@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import "../assets/user/css-custon/style.css"
+// import "../assets/user/css-custon/style.css"
 
-function Login() {
+const Login = () => {
   useEffect(() => {
     document.title = "Kampus Gratis | Login";
   });
@@ -74,7 +74,7 @@ function Login() {
                     Nice to see you! Please log in with your account.
                   </p> */}
 
-                  <htmlForm>
+                  <form>
                     <div className="mb-4">
                       <label htmlFor="exampleInputEmail1" className="form-label">
                         Email address *
@@ -137,7 +137,7 @@ function Login() {
                         </button>
                       </div>
                     </div>
-                  </htmlForm>
+                  </form>
 
                   <div className="row">
                     <div className="position-relative my-4">
