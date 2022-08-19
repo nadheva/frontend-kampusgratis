@@ -1,6 +1,20 @@
-# Getting Started with Create React App - latihan git
+## Ketentuan Nama Branch saat ini
+>- **master** →  untuk productions
+>- **main** → untuk staging
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>- **feature/feature-name* ** → untuk membuat fitur baru atau mengerjakan task (card) baru 
+>- **issue/issue-name* ** → untuk memperbaiki issue/permasalahan/kekurangan dari code yang sudah dikerjakan
+>- **bugfix/bug-name* ** → untuk mengatasi bug yang muncul dari code yang sudah dikerjakan
+
+<!--
+Ketentuan Nama Branch
+================
+>- **main** →  untuk productions
+>- **development** → untuk staging
+-->
+
+
+
 
 ## Available Scripts
 
