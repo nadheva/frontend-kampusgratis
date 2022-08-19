@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../assets/user/css-custon/style.css"
+// import "../assets/user/css-custon/style.css"
 
 function Login() {
   useEffect(() => {
@@ -76,7 +76,7 @@ function Login() {
 
                   <form>
                     <div className="mb-4">
-                      <label for="exampleInputEmail1" className="form-label">
+                      <label htmlFor="exampleInputEmail1" className="form-label">
                         Email address *
                       </label>
                       <div className="input-group input-group-lg">
@@ -93,7 +93,7 @@ function Login() {
                     </div>
 
                     <div className="mb-4">
-                      <label for="inputPassword5" className="form-label">
+                      <label htmlFor="inputPassword5" className="form-label">
                         Password *
                       </label>
                       <div className="input-group input-group-lg">
@@ -147,7 +147,7 @@ function Login() {
                       </p>
                     </div>
 
-                    <div className="col-xxl-6 d-grid">
+                    <div className="col-xxl-12 d-grid">
                       <a href=" " className="btn bg-google mb-2 mb-xxl-0">
                         <i className="fab fa-fw fa-google text-white me-2"></i>
                         Login dengan Google

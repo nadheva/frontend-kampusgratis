@@ -35,21 +35,21 @@ const Regist = () => {
                 
                   <form>
                     <div className="mb-4">
-                      <label for="exampleInputEmail1" className="form-label">Email address *</label>
+                      <label htmlFor="exampleInputEmail1" className="form-label">Email address *</label>
                       <div className="input-group input-group-lg">
                         <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i className="bi bi-envelope-fill"></i></span>
                         <input type="email" className="form-control border-0 bg-light rounded-end ps-1" placeholder="E-mail" id="exampleInputEmail1"/>
                       </div>
                     </div>
                     <div className="mb-4">
-                      <label for="inputPassword5" className="form-label">Password *</label>
+                      <label htmlFor="inputPassword5" className="form-label">Password *</label>
                       <div className="input-group input-group-lg">
                         <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i className="fas fa-lock"></i></span>
                         <input type="password" className="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword5"/>
                       </div>
                     </div>
                     <div className="mb-4">
-                      <label for="inputPassword6" className="form-label">Confirm Password *</label>
+                      <label htmlFor="inputPassword6" className="form-label">Confirm Password *</label>
                       <div className="input-group input-group-lg">
                         <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i className="fas fa-lock"></i></span>
                         <input type="password" className="form-control border-0 bg-light rounded-end ps-1" placeholder="*********" id="inputPassword6"/>
@@ -58,7 +58,7 @@ const Regist = () => {
                     <div className="mb-4">
                       <div className="form-check">
                         <input type="checkbox" className="form-check-input" id="checkbox-1"/>
-                        <label className="form-check-label" for="checkbox-1">By signing up, you agree to the<a href=" "> terms of service</a></label>
+                        <label className="form-check-label" htmlFor="checkbox-1">By signing up, you agree to the<a href=" "> terms of service</a></label>
                       </div>
                     </div>
                     <div className="align-items-center mt-0">
