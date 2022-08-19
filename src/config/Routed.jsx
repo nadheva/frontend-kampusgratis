@@ -1,6 +1,10 @@
 import React from "react";
-
 import { Route, Switch } from "react-router-dom";
+
+import "../assets/user/vendor/font-awesome/css/all.min.css";
+import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
+import "../assets/user/css/style.css";
+import "../assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import Login from "../pages/Login";
 import Regist from "../pages/Regist";
