@@ -20,7 +20,7 @@ import '../assets/user/vendor/tiny-slider/tiny-slider.js';
 // import '../assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js';
 
 // Template Functions
-// import '../assets/user/js/functions.js';
+import '../assets/user/js/functions.js';
 
 // import page
 import Login from '../pages/Login';
