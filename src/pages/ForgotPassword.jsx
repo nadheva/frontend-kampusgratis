@@ -1,12 +1,7 @@
-import React, { useEffect } from "react";
-import FormLogin from "../component/auth/FormLogin";
-// import "../assets/user/css-custon/style.css"
+import React from 'react';
+import FormForgot from '../component/auth/FormForgot';
 
-const Login = () => {
-  useEffect(() => {
-    document.title = "Kampus Gratis | Login";
-  });
-
+const ForgotPassword = () => {
   return (
     <main>
       <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
@@ -20,7 +15,6 @@ const Login = () => {
                     Mari belajar sesuatu yang baru hari ini!
                   </p>
                 </div>
-
                 <img
                   src="assets/images/element/02.svg"
                   className="mt-5"
@@ -28,7 +22,7 @@ const Login = () => {
                 />
               </div>
             </div>
-            <FormLogin />
+            <FormForgot />
           </div>
         </div>
       </section>
@@ -36,4 +30,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
