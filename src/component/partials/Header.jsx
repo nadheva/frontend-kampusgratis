@@ -44,7 +44,7 @@ const Header = () => {
                 <Link
                   // activeClass="active"
                   className="nav-link"
-                  to="hero-section"
+                  to="fakultas-section"
                   spy={true}
                   smooth={true}
                   duration={500}
