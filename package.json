@@ -42,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack-dev-middleware": "^5.3.3",
+    "webpack-hot-middleware": "^2.25.2"
   }
 }
