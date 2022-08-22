@@ -141,13 +141,13 @@
 
 
 /* Landing Page - Footer */
-footer .card-form-footer {
+.footer .card-form-footer {
     background: var(--first-color);
     border-radius: 20px;
     padding: 30px;
 }
 
-footer .btn-form-footer {
+.footer .btn-form-footer {
     border-radius: 5px;
     color: var(--first-color);
     padding: 5px 40px;
