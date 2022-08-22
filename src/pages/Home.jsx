@@ -8,7 +8,7 @@ import Fakultas from "../component/landing-page/Fakultas";
 import Banner from "../component/landing-page/Banner";
 import Mentor from "../component/landing-page/Mentor";
 import Tentang from "../component/landing-page/Tentang";
-// import { Link } from "react-router-dom";
+import { Element } from "react-scroll";
 
 const Home = () => {
   return (
@@ -17,12 +17,23 @@ const Home = () => {
       <main>
         <Hero />
         <Counter />
-        <Fakultas />
+
+        <Element name="fakultas-section">
+          <Fakultas />
+        </Element>
+
         <Banner />
-        <Mentor />
-        <Tentang />
+
+        <Element name="mentor-section">
+          <Mentor />
+        </Element>
+        <Element name="tentang-section">
+          <Tentang />
+        </Element>
       </main>
-      <Footer />
+      <Element name="footer-section">
+        <Footer />
+      </Element>
     </>
   );
 };
