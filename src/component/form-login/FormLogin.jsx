@@ -1,50 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/esm/Button";
+import Col from "react-bootstrap/esm/Col";
+import Row from "react-bootstrap/esm/Row";
 
 const FormLogin = () => {
   return (
-    <div className="col-12 col-lg-6 m-auto">
-      <div className="row my-5">
-        <div className="col-sm-10 col-xl-8 m-auto">
+    <Col lg="6" className="m-auto">
+      <Row className="my-5">
+        <Col sm="10" xl="8" className="m-auto">
           <h1 className="fs-2 mb-4">Login Kampus Gratis!</h1>
+          <Form>
+            <Form.Group className="mb-4" controlId="Email">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                className="border-0 bg-light rounded-end ps-1"
+                placeholder="Masukkan Alamat Email"
+                size="lg"
+              />
+            </Form.Group>
 
-          <form>
-            <div className="mb-4">
-              <label htmlFor="exampleInputEmail1" className="form-label">
-                Email address *
-              </label>
-              <div className="input-group input-group-lg">
-                <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
-                  <i className="bi bi-envelope-fill"></i>
-                </span>
-                <input
-                  type="email"
-                  className="form-control border-0 bg-light rounded-end ps-1"
-                  placeholder="E-mail"
-                  id="exampleInputEmail1"
-                />
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label htmlFor="inputPassword5" className="form-label">
-                Password *
-              </label>
-              <div className="input-group input-group-lg">
-                <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
-                  <i className="fas fa-lock"></i>
-                </span>
-                <input
-                  type="password"
-                  className="form-control border-0 bg-light rounded-end ps-1"
-                  placeholder="password"
-                  id="inputPassword5"
-                />
-              </div>
-            </div>
+            <Form.Group className="mb-4">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                className="border-0 bg-light rounded-end ps-1"
+                placeholder="Masukkan Password"
+                size="lg"
+              />
+            </Form.Group>
 
             <div className="mb-4 d-flex justify-content-between mb-4">
-              <div className="form-check">
-              </div>
+              <Form.Check></Form.Check>
               <div className="text-primary-hover">
                 <a href=" " className="text-secondary">
                   <u>Lupa password?</u>
@@ -54,37 +43,36 @@ const FormLogin = () => {
 
             <div className="align-items-center mt-0">
               <div className="d-grid">
-                <button className="btn btn-primary mb-0" type="button">
+                <Button variant="primary" className="mb-0">
                   Login
-                </button>
+                </Button>
               </div>
             </div>
-          </form>
+          </Form>
 
-          <div className="row">
-            <div className="position-relative my-4">
+          <Row>
+            <Col className="position-relative my-4">
               <hr />
               <p className="small position-absolute top-50 start-50 translate-middle bg-body px-5">
                 Atau
               </p>
-            </div>
+            </Col>
 
-            <div className="col-xxl-12 d-grid">
-              <a href=" " className="btn bg-google mb-2 mb-xxl-0">
+            <Col xxl="12" className="d-grid">
+              <Button className="bg-google mb-2 mb-xxl-0">
                 <i className="fab fa-fw fa-google text-white me-2"></i>
                 Login dengan Google
-              </a>
-            </div>
-          </div>
+              </Button>
+            </Col>
+          </Row>
 
-          <div className="mt-4 text-center">
-            <span>
-              Tidak punya akun? <a href=" ">Daftar</a>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
+          <Row className="mt-4 text-center">
+            <span>Tidak punya akun? <Link to={"/registration"}> Daftar</Link> </span>
+            
+          </Row>
+        </Col>
+      </Row>
+    </Col>
   );
 };
 

@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FormRegist = () => {
   return (
@@ -103,8 +104,9 @@ const FormRegist = () => {
 
           <div className="mt-4 text-center">
             <span>
-              Sudah Punya Akun?<a href="sign-in.html"> Login Disini</a>
+              Sudah Punya Akun?
             </span>
+            <Link to={'login'} className=""> Login</Link>
           </div>
         </div>
       </div>
