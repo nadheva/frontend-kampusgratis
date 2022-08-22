@@ -5,7 +5,7 @@ const Tentang = () => {
     <section className="bg-first-color">
       <div className="container">
         <div className="row g-4 g-lg-5 align-items-center">
-          <div className="col-xl-5 order-2 order-xl-1">
+          <div className="col-xl-4 order-2 order-xl-1">
             <div className="position-relative">
               <div className="bg-body shadow  p-5 rounded-3 position-relative mb-5 mb-md-0">
                 <h5 className="mb-2 mb-md-4 text-center">
@@ -46,10 +46,10 @@ const Tentang = () => {
               </div>
             </div>
           </div>
-          <div className="col-xl-7 order-1 text-xl-start text-white">
+          <div className="col-xl-8 order-1 text-xl-start text-white">
             <h2 className="fs-1 text-white">Sekilas Tentang Kita</h2>
             <p>
-              <span className="text-warning">Kampus Gratis</span> merupakan
+              <span className="text-warning">Kampus Gratis </span> merupakan
               sistem manajemen E-learning yang mencantumkan laporan peningkatan
               atau progres pembelajaran mahasiswa layaknya seperti perguruan
               tinggi.
@@ -57,7 +57,7 @@ const Tentang = () => {
             <p>
               Pengembangan platform pembelajaran ini merupakan salah satu
               inisiasi dari pendiri
-              <span className="text-danger">PT. Menara Indonesia</span> atau
+              <span className="text-danger"> PT. Menara Indonesia </span> atau
               <span className="text-info"> MKnows Consulting</span>, yang ingin
               memberikan solusi pendidikan tinggi yang gratis, berkualitas, bisa
               diakses siapapun khususnya kaum marginal, dan selalu update

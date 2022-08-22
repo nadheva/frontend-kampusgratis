@@ -29,6 +29,12 @@
 /* **************** LANDING PAGE **************** */
 
 
+header .nav-link:hover {
+    color: blue !important;
+  
+}
+
+
 /* Landing Page - hero section */
 
 .hero-section {
