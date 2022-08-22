@@ -7,6 +7,7 @@ import Counter from "../component/landing-page/Counter";
 import Fakultas from "../component/landing-page/Fakultas";
 import Banner from "../component/landing-page/Banner";
 import Mentor from "../component/landing-page/Mentor";
+import Tentang from "../component/landing-page/Tentang";
 // import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
         <Fakultas />
         <Banner />
         <Mentor />
+        <Tentang />
       </main>
       <Footer />
     </>
