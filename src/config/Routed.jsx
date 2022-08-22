@@ -12,12 +12,12 @@ import '../assets/user/css/style.css';
 import '../assets/user/css-custom/style.css';
 
 // js
-import '../assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js';
+// import '../assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // vendor
 import '../assets/user/vendor/tiny-slider/tiny-slider.js';
-import '../assets/user/vendor/glightbox/js/glightbox.js';
-import '../assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js';
+// import '../assets/user/vendor/glightbox/js/glightbox.js';
+// import '../assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js';
 
 // Template Functions
 // import '../assets/user/js/functions.js';
