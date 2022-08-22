@@ -6,7 +6,7 @@ import Header from "../component/partials/Header";
 import Counter from "../component/landing-page/Counter";
 import Fakultas from "../component/landing-page/Fakultas";
 import Banner from "../component/landing-page/Banner";
-
+import Mentor from "../component/landing-page/Mentor";
 // import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -18,6 +18,7 @@ const Home = () => {
         <Counter />
         <Fakultas />
         <Banner />
+        <Mentor />
       </main>
       <Footer />
     </>
