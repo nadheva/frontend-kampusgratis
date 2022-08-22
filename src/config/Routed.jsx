@@ -26,6 +26,7 @@ import '../assets/user/vendor/purecounterjs/dist/purecounter_vanilla.js';
 import Login from '../pages/Login';
 import Regist from '../pages/Regist';
 import Home from '../pages/Home';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const Routed = () => {
   return (
@@ -33,6 +34,7 @@ const Routed = () => {
       <Route path="/" exact component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/registration" component={Regist} />
+      <Route path="/forgot-password" component={ForgotPassword}/>
     </Switch>
   );
 };
