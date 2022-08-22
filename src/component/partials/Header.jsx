@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="navbar-light navbar-sticky header-static">
+    <header className="navbar-light navbar-sticky header-static">
       <div className="navbar navbar-expand-xl">
         <div className="container-fluid px-3 px-xl-5">
           <Link to=" " className="navbar-brand">
@@ -111,7 +111,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

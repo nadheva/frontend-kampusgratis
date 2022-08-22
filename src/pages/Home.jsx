@@ -1,6 +1,9 @@
 import React from "react";
+
+import Hero from "../component/landing-page/Hero";
 import Footer from "../component/partials/Footer";
 import Header from "../component/partials/Header";
+import Counter from "../component/landing-page/Counter";
 
 // import { Link } from "react-router-dom";
 
@@ -9,7 +12,8 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <h1>Halo</h1>
+        <Hero />
+        <Counter />
       </main>
       <Footer />
     </>
