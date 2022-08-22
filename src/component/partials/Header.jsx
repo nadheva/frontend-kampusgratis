@@ -6,7 +6,7 @@ const Header = () => {
     <header className="navbar-light navbar-sticky header-static">
       <div className="navbar navbar-expand-xl">
         <div className="container-fluid px-3 px-xl-5">
-          <Link to=" " className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img
               className="light-mode-item navbar-brand-item"
               src="assets/images/kgLogo.png"
@@ -88,21 +88,13 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link text-black"
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Akun Saya
-                </a>
+                <Link to="/login" className="nav-link text-black">Akun Saya</Link>
               </li>
             </ul>
 
             <div className="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
               <div className="nav-item w-100">
+                
                 <a href="#" className="btn btn-sm btn-warning mb-0">
                   Coba sekarang
                 </a>
