@@ -15,7 +15,7 @@ const Counter = () => {
               <div className="ms-4 h6 fw-normal">
                 <h6 className="mb-2">Konten Menarik</h6>
                 <p className="mb-0">
-                  Video, Web,Presentasi, Dokumen - Tonton di perangkat apa pun!
+                  Video, Web, Presentasi, Dokumen - Tonton di perangkat apa pun!
                 </p>
               </div>
             </div>

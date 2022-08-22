@@ -42,10 +42,8 @@ const Banner = () => {
                     </h3>
                     <p className="text-info">Malcolm Forbes</p>
                     <p className="text-white mb-3">
-                      <span className="text-warning font-weight-bold">
-                        KAMPUS GRATIS
-                      </span>
-                      adalah Manajemen Pembelajaran yang sempurna untuk
+                      <span className="text-warning font-weight-bold"> KAMPUS GRATIS </span>
+                        adalah Manajemen Pembelajaran yang sempurna untuk
                       memungkinkan pembelajaran Komunitas, berbagi pengetahuan,
                       dan menginspirasi orang lain!
                     </p>

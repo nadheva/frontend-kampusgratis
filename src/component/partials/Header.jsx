@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Header = () => {
   return (
-    <header className="navbar-light navbar-sticky header-static">
+    <header className="navbar-light navbar-sticky fixed-top header-static">
       <div className="navbar navbar-expand-xl">
         <div className="container-fluid px-3 px-xl-5">
-          <Link to=" " className="navbar-brand">
+          <NavLink to="/" className="navbar-brand">
             <img
               className="light-mode-item navbar-brand-item"
               src="assets/images/kgLogo.png"
@@ -17,7 +18,7 @@ const Header = () => {
               src="assets/images/kgLogo.png"
               alt="logo"
             />
-          </Link>
+          </NavLink>
 
           <button
             className="navbar-toggler ms-auto"
@@ -40,64 +41,57 @@ const Header = () => {
 
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link active "
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                <Link
+                  // activeClass="active"
+                  className="nav-link"
+                  to="hero-section"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                 >
                   Fakultas
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link text-black"
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                <Link
+                  // activeClass="active"
+                  className="nav-link"
+                  to="mentor-section"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                 >
                   Mentor
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link text-black"
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                <Link
+                  // activeClass="active"
+                  className="nav-link"
+                  to="tentang-section"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                 >
                   Tentang Kami
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link text-black"
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+                <Link
+                  // activeClass="active"
+                  className="nav-link"
+                  to="footer-section"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
                 >
                   Kontak
-                </a>
+                </Link>
               </li>
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link text-black"
-                  href="#"
-                  id="demoMenu"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
+                <NavLink to="/login" className="nav-link">
                   Akun Saya
-                </a>
+                </NavLink>
               </li>
             </ul>
 
