@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const _Footer = () => {
   return (
     <div className="pt-5 footer">
       <div className="container">
@@ -17,23 +17,22 @@ const Footer = () => {
               </div>
               <div className="col-lg-10 col-10">
                 <p className="mb-1 text">
-                  Primary :{" "}
+                  Primary :
                   <span className=" fw-light ms-2">
                     Jl. Radio IV No.8 B, RW.4,Kramat Pela, Kec. Kby.Baru, Kota
                     Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130
                   </span>
                 </p>
                 <p className="mb-1">
-                  Second :{" "}
+                  Second :
                   <span className="fw-light ms-2">
                     Jl. Raya Cirendeu No.60 Cirendeu Kec. Ciputat Timur, Kota
-                    Tangerang{" "}
+                    Tangerang
                   </span>
                 </p>
                 <p className="mb-1">
-                  Tertiary :{" "}
+                  Tertiary :
                   <span className="fw-light ms-2">
-                    {" "}
                     Jl. Raya Darmo Permai III Surabaya. 60119
                   </span>
                 </p>
@@ -48,7 +47,7 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-10 col-10">
                   <p className="mb-1">
-                    Primary :{" "}
+                    Primary :
                     <span className="fw-light ms-2">0812-1046 8281</span>
                   </p>
                 </div>
@@ -60,13 +59,13 @@ const Footer = () => {
                 </div>
                 <div className="col-lg-10 col-10">
                   <p className="mb-1">
-                    Primary :{" "}
+                    Primary :
                     <span className="fw-light ms-2">
                       learning@m-knowsconsulting.com
                     </span>
                   </p>
                   <p className="mb-1">
-                    Secondary :{" "}
+                    Secondary :
                     <span className="fw-light ms-2">
                       surabaya@m-knowsconsulting.com
                     </span>
@@ -148,8 +147,7 @@ const Footer = () => {
           <div className="container px-0">
             <div className="d-md-flex justify-content-between align-items-center py-3 text-center text-md-left">
               <div className="text-primary-hover">
-                {" "}
-                2022 - www.kampusgratis.id. All Rights Reserved{" "}
+                2022 - www.kampusgratis.id. All Rights Reserved
               </div>
               <div className=" mt-3 mt-md-0">
                 <ul className="list-inline mb-0 mt-3">
@@ -162,23 +160,21 @@ const Footer = () => {
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    {" "}
                     <a
                       className="btn btn-white btn-sm shadow px-2 text-facebook"
                       href="#"
                     >
                       <i className="fab fa-fw fa-facebook-f"></i>
-                    </a>{" "}
+                    </a>
                   </li>
 
                   <li className="list-inline-item">
-                    {" "}
                     <a
                       className="btn btn-white btn-sm shadow px-2 text-linkedin"
                       href="#"
                     >
                       <i className="fab fa-fw fa-linkedin-in"></i>
-                    </a>{" "}
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -186,19 +182,16 @@ const Footer = () => {
                 <ul className="list-inline mb-0">
                   <li className="list-inline-item">
                     <a className="nav-link" href="#">
-                      {" "}
                       Terms & Condition
                     </a>
                   </li>
                   <li className="list-inline-item">
                     <a className="nav-link" href="#">
-                      {" "}
                       Help
                     </a>
                   </li>
                   <li className="list-inline-item">
                     <a className="nav-link pe-0" href="#">
-                      {" "}
                       Privacy Police
                     </a>
                   </li>
@@ -212,4 +205,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default _Footer;
