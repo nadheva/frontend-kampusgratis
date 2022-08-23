@@ -166,3 +166,10 @@ header .nav-link:hover {
 .widget-1 .fw-light {
     color: black;
 }
+
+/* Edit Profile */
+.bg-banner {
+    background-color: #3d306e;
+    height: 100px;
+    
+}

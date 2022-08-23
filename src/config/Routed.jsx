@@ -27,6 +27,7 @@ import Login from '../pages/Login';
 import Regist from '../pages/Regist';
 import Home from '../pages/Home';
 import ForgotPassword from '../pages/ForgotPassword';
+import EditProfile from '../pages/EditProfile';
 
 const Routed = () => {
   return (
@@ -35,6 +36,7 @@ const Routed = () => {
       <Route path="/login" component={Login} />
       <Route path="/registration" component={Regist} />
       <Route path="/forgot-password" component={ForgotPassword}/>
+      <Route path="/edit-profile" component={EditProfile}/>
     </Switch>
   );
 };
