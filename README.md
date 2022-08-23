@@ -1,6 +1,6 @@
 ## Ketentuan Nama Branch saat ini
->- **master** →  untuk productions
->- **main** → untuk staging
+>- **main** →  untuk productions
+>- **backup** → untuk staging
 
 >- **feature/feature-name* ** → untuk membuat fitur baru atau mengerjakan task (card) baru 
 >- **issue/issue-name* ** → untuk memperbaiki issue/permasalahan/kekurangan dari code yang sudah dikerjakan
