@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const _Footer = () => {
   return (
     <div className="pt-5 footer">
       <div className="container">
@@ -205,4 +205,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default _Footer;
