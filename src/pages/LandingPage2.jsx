@@ -10,7 +10,9 @@ import Mentor from "../component/landing-page/Mentor";
 import Tentang from "../component/landing-page/Tentang";
 import { Element } from "react-scroll";
 
-const Home = () => {
+import '../assets/user/css-custom/style.css';
+
+const LandingPage2 = () => {
   return (
     <>
       <Header />
@@ -38,4 +40,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage2;
