@@ -4,6 +4,8 @@ import { Element } from "react-scroll";
 import Header1 from "../component/partials/Header1";
 import Hero1 from "../component/landing-page1/Hero1";
 import _Footer1 from "../component/partials/_Footer1";
+import Fakultas1 from "../component/landing-page1/Fakultas1";
+import Mentor1 from "../component/landing-page1/Mentor1";
 
 import "../assets/user/css-custom/style-kg-1.css";
 
@@ -13,6 +15,8 @@ const LandingPage1 = () => {
       <Header1 />
       <main>
         <Hero1 />
+        <Fakultas1 />
+        <Mentor1 />
       </main>
       <Element name="footer-section">
         <_Footer1 />

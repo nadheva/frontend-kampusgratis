@@ -3,10 +3,10 @@
     background: #E2ECF0;
 }
 
-.fs-1 {
+/* .fs-1 {
     font-size: 40px !important;
     color: #072E55 !important;
-}
+} */
 
 
 /* Landing Page - hero section */
@@ -44,32 +44,32 @@
 
 
 /* Landing Page - Fakultas */
-.fakultas-section {
+.fakultas-section-kg1 {
     margin-top: -20px;
 }
 
-.fakultas-section .fakultas-body h3 {
+.fakultas-section-kg1 .fakultas-body h3 {
     font-size: 36px;
     color: #494949;
 }
 
 
 /* Landing Page - Mentor */
-.mentor-section .card-mentor .card-title {
+.mentor-section-kg1 .card-mentor .card-title {
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     color: #072E55;
 }
 
-.mentor-section .card-mentor .card-subtitle {
+.mentor-section-kg1 .card-mentor .card-subtitle {
     font-weight: 600;
     font-size: 12px;
     line-height: 15px;
     color: #072E55;
 }
 
-.mentor-section .card-mentor {
+.mentor-section-kg1 .card-mentor {
     height: 122px;
     padding: 10px;
     margin-top: 120%;
@@ -156,7 +156,7 @@ footer .nav-link {
     }
 
     /* Landing Page - Fakultas */
-    .fakultas-section .fakultas-body h3 {
+    .fakultas-section-kg1.fakultas-body h3 {
         font-size: 14px;
     }
 
@@ -167,4 +167,3 @@ footer .nav-link {
 
 
 }
-
