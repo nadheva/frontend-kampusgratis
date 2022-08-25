@@ -3,10 +3,10 @@
     background: #E2ECF0;
 }
 
-/* .fs-1 {
+.fs-1-kg1 {
     font-size: 40px !important;
     color: #072E55 !important;
-} */
+}
 
 
 /* Landing Page - hero section */
@@ -79,13 +79,13 @@
 
 
 /* Landing Page - Event */
-.event-section .card-event {
+.event-section-kg .card-event {
     background: #1D7599;
     border-radius: 10px;
     padding: 10px;
 }
 
-.event-section .card-text-event {
+.event-section-kg .card-text-event {
     height: 150px;
     padding: 15px;
     margin-top: 28%;
@@ -93,21 +93,21 @@
     border-radius: 10px;
 }
 
-.event-section .card-text-event .card-title {
+.event-section-kg .card-text-event .card-title {
     color: #072E55;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
 }
 
-.event-section .card-text-event .card-text {
+.event-section-kg .card-text-event .card-text {
     color: #072E55;
     font-weight: 500;
     font-size: 12px;
     line-height: 13px;
 }
 
-.event-section .card-text-event .card-time {
+.event-section-kg .card-text-event .card-time {
     color: #072E55;
     font-weight: 400;
     font-size: 12px;
@@ -115,17 +115,17 @@
 }
 
 
-/* Landing Page - Footer */
-footer {
+/* Landing Page - .footer-kg1 */
+.footer-kg1 {
     background: #072E55;
     color: white;
 }
 
-footer h5 {
+.footer-kg1 h5 {
     color: white;
 }
 
-footer .nav-link {
+.footer-kg1 .nav-link {
     color: white;
 }
 
@@ -136,7 +136,6 @@ footer .nav-link {
     .fs-1 {
         font-size: 26px !important;
     }
-
 
     /* Hero */
     .hero-section-kg1 .hero-kg1 {
@@ -156,12 +155,12 @@ footer .nav-link {
     }
 
     /* Landing Page - Fakultas */
-    .fakultas-section-kg1.fakultas-body h3 {
+    .fakultas-section-kg1 .fakultas-body h3 {
         font-size: 14px;
     }
 
     /* Landing Page - Event */
-    .event-section .card-text-event {
+    .event-section-kg .card-text-event {
         margin-top: 18%;
     }
 
