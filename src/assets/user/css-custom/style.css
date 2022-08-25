@@ -21,6 +21,10 @@
     background-color: var(--first-color-second) !important;
 }
 
+.color-green {
+    color: rgb(55, 179, 74);
+}
+
 
 .title-small {
     font-weight: 300;
@@ -171,5 +175,5 @@ header .nav-link:hover {
 .bg-banner {
     background-color: #3d306e;
     height: 100px;
-    
+
 }

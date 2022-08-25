@@ -57,8 +57,8 @@ const Tentang = () => {
             <p>
               Pengembangan platform pembelajaran ini merupakan salah satu
               inisiasi dari pendiri
-              <span className="text-danger"> PT. Menara Indonesia </span> atau
-              <span className="text-info"> MKnows Consulting</span>, yang ingin
+              <span className="text-danger"> PT Menara Indonesia </span> atau
+              <span className="text-info"> M-Knows Consulting</span>, yang ingin
               memberikan solusi pendidikan tinggi yang gratis, berkualitas, bisa
               diakses siapapun khususnya kaum marginal, dan selalu update
               layaknya platform Wikipedia.

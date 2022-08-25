@@ -6,7 +6,7 @@ const Hero = () => {
             <div
                 className="bg-content position-absolute text-white d-flex flex-column align-items-center justify-content-center">
                 <h1 className="mb-4 mt-0 font-weight-bold text-center">Pembelajaran
-                    <span className="first-color-second"> Gratis </span> dan
+                    <span className="color-green"> Gratis </span> dan
                     <span className="text-warning"> Tepercaya </span>
                     <br />
                     Pertama di

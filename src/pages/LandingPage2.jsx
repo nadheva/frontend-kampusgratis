@@ -33,7 +33,7 @@ const LandingPage2 = () => {
           <Tentang />
         </Element>
       </main>
-      <Element name="footer-section">
+      <Element id="footer-section" className="element">
         <_Footer />
       </Element>
     </>

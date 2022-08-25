@@ -42,7 +42,7 @@ const Header = () => {
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
                 <Link
-                  // activeClass="active"
+                  activeClass="active"
                   className="nav-link"
                   to="fakultas-section"
                   spy={true}
@@ -54,7 +54,7 @@ const Header = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  // activeClass="active"
+                  activeClass="active"
                   className="nav-link"
                   to="mentor-section"
                   spy={true}
@@ -66,7 +66,7 @@ const Header = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  // activeClass="active"
+                  activeClass="active"
                   className="nav-link"
                   to="tentang-section"
                   spy={true}
@@ -78,7 +78,7 @@ const Header = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  // activeClass="active"
+                  activeClass="active"
                   className="nav-link"
                   to="footer-section"
                   spy={true}
