@@ -10,7 +10,7 @@
 
 
 /* Landing Page - hero section */
-.hero-section {
+.hero-section-kg1 {
     /* height: 200vh; */
     padding: 50px 10px;
 
@@ -19,24 +19,24 @@
     background-position: center;
 }
 
-.hero-section .hero-kg1 {
+.hero-section-kg1 .hero-kg1 {
     padding-top: 8%;
 }
 
-.hero-section .hero-kg1 h5 {
+.hero-section-kg1 .hero-kg1 h5 {
     color: white;
     font-size: 26px;
     font-weight: 500;
     line-height: 0em;
 }
 
-.hero-section .hero-kg1 h1 {
+.hero-section-kg1 .hero-kg1 h1 {
     font-size: 80px;
     font-weight: 600;
     color: white;
 }
 
-.hero-section .hero-kg1 p {
+.hero-section-kg1 .hero-kg1 p {
     color: white;
     font-size: 14px;
     font-weight: 300;
@@ -139,19 +139,19 @@ footer .nav-link {
 
 
     /* Hero */
-    .hero-section .hero-kg1 {
+    .hero-section-kg1 .hero-kg1 {
         padding-top: 20px;
     }
 
-    .hero-section .hero-kg1 h5 {
+    .hero-section-kg1 .hero-kg1 h5 {
         font-size: 16px;
     }
 
-    .hero-section .hero-kg1 h1 {
+    .hero-section-kg1 .hero-kg1 h1 {
         font-size: 28px;
     }
 
-    .hero-section .hero-kg1 p {
+    .hero-section-kg1 .hero-kg1 p {
         font-size: 14px;
     }
 
