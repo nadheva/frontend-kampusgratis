@@ -15,12 +15,20 @@ const LandingPage1 = () => {
     <>
       <Header1 />
       <main>
-        <Hero1 />
-        <Fakultas1 />
-        <Mentor1 />
-        <Event1 />
+        <Element name="home-section1">
+          <Hero1 />
+        </Element>
+        <Element name="fakultas-section1">
+          <Fakultas1 />
+        </Element>
+        <Element name="mentor-section1">
+          <Mentor1 />
+        </Element>
+        <Element name="event-section1">
+          <Event1 />
+        </Element>
       </main>
-      <Element name="footer-section">
+      <Element name="footer-section1">
         <_Footer1 />
       </Element>
     </>
