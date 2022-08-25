@@ -6,7 +6,7 @@ const Fakultas1 = () => {
       <section className="fakultas-section-kg1 bg-abu py-5 pt-8">
         <div className="container">
           <div className="mb-5">
-            <h2 className="fs-1-kg1">FAKULTAS & JURUSAN</h2>
+            <h2 className="title-kg1">FAKULTAS & JURUSAN</h2>
           </div>
           <div className="fakultas-body">
             <div className="row align-items-center ">

@@ -5,7 +5,7 @@ const Mentor1 = () => {
     <section className="mentor-section-kg1 py-5">
       <div className="container">
         <div className="mb-5">
-          <h2 className="fs-1-kg1">MENTOR</h2>
+          <h2 className="title-kg1">MENTOR</h2>
         </div>
         <div className="row">
           <div className="col-12 col-sm-12 col-md-4 col-lg-4">
