@@ -1,13 +1,13 @@
 import React from "react";
 
-import Hero from "../component/landing-page/Hero";
+import Hero from "../component/landing-page2/Hero";
 import _Footer from "../component/partials/_Footer";
 import Header from "../component/partials/Header";
-import Counter from "../component/landing-page/Counter";
-import Fakultas from "../component/landing-page/Fakultas";
-import Banner from "../component/landing-page/Banner";
-import Mentor from "../component/landing-page/Mentor";
-import Tentang from "../component/landing-page/Tentang";
+import Counter from "../component/landing-page2/Counter";
+import Fakultas from "../component/landing-page2/Fakultas";
+import Banner from "../component/landing-page2/Banner";
+import Mentor from "../component/landing-page2/Mentor";
+import Tentang from "../component/landing-page2/Tentang";
 import { Element } from "react-scroll";
 
 import '../assets/user/css-custom/style.css';
