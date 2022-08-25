@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 const Header1 = () => {
   return (
-    <header className="navbar-light navbar-sticky header-static">
+    <header className="navbar-light navbar-sticky fixed-top header-static">
       <div className="navbar navbar-expand-xl">
         <div className="container-fluid px-3 px-xl-5">
           <NavLink to="/landing-page1" className="navbar-brand p-3">
@@ -41,8 +41,8 @@ const Header1 = () => {
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link text-primary"
-                  to="home-section"
+                  className="nav-link "
+                  to="home-section1"
                   spy={true}
                   smooth={true}
                   duration={500}
@@ -52,8 +52,8 @@ const Header1 = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link text-primary"
-                  to="fakultas-section"
+                  className="nav-link "
+                  to="fakultas-section1"
                   spy={true}
                   smooth={true}
                   duration={500}
@@ -63,8 +63,8 @@ const Header1 = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link text-primary"
-                  to="mentor-section"
+                  className="nav-link "
+                  to="mentor-section1"
                   spy={true}
                   smooth={true}
                   duration={500}
@@ -74,8 +74,8 @@ const Header1 = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link text-primary"
-                  to="event-section"
+                  className="nav-link "
+                  to="event-section1"
                   spy={true}
                   smooth={true}
                   duration={500}
@@ -85,8 +85,8 @@ const Header1 = () => {
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="nav-link text-primary"
-                  to="about-section"
+                  className="nav-link "
+                  to="footer-section1"
                   spy={true}
                   smooth={true}
                   duration={500}

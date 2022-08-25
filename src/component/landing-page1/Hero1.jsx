@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Hero1 = () => {
   return (
     <section className="hero-section-kg1 position-relative py-5 ">
-      <div className="container">
+      <div className="container pt-5">
         <div className="row g-4">
           <div className="col-lg-6 col-md-6 col-12 text-center pt-6">
             <img
