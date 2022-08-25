@@ -6,10 +6,9 @@ const Mentor = () => {
       <div className="container">
         <div className="row mb-4">
           <div className="col-lg-8 mx-auto text-center">
-            <h2 className="fs-1">Mentor Kami</h2>
+            <h2 className="first-color-second">Mentor <span className="title-small">Kami</span></h2>
           </div>
         </div>
-
         <div className="row pb-1">
           <div className="col-sm-6 col-lg-3 col-xl-3">
             <div className="single-person">
