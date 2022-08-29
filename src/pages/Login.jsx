@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import FormLogin from "../component/form-login/FormLogin";
+import FormLogin from "../component/auth/FormLogin";
 // import "../assets/user/css-custon/style.css"
 
 const Login = () => {
