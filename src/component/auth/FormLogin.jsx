@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const FormLogin = () => {
   return (
-    <div className="col-12 col-lg-6 m-auto">
-      <div className="row my-5">
+    <div className="col-12 col-lg-6 bg-white">
+      <div className="row my-8">
         <div className="col-sm-10 col-xl-8 m-auto">
           <h1 className="fs-2 mb-4">Login Kampus Gratis!</h1>
 
@@ -44,18 +44,19 @@ const FormLogin = () => {
             </div>
 
             <div className="mb-4 d-flex justify-content-between mb-4">
-              <div className="form-check">
-              </div>
+              <div className="form-check"></div>
               <div className="text-primary-hover">
                 <a href=" " className="text-secondary">
-                  <Link to={'/forgot-password'} ><u>Lupa Password?</u></Link>
+                  <Link to={"/forgot-password"}>
+                    <u>Lupa Password?</u>
+                  </Link>
                 </a>
               </div>
             </div>
 
             <div className="align-items-center mt-0">
               <div className="d-grid">
-                <button className="btn btn-primary mb-0" type="button">
+                <button className="btn btn-kg mb-0 text-white" type="button">
                   Login
                 </button>
               </div>
@@ -71,8 +72,8 @@ const FormLogin = () => {
             </div>
 
             <div className="col-xxl-12 d-grid">
-              <a href=" " className="btn bg-google mb-2 mb-xxl-0">
-                <i className="fab fa-fw fa-google text-white me-2"></i>
+              <a href=" " className="btn btn-outline-secondary mb-2 mb-xxl-0">
+                <i className="fab fa-fw fa-google me-2"></i>
                 Login dengan Google
               </a>
             </div>
@@ -80,7 +81,7 @@ const FormLogin = () => {
 
           <div className="mt-4 text-center">
             <span>
-              Tidak punya akun? <Link to="/registration" > Daftar</Link>
+              Tidak punya akun? <Link to="/registration"> Daftar</Link>
             </span>
           </div>
         </div>

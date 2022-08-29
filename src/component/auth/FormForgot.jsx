@@ -2,7 +2,7 @@ import React from 'react';
 
 const FormForgot = () => {
   return (
-    <div class="col-12 col-lg-6 d-flex justify-content-center">
+    <div class="col-12 col-lg-6 d-flex justify-content-center bg-white">
         <div class="row my-5">
             <div class="col-sm-10 col-xl-12 m-auto">
                 <span class="mb-0 fs-1">🤔</span>
@@ -18,7 +18,7 @@ const FormForgot = () => {
                     </div>
                     <div class="align-items-center">
                         <div class="d-grid">
-                            <button class="btn btn-primary mb-0" type="button">Reset password</button>
+                            <button class="btn btn-kg mb-0 text-white" type="button">Reset password</button>
                         </div>
                     </div>	
                 </form>
