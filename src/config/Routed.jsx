@@ -16,6 +16,9 @@ import LandingPage2 from "../pages/LandingPage2";
 import ForgotPassword from "../pages/ForgotPassword";
 import EditProfile from "../pages/EditProfile";
 
+// test
+import ListKontak from "../component/kontak/ListKontak";
+
 const Routed = () => {
   return (
     <Switch>
@@ -25,6 +28,7 @@ const Routed = () => {
       <Route path="/registration" component={Regist} />
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/edit-profile" component={EditProfile} />
+      <Route path="/test" component={ListKontak} />
     </Switch>
   );
 };
