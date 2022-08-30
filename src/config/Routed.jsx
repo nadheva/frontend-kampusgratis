@@ -18,6 +18,8 @@ import EditProfile from "../pages/EditProfile";
 
 // test
 import ListKontak from "../component/kontak/ListKontak";
+import AddUser from "../component/auth/AddUser";
+
 
 const Routed = () => {
   return (
@@ -29,6 +31,7 @@ const Routed = () => {
       <Route path="/forgot-password" component={ForgotPassword} />
       <Route path="/edit-profile" component={EditProfile} />
       <Route path="/test" component={ListKontak} />
+      <Route path="/test2" component={AddUser} />
     </Switch>
   );
 };
