@@ -2,11 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import firebase from './config/firebase.config';
-
-import './assets/user/vendor/bootstrap/dist/js/bootstrap.bundle.min.js';
-
-console.log(firebase);
 
 import { createStore, compose, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
