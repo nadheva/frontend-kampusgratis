@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import {
-//   getAuth,
-//   createUserWithEmailAndPassword
-// } from 'firebase/auth';
-// import firebase from '../../config/firebase.config';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const FormRegist = () => {
   // const [showPassword, setShowPassword] = useState(false)
@@ -220,7 +215,7 @@ const FormRegist = () => {
           <div className="mt-4 text-center">
             <span>Sudah Punya Akun?</span>
             <Link to={"login"} className="">
-              {" "}
+             
               Login
             </Link>
           </div>
