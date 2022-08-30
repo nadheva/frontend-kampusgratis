@@ -51,7 +51,7 @@ const FormRegist = () => {
                   className="form-control border-0 bg-light rounded-end ps-1"
                   placeholder="Nama Lengkap"
                   id="fullName"
-                  name=""
+                  name="fullName"
                   value={fullName}
                   onChange={(event) => setFullName(event.target.value)}
                 />
