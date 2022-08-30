@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getListKontak } from "../../redux/actions/KontakAction";
 
+import AddKontak from "./AddKontak";
+
 const ListKontak = () => {
   const { getListKontakResult, getListKontakLoading, getListKontakError } =
     useSelector((state) => state.KontakReducer);
@@ -19,6 +21,9 @@ const ListKontak = () => {
   return (
     <div style={{ padding: "30px" }}>
       <h2>Aplikasi Kontak App</h2>
+      <AddKontak />
+      <hr />
+
       {getListKontakResult ? (
         getListKontakResult.map((kontak) => {
           return (
