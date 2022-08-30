@@ -18,7 +18,7 @@ export const addUser = (data) => {
     // get API
     axios({
       method: "POST",
-      url: "http://2c1e-182-253-248-23.ngrok.io/api/v1/auth/register",
+      url: "https://62b2d81c4f851f87f44e0d48.mockapi.io/user",
       timeout: 120000,
       data: data,
     })

@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addUser } from "../../redux/actions/AuthAction";
 
 const FormRegist = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState("");
+
+  const { addUserResult } = useSelector((state) => state.AuthReducer);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // add kontak
+    dispatch(
+      addUser({
+        email: email,
+        password: password,
+        fullName: fullName,
+        phone: phone,
+        gender: gender,
+      })
+    );
+  };
+
   return (
     <div className="col-12 col-lg-6 m-auto bg-white">
       <div className="row my-5">
@@ -11,36 +37,65 @@ const FormRegist = () => {
             Selamat Datang, Silahkan Registrasi Akunmu!
           </p>
 
-          <form>
+          <form onSubmit={(event) => handleSubmit(event)}>
             <div className="mb-4">
               <label htmlFor="exampleInputEmail1" className="form-label">
                 Full Nama *
               </label>
               <div className="input-group input-group-lg">
                 <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
-                  <i className="bi bi-envelope-fill"></i>
+                  <i className="bi bi-person-fill"></i>
                 </span>
                 <input
                   type="text"
                   className="form-control border-0 bg-light rounded-end ps-1"
                   placeholder="Nama Lengkap"
-                  id="full_name"
+                  id="fullName"
+                  name=""
+                  value={fullName}
+                  onChange={(event) => setFullName(event.target.value)}
                 />
               </div>
             </div>
             <div className="mb-4">
               <label htmlFor="exampleInputEmail1" className="form-label">
-                Nomer HP *
+                Jenis Kelamin *
               </label>
               <div className="input-group input-group-lg">
                 <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
-                  <i className="bi bi-envelope-fill"></i>
+                  <i className="bi bi-people-fill"></i>
+                </span>
+                <select
+                  className="form-select border-0 bg-light rounded-end ps-1"
+                  aria-label="Default select example"
+                  onChange={(event) => {
+                    const selectedGender = event.target.value;
+                    setGender(selectedGender);
+                  }}
+                >
+                  <option value="0">Tidak Ingin Memberitahu</option>
+                  <option value="1">Laki - Laki</option>
+                  <option value="2">Perempuan</option>
+                  <option value="9">Lainnya</option>
+                </select>
+              </div>
+            </div>
+            <div className="mb-4">
+              <label htmlFor="exampleInputEmail1" className="form-label">
+                Nomer Handphone *
+              </label>
+              <div className="input-group input-group-lg">
+                <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
+                  <i className="bi bi-telephone-fill"></i>
                 </span>
                 <input
                   type="text"
                   className="form-control border-0 bg-light rounded-end ps-1"
-                  placeholder="Nomer HP"
-                  id="hp"
+                  placeholder="Masukkan Nomer Handphone"
+                  id="phone"
+                  name="phone"
+                  value={phone}
+                  onChange={(event) => setPhone(event.target.value)}
                 />
               </div>
             </div>
@@ -57,6 +112,9 @@ const FormRegist = () => {
                   className="form-control border-0 bg-light rounded-end ps-1"
                   placeholder="E-mail"
                   id="email"
+                  name="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
                 />
               </div>
             </div>
@@ -73,44 +131,15 @@ const FormRegist = () => {
                   className="form-control border-0 bg-light rounded-end ps-1"
                   placeholder="*********"
                   id="password"
+                  name="password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
-              </div>
-            </div>
-            {/* <div className="mb-4">
-              <label htmlFor="inputPassword6" className="form-label">
-                Confirm Password *
-              </label>
-              <div className="input-group input-group-lg">
-                <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
-                  <i className="fas fa-lock"></i>
-                </span>
-                <input
-                  type="password"
-                  className="form-control border-0 bg-light rounded-end ps-1"
-                  placeholder="*********"
-                  id="inputPassword6"
-                />
-              </div>
-            </div> */}
-            <div className="mb-4">
-              <div className="form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="checkbox-1"
-                />
-                <label className="form-check-label" htmlFor="checkbox-1">
-                  Dengan Mendaftar, Anda Menyetujui
-                  <a href=" "> Persyaratan Layanan</a>
-                </label>
               </div>
             </div>
             <div className="align-items-center mt-0">
               <div className="d-grid">
-                <button
-                  className="btn btn-kg mb-0 text-white"
-                  type="button"
-                >
+                <button className="btn btn-kg mb-0 text-white" type="submit">
                   Sign Up
                 </button>
               </div>
@@ -126,7 +155,12 @@ const FormRegist = () => {
             </div>
             <div className="col-xxl-12 d-grid">
               <a href=" " className="btn btn-outline-secondary mb-2 mb-xxl-0">
-                <i className="fab fa-fw fa-google me-2"></i>Signup with Google
+                <img
+                  src="assets/images/googleicon.png"
+                  alt=""
+                  className="googleicon"
+                />
+                Daftar Dengan Akun Google
               </a>
             </div>
           </div>

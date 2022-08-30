@@ -218,3 +218,9 @@ header .nav-link:hover {
   left: 200px;
   top: 88px;
 }
+
+.googleicon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
