@@ -33,36 +33,36 @@ function AddUser() {
       <form onSubmit={(event) => handleSubmit(event)}>
         <input
           type="text"
-          name="nama"
+          name="email"
           placeholder="email ..."
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
         <input
           type="text"
-          name="nama"
+          name="password"
           placeholder="pass ..."
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
         <input
           type="text"
-          name="nama"
+          name="fullName"
           placeholder="Nama..."
           value={fullName}
           onChange={(event) => setFullname(event.target.value)}
         />
         <input
           type="text"
-          name="nama"
+          name="phone"
           placeholder="phone ..."
           value={phone}
           onChange={(event) => setPhone(event.target.value)}
         />
         <input
           type="text"
-          name="nama"
-          placeholder="Nama ..."
+          name="gender"
+          placeholder="gender ..."
           value={gender}
           onChange={(event) => setGender(event.target.value)}
         />
