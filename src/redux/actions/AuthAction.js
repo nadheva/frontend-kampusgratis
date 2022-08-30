@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import Swal from "sweetalert2";
 export const ADD_USER = "ADD_USER";
 
 // add
@@ -23,6 +23,13 @@ export const addUser = (data) => {
       data: data,
     })
       .then((response) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Registration Successful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         dispatch({
           // get data
           type: ADD_USER,
@@ -32,9 +39,17 @@ export const addUser = (data) => {
             errorMessage: false,
           },
         });
+        window.location.href = "/login";
       })
       .catch((error) => {
         // error
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `Registration Failed ${error.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
         dispatch({
           type: ADD_USER,
           payload: {
