@@ -1,5 +1,6 @@
 import axios from "axios";
 import Swal from "sweetalert2";
+
 export const ADD_USER = "ADD_USER";
 
 // add
@@ -18,7 +19,7 @@ export const addUser = (data) => {
     // get API
     axios({
       method: "POST",
-      url: "https://62b2d81c4f851f87f44e0d48.mockapi.io/user",
+      url: "https://testing-kampusg.herokuapp.com/api/v1/auth/register",
       timeout: 120000,
       data: data,
     })

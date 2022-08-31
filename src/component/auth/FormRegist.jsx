@@ -7,7 +7,7 @@ import { addUser } from "../../redux/actions/AuthAction";
 const FormRegist = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [full_name, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
 
@@ -21,7 +21,7 @@ const FormRegist = () => {
       addUser({
         email: email,
         password: password,
-        fullName: fullName,
+        full_name: full_name,
         phone: phone,
         gender: gender,
       })
@@ -52,7 +52,7 @@ const FormRegist = () => {
                   placeholder="Nama Lengkap"
                   id="fullName"
                   name="fullName"
-                  value={fullName}
+                  value={full_name}
                   onChange={(event) => setFullName(event.target.value)}
                 />
               </div>
