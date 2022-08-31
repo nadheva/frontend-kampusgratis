@@ -123,6 +123,7 @@ export const loginViaForm = (data) => async (dispatch) => {
         },
         user: user,
       });
+      window.location.href = "/";
     } else {
       dispatch({
         type: LOGIN,

@@ -124,7 +124,7 @@ const FormLogin = () => {
           </div>
         </div>
       ) : (
-        <Navigate to={`/`} />
+        <Navigate to="/" />
       )}
     </>
   );

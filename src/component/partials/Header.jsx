@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
+import { Nav, DropdownButton, Dropdown } from 'react-bootstrap';
+
+// Redux
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/actions/AuthAction";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const { isAuthenticated, user, error } = useSelector(
+    (state) => state.AuthReducer
+  );
+
+  useEffect(() => {
+    if (error) {
+      alert(error);
+    }
+  }, [error]);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <header className="navbar-light navbar-sticky fixed-top header-static">
       <div className="navbar navbar-expand-xl">
@@ -97,9 +117,32 @@ const Header = () => {
 
             <div className="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
               <div className="nav-item w-100">
-                <a href="#" className="btn btn-sm btn-warning mb-0">
+                {/* <a href="#" className="btn btn-sm btn-warning mb-0">
                   Coba sekarang
-                </a>
+                </a> */}
+
+                {!isAuthenticated ? (
+                  <NavLink 
+                    to="/registration"
+                    className="btn btn-sm btn-warning mb-0"
+                  >
+                    Coba Sekarang
+                  </NavLink>
+                ) : (   
+                  <>
+                    <DropdownButton
+                      variant="success"
+                      size="sm"
+                      id="dropdown-basic-button"
+                      title="Nama"
+                      className="ms-3 "
+                    >
+                      <Dropdown.Item size="sm" onClick={handleLogout}>
+                        Logout
+                      </Dropdown.Item>
+                    </DropdownButton>
+                  </>
+                )}
               </div>
             </div>
           </div>
