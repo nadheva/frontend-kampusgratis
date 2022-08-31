@@ -167,7 +167,7 @@ const FormRegist = () => {
 
           <div className="mt-4 text-center">
             <span>Sudah Punya Akun?</span>
-            <Link to={"login"} className="">
+            <Link to="/login" className="">
               Login
             </Link>
           </div>
