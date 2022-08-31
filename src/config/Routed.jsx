@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // css
 import "../assets/user/vendor/font-awesome/css/all.min.css";
@@ -20,14 +20,14 @@ import EditProfile from "../pages/EditProfile";
 
 const Routed = () => {
   return (
-    <Switch>
-      <Route path="/" exact component={LandingPage2} />
-      <Route path="/landing-page1" component={LandingPage1} />
-      <Route path="/login" component={Login} />
-      <Route path="/registration" component={Regist} />
-      <Route path="/forgot-password" component={ForgotPassword} />
-      <Route path="/edit-profile" component={EditProfile} />
-    </Switch>
+    <Routes>
+      <Route path="/" exact element={<LandingPage2/>} />
+      <Route path="/landing-page1" element={<LandingPage1/>} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/registration" element={<Regist/>} />
+      <Route path="/forgot-password" element={<ForgotPassword/>} />
+      <Route path="/edit-profile" element={<EditProfile/>} />
+    </Routes>
   );
 };
 
