@@ -11,7 +11,9 @@ const FormRegist = () => {
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
 
-  const { addUserResult } = useSelector((state) => state.AuthReducer);
+  const { addUserResult, addUserLoading } = useSelector(
+    (state) => state.AuthReducer
+  );
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
@@ -139,9 +141,20 @@ const FormRegist = () => {
             </div>
             <div className="align-items-center mt-0">
               <div className="d-grid">
-                <button className="btn btn-kg mb-0 text-white" type="submit">
-                  Sign Up
-                </button>
+                {addUserLoading ? (
+                  <button className="btn btn-kg mb-0 text-white" type="submit">
+                    <span
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>{" "}
+                    Loading...
+                  </button>
+                ) : (
+                  <button className="btn btn-kg mb-0 text-white" type="submit">
+                    Sign Up
+                  </button>
+                )}
               </div>
             </div>
           </form>

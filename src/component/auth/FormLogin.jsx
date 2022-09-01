@@ -86,12 +86,25 @@ const FormLogin = () => {
 
                 <div className="align-items-center mt-0">
                   <div className="d-grid">
-                    <button
-                      className="btn btn-kg mb-0 text-white"
-                      type="submit"
-                    >
-                      Login
-                    </button>
+                    {isAuthenticatedLoading ? (
+                      <button
+                        className="btn btn-kg mb-0 text-white"
+                        type="submit"
+                      >
+                        <span
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                          aria-hidden="true"
+                        ></span> Loading...
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn-kg mb-0 text-white"
+                        type="submit"
+                      >
+                        Login
+                      </button>
+                    )}
                   </div>
                 </div>
               </form>
