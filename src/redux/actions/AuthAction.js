@@ -91,7 +91,6 @@ export const loginViaForm = (data) => async (dispatch) => {
       }
     );
     const result = await response.json();
-    // console.log(result.data.token);
 
     const userInfo = await fetch(
       "https://testing-kampusg.herokuapp.com/api/v1/profile/me",
@@ -106,7 +105,6 @@ export const loginViaForm = (data) => async (dispatch) => {
     const user = JSON.parse(JSON.stringify(await userInfo.json()));
 
     if (result.data.token) {
-      // handleSwal("Login Successful!", "success");
       Swal.fire({
         position: "center",
         icon: "success",
@@ -144,11 +142,10 @@ export const loginViaForm = (data) => async (dispatch) => {
         user: false,
       });
 
-      // handleSwal(result.message, "error");
       Swal.fire({
         position: "center",
-        icon: "success",
-        title: `error ${result.message}`,
+        icon: "error",
+        title: `Error ${result.message}`,
         showConfirmButton: false,
         timer: 1500,
       });
@@ -172,11 +169,11 @@ export const loginViaForm = (data) => async (dispatch) => {
       },
       user: false,
     });
-    // handleSwal(error, "error");
+
     Swal.fire({
       position: "center",
-      icon: "success",
-      title: `error ${error}`,
+      icon: "error",
+      title: `Error ${error}`,
       showConfirmButton: false,
       timer: 1500,
     });
@@ -211,7 +208,7 @@ export const logout = () => async (dispatch) => {
   dispatch({
     type: LOGOUT,
   });
-  // handleSwal("Logout Successful", "success");
+
   Swal.fire({
     position: "center",
     icon: "success",
