@@ -207,6 +207,11 @@ header .nav-link:hover {
   border-radius: 10px;
 }
 
+.btn-kg-white {
+  background: #573dff;
+  color: #f9f9f9;
+}
+
 .btn-kg:hover {
   opacity: 80%;
 }

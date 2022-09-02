@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
-import { Nav, DropdownButton, Dropdown } from 'react-bootstrap';
+// import { Nav, DropdownButton, Dropdown } from "react-bootstrap";
 
 // Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -108,39 +108,79 @@ const Header = () => {
                   Kontak
                 </Link>
               </li>
-              <li className="nav-item dropdown">
-                <NavLink to="/login" className="nav-link">
-                  Akun Saya
-                </NavLink>
-              </li>
             </ul>
 
             <div className="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
               <div className="nav-item w-100">
-                {/* <a href="#" className="btn btn-sm btn-warning mb-0">
-                  Coba sekarang
-                </a> */}
 
                 {!isAuthenticated ? (
-                  <NavLink 
-                    to="/registration"
-                    className="btn btn-sm btn-warning mb-0"
-                  >
+                  <NavLink to="/login" className="btn btn-sm btn-warning mb-0">
                     Coba Sekarang
                   </NavLink>
-                ) : (   
+                ) : (
                   <>
-                    <DropdownButton
-                      variant="success"
-                      size="sm"
-                      id="dropdown-basic-button"
-                      title="Nama"
-                      className="ms-3 "
-                    >
-                      <Dropdown.Item size="sm" onClick={handleLogout}>
-                        Logout
-                      </Dropdown.Item>
-                    </DropdownButton>
+                    <div className="dropdown ms-1 ms-lg-0">
+                      <a
+                        className=" "
+                        href=" "
+                        id="profileDropdown"
+                        role="button"
+                        data-bs-auto-close="outside"
+                        data-bs-display="static"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="bi bi-person-fill "></i> {user.data.full_name}
+                      </a>
+                      <ul
+                        className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
+                        aria-labelledby="profileDropdown"
+                      >
+                        <li className="px-3">
+                          <div className="d-flex align-items-center">
+                            <div className="avatar me-3">
+                              <img
+                                className="avatar-img rounded-circle shadow"
+                                src="assets/images/avatar/01.jpg"
+                                alt="avatar"
+                              />
+                            </div>
+                            <div>
+                              <a className="h6" href=" ">
+                                Lori Ferguson
+                              </a>
+                              <p className="small m-0">example@gmail.com</p>
+                            </div>
+                          </div>
+                          <hr />
+                        </li>
+                        <li>
+                          <NavLink className="dropdown-item" to="/edit-profile">
+                            <i className="bi bi-person fa-fw me-2"></i>Edit Profile
+                          </NavLink>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href=" ">
+                            <i className="bi bi-gear fa-fw me-2"></i>Account
+                            Settings
+                          </a>
+                        </li>
+                        <li>
+                          <a className="dropdown-item" href=" ">
+                            <i className="bi bi-info-circle fa-fw me-2"></i>Help
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            className="dropdown-item bg-danger-soft-hover"
+                            href=" "
+                            onClick={handleLogout}
+                          >
+                            <i className="bi bi-power fa-fw me-2"></i>Sign Out
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </>
                 )}
               </div>
