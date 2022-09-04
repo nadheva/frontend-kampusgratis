@@ -1,4 +1,4 @@
-## Ketentuan Nama Branch saat ini32
+## Ketentuan Nama Branch saat ini
 >- **main** →  untuk productions
 >- **backup** → untuk staging
 
