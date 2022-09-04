@@ -8,7 +8,7 @@ import { loginViaForm } from "../../redux/actions/AuthAction";
 
 const FormLogin = () => {
   const dispatch = useDispatch();
-  const { isAuthenticated, isAuthenticatedLoading, user, error } = useSelector(
+  const { isAuthenticated, isAuthenticatedLoading,  error } = useSelector(
     (state) => state.AuthReducer
   );
 
