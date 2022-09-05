@@ -15,7 +15,11 @@ import LandingPage1 from "../pages/LandingPage1";
 import LandingPage2 from "../pages/LandingPage2";
 import ForgotPassword from "../pages/ForgotPassword";
 import EditProfile from "../pages/EditProfile";
-import PageNotFound from "../pages/404";
+import PageNotFound from "../pages/error/404";
+import Unauthorized from "../pages/error/401";
+import Forbidden from "../pages/error/403";
+import ServerError from "../pages/error/500";
+import ServiceUnavailable from "../pages/error/503";
 
 const Routed = () => {
   return (
@@ -28,10 +32,10 @@ const Routed = () => {
       <Route path="/edit-profile" element={<EditProfile />} />
 
       <Route path="/*" element={<PageNotFound />} />
-
-      {/* <Route path="/401" element={<Unauthorized />} />
-        <Route path="/403" element={<Forbidden />} />
-        <Route path="/*" element={<PageNotFound />} /> */}
+      <Route path="/401" element={<Unauthorized />} />
+      <Route path="/403" element={<Forbidden />} />
+      <Route path="/500" element={<ServerError />} />
+      <Route path="/503" element={<ServiceUnavailable />} />
     </Routes>
   );
 };
