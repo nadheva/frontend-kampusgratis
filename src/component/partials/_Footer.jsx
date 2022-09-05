@@ -154,7 +154,7 @@ const _Footer = () => {
                   <li className="list-inline-item">
                     <a
                       className="btn btn-white btn-sm shadow px-2 text-instagram"
-                      href="#"
+                      href=" "
                     >
                       <i className="fab fa-fw fa-instagram"></i>
                     </a>
@@ -162,7 +162,7 @@ const _Footer = () => {
                   <li className="list-inline-item">
                     <a
                       className="btn btn-white btn-sm shadow px-2 text-facebook"
-                      href="#"
+                      href=" "
                     >
                       <i className="fab fa-fw fa-facebook-f"></i>
                     </a>
@@ -171,7 +171,7 @@ const _Footer = () => {
                   <li className="list-inline-item">
                     <a
                       className="btn btn-white btn-sm shadow px-2 text-linkedin"
-                      href="#"
+                      href=" "
                     >
                       <i className="fab fa-fw fa-linkedin-in"></i>
                     </a>
@@ -181,17 +181,17 @@ const _Footer = () => {
               <div className=" mt-3 mt-md-0">
                 <ul className="list-inline mb-0">
                   <li className="list-inline-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href=" ">
                       Terms & Condition
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="nav-link" href="#">
+                    <a className="nav-link" href=" ">
                       Help
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="nav-link pe-0" href="#">
+                    <a className="nav-link pe-0" href=" ">
                       Privacy Police
                     </a>
                   </li>

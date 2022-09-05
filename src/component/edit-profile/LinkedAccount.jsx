@@ -24,7 +24,7 @@ const LinkedAccount = () => {
               <button type="button" className="btn btn-sm btn-danger mb-0">
                 Invoke
               </button>
-              <a href="#" className="btn btn-sm btn-link text-body mb-0">
+              <a href=" " className="btn btn-sm btn-link text-body mb-0">
                 Learn more
               </a>
             </div>

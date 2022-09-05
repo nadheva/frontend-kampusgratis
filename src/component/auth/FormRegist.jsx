@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -11,9 +11,7 @@ const FormRegist = () => {
   const [phone, setPhone] = useState("");
   const [gender, setGender] = useState("");
 
-  const { addUserResult, addUserLoading } = useSelector(
-    (state) => state.AuthReducer
-  );
+  const { addUserLoading } = useSelector((state) => state.AuthReducer);
   const dispatch = useDispatch();
 
   const handleSubmit = (event) => {

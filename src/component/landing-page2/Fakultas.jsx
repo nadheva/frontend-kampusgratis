@@ -25,7 +25,7 @@ const Fakultas = () => {
                   <img
                     src="assets/images/fakultas/UMKM & Ritel 1.png"
                     className="card-img-top"
-                    alt="course image"
+                    alt="course"
                   />
 
                   <div className="card-body pb-0">
@@ -52,7 +52,7 @@ const Fakultas = () => {
                   <img
                     src="assets/images/fakultas/UMKM & Ritel 2.png"
                     className="card-img-top"
-                    alt="course image"
+                    alt="course"
                   />
 
                   <div className="card-body pb-0">
@@ -79,7 +79,7 @@ const Fakultas = () => {
                   <img
                     src="assets/images/fakultas/UMKM & Ritel 3.png"
                     className="card-img-top"
-                    alt="course image"
+                    alt="course"
                   />
                   <div className="card-body pb-0">
                     <h5 className="card-title fw-normal ">
