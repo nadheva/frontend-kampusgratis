@@ -20,6 +20,7 @@ import Unauthorized from "../pages/error/401";
 import Forbidden from "../pages/error/403";
 import ServerError from "../pages/error/500";
 import ServiceUnavailable from "../pages/error/503";
+import HomeStudiku from "../pages/studiku/HomeStudiku";
 
 const Routed = () => {
   return (
@@ -36,6 +37,10 @@ const Routed = () => {
       <Route path="/403" element={<Forbidden />} />
       <Route path="/500" element={<ServerError />} />
       <Route path="/503" element={<ServiceUnavailable />} />
+
+      {/* Studiku */}
+      <Route path="/studiku" element={<HomeStudiku />} />
+
     </Routes>
   );
 };

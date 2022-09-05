@@ -229,3 +229,18 @@ header .nav-link:hover {
   height: 20px;
   margin-right: 5px;
 }
+
+.banner-studiku {
+  background: linear-gradient(271.51deg, #573DFF 15.61%, rgba(87, 61, 255, 0.6) 100%)  no-repeat center center; 
+  background-size:cover;
+}
+
+.card-course {
+  background:#D9D9D9; 
+  border-radius: 20px;
+}
+
+.card-category {
+  background:#D9D9D9; 
+  border-radius: 20px
+}
