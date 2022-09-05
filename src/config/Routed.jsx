@@ -15,18 +15,23 @@ import LandingPage1 from "../pages/LandingPage1";
 import LandingPage2 from "../pages/LandingPage2";
 import ForgotPassword from "../pages/ForgotPassword";
 import EditProfile from "../pages/EditProfile";
-
-
+import PageNotFound from "../pages/404";
 
 const Routed = () => {
   return (
     <Routes>
-      <Route path="/" exact element={<LandingPage2/>} />
-      <Route path="/landing-page1" element={<LandingPage1/>} />
-      <Route path="/login" element={<Login/>} />
-      <Route path="/registration" element={<Regist/>} />
-      <Route path="/forgot-password" element={<ForgotPassword/>} />
-      <Route path="/edit-profile" element={<EditProfile/>} />
+      <Route path="/" exact element={<LandingPage2 />} />
+      <Route path="/landing-page1" element={<LandingPage1 />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Regist />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/edit-profile" element={<EditProfile />} />
+
+      <Route path="/*" element={<PageNotFound />} />
+
+      {/* <Route path="/401" element={<Unauthorized />} />
+        <Route path="/403" element={<Forbidden />} />
+        <Route path="/*" element={<PageNotFound />} /> */}
     </Routes>
   );
 };
