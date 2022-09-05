@@ -17,6 +17,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import EditProfile from "../pages/EditProfile";
 import PageNotFound from "../pages/404";
 import Unauthorized from "../pages/401";
+import Forbidden from "../pages/403";
 
 const Routed = () => {
   return (
@@ -30,11 +31,7 @@ const Routed = () => {
 
       <Route path="/*" element={<PageNotFound />} />
       <Route path="/401" element={<Unauthorized />} />
-
-      {/* <Route path="/401" element={<Unauthorized />} />
-        <Route path="/403" element={<Forbidden />} />
-        <Route path="/*" element={<PageNotFound />} /> */}
-
+      <Route path="/403" element={<Forbidden />} />
 
     </Routes>
   );
