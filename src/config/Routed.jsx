@@ -9,11 +9,11 @@ import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 import "../assets/user/css/style.css";
 
 // import page
-import Login from "../pages/Login";
-import Regist from "../pages/Regist";
+import Login from "../pages/auth/Login";
+import Regist from "../pages/auth/Regist";
 import LandingPage1 from "../pages/LandingPage1";
 import LandingPage2 from "../pages/LandingPage2";
-import ForgotPassword from "../pages/ForgotPassword";
+import ForgotPassword from "../pages/auth/ForgotPassword";
 import EditProfile from "../pages/EditProfile";
 import PageNotFound from "../pages/error/404";
 import Unauthorized from "../pages/error/401";
