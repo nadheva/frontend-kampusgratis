@@ -10,7 +10,7 @@ const BannerStudiku = () => {
         <div className="d-flex">
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-              <li className="breadcrumb-item"><a href="#">Home</a></li>
+              <li className="breadcrumb-item"><a href=" ">Home</a></li>
               <li className="breadcrumb-item active" aria-current="page">Courses</li>
             </ol>
           </nav>

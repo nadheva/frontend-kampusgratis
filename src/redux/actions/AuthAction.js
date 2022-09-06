@@ -180,29 +180,29 @@ export const loginViaForm = (data) => async (dispatch) => {
   }
 };
 
-const authError = (error) => async (dispatch) => {
-  dispatch({
-    type: AUTH_ERROR,
-    payload: {
-      loading: false,
-      data: false,
-      errorMessage: error.message,
-    },
-    user: false,
-  });
+// const authError = (error) => async (dispatch) => {
+//   dispatch({
+//     type: AUTH_ERROR,
+//     payload: {
+//       loading: false,
+//       data: false,
+//       errorMessage: error.message,
+//     },
+//     user: false,
+//   });
 
-  setTimeout(() => {
-    dispatch({
-      type: AUTH_ERROR,
-      payload: {
-        loading: false,
-        data: false,
-        errorMessage: error.message,
-      },
-      user: false,
-    });
-  }, 5000);
-};
+//   setTimeout(() => {
+//     dispatch({
+//       type: AUTH_ERROR,
+//       payload: {
+//         loading: false,
+//         data: false,
+//         errorMessage: error.message,
+//       },
+//       user: false,
+//     });
+//   }, 5000);
+// };
 
 export const logout = () => async (dispatch) => {
   dispatch({

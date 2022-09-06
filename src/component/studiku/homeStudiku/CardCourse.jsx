@@ -11,27 +11,27 @@ const CardCourse = () => {
             <img
               src="assets/images/courses/4by3/06.jpg"
               className="rounded-2"
-              alt="Card image"
+              alt="Card"
             />
           </div>
           <div className="col-md-7">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-center mb-2">
-                <a href="#" className="badge bg-primary text-white mb-2 mb-sm-0">
+                <a href=" " className="badge bg-primary text-white mb-2 mb-sm-0">
                   Prasyarat
                 </a>
                 <div>
                   <span className="h6 fw-light me-3">
                     <i className="fas fa-star text-warning me-1"></i>4.5
                   </span>
-                  <a href="#" className="text-danger">
+                  <a href=" " className="text-danger">
                     <i className="fas fa-heart"></i>
                   </a>
                 </div>
               </div>
 
               <h5 className="card-title">
-                <a href="#">Pengantar UMKM - 000371</a>
+                <a href=" ">Pengantar UMKM - 000371</a>
               </h5>
               <p className="text-truncate-2 d-none d-lg-block">
                 Satisfied conveying a dependent contented he gentleman agreeable
@@ -58,7 +58,7 @@ const CardCourse = () => {
                     />
                   </div>
                   <p className="mb-0 ms-2">
-                    <a href="#" className="h6 fw-light">
+                    <a href=" " className="h6 fw-light">
                       Jacqueline Miller
                     </a>
                   </p>
