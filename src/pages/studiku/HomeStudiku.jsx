@@ -1,18 +1,16 @@
 import React from "react";
-import Header1 from "../../component/partials/Header1";
+import Header2 from "../../component/partials/Header2";
 import BannerStudiku from "../../component/studiku/homeStudiku/BannerStudiku";
 import CardCategory from "../../component/studiku/homeStudiku/CardCategory";
 import CardCourse from "../../component/studiku/homeStudiku/CardCourse";
+import Footer2 from "../../component/partials/Footer2";
 
 import { Element } from "react-scroll";
-
-import _Footer from "../../component/partials/_Footer";
-
 
 const HomeStudiku = () => {
   return (
     <>
-      <Header1 />
+      <Header2 />
       <main>
         <section>
           <BannerStudiku />
@@ -47,7 +45,7 @@ const HomeStudiku = () => {
         </section>
       </main>
       <Element name="footer-section1">
-        <_Footer />
+        <Footer2 />
       </Element>
     </>
   );

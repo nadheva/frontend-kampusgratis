@@ -1,7 +1,12 @@
-import React from 'react';
-import FormForgot from '../component/auth/FormForgot';
+import React, { useEffect } from "react";
+import FormLogin from "../../component/auth/FormLogin";
+// import "../assets/user/css-custon/style.css"
 
-const ForgotPassword = () => {
+const Login = () => {
+  useEffect(() => {
+    document.title = "Kampus Gratis | Login";
+  });
+
   return (
     <main>
       <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
@@ -22,7 +27,7 @@ const ForgotPassword = () => {
                 />
               </div>
             </div>
-            <FormForgot />
+            <FormLogin />
           </div>
         </div>
       </section>
@@ -30,4 +35,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default Login;

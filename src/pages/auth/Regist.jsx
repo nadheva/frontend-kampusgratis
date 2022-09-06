@@ -1,5 +1,5 @@
 import React from "react";
-import FormRegist from "../component/auth/FormRegist";
+import FormRegist from "../../component/auth/FormRegist";
 
 const Regist = () => {
   return (
