@@ -2,7 +2,7 @@ import React from "react";
 
 import Hero from "../component/landing-page2/Hero";
 import Footer2 from "../component/partials/Footer2";
-import Header from "../component/partials/Header";
+import Header2 from "../component/partials/Header2";
 import Counter from "../component/landing-page2/Counter";
 import Fakultas from "../component/landing-page2/Fakultas";
 import Banner from "../component/landing-page2/Banner";
@@ -15,7 +15,7 @@ import '../assets/user/css-custom/style.css';
 const LandingPage2 = () => {
   return (
     <>
-      <Header />
+      <Header2 />
       <main>
         <Hero />
         <Counter />

@@ -7,7 +7,7 @@ import { Link } from "react-scroll";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/actions/AuthAction";
 
-const Header = () => {
+const Header2 = () => {
   const dispatch = useDispatch();
   const { isAuthenticated, user, error } = useSelector(
     (state) => state.AuthReducer
@@ -192,4 +192,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header2;
