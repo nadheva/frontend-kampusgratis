@@ -60,7 +60,7 @@ const MainContent = () => {
                                 digital marketing course syllabus in India or anywhere around the world,
                                 then
                                 reading this blog will help. Before we delve into the advanced
-                                <strong><a href="#" className="text-reset text-decoration-underline">digital
+                                <strong><a href=" " className="text-reset text-decoration-underline">digital
                                     marketing
                                     course</a></strong> syllabus, let’s look at the scope of digital
                                 marketing and what the future holds.</p>

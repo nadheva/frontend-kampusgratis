@@ -10,8 +10,8 @@ const RightSidebar = () => {
                         <div className="card card-body card-body-right border p-4">
 
                             <div className="mt-3 d-grid">
-                                <a href="#" className="btn btn-light rounded-4 fs-4 py-2 fw-bold">TUGAS </a>
-                                <a href="#" className="btn btn-light rounded-4 mt-2">Qrizz </a>
+                                <a href=" " className="btn btn-light rounded-4 fs-4 py-2 fw-bold">TUGAS </a>
+                                <a href=" " className="btn btn-light rounded-4 mt-2">Qrizz </a>
                             </div>
 
                             <hr />
@@ -51,7 +51,7 @@ const RightSidebar = () => {
                                         alt="avatar" />
                                 </div>
                                 <div className="ms-sm-3 mt-2 mt-sm-0">
-                                    <h5 className="mb-0 "><a href="#" className="text-white">By Jacqueline
+                                    <h5 className="mb-0 "><a href=" " className="text-white">By Jacqueline
                                         Miller</a></h5>
                                     <p className="mb-0 small">Founder Eduport company</p>
                                 </div>
