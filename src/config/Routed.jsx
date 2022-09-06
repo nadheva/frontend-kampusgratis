@@ -22,6 +22,7 @@ import ServerError from "../pages/error/500";
 import ServiceUnavailable from "../pages/error/503";
 import HomeStudiku from "../pages/studiku/HomeStudiku";
 import PertemuanStudiku from "../pages/studiku/PertemuanStudiku";
+import VidioPlayer from "../pages/studiku/VidioPlayer";
 
 const Routed = () => {
   return (
@@ -42,6 +43,7 @@ const Routed = () => {
       {/* Studiku */}
       <Route path="/studiku" element={<HomeStudiku />} />
       <Route path="/pertemuan" element={<PertemuanStudiku />} />
+      <Route path="/vidio-player" element={<VidioPlayer />} />
     </Routes>
   );
 };
