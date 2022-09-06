@@ -4,7 +4,7 @@ import SidebarProfile from "../component/edit-profile/SidebarProfile";
 import FormEdit from "../component/edit-profile/FormEdit";
 import LinkedAccount from "../component/edit-profile/LinkedAccount";
 import UpdatePassword from "../component/edit-profile/UpdatePassword";
-import _Footer from "../component/partials/_Footer";
+import Footer2 from "../component/partials/Footer2";
 import Header from "../component/partials/Header";
 
 const EditProfile = () => {
@@ -28,7 +28,7 @@ const EditProfile = () => {
             </div>
         </section>
       </main>
-      <_Footer />
+      <Footer2 />
     </>
   );
 };

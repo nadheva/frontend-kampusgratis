@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../component/partials/Header'
-import _Footer from '../../component/partials/_Footer'
+import Footer2 from '../../component/partials/Footer2';
 import Intro from '../../component/studiku/pertemuan/Intro';
 import MainContent from '../../component/studiku/pertemuan/MainContent';
 import RightSidebar from '../../component/studiku/pertemuan/RightSidebar';
@@ -22,7 +22,7 @@ const PertemuanStudiku = () => {
                     </div>
                 </section>
             </main>
-            <_Footer />
+            <Footer2 />
         </>
     )
 }

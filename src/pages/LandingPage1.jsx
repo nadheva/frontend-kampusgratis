@@ -3,7 +3,7 @@ import { Element } from "react-scroll";
 
 import Header1 from "../component/partials/Header1";
 import Hero1 from "../component/landing-page1/Hero1";
-import _Footer1 from "../component/partials/_Footer1";
+import Footer1 from "../component/partials/Footer1";
 import Fakultas1 from "../component/landing-page1/Fakultas1";
 import Mentor1 from "../component/landing-page1/Mentor1";
 import Event1 from "../component/landing-page1/Event1";
@@ -29,7 +29,7 @@ const LandingPage1 = () => {
         </Element>
       </main>
       <Element name="footer-section1">
-        <_Footer1 />
+        <Footer1 />
       </Element>
     </>
   );

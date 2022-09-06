@@ -6,7 +6,7 @@ import CardCourse from "../../component/studiku/homeStudiku/CardCourse";
 
 import { Element } from "react-scroll";
 
-import _Footer from "../../component/partials/_Footer";
+import Footer2 from "../../component/partials/Footer2";
 
 
 const HomeStudiku = () => {
@@ -47,7 +47,7 @@ const HomeStudiku = () => {
         </section>
       </main>
       <Element name="footer-section1">
-        <_Footer />
+        <Footer2 />
       </Element>
     </>
   );

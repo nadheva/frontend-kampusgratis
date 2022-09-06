@@ -1,7 +1,7 @@
 import React from "react";
 
 import Hero from "../component/landing-page2/Hero";
-import _Footer from "../component/partials/_Footer";
+import Footer2 from "../component/partials/Footer2";
 import Header from "../component/partials/Header";
 import Counter from "../component/landing-page2/Counter";
 import Fakultas from "../component/landing-page2/Fakultas";
@@ -34,7 +34,7 @@ const LandingPage2 = () => {
         </Element>
       </main>
       <Element id="footer-section" className="element">
-        <_Footer />
+        <Footer2 />
       </Element>
     </>
   );
