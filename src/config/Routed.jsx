@@ -23,6 +23,7 @@ import ServiceUnavailable from "../pages/error/503";
 import HomeStudiku from "../pages/studiku/HomeStudiku";
 import PertemuanStudiku from "../pages/studiku/PertemuanStudiku";
 import VidioPlayer from "../pages/studiku/VidioPlayer";
+import Quiz from "../pages/studiku/Quiz";
 
 const Routed = () => {
   return (
@@ -44,6 +45,7 @@ const Routed = () => {
       <Route path="/studiku" element={<HomeStudiku />} />
       <Route path="/pertemuan" element={<PertemuanStudiku />} />
       <Route path="/vidio-player" element={<VidioPlayer />} />
+      <Route path="/quiz" element={<Quiz />} />
     </Routes>
   );
 };
