@@ -1,3 +1,9 @@
+/* Btn */
+.btn-studiku {
+    background: linear-gradient(325.17deg, #3827A6 0%, rgba(81, 56, 238, 0.6) 100%);
+    border-radius: 10px;
+}
+
 
 /* Right sidebar  */
 .card-body-right {
@@ -29,11 +35,10 @@
     border-radius: 10px;
 }
 
-.bg-body-pertemuan .accordion.accordion-bg-light .accordion-button{
-    color: white !important; 
+.bg-body-pertemuan .accordion.accordion-bg-light .accordion-button {
+    color: white !important;
 }
 
-.bg-body-pertemuan .text-truncate{
+.bg-body-pertemuan .text-truncate {
     color: white;
 }
-
