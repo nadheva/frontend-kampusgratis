@@ -23,7 +23,7 @@ export const addUser = (data) => {
     // get API
     axios({
       method: "POST",
-      url: "https://testing-kampusg.herokuapp.com/api/v1/auth/register",
+      url: "https://fe-integration-test.herokuapp.com/api/v1/auth/register",
       timeout: 120000,
       data: data,
     })
@@ -81,7 +81,7 @@ export const loginViaForm = (data) => async (dispatch) => {
 
   try {
     const response = await fetch(
-      "https://testing-kampusg.herokuapp.com/api/v1/auth/login",
+      "https://fe-integration-test.herokuapp.com/api/v1/auth/login",
       {
         method: "POST",
         headers: {
@@ -93,7 +93,7 @@ export const loginViaForm = (data) => async (dispatch) => {
     const result = await response.json();
 
     const userInfo = await fetch(
-      "https://testing-kampusg.herokuapp.com/api/v1/profile/me",
+      "https://fe-integration-test.herokuapp.com/api/v1/profile/me",
       {
         method: "GET",
         headers: {
@@ -121,7 +121,7 @@ export const loginViaForm = (data) => async (dispatch) => {
         },
         user: user,
       });
-      window.location.href = "/";
+      window.location.href = "/studiku";
     } else {
       dispatch({
         type: LOGIN,
