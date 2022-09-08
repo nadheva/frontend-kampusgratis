@@ -117,7 +117,7 @@ export const loginViaForm = (data) => async (dispatch) => {
         type: LOGIN,
         payload: {
           loading: false,
-          data: result.token,
+          data: result.data.token,
           errorMessage: false,
         },
         user: user,
