@@ -11,7 +11,7 @@ const initialState = {
 
   isAuthenticated: !!localStorage.getItem("token"),
   isAuthenticatedLoading: false,
-  accessToken: localStorage.getItem("token"),
+  token: localStorage.getItem("token"),
   user: JSON.parse(localStorage.getItem("user")),
   error: null,
 };
@@ -42,7 +42,7 @@ const AuthReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: action.payload.data,
         isAuthenticatedLoading: action.payload.loading,
-        accessToken: action.payload.data,
+        token: action.payload.data,
         user: action.user,
         error: null,
       };
@@ -57,7 +57,7 @@ const AuthReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        accessToken: null,
+        token: null,
         error: null,
       };
     case AUTH_ERROR:
@@ -66,7 +66,7 @@ const AuthReducer = (state = initialState, action) => {
       return {
         ...state,
         isAuthenticated: false,
-        accessToken: null,
+        token: null,
         error: action.payload.error,
       };
     default:
