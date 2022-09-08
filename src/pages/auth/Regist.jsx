@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormRegist from "../../component/auth/FormRegist";
 
 const Regist = () => {
+  useEffect(() => {
+    document.title = "Kampus Gratis | Register";
+  });
   return (
     <main>
       <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
