@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import FormForgot from '../../component/auth/FormForgot';
 
 const ForgotPassword = () => {
+  useEffect(() => {
+    document.title = "Kampus Gratis | Lupa Password";
+  });
   return (
     <main>
       <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
