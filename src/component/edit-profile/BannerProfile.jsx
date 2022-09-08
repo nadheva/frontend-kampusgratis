@@ -43,7 +43,7 @@ const BannerProfile = () => {
                   </div>
                   <div className="d-flex align-items-center mt-2 mt-md-0">
                     <a
-                      href="instructor-create-course.html"
+                      href=" "
                       className="btn btn-success mb-0"
                     >
                       Create a course
@@ -54,7 +54,7 @@ const BannerProfile = () => {
             </div>
             <hr className="d-xl-none" />
             <div className="col-12 col-xl-3 d-flex justify-content-between align-items-center">
-              <a className="h6 mb-0 fw-bold d-xl-none" href="#">
+              <a className="h6 mb-0 fw-bold d-xl-none" href=" ">
                 Menu
               </a>
               <button

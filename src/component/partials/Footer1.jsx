@@ -1,6 +1,6 @@
 import React from 'react'
 
-const _Footer1 = () => {
+const Footer1 = () => {
   return (
     <footer className="pt-5 footer-kg1">
       <div className="container">
@@ -32,21 +32,21 @@ const _Footer1 = () => {
           <div className="col-lg-3">
             <h5 className="mb-2 mb-md-4">More</h5>
             <ul className="nav flex-column">
-              <li className="nav-item"><a className="nav-link" href="#">Terms and Conditions</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Privacy policy</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Press Kit</a></li>
-              <li className="nav-item"><a className="nav-link" href="#">Help</a></li>
+              <li className="nav-item"><a className="nav-link" href=" ">Terms and Conditions</a></li>
+              <li className="nav-item"><a className="nav-link" href=" ">Privacy policy</a></li>
+              <li className="nav-item"><a className="nav-link" href=" ">Press Kit</a></li>
+              <li className="nav-item"><a className="nav-link" href=" ">Help</a></li>
             </ul>
 
             <ul className="list-inline mb-0 mt-3">
               <li className="list-inline-item"> <a className="btn btn-white btn-sm shadow px-2 text-facebook"
-                href="#"><i className="fab fa-fw fa-facebook-f"></i></a> </li>
+                href=" "><i className="fab fa-fw fa-facebook-f"></i></a> </li>
               <li className="list-inline-item"> <a className="btn btn-white btn-sm shadow px-2 text-instagram"
-                href="#"><i className="fab fa-fw fa-instagram"></i></a> </li>
+                href=" "><i className="fab fa-fw fa-instagram"></i></a> </li>
               <li className="list-inline-item"> <a className="btn btn-white btn-sm shadow px-2 text-twitter"
-                href="#"><i className="fab fa-fw fa-twitter"></i></a> </li>
+                href=" "><i className="fab fa-fw fa-twitter"></i></a> </li>
               <li className="list-inline-item"> <a className="btn btn-white btn-sm shadow px-2 text-linkedin"
-                href="#"><i className="fab fa-fw fa-linkedin-in"></i></a> </li>
+                href=" "><i className="fab fa-fw fa-linkedin-in"></i></a> </li>
             </ul>
           </div>
         </div>
@@ -64,4 +64,4 @@ const _Footer1 = () => {
   )
 }
 
-export default _Footer1
+export default Footer1

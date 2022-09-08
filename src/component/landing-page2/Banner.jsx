@@ -47,7 +47,7 @@ const Banner = () => {
                       memungkinkan pembelajaran Komunitas, berbagi pengetahuan,
                       dan menginspirasi orang lain!
                     </p>
-                    <a href="#" className="btn btn-warning btn-sm mb-0">
+                    <a href=" " className="btn btn-warning btn-sm mb-0">
                       Coba di Kampus Gratis
                     </a>
                   </div>

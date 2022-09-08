@@ -4,13 +4,13 @@ import SidebarProfile from "../component/edit-profile/SidebarProfile";
 import FormEdit from "../component/edit-profile/FormEdit";
 import LinkedAccount from "../component/edit-profile/LinkedAccount";
 import UpdatePassword from "../component/edit-profile/UpdatePassword";
-import _Footer from "../component/partials/_Footer";
-import Header from "../component/partials/Header";
+import Footer2 from "../component/partials/Footer2";
+import Header2 from "../component/partials/Header2";
 
 const EditProfile = () => {
   return (
     <>
-      <Header />
+      <Header2 />
       <main>
         <BannerProfile />
         <section className="pt-0">
@@ -28,7 +28,7 @@ const EditProfile = () => {
             </div>
         </section>
       </main>
-      <_Footer />
+      <Footer2 />
     </>
   );
 };
