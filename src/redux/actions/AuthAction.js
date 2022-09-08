@@ -6,6 +6,7 @@ export const AUTH_ERROR = "AUTH_ERROR";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";
 export const UPDATE_PROFILE = "UPDATE_PROFILE";
+export const FORGOT_PASSWORD = "FORGOT_PASSWORD";
 
 // add
 export const addUser = (data) => {
@@ -216,4 +217,67 @@ export const logout = () => async (dispatch) => {
     showConfirmButton: false,
     timer: 1500,
   });
+};
+
+
+// FORGOT PASSWORD
+export const forgotPassword = (data) => {
+  return (dispatch) => {
+    // loading
+    dispatch({
+      type: FORGOT_PASSWORD,
+      payload: {
+        loading: true,
+        data: false,
+        errorMessage: false,
+      },
+    });
+
+    // get API
+    axios({
+      method: "POST",
+      url: "https://fe-integration-test.herokuapp.com/api/v1/auth/forget-password",
+      timeout: 120000,
+      data: data,
+    })
+      .then((response) => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Email Reset Password telah terkirim. Silakan periksa kotak masuk email Anda untuk mengatur ulang kata sandi Anda.",
+          showConfirmButton: false,
+          timer: 3000,
+        });
+        dispatch({
+          // get data
+          type: FORGOT_PASSWORD,
+          payload: {
+            loading: false,
+            data: response.data,
+            errorMessage: false,
+          },
+        });
+        setTimeout(function () {
+          window.location.href = "/login";
+        }, 3100);
+      })
+      .catch((error) => {
+        // error
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: `Forgot Password Failed ${error.message}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        dispatch({
+          type: FORGOT_PASSWORD,
+          payload: {
+            loading: false,
+            data: false,
+            errorMessage: error.message,
+          },
+        });
+      });
+  };
 };

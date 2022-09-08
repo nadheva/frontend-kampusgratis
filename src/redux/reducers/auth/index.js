@@ -1,9 +1,13 @@
-import { ADD_USER, AUTH_ERROR, LOGIN, LOGOUT } from "../../actions/AuthAction";
+import { ADD_USER, AUTH_ERROR, LOGIN, LOGOUT, FORGOT_PASSWORD } from "../../actions/AuthAction";
 
 const initialState = {
   addUserResult: false,
   addUserLoading: false,
   addUserError: false,
+
+  forgotPasswordResult: false,
+  forgotPasswordLoading: false,
+  forgotPasswordError: false,
 
   isAuthenticated: !!localStorage.getItem("token"),
   isAuthenticatedLoading: false,
@@ -21,6 +25,13 @@ const AuthReducer = (state = initialState, action) => {
         addUserLoading: action.payload.loading,
         addUserError: action.payload.errorMessage,
       };
+    case FORGOT_PASSWORD:
+      return {
+        ...state,
+        forgotPasswordResult: action.payload.data,
+        forgotPasswordLoading: action.payload.loading,
+        forgotPasswordError: action.payload.errorMessage,
+      };
     case LOGIN:
       localStorage.setItem("token", action.payload.data);
       localStorage.setItem("user", JSON.stringify(action.user));
@@ -35,6 +46,7 @@ const AuthReducer = (state = initialState, action) => {
         user: action.user,
         error: null,
       };
+
 
     case LOGOUT:
       localStorage.removeItem("token");

@@ -145,7 +145,7 @@ const FormRegist = () => {
                       class="spinner-border spinner-border-sm"
                       role="status"
                       aria-hidden="true"
-                    ></span>{" "}
+                    ></span>
                     Loading...
                   </button>
                 ) : (
