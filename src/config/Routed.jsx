@@ -21,6 +21,7 @@ import Unauthorized from "../pages/error/401";
 import Forbidden from "../pages/error/403";
 import ServerError from "../pages/error/500";
 import ServiceUnavailable from "../pages/error/503";
+import Home from "../pages/studiku/Home";
 import HomeStudiku from "../pages/studiku/HomeStudiku";
 import PertemuanStudiku from "../pages/studiku/PertemuanStudiku";
 import VidioPlayer from "../pages/studiku/VidioPlayer";
@@ -43,6 +44,7 @@ const Routed = () => {
       <Route path="/503" element={<ServiceUnavailable />} />
 
       {/* Studiku */}
+      <Route path="/home" element={<Home />} />
       <Route path="/studiku" element={<HomeStudiku />} />
       <Route path="/pertemuan" element={<PertemuanStudiku />} />
       <Route path="/vidio-player" element={<VidioPlayer />} />
