@@ -26,6 +26,7 @@ import HomeStudiku from "../pages/studiku/HomeStudiku";
 import PertemuanStudiku from "../pages/studiku/PertemuanStudiku";
 import VidioPlayer from "../pages/studiku/VidioPlayer";
 import Quiz from "../pages/studiku/Quiz";
+import Pertemuan from "../pages/studiku/Pertemuan";
 
 const Routed = () => {
   return (
@@ -46,7 +47,10 @@ const Routed = () => {
       {/* Studiku */}
       <Route path="/home" element={<Home />} />
       <Route path="/studiku" element={<HomeStudiku />} />
-      <Route path="/pertemuan" element={<PertemuanStudiku />} />
+      
+      <Route path="/pertemuan" element={<Pertemuan />} />
+      <Route path="/pertemuan1" element={<PertemuanStudiku />} />
+
       <Route path="/vidio-player" element={<VidioPlayer />} />
       <Route path="/quiz" element={<Quiz />} />
     </Routes>

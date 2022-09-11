@@ -82,7 +82,7 @@ const Home = () => {
                                         <img src="assets/images/element/data-science.svg" alt="" />
                                     </div>
 
-                                    <h5 className="mb-2"><a href=" " className="stretched-link">Panduan</a></h5>
+                                    <h5 className="mb-2"><a href="/studiku" className="stretched-link">Panduan</a></h5>
                                 </div>
                             </div>
 
@@ -94,7 +94,7 @@ const Home = () => {
                                         <img src="assets/images/element/online.svg" alt="" />
                                     </div>
 
-                                    <h5 className="mb-2"><a href=" " className="stretched-link">Silabus</a></h5>
+                                    <h5 className="mb-2"><a href="/studiku" className="stretched-link">Silabus</a></h5>
                                 </div>
                             </div>
 
@@ -106,7 +106,7 @@ const Home = () => {
                                         <img src="assets/images/element/engineering.svg" alt="" />
                                     </div>
 
-                                    <h5 className="mb-2"><a href=" " className="stretched-link">Studi-Ku</a></h5>
+                                    <h5 className="mb-2"><a href="/studiku " className="stretched-link">Studi-Ku</a></h5>
                                 </div>
                             </div>
 
