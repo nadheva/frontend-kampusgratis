@@ -8,6 +8,7 @@ import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 // theme css
 import "../assets/user/css/style.css";
 
+
 // import page
 import Login from "../pages/auth/Login";
 import Regist from "../pages/auth/Regist";

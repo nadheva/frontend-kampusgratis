@@ -2,7 +2,7 @@
 * Eduport- LMS, Education and Course Theme
 *
 * @author Webestica (https://www.webestica.com/)
-* @version 1.0.0
+* @version 1.3.0
 **/
 
 
@@ -34,6 +34,7 @@ Table Of Content
 24 DARK MODE
 25 PRICING
 26 STICKY ELEMENT
+27 OVERLAY SCROLLBARS
 ====================== */
 
 "use strict";
@@ -110,7 +111,8 @@ var e = {
         e.videoPlyr(),
         e.darkMode(),
         e.pricing(),
-        e.stickyElement();
+        e.stickyElement(),
+        e.overlayScrollbars();
         
     },
     isVariableDefined: function (el) {
@@ -1076,6 +1078,30 @@ var e = {
     }
     },
     // END: Sticky element
+
+ 
+    // START: 27 Overlay scrollbars
+    overlayScrollbars: function () {
+      var os = e.select('.custom-scrollbar');
+      if (os) {
+        document.addEventListener("DOMContentLoaded", function() {
+          var cs = document.querySelectorAll('.custom-scrollbar');
+          cs.forEach(c => {
+              OverlayScrollbars(c, {
+                scrollbars: {
+                  autoHide: 'leave',
+                  autoHideDelay: 200
+                },
+                overflowBehavior : {
+                    x : "visible-hidden",
+                    y : "scroll"
+                }
+               });
+          });
+        });
+      }
+    }
+    // END: Overlay scrollbars
 
 };
 e.init();

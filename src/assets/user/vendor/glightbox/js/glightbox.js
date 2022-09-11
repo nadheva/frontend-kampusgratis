@@ -1750,7 +1750,7 @@
             }
 
             if (videoFile !== '') {
-              html += "<source src=\"".concat(videoFile, "\" type=\"video/").concat(key, "\">");
+              html += "<source src=\"".concat(videoFile, "\" type=\"video/index.html").concat(key, "\">");
             }
           }
         }
