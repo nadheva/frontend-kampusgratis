@@ -31,6 +31,7 @@ import VidioPlayer from "../pages/studiku/VidioPlayer";
 import Quiz from "../pages/studiku/Quiz";
 import Pertemuan from "../pages/studiku/Pertemuan";
 import ForumDiskusi from "../pages/studiku/ForumDiskusi";
+import MulaiQuiz from "../pages/studiku/MulaiQuiz";
 
 const Routed = () => {
   return (
@@ -59,6 +60,7 @@ const Routed = () => {
       <Route path="/quiz" element={<Quiz />} />
 
       <Route path="/forum-diskusi" element={<ForumDiskusi />} />
+      <Route path="/mulai-quiz" element={<MulaiQuiz />} />
     </Routes>
   );
 };
