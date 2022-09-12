@@ -9,7 +9,7 @@ const Pertemuan = () => {
 
             <main>
 
-                <section className="bg-blue py-7">
+                <section className="bg-blue">
                     <div className="container">
                         <div className="row justify-content-lg-between">
 
@@ -112,7 +112,7 @@ const Pertemuan = () => {
 
 
                                                                         <div className="ms-3">
-                                                                            <a href=" "
+                                                                            <a href="/vidio-player"
                                                                                 className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">
                                                                                 What is Digital Marketing What is Digital
                                                                                 Marketing</a>
@@ -227,7 +227,7 @@ const Pertemuan = () => {
                                                                             </a>
 
                                                                             <div className="ms-3">
-                                                                                <a href=" "
+                                                                                <a href="/Quiz"
                                                                                     className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz
                                                                                     - Digital Marketing</a>
                                                                                 <ul className="nav nav-divider small mb-0">

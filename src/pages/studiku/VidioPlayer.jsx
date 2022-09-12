@@ -11,7 +11,7 @@ const VidioPlayer = () => {
             <Header3 />
 
             <main>
-                <section className="pt-3 pt-xl-5 mt-8">
+                <section className="pt-3 pt-xl-5">
                     <div className="container" data-sticky-container>
                         <div className="row g-4">
                             <div className="col-xl-8">

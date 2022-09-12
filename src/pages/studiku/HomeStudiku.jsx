@@ -12,7 +12,7 @@ const HomeStudiku = () => {
     <>
       <Header3 />
       <main>
-        <section className="pt-8">
+        <section className="m-0 p-0">
           <BannerStudiku />
         </section>
         <section className="pb-0 py-sm-5">

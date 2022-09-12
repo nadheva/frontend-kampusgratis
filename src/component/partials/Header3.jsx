@@ -115,8 +115,18 @@ const Header3 = () => {
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
-                                <li><a class="dropdown-item" href=" "><i class="bi bi-person fa-fw me-2"></i>Edit
-                                    Profile</a></li>
+                                <li>
+                                    <a class="dropdown-item" href=" ">
+                                        <i class="bi bi-person fa-fw me-2"></i>
+                                        Edit Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/studiku">
+                                        <i class="bi bi-book fa-fw me-2"></i>
+                                        My Course
+                                    </a>
+                                </li>
                                 <li><a class="dropdown-item bg-danger-soft-hover" href=" "><i
                                     class="bi bi-power fa-fw me-2"></i>Log Out</a></li>
                                 <li>
