@@ -1,11 +1,11 @@
 import React from 'react'
-import Header2 from '../../component/partials/Header2'
+import Header3 from '../../component/partials/Header3'
 import Footer2 from '../../component/partials/Footer2'
 
 const Quiz = () => {
     return (
         <>
-            <Header2 />
+            <Header3 />
 
             <main>
                 <section className="pt-3 pt-xl-5 mt-8">

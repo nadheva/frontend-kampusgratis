@@ -1,5 +1,5 @@
 import React from 'react'
-import Header2 from '../../component/partials/Header2'
+import Header3 from '../../component/partials/Header3'
 import Footer2 from '../../component/partials/Footer2'
 import Intro from '../../component/studiku/vidioPlayer/Intro'
 import MainContent from '../../component/studiku/vidioPlayer/MainContent'
@@ -8,7 +8,7 @@ import RightSidebar from '../../component/studiku/vidioPlayer/RightSidebar'
 const VidioPlayer = () => {
     return (
         <>
-            <Header2 />
+            <Header3 />
 
             <main>
                 <section className="pt-3 pt-xl-5 mt-8">
