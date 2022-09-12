@@ -2,14 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Plugins CSS 
-import "../assets/user/vendor/font-awesome/css/all.min.css";
-import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
+// import "../assets/user/vendor/font-awesome/css/all.min.css";
+// import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 
 // import "../assets/user/vendor/tiny-slider/tiny-slider.css";
 // import "../assets/user/vendor/choices/css/choices.min.css";
 
 // Theme CSS 
-import "../assets/user/css/style.css";
+// import "../assets/user/css/style.css";
 
 
 // import page
