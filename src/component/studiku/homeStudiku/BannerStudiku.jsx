@@ -6,7 +6,7 @@ const BannerStudiku = () => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h1 className="text-white text-center">Course List Classic 32</h1>
+            <h1 className="text-white text-center">Course List Classic</h1>
             <div className="d-flex">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
