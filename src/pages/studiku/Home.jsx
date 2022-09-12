@@ -277,7 +277,7 @@ const Home = () => {
 
                         <div className="row">
 
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition">
                                 <div className="position-relative">
                                     <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="course" />
 
@@ -303,7 +303,7 @@ const Home = () => {
                             </div>
 
 
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition  ">
                                 <div className="position-relative">
                                     <img src="assets/images/courses/4by3/16.jpg" className="card-img" alt="course" />
 
@@ -328,7 +328,7 @@ const Home = () => {
                             </div>
 
 
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition  ">
                                 <div className="position-relative">
                                     <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="course" />
 
