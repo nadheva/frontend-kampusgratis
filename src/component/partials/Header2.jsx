@@ -61,12 +61,12 @@ const Header2 = () => {
 
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
-                <NavLink
+                <a
                   className="nav-link"
-                  to="/home"
+                  href="/home"
                 >
                   Home
-                </NavLink>
+                </a>
               </li>
               <li className="nav-item dropdown">
                 <Link
