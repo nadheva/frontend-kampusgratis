@@ -5,8 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import "../assets/user/vendor/font-awesome/css/all.min.css";
 import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 
-import "../assets/user/vendor/tiny-slider/tiny-slider.css";
-import "../assets/user/vendor/choices/css/choices.min.css";
+// import "../assets/user/vendor/tiny-slider/tiny-slider.css";
+// import "../assets/user/vendor/choices/css/choices.min.css";
 
 // Theme CSS 
 import "../assets/user/css/style.css";
