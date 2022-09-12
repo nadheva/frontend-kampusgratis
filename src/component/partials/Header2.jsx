@@ -65,7 +65,7 @@ const Header2 = () => {
                   className="nav-link"
                   to="/home"
                 >
-                  Studiku
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
