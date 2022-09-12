@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-// css
+// Plugins CSS 
 import "../assets/user/vendor/font-awesome/css/all.min.css";
 import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 
-// // theme css
+// Theme CSS 
 import "../assets/user/css/style.css";
 
 
@@ -27,6 +27,7 @@ import PertemuanStudiku from "../pages/studiku/PertemuanStudiku";
 import VidioPlayer from "../pages/studiku/VidioPlayer";
 import Quiz from "../pages/studiku/Quiz";
 import Pertemuan from "../pages/studiku/Pertemuan";
+import ForumDiskusi from "../pages/studiku/ForumDiskusi";
 
 const Routed = () => {
   return (
@@ -53,6 +54,8 @@ const Routed = () => {
 
       <Route path="/vidio-player" element={<VidioPlayer />} />
       <Route path="/quiz" element={<Quiz />} />
+
+      <Route path="/forum-diskusi" element={<ForumDiskusi />} />
     </Routes>
   );
 };

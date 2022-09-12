@@ -259,7 +259,7 @@ const Pertemuan = () => {
                                                                             </a>
 
                                                                             <div className="ms-3">
-                                                                                <a href=" "
+                                                                                <a href="/forum-diskusi"
                                                                                     className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Forum
                                                                                     Diskusi</a>
 
