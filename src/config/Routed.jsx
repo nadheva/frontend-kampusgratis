@@ -2,11 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 // css
-// import "../assets/user/vendor/font-awesome/css/all.min.css";
-// import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
+import "../assets/user/vendor/font-awesome/css/all.min.css";
+import "../assets/user/vendor/bootstrap-icons/bootstrap-icons.css";
 
 // // theme css
-// import "../assets/user/css/style.css";
+import "../assets/user/css/style.css";
 
 
 // import page
