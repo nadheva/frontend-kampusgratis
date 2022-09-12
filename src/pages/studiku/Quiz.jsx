@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import Header3 from '../../component/partials/Header3'
 import Footer2 from '../../component/partials/Footer2'
 
@@ -27,7 +28,9 @@ const Quiz = () => {
                                 </p>
                                 <p>Selamat mengerjakan</p>
                                 <div className="d-flex justify-content-end mt-3">
+                                    <Link to={"/mulai-quiz"} >
                                     <button className="btn btn-primary next-btn mb-0 btn-studiku px-4">Mulai</button>
+                                    </Link>
                                 </div>
 
                             </div>
