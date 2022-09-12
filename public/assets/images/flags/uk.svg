@@ -1,62 +1,43 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<rect y="85.333" style="fill:#F0F0F0;" width="512" height="341.337"/>
-<polygon style="fill:#D80027;" points="288,85.33 224,85.33 224,223.996 0,223.996 0,287.996 224,287.996 224,426.662 288,426.662 
-	288,287.996 512,287.996 512,223.996 288,223.996 "/>
+	 width="512px" height="341.3px" viewBox="0 0 512 341.3" style="enable-background:new 0 0 512 341.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFDA44;}
+	.st1{fill:#D80027;}
+	.st2{fill:#F0F0F0;}
+	.st3{fill:#0052B4;}
+</style>
+<rect class="st0" width="512" height="341.3"/>
 <g>
-	<polygon style="fill:#0052B4;" points="393.785,315.358 512,381.034 512,315.358 	"/>
-	<polygon style="fill:#0052B4;" points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 	"/>
-	<polygon style="fill:#0052B4;" points="458.634,426.662 311.652,344.998 311.652,426.662 	"/>
+	<rect class="st1" width="512" height="113.8"/>
+	<rect y="227.6" class="st1" width="512" height="113.8"/>
 </g>
-<polygon style="fill:#F0F0F0;" points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "/>
-<polygon style="fill:#D80027;" points="311.652,315.358 512,426.662 512,395.188 368.307,315.358 "/>
+<rect x="-1" y="-0.7" class="st2" width="512" height="341.3"/>
+<polygon class="st1" points="287,-0.7 223,-0.7 223,138 -1,138 -1,202 223,202 223,340.7 287,340.7 287,202 511,202 511,138 
+	287,138 "/>
 <g>
-	<polygon style="fill:#0052B4;" points="90.341,315.356 0,365.546 0,315.356 	"/>
-	<polygon style="fill:#0052B4;" points="200.348,329.51 200.348,426.661 25.491,426.661 	"/>
+	<polygon class="st3" points="392.8,229.4 511,295 511,229.4 	"/>
+	<polygon class="st3" points="310.7,229.4 511,340.7 511,309.2 367.3,229.4 	"/>
+	<polygon class="st3" points="457.6,340.7 310.7,259 310.7,340.7 	"/>
 </g>
-<polygon style="fill:#D80027;" points="143.693,315.358 0,395.188 0,426.662 0,426.662 200.348,315.358 "/>
+<polygon class="st2" points="310.7,229.4 511,340.7 511,309.2 367.3,229.4 "/>
+<polygon class="st1" points="310.7,229.4 511,340.7 511,309.2 367.3,229.4 "/>
 <g>
-	<polygon style="fill:#0052B4;" points="118.215,196.634 0,130.958 0,196.634 	"/>
-	<polygon style="fill:#0052B4;" points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 	"/>
-	<polygon style="fill:#0052B4;" points="53.366,85.33 200.348,166.994 200.348,85.33 	"/>
+	<polygon class="st3" points="89.3,229.4 -1,279.5 -1,229.4 	"/>
+	<polygon class="st3" points="199.3,243.5 199.3,340.7 24.5,340.7 	"/>
 </g>
-<polygon style="fill:#F0F0F0;" points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "/>
-<polygon style="fill:#D80027;" points="200.348,196.634 0,85.33 0,116.804 143.693,196.634 "/>
+<polygon class="st1" points="142.7,229.4 -1,309.2 -1,340.7 -1,340.7 199.3,229.4 "/>
 <g>
-	<polygon style="fill:#0052B4;" points="421.659,196.636 512,146.446 512,196.636 	"/>
-	<polygon style="fill:#0052B4;" points="311.652,182.482 311.652,85.331 486.509,85.331 	"/>
+	<polygon class="st3" points="117.2,110.6 -1,45 -1,110.6 	"/>
+	<polygon class="st3" points="199.3,110.6 -1,-0.7 -1,30.8 142.7,110.6 	"/>
+	<polygon class="st3" points="52.4,-0.7 199.3,81 199.3,-0.7 	"/>
 </g>
-<polygon style="fill:#D80027;" points="368.307,196.634 512,116.804 512,85.33 512,85.33 311.652,196.634 "/>
+<polygon class="st2" points="199.3,110.6 -1,-0.7 -1,30.8 142.7,110.6 "/>
+<polygon class="st1" points="199.3,110.6 -1,-0.7 -1,30.8 142.7,110.6 "/>
 <g>
+	<polygon class="st3" points="420.7,110.6 511,60.4 511,110.6 	"/>
+	<polygon class="st3" points="310.7,96.5 310.7,-0.7 485.5,-0.7 	"/>
 </g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
+<polygon class="st1" points="367.3,110.6 511,30.8 511,-0.7 511,-0.7 310.7,110.6 "/>
 </svg>

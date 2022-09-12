@@ -31,7 +31,7 @@ const CardCourse = () => {
               </div>
 
               <h5 className="card-title">
-                <a href=" ">Pengantar UMKM - 000371</a>
+                <a href="/pertemuan ">Pengantar UMKM - 000371</a>
               </h5>
               <p className="text-truncate-2 d-none d-lg-block">
                 Satisfied conveying a dependent contented he gentleman agreeable

@@ -24,10 +24,10 @@ const Header2 = () => {
   };
 
   return (
-    <header className="navbar-light navbar-sticky fixed-top header-static">
+    <header className="navbar-light navbar-sticky  header-static">
       <div className="navbar navbar-expand-xl">
         <div className="container-fluid px-3 px-xl-5">
-          <NavLink to="/" className="navbar-brand">
+          <NavLink to="/" className="navbar-brand p-3">
             <img
               className="light-mode-item navbar-brand-item"
               src="assets/images/kgLogo.png"
@@ -61,16 +61,12 @@ const Header2 = () => {
 
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
-                <Link
-                  activeClass="active"
+                <NavLink
                   className="nav-link"
-                  to="fakultas-section"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
+                  to="/home"
                 >
-                  Fakultas
-                </Link>
+                  Studiku
+                </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
