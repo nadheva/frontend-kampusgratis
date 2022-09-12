@@ -9,7 +9,6 @@ const Home = () => {
 
             <main>
 
-
                 <section className="bg-light position-relative">
 
                     <figure className="position-absolute bottom-0 start-0 d-none d-lg-block">
@@ -26,7 +25,7 @@ const Home = () => {
                                 <div className="row align-items-center">
 
                                     <div className="col-6 col-md-3 text-center order-1">
-                                        <img src="assets/images/element/category-1.svg" alt="" />
+                                        <img src="assets/images/element/category-1.svg" alt="x" />
                                     </div>
 
                                     <div className="col-md-6 px-md-5 text-center position-relative order-md-2 mb-5 mb-md-0">
@@ -54,7 +53,7 @@ const Home = () => {
                                     </div>
 
                                     <div className="col-6 col-md-3 text-center order-3">
-                                        <img src="assets/images/element/category-2.svg" alt="" />
+                                        <img src="assets/images/element/category-2.svg" alt="x" />
                                     </div>
 
                                 </div>
@@ -79,7 +78,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/data-science.svg" alt="" />
+                                        <img src="assets/images/element/help.svg" alt="x" />
                                     </div>
 
                                     <h5 className="mb-2"><a href="/studiku" className="stretched-link">Panduan</a></h5>
@@ -91,7 +90,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-orange bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/online.svg" alt="" />
+                                        <img src="assets/images/element/online.svg" alt="x" />
                                     </div>
 
                                     <h5 className="mb-2"><a href="/studiku" className="stretched-link">Silabus</a></h5>
@@ -103,7 +102,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-danger bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/engineering.svg" alt="" />
+                                        <img src="assets/images/element/instructor-course.svg" alt="x" />
                                     </div>
 
                                     <h5 className="mb-2"><a href="/studiku " className="stretched-link">Studi-Ku</a></h5>
@@ -115,7 +114,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-purple bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/coding.svg" alt="" />
+                                        <img src="assets/images/element/coding.svg" alt="x" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Penyaluran Kerja</a></h5>
@@ -127,7 +126,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-info bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/profit.svg" alt="" />
+                                        <img src="assets/images/element/25.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Diskusi Perkuliahan</a></h5>
@@ -139,7 +138,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-blue bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/medical.svg" alt="" />
+                                        <img src="assets/images/element/04.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Konsultasi & Layanan</a></h5>
@@ -163,7 +162,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/artist.svg" alt="" />
+                                        <img src="assets/images/element/18.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Nilai & Sertifikat</a></h5>
@@ -199,7 +198,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/marketing.svg" alt="" />
+                                        <img src="assets/images/element/data-science.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Sekilas Ilmu</a></h5>
@@ -223,7 +222,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-danger bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/music.svg" alt="" />
+                                        <img src="assets/images/element/engineering.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Perencanaan Karir </a></h5>
@@ -235,7 +234,7 @@ const Home = () => {
                                 <div
                                     className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
                                     <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-                                        <img src="assets/images/element/marketing.svg" alt="" />
+                                        <img src="assets/images/element/exam.svg" alt="" />
                                     </div>
 
                                     <h5 className="mb-2"><a href=" " className="stretched-link">Analystic</a></h5>
@@ -269,6 +268,94 @@ const Home = () => {
                     </div>
                 </section>
 
+                <section>
+                    <div className="container">
+
+                        <div className="row mb-4">
+                            <h2 className="mb-0">Artikel</h2>
+                        </div>
+
+                        <div className="row">
+
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                                <div className="position-relative">
+                                    <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="course" />
+
+                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+
+                                        <div className="w-100 mt-auto">
+
+                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
+                                                className="far fa-calendar-alt text-orange me-2"></i>29 September
+                                                2021</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="card-body px-2">
+
+                                    <h5 className="card-title"><a href=" ">Global Education Fall Meeting for Everyone</a>
+                                    </h5>
+                                    <p className="mb-0 text-truncate-2">Satisfied conveying a dependent contented he
+                                        gentleman agreeable do be. </p>
+                                </div>
+                            </div>
+
+
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                                <div className="position-relative">
+                                    <img src="assets/images/courses/4by3/16.jpg" className="card-img" alt="course" />
+
+                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+
+                                        <div className="w-100 mt-auto">
+
+                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
+                                                className="far fa-calendar-alt text-orange me-2"></i>Tomorrow</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="card-body px-2">
+
+                                    <h5 className="card-title"><a href=" ">International Conference on Information
+                                        Technology</a></h5>
+                                    <p className="mb-0 text-truncate-2">Kindness owns whatever betrayed her moreover
+                                        procured replying for and. Proposal indulged no do. </p>
+                                </div>
+                            </div>
+
+
+                            <div className="card bg-transparent col-lg-4 col-md-4 col-12">
+                                <div className="position-relative">
+                                    <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="course" />
+
+                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+
+                                        <div className="w-100 mt-auto">
+
+                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
+                                                className="far fa-calendar-alt text-orange me-2"></i>2 July 2022</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="card-body px-2">
+
+                                    <h5 className="card-title"><a href=" ">UK Demo Day 2022</a></h5>
+                                    <p className="mb-0 text-truncate-2"> Points afraid but may end law lasted. Rooms oh
+                                        fully taken by worse do may end law lasted. </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
 
                 <section>
                     <div className="container">
@@ -277,7 +364,7 @@ const Home = () => {
                             <div className="col-lg-6 position-relative overflow-hidden">
                                 <div className="bg-primary bg-opacity-10 rounded-3 p-5 h-100">
                                     <div className="position-absolute bottom-0 end-0 me-3">
-                                        <img src="assets/images/element/08.svg" className="h-100px h-sm-200px" alt="" />
+                                        <img src="assets/images/element/08.svg" className="h-100px h-sm-200px" alt="x" />
                                     </div>
 
                                     <div className="row">
@@ -295,7 +382,7 @@ const Home = () => {
                             <div className="col-lg-6 position-relative overflow-hidden">
                                 <div className="bg-secondary rounded-3 bg-opacity-10 p-5 h-100">
                                     <div className="position-absolute bottom-0 end-0 me-3">
-                                        <img src="assets/images/element/15.svg" className="h-100px h-sm-200px" alt="" />
+                                        <img src="assets/images/element/15.svg" className="h-100px h-sm-200px" alt="x" />
                                     </div>
 
                                     <div className="row">
@@ -311,7 +398,6 @@ const Home = () => {
                         </div>
                     </div>
                 </section>
-
 
             </main>
 
