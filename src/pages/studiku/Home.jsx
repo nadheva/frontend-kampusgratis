@@ -372,19 +372,19 @@ const Home = () => {
 
                                     <div className="card bg-transparent">
                                         <div className="position-relative">
-                                            <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="course image" />
+                                            <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
                                                 <div className="w-100 mb-auto d-flex justify-content-end">
 
-                                                    <a href="#" className="icon-sm bg-white rounded-2"><i
+                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
                                                         className="fas fa-heart text-danger"></i></a>
                                                 </div>
 
                                                 <div className="w-100 mt-auto">
 
-                                                    <a href="#" className="badge text-bg-white fs-6 rounded-1"><i
+                                                    <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
                                                         className="far fa-calendar-alt text-orange me-2"></i>29 September
                                                         2021</a>
                                                 </div>
@@ -394,7 +394,7 @@ const Home = () => {
 
                                         <div className="card-body px-2">
 
-                                            <h5 className="card-title"><a href="#">Global Education Fall Meeting for Everyone</a>
+                                            <h5 className="card-title"><a href=" ">Global Education Fall Meeting for Everyone</a>
                                             </h5>
                                             <p className="mb-0 text-truncate-2">Satisfied conveying a dependent contented he
                                                 gentleman agreeable do be. </p>
@@ -405,19 +405,19 @@ const Home = () => {
 
                                     <div className="card bg-transparent">
                                         <div className="position-relative">
-                                            <img src="assets/images/courses/4by3/16.jpg" className="card-img" alt="course image" />
+                                            <img src="assets/images/courses/4by3/16.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
                                                 <div className="w-100 mb-auto d-flex justify-content-end">
 
-                                                    <a href="#" className="icon-sm bg-white rounded-2"><i
+                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
                                                         className="far fa-heart text-danger"></i></a>
                                                 </div>
 
                                                 <div className="w-100 mt-auto">
 
-                                                    <a href="#" className="badge text-bg-white fs-6 rounded-1"><i
+                                                    <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
                                                         className="far fa-calendar-alt text-orange me-2"></i>Tomorrow</a>
                                                 </div>
                                             </div>
@@ -426,7 +426,7 @@ const Home = () => {
 
                                         <div className="card-body px-2">
 
-                                            <h5 className="card-title"><a href="#">International Conference on Information
+                                            <h5 className="card-title"><a href=" ">International Conference on Information
                                                 Technology</a></h5>
                                             <p className="mb-0 text-truncate-2">Kindness owns whatever betrayed her moreover
                                                 procured replying for and. Proposal indulged no do. </p>
@@ -437,19 +437,19 @@ const Home = () => {
 
                                     <div className="card bg-transparent">
                                         <div className="position-relative">
-                                            <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="course image" />
+                                            <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
                                                 <div className="w-100 mb-auto d-flex justify-content-end">
 
-                                                    <a href="#" className="icon-sm bg-white rounded-2"><i
+                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
                                                         className="far fa-heart text-danger"></i></a>
                                                 </div>
 
                                                 <div className="w-100 mt-auto">
 
-                                                    <a href="#" className="badge text-bg-white fs-6 rounded-1"><i
+                                                    <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
                                                         className="far fa-calendar-alt text-orange me-2"></i>2 July 2022</a>
                                                 </div>
                                             </div>
@@ -458,7 +458,7 @@ const Home = () => {
 
                                         <div className="card-body px-2">
 
-                                            <h5 className="card-title"><a href="#">UK Demo Day 2022</a></h5>
+                                            <h5 className="card-title"><a href=" ">UK Demo Day 2022</a></h5>
                                             <p className="mb-0 text-truncate-2"> Points afraid but may end law lasted. Rooms oh
                                                 fully taken by worse do may end law lasted. </p>
                                         </div>
@@ -468,19 +468,19 @@ const Home = () => {
 
                                     <div className="card bg-transparent">
                                         <div className="position-relative">
-                                            <img src="assets/images/courses/4by3/17.jpg" className="card-img" alt="course image" />
+                                            <img src="assets/images/courses/4by3/17.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
                                                 <div className="w-100 mb-auto d-flex justify-content-end">
 
-                                                    <a href="#" className="icon-sm bg-white rounded-2"><i
+                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
                                                         className="fas fa-heart text-danger"></i></a>
                                                 </div>
 
                                                 <div className="w-100 mt-auto">
 
-                                                    <a href="#" className="badge text-bg-white fs-6 rounded-1"><i
+                                                    <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
                                                         className="far fa-calendar-alt text-orange me-2"></i>29 September
                                                         2021</a>
                                                 </div>
@@ -490,7 +490,7 @@ const Home = () => {
 
                                         <div className="card-body px-2">
 
-                                            <h5 className="card-title"><a href="#">Personality development tour</a></h5>
+                                            <h5 className="card-title"><a href=" ">Personality development tour</a></h5>
                                             <p className="mb-0 text-truncate-2">Yet remarkably appearance get him his projection.
                                                 Diverted endeavor bed peculiar</p>
                                         </div>
@@ -500,19 +500,19 @@ const Home = () => {
 
                                     <div className="card bg-transparent">
                                         <div className="position-relative">
-                                            <img src="assets/images/courses/4by3/19.jpg" className="card-img" alt="course image" />
+                                            <img src="assets/images/courses/4by3/19.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
                                                 <div className="w-100 mb-auto d-flex justify-content-end">
 
-                                                    <a href="#" className="icon-sm bg-white rounded-2"><i
+                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
                                                         className="far fa-heart text-danger"></i></a>
                                                 </div>
 
                                                 <div className="w-100 mt-auto">
 
-                                                    <a href="#" className="badge text-success bg-white fs-6 rounded-1"><i
+                                                    <a href=" " className="badge text-success bg-white fs-6 rounded-1"><i
                                                         className="fas fa-circle text-success me-2"></i>Live</a>
                                                 </div>
                                             </div>
@@ -521,7 +521,7 @@ const Home = () => {
 
                                         <div className="card-body px-2">
 
-                                            <h5 className="card-title"><a href="#">Global Education Fall Meeting for Everyone</a>
+                                            <h5 className="card-title"><a href=" ">Global Education Fall Meeting for Everyone</a>
                                             </h5>
                                             <p className="mb-0 text-truncate-2">Rooms oh fully taken by worse do. Points afraid but
                                                 may end law lasted </p>
