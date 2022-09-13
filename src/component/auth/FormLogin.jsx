@@ -8,7 +8,7 @@ import { loginViaForm } from "../../redux/actions/AuthAction";
 
 const FormLogin = () => {
   const dispatch = useDispatch();
-  const { isAuthenticated, isAuthenticatedLoading,  error } = useSelector(
+  const { isAuthenticated, isAuthenticatedLoading, error } = useSelector(
     (state) => state.AuthReducer
   );
 
@@ -88,7 +88,7 @@ const FormLogin = () => {
                   <div className="d-grid">
                     {isAuthenticatedLoading ? (
                       <button
-                        className="btn btn-kg mb-0 text-white"
+                        className="btn btn-blue mb-0 text-white"
                         type="submit"
                       >
                         <span
@@ -99,7 +99,7 @@ const FormLogin = () => {
                       </button>
                     ) : (
                       <button
-                        className="btn btn-kg mb-0 text-white"
+                        className="btn btn-blue mb-0 text-white"
                         type="submit"
                       >
                         Login
