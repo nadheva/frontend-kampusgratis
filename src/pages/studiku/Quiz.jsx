@@ -46,7 +46,7 @@ const Quiz = () => {
                             <div className="col-12">
                                 <h2>Riwayat</h2>
                                 <div className="table-responsive">
-                                    <table className="table">
+                                    <table className="table table-hover">
                                         <thead>
                                             <tr>
                                                 <th>Tanggal </th>
