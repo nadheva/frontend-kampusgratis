@@ -1,5 +1,5 @@
 import React from "react";
-import Header2 from "../../component/partials/Header2";
+import Header3 from "../../component/partials/Header3";
 import BannerStudiku from "../../component/studiku/homeStudiku/BannerStudiku";
 import CardCategory from "../../component/studiku/homeStudiku/CardCategory";
 import CardCourse from "../../component/studiku/homeStudiku/CardCourse";
@@ -10,9 +10,9 @@ import { Element } from "react-scroll";
 const HomeStudiku = () => {
   return (
     <>
-      <Header2 />
+      <Header3 />
       <main>
-        <section className="pt-8">
+        <section className="m-0 p-0">
           <BannerStudiku />
         </section>
         <section className="pb-0 py-sm-5">

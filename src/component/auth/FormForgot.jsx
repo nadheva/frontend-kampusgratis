@@ -46,7 +46,7 @@ const FormForgot = () => {
                         <div class="align-items-center">
                             <div class="d-grid">
                                 {forgotPasswordLoading ? (
-                                    <button className="btn btn-kg mb-0 text-white" type="submit">
+                                    <button className="btn btn-blue mb-0 text-white" type="submit">
                                         <span
                                             class="spinner-border spinner-border-sm"
                                             role="status"
@@ -56,7 +56,7 @@ const FormForgot = () => {
                                         Loading...
                                     </button>
                                 ) : (
-                                    <button className="btn btn-kg mb-0 text-white" type="submit">
+                                    <button className="btn btn-blue mb-0 text-white" type="submit">
                                         Reset password
                                     </button>
                                 )}

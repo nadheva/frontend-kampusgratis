@@ -140,7 +140,7 @@ const FormRegist = () => {
             <div className="align-items-center mt-0">
               <div className="d-grid">
                 {addUserLoading ? (
-                  <button className="btn btn-kg mb-0 text-white" type="submit">
+                  <button className="btn btn-blue mb-0 text-white" type="submit">
                     <span
                       class="spinner-border spinner-border-sm"
                       role="status"
@@ -149,7 +149,7 @@ const FormRegist = () => {
                     Loading...
                   </button>
                 ) : (
-                  <button className="btn btn-kg mb-0 text-white" type="submit">
+                  <button className="btn btn-blue mb-0 text-white" type="submit">
                     Sign Up
                   </button>
                 )}
