@@ -32,6 +32,7 @@ import Quiz from "../pages/studiku/Quiz";
 import Pertemuan from "../pages/studiku/Pertemuan";
 import ForumDiskusi from "../pages/studiku/ForumDiskusi";
 import MulaiQuiz from "../pages/studiku/MulaiQuiz";
+import Penugasan from "../pages/studiku/Penugasan";
 
 const Routed = () => {
   return (
@@ -61,6 +62,7 @@ const Routed = () => {
 
       <Route path="/forum-diskusi" element={<ForumDiskusi />} />
       <Route path="/mulai-quiz" element={<MulaiQuiz />} />
+      <Route path="/penugasan" element={<Penugasan />} />
     </Routes>
   );
 };
