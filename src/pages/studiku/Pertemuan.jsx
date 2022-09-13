@@ -146,7 +146,7 @@ const Pertemuan = () => {
                                                                             </a>
 
                                                                             <div className="ms-3">
-                                                                                <a href=" "
+                                                                                <a href="/penugasan"
                                                                                     className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Tugas
                                                                                     1 - Research about marketing</a>
                                                                                 <ul className="nav nav-divider small mb-0">

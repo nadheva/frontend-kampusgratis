@@ -32,8 +32,8 @@ const Header3 = () => {
 
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                            <li class="nav-item dropdown"><a class="nav-link" href="/">Landing Page</a></li>
-                            <li class="nav-item"><a class="nav-link" href="/home">My Home</a></li>
+                            <li class="nav-item dropdown"><a class="nav-link" href="/">Landing Page*</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
                         </ul>
                     </div>
 
