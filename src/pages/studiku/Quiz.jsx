@@ -1,9 +1,17 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header3 from '../../component/partials/Header3'
 import Footer2 from '../../component/partials/Footer2'
 
 const Quiz = () => {
+
+    const navigate = useNavigate();
+
+    function changeLocation(placeToGo){
+        navigate(placeToGo, { replace: true });
+        window.location.reload();
+    }
+
     return (
         <>
             <Header3 />
@@ -28,9 +36,9 @@ const Quiz = () => {
                                 </p>
                                 <p>Selamat mengerjakan</p>
                                 <div className="d-flex justify-content-end mt-3">
-                                    <a href="/mulai-quiz" >
+                                    <Link to="/mulai-quiz" onClick={() => changeLocation('/mulai-quiz')} >
                                         <button className="btn btn-primary next-btn mb-0 btn-studiku px-4">Mulai</button>
-                                    </a>
+                                    </Link>
                                 </div>
 
                             </div>
