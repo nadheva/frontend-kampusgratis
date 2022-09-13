@@ -268,92 +268,6 @@ const Home = () => {
                     </div>
                 </section>
 
-                {/* <section>
-                    <div className="container">
-
-                        <div className="row mb-4">
-                            <h2 className="mb-0">Artikel</h2>
-                        </div>
-
-                        <div className="row">
-
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition">
-                                <div className="position-relative">
-                                    <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="course" />
-
-                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                        <div className="w-100 mt-auto">
-
-                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
-                                                className="far fa-calendar-alt text-orange me-2"></i>29 September
-                                                2021</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div className="card-body px-2">
-
-                                    <h5 className="card-title"><a href=" ">Global Education Fall Meeting for Everyone</a>
-                                    </h5>
-                                    <p className="mb-0 text-truncate-2">Satisfied conveying a dependent contented he
-                                        gentleman agreeable do be. </p>
-                                </div>
-                            </div>
-
-
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition  ">
-                                <div className="position-relative">
-                                    <img src="assets/images/courses/4by3/16.jpg" className="card-img" alt="course" />
-
-                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                        <div className="w-100 mt-auto">
-
-                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
-                                                className="far fa-calendar-alt text-orange me-2"></i>Tomorrow</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div className="card-body px-2">
-
-                                    <h5 className="card-title"><a href=" ">International Conference on Information
-                                        Technology</a></h5>
-                                    <p className="mb-0 text-truncate-2">Kindness owns whatever betrayed her moreover
-                                        procured replying for and. Proposal indulged no do. </p>
-                                </div>
-                            </div>
-
-
-                            <div className="card bg-transparent col-lg-4 col-md-4 col-12 btn-transition  ">
-                                <div className="position-relative">
-                                    <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="course" />
-
-                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                        <div className="w-100 mt-auto">
-
-                                            <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
-                                                className="far fa-calendar-alt text-orange me-2"></i>2 July 2022</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div className="card-body px-2">
-
-                                    <h5 className="card-title"><a href=" ">UK Demo Day 2022</a></h5>
-                                    <p className="mb-0 text-truncate-2"> Points afraid but may end law lasted. Rooms oh
-                                        fully taken by worse do may end law lasted. </p>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </section> */}
 
 
                 <section className="pt-0">
@@ -375,12 +289,6 @@ const Home = () => {
                                             <img src="assets/images/courses/4by3/21.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                                <div className="w-100 mb-auto d-flex justify-content-end">
-
-                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
-                                                        className="fas fa-heart text-danger"></i></a>
-                                                </div>
 
                                                 <div className="w-100 mt-auto">
 
@@ -409,12 +317,6 @@ const Home = () => {
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
-                                                <div className="w-100 mb-auto d-flex justify-content-end">
-
-                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
-                                                        className="far fa-heart text-danger"></i></a>
-                                                </div>
-
                                                 <div className="w-100 mt-auto">
 
                                                     <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
@@ -440,13 +342,6 @@ const Home = () => {
                                             <img src="assets/images/courses/4by3/18.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                                <div className="w-100 mb-auto d-flex justify-content-end">
-
-                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
-                                                        className="far fa-heart text-danger"></i></a>
-                                                </div>
-
                                                 <div className="w-100 mt-auto">
 
                                                     <a href=" " className="badge text-bg-white fs-6 rounded-1"><i
@@ -471,12 +366,6 @@ const Home = () => {
                                             <img src="assets/images/courses/4by3/17.jpg" className="card-img" alt="courseimage" />
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-
-                                                <div className="w-100 mb-auto d-flex justify-content-end">
-
-                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
-                                                        className="fas fa-heart text-danger"></i></a>
-                                                </div>
 
                                                 <div className="w-100 mt-auto">
 
@@ -504,11 +393,6 @@ const Home = () => {
 
                                             <div className="card-img-overlay d-flex align-items-start flex-column p-3">
 
-                                                <div className="w-100 mb-auto d-flex justify-content-end">
-
-                                                    <a href=" " className="icon-sm bg-white rounded-2"><i
-                                                        className="far fa-heart text-danger"></i></a>
-                                                </div>
 
                                                 <div className="w-100 mt-auto">
 

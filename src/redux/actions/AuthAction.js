@@ -122,7 +122,7 @@ export const loginViaForm = (data) => async (dispatch) => {
         },
         user: user,
       });
-      window.location.href = "/studiku";
+      window.location.href = "/home";
     } else {
       dispatch({
         type: LOGIN,
