@@ -9,29 +9,21 @@ import Header from './pages/default/Header';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Profile from './pages/Profile';
-import Dashboard from './pages/Dashboard';
+import Main from './pages/landing-page/Main';
 
 function App() {
   return (
     <>
       <Router>
+        <Header />
         <Routes>
-          <Route path='/' exact element={<>
-            <Header />
-            <h1>Hi</h1>
-          </>} />
+          <Route path='/' exact element={<Main />} />
           <Route path='/dashboard' element={<PrivateRoute />}>
-            <Route path='/dashboard' element={<>
-              <Header />
-              <Dashboard />
-            </>} />
+            <Route path='/dashboard' element={<>Hello</>} />
           </Route>
 
           <Route path='/profile' element={<PrivateRoute />}>
-            <Route path='/profile' element={<>
-              <Header />
-              <Profile />
-            </>} />
+            <Route path='/profile' element={<Profile />} />
           </Route>
 
           <Route path='/login' element={<Login />} />

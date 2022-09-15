@@ -43,6 +43,11 @@ export function extartErrorFirebase(error) {
       errors.message = message;
       break;
     }
+    case "auth/internal-error": {
+      const message = "Something went wrong.";
+      errors.message = message;
+      break;
+    }
   }
 
   return errors.message;

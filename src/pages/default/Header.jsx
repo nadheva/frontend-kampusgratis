@@ -31,8 +31,8 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand me-0" to='/'>
-              <img className="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo" />
-              <img className="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo" />
+              <img className="light-mode-item navbar-brand-item" src="assets/images/logo-kampus-gratis.png" alt="logo" />
+              <img className="dark-mode-item navbar-brand-item" src="assets/images/logo-kampus-gratis.png" alt="logo" />
             </Link>
             <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-animation">

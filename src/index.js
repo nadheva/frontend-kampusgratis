@@ -12,8 +12,8 @@ root.render(
   <Provider store={store}>
     <App />
     <Helmet>
-      <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/functions.js"></script>
+      <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+      <script src="assets/js/functions.js" defer></script>
     </Helmet>
   </Provider>
 );

@@ -83,10 +83,9 @@ export const loginWithGoogle = createAsyncThunk(
       const token = await auth.currentUser.getIdToken();
       await authService.googleValidate(token);
 
-      const userData = await authService.getMe(token);
-      const { firebase_uid, ...user } = userData.data;
+      const { data } = await authService.getMe(token);
 
-      return { token, user: user.data };
+      return { token, user: data };
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -159,6 +158,7 @@ export const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(loginWithGoogle.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.isLoading = false;
         state.isSuccess = true;
         state.user = action.payload.user;
