@@ -4,7 +4,7 @@ const CardCourse = () => {
   return (
     <div className="col-12">
       <div
-        className="card shadow overflow-hidden p-2 card-course"
+        className="card shadow overflow-hidden p-2 "
       >
         <div className="row g-0">
           <div className="col-md-5 overflow-hidden">
