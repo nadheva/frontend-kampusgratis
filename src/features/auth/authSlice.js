@@ -53,8 +53,6 @@ export const login = createAsyncThunk(
 
       const { data } = await authService.getMe(token);
 
-      console.log(data);
-
       return { token, user: data };
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
@@ -179,6 +177,7 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = "Profile Saved.";
+        state.user = action.payload.data;
       })
       .addCase(updateProfile.rejected, (state, action) => {
         state.isLoading = false;

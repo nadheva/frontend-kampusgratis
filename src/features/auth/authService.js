@@ -42,8 +42,6 @@ const getMe = async (token) => {
     localStorage.setItem('user', JSON.stringify(response.data.data))
   }
 
-  console.log(response.data)
-
   return response.data;
 }
 
@@ -56,6 +54,10 @@ const updateProfile = async (body, token) => {
   }
 
   const response = await axios.put(API_URL + 'profile/me', body, config);
+
+  if (response.data) {
+    localStorage.setItem('user', JSON.stringify(response.data.data))
+  }
 
   return response.data;
 }

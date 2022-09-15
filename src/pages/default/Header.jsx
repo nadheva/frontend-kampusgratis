@@ -30,10 +30,10 @@ const Header = () => {
       <header className="navbar-light navbar-sticky">
         <nav className="navbar navbar-expand-lg">
           <div className="container">
-            <a className="navbar-brand me-0" href="index.html">
+            <Link className="navbar-brand me-0" to='/'>
               <img className="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo" />
               <img className="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo" />
-            </a>
+            </Link>
             <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-animation">
                 <span></span>
