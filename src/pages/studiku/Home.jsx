@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer2 from '../default/Footer2'
 
 const Home = () => {
     return (
@@ -463,7 +462,6 @@ const Home = () => {
 
             </main>
 
-            <Footer2 />
         </>
     )
 }

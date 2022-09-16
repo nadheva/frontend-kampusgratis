@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import Footer2 from '../default/Footer2';
 
 const Quiz = () => {
 
@@ -85,8 +84,6 @@ const Quiz = () => {
                     </div>
                 </section>
             </main>
-
-            <Footer2 />
         </>
     )
 }

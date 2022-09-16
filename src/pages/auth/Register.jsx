@@ -69,23 +69,45 @@ function Register() {
       <main>
         <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
           <div className="container-fluid">
-            <div className="row">
-              <div
-                className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
-                <div className="p-3 p-lg-5">
-                  <div className="text-center">
-                    <h2 className="fw-bold">Welcome to our largest community</h2>
-                    <p className="mb-0 h6 fw-light">Let's learn something new today!</p>
+            <div className="row bg-custom">
+              <div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-opacity-10 vh-lg-100 bg-custom bg-line">
+                <div className="p-3 p-lg-5 bg-blur mx-4">
+                  <div className="text-left">
+                    <h1 className="fw-bold text-white">
+                      Selamat Datang <br /> Di Kampus Gratis!
+                    </h1>
+                    <p className="mb-0 h6 fw-light text-white">
+                      Mari belajar sesuatu yang baru hari ini!
+                    </p>
                   </div>
-                  <img src="assets/images/element/02.svg" className="mt-5" alt="Kampus Gratis" />
+                  <img
+                    src="assets/images/element/02.svg"
+                    className="mt-5"
+                    alt=""
+                  />
                 </div>
               </div>
-              <div className="col-12 col-lg-6 m-auto">
+              <div className="col-12 col-lg-6 bg-white pt-3">
                 <div className="row my-5">
-                  <div className="col-sm-10 col-xl-8 m-auto">
-                    <img src="assets/images/element/03.svg" className="h-40px mb-2" alt="Kampus Gratis" />
-                    <h2>Sign up for your account!</h2>
-                    <p className="lead mb-4">Nice to see you! Please Sign up with your account.</p>
+                  <div className="col-sm-10 col-xl-8 m-auto text">
+                    <div className="text-center">
+                    <Link class="me-0" to="/">
+                      <img
+                        class="light-mode-item h-40px"
+                        src="assets/images/logo-kampus-gratis.png"
+                        alt="Kampus Gratis"
+                      />
+                      <img
+                        class="dark-mode-item h-40px"
+                        src="assets/images/logo-kampus-gratis.png"
+                        alt="Kampus Gratis"
+                      />
+                    </Link>
+                    </div>
+                    <h1 className="fs-2 pt-5">Daftar Kampus Grastis!</h1>
+                    <p className="lead mb-4">
+                      Silahkan daftarkan akun anda.
+                    </p>
                     <form onSubmit={onFormSubmit}>
                       <div className="mb-4">
                         <label htmlFor="input-email-address" className="form-label">Alamat Email *</label>
@@ -126,7 +148,7 @@ function Register() {
                       <div className="mb-4">
                         <div className="form-check">
                           <input type="checkbox" className="form-check-input" id="checkbox-1" />
-                          <label className="form-check-label" htmlFor="checkbox-1">Saya setuju dengan<a href="#"> terms
+                          <label className="form-check-label" htmlFor="checkbox-1">Saya setuju dengan<a href=" "> terms
                             of service</a>.</label>
                         </div>
                       </div>

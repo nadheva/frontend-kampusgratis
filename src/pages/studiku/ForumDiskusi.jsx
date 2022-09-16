@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Footer2 from '../default/Footer2';
-
 const ForumDiskusi = () => {
     return (
         <>
@@ -198,8 +196,6 @@ const ForumDiskusi = () => {
                     </div>
                 </section>
             </main>
-
-            <Footer2 />
 
             <div className="modal fade" id="modalCreatePost" tabIndex="-1" aria-labelledby="modalLabelCreatePost"
                 aria-hidden="true">

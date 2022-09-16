@@ -2,9 +2,6 @@ import React from "react";
 import BannerStudiku from "../../components/studiku/homeStudiku/BannerStudiku";
 import CardCategory from "../../components/studiku/homeStudiku/CardCategory";
 import CardCourse from "../../components/studiku/homeStudiku/CardCourse";
-import Footer2 from "../default/Footer2";
-
-import { Element } from "react-scroll";
 
 const HomeStudiku = () => {
   return (
@@ -42,9 +39,6 @@ const HomeStudiku = () => {
           </div>
         </section>
       </main>
-      <Element name="footer-section1">
-        <Footer2 />
-      </Element>
     </>
   );
 };

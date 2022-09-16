@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer2 from '../default/Footer2'
 
 const Penugasan = () => {
     return (
@@ -68,10 +67,6 @@ const Penugasan = () => {
                     </div>
                 </section>
             </main>
-
-
-
-            <Footer2 />
         </>
 
 

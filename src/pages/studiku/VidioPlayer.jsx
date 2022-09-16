@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer2 from '../default/Footer2'
 import Intro from '../../components/studiku/vidioPlayer/Intro'
 import MainContent from '../../components/studiku/vidioPlayer/MainContent'
 import RightSidebar from '../../components/studiku/vidioPlayer/RightSidebar'
@@ -18,13 +17,10 @@ const VidioPlayer = () => {
                                 </div>
                             </div>
                             <RightSidebar />
-
                         </div>
                     </div>
                 </section>
             </main>
-
-            <Footer2 />
         </>
     )
 }

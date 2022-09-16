@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer2 from '../default/Footer2'
 
 const Pertemuan = () => {
     return (
@@ -375,10 +374,6 @@ const Pertemuan = () => {
                     </div>
                 </div>
             </div>
-
-
-            <Footer2 />
-
         </>
     )
 }

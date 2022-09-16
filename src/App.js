@@ -1,15 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import firebase from './config/firebase';
-import PrivateRoute from './components/PrivateRoute';
+import firebase from "./config/firebase";
+import PrivateRoute from "./components/PrivateRoute";
 
-import Header from './pages/default/Header';
-import Login from './pages/auth/Login';
-import Register from './pages/auth/Register';
-import Profile from './pages/Profile';
-import Main from './pages/landing-page/Main';
+import Header from "./pages/default/Header";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import Profile from "./pages/Profile";
+import Main from "./pages/landing-page/Main";
 
 import PageNotFound from "./pages/error/404";
 import Unauthorized from "./pages/error/401";
@@ -25,20 +25,31 @@ import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
+import Manage_Course from "./pages/instructor/Manage_Course"
+import Footer from "./pages/default/Footer";
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
         <Routes>
-          <Route path='/' exact element={<Main />} />
-          <Route path='/dashboard' element={<PrivateRoute />}>
-            <Route path='/dashboard' element={<>Hello</>} />
+          <Route
+            path="/"
+            exact
+            element={
+              <>
+                <Header />
+                <Main />
+                <Footer />
+              </>
+            }
+          />
+          <Route path="/dashboard" element={<PrivateRoute />}>
+            <Route path="/dashboard" element={<>Hello</>} />
           </Route>
 
-          <Route path='/profile' element={<PrivateRoute />}>
-            <Route path='/profile' element={<Profile />} />
+          <Route path="/profile" element={<PrivateRoute />}>
+            <Route path="/profile" element={<Profile />} />
           </Route>
 
           <Route path="/home" element={<PrivateRoute />}>
@@ -46,7 +57,9 @@ function App() {
               path="/home"
               element={
                 <>
+                  <Header />
                   <Home />
+                  <Footer />
                 </>
               }
             />
@@ -57,7 +70,9 @@ function App() {
               path="/studiku"
               element={
                 <>
+                  <Header />
                   <HomeStudiku />
+                  <Footer />
                 </>
               }
             />
@@ -68,7 +83,9 @@ function App() {
               path="/pertemuan"
               element={
                 <>
+                  <Header />
                   <Pertemuan />
+                  <Footer />
                 </>
               }
             />
@@ -79,7 +96,9 @@ function App() {
               path="/vidio-player"
               element={
                 <>
+                  <Header />
                   <VidioPlayer />
+                  <Footer />
                 </>
               }
             />
@@ -90,7 +109,9 @@ function App() {
               path="/quiz"
               element={
                 <>
+                  <Header />
                   <Quiz />
+                  <Footer />
                 </>
               }
             />
@@ -101,7 +122,9 @@ function App() {
               path="/forum-diskusi"
               element={
                 <>
+                  <Header />
                   <ForumDiskusi />
+                  <Footer />
                 </>
               }
             />
@@ -112,7 +135,9 @@ function App() {
               path="/mulai-quiz"
               element={
                 <>
+                  <Header />
                   <MulaiQuiz />
+                  <Footer />
                 </>
               }
             />
@@ -123,7 +148,22 @@ function App() {
               path="/penugasan"
               element={
                 <>
+                  <Header />
                   <Penugasan />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/Manage_Course" element={<PrivateRoute />}>
+            <Route
+              path="/Manage_Course"
+              element={
+                <>
+                  <Header />
+                  <Manage_Course />
+                  <Footer />
                 </>
               }
             />
@@ -135,8 +175,8 @@ function App() {
           <Route path="/500" element={<ServerError />} />
           <Route path="/503" element={<ServiceUnavailable />} />
 
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
 
