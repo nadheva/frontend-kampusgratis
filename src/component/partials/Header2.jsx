@@ -61,14 +61,6 @@ const Header2 = () => {
 
             <ul className="navbar-nav navbar-nav-scroll me-auto ">
               <li className="nav-item dropdown">
-                <a
-                  className="nav-link"
-                  href="/home"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="nav-item dropdown">
                 <Link
                   activeClass="active"
                   className="nav-link"
@@ -103,6 +95,14 @@ const Header2 = () => {
                 >
                   Kontak
                 </Link>
+              </li>
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link"
+                  href="/home"
+                >
+                  Dashboard
+                </a>
               </li>
             </ul>
 

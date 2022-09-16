@@ -7,11 +7,11 @@ const RightSidebar = () => {
                 <div className="row g-4">
                     <div className="col-md-6 col-xl-12">
 
-                        <div className="card card-body card-body-right border p-4">
+                        <div className="card card-body shadow  p-4">
 
                             <div className="mt-3 d-grid">
                                 <a href=" " className="btn btn-light rounded-4 fs-4 py-2 fw-bold">TUGAS </a>
-                                <a href=" " className="btn btn-light rounded-4 mt-2">Qrizz </a>
+                                <a href=" " className="btn btn-light rounded-4 mt-2">Quizz </a>
                             </div>
 
                             <hr />
@@ -22,22 +22,22 @@ const RightSidebar = () => {
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-book-open "></i>Lectures</span>
-                                    <span className="text-white">30</span>
+                                    <span className="">30</span>
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-clock "></i>Duration</span>
-                                    <span className="text-white">4h 50m</span>
+                                    <span className="">4h 50m</span>
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-signal "></i>Skills</span>
-                                    <span className="text-white">Beginner</span>
+                                    <span className="">Beginner</span>
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-user-clock"></i>Deadline</span>
-                                    <span className="text-white">Nov 30 2021</span>
+                                    <span className="">Nov 30 2021</span>
                                 </li>
                             </ul>
 
@@ -51,7 +51,7 @@ const RightSidebar = () => {
                                         alt="avatar" />
                                 </div>
                                 <div className="ms-sm-3 mt-2 mt-sm-0">
-                                    <h5 className="mb-0 "><a href=" " className="text-white">By Jacqueline
+                                    <h5 className="mb-0 "><a href=" " className="">By Jacqueline
                                         Miller</a></h5>
                                     <p className="mb-0 small">Founder Eduport company</p>
                                 </div>

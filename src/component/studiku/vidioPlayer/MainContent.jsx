@@ -20,12 +20,12 @@ const MainContent = () => {
             </div>
 
             <div className="col-lg-12">
-                <div className="bg-body bg-body-pertemuan shadow rounded-2 p-4">
+                <div className="bg-body shadow rounded-2 p-4">
 
                     <ul className="nav nav-pills nav-tabs-line pt-0" id="course-pills-tab" role="tablist">
 
                         <li className="nav-item me-2 me-sm-4" role="presentation">
-                            <button className="nav-link mb-2 mb-md-0 active  text-white"
+                            <button className="nav-link mb-2 mb-md-0 active  "
                                 id="course-pills-tab-1" data-bs-toggle="pill"
                                 data-bs-target="#course-pills-1" type="button" role="tab"
                                 aria-controls="course-pills-1" aria-selected="true">Description
@@ -34,7 +34,7 @@ const MainContent = () => {
 
 
                         <li className="nav-item me-2 me-sm-4" role="presentation">
-                            <button className="nav-link mb-2 mb-md-0  text-white" id="course-pills-tab-4"
+                            <button className="nav-link mb-2 mb-md-0  " id="course-pills-tab-4"
                                 data-bs-toggle="pill" data-bs-target="#course-pills-4" type="button"
                                 role="tab" aria-controls="course-pills-4"
                                 aria-selected="false">Discusion </button>
@@ -47,7 +47,7 @@ const MainContent = () => {
                         <div className="tab-pane fade show active" id="course-pills-1" role="tabpanel"
                             aria-labelledby="course-pills-tab-1">
 
-                            <h5 className="mb-3 text-white">Course Description</h5>
+                            <h5 className="mb-3 ">Course Description</h5>
                             <p className="mb-3">Welcome to the
                                 <strong> Digital Marketing Ultimate Course Bundle - 12 Courses in 1
                                     (Over 36 hours of content)</strong>
@@ -94,7 +94,7 @@ const MainContent = () => {
                             aria-labelledby="course-pills-tab-4">
 
                             <div className="row mb-4">
-                                <h5 className="mb-4 text-white">Our Student Reviews</h5>
+                                <h5 className="mb-4 ">Our Student Reviews</h5>
                             </div>
 
                             <div className="row">
@@ -108,7 +108,7 @@ const MainContent = () => {
 
                                     <div>
                                         <div className="d-sm-flex mt-1 mt-md-0 align-items-center">
-                                            <h5 className="me-3 mb-0 text-white">Jacqueline Miller</h5>
+                                            <h5 className="me-3 mb-0 ">Jacqueline Miller</h5>
                                         </div>
 
                                         <p className="small mb-2">2 days ago</p>
@@ -151,7 +151,7 @@ const MainContent = () => {
 
                                     <div>
                                         <div className="d-sm-flex mt-1 mt-md-0 align-items-center">
-                                            <h5 className="me-3 mb-0 text-white">Dennis Barrett</h5>
+                                            <h5 className="me-3 mb-0 ">Dennis Barrett</h5>
 
                                         </div>
 

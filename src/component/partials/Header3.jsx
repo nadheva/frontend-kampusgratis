@@ -7,7 +7,7 @@ const Header3 = () => {
             <nav class="navbar navbar-expand-xl z-index-9">
                 <div class="container">
 
-                    <a class="navbar-brand" href="/home">
+                    <a class="navbar-brand" href="/">
                         <img
                             className="light-mode-item navbar-brand-item"
                             src="assets/images/kgLogo.png"
@@ -32,7 +32,7 @@ const Header3 = () => {
 
                     <div class="navbar-collapse collapse" id="navbarCollapse">
                         <ul class="navbar-nav navbar-nav-scroll ms-auto">
-                            <li class="nav-item dropdown"><a class="nav-link" href="/">Landing Page*</a></li>
+
                             <li class="nav-item"><a class="nav-link" href="/home">Home</a></li>
                         </ul>
                     </div>

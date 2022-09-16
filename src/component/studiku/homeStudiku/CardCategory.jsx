@@ -3,7 +3,7 @@ import React from "react";
 const CardCategory = () => {
   return (
     <form>
-      <div className="card card-body shadow p-4 mb-4 card-category">
+      <div className="card card-body shadow p-4 mb-4 ">
         <h4 className="mb-4">Category</h4>
         <div className="row">
           <div className="col-xxl-6">
