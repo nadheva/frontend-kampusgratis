@@ -1,0 +1,168 @@
+/* global */
+.bg-abu {
+    background: #E2ECF0;
+}
+
+.title-kg1 {
+    font-size: 40px !important;
+    color: #072E55 !important;
+}
+
+
+/* Landing Page - hero section */
+.hero-section-kg1 {
+    /* height: 200vh; */
+    padding: 80px 10px;
+
+    background-image: url("../images/hero-kg1/hero-eclipse.svg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-section-kg1 .hero-kg1 {
+    padding-top: 8%;
+}
+
+.hero-section-kg1 .hero-kg1 h5 {
+    color: white;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 0em;
+}
+
+.hero-section-kg1 .hero-kg1 h1 {
+    font-size: 80px;
+    font-weight: 600;
+    color: white;
+}
+
+.hero-section-kg1 .hero-kg1 p {
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+/* Landing Page - Fakultas */
+.fakultas-section-kg1 {
+    margin-top: -20px;
+}
+
+.fakultas-section-kg1 .fakultas-body h3 {
+    font-size: 36px;
+    color: #494949;
+}
+
+
+/* Landing Page - Mentor */
+.mentor-section-kg1 .card-mentor .card-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #072E55;
+}
+
+.mentor-section-kg1 .card-mentor .card-subtitle {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #072E55;
+}
+
+.mentor-section-kg1 .card-mentor {
+    height: 122px;
+    padding: 10px;
+    margin-top: 120%;
+    background: #D9D9D9;
+    border-radius: 10px;
+}
+
+
+/* Landing Page - Event */
+.event-section-kg .card-event {
+    background: #1D7599;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.event-section-kg .card-text-event {
+    height: 150px;
+    padding: 15px;
+    margin-top: 28%;
+    background: #D9D9D9;
+    border-radius: 10px;
+}
+
+.event-section-kg .card-text-event .card-title {
+    color: #072E55;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.event-section-kg .card-text-event .card-text {
+    color: #072E55;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+.event-section-kg .card-text-event .card-time {
+    color: #072E55;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 13px;
+}
+
+
+/* Landing Page - .footer-kg1 */
+.footer-kg1 {
+    background: #072E55;
+    color: white;
+}
+
+.footer-kg1 h5 {
+    color: white;
+}
+
+.footer-kg1 .nav-link {
+    color: white;
+}
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+
+    .fs-1 {
+        font-size: 26px !important;
+    }
+
+    /* Hero */
+    .hero-section-kg1 .hero-kg1 {
+        padding-top: 20px;
+    }
+
+    .hero-section-kg1 .hero-kg1 h5 {
+        font-size: 16px;
+    }
+
+    .hero-section-kg1 .hero-kg1 h1 {
+        font-size: 28px;
+    }
+
+    .hero-section-kg1 .hero-kg1 p {
+        font-size: 14px;
+    }
+
+    /* Landing Page - Fakultas */
+    .fakultas-section-kg1 .fakultas-body h3 {
+        font-size: 14px;
+    }
+
+    /* Landing Page - Event */
+    .event-section-kg .card-text-event {
+        margin-top: 18%;
+    }
+
+
+}
