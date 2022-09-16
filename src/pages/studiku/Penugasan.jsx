@@ -1,6 +1,14 @@
 import React from 'react'
+import { useState } from 'react';
 
 const Penugasan = () => {
+
+    const [file, setFile] = useState();
+
+    function handleFileChange(e) {
+        setFile(e.target.value)
+    }
+
     return (
 
         <>
@@ -12,7 +20,7 @@ const Penugasan = () => {
                                 <div className="card-body p-sm-4">
                                     {/* 1 */}
                                     <div className="col-12">
-                                        <h3>Tugas</h3>
+                                        <h4>Tugas</h4>
                                         <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant
                                             private blushes removed an in equally totally if. Delivered dejection necessary
                                             objection do Mr prevailed. Mr feeling does chiefly cordial in do.
@@ -20,8 +28,8 @@ const Penugasan = () => {
 
                                     </div>
                                     {/* 2 */}
-                                    <div className="col-12">
-                                        <h2>Submission status</h2>
+                                    <div className="col-12 mt-4">
+                                        <h3>Submission status</h3>
                                         <div class="table-responsive">
                                             <table class="table table-striped table-hover">
                                                 <tbody>
@@ -47,7 +55,7 @@ const Penugasan = () => {
                                                     </tr>
                                                     <tr>
                                                         <th>File submissions </th>
-                                                        <td>namaFile.png </td>
+                                                        <td>{file}</td>
                                                     </tr>
                                                 </tbody>
 
@@ -55,18 +63,31 @@ const Penugasan = () => {
                                         </div>
                                     </div>
 
-                                    <div className="col-12">
-                                        <div class="input-group mb-3 mt-4">
-                                            <input type="file" class="form-control" id="inputGroupFile01" />
-                                            <label class="input-group-text">file</label>
+                                    {/*  Upload image START */}
+                                    <div class="col-12 mt-4">
+                                        <div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
+                                            {/* <!-- Image --> */}
+                                            <img src="../assets/images/element/gallery.svg" class="h-50px" alt="uploadfile" />
+                                            <div>
+                                                <h6 class="my-2">Upload tugas disini<a href="#!" class="text-primary"> Browse</a></h6>
+                                                <label style={{ cursor: "pointer" }}>
+                                                    <span>
+                                                        <input onChange={handleFileChange} class="form-control stretched-link" type="file" name="my-image" id="image" />
+                                                    </span>
+                                                </label>
+                                                <p class="small mb-0 mt-2"><b>Note:</b> Pastikan berkas sudah sesuai dengan ketentuan tugas submission</p>
+                                            </div>
                                         </div>
                                     </div>
+                                    {/* <!-- Upload image END --> */}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
             </main>
+
+
         </>
 
 
