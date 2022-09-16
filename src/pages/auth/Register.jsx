@@ -74,8 +74,8 @@ function Register() {
                 className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
                 <div className="p-3 p-lg-5">
                   <div className="text-center">
-                    <h2 className="fw-bold">Welcome to our largest community</h2>
-                    <p className="mb-0 h6 fw-light">Let's learn something new today!</p>
+                    <h2 className="fw-bold">Selamat datang di Kampus Gratis</h2>
+                    <p className="mb-0 h6 fw-light">Daftarkan dirimu dan dapatkan materi yang kamu butuhkan di Kampus Gratis!</p>
                   </div>
                   <img src="assets/images/element/02.svg" className="mt-5" alt="Kampus Gratis" />
                 </div>
@@ -84,8 +84,8 @@ function Register() {
                 <div className="row my-5">
                   <div className="col-sm-10 col-xl-8 m-auto">
                     <img src="assets/images/element/03.svg" className="h-40px mb-2" alt="Kampus Gratis" />
-                    <h2>Sign up for your account!</h2>
-                    <p className="lead mb-4">Nice to see you! Please Sign up with your account.</p>
+                    <h2>Daftarkan Akun Kamu!</h2>
+                    <p className="lead mb-4">Senang bertemu dengan kamu! Silakan daftar diri-mu.</p>
                     <form onSubmit={onFormSubmit}>
                       <div className="mb-4">
                         <label htmlFor="input-email-address" className="form-label">Alamat Email *</label>

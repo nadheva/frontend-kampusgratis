@@ -41,9 +41,6 @@ const BannerProfile = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="mt-2 mt-sm-0">
-                    <a href="student-course-list.html" className="btn btn-outline-primary mb-0">View my courses</a>
-                  </div>
                 </div>
               </div>
             </div>
