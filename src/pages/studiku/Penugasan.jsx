@@ -30,8 +30,8 @@ const Penugasan = () => {
                                     {/* 2 */}
                                     <div className="col-12 mt-4">
                                         <h3>Submission status</h3>
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-hover">
+                                        <div className="table-responsive">
+                                            <table className="table table-striped table-hover">
                                                 <tbody>
                                                     <tr>
                                                         <th>Submission status</th>
@@ -64,18 +64,18 @@ const Penugasan = () => {
                                     </div>
 
                                     {/*  Upload image START */}
-                                    <div class="col-12 mt-4">
-                                        <div class="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
+                                    <div className="col-12 mt-4">
+                                        <div className="text-center justify-content-center align-items-center p-4 p-sm-5 border border-2 border-dashed position-relative rounded-3">
                                             {/* <!-- Image --> */}
-                                            <img src="../assets/images/element/gallery.svg" class="h-50px" alt="uploadfile" />
+                                            <img src="../assets/images/element/gallery.svg" className="h-50px" alt="uploadfile" />
                                             <div>
-                                                <h6 class="my-2">Upload tugas disini<a href="#!" class="text-primary"> Browse</a></h6>
+                                                <h6 className="my-2">Upload tugas disini<a href="#!" className="text-primary"> Browse</a></h6>
                                                 <label style={{ cursor: "pointer" }}>
                                                     <span>
-                                                        <input onChange={handleFileChange} class="form-control stretched-link" type="file" name="my-image" id="image" />
+                                                        <input onChange={handleFileChange} className="form-control stretched-link" type="file" name="my-image" id="image" />
                                                     </span>
                                                 </label>
-                                                <p class="small mb-0 mt-2"><b>Note:</b> Pastikan berkas sudah sesuai dengan ketentuan tugas submission</p>
+                                                <p className="small mb-0 mt-2"><b>Note:</b> Pastikan berkas sudah sesuai dengan ketentuan tugas submission</p>
                                             </div>
                                         </div>
                                     </div>
