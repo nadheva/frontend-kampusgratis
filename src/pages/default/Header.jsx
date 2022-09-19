@@ -1,8 +1,9 @@
 import React from 'react';
-import { useNavigate, Link, NavLink } from 'react-router-dom';
+import { useNavigate, Link, NavLink, useLocation } from 'react-router-dom';
 import { reset } from '../../features/auth/authSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");
@@ -14,6 +15,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const onLogout = () => {
     auth.signOut();
@@ -23,7 +25,8 @@ const Header = () => {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
 
-    navigate('/');
+    if (location.pathname != '/') navigate('/');
+    else window.location.reload();
   }
 
   const { user } = useSelector(
@@ -79,6 +82,12 @@ const Header = () => {
                     <NavLink className="dropdown-item" to="/dashboard">
                       <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
                       Dashboard
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className="dropdown-item" to="/administrasi">
+                      <i className="bi bi-card-list fa-fw me-2"></i>
+                      Administrasi
                     </NavLink>
                   </li>
                   <li>

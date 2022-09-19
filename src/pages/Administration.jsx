@@ -1,12 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 import Banner from '../components/Account/Banner';
 import Sidebar from '../components/Account/Sidebar';
-import Form from '../components/Account/Form';
-// import LinkedAccount from '../components/Profile/LinkedAccount';
-// import UpdatePassword from '../components/Profile/UpdatePassword';
 
-const Profile = () => {
+const Administration = () => {
   return (
     <>
       <Banner />
@@ -15,7 +12,7 @@ const Profile = () => {
           <div className="row">
             <Sidebar />
             <div className="col-xl-9">
-              <Form />
+
             </div>
           </div>
         </div>
@@ -24,4 +21,4 @@ const Profile = () => {
   )
 }
 
-export default Profile;
+export default Administration

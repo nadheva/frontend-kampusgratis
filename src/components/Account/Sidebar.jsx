@@ -43,8 +43,15 @@ const SidebarProfile = () => {
           <div className="offcanvas-body p-3 p-xl-0">
             <div className="bg-dark border rounded-3 pb-0 p-3 w-100">
               <div className="list-group list-group-dark list-group-borderless">
-                <NavLink className="list-group-item" to="/dashboard">
+                <NavLink
+                  className="list-group-item"
+                  to="/dashboard">
                   <i className="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
+                </NavLink>
+                <NavLink
+                  className="list-group-item"
+                  to="/administrasi">
+                  <i className="bi bi-card-list fa-fw me-2"></i>Administrasi
                 </NavLink>
                 <NavLink
                   className="list-group-item"

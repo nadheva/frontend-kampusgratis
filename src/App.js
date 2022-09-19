@@ -19,6 +19,7 @@ import Footer from './pages/default/Footer';
 import MyStudy from './pages/my-study/Main';
 
 import PageNotFound from './pages/default/PageNotFound';
+import Administration from './pages/Administration';
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
             <Footer />
           </>} />
 
-          {/* Private Page */}
+          {/* Open Private Page */}
           <Route path='/dashboard' element={<PrivateRoute />}>
             <Route path='/dashboard' element={<>
               <Header />
@@ -52,7 +53,14 @@ function App() {
               <Footer />
             </>} />
           </Route>
-          {/* Private Page */}
+
+          <Route path='/administrasi' element={<><Header /><PrivateRoute /></>}>
+            <Route path='/administrasi' element={<>
+              <Administration />
+              <Footer />
+            </>} />
+          </Route>
+          {/* Close Private Page */}
 
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />

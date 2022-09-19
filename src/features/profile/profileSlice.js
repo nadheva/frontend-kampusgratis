@@ -22,7 +22,7 @@ export const getMe = createAsyncThunk(
 
       const { data } = await profileService.getMe(token);
 
-      return { token, user: data };
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -59,8 +59,7 @@ export const profileSlice = createSlice({
       .addCase(getMe.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.token = action.payload.token;
-        state.user = action.payload.user;
+        state.user = action.payload;
       })
       .addCase(getMe.rejected, (state, action) => {
         state.isLoading = false;

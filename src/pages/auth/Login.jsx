@@ -42,7 +42,7 @@ function Login() {
       toast.error(message);
     }
 
-    if (isSuccess || user) {
+    if (isSuccess && user) {
       navigate('/');
 
       toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
@@ -70,7 +70,6 @@ function Login() {
 
   const onLoginWithGoogle = (e) => {
     e.preventDefault();
-
     dispatch(loginWithGoogle());
   }
 

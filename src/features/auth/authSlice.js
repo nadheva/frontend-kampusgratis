@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from 'firebase/auth';
 import authService from './authService';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import profileService from '../profile/profileService';
 
 const token = localStorage.getItem('token');
 
@@ -54,9 +55,7 @@ export const loginWithGoogle = createAsyncThunk(
       const token = await auth.currentUser.getIdToken();
       await authService.googleValidate(token);
 
-      const { data } = await authService.getMe(token);
-
-      return { token, user: data };
+      return token;
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -112,8 +111,7 @@ export const authSlice = createSlice({
       .addCase(loginWithGoogle.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.token = action.payload;
       })
       .addCase(loginWithGoogle.rejected, (state, action) => {
         state.isLoading = false;
