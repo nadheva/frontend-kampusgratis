@@ -8,26 +8,17 @@ const RightSidebar = () => {
                     <div className="col-md-6 col-xl-12">
 
                         <div className="card card-body shadow  p-4">
-
-                            <div className="mt-3 d-grid">
-                                <a href=" " className="btn btn-light rounded-4 fs-4 py-2 fw-bold">TUGAS </a>
-                                <a href=" " className="btn btn-light rounded-4 mt-2">Quizz </a>
-                            </div>
-
-                            <hr />
-
-
                             <h5 className="mb-3">This course includes</h5>
                             <ul className="list-group list-group-borderless border-0">
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-book-open "></i>Lectures</span>
-                                    <span className="">30</span>
+                                    <span className="">2</span>
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
                                         className="fas fa-fw fa-clock "></i>Duration</span>
-                                    <span className="">4h 50m</span>
+                                    <span className="">2 jam durasi belajar</span>
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
@@ -36,8 +27,13 @@ const RightSidebar = () => {
                                 </li>
                                 <li className="list-group-item px-0 d-flex justify-content-between">
                                     <span className="h6 fw-light mb-0"><i
-                                        className="fas fa-fw fa-user-clock"></i>Deadline</span>
-                                    <span className="">Nov 30 2021</span>
+                                        className="fas fa-fw fa-user-clock"></i>Akses</span>
+                                    <span className="">Akses online selamanya</span>
+                                </li>
+                                <li className="list-group-item px-0 d-flex justify-content-between">
+                                    <span className="h6 fw-light mb-0"><i
+                                        className="fa fa-fw fa-bell cursor-pointer"></i>Forum</span>
+                                    <span className="">Forum Diskusi</span>
                                 </li>
                             </ul>
 
