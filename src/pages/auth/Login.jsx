@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, loginWithGoogle, reset } from "../../features/auth/authSlice";
 import { toast } from "react-toastify";
 import useEffectOnce from "../../helpers/useEffectOnce";
+import { getMe } from '../../features/profile/profileSlice';
 
 function Login() {
   const [loginData, setLoginData] = useState({
-    email: "",
-    password: "",
+    email: '', password: ''
   });
 
   const { email, password } = loginData;
@@ -16,8 +16,12 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
+  const { token, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
+  );
+
+  const { user } = useSelector(
+    (state) => state.profile
   );
 
   useEffectOnce(() => {
@@ -26,8 +30,11 @@ function Login() {
 
   useEffect(() => {
     if (!email || !password) {
-      if (isLoading)
-        toast.error("Invalid combination Email address and Password.");
+      if (isLoading) toast.error("Invalid combination Email address and Password.");
+    }
+
+    if (token) {
+      dispatch(getMe());
     }
 
     if (isError) {
@@ -35,34 +42,37 @@ function Login() {
       toast.error(message);
     }
 
-    if (isSuccess || user) {
-      navigate("/home");
+    if (isSuccess && user) {
+      navigate('/');
+
+      toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
     }
+
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   const onFormChange = (e) => {
     setLoginData((prevState) => ({
       ...prevState,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
-  };
+  }
 
   const onFormSubmit = (e) => {
     e.preventDefault();
 
     const userData = {
       email,
-      password,
+      password
     };
 
     dispatch(login(userData));
-  };
+  }
 
   const onLoginWithGoogle = (e) => {
     e.preventDefault();
 
     dispatch(loginWithGoogle());
-  };
+  }
 
   return (
     <>
@@ -91,14 +101,14 @@ function Login() {
                 <div className="row my-5">
                   <div className="col-sm-10 col-xl-8 m-auto text">
                     <div className="text-center">
-                    <Link class="me-0" to="/">
+                    <Link className="me-0" to="/">
                       <img
-                        class="light-mode-item h-40px"
+                        className="light-mode-item h-40px"
                         src="assets/images/logo-kampus-gratis.png"
                         alt="Kampus Gratis"
                       />
                       <img
-                        class="dark-mode-item h-40px"
+                        className="dark-mode-item h-40px"
                         src="assets/images/logo-kampus-gratis.png"
                         alt="Kampus Gratis"
                       />

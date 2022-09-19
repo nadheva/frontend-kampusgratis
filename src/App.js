@@ -16,7 +16,7 @@ import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
-import Home from "./pages/studiku/Home";
+import Home from "./pages/landing-page/Categories";
 import HomeStudiku from "./pages/studiku/HomeStudiku";
 
 import VidioPlayer from "./pages/studiku/VidioPlayer";
@@ -25,8 +25,9 @@ import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
-import Manage_Course from "./pages/instructor/Manage_Course"
+import Manage_Course from "./pages/instructor/Manage_Course";
 import Footer from "./pages/default/Footer";
+import Categories from "./pages/landing-page/Categories";
 
 function App() {
   return (
@@ -44,30 +45,40 @@ function App() {
               </>
             }
           />
+
           <Route path="/dashboard" element={<PrivateRoute />}>
             <Route path="/dashboard" element={<>Hello</>} />
           </Route>
 
           <Route path="/profile" element={<PrivateRoute />}>
-            <Route path="/profile" element={<Profile />} />
-          </Route>
-
-          <Route path="/home" element={<PrivateRoute />}>
             <Route
-              path="/home"
+              path="/profile"
               element={
                 <>
                   <Header />
-                  <Home />
+                  <Profile />
                   <Footer />
                 </>
               }
             />
           </Route>
 
-          <Route path="/studiku" element={<PrivateRoute />}>
+          <Route path="/kategori" element={<PrivateRoute />}>
             <Route
-              path="/studiku"
+              path="/kategori"
+              element={
+                <>
+                  <Header />
+                  <Categories />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/studi-ku" element={<PrivateRoute />}>
+            <Route
+              path="/studi-ku"
               element={
                 <>
                   <Header />

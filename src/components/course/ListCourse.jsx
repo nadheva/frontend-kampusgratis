@@ -4,14 +4,14 @@ const ListCourse = () => {
   return (
     <div className="card border bg-transparent rounded-3">
       <div className="card-header bg-transparent border-bottom">
-        <div class="col d-md-flex justify-content-between align-items-center mt-2 mb-2">
+        <div className="col d-md-flex justify-content-between align-items-center mt-2 mb-2">
           <div>
 		  <h3 className="mb-0">My Courses List</h3>
           </div>
-          <div class="d-flex align-items-center mt-2 mt-md-0">
+          <div className="d-flex align-items-center mt-2 mt-md-0">
             <a
               href="instructor-create-course.html"
-              class="btn btn-success mb-0"
+              className="btn btn-success mb-0"
             >
               Create a course
             </a>
