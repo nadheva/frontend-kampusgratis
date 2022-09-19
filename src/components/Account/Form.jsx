@@ -7,19 +7,31 @@ import useEffectOnce from '../../helpers/useEffectOnce';
 import { toast } from 'react-toastify';
 
 const FormEdit = () => {
+  const genderOptions = [
+    { value: '0', label: 'Tidak memberi tahu' },
+    { value: '1', label: 'Laki-laki' },
+    { value: '2', label: 'Perempuan' }
+  ];
+
+  const [isLoaded, setIsLoaded] = useState(false);
   const [profileData, setProfileData] = useState({
     full_name: '',
-    gender: ''
+    gender: 0,
+    phone: ''
   });
 
   useEffectOnce(() => {
     dispatch(getMe());
   });
 
-  const { full_name, gender } = profileData;
+  const { full_name, gender, phone, username } = profileData;
 
-  const { user, token, isLoading, isError, isSuccess, message } = useSelector(
+  const { token } = useSelector(
     (state) => state.auth
+  );
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.profile
   );
 
   const navigate = useNavigate();
@@ -34,13 +46,18 @@ const FormEdit = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+    setIsLoaded(false);
     dispatch(updateProfile({ data: profileData, token }));
   }
 
   useEffect(() => {
+    setIsLoaded(true);
+
     if (user) setProfileData({
       full_name: user.full_name,
-      gender: user.gender
+      phone: user.phone,
+      gender: user.gender,
+      username: user.username
     });
 
     if (isError) {
@@ -71,7 +88,7 @@ const FormEdit = () => {
                   <img
                     id="uploadfile-1-preview"
                     className="avatar-img rounded-circle border border-white border-3 shadow"
-                    src="assets/images/avatar/07.jpg"
+                    src={user.display_name != null ? user.display_name : "assets/images/avatar/empty-display-picture.png"}
                     alt=""
                   />
                 </span>
@@ -86,7 +103,7 @@ const FormEdit = () => {
               />
             </div>
           </div>
-          <div className="col-12">
+          <div className="col-6">
             <label className="form-label">Nama Lengkap</label>
             <div className="input-group">
               <input
@@ -99,7 +116,14 @@ const FormEdit = () => {
               />
             </div>
           </div>
-          <div className="col-md-6">
+          <div class="col-md-6">
+            <label class="form-label">Username</label>
+            <div class="input-group">
+              <span class="input-group-text">kampusgratis.com</span>
+              <input type="text" class="form-control" value={username} readOnly />
+            </div>
+          </div>
+          {/* <div className="col-md-6">
             <label className="form-label">Alamat Email</label>
             <input
               className="form-control"
@@ -108,18 +132,28 @@ const FormEdit = () => {
               placeholder="Alamat Email"
               readOnly
             />
-          </div>
+          </div> */}
           <div className="col-md-6">
-            <label className="form-label">Phone number</label>
+            <label className="form-label">Nomor Handphone</label>
             <input
               type="text"
               className="form-control"
-              value="1234567890"
-              placeholder="Phone number"
+              name="phone"
+              value={phone}
+              onChange={onFormChange}
+              placeholder="Nomor Handphone"
             />
           </div>
+          <div className="col-md-6">
+            <label className="form-label">Jenis Kelamin</label>
+            <select className="form-select" onChange={onFormChange} name="gender" value={gender}>
+              {genderOptions.map(option => (
+                <option key={option.value} value={option.value} >{option.label}</option>
+              ))}
+            </select>
+          </div>
           <div className="d-sm-flex justify-content-end">
-            {isLoading ? (
+            {isLoading && !isLoaded ? (
               <button type="submit" className="btn btn-primary mb-0" disabled={isLoading}>
                 <span className="spinner-border spinner-border-sm"></span>&nbsp;
                 Menyimpan Perubahan ...

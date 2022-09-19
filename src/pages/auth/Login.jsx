@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, loginWithGoogle, reset } from '../../features/auth/authSlice';
 import { toast } from 'react-toastify';
 import useEffectOnce from '../../helpers/useEffectOnce';
+import { getMe } from '../../features/profile/profileSlice';
 
 function Login() {
   const [loginData, setLoginData] = useState({
@@ -15,8 +16,12 @@ function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
+  const { token, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
+  );
+
+  const { user } = useSelector(
+    (state) => state.profile
   );
 
   useEffectOnce(() => {
@@ -26,6 +31,10 @@ function Login() {
   useEffect(() => {
     if (!email || !password) {
       if (isLoading) toast.error("Invalid combination Email address and Password.");
+    }
+
+    if (token) {
+      dispatch(getMe());
     }
 
     if (isError) {

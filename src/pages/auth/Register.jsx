@@ -16,8 +16,12 @@ function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { user, token, isLoading, isError, isSuccess, message } = useSelector(
+  const { token, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
+  );
+
+  const { user } = useSelector(
+    (state) => state.profile
   );
 
   const onFormChange = (e) => {

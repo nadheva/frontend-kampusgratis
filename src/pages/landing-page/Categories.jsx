@@ -44,7 +44,7 @@ const Categories = () => {
           </div>
           <div className="row g-4">
             <div className="col-sm-6 col-md-4 col-xl-3">
-              <div className="card card-body bg-success bg-opacity-10 text-c`+enter position-relative btn-transition p-4">
+              <div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
                 <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
                   <img loading="lazy" src="assets/images/element/instructor-course.svg" alt="x" /></div>
                 <h5 className="mb-2"><Link to="/studi-ku" className="stretched-link">Studi-Ku</Link></h5>

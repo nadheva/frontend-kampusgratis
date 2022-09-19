@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from 'react-redux';
 
 const BannerProfile = () => {
-  const { user, token, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
+  const { user } = useSelector(
+    (state) => state.profile
   );
 
   return (
@@ -19,9 +19,9 @@ const BannerProfile = () => {
               <div className="row d-sm-flex justify-sm-content-between mt-2 mt-md-0">
                 <div className="col-auto">
                   <div className="avatar avatar-xxl position-relative mt-n3">
-                    <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="" />
+                    <img className="avatar-img rounded-circle border border-white border-3 shadow" src={user.display_name != null ? user.display_name : "assets/images/avatar/empty-display-picture.png"} alt={user.full_name} />
                     <span className="badge bg-success text-white rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">
-                      Guest
+                      {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
                     </span>
                   </div>
                 </div>
