@@ -35,6 +35,8 @@ function Login() {
 
     if (isSuccess || user) {
       navigate('/');
+
+      toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
     }
 
   }, [isError, isSuccess, user, message, navigate, dispatch]);

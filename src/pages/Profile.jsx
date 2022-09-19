@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Header from '../pages/default/Header';
-import Banner from '../components/Profile/Banner';
-import Sidebar from '../components/Profile/Sidebar';
-import Form from '../components/Profile/Form';
+import Banner from '../components/Account/Banner';
+import Sidebar from '../components/Account/Sidebar';
+import Form from '../components/Account/Form';
 // import LinkedAccount from '../components/Profile/LinkedAccount';
 // import UpdatePassword from '../components/Profile/UpdatePassword';
 

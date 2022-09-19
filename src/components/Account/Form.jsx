@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateProfile, getMe } from '../../features/auth/authSlice';
+import { updateProfile, getMe } from '../../features/profile/profileSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import { toast } from 'react-toastify';
 
@@ -55,12 +55,12 @@ const FormEdit = () => {
   return (
     <div className="card border rounded-3">
       <div className="card-header border-bottom">
-        <h3 className="card-header-title mb-0">Ubah Profile</h3>
+        <h3 className="card-header-title mb-0">Ubah Profil</h3>
       </div>
       <div className="card-body">
         <form className="row g-4" onSubmit={onFormSubmit}>
           <div className="col-12 justify-content-center align-items-center">
-            <label className="form-label">Display Picture</label>
+            <label className="form-label">Tampilan Foto</label>
             <div className="d-flex align-items-center">
               <label
                 className="position-relative me-4"
@@ -119,9 +119,16 @@ const FormEdit = () => {
             />
           </div>
           <div className="d-sm-flex justify-content-end">
-            <button type="submit" className="btn btn-primary mb-0">
-              Simpan Perubahan
-            </button>
+            {isLoading ? (
+              <button type="submit" className="btn btn-primary mb-0" disabled={isLoading}>
+                <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                Menyimpan Perubahan ...
+              </button>
+            ) : (
+              <button type="submit" className="btn btn-primary mb-0">
+                Simpan Perubahan
+              </button>
+            )}
           </div>
         </form>
       </div>

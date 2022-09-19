@@ -20,7 +20,9 @@ const BannerProfile = () => {
                 <div className="col-auto">
                   <div className="avatar avatar-xxl position-relative mt-n3">
                     <img className="avatar-img rounded-circle border border-white border-3 shadow" src="assets/images/avatar/09.jpg" alt="" />
-                    <span className="badge bg-success text-white rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">Pro</span>
+                    <span className="badge bg-success text-white rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">
+                      Guest
+                    </span>
                   </div>
                 </div>
                 <div className="col d-sm-flex justify-content-between align-items-center">

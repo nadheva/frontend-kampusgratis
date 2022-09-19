@@ -3,11 +3,9 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPasswor
 import authService from './authService';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 
-const user = JSON.parse(localStorage.getItem('user'));
 const token = localStorage.getItem('token');
 
 const initialState = {
-  user: user ? user : null,
   token: token ? token : null,
   isError: false,
   isSuccess: false,
@@ -26,22 +24,6 @@ export const register = createAsyncThunk(
   }
 )
 
-export const getMe = createAsyncThunk(
-  'auth/get-me',
-  async (_, thunkAPI) => {
-    try {
-      const auth = getAuth();
-      const token = await auth.currentUser.getIdToken();
-
-      const { data } = await authService.getMe(token);
-
-      return { token, user: data };
-    } catch (error) {
-      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
-    }
-  }
-)
-
 export const login = createAsyncThunk(
   'auth/login-with-email',
   async (loginData, thunkAPI) => {
@@ -54,17 +36,6 @@ export const login = createAsyncThunk(
       const { data } = await authService.getMe(token);
 
       return { token, user: data };
-    } catch (error) {
-      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
-    }
-  }
-)
-
-export const updateProfile = createAsyncThunk(
-  'auth/update-profile',
-  async (_, thunkAPI) => {
-    try {
-      return await authService.updateProfile(_.data, _.token);
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -101,7 +72,6 @@ export const authSlice = createSlice({
       state.isError = false;
       state.isSuccess = false;
       state.message = '';
-      state.user = null;
       state.token = null;
     },
   },
@@ -119,7 +89,6 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.user = null;
         state.token = null;
       })
       .addCase(login.pending, (state) => {
@@ -129,25 +98,8 @@ export const authSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.token = action.payload.token;
-        state.user = action.payload.user;
       })
       .addCase(login.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
-        state.user = null;
-        state.token = null;
-      })
-      .addCase(getMe.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(getMe.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.token = action.payload.token;
-        state.user = action.payload.user;
-      })
-      .addCase(getMe.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
@@ -169,20 +121,6 @@ export const authSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
         state.user = null;
-      })
-      .addCase(updateProfile.pending, (state) => {
-        state.isLoading = true;
-      })
-      .addCase(updateProfile.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.isSuccess = true;
-        state.message = "Profile Saved.";
-        state.user = action.payload.data;
-      })
-      .addCase(updateProfile.rejected, (state, action) => {
-        state.isLoading = false;
-        state.isError = true;
-        state.message = action.payload;
       })
   }
 });

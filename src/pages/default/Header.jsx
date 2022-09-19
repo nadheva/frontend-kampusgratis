@@ -76,13 +76,23 @@ const Header = () => {
                     <hr />
                   </li>
                   <li>
-                    <NavLink className="dropdown-item" to="/profil">
-                      <i className="bi bi-person fa-fw me-2"></i>
-                      Ubah Profil
+                    <NavLink className="dropdown-item" to="/dashboard">
+                      <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
+                      Dashboard
                     </NavLink>
                   </li>
-                  <li><a className="dropdown-item" href="#"><i className="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
-                  <li><a className="dropdown-item" href="#"><i className="bi bi-info-circle fa-fw me-2"></i>Help</a></li>
+                  <li>
+                    <NavLink className="dropdown-item" to="/profil">
+                      <i className="bi bi-person fa-fw me-2"></i>
+                      Profil
+                    </NavLink>
+                  </li>
+                  {/* <li>
+                    <a className="dropdown-item" href="#">
+                      <i className="bi bi-info-circle fa-fw me-2"></i>
+                      Help
+                    </a>
+                  </li> */}
                   <li>
                     <button className="dropdown-item bg-danger-soft-hover" onClick={onLogout}>
                       <i className="bi bi-power fa-fw me-2"></i>
@@ -469,7 +479,7 @@ const Header = () => {
   //                   <hr />
   //                 </li>
   //                 <li>
-  //                   <Link className="dropdown-item" to="profile"><i className="bi bi-person fa-fw me-2"></i>Edit Profile</Link>
+  //                   <Link className="dropdown-item" to="profil"><i className="bi bi-person fa-fw me-2"></i>Profil</Link>
   //                 </li>
   //                 <li><a className="dropdown-item" href="#"><i className="bi bi-gear fa-fw me-2"></i>Account Settings</a></li>
   //                 <li><a className="dropdown-item" href="#"><i className="bi bi-info-circle fa-fw me-2"></i>Help</a></li>

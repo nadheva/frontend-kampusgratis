@@ -27,46 +27,9 @@ const googleValidate = async (token) => {
   return response.data;
 }
 
-const getMe = async (token) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }
-
-  const response = await axios.get(API_URL + 'profile/me', config);
-
-  if (response.data) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(response.data.data))
-  }
-
-  return response.data;
-}
-
-const updateProfile = async (body, token) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }
-
-  const response = await axios.put(API_URL + 'profile/me', body, config);
-
-  if (response.data) {
-    localStorage.setItem('user', JSON.stringify(response.data.data))
-  }
-
-  return response.data;
-}
-
 const authService = {
   googleValidate,
-  register,
-  getMe,
-  updateProfile
+  register
 }
 
 export default authService;

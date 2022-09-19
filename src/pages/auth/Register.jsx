@@ -50,13 +50,21 @@ function Register() {
   });
 
   useEffect(() => {
-    if (isError) {
+    if (password != confirm_password || password.length != confirm_password.length) {
+      toast.error("Password harus sama dengan Konfirmasi Password.");
+    } else if (isError) {
       toast.error(message);
+
       dispatch(reset());
+    }
+
+    if (isSuccess || user) {
+      navigate('/login');
     }
 
     if (isSuccess) {
       toast.success(message);
+
       setRegisterData({
         full_name: '', email: '',
         password: '', confirm_password: ''

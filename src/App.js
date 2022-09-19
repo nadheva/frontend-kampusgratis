@@ -12,31 +12,62 @@ import Register from './pages/auth/Register';
 import Profile from './pages/Profile';
 
 import Main from './pages/landing-page/Main';
+import Dashboard from './pages/Dashboard';
 import Categories from './pages/landing-page/Categories';
 import Footer from './pages/default/Footer';
+
+import MyStudy from './pages/my-study/Main';
+
+import PageNotFound from './pages/default/PageNotFound';
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/' exact element={<><Header /><Main /><Footer /></>} />
-          <Route path='/kategori' exact element={<><Header /><Categories /><Footer /></>} />
+          <Route path='/' exact element={<>
+            <Header />
+            <Main />
+            <Footer />
+          </>} />
+
+          <Route path='/kategori' exact element={<>
+            <Header />
+            <Categories />
+            <Footer />
+          </>} />
 
           {/* Private Page */}
           <Route path='/dashboard' element={<PrivateRoute />}>
-            <Route path='/dashboard' element={<>Hello</>} />
+            <Route path='/dashboard' element={<>
+              <Header />
+              <Dashboard />
+              <Footer />
+            </>} />
           </Route>
 
-          <Route path='/profil' element={<PrivateRoute />}>
-            <Route path='/profil' element={<><Header /><Profile /></>} />
+          <Route path='/profil' element={<><Header /><PrivateRoute /></>}>
+            <Route path='/profil' element={<>
+              <Profile />
+              <Footer />
+            </>} />
           </Route>
           {/* Private Page */}
-        </Routes>
 
-        <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+
+          <Route path='/studi-ku' element={<>
+            <Header />
+            <MyStudy />
+            <Footer />
+          </>} />
+
+          <Route path="/*" element={<>
+            <Header />
+            <PageNotFound />
+            <Footer />
+          </>} />
         </Routes>
       </Router>
 

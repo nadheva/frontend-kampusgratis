@@ -46,17 +46,14 @@ const SidebarProfile = () => {
                 <NavLink className="list-group-item" to="/dashboard">
                   <i className="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
                 </NavLink>
-                <a className="list-group-item" href="instructor-manage-course.html">
-                  <i className="bi bi-basket fa-fw me-2"></i>My Courses
-                </a>
                 <NavLink
                   className="list-group-item"
                   to="/profil">
-                  <i className="bi bi-pencil-square fa-fw me-2"></i>Edit Profile
+                  <i className="bi bi-person fa-fw me-2"></i>Profil
                 </NavLink>
                 <button
                   className="list-group-item text-danger bg-danger-soft-hover" onClick={onLogout}>
-                  <i className="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out
+                  <i className="fas fa-sign-out-alt fa-fw me-2"></i>Keluar
                 </button>
               </div>
             </div>
