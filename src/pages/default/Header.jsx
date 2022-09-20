@@ -1,9 +1,10 @@
 import React from 'react';
 import { useNavigate, Link, NavLink, useLocation } from 'react-router-dom';
-import { reset } from '../../features/auth/authSlice';
+import { reset as resetUser } from '../../features/profile/profileSlice';
+import { reset as resetToken } from '../../features/profile/profileSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { toast } from 'react-toastify';
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");
@@ -20,13 +21,16 @@ const Header = () => {
   const onLogout = () => {
     auth.signOut();
 
-    dispatch(reset());
-
     localStorage.removeItem('user');
     localStorage.removeItem('token');
 
+    dispatch(resetUser());
+    dispatch(resetToken());
+
+    toast.info("Kamu berhasil keluar.");
+
     if (location.pathname !== '/') navigate('/');
-    else window.location.reload();
+    // else window.location.reload();
   }
 
   const { user } = useSelector(
@@ -85,17 +89,17 @@ const Header = () => {
                     </NavLink>
                   </li>
                   <li>
+                    <NavLink className="dropdown-item" to="/administrasi">
+                      <i className="bi bi-card-list fa-fw me-2"></i>
+                      Administrasi
+                    </NavLink>
+                  </li>
+                  <li>
                     <NavLink className="dropdown-item" to="/profile">
                       <i className="bi bi-person fa-fw me-2"></i>
                       Profil
                     </NavLink>
                   </li>
-                  {/* <li>
-                    <a className="dropdown-item" href="#">
-                      <i className="bi bi-info-circle fa-fw me-2"></i>
-                      Help
-                    </a>
-                  </li> */}
                   <li>
                     <button className="dropdown-item bg-danger-soft-hover" onClick={onLogout}>
                       <i className="bi bi-power fa-fw me-2"></i>
@@ -110,7 +114,7 @@ const Header = () => {
                       <div className="modeswitch-item">
                         <div className="modeswitch-icon"></div>
                       </div>
-                      <span>Dark mode</span>
+                      <span>Mode Gelap</span>
                     </div>
                   </li>
                 </ul>
@@ -126,7 +130,7 @@ const Header = () => {
         </nav>
       </header>
     </>
-  )
+  );
 }
 
 export default Header;

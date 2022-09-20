@@ -27,6 +27,8 @@ import Penugasan from "./pages/studiku/Penugasan";
 import Manage_Course from "./pages/instructor/Manage_Course";
 import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
+import Administration from "./pages/Administration";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -45,8 +47,21 @@ function App() {
             }
           />
 
-          <Route path="/dashboard" element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<>Hello</>} />
+          {/* Open Private Page */}
+          <Route path='/dashboard' exact element={<PrivateRoute />}>
+            <Route path='/dashboard' element={<>
+              <Header />
+              <Dashboard />
+              <Footer />
+            </>} />
+          </Route>
+
+          <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
+            <Route path='/administrasi' element={<>
+              <Header />
+              <Administration />
+              <Footer />
+            </>} />
           </Route>
 
           <Route path="/profile" element={<PrivateRoute />}>
@@ -62,31 +77,28 @@ function App() {
             />
           </Route>
 
-          <Route path="/kategori" element={<PrivateRoute />}>
-            <Route
-              path="/kategori"
-              element={
-                <>
-                  <Header />
-                  <Categories />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+          <Route
+            path="/kategori"
+            exact
+            element={
+              <>
+                <Header />
+                <Categories />
+                <Footer />
+              </>
+            }
+          />
 
-          <Route path="/studi-ku" element={<PrivateRoute />}>
-            <Route
-              path="/studi-ku"
-              element={
-                <>
-                  <Header />
-                  <HomeStudiku />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+          <Route
+            path="/studi-ku"
+            element={
+              <>
+                <Header />
+                <HomeStudiku />
+                <Footer />
+              </>
+            }
+          />
 
           <Route path="/pertemuan" element={<PrivateRoute />}>
             <Route
