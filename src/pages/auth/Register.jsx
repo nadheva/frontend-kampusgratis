@@ -30,6 +30,10 @@ function Register() {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
+    if (password !== confirm_password && password.length !== confirm_password.length) {
+      return toast.error("Password harus sama dengan Konfirmasi Password.");
+    }
+
     const userData = {
       full_name,
       email,
@@ -51,8 +55,8 @@ function Register() {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
       dispatch(reset());
+      toast.error(message);
     }
 
     if (isSuccess) {
@@ -91,14 +95,14 @@ function Register() {
                 <div className="row my-5">
                   <div className="col-sm-10 col-xl-8 m-auto text">
                     <div className="text-center">
-                    <Link class="me-0" to="/">
+                    <Link className="me-0" to="/">
                       <img
-                        class="light-mode-item h-40px"
+                        className="light-mode-item h-40px"
                         src="assets/images/logo-kampus-gratis.png"
                         alt="Kampus Gratis"
                       />
                       <img
-                        class="dark-mode-item h-40px"
+                        className="dark-mode-item h-40px"
                         src="assets/images/logo-kampus-gratis.png"
                         alt="Kampus Gratis"
                       />

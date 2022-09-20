@@ -1,6 +1,7 @@
 import React from 'react'
 import SidebarProfile from '../../components/Profile/Sidebar'
 import Banner from '../../components/Profile/Banner'
+import MainContent from '../../components/student/mycourse/MainContent'
 
 const MyCourse = () => {
     return (
@@ -10,7 +11,7 @@ const MyCourse = () => {
                 <div className="container">
                     <div className="row">
                         <SidebarProfile />
-                        {/* <MainContent /> */}
+                        <MainContent />
                     </div>
                 </div>
             </section>

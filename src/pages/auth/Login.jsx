@@ -42,7 +42,7 @@ function Login() {
       toast.error(message);
     }
 
-    if (isSuccess && user) {
+    if (isSuccess && token && user) {
       navigate('/');
 
       toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);

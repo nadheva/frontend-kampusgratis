@@ -46,9 +46,9 @@ const SidebarProfile = () => {
                 <NavLink className="list-group-item" to="/dashboard">
                   <i className="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
                 </NavLink>
-                <a className="list-group-item" href="/mycourse">
+                <NavLink className="list-group-item" to="/mycourse">
                   <i className="bi bi-basket fa-fw me-2"></i>My Courses
-                </a>
+                </NavLink>
                 <NavLink
                   className="list-group-item"
                   to="/profile">

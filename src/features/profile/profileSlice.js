@@ -49,6 +49,8 @@ export const profileSlice = createSlice({
       state.isError = false;
       state.isSuccess = false;
       state.message = '';
+      state.user = '';
+      state.token = '';
     },
   },
   extraReducers: (builder) => {
