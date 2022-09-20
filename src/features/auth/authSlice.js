@@ -34,9 +34,7 @@ export const login = createAsyncThunk(
 
       const token = await auth.currentUser.getIdToken();
 
-      const { data } = await authService.getMe(token);
-
-      return { token, user: data };
+      return token;
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -96,7 +94,7 @@ export const authSlice = createSlice({
       .addCase(login.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.token = action.payload.token;
+        state.token = action.payload;
       })
       .addCase(login.rejected, (state, action) => {
         state.isLoading = false;
