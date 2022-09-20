@@ -8,24 +8,24 @@ const CardItem = () => {
                 <img
                     src="assets/images/courses/4by3/02.jpg"
                     className="card-img-top"
-                    alt="course image"
+                    alt="course"
                 />
                 <div className="card-body pb-0">
                     {/* Badge and favorite */}
                     <div className="d-flex justify-content-between mb-2">
                         <a
-                            href="#"
+                            href=" "
                             className="badge bg-success bg-opacity-10 text-success"
                         >
                             Beginner
                         </a>
-                        <a href="#" className="text-danger">
+                        <a href=" " className="text-danger">
                             <i className="fas fa-heart" />
                         </a>
                     </div>
                     {/* Title */}
                     <h5 className="card-title fw-normal">
-                        <a href="#">Graphic Design Masterclass</a>
+                        <a href=" ">Graphic Design Masterclass</a>
                     </h5>
                     <p className="mb-2 text-truncate-2">
                         Rooms oh fully taken by worse do Points afraid but may end Rooms
