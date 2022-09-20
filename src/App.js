@@ -30,6 +30,7 @@ import Categories from "./pages/landing-page/Categories";
 
 // Students
 import StudentDashboard from "./pages/student/StudentDashboard";
+import MyCourse from "./pages/student/MyCourse";
 
 function App() {
   return (
@@ -186,6 +187,18 @@ function App() {
                 <>
                   <Header />
                   <StudentDashboard />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+          <Route path="/mycourse" element={<PrivateRoute />}>
+            <Route
+              path="/mycourse"
+              element={
+                <>
+                  <Header />
+                  <MyCourse />
                   <Footer />
                 </>
               }
