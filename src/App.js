@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import firebase from "./config/firebase";
 import PrivateRoute from "./components/PrivateRoute";
 
 import Header from "./pages/default/Header";
@@ -16,7 +15,6 @@ import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
-import Home from "./pages/landing-page/Categories";
 import HomeStudiku from "./pages/studiku/HomeStudiku";
 
 import VidioPlayer from "./pages/studiku/VidioPlayer";

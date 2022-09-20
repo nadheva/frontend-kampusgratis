@@ -3,7 +3,7 @@ import { useNavigate, Link, NavLink, useLocation } from 'react-router-dom';
 import { reset } from '../../features/auth/authSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");
