@@ -4,7 +4,6 @@ import { reset as resetUser } from '../../features/profile/profileSlice';
 import { reset as resetToken } from '../../features/profile/profileSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 const getFirstName = (fullName) => {
@@ -30,7 +29,7 @@ const Header = () => {
 
     toast.info("Kamu berhasil keluar.");
 
-    if (location.pathname != '/') navigate('/');
+    if (location.pathname !== '/') navigate('/');
     // else window.location.reload();
   }
 
