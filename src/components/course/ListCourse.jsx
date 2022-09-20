@@ -454,7 +454,7 @@ const ListCourse = () => {
           >
             <ul className="pagination pagination-sm pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
               <li className="page-item mb-0">
-                <a className="page-link" href=" " tabindex="-1">
+                <a className="page-link" href=" " tabIndex="-1">
                   <i className="fas fa-angle-left"></i>
                 </a>
               </li>
