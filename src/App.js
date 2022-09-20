@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import PrivateRoute from "./components/PrivateRoute";
+import firebase from "./config/firebase";
 
 import Header from "./pages/default/Header";
 import Login from "./pages/auth/Login";
