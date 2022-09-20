@@ -28,7 +28,11 @@ import Manage_Course from "./pages/instructor/Manage_Course";
 import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
+
+// Students
+import StudentDashboard from "./pages/student/StudentDashboard";
+import MyCourse from "./pages/student/MyCourse";
 
 function App() {
   return (
@@ -46,15 +50,6 @@ function App() {
               </>
             }
           />
-
-          {/* Open Private Page */}
-          <Route path='/dashboard' exact element={<PrivateRoute />}>
-            <Route path='/dashboard' element={<>
-              <Header />
-              <Dashboard />
-              <Footer />
-            </>} />
-          </Route>
 
           <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
             <Route path='/administrasi' element={<>
@@ -185,6 +180,32 @@ function App() {
                 <>
                   <Header />
                   <Manage_Course />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          {/* Students */}
+          <Route path="/dashboard" element={<PrivateRoute />}>
+            <Route
+              path="/dashboard"
+              element={
+                <>
+                  <Header />
+                  <StudentDashboard />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+          <Route path="/mycourse" element={<PrivateRoute />}>
+            <Route
+              path="/mycourse"
+              element={
+                <>
+                  <Header />
+                  <MyCourse />
                   <Footer />
                 </>
               }
