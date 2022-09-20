@@ -34,6 +34,10 @@ function Register() {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
+    if (password != confirm_password && password.length != confirm_password.length) {
+      return toast.error("Password harus sama dengan Konfirmasi Password.");
+    }
+
     const userData = {
       full_name,
       email,
@@ -54,12 +58,9 @@ function Register() {
   });
 
   useEffect(() => {
-    if (password != confirm_password || password.length != confirm_password.length) {
-      toast.error("Password harus sama dengan Konfirmasi Password.");
-    } else if (isError) {
-      toast.error(message);
-
+    if (isError) {
       dispatch(reset());
+      toast.error(message);
     }
 
     if (isSuccess || user) {

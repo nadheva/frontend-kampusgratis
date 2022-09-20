@@ -39,7 +39,7 @@ function App() {
           </>} />
 
           {/* Open Private Page */}
-          <Route path='/dashboard' element={<PrivateRoute />}>
+          <Route path='/dashboard' exact element={<PrivateRoute />}>
             <Route path='/dashboard' element={<>
               <Header />
               <Dashboard />
@@ -47,16 +47,18 @@ function App() {
             </>} />
           </Route>
 
-          <Route path='/profil' element={<><Header /><PrivateRoute /></>}>
-            <Route path='/profil' element={<>
-              <Profile />
+          <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
+            <Route path='/administrasi' element={<>
+              <Header />
+              <Administration />
               <Footer />
             </>} />
           </Route>
 
-          <Route path='/administrasi' element={<><Header /><PrivateRoute /></>}>
-            <Route path='/administrasi' element={<>
-              <Administration />
+          <Route path='/profil' exact element={<><PrivateRoute /></>}>
+            <Route path='/profil' element={<>
+              <Header />
+              <Profile />
               <Footer />
             </>} />
           </Route>
