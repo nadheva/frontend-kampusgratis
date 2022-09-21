@@ -5,7 +5,7 @@ import Sidebar from '../../components/Profile/Sidebar';
 import ListCourse from '../../components/course/ListCourse';
 
 
-const Manage_Course = () => {
+const ManageCourse = () => {
   return (
     <>
       <Banner />
@@ -27,4 +27,4 @@ const Manage_Course = () => {
   )
 }
 
-export default Manage_Course
+export default ManageCourse

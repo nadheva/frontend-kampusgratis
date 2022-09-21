@@ -24,7 +24,7 @@ import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
-import Manage_Course from "./pages/instructor/Manage_Course";
+import ManageCourse from "./pages/instructor/ManageCourse";
 import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
@@ -173,13 +173,13 @@ function App() {
             />
           </Route>
 
-          <Route path="/Manage_Course" element={<PrivateRoute />}>
+          <Route path="/ManageCourse" element={<PrivateRoute />}>
             <Route
-              path="/Manage_Course"
+              path="/ManageCourse"
               element={
                 <>
                   <Header />
-                  <Manage_Course />
+                  <ManageCourse />
                   <Footer />
                 </>
               }
