@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Main = () => {
   return <>
-    <section className="bg-light pb-5">
+    {/* Hero */}
+    <section className="bg-light py-5">
       <div className="container pt-5 mt-0 mt-lg-5">
         <div className="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
           <div className="col-lg-8 text-center mx-auto position-relative">
@@ -129,7 +130,127 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className="row mt-5">
+      </div>
+    </section>
+
+    {/* ======================= Instructor grid START */}
+    <section className="py-5">
+      <div className="container">
+        {/* Title */}
+        <div className="row mb-4">
+          <div className="col-md-8 text-center mx-auto">
+            <h2 className="fs-1">Beberapa Mentor di Kampus Gratis</h2>
+            <p className="mb-0">Ruang terbatas Bergabung secepatnya di Kampus Gratis!</p>
+          </div>
+        </div>
+        {/* Instructor grid */}
+        <div className="row g-4">
+          {/* Card item START */}
+          <div className="col-sm-6 col-lg-4 col-xl-3">
+            <div className="card p-2 shadow h-100">
+              <div className="card-image-scale rounded-3 position-relative">
+                {/* Card Image */}
+                <img
+                  src="assets/images/instructor/pak-kembar.png"
+                  className="card-img"
+                  alt=""
+                />
+              </div>
+              {/* Card body */}
+              <div className="card-body px-2">
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="workshop-detail.html" className="stretched-link">
+                    Build your brand &amp; business
+                  </a>
+                </h5>
+                <h6 className="mb-0 fw-normal">Kembar Cahyono</h6>
+              </div>
+            </div>
+          </div>
+          {/* Card item END */}
+          {/* Card item START */}
+          <div className="col-sm-6 col-lg-4 col-xl-3">
+            <div className="card p-2 shadow h-100">
+              <div className="card-image-scale rounded-3 position-relative">
+                {/* Card Image */}
+                <img
+                  src="assets/images/instructor/pak-alyuhanas.png"
+                  className="card-img"
+                  alt=""
+                />
+              </div>
+              {/* Card body */}
+              <div className="card-body px-2">
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="workshop-detail.html" className="stretched-link">
+                    Master in logo design
+                  </a>
+                </h5>
+                <h6 className="mb-0 fw-normal">Alyuhannas</h6>
+              </div>
+            </div>
+          </div>
+          {/* Card item END */}
+          {/* Card item START */}
+          <div className="col-sm-6 col-lg-4 col-xl-3">
+            <div className="card p-2 shadow h-100">
+              <div className="card-image-scale rounded-3 position-relative">
+                {/* Card Image */}
+                <img
+                  src="assets/images/instructor/pak-apud.png"
+                  className="card-img"
+                  alt=""
+                />
+              </div>
+              {/* Card body */}
+              <div className="card-body px-2">
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="workshop-detail.html" className="stretched-link">
+                    Create brand using vector illustration
+                  </a>
+                </h5>
+                <h6 className="mb-0 fw-normal">Apud Salapudin</h6>
+              </div>
+            </div>
+          </div>
+          {/* Card item END */}
+          {/* Card item START */}
+          <div className="col-sm-6 col-lg-4 col-xl-3">
+            <div className="card p-2 shadow h-100">
+              <div className="card-image-scale rounded-3 position-relative">
+                {/* Card Image */}
+                <img
+                  src="assets/images/instructor/pak-komala.png"
+                  className="card-img"
+                  alt=""
+                />
+              </div>
+              {/* Card body */}
+              <div className="card-body px-2">
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="workshop-detail.html" className="stretched-link">
+                    Develop your marketing skills style
+                  </a>
+                </h5>
+                <h6 className="mb-0 fw-normal">M. Alam</h6>
+              </div>
+            </div>
+          </div>
+          {/* Card item END */}
+        </div>
+      </div>
+    </section>
+    {/* ======================= Instructor grid END */}
+
+
+    {/* Banner */}
+    <section className="py-5">
+      <div className="container">
+        <div className="row">
           <div className="col-12">
             <div className="bg-light p-4 p-sm-5 rounded-3 position-relative overflow-hidden">
               <figure className="position-absolute top-0 start-0 d-none d-lg-block ms-n7">
@@ -152,7 +273,7 @@ const Main = () => {
               </figure>
               <div className="row g-4 justify-content-center align-items-center position-relative">
                 <div className="col-lg-3 text-center text-lg-start ps-0">
-                  <img src="assets/images/element/08.svg" alt="" />
+                  {/* <img src="assets/images/element/08.svg" alt="" /> */}
                 </div>
                 <div className="col-lg-6 text-center">
                   <h3 className="mb-0 mt-2 mb-2">Tujuan pendidikan adalah mengganti pikiran kosong dengan pikiran terbuka.</h3>
@@ -167,74 +288,298 @@ const Main = () => {
         </div>
       </div>
     </section>
-    <section className="bg-light pb-5">
+
+
+    {/* ======================= Testimonials START */}
+    <section className="py-5">
       <div className="container">
-        <div className="row mb-4">
-          <div className="col-md-8 text-center mx-auto">
-            <h2 className="fs-1">Beberapa Mentor di Kampus Gratis</h2>
-            <p className="mb-0">Ruang terbatas. Bergabung secepatnya di Kampus Gratis!</p>
-          </div>
-        </div>
-        <div className="row g-4 mt-4">
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-alyuhanas.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
-                </div>
-              </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Anas</h6>
-              </div>
+        <div className="p-4 rounded-3">
+          {/* Title */}
+          <div className="row mb-4">
+            <div className="col-12 text-center">
+              <h2>Apa Kata Mereka Tentang Kami</h2>
             </div>
           </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-apud.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+          <div className="row">
+            {/* Slide item */}
+            <div className="col-lg-4">
+              <div className="card card-body h-100 bg-light">
+                <div className="d-sm-flex justify-content-between align-items-center mb-3">
+                  {/* Avatar */}
+                  <div className="d-flex align-items-center mb-1 mb-sm-0">
+                    {/* Avatar */}
+                    <div className="avatar avatar-sm">
+                      <img
+                        className="avatar-img rounded-circle"
+                        src="assets/images/avatar/03.jpg"
+                        alt="avatar"
+                      />
+                    </div>
+                    {/* Info */}
+                    <div className="ms-2">
+                      <h6 className="mb-0">Dennis Barrett</h6>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Apud</h6>
+                {/* Content */}
+                <h6 className="fw-normal mb-0">
+                  "Make my life easier and organized conviction For every
+                  delay in they Extremity now strangers contained breakfast"
+                </h6>
               </div>
             </div>
-          </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-kembar.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+            {/* Slide item */}
+            <div className="col-lg-4">
+              <div className="card card-body h-100 bg-light">
+                <div className="d-sm-flex justify-content-between align-items-center mb-3">
+                  {/* Avatar */}
+                  <div className="d-flex align-items-center mb-1 mb-sm-0">
+                    {/* Avatar */}
+                    <div className="avatar avatar-sm">
+                      <img
+                        className="avatar-img rounded-circle"
+                        src="assets/images/avatar/02.jpg"
+                        alt="avatar"
+                      />
+                    </div>
+                    {/* Info */}
+                    <div className="ms-2">
+                      <h6 className="mb-0">Billy Vasquez</h6>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Kembar</h6>
+                {/* Content */}
+                <h6 className="fw-normal mb-0">
+                  "Life easier and organized conviction For every delay in
+                  they Extremity now strangers contained breakfast"
+                </h6>
               </div>
             </div>
-          </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-komala.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+            {/* Slide item */}
+            <div className="col-lg-4">
+              <div className="card card-body h-100 bg-light">
+                <div className="d-sm-flex justify-content-between align-items-center mb-3">
+                  {/* Avatar */}
+                  <div className="d-flex align-items-center mb-1 mb-sm-0">
+                    {/* Avatar */}
+                    <div className="avatar avatar-sm">
+                      <img
+                        className="avatar-img rounded-circle"
+                        src="assets/images/avatar/05.jpg"
+                        alt="avatar"
+                      />
+                    </div>
+                    {/* Info */}
+                    <div className="ms-2">
+                      <h6 className="mb-0">Lori Stevens</h6>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Alam</h6>
+                {/* Content */}
+                <h6 className="fw-normal mb-0">
+                  "Easier and organized conviction For every delay in they
+                  Extremity now strangers contained breakfast makes my life."
+                </h6>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    {/* ======================= Testimonials END */}
+
+
+    {/* ======================= Event START */}
+    <section className="py-5">
+      <div className="container">
+        {/* Title */}
+        <div className="row mb-4">
+          <h2 className="mb-0">Upcoming Events</h2>
+        </div>
+        <div className="row">
+          {/* Card item START */}
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+            <div className="position-relative">
+              <img
+                src="assets/images/courses/4by3/21.jpg"
+                className="card-img"
+                alt="course"
+              />
+              {/* Overlay */}
+              <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+                <div className="w-100 mt-auto">
+                  {/* Category */}
+                  <a href=" " className="badge text-bg-white fs-6 rounded-1">
+                    <i className="far fa-calendar-alt text-orange me-2" />
+                    29 September 2021
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Card body */}
+            <div className="card-body px-2">
+              {/* Title */}
+              <h5 className="card-title">
+                <a href=" ">Global Education Fall Meeting for Everyone</a>
+              </h5>
+              <p className="mb-0 text-truncate-2">
+                Satisfied conveying a dependent contented he gentleman agreeable
+                do be.
+              </p>
+            </div>
+          </div>
+          {/* Card item END */}
+          {/* Card item START */}
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+            <div className="position-relative">
+              <img
+                src="assets/images/courses/4by3/16.jpg"
+                className="card-img"
+                alt="course"
+              />
+              {/* Overlay */}
+              <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+                <div className="w-100 mt-auto">
+                  {/* Category */}
+                  <a href=" " className="badge text-bg-white fs-6 rounded-1">
+                    <i className="far fa-calendar-alt text-orange me-2" />
+                    Tomorrow
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Card body */}
+            <div className="card-body px-2">
+              {/* Title */}
+              <h5 className="card-title">
+                <a href=" ">International Conference on Information Technology</a>
+              </h5>
+              <p className="mb-0 text-truncate-2">
+                Kindness owns whatever betrayed her moreover procured replying for
+                and. Proposal indulged no do.
+              </p>
+            </div>
+          </div>
+          {/* Card item END */}
+          {/* Card item START */}
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+            <div className="position-relative">
+              <img
+                src="assets/images/courses/4by3/18.jpg"
+                className="card-img"
+                alt="course"
+              />
+              {/* Overlay */}
+              <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+                <div className="w-100 mt-auto">
+                  {/* Category */}
+                  <a href=" " className="badge text-bg-white fs-6 rounded-1">
+                    <i className="far fa-calendar-alt text-orange me-2" />2 July
+                    2022
+                  </a>
+                </div>
+              </div>
+            </div>
+            {/* Card body */}
+            <div className="card-body px-2">
+              {/* Title */}
+              <h5 className="card-title">
+                <a href=" ">UK Demo Day 2022</a>
+              </h5>
+              <p className="mb-0 text-truncate-2">
+
+                Points afraid but may end law lasted. Rooms oh fully taken by
+                worse do may end law lasted.
+              </p>
+            </div>
+          </div>
+          {/* Card item END */}
+        </div>
+      </div>
+    </section>
+    {/* ======================= Event END */}
+
+
+    {/* ======================= Action box START */}
+    <section className="py-5">
+      <div className="container position-relative">
+        <div className="row">
+          <div className="col-12">
+            {/* SVG decoration START */}
+            <figure className="position-absolute top-50 start-50 translate-middle ms-2">
+              <svg>
+                <path
+                  className="fill-white opacity-2"
+                  d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"
+                />
+              </svg>
+            </figure>
+            {/* SVG decoration END */}
+            <div className="bg-dark p-4 p-sm-5 rounded-3">
+              <div className="row justify-content-center position-relative">
+                {/* Svg decoration START */}
+                <figure className="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
+                  <svg width="141px" height="141px">
+                    <path d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z" />
+                  </svg>
+                </figure>
+                {/* SVG decoration END */}
+                {/* Action box */}
+                <div className="col-11 position-relative">
+                  <div className="row align-items-center">
+                    {/* Title */}
+                    <div className="col-lg-7">
+                      <h3 className="text-white mb-0">
+                      Tunggu apa lagi?
+                      </h3>
+                      <p className="text-white small">
+                        Tingkatkan pengetahuan Anda, kembangkan keterampilan dengan kursus dan sertifikasi paling andal
+                      </p>
+                      {/* List */}
+                      <ul className="list-inline mb-0 justify-content-center justify-content-lg-start">
+                        <li className="list-inline-item text-white me-2">
+
+                          <i className="bi bi-check-circle-fill text-success me-2" />
+                          Free registration
+                        </li>
+                        <li className="list-inline-item text-white me-2">
+
+                          <i className="bi bi-check-circle-fill text-success me-2" />
+                          Powerful features
+                        </li>
+                      </ul>
+                    </div>
+                    {/* Content and input */}
+                    <div className="col-lg-5 text-lg-end mt-3 mt-lg-0">
+                      <a href=" " className="btn btn-warning mb-0">
+                        Buat Akun
+                      </a>
+                    </div>
+                  </div>
+                  {/* Row END */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Row END */}
+      </div>
+    </section>
+    {/* ======================= Action box END */}
+
+
   </>
 }
 
