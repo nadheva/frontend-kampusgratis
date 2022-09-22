@@ -15,13 +15,8 @@ const MainContent = () => {
                                     <div className="tab-pane fade show active" id="course-pills-3" role="tabpanel"
                                         aria-labelledby="course-pills-tab-3">
                                         <div className="card">
-
                                             <CardHeader />
                                             <CardBody />
-                                 
-
-                            
-
                                         </div>
                                     </div>
                                 </div>

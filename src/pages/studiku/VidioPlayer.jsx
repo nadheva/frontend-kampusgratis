@@ -14,7 +14,6 @@ const VidioPlayer = () => {
                                 <div className="row g-4">
                                     <Intro />
                                     <MainContent />
-
                                 </div>
                             </div>
                             <RightSidebar />
