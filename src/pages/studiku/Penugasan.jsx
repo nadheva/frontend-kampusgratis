@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Penugasan = () => {
 
@@ -13,6 +14,23 @@ const Penugasan = () => {
 
         <>
             <main>
+                <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-12 text-center">
+                                <h1 className="text-white">Penugasan</h1>
+                                <div className="d-flex justify-content-center">
+                                    <nav aria-label="breadcrumb">
+                                        <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                                            <li className="breadcrumb-item"><Link to="/pertemuan">Pertemuan</Link></li>
+                                            <li className="breadcrumb-item active" aria-current="page">Penugasan</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section className="pt-3 pt-xl-5">
                     <div className="container" data-sticky-container>
                         <div className="row g-4">
@@ -86,11 +104,7 @@ const Penugasan = () => {
                     </div>
                 </section>
             </main>
-
-
         </>
-
-
     )
 }
 

@@ -1,15 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Intro = () => {
     return (
         <section className="bg-blue py-7">
             <div className="container">
-                <div className="row justify-content-lg-between">
-                    <div className="col-lg-8">
+                <div className="row">
+                    <div className="col-12 text-center">
                         <h1 className="text-white">Forum Diskusi Global</h1>
-                        <p className="text-white">Satisfied conveying a dependent contented he gentleman agreeable do be.
-                            Warrant private blushes removed an in equally totally if. Delivered dejection necessary
-                            objection do Mr prevailed. Mr feeling does chiefly cordial in do.</p>
+                        <div className="d-flex justify-content-center">
+                            <nav aria-label="breadcrumb">
+                                <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                                    <li className="breadcrumb-item"><Link to="/pertemuan">Pertemuan</Link></li>
+                                    <li className="breadcrumb-item active" aria-current="page">Forum Diskusi Global</li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
