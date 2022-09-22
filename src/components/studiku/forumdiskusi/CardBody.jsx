@@ -6,7 +6,7 @@ const CardBody = () => {
         <div className="card-body p-0 pt-3">
             <div className="vstack gap-3">
                 {/* Question item START */}
-                <NavLink to="" className="text-black">
+                <NavLink to="/isi-forum-diskusi" className="text-black">
                     <div className="card shadow p-4 ">
                         {/* Name and time */}
                         <div className="d-sm-flex justify-content-sm-between mb-3">
@@ -41,7 +41,7 @@ const CardBody = () => {
                 </NavLink>
                 {/* Question item END */}
                 {/* Question item START */}
-                <NavLink to="" className="text-black">
+                <NavLink to="/isi-forum-diskusi" className="text-black">
                     <div className="card shadow p-4 ">
                         {/* Name and time */}
                         <div className="d-sm-flex justify-content-sm-between mb-3">
