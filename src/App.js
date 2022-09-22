@@ -23,6 +23,7 @@ import Quiz from "./pages/studiku/Quiz";
 import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import MulaiQuiz from "./pages/studiku/MulaiQuiz";
+import StartQuiz from "./pages/studiku/StartQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
 import ManageCourse from "./pages/instructor/ManageCourse";
 import Footer from "./pages/default/Footer";
@@ -134,6 +135,17 @@ function App() {
             />
           </Route>
 
+          <Route path="/start-quiz" element={<PrivateRoute />}>
+            <Route
+              path="/start-quiz"
+              element={
+                <>
+                  <StartQuiz />
+                </>
+              }
+            />
+          </Route>
+
           <Route path="/forum-diskusi" element={<PrivateRoute />}>
             <Route
               path="/forum-diskusi"
@@ -141,19 +153,6 @@ function App() {
                 <>
                   <Header />
                   <ForumDiskusi />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
-
-          <Route path="/mulai-quiz" element={<PrivateRoute />}>
-            <Route
-              path="/mulai-quiz"
-              element={
-                <>
-                  <Header />
-                  <MulaiQuiz />
                   <Footer />
                 </>
               }

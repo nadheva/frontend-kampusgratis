@@ -1,0 +1,57 @@
+[
+    {
+        "id": "01",
+        "question" : "Seluruh informasi pada sebuah website disimpan pada sebuah?",
+        "options": [
+            "Server",
+            "Flashdisk",
+            "Super Komputer",
+            "Hardisk"
+        ],
+        "answer": "Server"
+    },
+    {
+        "id": "02",
+        "question" : "Apa 3 skill utama yang harus dikuasai untuk menjadi Front-End Web Developer?",
+        "options": [
+            "HTML, CSS, Server",
+            "Server, CSS, JavaScript",
+            "HTML, Server, JavaScript",
+            "HTML, CSS, JavaScript"
+        ],
+        "answer": "HTML, CSS, JavaScript"
+    },
+    {
+        "id": "03",
+        "question" : "Apa kelebihan website dibanding aplikasi native?",
+        "options": [
+            "Mudah diakses di desktop saja",
+            "Mudah diakses di smartphone saja",
+            "Mudah diakses di smart device saja",
+            "Semua di atas"
+        ],
+        "answer": "Semua di atas"
+    },
+    {
+        "id": "04",
+        "question" : "Apa peran dari CSS pada sebuah website?",
+        "options": [
+            "Berperan sebagai kerangka dasar yang digunakan dalam menampilkan visual pada website.",
+            "Berperan untuk mempercantik tampilan pada sebuah website agar terlihat menarik.",
+            "Berperan agar sebuah website bisa ditampilkan pada sebuah browser.",
+            "Berperan membuat website lebih dinamis dan interaktif"
+        ],
+        "answer": "Berperan untuk mempercantik tampilan pada sebuah website agar terlihat menarik."
+    },
+    {
+        "id": "05",
+        "question" : "Apa fungsi dari HTTP Server?",
+        "options": [
+            "Sebuah proses yang dilakukan pada sisi client atau di sisi server.",
+            "Sebuah software yang dapat menerima transaksi dari HyperText Transfer Protocol dalam suatu website.",
+            "Mengubah / mengarahkan website melalui sebuah domain.",
+            "Tempat di mana terjadi interaksi pada database."
+        ],
+        "answer": "Sebuah software yang dapat menerima transaksi dari HyperText Transfer Protocol dalam suatu website."
+    }
+]

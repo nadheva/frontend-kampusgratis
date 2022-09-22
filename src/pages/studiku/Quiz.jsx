@@ -34,7 +34,7 @@ const Quiz = () => {
                                         </p>
                                         <p>Selamat mengerjakan</p>
                                         <div className="d-flex justify-content-end mt-3">
-                                            <Link to="/mulai-quiz" onClick={() => changeLocation('/mulai-quiz')} >
+                                            <Link to="/start-quiz" >
                                                 <button className="btn btn-primary next-btn mb-0 btn-studiku px-4">Mulai</button>
                                             </Link>
                                         </div>
