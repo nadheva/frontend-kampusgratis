@@ -22,6 +22,7 @@ import VidioPlayer from "./pages/studiku/VidioPlayer";
 import Quiz from "./pages/studiku/Quiz";
 import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
+import IsiForum from "./pages/studiku/IsiForum";
 import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import StartQuiz from "./pages/studiku/StartQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
@@ -153,6 +154,20 @@ function App() {
                 <>
                   <Header />
                   <ForumDiskusi />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+
+          <Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
+            <Route
+              path="/isi-forum-diskusi"
+              element={
+                <>
+                  <Header />
+                  <IsiForum />
                   <Footer />
                 </>
               }
