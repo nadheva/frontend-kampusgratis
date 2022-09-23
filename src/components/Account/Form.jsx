@@ -21,7 +21,6 @@ const FormEdit = () => {
   });
 
   useEffectOnce(() => {
-    dispatch(reset());
     dispatch(getMe());
   });
 
@@ -68,6 +67,8 @@ const FormEdit = () => {
     if (isSuccess && message !== "") {
       toast.success(message);
     }
+
+    dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   return (
