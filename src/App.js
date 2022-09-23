@@ -23,7 +23,7 @@ import Quiz from "./pages/studiku/Quiz";
 import Pertemuan from "./pages/studiku/Pertemuan";
 import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import IsiForum from "./pages/studiku/IsiForum";
-import MulaiQuiz from "./pages/studiku/MulaiQuiz";
+// import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import StartQuiz from "./pages/studiku/StartQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
 import ManageCourse from "./pages/instructor/ManageCourse";
