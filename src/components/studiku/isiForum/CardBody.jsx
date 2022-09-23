@@ -6,6 +6,7 @@ const CardBody = () => {
             <div className="vstack gap-3">
                 <div className="row mb-4">
                     <div className="col-12">
+
                         {/* Comment box */}
                         <div className="d-flex mb-4">
                             {/* Avatar */}
@@ -27,7 +28,7 @@ const CardBody = () => {
                                     defaultValue={""}
                                 />
                                 <button className="btn btn-primary ms-2 mb-0" type="button">
-                                    Post
+                                    Kirim
                                 </button>
                             </form>
                         </div>
@@ -52,11 +53,10 @@ const CardBody = () => {
                                                 <div className="d-flex justify-content-center">
                                                     <div className="me-2">
                                                         <h6 className="mb-1 lead fw-bold">
-                                                            <a href=" "> Frances Guerrero </a>
+                                                            <a href=" "> Masitoh </a>
                                                         </h6>
-                                                        <p className="h6 mb-0">
-                                                            Removed demands expense account in outward tedious do.
-                                                            Particular way thoroughly unaffected projection?
+                                                        <p className="mb-2">
+                                                            Alhamdulillah saya lulus dengan nilai 80%  Saya kira, tidak semuanya tertulis jelas di materi untuk soal yang disediakan. UN lagi nih. hehehe
                                                         </p>
                                                     </div>
                                                     <small>5hr</small>
@@ -106,10 +106,9 @@ const CardBody = () => {
                                                                     <a href=" "> Lori Stevens </a>
                                                                 </h6>
                                                                 <p className=" mb-0">
-                                                                    See resolved goodness felicity shy civility domestic
-                                                                    had but Drawings offended yet answered Jennings
-                                                                    perceive. Domestic had but Drawings offended yet
-                                                                    answered Jennings perceive.
+                                                                    Halo kak,
+                                                                    menurut pengalaman pribadi untuk jawaban di kuis itu tidak ada pembahasannya kak jadi kita harus mencari sendiri jawabannya dengan membaca kembali materi di modulnya kak..
+                                                                    sukses selalu ya kak..
                                                                 </p>
                                                             </div>
                                                             <small>2hr</small>

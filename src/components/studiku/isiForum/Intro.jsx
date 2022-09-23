@@ -12,6 +12,7 @@ const Intro = () => {
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
                                     <li className="breadcrumb-item"><Link to="/pertemuan">Pertemuan</Link></li>
+                                    <li className="breadcrumb-item"><Link to="/forum-diskusi">Forum Diskusi</Link></li>
                                     <li className="breadcrumb-item active" aria-current="page">Isi Forum Diskusi</li>
                                 </ol>
                             </nav>

@@ -20,7 +20,7 @@ const ForumDiskusi = () => {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="modalLabelCreatePost">
-                                Create Post{" "}
+                                Buat Diskusi Baru
                             </h5>
                             <button
                                 type="button"
@@ -58,7 +58,7 @@ const ForumDiskusi = () => {
                         {/* Modal footer */}
                         <div className="modal-footer">
                             <button type="button" className="btn btn-success-soft">
-                                Post
+                                Simpan
                             </button>
                         </div>
                     </div>
