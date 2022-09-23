@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateProfile, getMe } from '../../features/profile/profileSlice';
+import { updateProfile, getMe, reset } from '../../features/profile/profileSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import { toast } from 'react-toastify';
 
@@ -21,6 +21,7 @@ const FormEdit = () => {
   });
 
   useEffectOnce(() => {
+    dispatch(reset());
     dispatch(getMe());
   });
 
