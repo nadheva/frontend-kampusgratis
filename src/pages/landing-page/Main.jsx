@@ -79,7 +79,7 @@ const Main = () => {
             </figure>
             <div className="px-4">
               <div className="icon-xxl bg-body shadow mx-auto rounded-circle mb-3">
-                <img src="assets/images/element/child.svg" alt="" />
+                <img src="assets/images/icon-cunter/movie.svg" alt="" />
               </div>
               <h5>Konten Menarik</h5>
               <p className="text-truncate-2 pb-0">
@@ -95,7 +95,7 @@ const Main = () => {
             </figure>
             <div className="px-4">
               <div className="icon-xxl bg-body shadow mx-auto rounded-circle mb-3">
-                <img src="assets/images/element/idea.svg" alt="" />
+                <img src="assets/images/icon-cunter/reading.png" alt="" />
               </div>
               <h5>Belajar Menjadi Mudah</h5>
               <p className="text-truncate-2 pb-0">
@@ -111,7 +111,7 @@ const Main = () => {
             </figure>
             <div className="px-4">
               <div className="icon-xxl bg-body shadow mx-auto rounded-circle mb-3">
-                <img src="assets/images/element/help.svg" alt="" />
+                <img src="assets/images/icon-cunter/quiz.png" alt="" />
               </div>
               <h5>Kuis dan Ulasan</h5>
               <p className="text-truncate-2 pb-0">
@@ -121,7 +121,7 @@ const Main = () => {
           <div className="col-md-3 col-lg-3 text-center">
             <div className="px-4">
               <div className="icon-xxl bg-body shadow mx-auto rounded-circle mb-3">
-                <img src="assets/images/element/child.svg" alt="" />
+                <img src="assets/images/icon-cunter/certificate.png" alt="" />
               </div>
               <h5>Ilmu yang Berkualitas</h5>
               <p className="text-truncate-2 pb-0">
@@ -151,7 +151,7 @@ const Main = () => {
               <div className="card-image-scale rounded-3 position-relative">
                 {/* Card Image */}
                 <img
-                  src="assets/images/instructor/pak-kembar.png"
+                  src="assets/images/instructor/01.jpg"
                   className="card-img"
                   alt=""
                 />
@@ -175,7 +175,7 @@ const Main = () => {
               <div className="card-image-scale rounded-3 position-relative">
                 {/* Card Image */}
                 <img
-                  src="assets/images/instructor/pak-alyuhanas.png"
+                  src="assets/images/instructor/08.jpg"
                   className="card-img"
                   alt=""
                 />
@@ -199,7 +199,7 @@ const Main = () => {
               <div className="card-image-scale rounded-3 position-relative">
                 {/* Card Image */}
                 <img
-                  src="assets/images/instructor/pak-apud.png"
+                  src="assets/images/instructor/03.jpg"
                   className="card-img"
                   alt=""
                 />
@@ -223,7 +223,7 @@ const Main = () => {
               <div className="card-image-scale rounded-3 position-relative">
                 {/* Card Image */}
                 <img
-                  src="assets/images/instructor/pak-komala.png"
+                  src="assets/images/instructor/11.jpg"
                   className="card-img"
                   alt=""
                 />
