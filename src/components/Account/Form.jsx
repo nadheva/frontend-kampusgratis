@@ -116,11 +116,11 @@ const FormEdit = () => {
               />
             </div>
           </div>
-          <div class="col-md-6">
-            <label class="form-label">Username</label>
-            <div class="input-group">
-              <span class="input-group-text">kampusgratis.com</span>
-              <input type="text" class="form-control" value={username} readOnly />
+          <div className="col-md-6">
+            <label className="form-label">Username</label>
+            <div className="input-group">
+              <span className="input-group-text">kampusgratis.com</span>
+              <input type="text" className="form-control" value={username} readOnly />
             </div>
           </div>
           {/* <div className="col-md-6">

@@ -54,6 +54,9 @@ function Register() {
   }
 
   useEffectOnce(() => {
+    if (user && token)
+      return navigate('/');
+
     dispatch(reset());
   });
 
@@ -63,7 +66,7 @@ function Register() {
       toast.error(message);
     }
 
-    if (isSuccess || user) {
+    if (isSuccess && user) {
       navigate('/login');
     }
 

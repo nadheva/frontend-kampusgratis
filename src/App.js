@@ -1,9 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Switch } from "react-router";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import firebase from './config/Firebase';
+import './config/Firebase';
 import PrivateRoute from './components/PrivateRoute';
 
 import Header from './pages/default/Header';

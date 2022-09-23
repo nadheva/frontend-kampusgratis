@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, Link, NavLink, useLocation } from 'react-router-dom';
-import { reset as resetUser } from '../../features/profile/profileSlice';
+import { reset as resetUser } from '../../features/auth/authSlice';
 import { reset as resetToken } from '../../features/profile/profileSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
@@ -103,7 +103,7 @@ const Header = () => {
                   </li>
                   <li>
                     <button className="dropdown-item bg-danger-soft-hover" onClick={onLogout}>
-                      <i className="bi bi-power fa-fw me-2"></i>
+                      <i className="fas fa-sign-out-alt fa-fw me-2"></i>
                       Keluar
                     </button>
                   </li>

@@ -25,15 +25,15 @@ function Login() {
   );
 
   useEffectOnce(() => {
+    if (user && token) {
+      return navigate('/');
+    }
+
     dispatch(reset());
   });
 
   useEffect(() => {
-    if (!email || !password) {
-      if (isLoading) toast.error("Invalid combination Email address and Password.");
-    }
-
-    if (token) {
+    if (token && !user) {
       dispatch(getMe());
     }
 
@@ -59,6 +59,8 @@ function Login() {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
+
+    if (!email || !password) return toast.error("Invalid combination Email address and Password.");
 
     const userData = {
       email,
