@@ -59,9 +59,9 @@ const SidebarProfile = () => {
                   to="/administrasi">
                   <i className="bi bi-card-list fa-fw me-2"></i>Administrasi
                 </NavLink>
-                <a className="list-group-item" href=" ">
+                <NavLink to="/settings" className="list-group-item" href=" ">
                   <i className="bi bi-gear fa-fw me-2"></i>Settings
-                </a>
+                </NavLink>
                 <button
                   className="list-group-item text-danger bg-danger-soft-hover" onClick={onLogout}>
                   <i className="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out

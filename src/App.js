@@ -10,6 +10,7 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Profile from "./pages/Profile";
 import Main from "./pages/landing-page/Main";
+import Setting from "./pages/Setting";
 
 import PageNotFound from "./pages/error/404";
 import Unauthorized from "./pages/error/401";
@@ -220,6 +221,18 @@ function App() {
                 <>
                   <Header />
                   <MyCourse />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+          <Route path="/settings" element={<PrivateRoute />}>
+            <Route
+              path="/settings"
+              element={
+                <>
+                  <Header />
+                  <Setting />
                   <Footer />
                 </>
               }

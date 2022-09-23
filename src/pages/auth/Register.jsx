@@ -34,7 +34,7 @@ function Register() {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    if (password != confirm_password && password.length != confirm_password.length) {
+    if (password !== confirm_password && password.length !== confirm_password.length) {
       return toast.error("Password harus sama dengan Konfirmasi Password.");
     }
 
@@ -120,7 +120,7 @@ function Register() {
                       />
                     </Link>
                     </div>
-                    <h1 className="fs-2 pt-5">Daftar Kampus Grastis!</h1>
+                    <h1 className="fs-2 pt-5">Daftar Kampus Gratis!</h1>
                     <p className="lead mb-4">
                       Silahkan daftarkan akun anda.
                     </p>
