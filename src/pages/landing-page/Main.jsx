@@ -64,12 +64,7 @@ const Main = () => {
             <path className="fill-info" d="M8,13c1.6-2,4.1-3,6-5c-0.4-0.4-0.8-0.8-1.1-1.1C11,8.3,9.3,9.4,7.6,10.7c-0.9,0.7-1.8,1.4-1.4,3.1 c-2.6-2.1-4.8-4-5.1-7.2C0.9,4.7,1.7,3.1,3.3,2c1.6-1.2,3.4-1.4,5.2-0.5c2.1,1.1,3.7,2.9,5.2,4.6c0.5,0.6,0.8,1.4,1.8,1.4 c0.2,0,0.4,0.3,0.5,0.4c4.8,6,9.7,12,13.6,18.6c0.2,0.3,0.3,0.7,0.5,1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.4-0.5-0.9-0.9-1.2-1.4 c-1.9-2.6-3.6-5.4-5.5-7.9c-2.3-3-4.6-5.9-7-8.8c-1-1.2-1.1-1.2-2.4-0.1c-1.5,1.2-3.1,2.4-4.7,3.6c-0.2,0.2-0.5,0.2-0.8,0.3 C8.1,13.2,8,13.1,8,13z M12.1,5.8C10.7,4,9.5,3.1,8.2,2.4C6.5,1.6,4.9,1.7,3.4,3.1C2.2,4.2,1.7,5.6,2.2,7.3c0.5,1.8,1.5,3.2,3.1,4.3 C7.3,9.4,10.2,8.3,12.1,5.8z"></path>
           </svg>
         </figure>
-        <figure className="position-absolute top-50 end-0 translate-middle-y me-5 d-none d-lg-block">
-          <svg width="81.3px" height="106.2px">
-            <path className="fill-danger" d="M29.9,41.1c-1.7-0.8-2.4-1.5-2.7-2.8c-0.4-1.4-1.7-2.5-2.5-3.7c-4.4-6.7-6.9-14-6.6-22.1 c0.2-4.2,0.9-7.3,2.8-9.6c-0.3,1.9-0.5,3.8-0.9,5.6c-1.5,7.5,0.1,14.6,3.6,21.3c1.5,2.9,3.4,5.6,5.3,8.6 c9.3-4.1,14.3-11.3,16.7-20.6c0.7,2,0.3,3.7-0.3,5.4C42.8,29.9,38.3,35,32,38.6c-0.5,0.3-0.9,0.6-1.4,0.8c0.4,1.5,1.2,2,2.5,1.1 c2.5-1.8,5.1-3.6,7.5-5.5c3.2-2.4,6.5-4.3,10.6-4.8c5.9-0.7,10.7,1.2,15,5c4.7,4.2,7.4,9.7,9.3,15.5c3.2,9.7,3.2,19.6,0.7,29.5 c-0.5,1.8-1.3,3.5-2.1,5.2c-1.6,3.5-5,4.8-8.3,5.8c-1.3,0.4-3-0.1-4.4,0.2c-3.1,0.7-5.6,2.1-6.5,5.5c-0.4,1.7-1.9,2.8-3.4,3.6 c-5.3,2.7-10.9,2.9-16.4,1.1C23.5,98,14,91.3,7,81.1c-6.1-9-6.2-20.8-0.1-29.8c3.6-5.2,8.5-8.4,15-8.8c1.9-0.1,3.7-0.3,5.6-0.6 C28.2,41.9,28.7,41.6,29.9,41.1z M32.5,43.4c-1.5-0.1-2.6-0.3-3.8-0.3c-2.2,0.2-4.3,0.6-6.4,0.7c-5.4,0.4-9.8,2.6-13.1,6.8 c-6.7,8.5-7.3,20.1-1,29.5c5.7,8.6,13.6,14.5,23,18.5c5.4,2.3,10.9,3.6,16.7,1.8c2.8-0.9,5.5-1.9,6.3-5.3c0.5-1.8,1.8-3.1,3.5-3.8 c2.3-0.9,4.6-2,6.9-2.2c2.7-0.3,4.5-1.4,5.8-3.4c1.2-1.8,2.4-3.6,3.2-5.6c2.9-7.4,3.3-15,2-22.8c-1.2-7.1-3.7-13.6-8.4-19.1 c-7.1-8.2-17.4-8.7-24.7-2.8c-2.9,2.3-5.9,4.3-8.9,6.5C33.1,42.4,32.8,43.1,32.5,43.4z"></path>
-            <path className="fill-danger" d="M41.7,2.6c6.6,11.8,1.7,27-10.7,31.8c0.9-0.8,1.8-1.6,2.7-2.4c3.3-2.8,6.3-6,8-10c2.4-5.4,2-11.6-0.4-17 c-0.3,0.1-0.6,0-0.8,0.2c-5.8,4.6-11.1,9.5-13.4,16.9c-0.9,2.9-0.6,5.7,0.8,8.5c0.3,0.6,0.5,1.3,0.9,2.4c-2-0.8-2.5-2.1-2.9-3.4 c-1.3-3.7-0.9-7.3,0.9-10.6c1.2-2.4,2.7-4.7,4.4-6.9C34.1,8.5,37.7,5.5,41.7,2.6z"></path>
-          </svg>
-        </figure>
+
         <div className="row g-lg-5 mt-3">
           <div className="col-md-3 col-lg-3 text-center position-relative">
             <figure className="position-absolute top-0 start-100 translate-middle d-none d-lg-block">
@@ -133,16 +128,338 @@ const Main = () => {
       </div>
     </section>
 
+
+    {/* ======================= Trending course START */}
+    <section className="py-5">
+      <div className="container">
+        {/* Title */}
+        <div className="row mb-4">
+          <div className="col-12">
+            <h2 className="fs-1 fw-bold">
+              <span className="position-relative z-index-9">Trending </span>
+              <span className="position-relative z-index-1">
+                Courses
+                {/* SVG START */}
+                <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
+                  <svg width="163.9px" height="48.6px">
+                    <path
+                      className="fill-warning"
+                      d="M162.5,19.9c-0.1-0.4-0.2-0.8-0.3-1.3c-0.1-0.3-0.2-0.5-0.4-0.7c-0.3-0.4-0.7-0.7-1.2-0.9l0.1,0l-0.1,0 c0.1-0.4-0.2-0.5-0.5-0.6c0,0-0.1,0-0.1,0c-0.1-0.1-0.2-0.2-0.3-0.3c0-0.3,0-0.6-0.2-0.7c-0.1-0.1-0.3-0.2-0.6-0.2 c0-0.3-0.1-0.5-0.3-0.6c-0.1-0.1-0.3-0.2-0.5-0.2c-0.1,0-0.1,0-0.2,0c-0.5-0.4-1-0.8-1.4-1.1c0,0,0-0.1,0-0.1c0-0.1-0.1-0.1-0.3-0.2 c-0.9-0.5-1.8-1-2.6-1.5c-6-3.6-13.2-4.3-19.8-6.2c-4.1-1.2-8.4-1.4-12.6-2c-5.6-0.8-11.3-0.6-16.9-1.1c-2.3-0.2-4.6-0.3-6.8-0.3 c-1.2,0-2.4-0.2-3.5-0.1c-2.4,0.4-4.9,0.6-7.4,0.7c-0.8,0-1.7,0.1-2.5,0.1c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0 c-0.9,0-1.8,0.1-2.7,0.1c-0.9,0-1.8,0-2.7,0c-5.5-0.3-10.7,0.7-16,1.5c-2.5,0.4-5.1,1-7.6,1.5c-2.8,0.6-5.6,0.7-8.4,1.4 c-4.1,1-8.2,1.9-12.3,2.6c-4,0.7-8,1.6-11.9,2.7c-3.6,1-6.9,2.5-10.1,4.1c-1.9,0.9-3.8,1.7-5.2,3.2c-1.7,1.8-2.8,4-4.2,6 c-1,1.3-0.7,2.5,0.2,3.9c2,3.1,5.5,4.4,9,5.7c1.8,0.7,3.6,1,5.3,1.8c2.3,1.1,4.6,2.3,7.1,3.2c5.2,2,10.6,3.4,16.2,4.4 c3,0.6,6.2,0.9,9.2,1.1c4.8,0.3,9.5,1.1,14.3,0.8c0.3,0.3,0.6,0.3,0.9-0.1c0.7-0.3,1.4,0.1,2.1-0.1c3.7-0.6,7.6-0.3,11.3-0.3 c2.1,0,4.3,0.3,6.4,0.2c4-0.2,8-0.4,11.9-0.8c5.4-0.5,10.9-1,16.2-2.2c0.1,0.2,0.2,0.1,0.2,0c0.5-0.1,1-0.2,1.4-0.3 c0.1,0.1,0.2,0.1,0.3,0c0.5-0.1,1-0.3,1.6-0.3c3.3-0.3,6.7-0.6,10-1c2.1-0.3,4.1-0.8,6.2-1.2c0.2,0.1,0.3,0.1,0.4,0.1 c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.2 c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.1c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0c0.2,0,0.3-0.1,0.3-0.3c0.5-0.2,0.9-0.4,1.4-0.5 c0.1,0,0.2,0,0.2,0c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.1,0.6,0 c0.1,0,0.1-0.1,0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0.5-0.2,1-0.4,1.6-0.7c1.5-0.7,3.1-1.4,4.7-1.9c4.8-1.5,9.1-3.4,12.8-6.3 c0.8-0.2,1.2-0.5,1.6-1c0.2-0.3,0.4-0.6,0.5-0.9c0.5-0.1,0.7-0.2,0.9-0.5c0.2-0.2,0.2-0.5,0.3-0.9c0-0.1,0-0.1,0.1-0.1 c0.5,0,0.6-0.3,0.8-0.5C162.3,24,163,22,162.5,19.9z M4.4,28.7c-0.2-0.4-0.3-0.9-0.1-1.2c1.8-2.9,3.4-6,6.8-8 c2.8-1.7,5.9-2.9,8.9-4.2c4.3-1.8,9-2.5,13.6-3.4c0,0.1,0,0.2,0,0.2l0,0c-1.1,0.4-2.2,0.7-3.2,1.1c-3.3,1.1-6.5,2.1-9.7,3.4 c-4.2,1.6-7.6,4.2-10.1,7.5c-0.5,0.7-1,1.3-1.6,2c-2.2,2.7-1,4.7,1.2,6.9c0.1,0.1,0.3,0.3,0.4,0.5C7.8,32.5,5.5,31.2,4.4,28.7z  M158.2,23.8c-1.7,2.8-4.1,5.1-7,6.8c-2,1.2-4.5,2.1-6.9,2.9c-3.3,1-6.4,2.4-9.5,3.7c-3.9,1.6-8.1,2.5-12.4,2.9 c-6,0.5-11.8,1.5-17.6,2.5c-4.8,0.8-9.8,1-14.7,1.5c-5.6,0.6-11.2,0.2-16.8,0.1c-3.1-0.1-6.3,0.3-9.4,0.5c-2.6,0.2-5.2,0.1-7.8-0.1 c-3.9-0.3-7.8-0.5-11.7-0.9c-2.8-0.3-5.5-0.7-8.2-1.4c-3.2-0.8-6.3-1.7-9.5-2.5c-0.5-0.1-1-0.3-1.4-0.5c-0.2-0.1-0.4-0.1-0.6-0.2 c0,0,0.1,0,0.1,0c0.3-0.1,0.5,0,0.7,0.1c0,0,0,0,0,0c3.4,0.5,6.9,1.2,10.3,1.4c0.5,0,1,0,1.5,0c0.5,0,1.3,0.2,1.3-0.3 c0-0.6-0.7-0.9-1.4-0.9c-2.1,0-4.2-0.2-6.3-0.5c-4.6-0.7-9.1-1.5-13.4-3c-2.9-1.1-5.4-2.7-6.9-5.2c-0.5-0.8-0.5-1.6-0.1-2.4 c3.2-6.2,9-9.8,16.3-12.2c6.7-2.2,13.2-4.5,20.2-6c5-1.1,10-1.8,15-2.9c8.5-1.9,17.2-2.4,26-2.7c3.6-0.1,7.1-0.8,10.8-0.6 c8.4,0.7,16.7,1.2,25,2.3c4.5,0.6,9,1.2,13.6,1.7c3.6,0.4,7.1,1.4,10.5,2.8c3.1,1.3,6,2.9,8.5,5C159.1,17.7,159.8,21.1,158.2,23.8z"
+                    />
+                  </svg>
+                </span>
+                {/* SVG END */}
+              </span>
+            </h2>
+            <p className="mb-0">Temukan kursus yang terbaik untuk profesi Anda</p>
+          </div>
+        </div>
+        <div className="row g-4">
+          {/* Card START */}
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                {/* Image */}
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/16.jpg"
+                  alt="Card image"
+                />
+                {/* Overlay */}
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  {/* Card overlay bottom */}
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      {/* Avatar */}
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/10.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      {/* Avatar info */}
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Larry Lawson
+                          </a>
+                        </h6>
+                        <span className="small">Tutor</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Card body */}
+              <div className="card-body">
+                {/* Badge and icon */}
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a
+                      href="#"
+                      className="badge bg-orange bg-opacity-10 text-orange"
+                    >
+                      All level
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      6 Sks
+                    </a>
+                  </div>
+
+                </div>
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="#">
+                    The Complete Digital Marketing Course - 12 Courses in 1
+                  </a>
+                </h5>
+                {/* Rating */}
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">4.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(6,500)</li>
+                </ul>
+                {/* Divider */}
+                <hr />
+                {/* Time */}
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    200 Mahasiswa
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Card END */}
+          {/* Card START */}
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                {/* Image */}
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/14.jpg"
+                  alt="Card image"
+                />
+                {/* Overlay */}
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  {/* Card overlay bottom */}
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      {/* Avatar */}
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/08.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      {/* Avatar info */}
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Billy Vasquez
+                          </a>
+                        </h6>
+                        <span className="small">Developer</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Card body */}
+              <div className="card-body">
+                {/* Badge and icon */}
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                      Beginner
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      8 Sks
+                    </a>
+                  </div>
+
+                </div>
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="#">Angular – The Complete Guide (2021 Edition)</a>
+                </h5>
+                {/* Rating */}
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">4.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(5,436)</li>
+                </ul>
+                {/* Divider */}
+                <hr />
+                {/* Time */}
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    100 Mahasiswa
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Card END */}
+          {/* Card START */}
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                {/* Image */}
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/21.jpg"
+                  alt="Card image"
+                />
+                {/* Overlay */}
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  {/* Card overlay bottom */}
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      {/* Avatar */}
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/05.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      {/* Avatar info */}
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Lori Stevens
+                          </a>
+                        </h6>
+                        <span className="small">psychiatrist</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {/* Card body */}
+              <div className="card-body">
+                {/* Badge and icon */}
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                      Beginner
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      12 Sks
+                    </a>
+                  </div>
+
+                </div>
+                {/* Title */}
+                <h5 className="card-title">
+                  <a href="#">Time Management Mastery: Do More, Stress Less</a>
+                </h5>
+                {/* Rating */}
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">3.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="far fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(1,254)</li>
+                </ul>
+                {/* Divider */}
+                <hr />
+                {/* Time */}
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    90 Mahasiswa
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Card END */}
+        </div>
+      </div>
+    </section>
+    {/* ======================= Trending course END */}
+
+
     {/* ======================= Instructor grid START */}
     <section className="py-5">
       <div className="container">
         {/* Title */}
         <div className="row mb-4">
-          <div className="col-md-8 text-center mx-auto">
-            <h2 className="fs-1">Beberapa Mentor di Kampus Gratis</h2>
+          <div className="col-12">
+            <h2 className="fs-1 fw-bold">
+              <span className="position-relative z-index-9">Beberapa </span>
+              <span className="position-relative z-index-1">
+                Mentor
+                {/* SVG START */}
+                <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
+                  <svg width="163.9px" height="48.6px">
+                    <path
+                      className="fill-warning"
+                      d="M162.5,19.9c-0.1-0.4-0.2-0.8-0.3-1.3c-0.1-0.3-0.2-0.5-0.4-0.7c-0.3-0.4-0.7-0.7-1.2-0.9l0.1,0l-0.1,0 c0.1-0.4-0.2-0.5-0.5-0.6c0,0-0.1,0-0.1,0c-0.1-0.1-0.2-0.2-0.3-0.3c0-0.3,0-0.6-0.2-0.7c-0.1-0.1-0.3-0.2-0.6-0.2 c0-0.3-0.1-0.5-0.3-0.6c-0.1-0.1-0.3-0.2-0.5-0.2c-0.1,0-0.1,0-0.2,0c-0.5-0.4-1-0.8-1.4-1.1c0,0,0-0.1,0-0.1c0-0.1-0.1-0.1-0.3-0.2 c-0.9-0.5-1.8-1-2.6-1.5c-6-3.6-13.2-4.3-19.8-6.2c-4.1-1.2-8.4-1.4-12.6-2c-5.6-0.8-11.3-0.6-16.9-1.1c-2.3-0.2-4.6-0.3-6.8-0.3 c-1.2,0-2.4-0.2-3.5-0.1c-2.4,0.4-4.9,0.6-7.4,0.7c-0.8,0-1.7,0.1-2.5,0.1c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0 c-0.9,0-1.8,0.1-2.7,0.1c-0.9,0-1.8,0-2.7,0c-5.5-0.3-10.7,0.7-16,1.5c-2.5,0.4-5.1,1-7.6,1.5c-2.8,0.6-5.6,0.7-8.4,1.4 c-4.1,1-8.2,1.9-12.3,2.6c-4,0.7-8,1.6-11.9,2.7c-3.6,1-6.9,2.5-10.1,4.1c-1.9,0.9-3.8,1.7-5.2,3.2c-1.7,1.8-2.8,4-4.2,6 c-1,1.3-0.7,2.5,0.2,3.9c2,3.1,5.5,4.4,9,5.7c1.8,0.7,3.6,1,5.3,1.8c2.3,1.1,4.6,2.3,7.1,3.2c5.2,2,10.6,3.4,16.2,4.4 c3,0.6,6.2,0.9,9.2,1.1c4.8,0.3,9.5,1.1,14.3,0.8c0.3,0.3,0.6,0.3,0.9-0.1c0.7-0.3,1.4,0.1,2.1-0.1c3.7-0.6,7.6-0.3,11.3-0.3 c2.1,0,4.3,0.3,6.4,0.2c4-0.2,8-0.4,11.9-0.8c5.4-0.5,10.9-1,16.2-2.2c0.1,0.2,0.2,0.1,0.2,0c0.5-0.1,1-0.2,1.4-0.3 c0.1,0.1,0.2,0.1,0.3,0c0.5-0.1,1-0.3,1.6-0.3c3.3-0.3,6.7-0.6,10-1c2.1-0.3,4.1-0.8,6.2-1.2c0.2,0.1,0.3,0.1,0.4,0.1 c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.2 c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.1c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0c0.2,0,0.3-0.1,0.3-0.3c0.5-0.2,0.9-0.4,1.4-0.5 c0.1,0,0.2,0,0.2,0c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.1,0.6,0 c0.1,0,0.1-0.1,0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0.5-0.2,1-0.4,1.6-0.7c1.5-0.7,3.1-1.4,4.7-1.9c4.8-1.5,9.1-3.4,12.8-6.3 c0.8-0.2,1.2-0.5,1.6-1c0.2-0.3,0.4-0.6,0.5-0.9c0.5-0.1,0.7-0.2,0.9-0.5c0.2-0.2,0.2-0.5,0.3-0.9c0-0.1,0-0.1,0.1-0.1 c0.5,0,0.6-0.3,0.8-0.5C162.3,24,163,22,162.5,19.9z M4.4,28.7c-0.2-0.4-0.3-0.9-0.1-1.2c1.8-2.9,3.4-6,6.8-8 c2.8-1.7,5.9-2.9,8.9-4.2c4.3-1.8,9-2.5,13.6-3.4c0,0.1,0,0.2,0,0.2l0,0c-1.1,0.4-2.2,0.7-3.2,1.1c-3.3,1.1-6.5,2.1-9.7,3.4 c-4.2,1.6-7.6,4.2-10.1,7.5c-0.5,0.7-1,1.3-1.6,2c-2.2,2.7-1,4.7,1.2,6.9c0.1,0.1,0.3,0.3,0.4,0.5C7.8,32.5,5.5,31.2,4.4,28.7z  M158.2,23.8c-1.7,2.8-4.1,5.1-7,6.8c-2,1.2-4.5,2.1-6.9,2.9c-3.3,1-6.4,2.4-9.5,3.7c-3.9,1.6-8.1,2.5-12.4,2.9 c-6,0.5-11.8,1.5-17.6,2.5c-4.8,0.8-9.8,1-14.7,1.5c-5.6,0.6-11.2,0.2-16.8,0.1c-3.1-0.1-6.3,0.3-9.4,0.5c-2.6,0.2-5.2,0.1-7.8-0.1 c-3.9-0.3-7.8-0.5-11.7-0.9c-2.8-0.3-5.5-0.7-8.2-1.4c-3.2-0.8-6.3-1.7-9.5-2.5c-0.5-0.1-1-0.3-1.4-0.5c-0.2-0.1-0.4-0.1-0.6-0.2 c0,0,0.1,0,0.1,0c0.3-0.1,0.5,0,0.7,0.1c0,0,0,0,0,0c3.4,0.5,6.9,1.2,10.3,1.4c0.5,0,1,0,1.5,0c0.5,0,1.3,0.2,1.3-0.3 c0-0.6-0.7-0.9-1.4-0.9c-2.1,0-4.2-0.2-6.3-0.5c-4.6-0.7-9.1-1.5-13.4-3c-2.9-1.1-5.4-2.7-6.9-5.2c-0.5-0.8-0.5-1.6-0.1-2.4 c3.2-6.2,9-9.8,16.3-12.2c6.7-2.2,13.2-4.5,20.2-6c5-1.1,10-1.8,15-2.9c8.5-1.9,17.2-2.4,26-2.7c3.6-0.1,7.1-0.8,10.8-0.6 c8.4,0.7,16.7,1.2,25,2.3c4.5,0.6,9,1.2,13.6,1.7c3.6,0.4,7.1,1.4,10.5,2.8c3.1,1.3,6,2.9,8.5,5C159.1,17.7,159.8,21.1,158.2,23.8z"
+                    />
+                  </svg>
+                </span>
+                {/* SVG END */}
+              </span>
+              <span> di Kampus Gratis</span>
+            </h2>
             <p className="mb-0">Ruang terbatas Bergabung secepatnya di Kampus Gratis!</p>
           </div>
         </div>
+
         {/* Instructor grid */}
         <div className="row g-4">
           {/* Card item START */}
@@ -297,9 +614,25 @@ const Main = () => {
           {/* Title */}
           <div className="row mb-4">
             <div className="col-12 text-center">
-              <h2>Apa Kata Mereka Tentang Kami</h2>
+              <h2 className="fs-1 fw-bold">
+                <span className="position-relative z-index-9">Apa Kata Mereka </span>
+                <span className="position-relative z-index-1">
+                  Tentang Kami
+                  {/* SVG START */}
+                  <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
+                    <svg width="163.9px" height="48.6px">
+                      <path
+                        className="fill-warning"
+                        d="M162.5,19.9c-0.1-0.4-0.2-0.8-0.3-1.3c-0.1-0.3-0.2-0.5-0.4-0.7c-0.3-0.4-0.7-0.7-1.2-0.9l0.1,0l-0.1,0 c0.1-0.4-0.2-0.5-0.5-0.6c0,0-0.1,0-0.1,0c-0.1-0.1-0.2-0.2-0.3-0.3c0-0.3,0-0.6-0.2-0.7c-0.1-0.1-0.3-0.2-0.6-0.2 c0-0.3-0.1-0.5-0.3-0.6c-0.1-0.1-0.3-0.2-0.5-0.2c-0.1,0-0.1,0-0.2,0c-0.5-0.4-1-0.8-1.4-1.1c0,0,0-0.1,0-0.1c0-0.1-0.1-0.1-0.3-0.2 c-0.9-0.5-1.8-1-2.6-1.5c-6-3.6-13.2-4.3-19.8-6.2c-4.1-1.2-8.4-1.4-12.6-2c-5.6-0.8-11.3-0.6-16.9-1.1c-2.3-0.2-4.6-0.3-6.8-0.3 c-1.2,0-2.4-0.2-3.5-0.1c-2.4,0.4-4.9,0.6-7.4,0.7c-0.8,0-1.7,0.1-2.5,0.1c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0 c-0.9,0-1.8,0.1-2.7,0.1c-0.9,0-1.8,0-2.7,0c-5.5-0.3-10.7,0.7-16,1.5c-2.5,0.4-5.1,1-7.6,1.5c-2.8,0.6-5.6,0.7-8.4,1.4 c-4.1,1-8.2,1.9-12.3,2.6c-4,0.7-8,1.6-11.9,2.7c-3.6,1-6.9,2.5-10.1,4.1c-1.9,0.9-3.8,1.7-5.2,3.2c-1.7,1.8-2.8,4-4.2,6 c-1,1.3-0.7,2.5,0.2,3.9c2,3.1,5.5,4.4,9,5.7c1.8,0.7,3.6,1,5.3,1.8c2.3,1.1,4.6,2.3,7.1,3.2c5.2,2,10.6,3.4,16.2,4.4 c3,0.6,6.2,0.9,9.2,1.1c4.8,0.3,9.5,1.1,14.3,0.8c0.3,0.3,0.6,0.3,0.9-0.1c0.7-0.3,1.4,0.1,2.1-0.1c3.7-0.6,7.6-0.3,11.3-0.3 c2.1,0,4.3,0.3,6.4,0.2c4-0.2,8-0.4,11.9-0.8c5.4-0.5,10.9-1,16.2-2.2c0.1,0.2,0.2,0.1,0.2,0c0.5-0.1,1-0.2,1.4-0.3 c0.1,0.1,0.2,0.1,0.3,0c0.5-0.1,1-0.3,1.6-0.3c3.3-0.3,6.7-0.6,10-1c2.1-0.3,4.1-0.8,6.2-1.2c0.2,0.1,0.3,0.1,0.4,0.1 c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.2 c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.1c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0c0.2,0,0.3-0.1,0.3-0.3c0.5-0.2,0.9-0.4,1.4-0.5 c0.1,0,0.2,0,0.2,0c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.1,0.6,0 c0.1,0,0.1-0.1,0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0.5-0.2,1-0.4,1.6-0.7c1.5-0.7,3.1-1.4,4.7-1.9c4.8-1.5,9.1-3.4,12.8-6.3 c0.8-0.2,1.2-0.5,1.6-1c0.2-0.3,0.4-0.6,0.5-0.9c0.5-0.1,0.7-0.2,0.9-0.5c0.2-0.2,0.2-0.5,0.3-0.9c0-0.1,0-0.1,0.1-0.1 c0.5,0,0.6-0.3,0.8-0.5C162.3,24,163,22,162.5,19.9z M4.4,28.7c-0.2-0.4-0.3-0.9-0.1-1.2c1.8-2.9,3.4-6,6.8-8 c2.8-1.7,5.9-2.9,8.9-4.2c4.3-1.8,9-2.5,13.6-3.4c0,0.1,0,0.2,0,0.2l0,0c-1.1,0.4-2.2,0.7-3.2,1.1c-3.3,1.1-6.5,2.1-9.7,3.4 c-4.2,1.6-7.6,4.2-10.1,7.5c-0.5,0.7-1,1.3-1.6,2c-2.2,2.7-1,4.7,1.2,6.9c0.1,0.1,0.3,0.3,0.4,0.5C7.8,32.5,5.5,31.2,4.4,28.7z  M158.2,23.8c-1.7,2.8-4.1,5.1-7,6.8c-2,1.2-4.5,2.1-6.9,2.9c-3.3,1-6.4,2.4-9.5,3.7c-3.9,1.6-8.1,2.5-12.4,2.9 c-6,0.5-11.8,1.5-17.6,2.5c-4.8,0.8-9.8,1-14.7,1.5c-5.6,0.6-11.2,0.2-16.8,0.1c-3.1-0.1-6.3,0.3-9.4,0.5c-2.6,0.2-5.2,0.1-7.8-0.1 c-3.9-0.3-7.8-0.5-11.7-0.9c-2.8-0.3-5.5-0.7-8.2-1.4c-3.2-0.8-6.3-1.7-9.5-2.5c-0.5-0.1-1-0.3-1.4-0.5c-0.2-0.1-0.4-0.1-0.6-0.2 c0,0,0.1,0,0.1,0c0.3-0.1,0.5,0,0.7,0.1c0,0,0,0,0,0c3.4,0.5,6.9,1.2,10.3,1.4c0.5,0,1,0,1.5,0c0.5,0,1.3,0.2,1.3-0.3 c0-0.6-0.7-0.9-1.4-0.9c-2.1,0-4.2-0.2-6.3-0.5c-4.6-0.7-9.1-1.5-13.4-3c-2.9-1.1-5.4-2.7-6.9-5.2c-0.5-0.8-0.5-1.6-0.1-2.4 c3.2-6.2,9-9.8,16.3-12.2c6.7-2.2,13.2-4.5,20.2-6c5-1.1,10-1.8,15-2.9c8.5-1.9,17.2-2.4,26-2.7c3.6-0.1,7.1-0.8,10.8-0.6 c8.4,0.7,16.7,1.2,25,2.3c4.5,0.6,9,1.2,13.6,1.7c3.6,0.4,7.1,1.4,10.5,2.8c3.1,1.3,6,2.9,8.5,5C159.1,17.7,159.8,21.1,158.2,23.8z"
+                      />
+                    </svg>
+                  </span>
+                  {/* SVG END */}
+                </span>
+              </h2>
             </div>
           </div>
+          {/* Body */}
           <div className="row">
             {/* Slide item */}
             <div className="col-lg-4">
@@ -394,11 +727,29 @@ const Main = () => {
       <div className="container">
         {/* Title */}
         <div className="row mb-4">
-          <h2 className="mb-0">Upcoming Events</h2>
+          <div className="col-12 ">
+            <h2 className="fs-1 fw-bold">
+              <span className="position-relative z-index-9">Upcoming </span>
+              <span className="position-relative z-index-1">
+                Events
+                {/* SVG START */}
+                <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
+                  <svg width="163.9px" height="48.6px">
+                    <path
+                      className="fill-warning"
+                      d="M162.5,19.9c-0.1-0.4-0.2-0.8-0.3-1.3c-0.1-0.3-0.2-0.5-0.4-0.7c-0.3-0.4-0.7-0.7-1.2-0.9l0.1,0l-0.1,0 c0.1-0.4-0.2-0.5-0.5-0.6c0,0-0.1,0-0.1,0c-0.1-0.1-0.2-0.2-0.3-0.3c0-0.3,0-0.6-0.2-0.7c-0.1-0.1-0.3-0.2-0.6-0.2 c0-0.3-0.1-0.5-0.3-0.6c-0.1-0.1-0.3-0.2-0.5-0.2c-0.1,0-0.1,0-0.2,0c-0.5-0.4-1-0.8-1.4-1.1c0,0,0-0.1,0-0.1c0-0.1-0.1-0.1-0.3-0.2 c-0.9-0.5-1.8-1-2.6-1.5c-6-3.6-13.2-4.3-19.8-6.2c-4.1-1.2-8.4-1.4-12.6-2c-5.6-0.8-11.3-0.6-16.9-1.1c-2.3-0.2-4.6-0.3-6.8-0.3 c-1.2,0-2.4-0.2-3.5-0.1c-2.4,0.4-4.9,0.6-7.4,0.7c-0.8,0-1.7,0.1-2.5,0.1c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0 c-0.9,0-1.8,0.1-2.7,0.1c-0.9,0-1.8,0-2.7,0c-5.5-0.3-10.7,0.7-16,1.5c-2.5,0.4-5.1,1-7.6,1.5c-2.8,0.6-5.6,0.7-8.4,1.4 c-4.1,1-8.2,1.9-12.3,2.6c-4,0.7-8,1.6-11.9,2.7c-3.6,1-6.9,2.5-10.1,4.1c-1.9,0.9-3.8,1.7-5.2,3.2c-1.7,1.8-2.8,4-4.2,6 c-1,1.3-0.7,2.5,0.2,3.9c2,3.1,5.5,4.4,9,5.7c1.8,0.7,3.6,1,5.3,1.8c2.3,1.1,4.6,2.3,7.1,3.2c5.2,2,10.6,3.4,16.2,4.4 c3,0.6,6.2,0.9,9.2,1.1c4.8,0.3,9.5,1.1,14.3,0.8c0.3,0.3,0.6,0.3,0.9-0.1c0.7-0.3,1.4,0.1,2.1-0.1c3.7-0.6,7.6-0.3,11.3-0.3 c2.1,0,4.3,0.3,6.4,0.2c4-0.2,8-0.4,11.9-0.8c5.4-0.5,10.9-1,16.2-2.2c0.1,0.2,0.2,0.1,0.2,0c0.5-0.1,1-0.2,1.4-0.3 c0.1,0.1,0.2,0.1,0.3,0c0.5-0.1,1-0.3,1.6-0.3c3.3-0.3,6.7-0.6,10-1c2.1-0.3,4.1-0.8,6.2-1.2c0.2,0.1,0.3,0.1,0.4,0.1 c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.2 c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.1c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0c0.2,0,0.3-0.1,0.3-0.3c0.5-0.2,0.9-0.4,1.4-0.5 c0.1,0,0.2,0,0.2,0c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.1,0.6,0 c0.1,0,0.1-0.1,0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0.5-0.2,1-0.4,1.6-0.7c1.5-0.7,3.1-1.4,4.7-1.9c4.8-1.5,9.1-3.4,12.8-6.3 c0.8-0.2,1.2-0.5,1.6-1c0.2-0.3,0.4-0.6,0.5-0.9c0.5-0.1,0.7-0.2,0.9-0.5c0.2-0.2,0.2-0.5,0.3-0.9c0-0.1,0-0.1,0.1-0.1 c0.5,0,0.6-0.3,0.8-0.5C162.3,24,163,22,162.5,19.9z M4.4,28.7c-0.2-0.4-0.3-0.9-0.1-1.2c1.8-2.9,3.4-6,6.8-8 c2.8-1.7,5.9-2.9,8.9-4.2c4.3-1.8,9-2.5,13.6-3.4c0,0.1,0,0.2,0,0.2l0,0c-1.1,0.4-2.2,0.7-3.2,1.1c-3.3,1.1-6.5,2.1-9.7,3.4 c-4.2,1.6-7.6,4.2-10.1,7.5c-0.5,0.7-1,1.3-1.6,2c-2.2,2.7-1,4.7,1.2,6.9c0.1,0.1,0.3,0.3,0.4,0.5C7.8,32.5,5.5,31.2,4.4,28.7z  M158.2,23.8c-1.7,2.8-4.1,5.1-7,6.8c-2,1.2-4.5,2.1-6.9,2.9c-3.3,1-6.4,2.4-9.5,3.7c-3.9,1.6-8.1,2.5-12.4,2.9 c-6,0.5-11.8,1.5-17.6,2.5c-4.8,0.8-9.8,1-14.7,1.5c-5.6,0.6-11.2,0.2-16.8,0.1c-3.1-0.1-6.3,0.3-9.4,0.5c-2.6,0.2-5.2,0.1-7.8-0.1 c-3.9-0.3-7.8-0.5-11.7-0.9c-2.8-0.3-5.5-0.7-8.2-1.4c-3.2-0.8-6.3-1.7-9.5-2.5c-0.5-0.1-1-0.3-1.4-0.5c-0.2-0.1-0.4-0.1-0.6-0.2 c0,0,0.1,0,0.1,0c0.3-0.1,0.5,0,0.7,0.1c0,0,0,0,0,0c3.4,0.5,6.9,1.2,10.3,1.4c0.5,0,1,0,1.5,0c0.5,0,1.3,0.2,1.3-0.3 c0-0.6-0.7-0.9-1.4-0.9c-2.1,0-4.2-0.2-6.3-0.5c-4.6-0.7-9.1-1.5-13.4-3c-2.9-1.1-5.4-2.7-6.9-5.2c-0.5-0.8-0.5-1.6-0.1-2.4 c3.2-6.2,9-9.8,16.3-12.2c6.7-2.2,13.2-4.5,20.2-6c5-1.1,10-1.8,15-2.9c8.5-1.9,17.2-2.4,26-2.7c3.6-0.1,7.1-0.8,10.8-0.6 c8.4,0.7,16.7,1.2,25,2.3c4.5,0.6,9,1.2,13.6,1.7c3.6,0.4,7.1,1.4,10.5,2.8c3.1,1.3,6,2.9,8.5,5C159.1,17.7,159.8,21.1,158.2,23.8z"
+                    />
+                  </svg>
+                </span>
+                {/* SVG END */}
+              </span>
+            </h2>
+          </div>
         </div>
+        {/* Body */}
         <div className="row">
           {/* Card item START */}
-          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
             <div className="position-relative">
               <img
                 src="assets/images/courses/4by3/21.jpg"
@@ -417,7 +768,7 @@ const Main = () => {
               </div>
             </div>
             {/* Card body */}
-            <div className="card-body px-2">
+            <div className="card-body px-2 ">
               {/* Title */}
               <h5 className="card-title">
                 <a href=" ">Global Education Fall Meeting for Everyone</a>
@@ -430,7 +781,7 @@ const Main = () => {
           </div>
           {/* Card item END */}
           {/* Card item START */}
-          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
             <div className="position-relative">
               <img
                 src="assets/images/courses/4by3/16.jpg"
@@ -462,7 +813,7 @@ const Main = () => {
           </div>
           {/* Card item END */}
           {/* Card item START */}
-          <div className="col-lg-4 col-md-4 col-12 card bg-transparent">
+          <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
             <div className="position-relative">
               <img
                 src="assets/images/courses/4by3/18.jpg"
@@ -542,7 +893,7 @@ const Main = () => {
                     {/* Title */}
                     <div className="col-lg-7">
                       <h3 className="text-white mb-0">
-                      Tunggu apa lagi?
+                        Tunggu apa lagi?
                       </h3>
                       <p className="text-white small">
                         Tingkatkan pengetahuan Anda, kembangkan keterampilan dengan kursus dan sertifikasi paling andal
