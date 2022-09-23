@@ -16,8 +16,12 @@ function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { user, token, isLoading, isError, isSuccess, message } = useSelector(
+  const { token, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.auth
+  );
+
+  const { user } = useSelector(
+    (state) => state.profile
   );
 
   const onFormChange = (e) => {
@@ -30,7 +34,7 @@ function Register() {
   const onFormSubmit = (e) => {
     e.preventDefault();
 
-    if (password !== confirm_password && password.length !== confirm_password.length) {
+    if (password != confirm_password && password.length != confirm_password.length) {
       return toast.error("Password harus sama dengan Konfirmasi Password.");
     }
 
@@ -50,6 +54,9 @@ function Register() {
   }
 
   useEffectOnce(() => {
+    if (user && token)
+      return navigate('/');
+
     dispatch(reset());
   });
 
@@ -59,8 +66,13 @@ function Register() {
       toast.error(message);
     }
 
+    if (isSuccess && user) {
+      navigate('/login');
+    }
+
     if (isSuccess) {
       toast.success(message);
+
       setRegisterData({
         full_name: '', email: '',
         password: '', confirm_password: ''
