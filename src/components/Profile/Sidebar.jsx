@@ -54,6 +54,11 @@ const SidebarProfile = () => {
                   to="/profile">
                   <i className="bi bi-pencil-square fa-fw me-2"></i>Edit Profile
                 </NavLink>
+                <NavLink
+                  className="list-group-item"
+                  to="/administrasi">
+                  <i className="bi bi-card-list fa-fw me-2"></i>Administrasi
+                </NavLink>
                 <a className="list-group-item" href=" ">
                   <i className="bi bi-gear fa-fw me-2"></i>Settings
                 </a>
