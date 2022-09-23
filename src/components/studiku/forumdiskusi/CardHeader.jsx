@@ -3,9 +3,9 @@ import React from 'react'
 const CardHeader = () => {
     return (
         <div className="card-header border-bottom p-0 pb-3">
-            <h4 className="mb-3">Discussion</h4>
+            <h4 className="mb-3">Forum Diskusi</h4>
             <form className="row g-4">
-                <div className="col-sm-6 col-lg-6">
+                <div className="col-sm-6 col-lg-3">
                     <div className="position-relative">
                         <input className="form-control pe-5 bg-transparent"
                             type="search" placeholder="Search" aria-label="Search" />
@@ -35,6 +35,17 @@ const CardHeader = () => {
                         <option>Unanswered</option>
                     </select>
                 </div>
+                <div className="col-sm-6 col-lg-3">
+                    <a
+                        href=" "
+                        className="btn btn-primary-soft mb-0 w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#modalCreatePost"
+                    >
+                        Buat Diskusi Baru
+                    </a>
+                </div>
+
             </form>
         </div>
     )
