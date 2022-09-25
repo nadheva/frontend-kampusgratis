@@ -3,7 +3,7 @@ import React from 'react'
 const Counter = () => {
     return (
         <div className="row g-4 mb-4">
-            <div className="col-md-6 col-xxl-4">
+            <div className="col-md-4 col-xxl-4">
                 <div className="card card-body bg-warning bg-opacity-15 p-4 h-100">
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
@@ -17,7 +17,7 @@ const Counter = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-6 col-xxl-4">
+            <div className="col-md-4 col-xxl-4">
                 <div className="card card-body bg-purple bg-opacity-10 p-4 h-100">
                     <div className="d-flex justify-content-between align-items-center">
 
@@ -32,7 +32,7 @@ const Counter = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-6 col-xxl-4">
+            <div className="col-md-4 col-xxl-4">
                 <div className="card card-body bg-primary bg-opacity-10 p-4 h-100">
                     <div className="d-flex justify-content-between align-items-center">
 

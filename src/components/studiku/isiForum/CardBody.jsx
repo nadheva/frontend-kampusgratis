@@ -52,9 +52,14 @@ const CardBody = () => {
                                             <div className="bg-light p-3 rounded">
                                                 <div className="d-flex justify-content-center">
                                                     <div className="me-2">
-                                                        <h6 className="mb-1 lead fw-bold">
+                                                        <h6 className="lead fw-bold m-0 p-0">
                                                             <a href=" "> Masitoh </a>
                                                         </h6>
+                                                        <div className="mb-2">
+                                                            <small>
+                                                                29 Agustus 2022
+                                                            </small>
+                                                        </div>
                                                         <p className="mb-2">
                                                             Alhamdulillah saya lulus dengan nilai 80%  Saya kira, tidak semuanya tertulis jelas di materi untuk soal yang disediakan. UN lagi nih. hehehe
                                                         </p>
@@ -102,9 +107,14 @@ const CardBody = () => {
                                                     <div className="bg-light p-3 rounded">
                                                         <div className="d-flex justify-content-center">
                                                             <div className="me-2">
-                                                                <h6 className="mb-1  lead fw-bold">
+                                                                <h6 className="lead fw-bold m-0 p-0">
                                                                     <a href=" "> Lori Stevens </a>
                                                                 </h6>
+                                                                <div className="mb-2">
+                                                                    <small>
+                                                                        29 Agustus 2022
+                                                                    </small>
+                                                                </div>
                                                                 <p className=" mb-0">
                                                                     Halo kak,
                                                                     menurut pengalaman pribadi untuk jawaban di kuis itu tidak ada pembahasannya kak jadi kita harus mencari sendiri jawabannya dengan membaca kembali materi di modulnya kak..

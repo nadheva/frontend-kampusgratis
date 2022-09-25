@@ -1,6 +1,6 @@
 import React from 'react'
 import CardHeader from './CardHeader'
-import CardBody from './CardBody'
+import QuestioList from './QuestioList'
 
 const MainContent = () => {
     return (
@@ -16,7 +16,7 @@ const MainContent = () => {
                                         aria-labelledby="course-pills-tab-3">
                                         <div className="card">
                                             <CardHeader />
-                                            <CardBody />
+                                            <QuestioList />
                                         </div>
                                     </div>
                                 </div>

@@ -1,21 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MainContent = () => {
     return (
         <>
             {/* Vidio */}
             <div className="col-12 position-relative">
-                <div className="video-player rounded-3">
-                    <video controls crossOrigin="anonymous" playsInline
-                        poster="assets/images/videos/poster.jpg" >
-                        <source src="assets/images/videos/360p.mp4" type="video/mp4" size="360" />
-                        <source src="assets/images/videos/720p.mp4" type="video/mp4" size="720" />
-                        <source src="assets/images/videos/1080p.mp4" type="video/mp4" size="1080" />
-                        <track kind="captions" label="English" srcLang="en"
-                            src="assets/images/videos/en.vtt" default />
-                        <track kind="captions" label="French" srcLang="fr"
-                            src="assets/images/videos/fr.vtt" />
-                    </video>
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/mtmOxZNI-XE" title="YouTube video" allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -289,65 +281,9 @@ const MainContent = () => {
 
             {/* Btn */}
             <div className="col-lg-12">
-                <a className="btn btn-success btn-lg" href=" " data-bs-toggle="modal" data-bs-target="#modalCreatePost">
-                    Saya sudah paham
-                    <i className="fas fa-check ms-2" />
-                </a>
-                <a className="btn btn-secondary ms-3 btn-lg" href="/forum-diskusi">
-                    Tanya forum diskusi
-                    <i className="fas fa-comments ms-2" />
-                </a>
-            </div>
-
-
-            {/* Modal */}
-            <div
-                className="modal fade"
-                id="modalCreatePost"
-                tabIndex={-1}
-                aria-labelledby="modalLabelCreatePost"
-                aria-hidden="true"
-            >
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        {/* Title */}
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="modalLabelCreatePost">
-                                Catatan
-                            </h5>
-                            <button
-                                type="button"
-                                className="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            />
-                        </div>
-                        <div className="modal-body">
-                            {/* Form START */}
-                            <form>
-
-                                {/* Description */}
-                                <div className="mb-3">
-                                    <label className="form-label">Apa pelajaran yang kamu dapat dari pertemuan ini? </label>
-                                    <textarea
-                                        className="form-control"
-                                        rows={4}
-                                        placeholder="Description here"
-                                        defaultValue={""}
-                                    />
-                                </div>
-
-                            </form>
-                            {/* Form END */}
-                        </div>
-                        {/* Modal footer */}
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-success-soft">
-                               Simpan
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <Link to="/detail-modul" className="btn btn-secondary" >
+                    <i className="fas fa-arrow-left ms-2" /> Kembali
+                </Link>
             </div>
 
         </>

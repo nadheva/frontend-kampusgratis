@@ -84,7 +84,7 @@ const Header = () => {
                   </li>
                   <li>
                     <NavLink className="dropdown-item" to="/dashboard">
-                      <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
+                      <i className="bi bi-house fa-fw me-2"></i>
                       Dashboard
                     </NavLink>
                   </li>
@@ -92,6 +92,12 @@ const Header = () => {
                     <NavLink className="dropdown-item" to="/administrasi">
                       <i className="bi bi-card-list fa-fw me-2"></i>
                       Administrasi
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink className="dropdown-item" to="/kategori">
+                      <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
+                      Kategori
                     </NavLink>
                   </li>
                   <li>

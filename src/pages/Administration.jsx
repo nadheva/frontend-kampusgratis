@@ -47,18 +47,18 @@ const Administration = () => {
                   </div>
                 </div>
                 <div className="card-body mt-2">
-                  <div class="accordion accordion-icon accordion-bg-light" id="accordionExample">
-                    <div class="accordion-item mb-3">
-                      <h6 class="accordion-header" id="headingOne">
-                        <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                          <span class="text-secondary fw-bold me-3">01</span>
-                          <span class="fw-bold">Biodata Kamu</span>
-                          {/* &nbsp;<span class="badge text-bg-danger">5 data belum terverifikasi</span> */}
-                          {/* &nbsp;<span class="badge text-bg-info">3 data sudah terverifikasi</span> */}
+                  <div className="accordion accordion-icon accordion-bg-light" id="accordionExample">
+                    <div className="accordion-item mb-3">
+                      <h6 className="accordion-header" id="headingOne">
+                        <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          <span className="text-secondary fw-bold me-3">01</span>
+                          <span className="fw-bold">Biodata Kamu</span>
+                          {/* &nbsp;<span className="badge text-bg-danger">5 data belum terverifikasi</span> */}
+                          {/* &nbsp;<span className="badge text-bg-info">3 data sudah terverifikasi</span> */}
                         </button>
                       </h6>
-                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-                        <div class="accordion-body mt-3">
+                      <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne">
+                        <div className="accordion-body mt-3">
                           <div className="row">
                             <div className="col-md-6">
                               <label className="form-label"><span className='text-danger'><sup>*</sup></span> NIK</label>
@@ -109,23 +109,23 @@ const Administration = () => {
                               <input type="text" className="form-control mb-3" name="domicile" value={domicile} placeholder="NIM atau NPM" onChange={onFormChange} />
                             </div>
                           </div>
-                          <div class="d-sm-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary mb-0">Simpan Biodata</button>
+                          <div className="d-sm-flex justify-content-end mt-2">
+                            <button type="button" className="btn btn-primary mb-0">Simpan Biodata</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item mb-3">
-                      <h6 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          <span class="text-secondary fw-bold me-3">02</span>
-                          <span class="fw-bold">Data Keluarga Kamu</span>
-                          {/* &nbsp;<span class="badge text-bg-danger">5 data belum terverifikasi</span> */}
-                          {/* &nbsp;<span class="badge text-bg-info">3 data sudah terverifikasi</span> */}
+                    <div className="accordion-item mb-3">
+                      <h6 className="accordion-header" id="headingTwo">
+                        <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <span className="text-secondary fw-bold me-3">02</span>
+                          <span className="fw-bold">Data Keluarga Kamu</span>
+                          {/* &nbsp;<span className="badge text-bg-danger">5 data belum terverifikasi</span> */}
+                          {/* &nbsp;<span className="badge text-bg-info">3 data sudah terverifikasi</span> */}
                         </button>
                       </h6>
-                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                        <div class="accordion-body mt-3">
+                      <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo">
+                        <div className="accordion-body mt-3">
                           <div className="row">
                             <div className="col-md-6">
                               <label className="form-label"><span className='text-danger'><sup>*</sup></span> Nama Ayah</label>
@@ -168,23 +168,23 @@ const Administration = () => {
                               <input type="text" className="form-control mb-3" name="mother_occupation" value={mother_occupation} placeholder="Biaya Kuliah Ditanggung Oleh" onChange={onFormChange} />
                             </div>
                           </div>
-                          <div class="d-sm-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary mb-0">Simpan Data Keluarga</button>
+                          <div className="d-sm-flex justify-content-end mt-2">
+                            <button type="button" className="btn btn-primary mb-0">Simpan Data Keluarga</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item mb-3">
-                      <h6 class="accordion-header" id="headingThree">
-                        <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          <span class="text-secondary fw-bold me-3">03</span>
-                          <span class="fw-bold">Berkas Kamu</span>
-                          {/* &nbsp;<span class="badge text-bg-danger">5 data belum terverifikasi</span> */}
-                          {/* &nbsp;<span class="badge text-bg-info">3 data sudah terverifikasi</span> */}
+                    <div className="accordion-item mb-3">
+                      <h6 className="accordion-header" id="headingThree">
+                        <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          <span className="text-secondary fw-bold me-3">03</span>
+                          <span className="fw-bold">Berkas Kamu</span>
+                          {/* &nbsp;<span className="badge text-bg-danger">5 data belum terverifikasi</span> */}
+                          {/* &nbsp;<span className="badge text-bg-info">3 data sudah terverifikasi</span> */}
                         </button>
                       </h6>
-                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                        <div class="accordion-body mt-3">
+                      <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree">
+                        <div className="accordion-body mt-3">
                           <div className="col-12">
                             <label className="form-label">Unggah Pas Foto</label>
                             <div className="input-group mb-3">
@@ -227,29 +227,29 @@ const Administration = () => {
                               <label className="input-group-text">.pdf</label>
                             </div>
                           </div>
-                          <div class="d-sm-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary mb-0">Simpan Berkas</button>
+                          <div className="d-sm-flex justify-content-end mt-2">
+                            <button type="button" className="btn btn-primary mb-0">Simpan Berkas</button>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="accordion-item">
-                      <h6 class="accordion-header" id="headingFour">
-                        <button class="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                          <span class="text-secondary fw-bold me-3">04</span>
-                          <span class="fw-bold">Jenjang Pendidikan Kamu</span>
-                          {/* &nbsp;<span class="badge text-bg-danger">5 data belum terverifikasi</span> */}
-                          {/* &nbsp;<span class="badge text-bg-info">3 data sudah terverifikasi</span> */}
+                    <div className="accordion-item">
+                      <h6 className="accordion-header" id="headingFour">
+                        <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                          <span className="text-secondary fw-bold me-3">04</span>
+                          <span className="fw-bold">Jenjang Pendidikan Kamu</span>
+                          {/* &nbsp;<span className="badge text-bg-danger">5 data belum terverifikasi</span> */}
+                          {/* &nbsp;<span className="badge text-bg-info">3 data sudah terverifikasi</span> */}
                         </button>
                       </h6>
-                      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
-                        <div class="accordion-body mt-3">
+                      <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour">
+                        <div className="accordion-body mt-3">
                           <div className="col-md-6">
                             <label className="form-label"><span className='text-danger'><sup>*</sup></span> Jenjang Pendidikan</label>
                             <input type="text" className="form-control mb-3" name="mother_name" value={mother_name} placeholder="Jenjang Pendidikan" />
                           </div>
-                          <div class="d-sm-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary mb-0">Simpan Jenjang</button>
+                          <div className="d-sm-flex justify-content-end mt-2">
+                            <button type="button" className="btn btn-primary mb-0">Simpan Jenjang</button>
                           </div>
                         </div>
                       </div>
