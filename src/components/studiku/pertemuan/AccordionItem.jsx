@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const AccordionItem = ({ id, title }) => {
 
@@ -29,13 +30,13 @@ const AccordionItem = ({ id, title }) => {
                     <div className="d-flex justify-content-between align-items-center">
                         <div className="position-relative d-flex align-items-center">
                             <div className="d-flex align-items-center">
-                                <a href=" "
+                                <a href=' '
                                     className="icon-md mb-0 position-static flex-shrink-0 text-body">
                                     <i className="fas fa-fw fa-file fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <a href="/penugasan"
-                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Modul [Vidio Dokumen]</a>
+                                    <NavLink to="/vidio-player"
+                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Modul [Vidio Dokumen]</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -57,8 +58,8 @@ const AccordionItem = ({ id, title }) => {
                                         className="fas fa-question-circle fa-fw fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <a href="/Quiz"
-                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz</a>
+                                    <NavLink to="/Quiz"
+                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Quiz</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -80,8 +81,8 @@ const AccordionItem = ({ id, title }) => {
                                     <i className="fas fa-fw fa-file-signature fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <a href="/penugasan"
-                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Tugas</a>
+                                    <NavLink to="/penugasan"
+                                        className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Tugas</NavLink>
                                 </div>
                             </div>
                         </div>
@@ -102,9 +103,9 @@ const AccordionItem = ({ id, title }) => {
                                     <i className="fas fa-comment fa-fw fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <a href="/forum-diskusi"
+                                    <NavLink to="/forum-diskusi"
                                         className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Forum
-                                        Diskusi</a>
+                                        Diskusi</NavLink>
                                 </div>
                             </div>
                         </div>

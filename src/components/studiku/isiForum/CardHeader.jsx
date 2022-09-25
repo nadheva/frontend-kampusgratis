@@ -22,7 +22,7 @@ const CardHeader = () => {
                     <div className="ms-sm-2">
                         <h6 className="mb-1"> Jacqueline Miller</h6>
                         <p className="mb-0">
-                            27 Mar 2021
+                            Matematika - 27 Mar 2021
                         </p>
                     </div>
                 </div>
