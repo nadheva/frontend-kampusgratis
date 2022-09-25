@@ -32,6 +32,7 @@ import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
 import Modul from "./pages/studiku/Modul";
+import DetailModul from "./pages/studiku/DetailModul";
 // import Dashboard from "./pages/Dashboard";
 
 // Students
@@ -119,6 +120,19 @@ function App() {
                 <>
                   <Header />
                   <Modul />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/detail-modul" element={<PrivateRoute />}>
+            <Route
+              path="/detail-modul"
+              element={
+                <>
+                  <Header />
+                  <DetailModul />
                   <Footer />
                 </>
               }

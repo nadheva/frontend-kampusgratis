@@ -36,6 +36,7 @@ const Modul = () => {
                                         <div className="tab-pane fade show active" id="course-pills-3" role="tabpanel"
                                             aria-labelledby="course-pills-tab-3">
                                             <div className="card">
+
                                                 {/* Card header */}
                                                 <div className="card-header  p-0 pb-3">
                                                     <h4 className="mb-3">Modul</h4>
@@ -54,17 +55,11 @@ const Modul = () => {
                                                     </form>
                                                 </div>
                                                 {/* card Body */}
-
-                                                {/* Instructor list START */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-4 justify-content-center">
-                                                        {/* Card item START */}
-
                                                         {DataModul.map((modul) => (
                                                             <ModulItem key={modul.id} modul={modul} />
                                                         ))}
-                                                        {/* <ModulItem /> */}
-                                                        {/* Card item END */}
                                                     </div>
                                                 </div>
 
@@ -77,7 +72,7 @@ const Modul = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section>     
         </main >
     )
 }
