@@ -9,7 +9,7 @@ const MainContent = () => {
             <div className="card bg-transparent border rounded-3">
                 {/* Card header START */}
                 <div className="card-header bg-transparent border-bottom">
-                    <h3 className="mb-0">My Course</h3>
+                    <h3 className="mb-0">Daftar Mata Kuliah</h3>
                 </div>
                 {/* Card header END */}
 
