@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function CourseItem({ course }) {
   return (
     <div className="col-sm-6 col-xl-4">
-      <div className="card shadow h-100">
+      <div className="card shadow  h-100">
         <img src={course.image} className="card-img-top" alt="courseimage" />
         <div className="card-body pb-0">
           <div className="d-flex justify-content-between mb-2">

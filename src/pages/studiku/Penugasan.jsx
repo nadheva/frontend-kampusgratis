@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Penugasan = () => {
 
-    const [file, setFile] = useState();
+    const [file, setFile] = useState('201904020-ibnu-trpl.pdf');
 
     function handleFileChange(e) {
         setFile(e.target.value)
@@ -38,15 +38,30 @@ const Penugasan = () => {
                                 <div className="card-body p-sm-4">
                                     {/* 1 */}
                                     <div className="col-12">
-                                        <h4>Tugas</h4>
+                                        <h4>Tugas Matematika</h4>
+                                        <hr />
                                         <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant
                                             private blushes removed an in equally totally if. Delivered dejection necessary
                                             objection do Mr prevailed. Mr feeling does chiefly cordial in do.
                                             If you wish to find out the skills that should be covered in a basic digital marketing course syllabus in India or anywhere around the world, then reading this blog will help. Before we delve into the advanced digital marketing course syllabus, let’s look at the scope of digital marketing and what the future holds.</p>
+                                        <div className="hstack gap-3 flex-wrap">
+                                            <a href=" " className="btn btn-lg btn-light">
+                                                <div className="fs-4">
+                                                    <i className="bi bi-file-earmark-pdf" />
+                                                </div>
+                                                <span className="fs-6 mb-0">Tugas 5 pdf</span>
+                                            </a>
+                                            <a href=" " className="btn btn-lg btn-light">
+                                                <div className="fs-4">
+                                                    <i className="bi bi-file-earmark-word" />
+                                                </div>
+                                                <span className="fs-6 mb-0">Panduan 5 docs</span>
+                                            </a>
+                                        </div>
 
                                     </div>
                                     {/* 2 */}
-                                    <div className="col-12 mt-4">
+                                    <div className="col-12 mt-5">
                                         <h3>Submission status</h3>
                                         <div className="table-responsive">
                                             <table className="table table-striped table-hover">
