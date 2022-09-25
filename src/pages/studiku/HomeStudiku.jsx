@@ -31,7 +31,7 @@ const Main = () => {
                 <div className="col-xl-6">
                   <form className="border rounded p-2">
                     <div className="input-group input-borderless">
-                      <input className="form-control me-1" type="search" placeholder="Find your course" />
+                      <input className="form-control me-1" type="search" placeholder="Temukan matakuliah anda" />
                       <button type="button" className="btn btn-primary mb-0 rounded z-index-1"><i className="fas fa-search"></i></button>
                     </div>
                   </form>
@@ -53,6 +53,7 @@ const Main = () => {
                   <p className="mb-0 text-end">Showing 1-7 of 32 result</p>
                 </div>
               </div>
+              {/* Content */}
               <div className="row g-4">
                 {[{ id: 1, name: 'Ken' }, { id: 2, name: 'Aryo' }, { id: 3, name: 'Fikri' }].map((course) => (
                   <CourseItem key={course.id} course={course} />
@@ -195,7 +196,7 @@ const Main = () => {
           </div>
         </div>
       </section >
-      <section className="pt-0 pt-md-6">
+      {/* <section className="pt-0 pt-md-6">
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -233,7 +234,7 @@ const Main = () => {
           </div>
         </div>
 
-      </section>
+      </section> */}
     </main>
   </>
 }
