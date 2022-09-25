@@ -1,21 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MainContent = () => {
     return (
         <>
             {/* Vidio */}
             <div className="col-12 position-relative">
-                <div className="video-player rounded-3">
-                    <video controls crossOrigin="anonymous" playsInline
-                        poster="assets/images/videos/poster.jpg" >
-                        <source src="assets/images/videos/360p.mp4" type="video/mp4" size="360" />
-                        <source src="assets/images/videos/720p.mp4" type="video/mp4" size="720" />
-                        <source src="assets/images/videos/1080p.mp4" type="video/mp4" size="1080" />
-                        <track kind="captions" label="English" srcLang="en"
-                            src="assets/images/videos/en.vtt" default />
-                        <track kind="captions" label="French" srcLang="fr"
-                            src="assets/images/videos/fr.vtt" />
-                    </video>
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/mtmOxZNI-XE" title="YouTube video" allowfullscreen></iframe>
                 </div>
             </div>
 
@@ -286,6 +278,14 @@ const MainContent = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Btn */}
+            <div className="col-lg-12">
+                <Link to="/detail-modul" className="btn btn-secondary" >
+                    <i className="fas fa-arrow-left ms-2" /> Kembali
+                </Link>
+            </div>
+
         </>
     )
 }
