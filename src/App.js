@@ -31,6 +31,7 @@ import ManageCourse from "./pages/instructor/ManageCourse";
 import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
+import Modul from "./pages/studiku/Modul";
 // import Dashboard from "./pages/Dashboard";
 
 // Students
@@ -105,6 +106,19 @@ function App() {
                 <>
                   <Header />
                   <Pertemuan />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/modul" element={<PrivateRoute />}>
+            <Route
+              path="/modul"
+              element={
+                <>
+                  <Header />
+                  <Modul />
                   <Footer />
                 </>
               }

@@ -35,7 +35,7 @@ const AccordionItem = ({ id, title }) => {
                                     <i className="fas fa-fw fa-file fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <NavLink to="/vidio-player"
+                                    <NavLink to="/modul"
                                         className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Modul [Vidio Dokumen]</NavLink>
                                 </div>
                             </div>
