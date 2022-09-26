@@ -19,7 +19,7 @@ const CardItem = ({ data }) => {
                 <div className="card-body">
                     {/* Title */}
                     <h5 className="card-title">
-                        <Link to=" ">{data.title}</Link>
+                        <Link to="/detail-artikel">{data.title}</Link>
                     </h5>
                     <p className="text-truncate-2">
                         {data.body}

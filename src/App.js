@@ -37,6 +37,7 @@ import DetailModul from "./pages/studiku/DetailModul";
 
 // Artikel
 import Artikel from "./pages/artikel/Artikel";
+import DetailArtikel from "./pages/artikel/DetailArtikel";
 
 // Students
 import StudentDashboard from "./pages/student/StudentDashboard";
@@ -277,6 +278,18 @@ function App() {
                 <>
                   <Header />
                   <Artikel />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+          <Route path="/detail-artikel" element={<PrivateRoute />}>
+            <Route
+              path="/detail-artikel"
+              element={
+                <>
+                  <Header />
+                  <DetailArtikel />
                   <Footer />
                 </>
               }
