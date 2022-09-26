@@ -35,6 +35,10 @@ import Modul from "./pages/studiku/Modul";
 import DetailModul from "./pages/studiku/DetailModul";
 // import Dashboard from "./pages/Dashboard";
 
+// Artikel
+import Artikel from "./pages/artikel/Artikel";
+import DetailArtikel from "./pages/artikel/DetailArtikel";
+
 // Students
 import StudentDashboard from "./pages/student/StudentDashboard";
 import MyCourse from "./pages/student/MyCourse";
@@ -261,6 +265,31 @@ function App() {
                 <>
                   <Header />
                   <Setting />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/artikel" element={<PrivateRoute />}>
+            <Route
+              path="/artikel"
+              element={
+                <>
+                  <Header />
+                  <Artikel />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
+          <Route path="/detail-artikel" element={<PrivateRoute />}>
+            <Route
+              path="/detail-artikel"
+              element={
+                <>
+                  <Header />
+                  <DetailArtikel />
                   <Footer />
                 </>
               }

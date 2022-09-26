@@ -163,7 +163,7 @@ const Main = () => {
                 <img
                   className="card-img-top"
                   src="assets/images/courses/4by3/16.jpg"
-                  alt="Card image"
+                  alt="Card"
                 />
                 {/* Overlay */}
                 <div className="bg-overlay bg-dark opacity-4" />
@@ -182,7 +182,7 @@ const Main = () => {
                       {/* Avatar info */}
                       <div>
                         <h6 className="mb-0">
-                          <a href="#" className="text-dark">
+                          <a href=" " className="text-dark">
                             Larry Lawson
                           </a>
                         </h6>
@@ -198,12 +198,12 @@ const Main = () => {
                 <div className="d-flex justify-content-between mb-3">
                   <div className="hstack gap-2">
                     <a
-                      href="#"
+                      href=" "
                       className="badge bg-orange bg-opacity-10 text-orange"
                     >
                       All level
                     </a>
-                    <a href="#" className="badge text-bg-dark">
+                    <a href=" " className="badge text-bg-dark">
                       6 Sks
                     </a>
                   </div>
@@ -211,7 +211,7 @@ const Main = () => {
                 </div>
                 {/* Title */}
                 <h5 className="card-title">
-                  <a href="#">
+                  <a href=" ">
                     The Complete Digital Marketing Course - 12 Courses in 1
                   </a>
                 </h5>
@@ -257,7 +257,7 @@ const Main = () => {
                 <img
                   className="card-img-top"
                   src="assets/images/courses/4by3/14.jpg"
-                  alt="Card image"
+                  alt="Card"
                 />
                 {/* Overlay */}
                 <div className="bg-overlay bg-dark opacity-4" />
@@ -276,7 +276,7 @@ const Main = () => {
                       {/* Avatar info */}
                       <div>
                         <h6 className="mb-0">
-                          <a href="#" className="text-dark">
+                          <a href=" " className="text-dark">
                             Billy Vasquez
                           </a>
                         </h6>
@@ -291,10 +291,10 @@ const Main = () => {
                 {/* Badge and icon */}
                 <div className="d-flex justify-content-between mb-3">
                   <div className="hstack gap-2">
-                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                    <a href=" " className="badge bg-info bg-opacity-10 text-info">
                       Beginner
                     </a>
-                    <a href="#" className="badge text-bg-dark">
+                    <a href=" " className="badge text-bg-dark">
                       8 Sks
                     </a>
                   </div>
@@ -302,7 +302,7 @@ const Main = () => {
                 </div>
                 {/* Title */}
                 <h5 className="card-title">
-                  <a href="#">Angular – The Complete Guide (2021 Edition)</a>
+                  <a href=" ">Angular – The Complete Guide (2021 Edition)</a>
                 </h5>
                 {/* Rating */}
                 <ul className="list-inline">
@@ -346,7 +346,7 @@ const Main = () => {
                 <img
                   className="card-img-top"
                   src="assets/images/courses/4by3/21.jpg"
-                  alt="Card image"
+                  alt="Card"
                 />
                 {/* Overlay */}
                 <div className="bg-overlay bg-dark opacity-4" />
@@ -365,7 +365,7 @@ const Main = () => {
                       {/* Avatar info */}
                       <div>
                         <h6 className="mb-0">
-                          <a href="#" className="text-dark">
+                          <a href=" " className="text-dark">
                             Lori Stevens
                           </a>
                         </h6>
@@ -380,10 +380,10 @@ const Main = () => {
                 {/* Badge and icon */}
                 <div className="d-flex justify-content-between mb-3">
                   <div className="hstack gap-2">
-                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                    <a href=" " className="badge bg-info bg-opacity-10 text-info">
                       Beginner
                     </a>
-                    <a href="#" className="badge text-bg-dark">
+                    <a href=" " className="badge text-bg-dark">
                       12 Sks
                     </a>
                   </div>
@@ -391,7 +391,7 @@ const Main = () => {
                 </div>
                 {/* Title */}
                 <h5 className="card-title">
-                  <a href="#">Time Management Mastery: Do More, Stress Less</a>
+                  <a href=" ">Time Management Mastery: Do More, Stress Less</a>
                 </h5>
                 {/* Rating */}
                 <ul className="list-inline">
@@ -466,7 +466,7 @@ const Main = () => {
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div className="card p-2 shadow h-100">
               <div className="card-image-scale rounded-3 position-relative">
-                {/* Card Image */}
+                {/* Card */}
                 <img
                   src="assets/images/instructor/01.jpg"
                   className="card-img"
@@ -490,7 +490,7 @@ const Main = () => {
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div className="card p-2 shadow h-100">
               <div className="card-image-scale rounded-3 position-relative">
-                {/* Card Image */}
+                {/* Card */}
                 <img
                   src="assets/images/instructor/08.jpg"
                   className="card-img"
@@ -514,7 +514,7 @@ const Main = () => {
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div className="card p-2 shadow h-100">
               <div className="card-image-scale rounded-3 position-relative">
-                {/* Card Image */}
+                {/* Card */}
                 <img
                   src="assets/images/instructor/03.jpg"
                   className="card-img"
@@ -538,7 +538,7 @@ const Main = () => {
           <div className="col-sm-6 col-lg-4 col-xl-3">
             <div className="card p-2 shadow h-100">
               <div className="card-image-scale rounded-3 position-relative">
-                {/* Card Image */}
+                {/* Card */}
                 <img
                   src="assets/images/instructor/11.jpg"
                   className="card-img"
@@ -729,9 +729,9 @@ const Main = () => {
         <div className="row mb-4">
           <div className="col-12 ">
             <h2 className="fs-1 fw-bold">
-              <span className="position-relative z-index-9">Upcoming </span>
+              <span className="position-relative z-index-9"></span>
               <span className="position-relative z-index-1">
-                Events
+                Artikel
                 {/* SVG START */}
                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
                   <svg width="163.9px" height="48.6px">
@@ -743,6 +743,7 @@ const Main = () => {
                 </span>
                 {/* SVG END */}
               </span>
+              <span> Terbaru</span>
             </h2>
           </div>
         </div>
@@ -771,7 +772,7 @@ const Main = () => {
             <div className="card-body px-2 ">
               {/* Title */}
               <h5 className="card-title">
-                <a href=" ">Global Education Fall Meeting for Everyone</a>
+                <Link to="/detail-artikel" >Global Education Fall Meeting for Everyone</Link>
               </h5>
               <p className="mb-0 text-truncate-2">
                 Satisfied conveying a dependent contented he gentleman agreeable
@@ -803,7 +804,7 @@ const Main = () => {
             <div className="card-body px-2">
               {/* Title */}
               <h5 className="card-title">
-                <a href=" ">International Conference on Information Technology</a>
+                <Link to="/detail-artikel">International Conference on Information Technology</Link>
               </h5>
               <p className="mb-0 text-truncate-2">
                 Kindness owns whatever betrayed her moreover procured replying for
@@ -835,7 +836,7 @@ const Main = () => {
             <div className="card-body px-2">
               {/* Title */}
               <h5 className="card-title">
-                <a href=" ">UK Demo Day 2022</a>
+                <Link to="/detail-artikel">UK Demo Day 2022</Link>
               </h5>
               <p className="mb-0 text-truncate-2">
 
