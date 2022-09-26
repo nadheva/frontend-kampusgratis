@@ -131,12 +131,12 @@ const Categories = () => {
               </div>
             </div>
             <div className="col-sm-6 col-md-4 col-xl-3">
-              <div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
+              <div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
                 <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
                   <img loading="lazy" src="assets/images/element/data-science.svg" alt="" style={{ filter: "grayscale(100%)" }} />
                 </div>
                 <h5 className="mb-2">
-                  <Link to=" " className="stretched-link" disabled>Sekilas Ilmu</Link>
+                  <Link to="/artikel" className="stretched-link" disabled>Sekilas Ilmu</Link>
                 </h5>
               </div>
             </div>
