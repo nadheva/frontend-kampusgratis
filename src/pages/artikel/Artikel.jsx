@@ -30,7 +30,7 @@ const Artikel = () => {
     }, [isError, message, dispatch])
 
 
-    // Search
+    // Search -> TODO: Hidden
     const [searchValue, setSearchValue] = useState("");
     const [filteredArtikel, setFilteredArtikel] = useState(artikels);
 
@@ -50,7 +50,6 @@ const Artikel = () => {
         }, 500);
         return () => clearTimeout(timeout);
     }, [searchValue]);
-
 
     return (
         <main>
@@ -88,8 +87,8 @@ const Artikel = () => {
                     {/* Row */}
                     <div className="row g-4">
 
-                        {filteredArtikel.length > 0 ? (
-                            filteredArtikel.map((artikel) => (
+                        {artikels.length > 0 ? (
+                            artikels.map((artikel) => (
                                 <CardItem key={artikel.id} artikel={artikel} />
                             ))
                         ) : (
