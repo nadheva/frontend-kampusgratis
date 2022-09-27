@@ -271,18 +271,17 @@ function App() {
             />
           </Route>
 
-          <Route path="/artikel" element={<PrivateRoute />}>
-            <Route
-              path="/artikel"
-              element={
-                <>
-                  <Header />
-                  <Artikel />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+          <Route
+            path="/artikel"
+            element={
+              <>
+                <Header />
+                <Artikel />
+                <Footer />
+              </>
+            }
+          />
+
           <Route path="/detail-artikel" element={<PrivateRoute />}>
             <Route
               path="/detail-artikel"

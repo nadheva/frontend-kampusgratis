@@ -1,8 +1,33 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CardItem from '../../components/artikel/CardItem'
 import DataArtikel from '../../json/Artikel'
 
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+
+
 const Artikel = () => {
+
+    // redux
+    const dispatch = useDispatch()
+    const { artikels, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.artikel
+    );
+
+    useEffect(() => {
+        if (isError) {
+            console.log(message)
+        }
+
+        dispatch(artikelAll())
+
+        return () => {
+            dispatch(reset())
+        }
+    }, [isError, message, dispatch])
+
+
     return (
         <main>
             {/* ======================= Page Banner START */}
@@ -38,11 +63,14 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-                        {/* <CardItem /> */}
 
-                        {DataArtikel.map((data) => (
-                            <CardItem key={data.id} data={data} />
-                        ))}
+                        {artikels.length > 0 ? (
+                            artikels.map((artikel) => (
+                                <CardItem key={artikel.id} artikel={artikel} />
+                            ))
+                        ) : (
+                            <h3>Data Kosong</h3>
+                        )}
 
                     </div>
                     {/* Row end */}
