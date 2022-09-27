@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../pages/default/Header';
+// import Header from '../pages/default/Header';
 import Banner from '../components/Profile/Banner';
 import Sidebar from '../components/Profile/Sidebar';
 import Form from '../components/Profile/Form';
