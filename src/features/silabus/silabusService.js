@@ -14,7 +14,7 @@ const getMajors = async (currentPage) => {
     }
   }
 
-  const response = await axios.get(API_URL + `syllabus/getAllMajorsPagination?page=${currentPage}&limit=10`, config);
+  const response = await axios.get(API_URL + `syllabus/majors/paginate?page=${currentPage}&limit=9&search=a`, config);
 
   return response.data;
 }

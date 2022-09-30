@@ -12,7 +12,11 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const Main = () => {
+  const [isPageLoad, setIsPageLoad] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isFirstPage, setIsFirstPage] = useState(false);
+  const [isLastPage, setIsLastPage] = useState(false);
+  const [lastPage, setLastPage] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -20,17 +24,37 @@ const Main = () => {
     (state) => state.silabus
   );
 
-  const { max_page } = data;
+  const changePage = (page) => {
+    setCurrentPage(page);
+    dispatch(resetAll());
 
-  const nextPage = () => {
-    if (currentPage !== 12)
-      setCurrentPage(currentPage + 1)
-  }
-  const prevPage = () => {
-    if (currentPage !== 1)
-      setCurrentPage(currentPage - 1)
+    if (page == 1) setIsFirstPage(false);
+    else {
+      setIsFirstPage(true);
+      setIsLastPage(true);
+    }
+
+    if (page == lastPage) setIsLastPage(false);
+    else setIsLastPage(true);
+
+    dispatch(getMajors(page));
   }
 
+  const renderPage = () => {
+    if (!isPageLoad) return;
+
+    let page = [];
+
+    for (let i = 1; i <= lastPage; i++) {
+      page.push(<li className={`page-item mb-0 ${i == currentPage ? "active" : ""}`} >
+        {i == currentPage
+          ? <span className="page-link">{i}</span>
+          : <button className="page-link" onClick={() => changePage(i)}>{i}</button>}
+      </li>);
+    }
+
+    return page;
+  }
 
   useEffectOnce(() => {
     dispatch(resetAll());
@@ -38,6 +62,20 @@ const Main = () => {
   });
 
   useEffect(() => {
+    if (data && Object.keys(data).length != 0) {
+      setIsPageLoad(true);
+      setLastPage(data.max_page);
+
+      if (currentPage == 1) setIsFirstPage(false);
+      else {
+        setIsFirstPage(true);
+        setIsLastPage(true);
+      }
+
+      if (currentPage == lastPage) setIsLastPage(false);
+      else setIsLastPage(true);
+    }
+
     if (isError && !isSuccess) {
       toast.error(message);
       dispatch(reset());
@@ -47,7 +85,7 @@ const Main = () => {
       toast.success(message);
       dispatch(reset());
     }
-  }, [data, isLoading, isError, isSuccess, message]);
+  }, [isFirstPage, isLastPage, data, isLoading, isError, isSuccess, message]);
 
   return <main>
     <section className="bg-blue align-items-center d-flex" style={{ background: "url(assets/images/pattern/04.png) no-repeat center center", backgroundSize: "cover" }}>
@@ -130,7 +168,7 @@ const Main = () => {
         <div className="row mt-3">
           <div className="col-12">
             <div className="row g-4">
-              {data?.length > 1 ? data.map(major => <MajorItem key={major.id} major={major} />) : <>
+              {data?.result ? data?.result.map(major => <MajorItem key={major.id} major={major} />) : <>
                 <div className='col-sm-6 col-lg-4'>
                   <SkeletonTheme>
                     <Skeleton height={260} />
@@ -178,28 +216,17 @@ const Main = () => {
             <div className="col-12">
               <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
                 <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                  <li className="page-item mb-0">
-                    <a className="page-link" href="#">
+                  {isFirstPage && isPageLoad && <li className="page-item mb-0">
+                    <button className="page-link" onClick={() => changePage(1)}>
                       <i className="fas fa-angle-double-left"></i>
-                    </a>
-                  </li>
-                  <li className="page-item mb-0 active">
-                    <a className="page-link" href="#">1</a>
-                  </li>
-                  <li className="page-item mb-0">
-                    <a className="page-link" href="#">2</a>
-                  </li>
-                  <li className="page-item mb-0">
-                    <a className="page-link" href="#">..</a>
-                  </li>
-                  <li className="page-item mb-0">
-                    <a className="page-link" href="#">6</a>
-                  </li>
-                  <li className="page-item mb-0">
-                    <a className="page-link" href="#">
+                    </button>
+                  </li>}
+                  {renderPage()}
+                  {isLastPage && isPageLoad && <li className="page-item mb-0">
+                    <button className="page-link" onClick={() => changePage(lastPage)} >
                       <i className="fas fa-angle-double-right"></i>
-                    </a>
-                  </li>
+                    </button>
+                  </li>}
                 </ul>
               </nav>
             </div>
@@ -207,7 +234,7 @@ const Main = () => {
         </div>
       </div>
     </section>
-  </main>
+  </main >
 }
 
 export default Main;
