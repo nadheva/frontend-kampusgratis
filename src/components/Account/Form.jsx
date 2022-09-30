@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateProfile, getMe, reset } from '../../features/profile/profileSlice';
+import { updateProfile, getMe, resetState } from '../../features/profile/profileSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import { toast } from 'react-toastify';
 
 const FormEdit = () => {
   const genderOptions = [
-    { value: '0', label: 'Tidak memberi tahu' },
+    { value: '0', label: 'Tidak ingin memberi tahu' },
     { value: '1', label: 'Laki-laki' },
     { value: '2', label: 'Perempuan' }
   ];
@@ -17,14 +17,16 @@ const FormEdit = () => {
   const [profileData, setProfileData] = useState({
     full_name: '',
     gender: 0,
-    phone: ''
+    phone: '',
+    display_picture: ''
   });
 
-  useEffectOnce(() => {
-    dispatch(getMe());
-  });
+  const [imageData, setImageData] = useState(null);
 
-  const { full_name, gender, phone, username } = profileData;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { full_name, gender, phone, username, display_picture, display_picture_link } = profileData;
 
   const { token } = useSelector(
     (state) => state.auth
@@ -34,8 +36,27 @@ const FormEdit = () => {
     (state) => state.profile
   );
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+  useEffectOnce(() => {
+    dispatch(resetState());
+    dispatch(getMe());
+  });
+
+  const onChangePicture = (e) => {
+    if (e.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.addEventListener("load", () => {
+        setImageData(reader.result);
+      });
+
+      reader.readAsDataURL(e.target.files[0]);
+
+      setProfileData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.files[0]
+      }));
+    }
+  }
 
   const onFormChange = (e) => {
     setProfileData((prevState) => ({
@@ -57,7 +78,9 @@ const FormEdit = () => {
       full_name: user.full_name,
       phone: user.phone,
       gender: user.gender,
-      username: user.username
+      username: user.username,
+      display_picture: user.display_picture,
+      display_picture_link: user.display_picture_link
     });
 
     if (isError) {
@@ -66,15 +89,14 @@ const FormEdit = () => {
 
     if (isSuccess && message !== "") {
       toast.success(message);
+      dispatch(resetState());
     }
-
-    dispatch(reset());
   }, [isError, isSuccess, user, message, navigate, dispatch]);
 
   return (
     <div className="card border rounded-3">
       <div className="card-header border-bottom">
-        <h3 className="card-header-title mb-0">Ubah Profil</h3>
+        <h3 className="card-header-title mb-0">Profil</h3>
       </div>
       <div className="card-body">
         <form className="row g-4" onSubmit={onFormSubmit}>
@@ -90,7 +112,7 @@ const FormEdit = () => {
                   <img
                     id="uploadfile-1-preview"
                     className="avatar-img rounded-circle border border-white border-3 shadow"
-                    src={user.display_name != null ? user.display_name : "assets/images/avatar/empty-display-picture.png"}
+                    src={imageData ? imageData : display_picture_link != null ? display_picture_link : "assets/images/avatar/empty-display-picture.png"}
                     alt=""
                   />
                 </span>
@@ -100,8 +122,10 @@ const FormEdit = () => {
               </label>
               <input
                 id="uploadfile-1"
+                name="display_picture"
                 className="form-control d-none"
                 type="file"
+                onChange={onChangePicture}
               />
             </div>
           </div>

@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './config/Firebase';
 import PrivateRoute from './components/PrivateRoute';
 
-import Header from './pages/default/Header';
+import Header from './components/default/Header';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Profile from './pages/Profile';
@@ -13,11 +13,12 @@ import Profile from './pages/Profile';
 import Main from './pages/landing-page/Main';
 import Dashboard from './pages/Dashboard';
 import Categories from './pages/landing-page/Categories';
-import Footer from './pages/default/Footer';
+import Footer from './components/default/Footer';
 
 import MyStudy from './pages/my-study/Main';
+import Silabus from './pages/silabus/Main';
 
-import PageNotFound from './pages/default/PageNotFound';
+import PageNotFound from './components/default/PageNotFound';
 import Administration from './pages/Administration';
 
 function App() {
@@ -66,11 +67,21 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
 
-          <Route path='/studi-ku' element={<>
-            <Header />
-            <MyStudy />
-            <Footer />
-          </>} />
+          <Route path='/studi-ku' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku' element={<>
+              <Header />
+              <MyStudy />
+              <Footer />
+            </>} />
+          </Route>
+
+          <Route path='/silabus' exact element={<PrivateRoute />}>
+            <Route path='/silabus' element={<>
+              <Header />
+              <Silabus />
+              <Footer />
+            </>} />
+          </Route>
 
           <Route path="/*" element={<>
             <Header />

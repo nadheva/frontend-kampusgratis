@@ -10,9 +10,11 @@ export const useAuthStatus = () => {
     if (isMounted) {
       const auth = getAuth();
 
-      onAuthStateChanged(auth, (user) => {
+      onAuthStateChanged(auth, async (user) => {
         if (user) {
           setLoggedIn(true);
+          const token = await user?.getIdToken();
+          localStorage.setItem("token", token);
         }
 
         setCheckingStatus(false);
@@ -21,7 +23,6 @@ export const useAuthStatus = () => {
       onIdTokenChanged(auth, async (user) => {
         if (user) {
           const token = await user?.getIdToken();
-
           localStorage.setItem("token", token);
         }
       });

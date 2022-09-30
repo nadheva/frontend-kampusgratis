@@ -19,7 +19,7 @@ const BannerProfile = () => {
               <div className="row d-sm-flex justify-sm-content-between mt-2 mt-md-0">
                 <div className="col-auto">
                   <div className="avatar avatar-xxl position-relative mt-n3">
-                    <img className="avatar-img rounded-circle border border-white border-3 shadow" src={user.display_name != null ? user.display_name : "assets/images/avatar/empty-display-picture.png"} alt={user.full_name} />
+                    <img className="avatar-img rounded-circle border border-white border-3 shadow" src={user.display_picture_link != null ? user.display_picture_link : "assets/images/avatar/empty-display-picture.png"} alt={user.full_name} />
                     <span className="badge bg-success text-white rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">
                       {user.role.charAt(0).toUpperCase() + user.role.slice(1)}
                     </span>

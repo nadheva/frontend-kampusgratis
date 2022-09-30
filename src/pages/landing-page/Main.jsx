@@ -39,6 +39,10 @@ const Main = () => {
             </Link>
           </div>
         </div>
+      </div>
+    </section>
+    <section className='bg-light mt-0 pt-1'>
+      <div className="container">
         <figure className="position-absolute translate-middle-y ms-5 d-none d-md-block">
           <svg enableBackground={"new 0 0 44.1 76.2"}>
             <path className="fill-orange" d="m25 32c-0.7-0.4-1.4-1-1.1-1.8 0.3-0.9 0.7-1.9 1.8-2.2 1-0.3 2-0.6 3-0.6 1.8-0.1 3.7-0.7 5.5-0.1 0.2 0.1 0.5-0.1 0.8-0.1 0.7 0 1.4 0 2 0.1 1.5 0.4 2 2 0.9 3-0.5 0.5-0.5 1-0.5 1.6 0.2 2.3 0.4 4.6 0.7 6.9 0.3 3.5 0.7 7 1 10.5l0.6 6.9c0.2 2.3 0.5 4.7 0.7 7 0.1 1.8 0.2 3.7 0.3 5.6 0 0.2-0.1 0.4-0.2 0.6-0.9-7-1.5-14.1-2.1-21.3-1.9 0.6-3.6 1-5.5 1-1.7 0-3.5 0.1-5.4 0.2v1.6c0.3 3.4 0.6 6.8 0.9 10.3 0.2 2.2 0.2 4.3 0.6 6.5 0.2 1.6 0.7 3.1 1.3 4.7 0.6 1.8 2.2 2.7 4 3.1 2.8 0.6 5.2-0.3 6.2-2.6 0.4-1 0.7-2.1 0.9-3.1 0.2-0.9 0.1-1.9 0.2-2.8 0-0.4 0.1-0.8 0.4-1.3 0.1 0.4 0.3 0.8 0.3 1.2 0.1 2.1-0.1 4.2-1.1 6.2-1.4 2.9-4 3.7-7 3.1-2.2-0.5-3.6-1.8-4.7-3.9-1.2-2.2-1-4.5-1.2-6.8-0.3-2.5-0.4-5-0.6-7.5s-0.4-5-0.6-7.6c-0.3-3.5-0.6-6.9-0.9-10.4-0.8-2.7-1-5.3-1.2-8zm2 15.3c3.5-2.1 7.1-2.1 11-1.3-0.4-4.8-0.9-9.5-1.3-14-3.7 0.1-7.2 0.2-11 0.3 0.4 5 0.8 9.9 1.3 15zm0.4 1c3.2 0.5 6.2 0.2 9.2-0.6 0.4-0.1 0.7-0.4 1.2-0.6-2.5-1.7-9-0.9-10.4 1.2zm-2-19.3c2.2 1.4 9.6 1 11-0.6-0.5-0.5-1-0.7-1.7-0.5-0.4 0.1-0.9 0.2-1.3 0.1-2.1-0.5-4.1 0.1-6.2 0.3-0.6 0-1.3 0.1-1.8 0.7zm-0.8 0.9c0 0.1-0.1 0.2-0.1 0.4 0.7 0.3 0.8 1.2 1.8 1.2 3.3-0.1 6.7-0.1 9.8-0.2 0.7-0.8 1.2-1.5 1.7-2.2-1.6 0.2-3 0.8-4.4 1.1s-3 0.3-4.4 0.2c-1.5 0-2.9-0.3-4.4-0.5z"></path>
@@ -167,74 +171,325 @@ const Main = () => {
         </div>
       </div>
     </section>
-    {/* <section>
+    <section className="bg-light py-5">
       <div className="container">
         <div className="row mb-4">
-          <div className="col-md-8 text-center mx-auto">
-            <h2 className="fs-1">Beberapa Mentor di Kampus Gratis</h2>
-            <p className="mb-0">Ruang terbatas. Bergabung secepatnya di Kampus Gratis!</p>
+          <div className="col-12">
+            <h2 className="fs-1 fw-bold">
+              <span className="position-relative z-index-9">Trending </span>
+              <span className="position-relative z-index-1">
+                Courses
+                <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
+                  <svg width="163.9px" height="48.6px">
+                    <path
+                      className="fill-warning"
+                      d="M162.5,19.9c-0.1-0.4-0.2-0.8-0.3-1.3c-0.1-0.3-0.2-0.5-0.4-0.7c-0.3-0.4-0.7-0.7-1.2-0.9l0.1,0l-0.1,0 c0.1-0.4-0.2-0.5-0.5-0.6c0,0-0.1,0-0.1,0c-0.1-0.1-0.2-0.2-0.3-0.3c0-0.3,0-0.6-0.2-0.7c-0.1-0.1-0.3-0.2-0.6-0.2 c0-0.3-0.1-0.5-0.3-0.6c-0.1-0.1-0.3-0.2-0.5-0.2c-0.1,0-0.1,0-0.2,0c-0.5-0.4-1-0.8-1.4-1.1c0,0,0-0.1,0-0.1c0-0.1-0.1-0.1-0.3-0.2 c-0.9-0.5-1.8-1-2.6-1.5c-6-3.6-13.2-4.3-19.8-6.2c-4.1-1.2-8.4-1.4-12.6-2c-5.6-0.8-11.3-0.6-16.9-1.1c-2.3-0.2-4.6-0.3-6.8-0.3 c-1.2,0-2.4-0.2-3.5-0.1c-2.4,0.4-4.9,0.6-7.4,0.7c-0.8,0-1.7,0.1-2.5,0.1c-0.1,0-0.1,0-0.2,0c-0.1,0-0.1,0-0.2,0 c-0.9,0-1.8,0.1-2.7,0.1c-0.9,0-1.8,0-2.7,0c-5.5-0.3-10.7,0.7-16,1.5c-2.5,0.4-5.1,1-7.6,1.5c-2.8,0.6-5.6,0.7-8.4,1.4 c-4.1,1-8.2,1.9-12.3,2.6c-4,0.7-8,1.6-11.9,2.7c-3.6,1-6.9,2.5-10.1,4.1c-1.9,0.9-3.8,1.7-5.2,3.2c-1.7,1.8-2.8,4-4.2,6 c-1,1.3-0.7,2.5,0.2,3.9c2,3.1,5.5,4.4,9,5.7c1.8,0.7,3.6,1,5.3,1.8c2.3,1.1,4.6,2.3,7.1,3.2c5.2,2,10.6,3.4,16.2,4.4 c3,0.6,6.2,0.9,9.2,1.1c4.8,0.3,9.5,1.1,14.3,0.8c0.3,0.3,0.6,0.3,0.9-0.1c0.7-0.3,1.4,0.1,2.1-0.1c3.7-0.6,7.6-0.3,11.3-0.3 c2.1,0,4.3,0.3,6.4,0.2c4-0.2,8-0.4,11.9-0.8c5.4-0.5,10.9-1,16.2-2.2c0.1,0.2,0.2,0.1,0.2,0c0.5-0.1,1-0.2,1.4-0.3 c0.1,0.1,0.2,0.1,0.3,0c0.5-0.1,1-0.3,1.6-0.3c3.3-0.3,6.7-0.6,10-1c2.1-0.3,4.1-0.8,6.2-1.2c0.2,0.1,0.3,0.1,0.4,0.1 c0.1,0,0.1,0,0.2-0.1c0,0,0.1,0,0.1-0.1c0,0,0-0.1,0.1-0.1c0.2-0.1,0.4-0.1,0.6-0.2c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.2 c0,0,0,0,0,0l0,0c0,0,0,0,0,0c0.2,0,0.4-0.1,0.5-0.1c0,0,0,0,0,0c0.1,0,0.1,0,0.2,0c0.2,0,0.3-0.1,0.3-0.3c0.5-0.2,0.9-0.4,1.4-0.5 c0.1,0,0.2,0,0.2,0c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.1c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0c0.2,0.1,0.4,0.1,0.6,0 c0.1,0,0.1-0.1,0.2-0.2c0.1-0.1,0.1-0.2,0.1-0.3c0.5-0.2,1-0.4,1.6-0.7c1.5-0.7,3.1-1.4,4.7-1.9c4.8-1.5,9.1-3.4,12.8-6.3 c0.8-0.2,1.2-0.5,1.6-1c0.2-0.3,0.4-0.6,0.5-0.9c0.5-0.1,0.7-0.2,0.9-0.5c0.2-0.2,0.2-0.5,0.3-0.9c0-0.1,0-0.1,0.1-0.1 c0.5,0,0.6-0.3,0.8-0.5C162.3,24,163,22,162.5,19.9z M4.4,28.7c-0.2-0.4-0.3-0.9-0.1-1.2c1.8-2.9,3.4-6,6.8-8 c2.8-1.7,5.9-2.9,8.9-4.2c4.3-1.8,9-2.5,13.6-3.4c0,0.1,0,0.2,0,0.2l0,0c-1.1,0.4-2.2,0.7-3.2,1.1c-3.3,1.1-6.5,2.1-9.7,3.4 c-4.2,1.6-7.6,4.2-10.1,7.5c-0.5,0.7-1,1.3-1.6,2c-2.2,2.7-1,4.7,1.2,6.9c0.1,0.1,0.3,0.3,0.4,0.5C7.8,32.5,5.5,31.2,4.4,28.7z  M158.2,23.8c-1.7,2.8-4.1,5.1-7,6.8c-2,1.2-4.5,2.1-6.9,2.9c-3.3,1-6.4,2.4-9.5,3.7c-3.9,1.6-8.1,2.5-12.4,2.9 c-6,0.5-11.8,1.5-17.6,2.5c-4.8,0.8-9.8,1-14.7,1.5c-5.6,0.6-11.2,0.2-16.8,0.1c-3.1-0.1-6.3,0.3-9.4,0.5c-2.6,0.2-5.2,0.1-7.8-0.1 c-3.9-0.3-7.8-0.5-11.7-0.9c-2.8-0.3-5.5-0.7-8.2-1.4c-3.2-0.8-6.3-1.7-9.5-2.5c-0.5-0.1-1-0.3-1.4-0.5c-0.2-0.1-0.4-0.1-0.6-0.2 c0,0,0.1,0,0.1,0c0.3-0.1,0.5,0,0.7,0.1c0,0,0,0,0,0c3.4,0.5,6.9,1.2,10.3,1.4c0.5,0,1,0,1.5,0c0.5,0,1.3,0.2,1.3-0.3 c0-0.6-0.7-0.9-1.4-0.9c-2.1,0-4.2-0.2-6.3-0.5c-4.6-0.7-9.1-1.5-13.4-3c-2.9-1.1-5.4-2.7-6.9-5.2c-0.5-0.8-0.5-1.6-0.1-2.4 c3.2-6.2,9-9.8,16.3-12.2c6.7-2.2,13.2-4.5,20.2-6c5-1.1,10-1.8,15-2.9c8.5-1.9,17.2-2.4,26-2.7c3.6-0.1,7.1-0.8,10.8-0.6 c8.4,0.7,16.7,1.2,25,2.3c4.5,0.6,9,1.2,13.6,1.7c3.6,0.4,7.1,1.4,10.5,2.8c3.1,1.3,6,2.9,8.5,5C159.1,17.7,159.8,21.1,158.2,23.8z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </h2>
+            <p className="mb-0">Temukan kursus yang terbaik untuk profesi Anda</p>
           </div>
         </div>
         <div className="row g-4">
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-alyuhanas.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/16.jpg"
+                  alt="Card image"
+                />
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/10.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Larry Lawson
+                          </a>
+                        </h6>
+                        <span className="small">Tutor</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Anas</h6>
+              <div className="card-body">
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a
+                      href="#"
+                      className="badge bg-orange bg-opacity-10 text-orange"
+                    >
+                      All level
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      6 Sks
+                    </a>
+                  </div>
+                </div>
+                <h5 className="card-title">
+                  <a href="#">
+                    The Complete Digital Marketing Course - 12 Courses in 1
+                  </a>
+                </h5>
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">4.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(6,500)</li>
+                </ul>
+                <hr />
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    200 Mahasiswa
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-apud.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/14.jpg"
+                  alt="Card image"
+                />
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/08.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Billy Vasquez
+                          </a>
+                        </h6>
+                        <span className="small">Developer</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Apud</h6>
+              <div className="card-body">
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                      Beginner
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      8 Sks
+                    </a>
+                  </div>
+                </div>
+                <h5 className="card-title">
+                  <a href="#">Angular – The Complete Guide (2021 Edition)</a>
+                </h5>
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">4.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(5,436)</li>
+                </ul>
+                <hr />
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    100 Mahasiswa
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-kembar.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+          <div className="col-md-6 col-xl-4">
+            <div className="card shadow-hover overflow-hidden bg-transparent">
+              <div className="position-relative">
+                <img
+                  className="card-img-top"
+                  src="assets/images/courses/4by3/21.jpg"
+                  alt="Card image"
+                />
+                <div className="bg-overlay bg-dark opacity-4" />
+                <div className="card-img-overlay d-flex align-items-start flex-column">
+                  <div className="w-100 mt-auto d-inline-flex">
+                    <div className="d-flex align-items-center bg-white p-2 rounded-2">
+                      <div className="avatar avatar-sm me-2">
+                        <img
+                          className="avatar-img rounded-1"
+                          src="assets/images/avatar/05.jpg"
+                          alt="avatar"
+                        />
+                      </div>
+                      <div>
+                        <h6 className="mb-0">
+                          <a href="#" className="text-dark">
+                            Lori Stevens
+                          </a>
+                        </h6>
+                        <span className="small">psychiatrist</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Kembar</h6>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6 col-lg-4 col-xl-3">
-            <div className="card p-2 shadow h-100">
-              <div className="card-image-scale rounded-3 position-relative">
-                <img src="assets/images/instructor/pak-komala.png" className="card-img" alt="" />
-                <div className="card-img-overlay d-flex flex-column p-2 z-index-1">
-                  <div><span className="badge text-bg-dark"><i className="bi bi-star-fill text-warning me-2"></i>5</span></div>
+              <div className="card-body">
+                <div className="d-flex justify-content-between mb-3">
+                  <div className="hstack gap-2">
+                    <a href="#" className="badge bg-info bg-opacity-10 text-info">
+                      Beginner
+                    </a>
+                    <a href="#" className="badge text-bg-dark">
+                      12 Sks
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div className="card-body px-2">
-                <h5 className="card-title"><a href="workshop-detail.html" className="stretched-link">Lorem, ipsum dolor.</a></h5>
-                <h6 className="mb-0 fw-normal">Pak Alam</h6>
+                <h5 className="card-title">
+                  <a href="#">Time Management Mastery: Do More, Stress Less</a>
+                </h5>
+                <ul className="list-inline">
+                  <li className="list-inline-item h6 fw-light mb-0">3.5</li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="fas fa-star-half-alt text-warning" />
+                  </li>
+                  <li className="list-inline-item me-0 small">
+                    <i className="far fa-star text-warning" />
+                  </li>
+                  <li className="list-inline-item ms-2 text-reset">(1,254)</li>
+                </ul>
+                <hr />
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <h4 className="text-success mb-0">Gratis</h4>
+                  <span className="h6 fw-light mb-0 me-3">
+                    <i className="far fa-user text-danger me-2" />
+                    90 Mahasiswa
+                  </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
+    <section className="bg-light py-5">
+      <div className="container position-relative">
+        <div className="row">
+          <div className="col-12">
+            <figure className="position-absolute top-50 start-50 translate-middle ms-2">
+              <svg>
+                <path
+                  className="fill-white opacity-2"
+                  d="m496 22.999c0 10.493-8.506 18.999-18.999 18.999s-19-8.506-19-18.999 8.507-18.999 19-18.999 18.999 8.506 18.999 18.999z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m775 102.5c0 5.799-4.701 10.5-10.5 10.5-5.798 0-10.499-4.701-10.499-10.5 0-5.798 4.701-10.499 10.499-10.499 5.799 0 10.5 4.701 10.5 10.499z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m192 102c0 6.626-5.373 11.999-12 11.999s-11.999-5.373-11.999-11.999c0-6.628 5.372-12 11.999-12s12 5.372 12 12z"
+                />
+                <path
+                  className="fill-white opacity-2"
+                  d="m20.499 10.25c0 5.66-4.589 10.249-10.25 10.249-5.66 0-10.249-4.589-10.249-10.249-0-5.661 4.589-10.25 10.249-10.25 5.661-0 10.25 4.589 10.25 10.25z"
+                />
+              </svg>
+            </figure>
+            <div className="bg-dark p-4 p-sm-5 rounded-3">
+              <div className="row justify-content-center position-relative">
+                <figure className="fill-white opacity-1 position-absolute top-50 start-0 translate-middle-y">
+                  <svg width="141px" height="141px">
+                    <path d="M140.520,70.258 C140.520,109.064 109.062,140.519 70.258,140.519 C31.454,140.519 -0.004,109.064 -0.004,70.258 C-0.004,31.455 31.454,-0.003 70.258,-0.003 C109.062,-0.003 140.520,31.455 140.520,70.258 Z" />
+                  </svg>
+                </figure>
+                <div className="col-11 position-relative">
+                  <div className="row align-items-center">
+                    <div className="col-lg-7">
+                      <h3 className="text-white mb-0">
+                        Tunggu apa lagi?
+                      </h3>
+                      <p className="text-white small">
+                        Tingkatkan pengetahuan Anda, kembangkan keterampilan dengan kursus dan sertifikasi paling andal
+                      </p>
+                      <ul className="list-inline mb-0 justify-content-center justify-content-lg-start">
+                        <li className="list-inline-item text-white me-2">
+                          <i className="bi bi-check-circle-fill text-success me-2" />
+                          Registrasi Gratis
+                        </li>
+                        <li className="list-inline-item text-white me-2">
+                          <i className="bi bi-check-circle-fill text-success me-2" />
+                          Banyak Pertemuan Bermanfaat
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-lg-5 text-lg-end mt-3 mt-lg-0">
+                      <a href=" " className="btn btn-warning mb-0">
+                        Buat Akun
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </>
 }
 

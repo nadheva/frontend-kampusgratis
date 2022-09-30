@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 import CourseItem from '../../components/My-Study/CourseItem';
 
@@ -61,7 +61,7 @@ const Main = () => {
               <div className="col-12">
                 <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
                   <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                    <li className="page-item mb-0"><a className="page-link" href="#" tabindex="-1"><i className="fas fa-angle-double-left"></i></a></li>
+                    <li className="page-item mb-0"><a className="page-link" href="#"><i className="fas fa-angle-double-left"></i></a></li>
                     <li className="page-item mb-0 active"><a className="page-link" href="#">1</a></li>
                     <li className="page-item mb-0" aria-current="page"><a className="page-link" href="#">2</a></li>
                     <li className="page-item mb-0"><a className="page-link" href="#">..</a></li>
@@ -72,7 +72,7 @@ const Main = () => {
               </div>
             </div>
             <div className="col-lg-4 col-xl-3">
-              <div className="offcanvas-lg offcanvas-end" tabindex="-1" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
+              <div className="offcanvas-lg offcanvas-end" id="offcanvasSidebar" aria-labelledby="offcanvasSidebarLabel">
                 <div className="offcanvas-header bg-light">
                   <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Advance Filter</h5>
                   <button type="button" className="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasSidebar" aria-label="Close"></button>
