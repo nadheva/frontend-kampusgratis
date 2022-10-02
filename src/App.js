@@ -43,6 +43,9 @@ import DetailArtikel from "./pages/artikel/DetailArtikel";
 import StudentDashboard from "./pages/student/StudentDashboard";
 import MyCourse from "./pages/student/MyCourse";
 
+// Silabus
+import Silabus from './pages/silabus/Main';
+
 function App() {
   return (
     <>
@@ -291,6 +294,15 @@ function App() {
               </>
             }
           />
+
+
+          <Route path='/silabus' exact element={<PrivateRoute />}>
+            <Route path='/silabus' element={<>
+              <Header />
+              <Silabus />
+              <Footer />
+            </>} />
+          </Route>
 
 
           <Route path="/*" element={<PageNotFound />} />
