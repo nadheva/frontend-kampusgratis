@@ -10,6 +10,9 @@ import 'react-loading-skeleton/dist/skeleton.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { artikelAll, reset } from '../../features/artikel/artikelSlice'
 
+// search
+import _ from "lodash";
+
 
 const Artikel = () => {
 
@@ -32,6 +35,28 @@ const Artikel = () => {
     }, [artikels, isLoading, isError, isSuccess, message, dispatch])
 
 
+    // search
+    const [searchValue, setSearchValue] = React.useState("");
+    const [filteredArtikel, setFilteredArtikel] = React.useState(artikels);
+
+    const handleSearchFilter = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    React.useEffect(() => {
+        const timeout = setTimeout(() => {
+            const filter = _.filter(artikels, (data) => {
+                return _.includes(
+                    _.lowerCase(JSON.stringify(_.values(data))),
+                    _.lowerCase(searchValue)
+                );
+            });
+            setFilteredArtikel(filter);
+        }, 200);
+        return () => clearTimeout(timeout);
+    }, [searchValue, filteredArtikel]);
+
+
     return (
         <main>
             {/* ======================= Page Banner START */}
@@ -47,11 +72,9 @@ const Artikel = () => {
                                         className="form-control border-0 me-1"
                                         type="search"
                                         placeholder="Search ..."
-
+                                        value={searchValue}
+                                        onChange={handleSearchFilter}
                                     />
-                                    <button type="button" className="btn btn-dark mb-0 rounded">
-                                        Search
-                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -66,8 +89,8 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-                        {artikels.length > 0 ? (
-                            artikels.map((artikel) => (
+                        {filteredArtikel.length > 0 ? (
+                            filteredArtikel.map((artikel) => (
                                 <CardItem key={artikel.id} artikel={artikel} />
                             ))
                         ) : isLoading ? (
