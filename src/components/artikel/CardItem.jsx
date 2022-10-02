@@ -23,7 +23,7 @@ const CardItem = ({ artikel }) => {
                 <div className="card-body">
                     {/* Title */}
                     <h5 className="card-title">
-                        <Link to="/detail-artikel">{artikel.title}</Link>
+                        <Link to={`/artikel/${artikel.id}`} >{artikel.title}</Link>
                     </h5>
                     <p className="text-truncate-2">
                         {artikel.description}

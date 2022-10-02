@@ -281,19 +281,17 @@ function App() {
               </>
             }
           />
+          <Route
+            path="/artikel/:artikelId"
+            element={
+              <>
+                <Header />
+                <DetailArtikel />
+                <Footer />
+              </>
+            }
+          />
 
-          <Route path="/detail-artikel" element={<PrivateRoute />}>
-            <Route
-              path="/detail-artikel"
-              element={
-                <>
-                  <Header />
-                  <DetailArtikel />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/401" element={<Unauthorized />} />

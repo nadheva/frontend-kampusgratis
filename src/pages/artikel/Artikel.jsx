@@ -108,7 +108,7 @@ const Artikel = () => {
                     {/* Row end */}
 
                     {/* Pagination START */}
-                    <nav
+                    {/* <nav
                         className="d-flex justify-content-center mt-5"
                         aria-label="navigation"
                     >
@@ -144,7 +144,7 @@ const Artikel = () => {
                                 </a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
                     {/* Pagination END */}
                 </div>
             </section>
