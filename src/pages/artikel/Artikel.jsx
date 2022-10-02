@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import CardItem from '../../components/artikel/CardItem'
-// import DataArtikel from '../../json/Artikel'
 
-import _ from "lodash";
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
@@ -27,7 +29,7 @@ const Artikel = () => {
         return () => {
             dispatch(reset())
         }
-    }, [isError, message, dispatch])
+    }, [artikels, isLoading, isError, isSuccess, message, dispatch])
 
 
     return (
@@ -64,15 +66,44 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-
                         {artikels.length > 0 ? (
                             artikels.map((artikel) => (
                                 <CardItem key={artikel.id} artikel={artikel} />
                             ))
+                        ) : isLoading ? (
+                            <div className="row">
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                            </div>
                         ) : (
-                            <h3 className='text-center'>Data Kosong</h3>
+                            <h1>Data Kosong</h1>
                         )}
-
                     </div>
                     {/* Row end */}
 
