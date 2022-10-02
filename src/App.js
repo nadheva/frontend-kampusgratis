@@ -271,30 +271,27 @@ function App() {
             />
           </Route>
 
-          <Route path="/artikel" element={<PrivateRoute />}>
-            <Route
-              path="/artikel"
-              element={
-                <>
-                  <Header />
-                  <Artikel />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
-          <Route path="/detail-artikel" element={<PrivateRoute />}>
-            <Route
-              path="/detail-artikel"
-              element={
-                <>
-                  <Header />
-                  <DetailArtikel />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+          <Route
+            path="/artikel"
+            element={
+              <>
+                <Header />
+                <Artikel />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/artikel/:artikelId"
+            element={
+              <>
+                <Header />
+                <DetailArtikel />
+                <Footer />
+              </>
+            }
+          />
+
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/401" element={<Unauthorized />} />

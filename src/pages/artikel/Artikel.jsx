@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CardItem from '../../components/artikel/CardItem'
-import DataArtikel from '../../json/Artikel'
+
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
+
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+
 
 const Artikel = () => {
+
+    // redux
+    const dispatch = useDispatch()
+    const { artikels, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.artikel
+    );
+
+    useEffect(() => {
+        if (isError) {
+            console.log(message)
+        }
+
+        dispatch(artikelAll())
+
+        return () => {
+            dispatch(reset())
+        }
+    }, [artikels, isLoading, isError, isSuccess, message, dispatch])
+
+
     return (
         <main>
             {/* ======================= Page Banner START */}
@@ -11,15 +40,14 @@ const Artikel = () => {
                     <div className="row position-relative">
                         {/* Title and breadcrumb */}
                         <div className="col-lg-10 mx-auto text-center position-relative">
-                            {/* Title */}
-                            <h1>Artikel</h1>
                             {/* Search bar */}
                             <form className="bg-body shadow rounded p-2 mt-4">
                                 <div className="input-group">
                                     <input
                                         className="form-control border-0 me-1"
-                                        type="text"
+                                        type="search"
                                         placeholder="Search ..."
+
                                     />
                                     <button type="button" className="btn btn-dark mb-0 rounded">
                                         Search
@@ -38,17 +66,49 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-                        {/* <CardItem /> */}
-
-                        {DataArtikel.map((data) => (
-                            <CardItem key={data.id} data={data} />
-                        ))}
-
+                        {artikels.length > 0 ? (
+                            artikels.map((artikel) => (
+                                <CardItem key={artikel.id} artikel={artikel} />
+                            ))
+                        ) : isLoading ? (
+                            <div className="row">
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                                <div className="col-sm-6 col-lg-4 col-xl-3">
+                                    <SkeletonTheme>
+                                        <Skeleton height={189} className="mb-2" />
+                                        <Skeleton height={26} />
+                                        <Skeleton height={22} />
+                                    </SkeletonTheme>
+                                </div>
+                            </div>
+                        ) : (
+                            <h1>Data Kosong</h1>
+                        )}
                     </div>
                     {/* Row end */}
 
                     {/* Pagination START */}
-                    <nav
+                    {/* <nav
                         className="d-flex justify-content-center mt-5"
                         aria-label="navigation"
                     >
@@ -84,7 +144,7 @@ const Artikel = () => {
                                 </a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
                     {/* Pagination END */}
                 </div>
             </section>
