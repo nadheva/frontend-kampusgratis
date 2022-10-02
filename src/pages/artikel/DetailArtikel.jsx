@@ -1,6 +1,34 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+
 
 const DetailArtikel = () => {
+
+    // redux
+    const dispatch = useDispatch()
+    const { artikels, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.artikel
+    );
+
+    useEffect(() => {
+        if (isError) {
+            console.log(message)
+        }
+
+        dispatch(artikelAll())
+
+        return () => {
+            dispatch(reset())
+        }
+    }, [isError, message, dispatch])
+
+
+    console.log(artikels[0].id)
+
+
     return (
         <main>
             {/* ======================= Main Banner START */}

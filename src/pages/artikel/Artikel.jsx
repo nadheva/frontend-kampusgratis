@@ -30,27 +30,6 @@ const Artikel = () => {
     }, [isError, message, dispatch])
 
 
-    // Search -> TODO: Hidden
-    const [searchValue, setSearchValue] = useState("");
-    const [filteredArtikel, setFilteredArtikel] = useState(artikels);
-
-    const handleSearchFilter = (e) => {
-        setSearchValue(e.target.value);
-    };
-
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            const filter = _.filter(artikels, (artikel) => {
-                return _.includes(
-                    _.lowerCase(JSON.stringify(_.values(artikel))),
-                    _.lowerCase(searchValue)
-                );
-            });
-            setFilteredArtikel(filter);
-        }, 500);
-        return () => clearTimeout(timeout);
-    }, [searchValue]);
-
     return (
         <main>
             {/* ======================= Page Banner START */}
@@ -66,8 +45,7 @@ const Artikel = () => {
                                         className="form-control border-0 me-1"
                                         type="search"
                                         placeholder="Search ..."
-                                        value={searchValue}
-                                        onChange={handleSearchFilter}
+
                                     />
                                     <button type="button" className="btn btn-dark mb-0 rounded">
                                         Search
