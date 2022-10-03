@@ -32,7 +32,7 @@ const Artikel = () => {
         return () => {
             dispatch(reset())
         }
-    }, [artikels, isLoading, isError, isSuccess, message, dispatch])
+    }, [isLoading, isError, isSuccess, message, dispatch])
 
 
     // search

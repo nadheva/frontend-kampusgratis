@@ -293,7 +293,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option1"
+                                  htmlFor="option1"
                                 >
                                   We have cybersecurity insurance coverage
                                 </label>
@@ -307,7 +307,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option2"
+                                  htmlFor="option2"
                                 >
                                   Our dedicated staff will protect us
                                 </label>
@@ -321,7 +321,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option3"
+                                  htmlFor="option3"
                                 >
                                   We give regular training for best practices
                                 </label>
@@ -335,7 +335,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option4"
+                                  htmlFor="option4"
                                 >
                                   Third-party vendor protection
                                 </label>
@@ -370,7 +370,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option11"
+                                  htmlFor="option11"
                                 >
                                   We have cybersecurity insurance coverage
                                 </label>
@@ -384,7 +384,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option22"
+                                  htmlFor="option22"
                                 >
                                   Our dedicated staff will protect us
                                 </label>
@@ -398,7 +398,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option33"
+                                  htmlFor="option33"
                                 >
                                   We give regular training for best practices
                                 </label>
@@ -412,7 +412,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option44"
+                                  htmlFor="option44"
                                 >
                                   Third-party vendor protection
                                 </label>
@@ -447,7 +447,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option111"
+                                  htmlFor="option111"
                                 >
                                   We have cybersecurity insurance coverage
                                 </label>
@@ -461,7 +461,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option222"
+                                  htmlFor="option222"
                                 >
                                   Our dedicated staff will protect us
                                 </label>
@@ -475,7 +475,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option333"
+                                  htmlFor="option333"
                                 >
                                   We give regular training for best practices
                                 </label>
@@ -489,7 +489,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option444"
+                                  htmlFor="option444"
                                 >
                                   Third-party vendor protection
                                 </label>
@@ -522,7 +522,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option1111"
+                                  htmlFor="option1111"
                                 >
                                   We have cybersecurity insurance coverage
                                 </label>
@@ -536,7 +536,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option2222"
+                                  htmlFor="option2222"
                                 >
                                   Our dedicated staff will protect us
                                 </label>
@@ -550,7 +550,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option3333"
+                                  htmlFor="option3333"
                                 >
                                   We give regular training for best practices
                                 </label>
@@ -564,7 +564,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option4444"
+                                  htmlFor="option4444"
                                 >
                                   Third-party vendor protection
                                 </label>
@@ -598,7 +598,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option1111"
+                                  htmlFor="option1111"
                                 >
                                   We have cybersecurity insurance coverage
                                 </label>
@@ -612,7 +612,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option2222"
+                                  htmlFor="option2222"
                                 >
                                   Our dedicated staff will protect us
                                 </label>
@@ -626,7 +626,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option3333"
+                                  htmlFor="option3333"
                                 >
                                   We give regular training for best practices
                                 </label>
@@ -640,7 +640,7 @@ const Question = () => {
                                 />
                                 <label
                                   className="btn btn-outline-primary w-100"
-                                  for="option4444"
+                                  htmlFor="option4444"
                                 >
                                   Third-party vendor protection
                                 </label>

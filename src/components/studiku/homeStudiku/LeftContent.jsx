@@ -1,8 +1,33 @@
 import React from 'react'
 import CourseItem from './CourseItem'
-import DataMatakuliah from '../../../json/Matakuliah'
+
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { getSubject, reset } from '../../../features/subject/subjectSlice'
+import { useEffect } from 'react'
 
 const LeftContent = () => {
+
+    // redux
+    const dispatch = useDispatch()
+    const { data, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.subject
+    );
+
+    useEffect(() => {
+        if (isError) {
+            console.log(message)
+        }
+
+        dispatch(getSubject())
+
+        return () => {
+            dispatch(reset())
+        }
+    }, [isLoading, isError, isSuccess, message, dispatch])
+
+
+
     return (
         <div className="col-lg-8 col-xl-9">
             <div className="row mb-4 align-items-center">
@@ -28,11 +53,11 @@ const LeftContent = () => {
 
             {/* Content */}
             <div className="row g-4">
-                {DataMatakuliah.map((course) => (
-                    <CourseItem key={course.id} course={course} />
+                {data.map((course) => (
+                    <CourseItem key={course.item.id} course={course} />
                 ))}
             </div>
-            
+
             <div className="col-12">
                 <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
                     <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">

@@ -4,6 +4,7 @@ import profileReducer from '../features/profile/profileSlice';
 import artikelReducer from '../features/artikel/artikelSlice';
 import administrationReducer from '../features/administration/administrationSlice';
 import silabusReducer from '../features/silabus/silabusSlice';
+import subjectReducer from '../features/subject/subjectSlice';
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     artikel: artikelReducer,
     administration: administrationReducer,
     silabus: silabusReducer,
+    subject: subjectReducer,
   }
 });
