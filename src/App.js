@@ -16,10 +16,11 @@ import Categories from './pages/landing-page/Categories';
 import Footer from './components/default/Footer';
 
 import MyStudy from './pages/my-study/Main';
-import Silabus from './pages/silabus/Main';
+import Silabus from './pages/syllabus/Main';
 
 import PageNotFound from './components/default/PageNotFound';
 import Administration from './pages/Administration';
+import SilabusSubject from './pages/syllabus/ListSubject';
 
 function App() {
   return (
@@ -79,6 +80,14 @@ function App() {
             <Route path='/silabus' element={<>
               <Header />
               <Silabus />
+              <Footer />
+            </>} />
+          </Route>
+
+          <Route path='/silabus/:majorId' exact element={<PrivateRoute />}>
+            <Route path='/silabus/:majorId' element={<>
+              <Header />
+              <SilabusSubject />
               <Footer />
             </>} />
           </Route>
