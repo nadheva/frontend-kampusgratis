@@ -3,42 +3,86 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import useEffectOnce from '../../helpers/useEffectOnce';
-import { getMajors, reset, resetAll } from '../../features/silabus/silabusSlice';
+import { getMajors, reset, resetAll } from '../../features/syllabus/syllabusSlice';
 import { toast } from 'react-toastify';
 
-import MajorItem from '../../components/Silabus/MajorItem';
+import MajorItem from '../../components/Syllabus/MajorItem';
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const Main = () => {
+  const [searchTerm, setSearchTerm] = useState('')
+
   const [isPageLoad, setIsPageLoad] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isFirstPage, setIsFirstPage] = useState(false);
-  const [isLastPage, setIsLastPage] = useState(false);
+  const [showFirstPage, setShowFirstPage] = useState(false);
+  const [showLastPage, setShowLastPage] = useState(false);
   const [lastPage, setLastPage] = useState(1);
 
   const dispatch = useDispatch();
 
   const { data, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.silabus
+    (state) => state.syllabus
   );
 
   const changePage = (page) => {
     setCurrentPage(page);
     dispatch(resetAll());
 
-    if (page == 1) setIsFirstPage(false);
-    else {
-      setIsFirstPage(true);
-      setIsLastPage(true);
+    if (page == 1) setShowFirstPage(false);
+    else setShowFirstPage(true);
+
+    if (page == lastPage) setShowLastPage(false);
+    else setShowLastPage(true);
+
+    dispatch(getMajors({ currentPage: page, search: searchTerm }));
+  }
+
+  const doFilter = (e) => {
+    e.preventDefault();
+    dispatch(resetAll());
+    dispatch(getMajors({ currentPage, search: searchTerm }));
+
+    setIsPageLoad(false);
+    setShowFirstPage(false);
+    setShowLastPage(false);
+  }
+
+  useEffectOnce(() => {
+    dispatch(resetAll());
+    dispatch(getMajors({ currentPage, search: searchTerm }));
+    setShowLastPage(true);
+  });
+
+  useEffect(() => {
+    if (data && Object.keys(data).length != 0) {
+      setIsPageLoad(true);
+      setLastPage(data.max_page);
+
+      if (currentPage == 1) setShowFirstPage(false);
+      else setShowFirstPage(true);
+
+      if (currentPage == lastPage) setShowLastPage(false);
+      else setShowLastPage(true);
+
+      if (data.result.length == 0) {
+        setShowFirstPage(false);
+        setShowLastPage(false);
+        setIsPageLoad(false);
+      }
     }
 
-    if (page == lastPage) setIsLastPage(false);
-    else setIsLastPage(true);
+    if (isError && !isSuccess) {
+      toast.error(message);
+      dispatch(reset());
+    }
 
-    dispatch(getMajors(page));
-  }
+    if (isSuccess && message && !isError) {
+      toast.success(message);
+      dispatch(reset());
+    }
+  }, [searchTerm, showFirstPage, showLastPage, data, isLoading, isError, isSuccess, message]);
 
   const renderPage = () => {
     if (!isPageLoad) return;
@@ -55,37 +99,6 @@ const Main = () => {
 
     return page;
   }
-
-  useEffectOnce(() => {
-    dispatch(resetAll());
-    dispatch(getMajors(currentPage));
-  });
-
-  useEffect(() => {
-    if (data && Object.keys(data).length != 0) {
-      setIsPageLoad(true);
-      setLastPage(data.max_page);
-
-      if (currentPage == 1) setIsFirstPage(false);
-      else {
-        setIsFirstPage(true);
-        setIsLastPage(true);
-      }
-
-      if (currentPage == lastPage) setIsLastPage(false);
-      else setIsLastPage(true);
-    }
-
-    if (isError && !isSuccess) {
-      toast.error(message);
-      dispatch(reset());
-    }
-
-    if (isSuccess && message && !isError) {
-      toast.success(message);
-      dispatch(reset());
-    }
-  }, [isFirstPage, isLastPage, data, isLoading, isError, isSuccess, message]);
 
   return <main>
     <section className="bg-blue align-items-center d-flex" style={{ background: "url(assets/images/pattern/04.png) no-repeat center center", backgroundSize: "cover" }}>
@@ -107,10 +120,10 @@ const Main = () => {
     </section>
     <section className="pt-0">
       <div className="container">
-        <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
+        <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative" onSubmit={doFilter}>
           <div className="row g-3">
             <div className="col-xl-3">
-              <input className="form-control me-1" type="search" placeholder="Enter keyword" />
+              <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang kamu ingin cari ..." onChange={(e) => setSearchTerm(e.target.value)} />
             </div>
             <div className="col-xl-8">
               <div className="row g-3">
@@ -160,36 +173,19 @@ const Main = () => {
               </div>
             </div>
             <div className="col-xl-1">
-              <button type="button" className="btn btn-primary mb-0 rounded z-index-1 w-100"><i
-                className="fas fa-search"></i></button>
+              <button type="submit" className="btn btn-primary mb-0 rounded z-index-1 w-100">
+                <i className="fas fa-search"></i>
+              </button>
             </div>
           </div>
         </form>
         <div className="row mt-3">
           <div className="col-12">
             <div className="row g-4">
+              {data?.result?.length == 0 && <>
+                <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
+              </>}
               {data?.result ? data?.result.map(major => <MajorItem key={major.id} major={major} />) : <>
-                <div className='col-sm-6 col-lg-4'>
-                  <SkeletonTheme>
-                    <Skeleton height={260} />
-                    <Skeleton height={102} />
-                    <Skeleton height={67} />
-                  </SkeletonTheme>
-                </div>
-                <div className='col-sm-6 col-lg-4'>
-                  <SkeletonTheme>
-                    <Skeleton height={260} />
-                    <Skeleton height={102} />
-                    <Skeleton height={67} />
-                  </SkeletonTheme>
-                </div>
-                <div className='col-sm-6 col-lg-4'>
-                  <SkeletonTheme>
-                    <Skeleton height={260} />
-                    <Skeleton height={102} />
-                    <Skeleton height={67} />
-                  </SkeletonTheme>
-                </div>
                 <div className='col-sm-6 col-lg-4'>
                   <SkeletonTheme>
                     <Skeleton height={260} />
@@ -216,13 +212,13 @@ const Main = () => {
             <div className="col-12">
               <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
                 <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-                  {isFirstPage && isPageLoad && <li className="page-item mb-0">
+                  {showFirstPage && isPageLoad && <li className="page-item mb-0">
                     <button className="page-link" onClick={() => changePage(1)}>
                       <i className="fas fa-angle-double-left"></i>
                     </button>
                   </li>}
                   {renderPage()}
-                  {isLastPage && isPageLoad && <li className="page-item mb-0">
+                  {showLastPage && isPageLoad && <li className="page-item mb-0">
                     <button className="page-link" onClick={() => changePage(lastPage)} >
                       <i className="fas fa-angle-double-right"></i>
                     </button>

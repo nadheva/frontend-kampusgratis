@@ -44,12 +44,18 @@ export const profileSlice = createSlice({
   name: 'profile',
   initialState,
   reducers: {
+    resetState: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.message = '';
+    },
     reset: (state) => {
       state.isLoading = false;
       state.isError = false;
       state.isSuccess = false;
       state.message = '';
-      state.user = null;
+      state.user = '';
     },
   },
   extraReducers: (builder) => {
@@ -74,7 +80,7 @@ export const profileSlice = createSlice({
       .addCase(updateProfile.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.message = "Perubahan Profil Tersimpan.";
+        state.message = "Perubahan Profil telah disimpan.";
         state.user = action.payload.data;
       })
       .addCase(updateProfile.rejected, (state, action) => {
@@ -85,5 +91,5 @@ export const profileSlice = createSlice({
   }
 });
 
-export const { reset } = profileSlice.actions;
+export const { resetState, reset } = profileSlice.actions;
 export default profileSlice.reducer;

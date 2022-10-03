@@ -3,7 +3,7 @@ import authReducer from '../features/auth/authSlice';
 import profileReducer from '../features/profile/profileSlice';
 import artikelReducer from '../features/artikel/artikelSlice';
 import administrationReducer from '../features/administration/administrationSlice';
-import silabusReducer from '../features/silabus/silabusSlice';
+import syllabusReducer from '../features/syllabus/syllabusSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +11,6 @@ export const store = configureStore({
     profile: profileReducer,
     artikel: artikelReducer,
     administration: administrationReducer,
-    silabus: silabusReducer,
+    syllabus: syllabusReducer
   }
 });

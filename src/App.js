@@ -44,7 +44,8 @@ import StudentDashboard from "./pages/student/StudentDashboard";
 import MyCourse from "./pages/student/MyCourse";
 
 // Silabus
-import Silabus from './pages/silabus/Main';
+import Silabus from './pages/syllabus/Main';
+import SilabusSubject from './pages/syllabus/ListSubject';
 
 function App() {
   return (
@@ -300,6 +301,14 @@ function App() {
             <Route path='/silabus' element={<>
               <Header />
               <Silabus />
+              <Footer />
+            </>} />
+          </Route>
+
+          <Route path='/silabus/:majorId' exact element={<PrivateRoute />}>
+            <Route path='/silabus/:majorId' element={<>
+              <Header />
+              <SilabusSubject />
               <Footer />
             </>} />
           </Route>
