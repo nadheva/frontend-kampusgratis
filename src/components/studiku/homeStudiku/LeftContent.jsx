@@ -1,6 +1,9 @@
 import React from 'react'
 import CourseItem from './CourseItem'
 
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 // redux
 import { useSelector, useDispatch } from 'react-redux'
 import { getSubject, reset } from '../../../features/subject/subjectSlice'
@@ -53,9 +56,34 @@ const LeftContent = () => {
 
             {/* Content */}
             <div className="row g-4">
-                {data.map((course) => (
-                    <CourseItem key={course.item.id} course={course} />
-                ))}
+                {data.length > 0 ? (
+                    data.map((course) => (
+                        <CourseItem key={course.item.id} course={course} />
+                    ))
+                ) : isLoading ? (
+                    <>
+                        <div className="col-sm-6 col-xl-4">
+                            <SkeletonTheme>
+                                <Skeleton height={234} />
+                                <Skeleton height={100} />
+                            </SkeletonTheme>
+                        </div>
+                        <div className="col-sm-6 col-xl-4">
+                            <SkeletonTheme>
+                                <Skeleton height={234} />
+                                <Skeleton height={100} />
+                            </SkeletonTheme>
+                        </div>
+                        <div className="col-sm-6 col-xl-4">
+                            <SkeletonTheme>
+                                <Skeleton height={234} />
+                                <Skeleton height={100} />
+                            </SkeletonTheme>
+                        </div>
+                    </>
+                ) : (
+                    <h1>Data Kosong</h1>
+                )}
             </div>
 
             <div className="col-12">
