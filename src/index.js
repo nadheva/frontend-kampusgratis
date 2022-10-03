@@ -14,6 +14,7 @@ root.render(
     <Helmet>
       {/* <!-- Bootstrap JS --> */}
       <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+      <script src="assets/vendor/choices/js/choices.min.js" defer></script>
 
       {/* <!-- Vendors --> */}
 
