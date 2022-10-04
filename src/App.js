@@ -47,6 +47,8 @@ import MyCourse from "./pages/student/MyCourse";
 import Silabus from "./pages/syllabus/Main";
 import SilabusSubject from "./pages/syllabus/ListSubject";
 
+import Calendar from "./pages/kalender/Calendar";
+
 function App() {
   return (
     <>
@@ -335,6 +337,19 @@ function App() {
                   <Header />
                   <SilabusSubject />
                   <Footer />
+                </>
+              }
+            />
+          </Route>
+
+          <Route path="/calender" exact element={<PrivateRoute />}>
+            <Route
+              path="/calender"
+              exact
+              element={
+                <>
+                  <Header />
+                  <Calendar />
                 </>
               }
             />
