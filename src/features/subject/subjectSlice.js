@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import subjectService from './subjectService';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import subjectService from './subjectService';
 
 const initialState = {
-  data: [],
+  subjects: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: ''
 };
 
-export const getSubject = createAsyncThunk(
+export const getSubjects = createAsyncThunk(
   'subject/enrolledsubjects',
-  async (token, thunkAPI) => {
+  async (_, thunkAPI) => {
     try {
 
-      const { data } = await subjectService.getSubject(token);
+      const { data } = await subjectService.getSubject();
       return data;
 
     } catch (error) {
@@ -38,19 +38,19 @@ export const subjectSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getSubject.pending, (state) => {
+      .addCase(getSubjects.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getSubject.fulfilled, (state, action) => {
+      .addCase(getSubjects.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data = action.payload;
+        state.subjects = action.payload;
       })
-      .addCase(getSubject.rejected, (state, action) => {
+      .addCase(getSubjects.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.data = null;
+        state.subjects = null;
       })
   }
 });
