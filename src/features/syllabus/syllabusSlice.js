@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { extractErrorMessage } from '../../utils';
-import silabusService from './silabusService';
+import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import syllabusService from './syllabusService';
 
 const initialState = {
   date: {},
@@ -11,18 +11,29 @@ const initialState = {
 };
 
 export const getMajors = createAsyncThunk(
-  'silabus/get-majors',
-  async (currentPage, thunkAPI) => {
+  'syllabus/get-majors',
+  async ({ currentPage, search }, thunkAPI) => {
     try {
-      return await silabusService.getMajors(currentPage);
+      return await syllabusService.getMajors(currentPage, search);
     } catch (error) {
       return thunkAPI.rejectWithValue(extractErrorMessage(error));
     }
   }
 )
 
-export const administrationSlice = createSlice({
-  name: 'administration',
+export const getSubjectsByMajor = createAsyncThunk(
+  'syllabus/get-subject-by-major',
+  async (majorId, thunkAPI) => {
+    try {
+      return await syllabusService.getSubjectByMajor(majorId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error));
+    }
+  }
+)
+
+export const syllabusSlice = createSlice({
+  name: 'syllabus',
   initialState,
   reducers: {
     reset: (state) => {
@@ -54,8 +65,21 @@ export const administrationSlice = createSlice({
         state.isError = true;
         state.message = action.payload;
       })
+      .addCase(getSubjectsByMajor.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSubjectsByMajor.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data = action.payload.data;
+      })
+      .addCase(getSubjectsByMajor.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
   }
 });
 
-export const { reset, resetAll } = administrationSlice.actions;
-export default administrationSlice.reducer;
+export const { reset, resetAll } = syllabusSlice.actions;
+export default syllabusSlice.reducer;

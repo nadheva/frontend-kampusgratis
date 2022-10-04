@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Banner from '../components/Profile/Banner';
 import Sidebar from '../components/Profile/Sidebar';
 
-
-
 import useEffectOnce from '../helpers/useEffectOnce';
 
 import AdministrationForm from '../components/Administration/AdministrationForm';

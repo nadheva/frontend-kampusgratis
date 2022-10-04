@@ -115,7 +115,7 @@ function Login() {
                       />
                     </Link>
                     </div>
-                    <h1 className="fs-2 pt-5">Login Kampus Grastis!</h1>
+                    <h1 className="fs-2 pt-5">Login Kampus Gratis!</h1>
                     <p className="lead mb-4">
                       Silahkan login dengan akun yang terdaftar.
                     </p>
