@@ -5,6 +5,9 @@ import { reset as resetUser } from '../../features/profile/profileSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+
+import Logo from '../../assets/images/logo-kampus-gratis.png';
+
 import useScript from '../../hooks/useScript';
 
 const getFirstName = (fullName) => {
@@ -18,6 +21,8 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
+
+  useScript("http://localhost:3000/assets/js/functions.js");
 
   const onLogout = () => {
     auth.signOut();
@@ -44,8 +49,8 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand me-0" to='/'>
-              <img className="light-mode-item navbar-brand-item" src="assets/images/logo-kampus-gratis.png" alt="Kampus Gratis" />
-              <img className="dark-mode-item navbar-brand-item" src="assets/images/logo-kampus-gratis.png" alt="Kampus Gratis" />
+              <img className="light-mode-item navbar-brand-item" src={Logo} alt="Kampus Gratis" />
+              <img className="dark-mode-item navbar-brand-item" src={Logo} alt="Kampus Gratis" />
             </Link>
             <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-animation">

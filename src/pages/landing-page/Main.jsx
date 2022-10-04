@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Footer from '../../components/default/Footer';
+import Header from '../../components/default/Header';
+
 const Main = () => {
   return <>
+    <Header />
     <section className="bg-light pb-5">
       <div className="container pt-5 mt-0 mt-lg-5">
         <div className="row position-relative mb-0 mb-sm-5 pb-0 pb-lg-5">
@@ -490,7 +494,8 @@ const Main = () => {
         </div>
       </div>
     </section>
+    <Footer />
   </>
 }
 
-export default Main
+export default Main;

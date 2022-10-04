@@ -9,6 +9,9 @@ import useEffectOnce from '../helpers/useEffectOnce';
 import AdministrationForm from '../components/Administration/AdministrationForm';
 import { getMyAdministration } from '../features/administration/administrationSlice';
 
+import Header from '../components/default/Header';
+import Footer from '../components/default/Footer';
+
 const Administration = () => {
   const dispatch = useDispatch();
 
@@ -22,6 +25,7 @@ const Administration = () => {
 
   return (
     <>
+      <Header />
       <Banner />
       <section className="pt-0">
         <div className="container">
@@ -47,6 +51,7 @@ const Administration = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

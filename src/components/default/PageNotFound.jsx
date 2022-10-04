@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 const PageNotFound = () => {
   return <>
+    <Header />
     <main>
       <section className="pt-5">
         <div className="container">
@@ -22,6 +25,7 @@ const PageNotFound = () => {
         </div>
       </section>
     </main>
+    <Footer />
   </>
 }
 

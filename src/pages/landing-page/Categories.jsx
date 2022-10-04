@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Header from '../../components/default/Header';
+import Footer from '../../components/default/Footer';
+
 const Categories = () => {
+
   return (
     <>
+      <Header />
       <section>
         <div className="container position-relative">
           <div className="row">
@@ -225,6 +230,7 @@ const Categories = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   )
 }

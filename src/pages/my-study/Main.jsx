@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom';
 
 import CourseItem from '../../components/My-Study/CourseItem';
 
+import Footer from '../../components/default/Footer';
+import Header from '../../components/default/Header';
+
 const Main = () => {
   return <>
+    <Header />
     <main>
       <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
         <div className="container">
@@ -235,6 +239,7 @@ const Main = () => {
 
       </section>
     </main>
+    <Footer />
   </>
 }
 

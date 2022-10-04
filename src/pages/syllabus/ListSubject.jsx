@@ -4,6 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 import { getSubjectsByMajor } from '../../features/syllabus/syllabusSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 
+import Header from '../../components/default/Header';
+import Footer from '../../components/default/Footer';
+
 const ListSubject = () => {
   const { majorId } = useParams();
   const dispatch = useDispatch();
@@ -21,6 +24,7 @@ const ListSubject = () => {
   }, [data, isLoading]);
 
   return <>
+    <Header />
     <section className="bg-light py-0 py-sm-5">
       <div className="container">
         <div className="row py-5">
@@ -43,7 +47,7 @@ const ListSubject = () => {
         </div>
       </div>
     </section>
-    <section className="pb-0 py-lg-5">
+    {/* <section className="pb-0 py-lg-5">
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
@@ -1507,7 +1511,8 @@ const ListSubject = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
+    <Footer />
   </>
 }
 
