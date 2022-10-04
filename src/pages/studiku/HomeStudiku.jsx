@@ -50,7 +50,7 @@ const Main = () => {
             {/* Left */}
             <div className="col-lg-8 col-xl-9">
               <div className="row mb-4 align-items-center">
-                <div className="col-xl-8">
+                <div className="col-xl-12">
                   <form className="border rounded p-2">
                     <div className="input-group input-borderless">
                       <input className="form-control me-1" type="search" placeholder="Temukan matakuliah anda" />
@@ -58,16 +58,16 @@ const Main = () => {
                     </div>
                   </form>
                 </div>
-                <div className="col-xl-4 mt-3 mt-xl-0">
+                {/* <div className="col-xl-4 mt-3 mt-xl-0">
                   <form className="border rounded p-2 input-borderless">
                     <select className="form-select form-select-sm js-choice border-0" aria-label=".form-select-sm">
-                      <option value="">Most Viewed</option>
-                      <option>Recently search</option>
-                      <option>Most popular</option>
-                      <option>Top rated</option>
+                      <option value="">Skill Level</option>
+                      <option>Basic</option>
+                      <option>Intermediate</option>
+                      <option>Advanced</option>
                     </select>
                   </form>
-                </div>
+                </div> */}
               </div>
 
               {/* Content */}
@@ -124,7 +124,7 @@ const Main = () => {
 
                 <div className="offcanvas-body p-3 p-lg-0">
                   <form>
-                    <div className="card card-body shadow p-4 mb-4">
+                    {/* <div className="card card-body shadow p-4 mb-4">
                       <h4 className="mb-3">Category</h4>
                       <div className="col-12">
                         <div className="d-flex justify-content-between align-items-center">
@@ -154,20 +154,6 @@ const Main = () => {
                             <label className="form-check-label" htmlFor="flexCheckDefault12">Accounting</label>
                           </div>
                           <span className="small">(65)</span>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault17" />
-                            <label className="form-check-label" htmlFor="flexCheckDefault17">Translation</label>
-                          </div>
-                          <span className="small">(245)</span>
-                        </div>
-                        <div className="d-flex justify-content-between align-items-center">
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault13" />
-                            <label className="form-check-label" htmlFor="flexCheckDefault13">Finance</label>
-                          </div>
-                          <span className="small">(184)</span>
                         </div>
                         <div className="d-flex justify-content-between align-items-center">
                           <div className="form-check">
@@ -208,7 +194,8 @@ const Main = () => {
                             className="fas fa-angle-down ms-2"></i>
                         </a>
                       </div>
-                    </div>
+                    </div> */}
+
                     <div className="card card-body shadow p-4 mb-4">
                       <h4 className="mb-3">Skill level</h4>
                       <ul className="list-inline mb-0">
@@ -218,7 +205,7 @@ const Main = () => {
                         </li>
                         <li className="list-inline-item mb-2">
                           <input type="checkbox" className="btn-check" id="btn-check-9" />
-                          <label className="btn btn-light btn-primary-soft-check" htmlFor="btn-check-9">Beginner</label>
+                          <label className="btn btn-light btn-primary-soft-check" htmlFor="btn-check-9">Basic</label>
                         </li>
                         <li className="list-inline-item mb-2">
                           <input type="checkbox" className="btn-check" id="btn-check-10" />
@@ -232,19 +219,15 @@ const Main = () => {
                     </div>
                   </form>
                 </div>
-                <div className="d-grid p-2 p-lg-0 text-center">
+                {/* <div className="d-grid p-2 p-lg-0 text-center">
                   <button className="btn btn-primary mb-0">Filter Results</button>
-                </div>
+                </div> */}
               </div>
             </div>
 
           </div>
         </div>
       </section >
-
-
-
-
 
     </main>
   </>
