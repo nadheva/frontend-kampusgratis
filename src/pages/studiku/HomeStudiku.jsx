@@ -79,7 +79,7 @@ const Main = () => {
                   <form className="border rounded p-2">
                     <div className="input-group input-borderless">
                       <input className="form-control me-1"
-                        type="search" placeholder="Temukan matakuliah anda"
+                        type="search" placeholder="Cari matakuliah"
                         value={searchValue}
                         onChange={handleSearchFilter}
                       />
@@ -108,19 +108,19 @@ const Main = () => {
                       <div className="col-sm-6 col-xl-4">
                         <SkeletonTheme>
                           <Skeleton height={234} />
-                          <Skeleton height={100} />
+                          <Skeleton height={50} />
                         </SkeletonTheme>
                       </div>
                       <div className="col-sm-6 col-xl-4">
                         <SkeletonTheme>
                           <Skeleton height={234} />
-                          <Skeleton height={100} />
+                          <Skeleton height={50} />
                         </SkeletonTheme>
                       </div>
                       <div className="col-sm-6 col-xl-4">
                         <SkeletonTheme>
                           <Skeleton height={234} />
-                          <Skeleton height={100} />
+                          <Skeleton height={50} />
                         </SkeletonTheme>
                       </div>
                     </>
