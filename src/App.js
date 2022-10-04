@@ -50,12 +50,12 @@ function App() {
             <Route path='/studi-ku' exact element={<MyStudy />} />
           </Route>
 
-          <Route path='/silabus' exact element={<PrivateRoute />}>
-            <Route path='/silabus' exact element={<Silabus />} />
+          <Route path='/silabus/:majorId' element={<PrivateRoute />}>
+            <Route path='/silabus/:majorId' element={<SilabusSubject />} />
           </Route>
 
-          <Route path='/silabus/:majorId' exact element={<PrivateRoute />}>
-            <Route path='/silabus/:majorId' exact element={<SilabusSubject />} />
+          <Route path='/silabus' exact element={<PrivateRoute />}>
+            <Route path='/silabus' exact element={<Silabus />} />
           </Route>
 
           <Route path="/*" element={<PageNotFound />} />

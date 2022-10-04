@@ -30,8 +30,8 @@ const ListSubject = () => {
         <div className="row py-5">
           <div className="col-lg-8">
             <h6 className="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">Digital Marketing</h6>
-            <h1>{data && data[0]?.name}</h1>
-            <p>{data && data[0]?.description}</p>
+            <h1>{data && data?.major?.name}</h1>
+            <p>{data && data?.major?.description}</p>
             <ul className="list-inline mb-0">
               <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i className="fas fa-star text-warning me-2"></i>4.5/5.0
               </li>
@@ -40,7 +40,7 @@ const ListSubject = () => {
               <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i className="fas fa-signal text-success me-2"></i>All
                 levels</li>
               <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
-                className="bi bi-patch-exclamation-fill text-danger me-2"></i>Last updated 09/2021</li>
+                className="bi bi-patch-exclamation-fill text-danger me-2"></i>Last updated {data !== undefined ? `${data?.major?.updated_at.split("-")[1]}/${data?.major?.updated_at.split("-")[0]}` : "-/-"}</li>
               <li className="list-inline-item h6 mb-0"><i className="fas fa-globe text-info me-2"></i>English</li>
             </ul>
           </div>
