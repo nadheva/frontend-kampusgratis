@@ -15,18 +15,16 @@ export const useAuthStatus = () => {
     if (isMounted) {
       const auth = getAuth();
 
-      if (!auth.uid) {
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
-        toast.info("Session kamu telah berakhir!");
-        dispatch(reset());
-      }
-
       onAuthStateChanged(auth, async (user) => {
         if (user) {
           setLoggedIn(true);
           const token = await user?.getIdToken();
           localStorage.setItem("token", token);
+        } else {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          toast.info("Session kamu telah berakhir!");
+          dispatch(reset());
         }
 
         setCheckingStatus(false);
@@ -37,6 +35,11 @@ export const useAuthStatus = () => {
           setLoggedIn(true);
           const token = await user?.getIdToken();
           localStorage.setItem("token", token);
+        } else {
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
+          toast.info("Session kamu telah berakhir!");
+          dispatch(reset());
         }
 
         setCheckingStatus(false);
