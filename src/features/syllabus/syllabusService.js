@@ -30,7 +30,7 @@ const getSubjectByMajor = async (majorId) => {
     }
   }
 
-  const response = await axios.get(API_URL + `syllabus/subjectByMajor/${majorId}`, config);
+  const response = await axios.get(API_URL + `syllabus/curriculum?degree=S1&major_id=${majorId}`, config);
 
   return response.data;
 }

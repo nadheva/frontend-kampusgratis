@@ -5,6 +5,7 @@ import { reset as resetUser } from '../../features/profile/profileSlice';
 import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import useScript from '../../hooks/useScript';
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");

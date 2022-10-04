@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getAuth } from 'firebase/auth';
 import profileService from './profileService';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 
@@ -17,10 +16,7 @@ export const getMe = createAsyncThunk(
   'profile/get-me',
   async (_, thunkAPI) => {
     try {
-      const auth = getAuth();
-      const token = await auth.currentUser.getIdToken();
-
-      const { data } = await profileService.getMe(token);
+      const { data } = await profileService.getMe();
 
       return data;
     } catch (error) {
@@ -31,9 +27,9 @@ export const getMe = createAsyncThunk(
 
 export const updateProfile = createAsyncThunk(
   'profile/put-me',
-  async (_, thunkAPI) => {
+  async (data, thunkAPI) => {
     try {
-      return await profileService.updateProfile(_.data, _.token);
+      return await profileService.updateProfile(data);
     } catch (error) {
       return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
     }
@@ -84,9 +80,10 @@ export const profileSlice = createSlice({
         state.user = action.payload.data;
       })
       .addCase(updateProfile.rejected, (state, action) => {
+        console.log(action.payload);
         state.isLoading = false;
         state.isError = true;
-        state.message = action.payload;
+        state.message = action.payload.message;
       })
   }
 });

@@ -33,7 +33,7 @@ const Administration = () => {
                   <div className="row">
                     <div className="col-sm-6 d-flex align-items-center">
                       <h3 className="card-header-title mb-2 mb-sm-0 d-inline-flex">Administrasi</h3>
-                      {data?.is_approved?.biodata == false
+                      {data?.is_approved?.overall == false
                         ? <span className="badge bg-primary bg-opacity-10 ms-3 text-primary py-2">waiting</span>
                         : <span className='badge bg-secondary bg-opacity-10 ms-3 text-dark py-2'>loading</span>}
                     </div>

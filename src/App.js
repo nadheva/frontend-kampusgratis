@@ -41,7 +41,7 @@ function App() {
 
           {/* Open Private Page */}
           <Route path='/dashboard' exact element={<PrivateRoute />}>
-            <Route path='/dashboard' element={<>
+            <Route path='/dashboard' exact element={<>
               <Header />
               <Dashboard />
               <Footer />
@@ -49,7 +49,7 @@ function App() {
           </Route>
 
           <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
-            <Route path='/administrasi' element={<>
+            <Route path='/administrasi' exact element={<>
               <Header />
               <Administration />
               <Footer />
@@ -57,7 +57,7 @@ function App() {
           </Route>
 
           <Route path='/profil' exact element={<><PrivateRoute /></>}>
-            <Route path='/profil' element={<>
+            <Route path='/profil' exact element={<>
               <Header />
               <Profile />
               <Footer />
@@ -65,11 +65,11 @@ function App() {
           </Route>
           {/* Close Private Page */}
 
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route path='/login' exact element={<Login />} />
+          <Route path='/register' exact element={<Register />} />
 
           <Route path='/studi-ku' exact element={<PrivateRoute />}>
-            <Route path='/studi-ku' element={<>
+            <Route path='/studi-ku' exact element={<>
               <Header />
               <MyStudy />
               <Footer />
@@ -77,7 +77,7 @@ function App() {
           </Route>
 
           <Route path='/silabus' exact element={<PrivateRoute />}>
-            <Route path='/silabus' element={<>
+            <Route path='/silabus' exact element={<>
               <Header />
               <Silabus />
               <Footer />
@@ -85,7 +85,7 @@ function App() {
           </Route>
 
           <Route path='/silabus/:majorId' exact element={<PrivateRoute />}>
-            <Route path='/silabus/:majorId' element={<>
+            <Route path='/silabus/:majorId' exact element={<>
               <Header />
               <SilabusSubject />
               <Footer />

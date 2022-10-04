@@ -61,7 +61,7 @@ const AdministrationForm = () => {
     if (e.target.files[0]) {
       setAdministrationFiles((prevState) => ({
         ...prevState,
-        [e.target.name]: e.target.files[0]
+        [e.target.name]: e.target.files[0].name
       }));
     }
   }
@@ -136,14 +136,14 @@ const AdministrationForm = () => {
     if (data?.biodata) setAdministrationBiodata({ ...data?.biodata, ...appendData });
     if (data?.familial) setAdministrationFamilial(data.familial);
     if (data?.files) setAdministrationFiles(data.files);
-    if (data?.degree) setAdministrationDegree(data.degree);
+    if (data?.degree) setAdministrationDegree({ degree: data.degree });
 
     if (isError && !isSuccess) {
       toast.error(message);
       dispatch(reset());
     }
 
-    if (isSuccess && data.length > 0) {
+    if (isSuccess && Object.keys(data).length > 0) {
       setIsLoaded(true);
     }
 
@@ -231,7 +231,14 @@ const AdministrationForm = () => {
                   </div>
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
-                  <button type="submit" className="btn btn-primary mb-0">Simpan Biodata</button>
+                  {isLoading ? (
+                    <button className="btn btn-primary mb-0" type="submit" disabled={isLoading}>
+                      <span className="spinner-border spinner-border-sm"></span>
+                      &nbsp;Loading...
+                    </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary mb-0">Simpan Biodata</button>
+                  )}
                 </div>
               </form>
             </div>
@@ -298,7 +305,14 @@ const AdministrationForm = () => {
                   </div>
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
-                  <button type="submit" className="btn btn-primary mb-0">Simpan Data Keluarga</button>
+                  {isLoading ? (
+                    <button className="btn btn-primary mb-0" type="submit" disabled={isLoading}>
+                      <span className="spinner-border spinner-border-sm"></span>
+                      &nbsp;Loading...
+                    </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary mb-0">Simpan Data Keluarga</button>
+                  )}
                 </div>
               </form>
             </div>
@@ -395,8 +409,14 @@ const AdministrationForm = () => {
                   </div>
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
-                  <button type="submit" className="btn btn-primary mb-0">Simpan Berkas</button>
-                </div>
+                  {isLoading ? (
+                    <button className="btn btn-primary mb-0" type="submit" disabled={isLoading}>
+                      <span className="spinner-border spinner-border-sm"></span>
+                      &nbsp;Loading...
+                    </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary mb-0">Simpan Berkas</button>
+                  )}                </div>
               </form>
             </div>
           </div>
@@ -424,8 +444,14 @@ const AdministrationForm = () => {
                   <input type="text" className="form-control mb-3" name="degree" value={degree} placeholder="Jenjang Pendidikan" onChange={onFormChangeAdministrationDegree} />
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
-                  <button type="submit" className="btn btn-primary mb-0">Simpan Jenjang</button>
-                </div>
+                  {isLoading ? (
+                    <button className="btn btn-primary mb-0" type="submit" disabled={isLoading}>
+                      <span className="spinner-border spinner-border-sm"></span>
+                      &nbsp;Loading...
+                    </button>
+                  ) : (
+                    <button type="submit" className="btn btn-primary mb-0">Simpan Jenjang</button>
+                  )}                </div>
               </form>
             </div>
           </div>

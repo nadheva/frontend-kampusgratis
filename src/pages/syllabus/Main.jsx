@@ -30,10 +30,10 @@ const Main = () => {
     setCurrentPage(page);
     dispatch(resetAll());
 
-    if (page == 1) setShowFirstPage(false);
+    if (page === 1) setShowFirstPage(false);
     else setShowFirstPage(true);
 
-    if (page == lastPage) setShowLastPage(false);
+    if (page === lastPage) setShowLastPage(false);
     else setShowLastPage(true);
 
     dispatch(getMajors({ currentPage: page, search: searchTerm }));
@@ -41,6 +41,7 @@ const Main = () => {
 
   const doFilter = (e) => {
     e.preventDefault();
+
     dispatch(resetAll());
     dispatch(getMajors({ currentPage, search: searchTerm }));
 
@@ -56,22 +57,22 @@ const Main = () => {
   });
 
   useEffect(() => {
-    if (data && Object.keys(data).length != 0) {
+    if (data && Object.keys(data).length !== 0) {
       setIsPageLoad(true);
       setLastPage(data.max_page);
 
-      if (currentPage == 1) setShowFirstPage(false);
+      if (currentPage === 1) setShowFirstPage(false);
       else setShowFirstPage(true);
 
-      if (currentPage == lastPage) setShowLastPage(false);
+      if (currentPage === lastPage) setShowLastPage(false);
       else setShowLastPage(true);
 
-      if (data.result.length == 0) {
+      if (data?.result?.length === 0) {
         setShowFirstPage(false);
         setShowLastPage(false);
         setIsPageLoad(false);
       }
-    }
+    } else setIsPageLoad(false);
 
     if (isError && !isSuccess) {
       toast.error(message);
@@ -82,16 +83,16 @@ const Main = () => {
       toast.success(message);
       dispatch(reset());
     }
-  }, [searchTerm, showFirstPage, showLastPage, data, isLoading, isError, isSuccess, message]);
+  }, [currentPage, lastPage, isPageLoad, searchTerm, showFirstPage, showLastPage, data, isLoading, isError, isSuccess, message, dispatch]);
 
   const renderPage = () => {
-    if (!isPageLoad) return;
+    if (!isPageLoad) return <></>;
 
     let page = [];
 
     for (let i = 1; i <= lastPage; i++) {
-      page.push(<li className={`page-item mb-0 ${i == currentPage ? "active" : ""}`} >
-        {i == currentPage
+      page.push(<li className={`page-item mb-0 ${i === currentPage ? "active" : ""}`} >
+        {i === currentPage
           ? <span className="page-link">{i}</span>
           : <button className="page-link" onClick={() => changePage(i)}>{i}</button>}
       </li>);
@@ -127,7 +128,7 @@ const Main = () => {
             </div>
             <div className="col-xl-8">
               <div className="row g-3">
-                <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+                <div className="col-md-6 pb-2 pb-md-0">
                   <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
                     <option value="">Categories</option>
                     <option>All</option>
@@ -142,34 +143,6 @@ const Main = () => {
                     <option>Marketing</option>
                   </select>
                 </div>
-                <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                  <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                    <option value="">Price level</option>
-                    <option>All</option>
-                    <option>Free</option>
-                    <option>Paid</option>
-                  </select>
-                </div>
-                <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                  <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                    <option value="">Skill level</option>
-                    <option>All levels</option>
-                    <option>Beginner</option>
-                    <option>Intermediate</option>
-                    <option>Advanced</option>
-                  </select>
-                </div>
-                <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                  <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                    <option value="">Language</option>
-                    <option>English</option>
-                    <option>Francas</option>
-                    <option>Russian</option>
-                    <option>Hindi</option>
-                    <option>Bengali</option>
-                    <option>Spanish</option>
-                  </select>
-                </div>
               </div>
             </div>
             <div className="col-xl-1">
@@ -182,7 +155,7 @@ const Main = () => {
         <div className="row mt-3">
           <div className="col-12">
             <div className="row g-4">
-              {data?.result?.length == 0 && <>
+              {data?.result?.length === 0 && <>
                 <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
               </>}
               {data?.result ? data?.result.map(major => <MajorItem key={major.id} major={major} />) : <>

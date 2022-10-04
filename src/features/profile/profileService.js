@@ -1,8 +1,12 @@
 import axios from 'axios';
+import { getAuth } from 'firebase/auth';
 
 const API_URL = 'https://fe-integration-test.herokuapp.com/api/v1/'
 
-const getMe = async (token) => {
+const getMe = async () => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
   const config = {
     headers: {
       'Content-Type': 'application/json',
@@ -12,15 +16,17 @@ const getMe = async (token) => {
 
   const response = await axios.get(API_URL + 'profile/me', config);
 
-  if (response.data) {
-    localStorage.setItem('token', token);
+  if (response?.data) {
     localStorage.setItem('user', JSON.stringify(response.data.data))
   }
 
   return response.data;
 }
 
-const updateProfile = async (body, token) => {
+const updateProfile = async (body) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
   const config = {
     headers: {
       'Content-Type': 'multipart/form-data',
@@ -30,7 +36,7 @@ const updateProfile = async (body, token) => {
 
   const response = await axios.put(API_URL + 'profile/me', body, config);
 
-  if (response.data) {
+  if (response?.data) {
     localStorage.setItem('user', JSON.stringify(response.data.data))
   }
 

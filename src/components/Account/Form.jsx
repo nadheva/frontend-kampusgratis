@@ -28,10 +28,6 @@ const FormEdit = () => {
 
   const { full_name, gender, phone, username, display_picture, display_picture_link } = profileData;
 
-  const { token } = useSelector(
-    (state) => state.auth
-  );
-
   const { user, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.profile
   );
@@ -68,7 +64,7 @@ const FormEdit = () => {
   const onFormSubmit = (e) => {
     e.preventDefault();
     setIsLoaded(false);
-    dispatch(updateProfile({ data: profileData, token }));
+    dispatch(updateProfile(profileData));
   }
 
   useEffect(() => {
@@ -83,11 +79,11 @@ const FormEdit = () => {
       display_picture_link: user.display_picture_link
     });
 
-    if (isError) {
+    if (isError && !isSuccess) {
       toast.error(message);
     }
 
-    if (isSuccess && message !== "") {
+    if (isSuccess && message && !isError) {
       toast.success(message);
       dispatch(resetState());
     }
