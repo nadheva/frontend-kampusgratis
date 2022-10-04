@@ -6,7 +6,7 @@ function CourseItem({ course }) {
   return (
     <div className="col-sm-6 col-xl-4">
       <div className="card shadow  h-100">
-        <img src="assets/images/courses/4by3/03.jpg" className="card-img-top" alt="courseimage" />
+        <img src={course.item.Subject.thumbnail_link} className="card-img-top" alt="courseimage" />
         <div className="card-body pb-0">
           <div className="d-flex justify-content-between mb-2">
             <a href=" " className="badge bg-success bg-opacity-10 text-success"> {course.lecturers} </a>
