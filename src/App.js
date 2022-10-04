@@ -44,8 +44,8 @@ import StudentDashboard from "./pages/student/StudentDashboard";
 import MyCourse from "./pages/student/MyCourse";
 
 // Silabus
-import Silabus from './pages/syllabus/Main';
-import SilabusSubject from './pages/syllabus/ListSubject';
+import Silabus from "./pages/syllabus/Main";
+import SilabusSubject from "./pages/syllabus/ListSubject";
 
 function App() {
   return (
@@ -64,17 +64,32 @@ function App() {
             }
           />
 
-          <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
-            <Route path='/administrasi' element={<>
-              <Header />
-              <Administration />
-              <Footer />
-            </>} />
+          <Route
+            path="/administrasi"
+            exact
+            element={
+              <>
+                <PrivateRoute />
+              </>
+            }
+          >
+            <Route
+              path="/administrasi"
+              exact
+              element={
+                <>
+                  <Header />
+                  <Administration />
+                  <Footer />
+                </>
+              }
+            />
           </Route>
 
-          <Route path="/profile" element={<PrivateRoute />}>
+          <Route path="/profile" exact element={<PrivateRoute />}>
             <Route
               path="/profile"
+              exact
               element={
                 <>
                   <Header />
@@ -97,16 +112,18 @@ function App() {
             }
           />
 
-          <Route
-            path="/studi-ku"
-            element={
-              <>
-                <Header />
-                <HomeStudiku />
-                <Footer />
-              </>
-            }
-          />
+          <Route path="/studi-ku" exact element={<PrivateRoute />}>
+            <Route
+              path="/studi-ku"
+              element={
+                <>
+                  <Header />
+                  <HomeStudiku />
+                  <Footer />
+                </>
+              }
+            />
+          </Route>
 
           <Route path="/pertemuan" element={<PrivateRoute />}>
             <Route
@@ -196,7 +213,6 @@ function App() {
               }
             />
           </Route>
-
 
           <Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
             <Route
@@ -296,23 +312,33 @@ function App() {
             }
           />
 
-
-          <Route path='/silabus' exact element={<PrivateRoute />}>
-            <Route path='/silabus' element={<>
-              <Header />
-              <Silabus />
-              <Footer />
-            </>} />
+          <Route path="/silabus" exact element={<PrivateRoute />}>
+            <Route
+              path="/silabus"
+              exact
+              element={
+                <>
+                  <Header />
+                  <Silabus />
+                  <Footer />
+                </>
+              }
+            />
           </Route>
 
-          <Route path='/silabus/:majorId' exact element={<PrivateRoute />}>
-            <Route path='/silabus/:majorId' element={<>
-              <Header />
-              <SilabusSubject />
-              <Footer />
-            </>} />
+          <Route path="/silabus/:majorId" exact element={<PrivateRoute />}>
+            <Route
+              path="/silabus/:majorId"
+              exact
+              element={
+                <>
+                  <Header />
+                  <SilabusSubject />
+                  <Footer />
+                </>
+              }
+            />
           </Route>
-
 
           <Route path="/*" element={<PageNotFound />} />
           <Route path="/401" element={<Unauthorized />} />
@@ -320,8 +346,8 @@ function App() {
           <Route path="/500" element={<ServerError />} />
           <Route path="/503" element={<ServiceUnavailable />} />
 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/login" exact element={<Login />} />
+          <Route path="/register" exact element={<Register />} />
         </Routes>
       </Router>
 

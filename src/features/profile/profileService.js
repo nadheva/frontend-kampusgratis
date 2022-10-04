@@ -1,45 +1,51 @@
-import axios from 'axios';
+import axios from "axios";
+import { getAuth } from "firebase/auth";
 
-const API_URL = 'https://fe-integration-test.herokuapp.com/api/v1/'
+const API_URL = "https://fe-integration-test.herokuapp.com/api/v1/";
 
-const getMe = async (token) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }
+const getMe = async () => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
 
-  const response = await axios.get(API_URL + 'profile/me', config);
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-  if (response.data) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify(response.data.data))
-  }
+	const response = await axios.get(API_URL + "profile/me", config);
 
-  return response.data;
-}
+	if (response?.data) {
+		localStorage.setItem("user", JSON.stringify(response.data.data));
+	}
 
-const updateProfile = async (body, token) => {
-  const config = {
-    headers: {
-      'Content-Type': 'multipart/form-data',
-      'Authorization': `Bearer ${token}`
-    }
-  }
+	return response.data;
+};
 
-  const response = await axios.put(API_URL + 'profile/me', body, config);
+const updateProfile = async (body) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
 
-  if (response.data) {
-    localStorage.setItem('user', JSON.stringify(response.data.data))
-  }
+	const config = {
+		headers: {
+			"Content-Type": "multipart/form-data",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-  return response.data;
-}
+	const response = await axios.put(API_URL + "profile/me", body, config);
+
+	if (response?.data) {
+		localStorage.setItem("user", JSON.stringify(response.data.data));
+	}
+
+	return response.data;
+};
 
 const profileService = {
-  getMe,
-  updateProfile
-}
+	getMe,
+	updateProfile,
+};
 
 export default profileService;
