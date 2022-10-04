@@ -1,5 +1,5 @@
-#root {
-    height: 100vh;
+.Kalend__Calendar__root.Kalend__main {
+    height: 100vh !important;
 }
 
 /* img */
