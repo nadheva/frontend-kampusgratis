@@ -13,6 +13,9 @@ import { getSubjects, reset } from '../../features/subject/subjectSlice'
 import { useEffect } from 'react'
 import useEffectOnce from '../../helpers/useEffectOnce';
 
+// search
+import _ from "lodash";
+
 const Main = () => {
 
   // redux
@@ -39,6 +42,28 @@ const Main = () => {
 
   }, [subjects, isLoading, isError, isSuccess, message, dispatch])
 
+
+  // search
+  const [searchValue, setSearchValue] = React.useState("");
+  const [filteredData, setFilteredData] = React.useState(subjects);
+
+  const handleSearchFilter = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      const filter = _.filter(subjects, (data) => {
+        return _.includes(
+          _.lowerCase(JSON.stringify(_.values(data))),
+          _.lowerCase(searchValue)
+        );
+      });
+      setFilteredData(filter);
+    }, 200);
+    return () => clearTimeout(timeout);
+  }, [searchValue, filteredData]);
+
   return <>
     <main>
       <Intro />
@@ -53,8 +78,11 @@ const Main = () => {
                 <div className="col-xl-12">
                   <form className="border rounded p-2">
                     <div className="input-group input-borderless">
-                      <input className="form-control me-1" type="search" placeholder="Temukan matakuliah anda" />
-                      <button type="button" className="btn btn-primary mb-0 rounded z-index-1"><i className="fas fa-search"></i></button>
+                      <input className="form-control me-1"
+                        type="search" placeholder="Temukan matakuliah anda"
+                        value={searchValue}
+                        onChange={handleSearchFilter}
+                      />
                     </div>
                   </form>
                 </div>
@@ -97,7 +125,7 @@ const Main = () => {
                       </div>
                     </>
                   ) : (
-                    subjects.map((course) => (
+                    filteredData.map((course) => (
                       <CourseItem key={course.item.id} course={course} />
                     ))
                   )
@@ -105,7 +133,7 @@ const Main = () => {
               </div>
 
               <div className="col-12">
-                <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
+                {/* <nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
                   <ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
                     <li className="page-item mb-0"><a className="page-link" href=" " tabIndex="-1"><i className="fas fa-angle-double-left"></i></a></li>
                     <li className="page-item mb-0 active"><a className="page-link" href=" ">1</a></li>
@@ -114,7 +142,7 @@ const Main = () => {
                     <li className="page-item mb-0"><a className="page-link" href=" ">6</a></li>
                     <li className="page-item mb-0"><a className="page-link" href=" "><i className="fas fa-angle-double-right"></i></a></li>
                   </ul>
-                </nav>
+                </nav> */}
               </div>
             </div>
 
