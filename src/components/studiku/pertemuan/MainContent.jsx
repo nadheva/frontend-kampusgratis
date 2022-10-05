@@ -1,7 +1,7 @@
 import React from 'react'
 import AccordionList from './AccordionList'
 
-const MainContent = ({ session }) => {
+const MainContent = ({ session, isLoading }) => {
 
     return (
         <section className="pt-0">
@@ -15,7 +15,7 @@ const MainContent = ({ session }) => {
                             </div>
 
                             {/* Card body */}
-                            <AccordionList session={session} />
+                            <AccordionList session={session} isLoading={isLoading} />
 
                         </div>
                     </div>

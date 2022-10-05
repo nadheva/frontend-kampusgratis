@@ -13,7 +13,7 @@ const Pertemuan = () => {
     // Get id
     const { subjectId } = useParams()
 
-    // redux
+    // redux session
     const dispatch = useDispatch()
     const { sessions, isLoading, isError, isSuccess, message } = useSelector(
         (state) => state.session
@@ -41,7 +41,7 @@ const Pertemuan = () => {
         <>
             <main>
                 <Intro />
-                <MainContent session={sessions} />
+                <MainContent session={sessions} isLoading={isLoading} />
             </main>
         </>
     )
