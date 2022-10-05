@@ -1,9 +1,10 @@
 import React from 'react'
-import DataPertemuan from '../../../json/Pertemuan'
+// import DataPertemuan from '../../../json/Pertemuan'
 import AccordionItem from './AccordionItem'
 
 
-const AccordionList = () => {
+const AccordionList = ({ session }) => {
+
     return (
         <div className="card-body p-sm-4">
             <div className="tab-content" id="course-pills-tabContent">
@@ -11,10 +12,10 @@ const AccordionList = () => {
                     aria-labelledby="course-pills-tab-1">
                     <div className="accordion accordion-icon accordion-border" id="accordionExample2">
 
-                        {DataPertemuan.map((Data) => (
-                            <AccordionItem key={Data.id} {...Data} />
+                        {session.map((Data) => (
+                            <AccordionItem key={Data.id} session={Data} />
                         ))}
-                        
+
                     </div>
 
                 </div>

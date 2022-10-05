@@ -1,7 +1,7 @@
 import React from 'react'
 import AccordionList from './AccordionList'
 
-const MainContent = () => {
+const MainContent = ({ session }) => {
 
     return (
         <section className="pt-0">
@@ -15,7 +15,7 @@ const MainContent = () => {
                             </div>
 
                             {/* Card body */}
-                            <AccordionList />
+                            <AccordionList session={session} />
 
                         </div>
                     </div>

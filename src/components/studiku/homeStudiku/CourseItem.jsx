@@ -11,7 +11,9 @@ function CourseItem({ course }) {
           <div className="d-flex justify-content-between mb-2">
             <a href=" " className="badge bg-success bg-opacity-10 text-success"> {course.lecturers} </a>
           </div>
-          <h5 className="card-title"><Link to="/pertemuan">{course.item.Subject.name}</Link></h5>
+          <h5 className="card-title">
+            <Link to={`/pertemuan/${course.item.id}`}>{course.item.Subject.name}</Link>
+          </h5>
           {/* <p className="mb-2 text-truncate-2">{course.description.substring(0, 60)}</p> */}
         </div>
         <div className="card-footer pt-0 pb-3">
