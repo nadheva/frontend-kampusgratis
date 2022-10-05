@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 const AccordionItem = ({ session }) => {
 
-    const dataTarget = `#data${session.id}`;
-    const dataId = `data${session.id}`;
+    const dataTarget = `#data${session.session_no}`;
+    const dataId = `data${session.session_no}`;
 
     return (
         <div className="accordion-item mb-3">
@@ -35,7 +35,7 @@ const AccordionItem = ({ session }) => {
                                     <i className="fas fa-fw fa-file fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <NavLink to="/modul"
+                                    <NavLink to={`/modul/${session.id}`}
                                         className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Modul [Vidio Dokumen]</NavLink>
                                 </div>
                             </div>

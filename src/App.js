@@ -140,9 +140,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/modul" element={<PrivateRoute />}>
+          <Route path="/modul/:sessionId" element={<PrivateRoute />}>
             <Route
-              path="/modul"
+              path="/modul/:sessionId"
               element={
                 <>
                   <Header />

@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ModulItem from '../../components/studiku/modul/ModulItem';
-import DataModul from '../../json/Modul';
+// import DataModul from '../../json/Modul';
+
+import { useParams } from 'react-router-dom';
+
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { getModules, reset } from '../../features/module/moduleSlice'
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 const Modul = () => {
+    // Get id
+    const { sessionId } = useParams();
+
+    // redux session
+    const dispatch = useDispatch()
+    const { modules, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.module
+    );
+
+    useEffectOnce(() => {
+        dispatch(getModules(sessionId))
+    });
+
+    useEffect(() => {
+
+        if (isError && !isSuccess) {
+            // toast.error(message);
+            dispatch(reset());
+        }
+
+        if (isSuccess && message && !isError) {
+            // toast.success(message);
+            dispatch(reset());
+        }
+
+    }, [modules, isLoading, isError, isSuccess, message, dispatch])
+
+
     return (
         <main>
             {/* Intro */}
@@ -57,8 +92,8 @@ const Modul = () => {
                                                 {/* card Body */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-4 justify-content-center">
-                                                        {DataModul.map((modul) => (
-                                                            <ModulItem key={modul.id} modul={modul} />
+                                                        {modules.map((modul) => (
+                                                            <ModulItem key={modul.modul.id} modul={modul} />
                                                         ))}
                                                     </div>
                                                 </div>
@@ -72,7 +107,7 @@ const Modul = () => {
                         </div>
                     </div>
                 </div>
-            </section>     
+            </section>
         </main >
     )
 }
