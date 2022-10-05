@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 
-const AccordionItem = ({ id, title }) => {
+const AccordionItem = ({ session }) => {
 
-    const dataTarget = `#data${id}`;
-    const dataId = `data${id}`;
+    const dataTarget = `#data${session.id}`;
+    const dataId = `data${session.id}`;
 
     return (
         <div className="accordion-item mb-3">
@@ -13,7 +13,7 @@ const AccordionItem = ({ id, title }) => {
                     type="button" data-bs-toggle="collapse"
                     data-bs-target={dataTarget} aria-expanded="true"
                     aria-controls="collapse-1">
-                    {title}
+                    Pertemuan  {session.session_no}
                     <span className="text-secondary ms-auto pe-4"
                         data-bs-toggle="tooltip" data-bs-placement="top"
                         title="Mark as completed">

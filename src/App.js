@@ -45,6 +45,8 @@ import MyCourse from "./pages/student/MyCourse";
 import Silabus from "./pages/syllabus/Main";
 import SilabusSubject from "./pages/syllabus/ListSubject";
 
+import Calendar from "./pages/kalender/Calendar";
+
 function App() {
 	return (
 		<>
@@ -66,8 +68,13 @@ function App() {
 						<Route path="/studi-ku" element={<HomeStudiku />} />
 					</Route>
 
-					<Route path="/pertemuan" element={<PrivateRoute />}>
-						<Route path="/pertemuan" element={<Pertemuan />} />
+					<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
+						<Route
+						path="/pertemuan/:subjectId"
+						element={
+							<Pertemuan />
+						}
+						/>
 					</Route>
 
 					<Route path="/modul" element={<PrivateRoute />}>
@@ -128,6 +135,16 @@ function App() {
 						<Route path="/silabus" exact element={<Silabus />} />
 					</Route>
 
+					<Route path="/calender" exact element={<PrivateRoute />}>
+						<Route
+						path="/calender"
+						exact
+						element={
+							<Calendar />
+						}
+						/>
+					</Route>
+
 					<Route path="/*" element={<PageNotFound />} />
 					<Route path="/401" element={<Unauthorized />} />
 					<Route path="/403" element={<Forbidden />} />
@@ -140,7 +157,7 @@ function App() {
 			</Router>
 
 			<ToastContainer />
-		</>
+			</>
 	);
 }
 
