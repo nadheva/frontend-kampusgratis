@@ -40,7 +40,7 @@ const Pertemuan = () => {
     return (
         <>
             <main>
-                <Intro />
+                <Intro subjectId={subjectId} />
                 <MainContent session={sessions} isLoading={isLoading} />
             </main>
         </>
