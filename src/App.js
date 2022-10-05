@@ -127,9 +127,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/pertemuan" element={<PrivateRoute />}>
+          <Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
             <Route
-              path="/pertemuan"
+              path="/pertemuan/:subjectId"
               element={
                 <>
                   <Header />
