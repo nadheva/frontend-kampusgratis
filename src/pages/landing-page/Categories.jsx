@@ -321,7 +321,6 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-<<<<<<< HEAD
 										src="/assets/images/element/account.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
@@ -340,9 +339,6 @@ const Categories = () => {
 									<img
 										loading="lazy"
 										src="/assets/images/element/marketing.svg"
-=======
-										src="assets/images/element/marketing.svg"
->>>>>>> 33484b1128270a9118711a5d7dccc96aa577e09d
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
