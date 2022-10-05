@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 import "./assets/vendor/font-awesome/css/all.min.css";
 import "./assets/vendor/bootstrap-icons/bootstrap-icons.css";
-import "./assets/vendor/choices/css/choices.min.css";
+import "./assets/vendor/choices/css/choices.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

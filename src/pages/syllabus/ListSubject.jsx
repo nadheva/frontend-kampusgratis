@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getSubjectsByMajor } from '../../features/syllabus/syllabusSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 
@@ -29,25 +29,28 @@ const ListSubject = () => {
       <div className="container">
         <div className="row py-5">
           <div className="col-lg-8">
-            <h6 className="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">Digital Marketing</h6>
+            <h6 className="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">Sarjana (S1)</h6>
             <h1>{data && data?.major?.name}</h1>
             <p>{data && data?.major?.description}</p>
             <ul className="list-inline mb-0">
-              <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i className="fas fa-star text-warning me-2"></i>4.5/5.0
+              <li className="list-inline-item h6 me-3 mb-1 mb-sm-0">
+                <i className="fas fa-user-graduate text-orange me-2"></i>
+                Head of Major
               </li>
-              <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i className="fas fa-user-graduate text-orange me-2"></i>12k
-                Enrolled</li>
-              <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i className="fas fa-signal text-success me-2"></i>All
-                levels</li>
               <li className="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
-                className="bi bi-patch-exclamation-fill text-danger me-2"></i>Last updated {data !== undefined ? `${data?.major?.updated_at.split("-")[1]}/${data?.major?.updated_at.split("-")[0]}` : "-/-"}</li>
-              <li className="list-inline-item h6 mb-0"><i className="fas fa-globe text-info me-2"></i>English</li>
+                className="bi bi-patch-exclamation-fill text-danger me-2"></i>
+                Last updated {data !== undefined ? `${data?.major?.updated_at.split("-")[1]}/${data?.major?.updated_at.split("-")[0]}` : "-/-"}
+              </li>
+              <li className="list-inline-item h6 mb-0">
+                <i className="fas fa-globe text-info me-2"></i>
+                Indonesia
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    {/* <section className="pb-0 py-lg-5">
+    <section className="pb-0 py-lg-5">
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
@@ -1511,7 +1514,7 @@ const ListSubject = () => {
           </div>
         </div>
       </div>
-    </section> */}
+    </section>
     <Footer />
   </>
 }

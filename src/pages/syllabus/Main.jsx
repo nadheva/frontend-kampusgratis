@@ -129,11 +129,11 @@ const Main = () => {
           <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative" onSubmit={doFilter}>
             <div className="row g-3">
               <div className="col-xl-3">
-                <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang kamu ingin cari ..." onChange={(e) => setSearchTerm(e.target.value)} />
+                <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang ingin dicari ..." onChange={(e) => setSearchTerm(e.target.value)} />
               </div>
               <div className="col-xl-8">
                 <div className="row g-3">
-                  <div className="col-md-6 pb-2 pb-md-0">
+                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
                     <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
                       <option value="">Categories</option>
                       <option>All</option>
@@ -146,6 +146,34 @@ const Main = () => {
                       <option>Photography</option>
                       <option>Writing</option>
                       <option>Marketing</option>
+                    </select>
+                  </div>
+                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                      <option value="">Price level</option>
+                      <option>All</option>
+                      <option>Free</option>
+                      <option>Paid</option>
+                    </select>
+                  </div>
+                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                      <option value="">Skill level</option>
+                      <option>All levels</option>
+                      <option>Beginner</option>
+                      <option>Intermediate</option>
+                      <option>Advanced</option>
+                    </select>
+                  </div>
+                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
+                      <option value="">Language</option>
+                      <option>English</option>
+                      <option>Francas</option>
+                      <option>Russian</option>
+                      <option>Hindi</option>
+                      <option>Bengali</option>
+                      <option>Spanish</option>
                     </select>
                   </div>
                 </div>
