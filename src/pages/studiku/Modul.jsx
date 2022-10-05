@@ -5,6 +5,9 @@ import ModulItem from '../../components/studiku/modul/ModulItem';
 
 import { useParams } from 'react-router-dom';
 
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 // redux
 import { useSelector, useDispatch } from 'react-redux'
 import { getModules, reset } from '../../features/module/moduleSlice'
@@ -37,7 +40,6 @@ const Modul = () => {
         }
 
     }, [modules, isLoading, isError, isSuccess, message, dispatch])
-
 
     return (
         <main>
@@ -75,26 +77,40 @@ const Modul = () => {
                                                 {/* Card header */}
                                                 <div className="card-header  p-0 pb-3">
                                                     <h4 className="mb-3">Modul</h4>
-                                                    <form className="row g-4">
-                                                        <div className="col-sm-12 col-lg-12">
-                                                            <div className="position-relative">
-                                                                <input className="form-control pe-5 bg-transparent"
-                                                                    type="search" placeholder="Search" aria-label="Search" />
-                                                                <button
-                                                                    className="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-                                                                    type="submit">
-                                                                    <i className="fas fa-search fs-6 "></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
                                                 </div>
                                                 {/* card Body */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-4 justify-content-center">
-                                                        {modules.map((modul) => (
-                                                            <ModulItem key={modul.modul.id} modul={modul} />
-                                                        ))}
+                                                        {
+                                                            isLoading ? (
+                                                                <>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                </>
+                                                            ) : (
+                                                                modules.map((modul, i) => (
+                                                                    <ModulItem key={modul.modul.id} modul={modul} i={i + 1} />
+                                                                ))
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
 
