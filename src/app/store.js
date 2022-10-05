@@ -7,6 +7,7 @@ import syllabusReducer from '../features/syllabus/syllabusSlice';
 import subjectReducer from '../features/subject/subjectSlice';
 import sessionReducer from '../features/session/sessionSlice';
 import moduleReducer from '../features/module/moduleSlice';
+import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     syllabus: syllabusReducer,
     subject: subjectReducer,
     session: sessionReducer,
-    module: moduleReducer
+    module: moduleReducer,
+    detailModule: detailModuleReducer
   }
 });

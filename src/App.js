@@ -153,9 +153,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/detail-modul" element={<PrivateRoute />}>
+          <Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
             <Route
-              path="/detail-modul"
+              path="/detail-modul/:moduleId"
               element={
                 <>
                   <Header />
