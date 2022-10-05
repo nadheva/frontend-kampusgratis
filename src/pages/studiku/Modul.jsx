@@ -1,9 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ModulItem from '../../components/studiku/modul/ModulItem';
-import DataModul from '../../json/Modul';
+// import DataModul from '../../json/Modul';
+
+import { useParams } from 'react-router-dom';
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { getModules, reset } from '../../features/module/moduleSlice'
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 const Modul = () => {
+    // Get id
+    const { sessionId } = useParams();
+
+    // redux session
+    const dispatch = useDispatch()
+    const { modules, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.module
+    );
+
+    useEffectOnce(() => {
+        dispatch(getModules(sessionId))
+    });
+
+    useEffect(() => {
+
+        if (isError && !isSuccess) {
+            // toast.error(message);
+            dispatch(reset());
+        }
+
+        if (isSuccess && message && !isError) {
+            // toast.success(message);
+            dispatch(reset());
+        }
+
+    }, [modules, isLoading, isError, isSuccess, message, dispatch])
+
     return (
         <main>
             {/* Intro */}
@@ -40,26 +77,40 @@ const Modul = () => {
                                                 {/* Card header */}
                                                 <div className="card-header  p-0 pb-3">
                                                     <h4 className="mb-3">Modul</h4>
-                                                    <form className="row g-4">
-                                                        <div className="col-sm-12 col-lg-12">
-                                                            <div className="position-relative">
-                                                                <input className="form-control pe-5 bg-transparent"
-                                                                    type="search" placeholder="Search" aria-label="Search" />
-                                                                <button
-                                                                    className="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-                                                                    type="submit">
-                                                                    <i className="fas fa-search fs-6 "></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
                                                 </div>
                                                 {/* card Body */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-4 justify-content-center">
-                                                        {DataModul.map((modul) => (
-                                                            <ModulItem key={modul.id} modul={modul} />
-                                                        ))}
+                                                        {
+                                                            isLoading ? (
+                                                                <>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                    <div className="col-sm-12 col-xl-12">
+                                                                        <SkeletonTheme>
+                                                                            <Skeleton height={100} />
+                                                                        </SkeletonTheme>
+                                                                    </div>
+                                                                </>
+                                                            ) : (
+                                                                modules.map((modul, i) => (
+                                                                    <ModulItem key={modul.modul.id} modul={modul} i={i + 1} />
+                                                                ))
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
 
@@ -72,7 +123,7 @@ const Modul = () => {
                         </div>
                     </div>
                 </div>
-            </section>     
+            </section>
         </main >
     )
 }

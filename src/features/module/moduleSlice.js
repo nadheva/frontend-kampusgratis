@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
-import sessionService from './sessionService';
+import moduleService from './moduleService';
 
 const initialState = {
-  sessions: [],
+  modules: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: ''
 };
 
-export const getSessions = createAsyncThunk(
-  'session/getfromsub/',
-  async (subjectId, thunkAPI) => {
+export const getModules = createAsyncThunk(
+  'module/session/',
+  async (sessionId, thunkAPI) => {
     try {
 
-      const { data } = await sessionService.getSession(subjectId);
+      const { data } = await moduleService.getModule(sessionId);
       return data;
 
     } catch (error) {
@@ -25,8 +25,8 @@ export const getSessions = createAsyncThunk(
 )
 
 
-export const sessionSlice = createSlice({
-  name: 'session',
+export const moduleSlice = createSlice({
+  name: 'module',
   initialState,
   reducers: {
     reset: (state) => {
@@ -38,22 +38,22 @@ export const sessionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getSessions.pending, (state) => {
+      .addCase(getModules.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getSessions.fulfilled, (state, action) => {
+      .addCase(getModules.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.sessions = action.payload;
+        state.modules = action.payload;
       })
-      .addCase(getSessions.rejected, (state, action) => {
+      .addCase(getModules.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.sessions = null;
+        state.modules = null;
       })
   }
 });
 
-export const { reset } = sessionSlice.actions;
-export default sessionSlice.reducer;
+export const { reset } = moduleSlice.actions;
+export default moduleSlice.reducer;

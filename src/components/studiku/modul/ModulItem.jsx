@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ModulItem = ({ modul }) => {
+const ModulItem = ({ modul, i }) => {
+
+    let length_doc = modul.modul.document_id.length;
+    let length_vidio = modul.modul.video_id.length;
+
     return (
         <div className="col-lg-12 col-xl-12">
             <div className="card shadow p-2">
@@ -10,7 +14,7 @@ const ModulItem = ({ modul }) => {
                     <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                         <div>
                             <h5 className="card-title mb-0">
-                                <Link to="/detail-modul" >{modul.title}</Link>
+                                <Link to="/detail-modul" >Modul {i} </Link>
                             </h5>
                         </div>
 
@@ -28,7 +32,7 @@ const ModulItem = ({ modul }) => {
                     {/* Info */}
                     <div className="d-sm-flex justify-content-sm-between align-items-center">
                         {/* Title */}
-                        <p className="text-small mb-0">{modul.vidio} Vidio {modul.dokumen} Dokumen</p>
+                        <p className="text-small mb-0">{length_vidio} Vidio {length_doc} Dokumen</p>
                     </div>
                 </div>
             </div>
