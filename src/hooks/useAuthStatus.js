@@ -1,37 +1,55 @@
-import { useEffect, useState, useRef } from 'react';
-import { getAuth, onAuthStateChanged, onIdTokenChanged } from 'firebase/auth';
+import { useEffect, useState, useRef } from "react";
+import { getAuth, onAuthStateChanged, onIdTokenChanged } from "firebase/auth";
+import { toast } from "react-toastify";
+import { reset } from "../features/profile/profileSlice";
+import { useDispatch } from "react-redux";
 
 export const useAuthStatus = () => {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [checkingStatus, setCheckingStatus] = useState(true);
-  const isMounted = useRef(true);
+	const [loggedIn, setLoggedIn] = useState(false);
+	const [checkingStatus, setCheckingStatus] = useState(true);
+	const isMounted = useRef(true);
 
-  useEffect(() => {
-    if (isMounted) {
-      const auth = getAuth();
+	const dispatch = useDispatch();
 
-      onAuthStateChanged(auth, async (user) => {
-        if (user) {
-          setLoggedIn(true);
-          const token = await user?.getIdToken();
-          localStorage.setItem("token", token);
-        }
+	useEffect(() => {
+		if (isMounted) {
+			const auth = getAuth();
 
-        setCheckingStatus(false);
-      })
+			onAuthStateChanged(auth, async (user) => {
+				if (user) {
+					setLoggedIn(true);
+					const token = await user?.getIdToken();
+					localStorage.setItem("token", token);
+				} else {
+					localStorage.removeItem("token");
+					localStorage.removeItem("user");
+					toast.info("Session kamu telah berakhir!");
+					dispatch(reset());
+				}
 
-      onIdTokenChanged(auth, async (user) => {
-        if (user) {
-          const token = await user?.getIdToken();
-          localStorage.setItem("token", token);
-        }
-      });
-    }
+				setCheckingStatus(false);
+			});
 
-    return () => {
-      isMounted.current = false;
-    }
-  }, [isMounted]);
+			onIdTokenChanged(auth, async (user) => {
+				if (user) {
+					setLoggedIn(true);
+					const token = await user?.getIdToken();
+					localStorage.setItem("token", token);
+				} else {
+					localStorage.removeItem("token");
+					localStorage.removeItem("user");
+					toast.info("Session kamu telah berakhir!");
+					dispatch(reset());
+				}
 
-  return { loggedIn, checkingStatus };
-}
+				setCheckingStatus(false);
+			});
+		}
+
+		return () => {
+			isMounted.current = false;
+		};
+	}, [isMounted]);
+
+	return { loggedIn, checkingStatus };
+};

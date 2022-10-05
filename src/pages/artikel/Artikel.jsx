@@ -1,137 +1,134 @@
-import React, { useEffect } from 'react'
-import CardItem from '../../components/artikel/CardItem'
+import React, { useEffect } from "react";
+import CardItem from "../../components/artikel/CardItem";
 
-
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css';
-
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // redux
-import { useSelector, useDispatch } from 'react-redux'
-import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+import { useSelector, useDispatch } from "react-redux";
+import { artikelAll, reset } from "../../features/artikel/artikelSlice";
 
 // search
 import _ from "lodash";
 
+import Header from "../default/Header";
+import Footer from "../default/Footer";
 
 const Artikel = () => {
+	// redux
+	const dispatch = useDispatch();
+	const { artikels, isLoading, isError, isSuccess, message } = useSelector(
+		(state) => state.artikel
+	);
 
-    // redux
-    const dispatch = useDispatch()
-    const { artikels, isLoading, isError, isSuccess, message } = useSelector(
-        (state) => state.artikel
-    );
+	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
 
-    useEffect(() => {
-        if (isError) {
-            console.log(message)
-        }
+		dispatch(artikelAll());
 
-        dispatch(artikelAll())
+		return () => {
+			dispatch(reset());
+		};
+	}, [isLoading, isError, isSuccess, message, dispatch]);
 
-        return () => {
-            dispatch(reset())
-        }
-    }, [isLoading, isError, isSuccess, message, dispatch])
+	// search
+	const [searchValue, setSearchValue] = React.useState("");
+	const [filteredArtikel, setFilteredArtikel] = React.useState(artikels);
 
+	const handleSearchFilter = (e) => {
+		setSearchValue(e.target.value);
+	};
 
-    // search
-    const [searchValue, setSearchValue] = React.useState("");
-    const [filteredArtikel, setFilteredArtikel] = React.useState(artikels);
+	React.useEffect(() => {
+		const timeout = setTimeout(() => {
+			const filter = _.filter(artikels, (data) => {
+				return _.includes(
+					_.lowerCase(JSON.stringify(_.values(data))),
+					_.lowerCase(searchValue)
+				);
+			});
+			setFilteredArtikel(filter);
+		}, 200);
+		return () => clearTimeout(timeout);
+	}, [searchValue, filteredArtikel]);
 
-    const handleSearchFilter = (e) => {
-        setSearchValue(e.target.value);
-    };
+	return (
+		<main>
+			<Header />
+			{/* ======================= Page Banner START */}
+			<section className="py-5">
+				<div className="container">
+					<div className="row position-relative">
+						{/* Title and breadcrumb */}
+						<div className="col-lg-10 mx-auto text-center position-relative">
+							{/* Search bar */}
+							<form className="bg-body shadow rounded p-2 mt-4">
+								<div className="input-group">
+									<input
+										className="form-control border-0 me-1"
+										type="search"
+										placeholder="Search ..."
+										value={searchValue}
+										onChange={handleSearchFilter}
+									/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			{/* ======================= Page Banner END */}
 
-    React.useEffect(() => {
-        const timeout = setTimeout(() => {
-            const filter = _.filter(artikels, (data) => {
-                return _.includes(
-                    _.lowerCase(JSON.stringify(_.values(data))),
-                    _.lowerCase(searchValue)
-                );
-            });
-            setFilteredArtikel(filter);
-        }, 200);
-        return () => clearTimeout(timeout);
-    }, [searchValue, filteredArtikel]);
+			{/* =======================  Page content START */}
+			<section className="position-relative pt-0 pt-lg-5">
+				<div className="container">
+					{/* Row */}
+					<div className="row g-4">
+						{filteredArtikel.length > 0 ? (
+							filteredArtikel.map((artikel) => (
+								<CardItem key={artikel.id} artikel={artikel} />
+							))
+						) : isLoading ? (
+							<div className="row">
+								<div className="col-sm-6 col-lg-4 col-xl-3">
+									<SkeletonTheme>
+										<Skeleton height={189} className="mb-2" />
+										<Skeleton height={26} />
+										<Skeleton height={22} />
+									</SkeletonTheme>
+								</div>
+								<div className="col-sm-6 col-lg-4 col-xl-3">
+									<SkeletonTheme>
+										<Skeleton height={189} className="mb-2" />
+										<Skeleton height={26} />
+										<Skeleton height={22} />
+									</SkeletonTheme>
+								</div>
+								<div className="col-sm-6 col-lg-4 col-xl-3">
+									<SkeletonTheme>
+										<Skeleton height={189} className="mb-2" />
+										<Skeleton height={26} />
+										<Skeleton height={22} />
+									</SkeletonTheme>
+								</div>
+								<div className="col-sm-6 col-lg-4 col-xl-3">
+									<SkeletonTheme>
+										<Skeleton height={189} className="mb-2" />
+										<Skeleton height={26} />
+										<Skeleton height={22} />
+									</SkeletonTheme>
+								</div>
+							</div>
+						) : (
+							<h1>Data Kosong</h1>
+						)}
+					</div>
+					{/* Row end */}
 
-
-    return (
-        <main>
-            {/* ======================= Page Banner START */}
-            <section className="py-5">
-                <div className="container">
-                    <div className="row position-relative">
-                        {/* Title and breadcrumb */}
-                        <div className="col-lg-10 mx-auto text-center position-relative">
-                            {/* Search bar */}
-                            <form className="bg-body shadow rounded p-2 mt-4">
-                                <div className="input-group">
-                                    <input
-                                        className="form-control border-0 me-1"
-                                        type="search"
-                                        placeholder="Search ..."
-                                        value={searchValue}
-                                        onChange={handleSearchFilter}
-                                    />
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* ======================= Page Banner END */}
-
-            {/* =======================  Page content START */}
-            <section className="position-relative pt-0 pt-lg-5">
-                <div className="container">
-
-                    {/* Row */}
-                    <div className="row g-4">
-                        {filteredArtikel.length > 0 ? (
-                            filteredArtikel.map((artikel) => (
-                                <CardItem key={artikel.id} artikel={artikel} />
-                            ))
-                        ) : isLoading ? (
-                            <div className="row">
-                                <div className="col-sm-6 col-lg-4 col-xl-3">
-                                    <SkeletonTheme>
-                                        <Skeleton height={189} className="mb-2" />
-                                        <Skeleton height={26} />
-                                        <Skeleton height={22} />
-                                    </SkeletonTheme>
-                                </div>
-                                <div className="col-sm-6 col-lg-4 col-xl-3">
-                                    <SkeletonTheme>
-                                        <Skeleton height={189} className="mb-2" />
-                                        <Skeleton height={26} />
-                                        <Skeleton height={22} />
-                                    </SkeletonTheme>
-                                </div>
-                                <div className="col-sm-6 col-lg-4 col-xl-3">
-                                    <SkeletonTheme>
-                                        <Skeleton height={189} className="mb-2" />
-                                        <Skeleton height={26} />
-                                        <Skeleton height={22} />
-                                    </SkeletonTheme>
-                                </div>
-                                <div className="col-sm-6 col-lg-4 col-xl-3">
-                                    <SkeletonTheme>
-                                        <Skeleton height={189} className="mb-2" />
-                                        <Skeleton height={26} />
-                                        <Skeleton height={22} />
-                                    </SkeletonTheme>
-                                </div>
-                            </div>
-                        ) : (
-                            <h1>Data Kosong</h1>
-                        )}
-                    </div>
-                    {/* Row end */}
-
-                    {/* Pagination START */}
-                    {/* <nav
+					{/* Pagination START */}
+					{/* <nav
                         className="d-flex justify-content-center mt-5"
                         aria-label="navigation"
                     >
@@ -168,14 +165,13 @@ const Artikel = () => {
                             </li>
                         </ul>
                     </nav> */}
-                    {/* Pagination END */}
-                </div>
-            </section>
-            {/* ======================= Page content END */}
+					{/* Pagination END */}
+				</div>
+			</section>
+			{/* ======================= Page content END */}
+			<Footer />
+		</main>
+	);
+};
 
-        </main>
-
-    )
-}
-
-export default Artikel
+export default Artikel;
