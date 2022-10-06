@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import ModulItem from '../../components/studiku/modul/ModulItem';
 // import DataModul from '../../json/Modul';
 
@@ -14,6 +14,8 @@ import { getModules, reset } from '../../features/module/moduleSlice'
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 const Modul = () => {
+    const navigate = useNavigate();
+
     // Get id
     const { sessionId } = useParams();
 
@@ -54,8 +56,11 @@ const Modul = () => {
                             <div className="d-flex justify-content-center">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                                        <li className="breadcrumb-item"><Link to="/pertemuan">Pertemuan</Link></li>
+                                        <li className="breadcrumb-item">
+                                            <Link to='' onClick={() => navigate(-1)}>Pertemuan</Link>
+                                        </li>
                                         <li className="breadcrumb-item active" aria-current="page">Modul</li>
+
                                     </ol>
                                 </nav>
                             </div>
