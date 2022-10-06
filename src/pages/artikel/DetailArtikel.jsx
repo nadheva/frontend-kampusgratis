@@ -5,6 +5,7 @@ import moment from 'moment/moment'
 // redux
 import { useSelector, useDispatch } from 'react-redux'
 import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 const DetailArtikel = () => {
 
@@ -14,16 +15,22 @@ const DetailArtikel = () => {
         (state) => state.artikel
     );
 
-    useEffect(() => {
-        if (isError) {
-            console.log(message)
-        }
-
+    useEffectOnce(() => {
         dispatch(artikelAll())
+    });
 
-        return () => {
-            dispatch(reset())
+    useEffect(() => {
+
+        if (isError && !isSuccess) {
+            // toast.error(message);
+            dispatch(reset());
         }
+
+        if (isSuccess && message && !isError) {
+            // toast.success(message);
+            dispatch(reset());
+        }
+
     }, [artikels, isLoading, isError, isSuccess, message, dispatch])
 
 

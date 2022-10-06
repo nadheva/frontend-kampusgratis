@@ -9,6 +9,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 // redux
 import { useSelector, useDispatch } from 'react-redux'
 import { artikelAll, reset } from '../../features/artikel/artikelSlice'
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 // search
 import _ from "lodash";
@@ -22,17 +23,23 @@ const Artikel = () => {
         (state) => state.artikel
     );
 
-    useEffect(() => {
-        if (isError) {
-            console.log(message)
-        }
-
+    useEffectOnce(() => {
         dispatch(artikelAll())
+    });
 
-        return () => {
-            dispatch(reset())
+    useEffect(() => {
+
+        if (isError && !isSuccess) {
+            // toast.error(message);
+            dispatch(reset());
         }
-    }, [isLoading, isError, isSuccess, message, dispatch])
+
+        if (isSuccess && message && !isError) {
+            // toast.success(message);
+            dispatch(reset());
+        }
+
+    }, [artikels, isLoading, isError, isSuccess, message, dispatch])
 
 
     // search
@@ -89,7 +96,7 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-                        {filteredArtikel.length > 0 ? (
+                        {filteredArtikel != null ? (
                             filteredArtikel.map((artikel) => (
                                 <CardItem key={artikel.id} artikel={artikel} />
                             ))
