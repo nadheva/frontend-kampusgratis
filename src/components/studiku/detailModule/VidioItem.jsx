@@ -10,8 +10,8 @@ const VidioItem = ({ vidio }) => {
                         <i className="fas fa-play" />
                     </Link>
                     <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
-                        <h6 className="mb-0">{vidio.description}</h6>
-                        {/* <p className="mb-2 mb-sm-0 small">10m 56s</p> */}
+                        <h6 className="mb-0">{vidio.title}</h6>
+                        <p className="mb-2 mb-sm-0 small">{vidio.description}</p>
                     </div>
                 </div>
 

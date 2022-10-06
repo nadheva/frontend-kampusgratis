@@ -1,5 +1,4 @@
 import React from 'react'
-import Intro from '../../components/studiku/vidioPlayer/Intro'
 import MainContent from '../../components/studiku/vidioPlayer/MainContent'
 import RightSidebar from '../../components/studiku/vidioPlayer/RightSidebar'
 
@@ -12,7 +11,9 @@ const VidioPlayer = () => {
                         <div className="row g-4">
                             <div className="col-xl-8">
                                 <div className="row g-4">
-                                    <Intro />
+                                    <div className="col-12">
+                                        <h2>Lembaga Keuangan - 000372</h2>
+                                    </div>
                                     <MainContent />
                                 </div>
                             </div>
