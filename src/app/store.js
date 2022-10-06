@@ -8,6 +8,7 @@ import subjectReducer from '../features/subject/subjectSlice';
 import sessionReducer from '../features/session/sessionSlice';
 import moduleReducer from '../features/module/moduleSlice';
 import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
+import videoReducer from '../features/video/videoSlice';
 
 export const store = configureStore({
   reducer: {
@@ -19,6 +20,7 @@ export const store = configureStore({
     subject: subjectReducer,
     session: sessionReducer,
     module: moduleReducer,
-    detailModule: detailModuleReducer
+    detailModule: detailModuleReducer,
+    video: videoReducer
   }
 });
