@@ -27,7 +27,7 @@ const ModulItem = ({ modul, i }) => {
                     {/* Info */}
                     <div className="d-sm-flex justify-content-sm-between align-items-center">
                         {/* Title */}
-                        <p className="text-small mb-0">{modul.number_of_videos} Vidio {modul.number_of_documents} Dokumen</p>
+                        <p className="text-small mb-0">{modul.content_length.number_of_video} Vidio {modul.content_length.number_of_document} Dokumen</p>
                     </div>
                 </div>
             </div>
