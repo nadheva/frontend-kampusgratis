@@ -23,7 +23,9 @@ const ModulItem = ({ modul, i }) => {
 
                     </div>
                     {/* Content */}
-                    <p className="text-truncate-2 mb-3"> </p>
+                    <p className="text-truncate-2 mb-3">
+                        {modul.description}
+                    </p>
                     {/* Info */}
                     <div className="d-sm-flex justify-content-sm-between align-items-center">
                         {/* Title */}
