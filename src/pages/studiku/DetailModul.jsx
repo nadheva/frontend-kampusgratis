@@ -1,7 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import VidioItem from '../../components/studiku/detailModule/VidioItem';
+import DokumentItem from '../../components/studiku/detailModule/DokumentItem';
+
+import { useParams } from 'react-router-dom';
+// redux
+import { useSelector, useDispatch } from 'react-redux'
+import { getDetailModules, reset } from '../../features/detailmodule/detailModuleSlice'
+import useEffectOnce from '../../helpers/useEffectOnce';
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
 
 const DetailModul = () => {
+
+    // Get id
+    const { moduleId } = useParams();
+
+    const dispatch = useDispatch()
+    const { dModules, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.detailModule
+    );
+
+    useEffectOnce(() => {
+        dispatch(getDetailModules(moduleId))
+    });
+
+    useEffect(() => {
+
+        if (isError && !isSuccess) {
+            // toast.error(message);
+            dispatch(reset());
+        }
+
+        if (isSuccess && message && !isError) {
+            // toast.success(message);
+            dispatch(reset());
+        }
+
+
+    }, [dModules, isLoading, isError, isSuccess, message, dispatch])
+
+    // console.log(dModules)
+
+    // dModules.videos.map(video => console.log(video.url))
+    // dModules.documents.map(dokument => console.log(dokument.file))
+
     return (
         <main>
             {/* Intro */}
@@ -38,85 +82,68 @@ const DetailModul = () => {
                                                 {/* Card header */}
                                                 <div className="card-header  p-0 pb-3">
                                                     <h4 className="mb-0">Modul</h4>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos illo rerum vero reiciendis omnis dolor consequatur earum. Sint eum facilis hic doloribus, excepturi nesciunt quo labore suscipit, nobis, laborum totam. adipisicing elit. Quos illo rerum vero reiciendis omnis dolor consequatur earum.</p>
+                                                    {/* <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos illo rerum vero reiciendis omnis dolor consequatur earum. Sint eum facilis hic doloribus, excepturi nesciunt quo labore suscipit, nobis, laborum totam. adipisicing elit. Quos illo rerum vero reiciendis omnis dolor consequatur earum.</p> */}
                                                 </div>
 
                                                 {/* Card Body */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-5">
-                                                        {/* Lecture item START */}
+
+                                                        {/* Viido */}
                                                         <div className="col-12">
-                                                            {/* Curriculum item */}
                                                             <h5 className="mb-4">Vidio</h5>
-                                                            <div className="d-sm-flex justify-content-sm-between align-items-center">
-                                                                <div className="d-flex">
-                                                                    <Link to="/vidio-player" className="btn btn-danger-soft btn-round mb-0">
-                                                                        <i className="fas fa-play" />
-                                                                    </Link>
-                                                                    <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
-                                                                        <h6 className="mb-0">Introduction</h6>
-                                                                        <p className="mb-2 mb-sm-0 small">10m 56s</p>
+                                                            {
+                                                                dModules.videos != null ? (
+                                                                    dModules.videos.map((vidio) => (
+                                                                        <VidioItem key={vidio.id} vidio={vidio} />
+                                                                    ))
+                                                                ) : isLoading ? (
+                                                                    <div className='row'>
+                                                                        <div className="col-sm-12 col-xl-12">
+                                                                            <SkeletonTheme>
+                                                                                <Skeleton height={50} />
+                                                                            </SkeletonTheme>
+                                                                        </div>
+                                                                        <div className="col-sm-12 col-xl-12">
+                                                                            <SkeletonTheme>
+                                                                                <Skeleton height={50} />
+                                                                            </SkeletonTheme>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                                {/* Button */}
-                                                                <Link to="/vidio-player" className="btn btn-sm btn-success mb-0">
-                                                                    Play
-                                                                </Link>
-                                                            </div>
-                                                            {/* Divider */}
-                                                            <hr />
-                                                            {/* Curriculum item */}
-                                                            <div className="d-sm-flex justify-content-sm-between align-items-center">
-                                                                <div className="d-flex">
-                                                                    <Link to="/vidio-player"
-                                                                        className="btn btn-danger-soft btn-round mb-0 flex-shrink-0">
-                                                                        <i className="fas fa-play" />
-                                                                    </Link>
-                                                                    <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
-                                                                        <h6 className="mb-0">What is Digital Marketing</h6>
-                                                                        <p className="mb-2 mb-sm-0 small">18m 30s</p>
-                                                                    </div>
-                                                                </div>
-                                                                {/* Button */}
-                                                                <Link to="/vidio-player" className="btn btn-sm btn-success mb-0">
-                                                                    Play
-                                                                </Link>
-                                                            </div>
+                                                                ) : (
+                                                                    <h1>Data Kosong</h1>
+                                                                )
+                                                            }
                                                         </div>
-                                                        {/* Lecture item END */}
-                                                        {/* Lecture item START */}
+
+
+                                                        {/* Dokument */}
                                                         <div className="col-12">
                                                             {/* Curriculum item */}
                                                             <h5 className="mb-4">Dokumen</h5>
-
-                                                            {/* Curriculum item */}
-                                                            <div className="d-sm-flex justify-content-sm-between align-items-center">
-                                                                <div className="d-flex">
-                                                                    <a href=" " className="btn btn-light btn-round mb-0 flex-shrink-0">
-                                                                        <i className="bi bi-file-earmark-pdf" />
-                                                                    </a>
-                                                                    <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
-                                                                        <h6 className="mb-0">Dokumen 1</h6>
-                                                                        <p className="mb-2 mb-sm-0 small">Pertemuan 1</p>
+                                                            {
+                                                                dModules.documents != null ? (
+                                                                    dModules.documents.map((dokument) => (
+                                                                        <DokumentItem key={dokument.id} dokument={dokument} />
+                                                                    ))
+                                                                ) : isLoading ? (
+                                                                    <div className='row'>
+                                                                        <div className="col-sm-12 col-xl-12">
+                                                                            <SkeletonTheme>
+                                                                                <Skeleton height={50} />
+                                                                            </SkeletonTheme>
+                                                                        </div>
+                                                                        <div className="col-sm-12 col-xl-12">
+                                                                            <SkeletonTheme>
+                                                                                <Skeleton height={50} />
+                                                                            </SkeletonTheme>
+                                                                        </div>
                                                                     </div>
-                                                                </div>
-                                                            </div>
-                                                            {/* Divider */}
-                                                            <hr />
-                                                            {/* Curriculum item */}
-                                                            <div className="d-sm-flex justify-content-sm-between align-items-center">
-                                                                <div className="d-flex">
-                                                                    <a href=" " className="btn btn-light btn-round mb-0 flex-shrink-0">
-                                                                        <i className="bi bi-file-earmark-pdf" />
-                                                                    </a>
-                                                                    <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
-                                                                        <h6 className="mb-0">Dokumen 2</h6>
-                                                                        <p className="mb-2 mb-sm-0 small">Pertemuan 1</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                ) : (
+                                                                    <h1>Data Kosong</h1>
+                                                                )
+                                                            }
                                                         </div>
-                                                        {/* Lecture item END */}
 
                                                     </div>
                                                 </div>

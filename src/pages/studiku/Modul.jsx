@@ -41,6 +41,8 @@ const Modul = () => {
 
     }, [modules, isLoading, isError, isSuccess, message, dispatch])
 
+    // console.log(modules)
+
     return (
         <main>
             {/* Intro */}
@@ -81,6 +83,7 @@ const Modul = () => {
                                                 {/* card Body */}
                                                 <div className="card-body p-0 pt-3">
                                                     <div className="row g-4 justify-content-center">
+
                                                         {
                                                             isLoading ? (
                                                                 <>
@@ -105,10 +108,12 @@ const Modul = () => {
                                                                         </SkeletonTheme>
                                                                     </div>
                                                                 </>
-                                                            ) : (
+                                                            ) : modules != null ? (
                                                                 modules.map((modul, i) => (
-                                                                    <ModulItem key={modul.modul.id} modul={modul} i={i + 1} />
+                                                                    <ModulItem key={modul.id} modul={modul} i={i + 1} />
                                                                 ))
+                                                            ) : (
+                                                                <h2>Data kosong</h2>
                                                             )
                                                         }
                                                     </div>
