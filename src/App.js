@@ -166,9 +166,9 @@ function App() {
             />
           </Route>
 
-          <Route path="/vidio-player" element={<PrivateRoute />}>
+          <Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
             <Route
-              path="/vidio-player"
+              path="/vidio-player/:videoId"
               element={
                 <>
                   <Header />
