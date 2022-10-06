@@ -96,11 +96,7 @@ const Artikel = () => {
 
                     {/* Row */}
                     <div className="row g-4">
-                        {filteredArtikel != null ? (
-                            filteredArtikel.map((artikel) => (
-                                <CardItem key={artikel.id} artikel={artikel} />
-                            ))
-                        ) : isLoading ? (
+                        {isLoading ? (
                             <div className="row">
                                 <div className="col-sm-6 col-lg-4 col-xl-3">
                                     <SkeletonTheme>
@@ -132,7 +128,9 @@ const Artikel = () => {
                                 </div>
                             </div>
                         ) : (
-                            <h1>Data Kosong</h1>
+                            filteredArtikel.map((artikel) => (
+                                <CardItem key={artikel.id} artikel={artikel} />
+                            ))
                         )}
                     </div>
                     {/* Row end */}
