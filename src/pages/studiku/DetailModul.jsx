@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import VidioItem from '../../components/studiku/detailModule/VidioItem';
 import DokumentItem from '../../components/studiku/detailModule/DokumentItem';
 
@@ -13,6 +13,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const DetailModul = () => {
+    const navigate = useNavigate();
 
     // Get id
     const { moduleId } = useParams();
@@ -57,8 +58,12 @@ const DetailModul = () => {
                             <div className="d-flex justify-content-center">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                                        <li className="breadcrumb-item"><Link to="/pertemuan">Pertemuan</Link></li>
-                                        <li className="breadcrumb-item"><Link to="/modul">Modul</Link></li>
+                                        <li className="breadcrumb-item">
+                                            <Link to='' onClick={() => navigate(-2)}>Pertemuan</Link>
+                                        </li>
+                                        <li className="breadcrumb-item">
+                                            <Link to='' onClick={() => navigate(-1)}>Modul</Link>
+                                        </li>
                                         <li className="breadcrumb-item active" aria-current="page">Detail Modul</li>
                                     </ol>
                                 </nav>
