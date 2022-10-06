@@ -38,6 +38,7 @@ const VidioPlayer = () => {
 
     }, [videos, isLoading, isError, isSuccess, message, dispatch])
 
+    console.log(videos)
 
     return (
         <>
@@ -48,8 +49,8 @@ const VidioPlayer = () => {
                             <div className="col-xl-8">
                                 <div className="row g-4">
                                     {
-                                        videos != null ? (
-                                            <MainContent videos={videos} />
+                                        videos == null || videos == 0 ? (
+                                            <h2>Data kosong</h2>
                                         ) : isLoading ? (
                                             <div className='row'>
                                                 <div className="col-sm-12 col-xl-12">
@@ -64,7 +65,7 @@ const VidioPlayer = () => {
                                                 </div>
                                             </div>
                                         ) : (
-                                            <h2>Data kosong</h2>
+                                            <MainContent videos={videos} />
                                         )
                                     }
 

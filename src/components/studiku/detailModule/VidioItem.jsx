@@ -15,7 +15,7 @@ const VidioItem = ({ vidio }) => {
                     </div>
                 </div>
 
-                <Link to="/vidio-player" className="btn btn-sm btn-success mb-0">
+                <Link to={`/vidio-player/${vidio.id}`} className="btn btn-sm btn-success mb-0">
                     Play
                 </Link>
             </div>

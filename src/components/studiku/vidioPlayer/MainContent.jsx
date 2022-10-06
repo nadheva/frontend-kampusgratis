@@ -8,19 +8,13 @@ const MainContent = ({ videos }) => {
 
     return (
         <>
-            {/* tittle */}
-            <div className="col-12">
-                <h2>{videos.title}</h2>
-            </div>
-
-            {/* Vidio */}
             <div className="col-12 position-relative">
                 <div className="ratio ratio-16x9">
                     <iframe src={`https://www.youtube.com/embed/${url}`} title="YouTube video" allowFullScreen></iframe>
                 </div>
             </div>
 
-            {/* Deskripsi & forum diskusi */}
+            {/* Deskripsi */}
             <div className="col-lg-12">
                 <div className="bg-body shadow rounded-2 p-4">
 
