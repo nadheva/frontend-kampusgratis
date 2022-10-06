@@ -135,7 +135,7 @@ const Main = () => {
 					className="bg-blue align-items-center d-flex"
 					style={{
 						background:
-							"url(/assets/images/pattern/04.png) no-repeat center center",
+							"url(assets/images/pattern/04.png) no-repeat center center",
 						backgroundSize: "cover",
 					}}
 				>
@@ -173,13 +173,13 @@ const Main = () => {
 									<input
 										className="form-control me-1"
 										type="search"
-										placeholder="Masukkan Jurusan yang kamu ingin cari ..."
+										placeholder="Masukkan Jurusan yang ingin dicari ..."
 										onChange={(e) => setSearchTerm(e.target.value)}
 									/>
 								</div>
 								<div className="col-xl-8">
 									<div className="row g-3">
-										<div className="col-md-6 pb-2 pb-md-0">
+										<div className="col-sm-6 col-md-3 pb-2 pb-md-0">
 											<select
 												className="form-select form-select-sm js-choice"
 												aria-label=".form-select-sm example"
@@ -195,6 +195,43 @@ const Main = () => {
 												<option>Photography</option>
 												<option>Writing</option>
 												<option>Marketing</option>
+											</select>
+										</div>
+										<div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+											<select
+												className="form-select form-select-sm js-choice"
+												aria-label=".form-select-sm example"
+											>
+												<option value="">Price level</option>
+												<option>All</option>
+												<option>Free</option>
+												<option>Paid</option>
+											</select>
+										</div>
+										<div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+											<select
+												className="form-select form-select-sm js-choice"
+												aria-label=".form-select-sm example"
+											>
+												<option value="">Skill level</option>
+												<option>All levels</option>
+												<option>Beginner</option>
+												<option>Intermediate</option>
+												<option>Advanced</option>
+											</select>
+										</div>
+										<div className="col-sm-6 col-md-3 pb-2 pb-md-0">
+											<select
+												className="form-select form-select-sm js-choice"
+												aria-label=".form-select-sm example"
+											>
+												<option value="">Language</option>
+												<option>English</option>
+												<option>Francas</option>
+												<option>Russian</option>
+												<option>Hindi</option>
+												<option>Bengali</option>
+												<option>Spanish</option>
 											</select>
 										</div>
 									</div>

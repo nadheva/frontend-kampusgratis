@@ -117,7 +117,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/account.svg"
+										src="/assets/images/element/account.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
