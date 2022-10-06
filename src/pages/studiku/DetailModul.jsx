@@ -38,11 +38,10 @@ const DetailModul = () => {
             dispatch(reset());
         }
 
-        // dispatch(getDetailModules(moduleId))
 
     }, [dModules, isLoading, isError, isSuccess, message, dispatch])
 
-    console.log(dModules)
+    // console.log(dModules)
 
     // dModules.videos.map(video => console.log(video.url))
     // dModules.documents.map(dokument => console.log(dokument.file))
