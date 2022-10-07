@@ -21,9 +21,7 @@ export const useAuthStatus = () => {
           const token = await user?.getIdToken();
           localStorage.setItem("token", token);
         } else {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-          toast.info("Session kamu telah berakhir!");
+          // toast.info("Session kamu telah berakhir!");
           dispatch(reset());
         }
 
@@ -36,9 +34,7 @@ export const useAuthStatus = () => {
           const token = await user?.getIdToken();
           localStorage.setItem("token", token);
         } else {
-          localStorage.removeItem("token");
-          localStorage.removeItem("user");
-          toast.info("Session kamu telah berakhir!");
+          // toast.info("Session kamu telah berakhir!");
           dispatch(reset());
         }
 

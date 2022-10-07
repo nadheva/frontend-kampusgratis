@@ -8,7 +8,6 @@ import Logo from '../../assets/images/element/error404-01.svg';
 const PageNotFound = () => {
   const location = useNavigate();
 
-  console.log("location");
   return <>
     <Header />
     <main>
