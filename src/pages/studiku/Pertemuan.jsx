@@ -42,12 +42,12 @@ const Pertemuan = () => {
 
     return (
         <>
+            <Header />
             <main>
-                <Header />
                 <Intro subjectId={subjectId} />
                 <MainContent session={sessions} isLoading={isLoading} />
-                <Footer />
             </main>
+            <Footer />
         </>
     )
 }

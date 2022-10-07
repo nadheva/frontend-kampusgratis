@@ -28,7 +28,7 @@ const CourseList = ({ course, isLoading }) => {
                         </SkeletonTheme>
                     </div>
                 </>
-            ) : course == null || course == 0 || course.length == undefined ? (
+            ) : course == null || course == 0 ? (
                 <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
             ) : (
                 course.map((course) => (

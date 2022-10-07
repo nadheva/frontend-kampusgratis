@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import MainContent from '../../components/studiku/vidioPlayer/MainContent'
 import RightSidebar from '../../components/studiku/vidioPlayer/RightSidebar'
+import Header from '../default/Header';
+import Footer from '../default/Footer';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
@@ -42,6 +44,7 @@ const VidioPlayer = () => {
 
     return (
         <>
+            <Header />
             <main>
                 <section className="pt-3 pt-xl-5">
                     <div className="container" data-sticky-container>
@@ -76,6 +79,7 @@ const VidioPlayer = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     )
 }
