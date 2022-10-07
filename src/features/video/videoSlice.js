@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
-import sessionService from './sessionService';
+import videoService from './videoService';
 
 const initialState = {
-  sessions: [],
+  videos: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: ''
 };
 
-export const getSessions = createAsyncThunk(
-  'session/getfromsub/',
-  async (subjectId, thunkAPI) => {
+export const getVideos = createAsyncThunk(
+  'module/video/',
+  async (videoId, thunkAPI) => {
     try {
 
-      const { data } = await sessionService.getSession(subjectId);
+      const { data } = await videoService.getVideo(videoId);
       return data;
 
     } catch (error) {
@@ -25,8 +25,8 @@ export const getSessions = createAsyncThunk(
 )
 
 
-export const sessionSlice = createSlice({
-  name: 'session',
+export const videoSlice = createSlice({
+  name: 'video',
   initialState,
   reducers: {
     reset: (state) => {
@@ -38,22 +38,22 @@ export const sessionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getSessions.pending, (state) => {
+      .addCase(getVideos.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getSessions.fulfilled, (state, action) => {
+      .addCase(getVideos.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.sessions = action.payload;
+        state.videos = action.payload;
       })
-      .addCase(getSessions.rejected, (state, action) => {
+      .addCase(getVideos.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.sessions = null;
+        state.videos = null;
       })
   }
 });
 
-export const { reset } = sessionSlice.actions;
-export default sessionSlice.reducer;
+export const { reset } = videoSlice.actions;
+export default videoSlice.reducer;

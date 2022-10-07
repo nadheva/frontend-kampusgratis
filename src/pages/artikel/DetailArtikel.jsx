@@ -5,9 +5,7 @@ import moment from "moment/moment";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { artikelAll, reset } from "../../features/artikel/artikelSlice";
-
-import Header from "../default/Header";
-import Footer from "../default/Footer";
+import useEffectOnce from "../../helpers/useEffectOnce";
 
 const DetailArtikel = () => {
 	// redux
@@ -16,16 +14,20 @@ const DetailArtikel = () => {
 		(state) => state.artikel
 	);
 
+	useEffectOnce(() => {
+		dispatch(artikelAll());
+	});
+
 	useEffect(() => {
-		if (isError) {
-			console.log(message);
+		if (isError && !isSuccess) {
+			// toast.error(message);
+			dispatch(reset());
 		}
 
-		dispatch(artikelAll());
-
-		return () => {
+		if (isSuccess && message && !isError) {
+			// toast.success(message);
 			dispatch(reset());
-		};
+		}
 	}, [artikels, isLoading, isError, isSuccess, message, dispatch]);
 
 	// Get id
@@ -37,7 +39,6 @@ const DetailArtikel = () => {
 
 	return (
 		<main>
-			<Header />
 			<section className="bg-light">
 				<div className="container">
 					<div className="row position-relative pb-4">
@@ -67,7 +68,6 @@ const DetailArtikel = () => {
 					</div>
 				</div>
 			</section>
-			<Footer />
 		</main>
 	);
 };

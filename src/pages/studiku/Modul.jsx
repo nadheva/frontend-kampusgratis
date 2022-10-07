@@ -1,15 +1,50 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import ModulItem from "../../components/studiku/modul/ModulItem";
-import DataModul from "../../json/Modul";
+// import DataModul from '../../json/Modul';
 
-import Header from "../default/Header";
-import Footer from "../default/Footer";
+import { useParams } from "react-router-dom";
+
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getModules, reset } from "../../features/module/moduleSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Modul = () => {
+	const navigate = useNavigate();
+
+	// Get id
+	const { sessionId } = useParams();
+
+	// redux session
+	const dispatch = useDispatch();
+	const { modules, isLoading, isError, isSuccess, message } = useSelector(
+		(state) => state.module
+	);
+
+	useEffectOnce(() => {
+		dispatch(getModules(sessionId));
+	});
+
+	useEffect(() => {
+		if (isError && !isSuccess) {
+			// toast.error(message);
+			dispatch(reset());
+		}
+
+		if (isSuccess && message && !isError) {
+			// toast.success(message);
+			dispatch(reset());
+		}
+	}, [modules, isLoading, isError, isSuccess, message, dispatch]);
+
+	// console.log(modules)
+
 	return (
 		<main>
-			<Header />
 			{/* Intro */}
 			<section className="bg-blue py-7">
 				<div className="container">
@@ -20,7 +55,9 @@ const Modul = () => {
 								<nav aria-label="breadcrumb">
 									<ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
 										<li className="breadcrumb-item">
-											<Link to="/pertemuan">Pertemuan</Link>
+											<Link to="" onClick={() => navigate(-1)}>
+												Pertemuan
+											</Link>
 										</li>
 										<li className="breadcrumb-item active" aria-current="page">
 											Modul
@@ -50,31 +87,44 @@ const Modul = () => {
 												{/* Card header */}
 												<div className="card-header  p-0 pb-3">
 													<h4 className="mb-3">Modul</h4>
-													<form className="row g-4">
-														<div className="col-sm-12 col-lg-12">
-															<div className="position-relative">
-																<input
-																	className="form-control pe-5 bg-transparent"
-																	type="search"
-																	placeholder="Search"
-																	aria-label="Search"
-																/>
-																<button
-																	className="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset"
-																	type="submit"
-																>
-																	<i className="fas fa-search fs-6 "></i>
-																</button>
-															</div>
-														</div>
-													</form>
 												</div>
 												{/* card Body */}
 												<div className="card-body p-0 pt-3">
 													<div className="row g-4 justify-content-center">
-														{DataModul.map((modul) => (
-															<ModulItem key={modul.id} modul={modul} />
-														))}
+														{isLoading ? (
+															<>
+																<div className="col-sm-12 col-xl-12">
+																	<SkeletonTheme>
+																		<Skeleton height={100} />
+																	</SkeletonTheme>
+																</div>
+																<div className="col-sm-12 col-xl-12">
+																	<SkeletonTheme>
+																		<Skeleton height={100} />
+																	</SkeletonTheme>
+																</div>
+																<div className="col-sm-12 col-xl-12">
+																	<SkeletonTheme>
+																		<Skeleton height={100} />
+																	</SkeletonTheme>
+																</div>
+																<div className="col-sm-12 col-xl-12">
+																	<SkeletonTheme>
+																		<Skeleton height={100} />
+																	</SkeletonTheme>
+																</div>
+															</>
+														) : modules != null ? (
+															modules.map((modul, i) => (
+																<ModulItem
+																	key={modul.id}
+																	modul={modul}
+																	i={i + 1}
+																/>
+															))
+														) : (
+															<h2>Data kosong</h2>
+														)}
 													</div>
 												</div>
 											</div>
@@ -86,7 +136,6 @@ const Modul = () => {
 					</div>
 				</div>
 			</section>
-			<Footer />
 		</main>
 	);
 };

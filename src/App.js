@@ -69,12 +69,7 @@ function App() {
 					</Route>
 
 					<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
-						<Route
-						path="/pertemuan/:subjectId"
-						element={
-							<Pertemuan />
-						}
-						/>
+						<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
 					</Route>
 
 					<Route path="/modul" element={<PrivateRoute />}>
@@ -136,13 +131,7 @@ function App() {
 					</Route>
 
 					<Route path="/calender" exact element={<PrivateRoute />}>
-						<Route
-						path="/calender"
-						exact
-						element={
-							<Calendar />
-						}
-						/>
+						<Route path="/calender" exact element={<Calendar />} />
 					</Route>
 
 					<Route path="/*" element={<PageNotFound />} />
@@ -157,7 +146,7 @@ function App() {
 			</Router>
 
 			<ToastContainer />
-			</>
+		</>
 	);
 }
 

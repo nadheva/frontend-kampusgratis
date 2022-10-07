@@ -7,12 +7,10 @@ import "react-loading-skeleton/dist/skeleton.css";
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import { artikelAll, reset } from "../../features/artikel/artikelSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
 
 // search
 import _ from "lodash";
-
-import Header from "../default/Header";
-import Footer from "../default/Footer";
 
 const Artikel = () => {
 	// redux
@@ -21,17 +19,21 @@ const Artikel = () => {
 		(state) => state.artikel
 	);
 
+	useEffectOnce(() => {
+		dispatch(artikelAll());
+	});
+
 	useEffect(() => {
-		if (isError) {
-			console.log(message);
+		if (isError && !isSuccess) {
+			// toast.error(message);
+			dispatch(reset());
 		}
 
-		dispatch(artikelAll());
-
-		return () => {
+		if (isSuccess && message && !isError) {
+			// toast.success(message);
 			dispatch(reset());
-		};
-	}, [isLoading, isError, isSuccess, message, dispatch]);
+		}
+	}, [artikels, isLoading, isError, isSuccess, message, dispatch]);
 
 	// search
 	const [searchValue, setSearchValue] = React.useState("");
@@ -56,7 +58,6 @@ const Artikel = () => {
 
 	return (
 		<main>
-			<Header />
 			{/* ======================= Page Banner START */}
 			<section className="py-5">
 				<div className="container">
@@ -86,11 +87,7 @@ const Artikel = () => {
 				<div className="container">
 					{/* Row */}
 					<div className="row g-4">
-						{filteredArtikel.length > 0 ? (
-							filteredArtikel.map((artikel) => (
-								<CardItem key={artikel.id} artikel={artikel} />
-							))
-						) : isLoading ? (
+						{isLoading ? (
 							<div className="row">
 								<div className="col-sm-6 col-lg-4 col-xl-3">
 									<SkeletonTheme>
@@ -122,7 +119,9 @@ const Artikel = () => {
 								</div>
 							</div>
 						) : (
-							<h1>Data Kosong</h1>
+							filteredArtikel.map((artikel) => (
+								<CardItem key={artikel.id} artikel={artikel} />
+							))
 						)}
 					</div>
 					{/* Row end */}
@@ -169,7 +168,6 @@ const Artikel = () => {
 				</div>
 			</section>
 			{/* ======================= Page content END */}
-			<Footer />
 		</main>
 	);
 };

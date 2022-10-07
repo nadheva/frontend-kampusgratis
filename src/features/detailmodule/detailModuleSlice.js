@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
-import sessionService from './sessionService';
+import detailModuleService from './detailModuleService';
 
 const initialState = {
-  sessions: [],
+  dModules: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: ''
 };
 
-export const getSessions = createAsyncThunk(
-  'session/getfromsub/',
-  async (subjectId, thunkAPI) => {
+export const getDetailModules = createAsyncThunk(
+  'module/',
+  async (moduleId, thunkAPI) => {
     try {
 
-      const { data } = await sessionService.getSession(subjectId);
+      const { data } = await detailModuleService.getDetailModule(moduleId);
       return data;
 
     } catch (error) {
@@ -25,8 +25,8 @@ export const getSessions = createAsyncThunk(
 )
 
 
-export const sessionSlice = createSlice({
-  name: 'session',
+export const detailModuleSlice = createSlice({
+  name: 'detailModule',
   initialState,
   reducers: {
     reset: (state) => {
@@ -38,22 +38,22 @@ export const sessionSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getSessions.pending, (state) => {
+      .addCase(getDetailModules.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getSessions.fulfilled, (state, action) => {
+      .addCase(getDetailModules.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.sessions = action.payload;
+        state.dModules = action.payload;
       })
-      .addCase(getSessions.rejected, (state, action) => {
+      .addCase(getDetailModules.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.sessions = null;
+        state.dModules = null;
       })
   }
 });
 
-export const { reset } = sessionSlice.actions;
-export default sessionSlice.reducer;
+export const { reset } = detailModuleSlice.actions;
+export default detailModuleSlice.reducer;

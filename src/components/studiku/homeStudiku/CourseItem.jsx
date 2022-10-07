@@ -10,6 +10,7 @@ function CourseItem({ course }) {
         <div className="card-body pb-0">
           <div className="d-flex justify-content-between mb-2">
             <a href=" " className="badge bg-success bg-opacity-10 text-success"> {course.lecturers} </a>
+            <a href=" " className="badge bg-purple bg-opacity-10 text-purple">{course.progress}%</a>
           </div>
           <h5 className="card-title">
             <Link to={`/pertemuan/${course.item.id}`}>{course.item.Subject.name}</Link>

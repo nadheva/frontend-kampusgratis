@@ -6,6 +6,9 @@ import administrationReducer from '../features/administration/administrationSlic
 import syllabusReducer from '../features/syllabus/syllabusSlice';
 import subjectReducer from '../features/subject/subjectSlice';
 import sessionReducer from '../features/session/sessionSlice';
+import moduleReducer from '../features/module/moduleSlice';
+import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
+import videoReducer from '../features/video/videoSlice';
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +18,9 @@ export const store = configureStore({
     administration: administrationReducer,
     syllabus: syllabusReducer,
     subject: subjectReducer,
-    session: sessionReducer
+    session: sessionReducer,
+    module: moduleReducer,
+    detailModule: detailModuleReducer,
+    video: videoReducer
   }
 });
