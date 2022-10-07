@@ -1,4 +1,8 @@
 import React, { useEffect } from 'react'
+import { toast } from 'react-toastify';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css';
+
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
@@ -18,17 +22,14 @@ const Intro = ({ subjectId }) => {
     });
 
     useEffect(() => {
-
         if (isError && !isSuccess) {
-            // toast.error(message);
+            toast.error(message);
             dispatch(reset());
         }
-
         if (isSuccess && message && !isError) {
-            // toast.success(message);
+            toast.success(message);
             dispatch(reset());
         }
-
     }, [subjects, isLoading, isError, isSuccess, message, dispatch])
 
     // Filter data

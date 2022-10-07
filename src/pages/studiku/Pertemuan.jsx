@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+// component
 import Intro from '../../components/studiku/pertemuan/Intro';
 import MainContent from '../../components/studiku/pertemuan/MainContent';
-
 import Header from '../default/Header';
 import Footer from '../default/Footer';
-
-import { useParams } from 'react-router-dom';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
@@ -16,7 +17,7 @@ const Pertemuan = () => {
     // Get id
     const { subjectId } = useParams()
 
-    // redux session
+    // redux 
     const dispatch = useDispatch()
     const { sessions, isLoading, isError, isSuccess, message } = useSelector(
         (state) => state.session
@@ -27,17 +28,14 @@ const Pertemuan = () => {
     });
 
     useEffect(() => {
-
         if (isError && !isSuccess) {
-            // toast.error(message);
+            toast.error(message);
             dispatch(reset());
         }
-
         if (isSuccess && message && !isError) {
-            // toast.success(message);
+            toast.success(message);
             dispatch(reset());
         }
-
     }, [sessions, isLoading, isError, isSuccess, message, dispatch])
 
     return (
