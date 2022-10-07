@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../default/Header";
+import Footer from "../default/Footer";
 
 const Categories = () => {
 	return (
 		<>
+			<Header />
 			<section>
 				<div className="container position-relative">
 					<div className="row">
@@ -12,7 +15,7 @@ const Categories = () => {
 								<div className="col-6 col-md-3 text-center order-1">
 									<img
 										loading="lazy"
-										src="assets/images/element/category-1.svg"
+										src="/assets/images/element/category-1.svg"
 										alt="x"
 									/>
 								</div>
@@ -43,7 +46,7 @@ const Categories = () => {
 								<div className="col-6 col-md-3 text-center order-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/category-2.svg"
+										src="/assets/images/element/category-2.svg"
 										alt="x"
 									/>
 								</div>
@@ -65,7 +68,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/instructor-course.svg"
+										src="/assets/images/element/instructor-course.svg"
 										alt="x"
 									/>
 								</div>
@@ -81,7 +84,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/online.svg"
+										src="/assets/images/element/online.svg"
 										alt="Silabus"
 									/>
 								</div>
@@ -97,7 +100,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/data-science.svg"
+										src="/assets/images/element/data-science.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -114,7 +117,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/account.svg"
+										src="/assets/images/element/account.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -131,7 +134,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/help.svg"
+										src="/assets/images/element/help.svg"
 										alt="x"
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -148,7 +151,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/coding.svg"
+										src="/assets/images/element/coding.svg"
 										alt="x"
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -165,7 +168,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/25.svg"
+										src="/assets/images/element/25.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -182,7 +185,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/04.svg"
+										src="/assets/images/element/04.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -199,7 +202,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/home.svg"
+										src="/assets/images/element/home.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -216,7 +219,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/18.svg"
+										src="/assets/images/element/18.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -233,7 +236,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/photography.svg"
+										src="/assets/images/element/photography.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -250,7 +253,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/music.svg"
+										src="/assets/images/element/music.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -267,7 +270,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/account.svg"
+										src="/assets/images/element/account.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -284,7 +287,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/engineering.svg"
+										src="/assets/images/element/engineering.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -301,7 +304,7 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/exam.svg"
+										src="/assets/images/element/exam.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -318,7 +321,24 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/marketing.svg"
+										src="/assets/images/element/account.svg"
+										alt=""
+										style={{ filter: "grayscale(100%)" }}
+									/>
+								</div>
+								<h5 className="mb-2">
+									<Link to=" " className="stretched-link" disabled>
+										Kalender Saya
+									</Link>
+								</h5>
+							</div>
+						</div>
+						<div className="col-sm-6 col-md-4 col-xl-3">
+							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
+								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
+									<img
+										loading="lazy"
+										src="/assets/images/element/marketing.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
 									/>
@@ -341,7 +361,7 @@ const Categories = () => {
 								<div className="position-absolute bottom-0 end-0 me-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/08.svg"
+										src="/assets/images/element/08.svg"
 										className="h-100px h-sm-200px"
 										alt="x"
 									/>
@@ -365,7 +385,7 @@ const Categories = () => {
 								<div className="position-absolute bottom-0 end-0 me-3">
 									<img
 										loading="lazy"
-										src="assets/images/element/15.svg"
+										src="/assets/images/element/15.svg"
 										className="h-100px h-sm-200px"
 										alt="x"
 									/>
@@ -387,6 +407,7 @@ const Categories = () => {
 					</div>
 				</div>
 			</section>
+			<Footer />
 		</>
 	);
 };

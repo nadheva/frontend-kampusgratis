@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import Intro from '../../components/studiku/pertemuan/Intro';
 import MainContent from '../../components/studiku/pertemuan/MainContent';
 
+import Header from '../default/Header';
+import Footer from '../default/Footer';
+
 import { useParams } from 'react-router-dom';
 
 // redux
@@ -40,11 +43,13 @@ const Pertemuan = () => {
     return (
         <>
             <main>
+                <Header />
                 <Intro subjectId={subjectId} />
                 <MainContent session={sessions} isLoading={isLoading} />
+                <Footer />
             </main>
         </>
     )
 }
 
-export default Pertemuan
+export default Pertemuan;

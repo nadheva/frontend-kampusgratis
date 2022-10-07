@@ -5,7 +5,6 @@ import "react-toastify/dist/ReactToastify.css";
 import PrivateRoute from "./components/PrivateRoute";
 import "./config/firebase";
 
-import Header from "./pages/default/Header";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Profile from "./pages/Profile";
@@ -28,7 +27,6 @@ import IsiForum from "./pages/studiku/IsiForum";
 import StartQuiz from "./pages/studiku/StartQuiz";
 import Penugasan from "./pages/studiku/Penugasan";
 import ManageCourse from "./pages/instructor/ManageCourse";
-import Footer from "./pages/default/Footer";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
 import Modul from "./pages/studiku/Modul";
@@ -50,325 +48,106 @@ import SilabusSubject from "./pages/syllabus/ListSubject";
 import Calendar from "./pages/kalender/Calendar";
 
 function App() {
-  return (
-    <>
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              <>
-                <Header />
-                <Main />
-                <Footer />
-              </>
-            }
-          />
+	return (
+		<>
+			<Router>
+				<Routes>
+					<Route path="/" exact element={<Main />} />
 
-          <Route
-            path="/administrasi"
-            exact
-            element={
-              <>
-                <PrivateRoute />
-              </>
-            }
-          >
-            <Route
-              path="/administrasi"
-              exact
-              element={
-                <>
-                  <Header />
-                  <Administration />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/administrasi" exact element={<PrivateRoute />}>
+						<Route path="/administrasi" exact element={<Administration />} />
+					</Route>
 
-          <Route path="/profile" exact element={<PrivateRoute />}>
-            <Route
-              path="/profile"
-              exact
-              element={
-                <>
-                  <Header />
-                  <Profile />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/profile" exact element={<PrivateRoute />}>
+						<Route path="/profile" exact element={<Profile />} />
+					</Route>
 
-          <Route
-            path="/kategori"
-            exact
-            element={
-              <>
-                <Header />
-                <Categories />
-                <Footer />
-              </>
-            }
-          />
+					<Route path="/kategori" exact element={<Categories />} />
 
-          <Route path="/studi-ku" exact element={<PrivateRoute />}>
-            <Route
-              path="/studi-ku"
-              element={
-                <>
-                  <Header />
-                  <HomeStudiku />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/studi-ku" exact element={<PrivateRoute />}>
+						<Route path="/studi-ku" element={<HomeStudiku />} />
+					</Route>
 
-          <Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
-            <Route
-              path="/pertemuan/:subjectId"
-              element={
-                <>
-                  <Header />
-                  <Pertemuan />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
+						<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
+					</Route>
 
-          <Route path="/modul/:sessionId" element={<PrivateRoute />}>
-            <Route
-              path="/modul/:sessionId"
-              element={
-                <>
-                  <Header />
-                  <Modul />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/modul/:sessionId" element={<PrivateRoute />}>
+						<Route path="/modul/:sessionId" element={<Modul />} />
+					</Route>
 
-          <Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
-            <Route
-              path="/detail-modul/:moduleId"
-              element={
-                <>
-                  <Header />
-                  <DetailModul />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
+						<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
+					</Route>
 
-          <Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
-            <Route
-              path="/vidio-player/:videoId"
-              element={
-                <>
-                  <Header />
-                  <VidioPlayer />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
+						<Route path="/vidio-player/:videoId" element={<VidioPlayer />} />
+					</Route>
 
-          <Route path="/quiz" element={<PrivateRoute />}>
-            <Route
-              path="/quiz"
-              element={
-                <>
-                  <Header />
-                  <Quiz />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/quiz" element={<PrivateRoute />}>
+						<Route path="/quiz" element={<Quiz />} />
+					</Route>
 
-          <Route path="/start-quiz" element={<PrivateRoute />}>
-            <Route
-              path="/start-quiz"
-              element={
-                <>
-                  <StartQuiz />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/start-quiz" element={<PrivateRoute />}>
+						<Route path="/start-quiz" element={<StartQuiz />} />
+					</Route>
 
-          <Route path="/forum-diskusi" element={<PrivateRoute />}>
-            <Route
-              path="/forum-diskusi"
-              element={
-                <>
-                  <Header />
-                  <ForumDiskusi />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/forum-diskusi" element={<PrivateRoute />}>
+						<Route path="/forum-diskusi" element={<ForumDiskusi />} />
+					</Route>
 
-          <Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
-            <Route
-              path="/isi-forum-diskusi"
-              element={
-                <>
-                  <Header />
-                  <IsiForum />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
+						<Route path="/isi-forum-diskusi" element={<IsiForum />} />
+					</Route>
 
-          <Route path="/penugasan" element={<PrivateRoute />}>
-            <Route
-              path="/penugasan"
-              element={
-                <>
-                  <Header />
-                  <Penugasan />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/penugasan" element={<PrivateRoute />}>
+						<Route path="/penugasan" element={<Penugasan />} />
+					</Route>
 
-          <Route path="/ManageCourse" element={<PrivateRoute />}>
-            <Route
-              path="/ManageCourse"
-              element={
-                <>
-                  <Header />
-                  <ManageCourse />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/ManageCourse" element={<PrivateRoute />}>
+						<Route path="/ManageCourse" element={<ManageCourse />} />
+					</Route>
 
-          {/* Students */}
-          <Route path="/dashboard" element={<PrivateRoute />}>
-            <Route
-              path="/dashboard"
-              element={
-                <>
-                  <Header />
-                  <StudentDashboard />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
-          <Route path="/mycourse" element={<PrivateRoute />}>
-            <Route
-              path="/mycourse"
-              element={
-                <>
-                  <Header />
-                  <MyCourse />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
-          <Route path="/settings" element={<PrivateRoute />}>
-            <Route
-              path="/settings"
-              element={
-                <>
-                  <Header />
-                  <Setting />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					{/* Students */}
+					<Route path="/dashboard" element={<PrivateRoute />}>
+						<Route path="/dashboard" element={<StudentDashboard />} />
+					</Route>
+					<Route path="/mycourse" element={<PrivateRoute />}>
+						<Route path="/mycourse" element={<MyCourse />} />
+					</Route>
+					<Route path="/settings" element={<PrivateRoute />}>
+						<Route path="/settings" element={<Setting />} />
+					</Route>
 
-          <Route
-            path="/artikel"
-            element={
-              <>
-                <Header />
-                <Artikel />
-                <Footer />
-              </>
-            }
-          />
-          <Route
-            path="/artikel/:artikelId"
-            element={
-              <>
-                <Header />
-                <DetailArtikel />
-                <Footer />
-              </>
-            }
-          />
+					<Route path="/artikel" element={<Artikel />} />
+					<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 
-          <Route path="/silabus" exact element={<PrivateRoute />}>
-            <Route
-              path="/silabus"
-              exact
-              element={
-                <>
-                  <Header />
-                  <Silabus />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/silabus/:majorId" element={<PrivateRoute />}>
+						<Route path="/silabus/:majorId" element={<SilabusSubject />} />
+					</Route>
 
-          <Route path="/silabus/:majorId" exact element={<PrivateRoute />}>
-            <Route
-              path="/silabus/:majorId"
-              exact
-              element={
-                <>
-                  <Header />
-                  <SilabusSubject />
-                  <Footer />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/silabus" exact element={<PrivateRoute />}>
+						<Route path="/silabus" exact element={<Silabus />} />
+					</Route>
 
-          <Route path="/calender" exact element={<PrivateRoute />}>
-            <Route
-              path="/calender"
-              exact
-              element={
-                <>
-                  <Header />
-                  <Calendar />
-                </>
-              }
-            />
-          </Route>
+					<Route path="/calender" exact element={<PrivateRoute />}>
+						<Route path="/calender" exact element={<Calendar />} />
+					</Route>
 
-          <Route path="/*" element={<PageNotFound />} />
-          <Route path="/401" element={<Unauthorized />} />
-          <Route path="/403" element={<Forbidden />} />
-          <Route path="/500" element={<ServerError />} />
-          <Route path="/503" element={<ServiceUnavailable />} />
+					<Route path="/*" element={<PageNotFound />} />
+					<Route path="/401" element={<Unauthorized />} />
+					<Route path="/403" element={<Forbidden />} />
+					<Route path="/500" element={<ServerError />} />
+					<Route path="/503" element={<ServiceUnavailable />} />
 
-          <Route path="/login" exact element={<Login />} />
-          <Route path="/register" exact element={<Register />} />
-        </Routes>
-      </Router>
+					<Route path="/login" exact element={<Login />} />
+					<Route path="/register" exact element={<Register />} />
+				</Routes>
+			</Router>
 
-      <ToastContainer />
-    </>
-  );
+			<ToastContainer />
+		</>
+	);
 }
 
 export default App;

@@ -1,22 +1,26 @@
-import React from 'react';
+import React from "react";
 
-import Banner from '../components/Profile/Banner';
-import Sidebar from '../components/Profile/Sidebar';
+import Banner from "../components/Profile/Banner";
+import Sidebar from "../components/Profile/Sidebar";
+import Header from "./default/Header";
+import Footer from "./default/Footer";
 
 const Dashboard = () => {
-  return <>
-    <Banner />
-    <section className="pt-0">
-      <div className="container">
-        <div className="row">
-          <Sidebar />
-          <div className="col-xl-9">
+	return (
+		<>
+			<Header />
+			<Banner />
+			<section className="pt-0">
+				<div className="container">
+					<div className="row">
+						<Sidebar />
+						<div className="col-xl-9"></div>
+					</div>
+				</div>
+			</section>
+			<Footer />
+		</>
+	);
+};
 
-          </div>
-        </div>
-      </div>
-    </section>
-  </>
-}
-
-export default Dashboard
+export default Dashboard;

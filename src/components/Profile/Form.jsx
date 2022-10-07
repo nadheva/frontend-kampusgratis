@@ -127,7 +127,7 @@ const FormEdit = () => {
 												? imageData
 												: display_picture_link != null
 												? display_picture_link
-												: "assets/images/avatar/empty-display-picture.png"
+												: "/assets/images/avatar/empty-display-picture.png"
 										}
 										alt=""
 									/>

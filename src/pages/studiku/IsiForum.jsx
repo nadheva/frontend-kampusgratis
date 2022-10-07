@@ -1,13 +1,19 @@
-import React from 'react'
-import Intro from '../../components/studiku/isiForum/Intro'
-import MainContent from '../../components/studiku/isiForum/MainContent'
-const IsiForum = () => {
-    return (
-        <main>
-            <Intro />
-            <MainContent />
-        </main>
-    )
-}
+import React from "react";
+import Intro from "../../components/studiku/isiForum/Intro";
+import MainContent from "../../components/studiku/isiForum/MainContent";
 
-export default IsiForum
+import Header from "../default/Header";
+import Footer from "../default/Footer";
+
+const IsiForum = () => {
+	return (
+		<main>
+			<Header />
+			<Intro />
+			<MainContent />
+			<Footer />
+		</main>
+	);
+};
+
+export default IsiForum;
