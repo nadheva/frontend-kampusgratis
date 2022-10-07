@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import { extractErrorMessage } from '../../utils';
 import syllabusService from './syllabusService';
 
 const initialState = {
-  date: {},
+  data: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -26,6 +26,17 @@ export const getSubjectsByMajor = createAsyncThunk(
   async (majorId, thunkAPI) => {
     try {
       return await syllabusService.getSubjectByMajor(majorId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error));
+    }
+  }
+)
+
+export const getMyStudyPlan = createAsyncThunk(
+  'syllabus/get-my-study-plan',
+  async (_, thunkAPI) => {
+    try {
+      return await syllabusService.getMyStudyPlan();
     } catch (error) {
       return thunkAPI.rejectWithValue(extractErrorMessage(error));
     }
@@ -58,7 +69,7 @@ export const syllabusSlice = createSlice({
       .addCase(getMajors.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data = action.payload.data;
+        state.data.majors = action.payload.data;
       })
       .addCase(getMajors.rejected, (state, action) => {
         state.isLoading = false;
@@ -71,9 +82,22 @@ export const syllabusSlice = createSlice({
       .addCase(getSubjectsByMajor.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data = action.payload.data;
+        state.data.subjects = action.payload.data;
       })
       .addCase(getSubjectsByMajor.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(getMyStudyPlan.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getMyStudyPlan.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.study_plan = action.payload.data;
+      })
+      .addCase(getMyStudyPlan.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

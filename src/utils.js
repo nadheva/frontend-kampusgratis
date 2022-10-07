@@ -8,6 +8,11 @@ export function extartErrorFirebase(error) {
   errors.message = error.message;
 
   switch (errors.code) {
+    case "ERR_BAD_REQUEST": {
+      const message = error?.response?.data?.message || "Something went wrong.";
+      errors.message = message;
+      break;
+    }
     case 401: {
       const message = "Invalid authorization.";
       errors.message = message;

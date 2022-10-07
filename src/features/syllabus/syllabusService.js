@@ -35,9 +35,26 @@ const getSubjectByMajor = async (majorId) => {
   return response.data;
 }
 
+const getMyStudyPlan = async () => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.get(API_URL + `subject/studyplan`, config);
+
+  return response.data;
+}
+
 const silabusService = {
   getMajors,
-  getSubjectByMajor
+  getSubjectByMajor,
+  getMyStudyPlan
 }
 
 export default silabusService;

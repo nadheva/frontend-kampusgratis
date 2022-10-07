@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Logo from '../../assets/images/logo-kampus-gratis.png';
+
 const Footer = () => {
   return <>
     <footer className="bg-light pt-5">
@@ -8,8 +10,8 @@ const Footer = () => {
         <div className="row g-4">
           <div className="col-lg-3">
             <a className="me-0" href="index.html">
-              <img className="light-mode-item h-40px" src="assets/images/logo-kampus-gratis.png" alt="Kampus Gratis" />
-              <img className="dark-mode-item h-40px" src="assets/images/logo-kampus-gratis.png" alt="Kampus Gratis" />
+              <img className="light-mode-item h-40px" src={Logo} alt="Kampus Gratis" />
+              <img className="dark-mode-item h-40px" src={Logo} alt="Kampus Gratis" />
             </a>
             <p className="my-3">Jl. Radio IV No. 08 B, RW 4, Kramat Pela, Kec. Kebayoran Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
             <ul className="list-inline mb-0 mt-3">

@@ -21,45 +21,51 @@ import PageNotFound from './components/default/PageNotFound';
 import Administration from './pages/Administration';
 import SilabusSubject from './pages/syllabus/ListSubject';
 
+import ScrollToTop from './components/default/ScrollToTop';
+
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
+// https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
+
 function App() {
   return (
     <>
       <Router>
-        <Routes>
-          <Route path='/' exact element={<Main />} />
+        <ScrollToTop>
+          <Routes>
+            <Route path='/' exact element={<Main />} />
 
-          <Route path='/kategori' exact element={<Categories />} />
+            <Route path='/kategori' exact element={<Categories />} />
 
-          <Route path='/dashboard' exact element={<PrivateRoute />}>
-            <Route path='/dashboard' exact element={<Dashboard />} />
-          </Route>
+            <Route path='/dashboard' exact element={<PrivateRoute />}>
+              <Route path='/dashboard' exact element={<Dashboard />} />
+            </Route>
 
-          <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
-            <Route path='/administrasi' exact element={<Administration />} />
-          </Route>
+            <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
+              <Route path='/administrasi' exact element={<Administration />} />
+            </Route>
 
-          <Route path='/profil' exact element={<><PrivateRoute /></>}>
-            <Route path='/profil' exact element={<Profile />} />
-          </Route>
+            <Route path='/profil' exact element={<><PrivateRoute /></>}>
+              <Route path='/profil' exact element={<Profile />} />
+            </Route>
 
-          <Route path='/login' exact element={<Login />} />
-          <Route path='/register' exact element={<Register />} />
+            <Route path='/login' exact element={<Login />} />
+            <Route path='/register' exact element={<Register />} />
 
-          <Route path='/studi-ku' exact element={<PrivateRoute />}>
-            <Route path='/studi-ku' exact element={<MyStudy />} />
-          </Route>
+            <Route path='/studi-ku' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku' exact element={<MyStudy />} />
+            </Route>
 
-          <Route path='/silabus/:majorId' element={<PrivateRoute />}>
-            <Route path='/silabus/:majorId' element={<SilabusSubject />} />
-          </Route>
+            <Route path='/silabus/:majorId' element={<PrivateRoute />}>
+              <Route path='/silabus/:majorId' element={<SilabusSubject />} />
+            </Route>
 
-          <Route path='/silabus' exact element={<PrivateRoute />}>
-            <Route path='/silabus' exact element={<Silabus />} />
-          </Route>
+            <Route path='/silabus' exact element={<PrivateRoute />}>
+              <Route path='/silabus' exact element={<Silabus />} />
+            </Route>
 
-          <Route path="/*" element={<PageNotFound />} />
-        </Routes>
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+        </ScrollToTop>
       </Router>
 
       <ToastContainer />

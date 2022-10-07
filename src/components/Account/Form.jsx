@@ -81,6 +81,7 @@ const FormEdit = () => {
 
     if (isError && !isSuccess) {
       toast.error(message);
+      dispatch(resetState());
     }
 
     if (isSuccess && message && !isError) {

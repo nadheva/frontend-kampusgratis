@@ -25,10 +25,6 @@ const Main = () => {
 
   const dispatch = useDispatch();
 
-  const { data, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.syllabus
-  );
-
   const changePage = (page) => {
     setCurrentPage(page);
     dispatch(resetAll());
@@ -54,15 +50,21 @@ const Main = () => {
   }
 
   useEffectOnce(() => {
+    window.scrollTo(0, 0);
+
     dispatch(resetAll());
     dispatch(getMajors({ currentPage, search: searchTerm }));
     setShowLastPage(true);
   });
 
+  const { data, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.syllabus
+  );
+
   useEffect(() => {
     if (data && Object.keys(data).length !== 0) {
       setIsPageLoad(true);
-      setLastPage(data.max_page);
+      setLastPage(data.majors.max_page);
 
       if (currentPage === 1) setShowFirstPage(false);
       else setShowFirstPage(true);
@@ -71,10 +73,10 @@ const Main = () => {
       else setShowLastPage(true);
 
       if (data?.result?.length === 0) {
+        setIsPageLoad(false);
         setShowFirstPage(false);
         setShowLastPage(false);
-        setIsPageLoad(false);
-      }
+      } else setIsPageLoad(true);
     } else setIsPageLoad(false);
 
     if (isError && !isSuccess) {
@@ -87,6 +89,7 @@ const Main = () => {
       dispatch(reset());
     }
   }, [currentPage, lastPage, isPageLoad, searchTerm, showFirstPage, showLastPage, data, isLoading, isError, isSuccess, message, dispatch]);
+
 
   const renderPage = () => {
     if (!isPageLoad) return <></>;
@@ -111,7 +114,7 @@ const Main = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <h1 className="text-white">Silabus</h1>
+              <h1 className="text-white">Mata Kuliah Tersedia</h1>
               <div className="d-flex justify-content-center">
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
@@ -188,10 +191,10 @@ const Main = () => {
           <div className="row mt-3">
             <div className="col-12">
               <div className="row g-4">
-                {data?.result?.length === 0 && <>
+                {data?.majors?.result?.length === 0 && isPageLoad && <>
                   <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
                 </>}
-                {data?.result ? data?.result.map(major => <MajorItem key={major.id} major={major} />) : <>
+                {data?.majors?.result && isPageLoad ? data?.majors?.result.map(major => <MajorItem key={major.id} major={major} />) : <>
                   <div className='col-sm-6 col-lg-4'>
                     <SkeletonTheme>
                       <Skeleton height={260} />
