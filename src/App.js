@@ -72,16 +72,16 @@ function App() {
 						<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
 					</Route>
 
-					<Route path="/modul" element={<PrivateRoute />}>
-						<Route path="/modul" element={<Modul />} />
+					<Route path="/modul/:sessionId" element={<PrivateRoute />}>
+						<Route path="/modul/:sessionId" element={<Modul />} />
 					</Route>
 
-					<Route path="/detail-modul" element={<PrivateRoute />}>
-						<Route path="/detail-modul" element={<DetailModul />} />
+					<Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
+						<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
 					</Route>
 
-					<Route path="/vidio-player" element={<PrivateRoute />}>
-						<Route path="/vidio-player" element={<VidioPlayer />} />
+					<Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
+						<Route path="/vidio-player/:videoId" element={<VidioPlayer />} />
 					</Route>
 
 					<Route path="/quiz" element={<PrivateRoute />}>
