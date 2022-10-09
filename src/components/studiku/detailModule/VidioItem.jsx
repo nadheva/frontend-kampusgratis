@@ -11,10 +11,9 @@ const VidioItem = ({ vidio }) => {
                     </Link>
                     <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
                         <h6 className="mb-0">{vidio.title}</h6>
-                        {/* <p className="mb-2 mb-sm-0 small">{vidio.description}</p> */}
+                        <p className="mb-2 mb-sm-0 small">{vidio.description.substring(0, 60)}</p>
                     </div>
                 </div>
-
                 <Link to={`/vidio-player/${vidio.id}`} className="btn btn-sm btn-success mb-0">
                     Play
                 </Link>

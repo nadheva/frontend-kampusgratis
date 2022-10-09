@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function CourseItem({ course }) {
-
   return (
     <div className="col-sm-6 col-xl-4">
       <div className="card shadow  h-100">

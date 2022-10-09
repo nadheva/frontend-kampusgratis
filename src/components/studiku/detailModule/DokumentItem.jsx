@@ -10,7 +10,7 @@ const DokumentItem = ({ dokument }) => {
                     </a>
                     <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
                         <h6 className="mb-0">{dokument.content}</h6>
-                        {/* <p className="mb-2 mb-sm-0 small">{dokument.description}</p> */}
+                        <p className="mb-2 mb-sm-0 small">{dokument.description.substring(0, 60)}</p>
                     </div>
                 </div>
             </div>
