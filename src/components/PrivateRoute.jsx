@@ -4,13 +4,22 @@ import { useAuthStatus } from "../hooks/useAuthStatus";
 // import Spinner from './Spinner';
 
 const PrivateRoute = () => {
-  const { loggedIn, checkingStatus } = useAuthStatus();
+	const { loggedIn, checkingStatus } = useAuthStatus();
 
-  if (checkingStatus) {
-    return <></>
-  }
+	if (checkingStatus) {
+		return;
+		<>
+			{/* <Header />
+      <div className="container text-center" style={{ margin: "200px 0" }}>
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <Footer /> */}
+		</>;
+	}
 
-  return loggedIn ? <Outlet /> : <Navigate to="/login" />;
+	return loggedIn ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;

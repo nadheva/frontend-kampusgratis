@@ -39,8 +39,6 @@ const FormEdit = () => {
 		display_picture_link,
 	} = profileData;
 
-	const { token } = useSelector((state) => state.auth);
-
 	const { user, isLoading, isError, isSuccess, message } = useSelector(
 		(state) => state.profile
 	);
@@ -95,6 +93,7 @@ const FormEdit = () => {
 
 		if (isError && !isSuccess) {
 			toast.error(message);
+			dispatch(resetState());
 		}
 
 		if (isSuccess && message && !isError) {
@@ -127,7 +126,7 @@ const FormEdit = () => {
 												? imageData
 												: display_picture_link != null
 												? display_picture_link
-												: "/assets/images/avatar/empty-display-picture.png"
+												: "assets/images/avatar/empty-display-picture.png"
 										}
 										alt=""
 									/>
@@ -174,15 +173,15 @@ const FormEdit = () => {
 						</div>
 					</div>
 					{/* <div className="col-md-6">
-            <label className="form-label">Alamat Email</label>
-            <input
-              className="form-control"
-              type="text"
-              value="example@gmail.com"
-              placeholder="Alamat Email"
-              readOnly
-            />
-          </div> */}
+				<label className="form-label">Alamat Email</label>
+				<input
+				  className="form-control"
+				  type="text"
+				  value="example@gmail.com"
+				  placeholder="Alamat Email"
+				  readOnly
+				/>
+			  </div> */}
 					<div className="col-md-6">
 						<label className="form-label">Nomor Handphone</label>
 						<input
