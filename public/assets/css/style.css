@@ -21519,6 +21519,10 @@ fieldset:disabled .btn {
   header.navbar-sticky-on .navbar-brand .navbar-brand-item {
     height: 22px;
   }
+
+  header.navbar-sticky-on .navbar-expand-lg {
+    padding: 16px 0;
+  }
 }
 
 @-webkit-keyframes fadeInDown {

@@ -50,7 +50,7 @@ const Main = () => {
   }
 
   useEffectOnce(() => {
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
 
     dispatch(resetAll());
     dispatch(getMajors({ currentPage, search: searchTerm }));
@@ -62,7 +62,7 @@ const Main = () => {
   );
 
   useEffect(() => {
-    if (data && Object.keys(data).length !== 0) {
+    if (data?.majors && Object.keys(data?.majors).length !== 0) {
       setIsPageLoad(true);
       setLastPage(data.majors.max_page);
 

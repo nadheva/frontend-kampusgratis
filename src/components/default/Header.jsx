@@ -73,7 +73,7 @@ const Header = () => {
               <div className="dropdown ms-1 ms-lg-0">
                 <a className="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
                   data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img className="avatar-img rounded-circle" src={user.display_picture_link != null ? `${user.display_picture_link}` : "assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+                  <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                 </a>
                 <ul className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
                   <li className="px-3">
