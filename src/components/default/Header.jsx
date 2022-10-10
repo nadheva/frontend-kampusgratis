@@ -64,7 +64,7 @@ const Header = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/">Beranda</NavLink>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" style={{ marginRight: "85px" }}>
                   <NavLink className="nav-link" to="/kategori">Kategori</NavLink>
                 </li>
               </ul>
@@ -73,13 +73,13 @@ const Header = () => {
               <div className="dropdown ms-1 ms-lg-0">
                 <a className="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
                   data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+                  <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                 </a>
                 <ul className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
                   <li className="px-3">
                     <div className="d-flex align-items-center">
                       <div className="avatar me-3">
-                        <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+                        <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                       </div>
                       <div>
                         <a className="h6" href="#">{getFirstName(user.full_name)}</a>

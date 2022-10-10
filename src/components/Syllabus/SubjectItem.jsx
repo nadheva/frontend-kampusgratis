@@ -30,13 +30,13 @@ const SubjectItem = ({ subject }) => {
   )
 
   useEffect(() => {
-    if (data?.study_plan?.draft?.subjects) {
+    if (data?.study_plan?.draft.subjects) {
       setSubjectsDraft(data?.study_plan?.draft?.subjects)
       setStudentSubjectIndex(subjectsDraft.findIndex(e => e.name === subject.subject.name));
       console.log(studentSubjectIndex);
       console.log(subjectsDraft[studentSubjectIndex]);
     }
-  }, [data, subjectsDraft, isLoading, studentSubjectIndex]);
+  }, [data, isLoading, subjectsDraft, studentSubjectIndex]);
 
   return <>
     <div className='d-flex justify-content-between'>
@@ -48,6 +48,10 @@ const SubjectItem = ({ subject }) => {
         <span
           className='text-truncate ms-2 mb-0 h6 fw-light w-100px w-sm-200px w-md-500px'>
           {subject.subject.name}
+        </span>
+        <span
+          className='text-truncate ms-2 mb-0 h6 fw-light w-100px'>
+          {subject.subject.credit} SKS
         </span>
         <div
           className='mb-0 h6 fw-light text-start' style={{ width: '30%' }}>
@@ -66,8 +70,8 @@ const SubjectItem = ({ subject }) => {
         </div>
         {!isLoading ? <>
           {subjectsDraft.find(sub => subject.subject.name === sub.name) ? <>
-            {subjectsDraft.length !== 0 && studentSubjectIndex !== -1 && <>
-              <button className='btn ms-5 mt-1 btn-danger btn-round' data-id={subjectsDraft[`${studentSubjectIndex}`].student_subject_id} data-bs-toggle='tooltip' data-bs-placement='bottom' title='Hapus dari KRS' onClick={() => removeSubject(subjectsDraft[studentSubjectIndex].student_subject_id)}>
+            {subjectsDraft[studentSubjectIndex] !== undefined && <>
+              <button className='btn ms-5 mt-1 btn-danger btn-round' data-id={subjectsDraft[studentSubjectIndex].student_subject_id} data-bs-toggle='tooltip' data-bs-placement='bottom' title='Hapus dari KRS' onClick={() => removeSubject(subjectsDraft[studentSubjectIndex].student_subject_id)}>
                 <i className='fa fa-times text-light'></i>
               </button>
             </>}

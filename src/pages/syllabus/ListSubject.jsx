@@ -37,7 +37,7 @@ const ListSubject = () => {
 
       setIsLoaded(true);
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 
@@ -214,7 +214,9 @@ const ListSubject = () => {
                       <h6 className=''>Total SKS Kamu: {data?.study_plan.total_credit} SKS</h6>
                       <div className='accordion accordion-icon accordion-bg-light' id='accordionSubjects'>
                         {data?.study_plan?.draft?.subjects.length === 0 ? <>
-                          <span className='d-block'>- Kamu belum memiliki KRS yang terencana.</span>
+                          <div className="alert alert-secondary">
+                            Kamu belum memiliki KRS yang tertunda / menunggu konfirmasi.
+                          </div>
                         </> : <>
                           <div className='accordion-item mb-3'>
                             <h6 className='accordion-header font-base' id={`heading-draft`}>
@@ -231,6 +233,43 @@ const ListSubject = () => {
                                   {data?.study_plan?.draft?.subjects.map((subject, i) => <>
                                     <li className='list-group-item d-flex justify-content-between align-items-center'>
                                       <span>{i + 1}. {subject.name}</span>
+                                      <span className='btn-danger-soft btn-sm px-2 btn-round me-0 user-select-auto my-1'>
+                                        <i className='fa fa-trash-alt fa-fw me-0'></i>
+                                      </span>
+                                    </li>
+                                  </>)}
+                                </ul>
+                                <div class="d-sm-flex justify-content-end mt-3">
+                                  <button type="button" class="btn btn-primary mb-0 btn-sm">
+                                    <i class="bi bi-send me-2"></i>
+                                    Kirim Draft
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </>}
+
+                        {data?.study_plan?.pending?.subjects.length === 0 ? <>
+                          <div className="alert alert-secondary">
+                            Kamu belum memiliki KRS yang tertunda / menunggu konfirmasi.
+                          </div>
+                        </> : <>
+                          <div className='accordion-item mb-3'>
+                            <h6 className='accordion-header font-base' id={`heading-pending`}>
+                              <button className='accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed'
+                                type='button' data-bs-toggle='collapse' data-bs-target={`#collapse-pending`} aria-expanded='false'
+                                aria-controls={`collapse-pending`}>
+                                KRS Pending
+                                <span className='small ms-0 ms-sm-2'>({data?.study_plan?.pending?.subjects.length} Mata Kuliah)</span>
+                              </button>
+                            </h6>
+                            <div id={`collapse-pending`} className='accordion-collapse collapse' aria-labelledby={`heading-pending`}>
+                              <div className='accordion-body mt-3 px-1'>
+                                <ul className='list-group'>
+                                  {data?.study_plan?.pending?.subjects.map((subject, i) => <>
+                                    <li className='list-group-item d-flex justify-content-between align-items-center'>
+                                      <span>{i + 1}. {subject.name}</span>
                                       <button className='btn btn-danger-soft btn-sm px-2 btn-round'>
                                         <i className='fa fa-trash-alt fa-fw'></i>
                                       </button>
@@ -242,47 +281,36 @@ const ListSubject = () => {
                           </div>
                         </>}
 
-                        {data?.study_plan?.ongoing?.subjects.length === 0 && <>
-                          <span className='d-block'>- Kamu belum memiliki KRS yang sedang berjalan.</span>
-                        </>}
-                        {data?.study_plan?.ongoing?.subjects.map((subject, i) => <>
+                        {data?.study_plan?.ongoing?.subjects.length === 0 ? <>
+                          <div className="alert alert-info">
+                            Kamu belum memiliki KRS yang terkonfirmasi.
+                          </div>
+                        </> : <>
                           <div className='accordion-item mb-3'>
-                            <h6 className='accordion-header font-base' id={`heading-item-${i + 1}`}>
+                            <h6 className='accordion-header font-base' id={`heading-ongoing`}>
                               <button className='accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed'
-                                type='button' data-bs-toggle='collapse' data-bs-target={`#collapse-item-${i + 1}`} aria-expanded='false'
-                                aria-controls={`collapse-item-${i + 1}`}>
-                                subject {subject.subject}
-                                <span className='small ms-0 ms-sm-2'>(3 Lectures)</span>
+                                type='button' data-bs-toggle='collapse' data-bs-target={`#collapse-ongoing`} aria-expanded='false'
+                                aria-controls={`collapse-ongoing`}>
+                                KRS Terkonfirmasi
+                                <span className='small ms-0 ms-sm-2'>({data?.study_plan?.ongoing?.subjects.length} Mata Kuliah)</span>
                               </button>
                             </h6>
-                            <div id={`collapse-item-${i + 1}`} className='accordion-collapse collapse' aria-labelledby={`heading-item-${i + 1}`}>
-                              <div className='accordion-body mt-3'>
-
+                            <div id={`collapse-ongoing`} className='accordion-collapse collapse' aria-labelledby={`heading-ongoing`}>
+                              <div className='accordion-body mt-3 px-1'>
+                                <ul className='list-group'>
+                                  {data?.study_plan?.ongoing?.subjects.map((subject, i) => <>
+                                    <li className='list-group-item d-flex justify-content-between align-items-center'>
+                                      <span>{i + 1}. {subject.name}</span>
+                                      <span className='btn-success-soft btn-sm px-2 btn-round me-0 user-select-auto my-1'>
+                                        <i class="fa fa-check fa-fw me-0"></i>
+                                      </span>
+                                    </li>
+                                  </>)}
+                                </ul>
                               </div>
                             </div>
                           </div>
-                        </>)}
-
-                        {data?.study_plan?.pending?.subjects.length === 0 && <>
-                          <span className='d-block'>- Kamu belum memiliki KRS yang sedang tertunda.</span>
                         </>}
-                        {data?.study_plan?.pending?.subjects.map((subject, i) => <>
-                          <div className='accordion-item mb-3'>
-                            <h6 className='accordion-header font-base' id={`heading-${i + 1}`}>
-                              <button className='accordion-button fw-bold rounded d-sm-flex d-inline-block collapsed'
-                                type='button' data-bs-toggle='collapse' data-bs-target={`#collapse-${i + 1}`} aria-expanded='false'
-                                aria-controls={`collapse-${i + 1}`}>
-                                subject {subject.subject}
-                                <span className='small ms-0 ms-sm-2'>(3 Lectures)</span>
-                              </button>
-                            </h6>
-                            <div id={`collapse-${i + 1}`} className='accordion-collapse collapse' aria-labelledby={`heading-${i + 1}`}>
-                              <div className='accordion-body mt-3'>
-
-                              </div>
-                            </div>
-                          </div>
-                        </>)}
                       </div>
                     </div>
                   </div>

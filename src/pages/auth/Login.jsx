@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useEffectOnce from '../../helpers/useEffectOnce';
-import { login, loginWithGoogle, reset } from '../../features/auth/authSlice';
+import { login, loginWithGoogle, reset, resetDefault } from '../../features/auth/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { getMe } from '../../features/profile/profileSlice';
@@ -44,8 +44,8 @@ function Login() {
 
     if (isSuccess && token && user) {
       navigate('/');
-
       toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
+      dispatch(resetDefault());
     }
 
   }, [isError, isSuccess, user, message, navigate, dispatch]);
