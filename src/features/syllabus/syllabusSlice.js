@@ -32,6 +32,28 @@ export const getSubjectsByMajor = createAsyncThunk(
 	}
 );
 
+export const takeStudyPlan = createAsyncThunk(
+	"syllabus/take-study-plan",
+	async (majorId, thunkAPI) => {
+		try {
+			return await syllabusService.takeStudyPlan(majorId);
+		} catch (error) {
+			return thunkAPI.rejectWithValue(extractErrorMessage(error));
+		}
+	}
+);
+
+export const removeStudyPlan = createAsyncThunk(
+	"syllabus/remove-study-plan",
+	async (majorId, thunkAPI) => {
+		try {
+			return await syllabusService.removeStudyPlan(majorId);
+		} catch (error) {
+			return thunkAPI.rejectWithValue(extractErrorMessage(error));
+		}
+	}
+);
+
 export const getMyStudyPlan = createAsyncThunk(
 	"syllabus/get-my-study-plan",
 	async (_, thunkAPI) => {
@@ -98,6 +120,34 @@ export const syllabusSlice = createSlice({
 				state.data.study_plan = action.payload.data;
 			})
 			.addCase(getMyStudyPlan.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
+			})
+			.addCase(takeStudyPlan.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(takeStudyPlan.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.message = action.payload.message;
+				state.data.study_plan = action.payload.data;
+			})
+			.addCase(takeStudyPlan.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
+			})
+			.addCase(removeStudyPlan.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(removeStudyPlan.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.message = action.payload.message;
+				state.data.study_plan = action.payload.data;
+			})
+			.addCase(removeStudyPlan.rejected, (state, action) => {
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
