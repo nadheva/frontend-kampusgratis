@@ -7,6 +7,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { artikelAll, reset } from "../../features/artikel/artikelSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
+import Header from "../default/Header";
+import Footer from "../default/Footer";
+
 const DetailArtikel = () => {
 	// redux
 	const dispatch = useDispatch();
@@ -38,37 +41,41 @@ const DetailArtikel = () => {
 	const timeago = moment(thisArtikel.created_at).fromNow();
 
 	return (
-		<main>
-			<section className="bg-light">
-				<div className="container">
-					<div className="row position-relative pb-4">
-						<div className="col-lg-8 position-relative">
-							<h1>{thisArtikel.title}</h1>
-							<p className="small">{timeago}</p>
+		<>
+			<Header />
+			<main>
+				<section className="bg-light">
+					<div className="container">
+						<div className="row position-relative pb-4">
+							<div className="col-lg-8 position-relative">
+								<h1>{thisArtikel.title}</h1>
+								<p className="small">{timeago}</p>
+							</div>
 						</div>
-					</div>
 
-					<div
-						className="h-300px mb-n9 rounded-3"
-						style={{
-							backgroundImage: `url(${thisArtikel.image_link})`,
-							backgroundPosition: "center left",
-							backgroundSize: "cover",
-						}}
-					></div>
-				</div>
-			</section>
-			<section className="pt-9">
-				<div className="container">
-					<div className="row">
-						<div className="col-12">
-							{/* Content */}
-							<p>{thisArtikel.description}</p>
+						<div
+							className="h-300px mb-n9 rounded-3"
+							style={{
+								backgroundImage: `url(${thisArtikel.image_link})`,
+								backgroundPosition: "center left",
+								backgroundSize: "cover",
+							}}
+						></div>
+					</div>
+				</section>
+				<section className="pt-9">
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
+								{/* Content */}
+								<p>{thisArtikel.description}</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
-		</main>
+				</section>
+			</main>
+			<Footer />
+		</>
 	);
 };
 

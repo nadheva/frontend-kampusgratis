@@ -47,102 +47,106 @@ import SilabusSubject from "./pages/syllabus/ListSubject";
 
 import Calendar from "./pages/kalender/Calendar";
 
+import ScrollToTop from "./pages/default/ScrollToTop";
+
 function App() {
 	return (
 		<>
 			<Router>
-				<Routes>
-					<Route path="/" exact element={<Main />} />
+				<ScrollToTop>
+					<Routes>
+						<Route path="/" exact element={<Main />} />
 
-					<Route path="/administrasi" exact element={<PrivateRoute />}>
-						<Route path="/administrasi" exact element={<Administration />} />
-					</Route>
+						<Route path="/administrasi" exact element={<PrivateRoute />}>
+							<Route path="/administrasi" exact element={<Administration />} />
+						</Route>
 
-					<Route path="/profile" exact element={<PrivateRoute />}>
-						<Route path="/profile" exact element={<Profile />} />
-					</Route>
+						<Route path="/profile" exact element={<PrivateRoute />}>
+							<Route path="/profile" exact element={<Profile />} />
+						</Route>
 
-					<Route path="/kategori" exact element={<Categories />} />
+						<Route path="/kategori" exact element={<Categories />} />
 
-					<Route path="/studi-ku" exact element={<PrivateRoute />}>
-						<Route path="/studi-ku" element={<HomeStudiku />} />
-					</Route>
+						<Route path="/studi-ku" exact element={<PrivateRoute />}>
+							<Route path="/studi-ku" element={<HomeStudiku />} />
+						</Route>
 
-					<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
-						<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
-					</Route>
+						<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
+							<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
+						</Route>
 
-					<Route path="/modul/:sessionId" element={<PrivateRoute />}>
-						<Route path="/modul/:sessionId" element={<Modul />} />
-					</Route>
+						<Route path="/modul/:sessionId" element={<PrivateRoute />}>
+							<Route path="/modul/:sessionId" element={<Modul />} />
+						</Route>
 
-					<Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
-						<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
-					</Route>
+						<Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
+							<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
+						</Route>
 
-					<Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
-						<Route path="/vidio-player/:videoId" element={<VidioPlayer />} />
-					</Route>
+						<Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
+							<Route path="/vidio-player/:videoId" element={<VidioPlayer />} />
+						</Route>
 
-					<Route path="/quiz" element={<PrivateRoute />}>
-						<Route path="/quiz" element={<Quiz />} />
-					</Route>
+						<Route path="/quiz" element={<PrivateRoute />}>
+							<Route path="/quiz" element={<Quiz />} />
+						</Route>
 
-					<Route path="/start-quiz" element={<PrivateRoute />}>
-						<Route path="/start-quiz" element={<StartQuiz />} />
-					</Route>
+						<Route path="/start-quiz" element={<PrivateRoute />}>
+							<Route path="/start-quiz" element={<StartQuiz />} />
+						</Route>
 
-					<Route path="/forum-diskusi" element={<PrivateRoute />}>
-						<Route path="/forum-diskusi" element={<ForumDiskusi />} />
-					</Route>
+						<Route path="/forum-diskusi" element={<PrivateRoute />}>
+							<Route path="/forum-diskusi" element={<ForumDiskusi />} />
+						</Route>
 
-					<Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
-						<Route path="/isi-forum-diskusi" element={<IsiForum />} />
-					</Route>
+						<Route path="/isi-forum-diskusi" element={<PrivateRoute />}>
+							<Route path="/isi-forum-diskusi" element={<IsiForum />} />
+						</Route>
 
-					<Route path="/penugasan" element={<PrivateRoute />}>
-						<Route path="/penugasan" element={<Penugasan />} />
-					</Route>
+						<Route path="/penugasan" element={<PrivateRoute />}>
+							<Route path="/penugasan" element={<Penugasan />} />
+						</Route>
 
-					<Route path="/ManageCourse" element={<PrivateRoute />}>
-						<Route path="/ManageCourse" element={<ManageCourse />} />
-					</Route>
+						<Route path="/ManageCourse" element={<PrivateRoute />}>
+							<Route path="/ManageCourse" element={<ManageCourse />} />
+						</Route>
 
-					{/* Students */}
-					<Route path="/dashboard" element={<PrivateRoute />}>
-						<Route path="/dashboard" element={<StudentDashboard />} />
-					</Route>
-					<Route path="/mycourse" element={<PrivateRoute />}>
-						<Route path="/mycourse" element={<MyCourse />} />
-					</Route>
-					<Route path="/settings" element={<PrivateRoute />}>
-						<Route path="/settings" element={<Setting />} />
-					</Route>
+						{/* Students */}
+						<Route path="/dashboard" element={<PrivateRoute />}>
+							<Route path="/dashboard" element={<StudentDashboard />} />
+						</Route>
+						<Route path="/mycourse" element={<PrivateRoute />}>
+							<Route path="/mycourse" element={<MyCourse />} />
+						</Route>
+						<Route path="/settings" element={<PrivateRoute />}>
+							<Route path="/settings" element={<Setting />} />
+						</Route>
 
-					<Route path="/artikel" element={<Artikel />} />
-					<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
+						<Route path="/artikel" element={<Artikel />} />
+						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 
-					<Route path="/silabus/:majorId" element={<PrivateRoute />}>
-						<Route path="/silabus/:majorId" element={<SilabusSubject />} />
-					</Route>
+						<Route path="/silabus/:majorId" element={<PrivateRoute />}>
+							<Route path="/silabus/:majorId" element={<SilabusSubject />} />
+						</Route>
 
-					<Route path="/silabus" exact element={<PrivateRoute />}>
-						<Route path="/silabus" exact element={<Silabus />} />
-					</Route>
+						<Route path="/silabus" exact element={<PrivateRoute />}>
+							<Route path="/silabus" exact element={<Silabus />} />
+						</Route>
 
-					<Route path="/calender" exact element={<PrivateRoute />}>
-						<Route path="/calender" exact element={<Calendar />} />
-					</Route>
+						<Route path="/calender" exact element={<PrivateRoute />}>
+							<Route path="/calender" exact element={<Calendar />} />
+						</Route>
 
-					<Route path="/*" element={<PageNotFound />} />
-					<Route path="/401" element={<Unauthorized />} />
-					<Route path="/403" element={<Forbidden />} />
-					<Route path="/500" element={<ServerError />} />
-					<Route path="/503" element={<ServiceUnavailable />} />
+						<Route path="/*" element={<PageNotFound />} />
+						<Route path="/401" element={<Unauthorized />} />
+						<Route path="/403" element={<Forbidden />} />
+						<Route path="/500" element={<ServerError />} />
+						<Route path="/503" element={<ServiceUnavailable />} />
 
-					<Route path="/login" exact element={<Login />} />
-					<Route path="/register" exact element={<Register />} />
-				</Routes>
+						<Route path="/login" exact element={<Login />} />
+						<Route path="/register" exact element={<Register />} />
+					</Routes>
+				</ScrollToTop>
 			</Router>
 
 			<ToastContainer />
