@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import Logo from "../../assets/images/logo-kampus-gratis.png";
+
 const Footer = () => {
 	return (
 		<>
@@ -10,13 +12,13 @@ const Footer = () => {
 						<div className="col-lg-3">
 							<a className="me-0" href="index.html">
 								<img
-									className="light-mode-item h-40px"
-									src="/assets/images/logo-kampus-gratis.png"
+									className="light-mode-item navbar-brand-item"
+									src={Logo}
 									alt="Kampus Gratis"
 								/>
 								<img
-									className="dark-mode-item h-40px"
-									src="/assets/images/logo-kampus-gratis.png"
+									className="dark-mode-item navbar-brand-item"
+									src={Logo}
 									alt="Kampus Gratis"
 								/>
 							</a>

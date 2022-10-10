@@ -66,6 +66,7 @@ export const profileSlice = createSlice({
 				state.user = action.payload;
 			})
 			.addCase(getMe.rejected, (state, action) => {
+				state.isSuccess = false;
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
@@ -81,10 +82,10 @@ export const profileSlice = createSlice({
 				state.user = action.payload.data;
 			})
 			.addCase(updateProfile.rejected, (state, action) => {
-				console.log(action.payload);
+				state.isSuccess = false;
 				state.isLoading = false;
 				state.isError = true;
-				state.message = action.payload.message;
+				state.message = action.payload;
 			});
 	},
 });
