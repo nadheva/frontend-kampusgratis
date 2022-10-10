@@ -149,7 +149,6 @@ function Login() {
                         {isLoading ? (
                           <button className="btn bg-google mb-2 mb-xxl-0" disabled={isLoading}>
                             <span className="spinner-border spinner-border-sm"></span>&nbsp;
-                            <i className="fab fa-fw fa-google text-white me-2"></i>
                             &nbsp;Loading...
                           </button>
                         ) : (
