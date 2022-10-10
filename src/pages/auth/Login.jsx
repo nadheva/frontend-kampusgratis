@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login, loginWithGoogle, reset } from "../../features/auth/authSlice";
+import {
+	login,
+	loginWithGoogle,
+	reset,
+	resetDefault,
+} from "../../features/auth/authSlice";
 import { toast } from "react-toastify";
 import useEffectOnce from "../../helpers/useEffectOnce";
 import { getMe } from "../../features/profile/profileSlice";
@@ -27,6 +32,7 @@ function Login() {
 		if (user && token) {
 			return navigate("/");
 		}
+
 		dispatch(reset());
 	});
 
@@ -42,10 +48,10 @@ function Login() {
 
 		if (isSuccess && token && user) {
 			navigate("/");
-
 			toast.success(
 				`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`
 			);
+			dispatch(resetDefault());
 		}
 	}, [isError, isSuccess, user, message, navigate, dispatch]);
 
@@ -72,7 +78,6 @@ function Login() {
 
 	const onLoginWithGoogle = (e) => {
 		e.preventDefault();
-
 		dispatch(loginWithGoogle());
 	};
 
@@ -81,49 +86,34 @@ function Login() {
 			<main>
 				<section className="p-0 d-flex align-items-center position-relative overflow-hidden">
 					<div className="container-fluid">
-						<div className="row bg-custom">
-							<div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-opacity-10 vh-lg-100 bg-custom bg-line">
-								<div className="p-3 p-lg-5 bg-blur mx-4">
-									<div className="text-left">
-										<h1 className="fw-bold text-white">
-											Selamat Datang <br /> Di Kampus Gratis!
-										</h1>
-										<p className="mb-0 h6 fw-light text-white">
-											Mari belajar sesuatu yang baru hari ini!
+						<div className="row">
+							<div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
+								<div className="p-3 p-lg-5">
+									<div className="text-center">
+										<h2 className="fw-bold">Selamat datang di Kampus Gratis</h2>
+										<p className="mb-0 h6 fw-light">
+											Dapatkan materi yang kamu butuhkan dari pakar sekarang!
 										</p>
 									</div>
 									<img
-										src="/assets/images/element/02.svg"
+										src="assets/images/element/02.svg"
 										className="mt-5"
 										alt=""
 									/>
 								</div>
 							</div>
-							<div className="col-12 col-lg-6 bg-white pt-3">
+							<div className="col-12 col-lg-6 m-auto">
 								<div className="row my-5">
-									<div className="col-sm-10 col-xl-8 m-auto text">
-										<div className="text-center">
-											<Link className="me-0" to="/">
-												<img
-													className="light-mode-item h-40px"
-													src="/assets/images/logo-kampus-gratis.png"
-													alt="Kampus Gratis"
-												/>
-												<img
-													className="dark-mode-item h-40px"
-													src="/assets/images/logo-kampus-gratis.png"
-													alt="Kampus Gratis"
-												/>
-											</Link>
-										</div>
-										<h1 className="fs-2 pt-5">Login Kampus Gratis!</h1>
+									<div className="col-sm-10 col-xl-8 m-auto">
+										<span className="mb-0 fs-1">👋</span>
+										<h1 className="fs-2">Masuk ke Kampus Gratis!</h1>
 										<p className="lead mb-4">
-											Silahkan login dengan akun yang terdaftar.
+											Halooo! Login dengan Akun yang kamu daftarkan.
 										</p>
 										<form onSubmit={onFormSubmit}>
 											<div className="mb-4">
 												<label htmlFor="input-email" className="form-label">
-													Email address *
+													Alamat Email *
 												</label>
 												<div className="input-group input-group-lg">
 													<span className="input-group-text bg-light rounded-start border-0 text-secondary px-3">
@@ -133,7 +123,7 @@ function Login() {
 														name="email"
 														type="text"
 														className="form-control border-0 bg-light rounded-end ps-1"
-														placeholder="Email address"
+														placeholder="Alamat Email"
 														id="input-email"
 														value={email}
 														onChange={onFormChange}
@@ -159,8 +149,8 @@ function Login() {
 													/>
 												</div>
 												{/* <div id="passwordHelpBlock" className="form-text">
-                          Your password must be 8 characters at least
-                        </div> */}
+							Your password must be 8 characters at least
+						  </div> */}
 											</div>
 											<div className="mb-4 d-flex justify-content-between mb-4">
 												<div className="form-check">
@@ -173,7 +163,7 @@ function Login() {
 														className="form-check-label"
 														htmlFor="exampleCheck1"
 													>
-														Remember me
+														Ingat saya
 													</label>
 												</div>
 												<div className="text-primary-hover">
@@ -181,7 +171,7 @@ function Login() {
 														href="forgot-password.html"
 														className="text-secondary"
 													>
-														<u>Forgot password?</u>
+														<u>Lupa password akun-mu?</u>
 													</a>
 												</div>
 											</div>
@@ -211,7 +201,7 @@ function Login() {
 											<div className="position-relative my-4">
 												<hr />
 												<p className="small position-absolute top-50 start-50 translate-middle bg-body px-5">
-													Or
+													Atau
 												</p>
 											</div>
 										</div>

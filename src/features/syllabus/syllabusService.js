@@ -42,6 +42,45 @@ const getSubjectByMajor = async (majorId) => {
 	return response.data;
 };
 
+const takeStudyPlan = async (majorId) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken({ refresh: true });
+
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+
+	const response = await axios.post(
+		API_URL + `subject/enroll/${majorId}`,
+		{},
+		config
+	);
+
+	return response.data;
+};
+
+const removeStudyPlan = async (majorId) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken({ refresh: true });
+
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+
+	const response = await axios.delete(
+		API_URL + `subject/deleteDraft/${majorId}`,
+		config
+	);
+
+	return response.data;
+};
+
 const getMyStudyPlan = async () => {
 	const auth = getAuth();
 	const token = await auth.currentUser.getIdToken();
@@ -62,6 +101,8 @@ const silabusService = {
 	getMajors,
 	getSubjectByMajor,
 	getMyStudyPlan,
+	takeStudyPlan,
+	removeStudyPlan,
 };
 
 export default silabusService;

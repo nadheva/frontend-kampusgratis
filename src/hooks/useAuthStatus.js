@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { getAuth, onAuthStateChanged, onIdTokenChanged } from "firebase/auth";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { reset } from "../features/profile/profileSlice";
 import { useDispatch } from "react-redux";
 
@@ -21,9 +21,7 @@ export const useAuthStatus = () => {
 					const token = await user?.getIdToken();
 					localStorage.setItem("token", token);
 				} else {
-					localStorage.removeItem("token");
-					localStorage.removeItem("user");
-					toast.info("Session kamu telah berakhir!");
+					// toast.info("Session kamu telah berakhir!");
 					dispatch(reset());
 				}
 
@@ -36,9 +34,7 @@ export const useAuthStatus = () => {
 					const token = await user?.getIdToken();
 					localStorage.setItem("token", token);
 				} else {
-					localStorage.removeItem("token");
-					localStorage.removeItem("user");
-					toast.info("Session kamu telah berakhir!");
+					// toast.info("Session kamu telah berakhir!");
 					dispatch(reset());
 				}
 

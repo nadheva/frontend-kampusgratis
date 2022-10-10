@@ -80,7 +80,7 @@ const Header = () => {
 										Beranda
 									</NavLink>
 								</li>
-								<li className="nav-item">
+								<li className="nav-item" style={{ marginRight: "85px" }}>
 									<NavLink className="nav-link" to="/kategori">
 										Kategori
 									</NavLink>
@@ -101,6 +101,7 @@ const Header = () => {
 								>
 									<img
 										className="avatar-img rounded-circle"
+										style={{ border: "1px solid black", padding: "2px" }}
 										src={
 											user.display_picture_link != null
 												? `${user.display_picture_link}`
