@@ -1,22 +1,21 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
+import Iframe from 'react-iframe';
 
 const VidioItem = ({ videos }) => {
 
     let url = videos.url.split("?v=")[1];
     const navigate = useNavigate();
-    console.log(url)
 
     return (
         <>
             <div className="col-12 position-relative">
-                <div className="ratio ratio-16x9">
-                    <iframe
-                        src={`https://www.youtube.com/embed/${url}`}
-                        title="YouTube video"
-                        allowFullScreen
-                    ></iframe>
-                </div>
+                <Iframe url={`https://www.youtube.com/embed/${url}`}
+                    title="YouTube video"
+                    width="100%"
+                    height="500x"
+                    display="block"
+                    position="relative" />
             </div>
 
             <div className="col-lg-12">
