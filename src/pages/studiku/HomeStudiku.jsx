@@ -58,6 +58,7 @@ const Main = () => {
 		return () => clearTimeout(timeout);
 	}, [searchValue, filteredData]);
 
+	console.log(filteredData)
 	return (
 		<>
 			<Header />
