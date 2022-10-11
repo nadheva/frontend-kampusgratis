@@ -29,7 +29,7 @@ const ModuleList = ({ dModules, isLoading }) => {
                         <span className='alert alert-danger'>Data kosong</span>
                     ) : (
                         dModules.videos.map((vidio) => (
-                            <VidioItem key={vidio.id} vidio={vidio} />
+                            <VidioItem key={vidio.id} vidio={vidio} dModules={dModules} />
                         ))
                     )}
                 </div>

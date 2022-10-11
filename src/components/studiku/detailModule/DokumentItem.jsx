@@ -10,10 +10,10 @@ const DokumentItem = ({ dokument }) => {
                     </a>
                     <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
                         <h6 className="mb-0">{dokument.content}</h6>
-                        <p className="mb-2 mb-sm-0 small">{dokument.description.substring(0, 60)}</p>
+                        {/* <p className="mb-2 mb-sm-0 small">{dokument.description.substring(0, 60)}</p> */}
                     </div>
                 </div>
-                <a href={`/view-pdf/${dokument.id}`} target="_blank" className="btn btn-sm btn-success mb-0">
+                <a href={`/view-pdf/${dokument.id}`} target="_blank" className="btn btn-sm btn-success mb-0 mt-3">
                     View
                 </a>
             </div>

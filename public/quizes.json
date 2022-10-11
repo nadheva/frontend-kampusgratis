@@ -1,0 +1,26 @@
+{
+  "session_id": "1",
+  "duration": 60,
+  "description": "quizz desc",
+  "questions": [
+    {
+      "question_id": "xxxx-xxxx-xxxx",
+      "question": "apa itu telor?",
+      "type": "single / multiple",
+      "choices": [
+        {
+          "answer_id": "xxxx-xxxx-xxxx",
+          "answer": "telor adalah"
+        },
+        {
+          "answer_id": "xxxx-xxxx-xxxx",
+          "answer": "telor adalah"
+        },
+        {
+          "answer_id": "xxxx-xxxx-xxxx",
+          "answer": "telor adalah"
+        }
+      ]
+    },
+  ]
+}

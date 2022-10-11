@@ -85,8 +85,8 @@ function App() {
 							<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
 						</Route>
 
-						<Route path="/vidio-player/:videoId" element={<PrivateRoute />}>
-							<Route path="/vidio-player/:videoId" element={<VidioPlayer />} />
+						<Route path="/vidio-player/:videoId/:moduleId" element={<PrivateRoute />}>
+							<Route path="/vidio-player/:videoId/:moduleId" element={<VidioPlayer />} />
 						</Route>
 
 						<Route path="/quiz" element={<PrivateRoute />}>

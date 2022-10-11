@@ -14,7 +14,7 @@ function CourseItem({ course }) {
           <h5 className="card-title">
             <Link to={`/pertemuan/${course.item.id}`}>{course.item.Subject.name}</Link>
           </h5>
-          {/* <p className="mb-2 text-truncate-2">{course.description.substring(0, 60)}</p> */}
+          <p className="mb-2 text-truncate-2">Jumlah Mahasiswa {course.student_count}</p>
         </div>
         <div className="card-footer pt-0 pb-3">
           <hr />
