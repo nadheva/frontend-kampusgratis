@@ -5,7 +5,9 @@ import {
 	getMyStudyPlan,
 	getSubjectsByMajor,
 	reset,
+	takeCurrentMajor,
 } from "../../features/syllabus/syllabusSlice";
+import { getMyAdministration } from "../../features/administration/administrationSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 import { getMe } from "../../features/profile/profileSlice";
@@ -22,11 +24,13 @@ import Header from "../default/Header";
 import Footer from "../default/Footer";
 
 const ListSubject = () => {
+	const [currentUserMajors, setCurrentUserMajors] = useState([]);
+	const [isEligible, setIsEligible] = useState(false);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const { majorId } = useParams();
 	const dispatch = useDispatch();
 
-	const { data, message } = useSelector((state) => state.syllabus);
+	const { data, message, isLoading } = useSelector((state) => state.syllabus);
 
 	const { user } = useSelector((state) => state.profile);
 
@@ -34,6 +38,7 @@ const ListSubject = () => {
 		try {
 			await Promise.all([
 				dispatch(getMe()),
+				dispatch(getMyAdministration()),
 				dispatch(getSubjectsByMajor(majorId)),
 				dispatch(getMyStudyPlan()),
 			]);
@@ -42,6 +47,17 @@ const ListSubject = () => {
 		} catch (error) {
 			console.error(error);
 		}
+	};
+
+	const { data: dataAdministration } = useSelector(
+		(state) => state.administration
+	);
+
+	const doTakeCurrentMajor = (majorId) => {
+		if (!majorId || majorId.length !== 36)
+			return toast.error("Mata Kuliah tidak ditemukan.");
+
+		dispatch(takeCurrentMajor(majorId));
 	};
 
 	useEffectOnce(() => {
@@ -55,6 +71,15 @@ const ListSubject = () => {
 	});
 
 	useEffect(() => {
+		if (data?.subjects?.students_information?.majors) {
+			setIsEligible(
+				data?.subjects?.students_information?.majors.find(
+					(major) => major === data?.subjects?.major?.id
+				)
+			);
+			setCurrentUserMajors(data?.subjects?.students_information?.majors);
+		}
+
 		if (message === "Exceeded maximum credit") {
 			dispatch(reset());
 			toast.error("Kamu telah melampaui maksimal SKS.");
@@ -63,6 +88,13 @@ const ListSubject = () => {
 		if (message === "Subject already taken") {
 			dispatch(reset());
 			toast.error("Mata Kuliah ini telah kamu ambil sebelumnya.");
+		}
+
+		if (message === "Student's major doesn't have that subject") {
+			dispatch(reset());
+			toast.error(
+				"Kamu tidak dapat mengambil Mata Kuliah ini karena berbeda dengan Jurusan kamu."
+			);
 		}
 
 		if (message.includes("already enrolled in")) {
@@ -78,6 +110,11 @@ const ListSubject = () => {
 		if (message.includes("Draft Deleted")) {
 			dispatch(reset());
 			toast.success("Mata Kuliah berhasil dihapus dari KRS.");
+		}
+
+		if (message.includes("Already enrolled to major")) {
+			dispatch(reset());
+			toast.success("Kamu sudah mengambil Mata Kuliah lain.");
 		}
 	}, [message, dispatch]);
 
@@ -126,7 +163,7 @@ const ListSubject = () => {
 						<section className="bg-light py-0 py-sm-5">
 							<div
 								className="container text-center"
-								style={{ marginTop: "178px", marginBottom: "178px" }}
+								style={{ marginTop: "188px", marginBottom: "188px" }}
 							>
 								<div className="row">
 									<div className="col-12">
@@ -197,10 +234,33 @@ const ListSubject = () => {
 												style={{ height: "360px", objectFit: "cover" }}
 											/>
 											<div className="col-lg-7 mt-4 ">
+												{!isEligible && currentUserMajors.length !== 0 ? (
+													<>
+														<div className="alert alert-danger mb-4">
+															Kamu tidak dapat mengambil Jurusan / Mata Kuliah
+															ini karena berbeda dengan Jurusan yang kamu ambil
+															sebelumnya.
+														</div>
+													</>
+												) : (
+													<>
+														{dataAdministration?.is_approved?.overall && (
+															<>
+																<div className="alert alert-info">
+																	Kamu dapat mengambil Jurusan / Mata Kuliah
+																	ini.
+																</div>
+															</>
+														)}
+													</>
+												)}
 												<div className="card shadow rounded-2 p-0">
 													<div className="card-header border-bottom px-4 py-3">
 														<ul
-															className="nav nav-pills nav-tabs-line py-0"
+															className={`nav nav-pills nav-tabs-line py-0 ${
+																dataAdministration?.is_approved?.overall &&
+																"justify-content-between"
+															}`}
 															id="course-pills-tab"
 															role="tablist"
 														>
@@ -235,9 +295,41 @@ const ListSubject = () => {
 																	aria-controls="course-pills-2"
 																	aria-selected="false"
 																>
-																	Kurikulum
+																	Kurikulum / Mata Kuliah
 																</button>
 															</li>
+															{dataAdministration?.is_approved && (
+																<>
+																	{dataAdministration?.is_approved?.overall && (
+																		<>
+																			{!isLoading ? (
+																				<li>
+																					<button
+																						className="btn btn-primary btn-sm"
+																						onClick={() =>
+																							doTakeCurrentMajor(
+																								data?.subjects?.major?.id
+																							)
+																						}
+																					>
+																						Ambil Mata Kuliah
+																					</button>
+																				</li>
+																			) : (
+																				<li>
+																					<button
+																						className="btn btn-primary mb-0 btn-sm"
+																						disabled={isLoading}
+																					>
+																						<span className="spinner-border spinner-border-sm"></span>
+																						&nbsp; &nbsp;Loading...
+																					</button>
+																				</li>
+																			)}
+																		</>
+																	)}
+																</>
+															)}
 														</ul>
 													</div>
 													<div className="card-body p-4">
@@ -302,7 +394,15 @@ const ListSubject = () => {
 																								aria-controls={`collapse-${
 																									i + 1
 																								}`}
+																								style={
+																									!isEligible && {
+																										cursor: "not-allowed",
+																									}
+																								}
 																							>
+																								{!isEligible && (
+																									<i className="bi bi-lock-fill me-2"></i>
+																								)}{" "}
 																								Semester {semester.semester}
 																								<span className="small ms-0 ms-sm-2">
 																									| {semester.subjects.length}{" "}
@@ -310,37 +410,41 @@ const ListSubject = () => {
 																								</span>
 																							</button>
 																						</h6>
-																						<div
-																							id={`collapse-${i + 1}`}
-																							className="accordion-collapse collapse"
-																							aria-labelledby={`heading-${
-																								i + 1
-																							}`}
-																						>
-																							<div className="accordion-body mt-3">
-																								{semester.subjects.length ===
-																									0 && (
-																									<>
-																										<div className="alert alert-info">
-																											Mata Kuliah belum
-																											dimasukkan pada semester
-																											ini.
-																										</div>
-																									</>
-																								)}
-																								{semester.subjects.map(
-																									(subject, key) => (
-																										<>
-																											<SubjectItem
-																												subject={subject}
-																												key={key}
-																											/>
-																											<hr />
-																										</>
-																									)
-																								)}
-																							</div>
-																						</div>
+																						{isEligible && (
+																							<>
+																								<div
+																									id={`collapse-${i + 1}`}
+																									className="accordion-collapse collapse"
+																									aria-labelledby={`heading-${
+																										i + 1
+																									}`}
+																								>
+																									<div className="accordion-body mt-3">
+																										{semester.subjects
+																											.length === 0 && (
+																											<>
+																												<div className="alert alert-info">
+																													Mata Kuliah belum
+																													dimasukkan pada
+																													semester ini.
+																												</div>
+																											</>
+																										)}
+																										{semester.subjects.map(
+																											(subject, key) => (
+																												<>
+																													<SubjectItem
+																														subject={subject}
+																														key={key}
+																													/>
+																													<hr />
+																												</>
+																											)
+																										)}
+																									</div>
+																								</div>
+																							</>
+																						)}
 																					</div>
 																				</>
 																			))}
