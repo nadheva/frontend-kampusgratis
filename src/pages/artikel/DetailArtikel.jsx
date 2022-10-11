@@ -36,10 +36,8 @@ const DetailArtikel = () => {
 
 	// Get id
 	const { artikelId } = useParams();
+	
 	const thisArtikel = artikels.find((prod) => prod.id === artikelId);
-
-	// moment
-	const timeago = moment(thisArtikel.created_at).fromNow();
 
 	return (
 		<>
@@ -68,7 +66,7 @@ const DetailArtikel = () => {
 							<div className="row position-relative pb-4">
 								<div className="col-lg-8 position-relative">
 									<h1>{thisArtikel.title}</h1>
-									<p className="small">{timeago}</p>
+									<p className="small">{moment(thisArtikel.created_at).fromNow()}</p>
 								</div>
 							</div>
 							<div
