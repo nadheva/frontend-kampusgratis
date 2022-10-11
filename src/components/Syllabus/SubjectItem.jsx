@@ -37,8 +37,6 @@ const SubjectItem = ({ subject }) => {
 			setStudentSubjectIndex(
 				subjectsDraft.findIndex((e) => e.name === subject.subject.name)
 			);
-			console.log(studentSubjectIndex);
-			console.log(subjectsDraft[studentSubjectIndex]);
 		}
 	}, [data, isLoading, subjectsDraft, studentSubjectIndex]);
 
@@ -55,21 +53,21 @@ const SubjectItem = ({ subject }) => {
 					<span className="text-truncate ms-2 mb-0 h6 fw-light w-100px">
 						{subject.subject.credit} SKS
 					</span>
-					<div className="mb-0 h6 fw-light text-start" style={{ width: "30%" }}>
+					<div className="mb-0 h6 fw-light text-start" style={{ width: "15%" }}>
 						{subject.subject.level === "Basic" && (
-							<span style={{ width: "20px" }} className="w-100 text-success">
+							<span style={{ width: "20px" }} className="w-50 text-success">
 								<i className="fas fa-signal fa-fw me-3 p-1"></i>
 								<label className="d-none d-sm-inline">Basic</label>
 							</span>
 						)}
 						{subject.subject.level === "Intermediate" && (
-							<span style={{ width: "20px" }} className="w-100 text-primary">
+							<span style={{ width: "20px" }} className="w-50 text-primary">
 								<i className="fas fa-signal fa-fw me-3 p-1"></i>
 								<label className="d-none d-sm-inline">Intermediate</label>
 							</span>
 						)}
 						{subject.subject.level === "Advanced" && (
-							<span style={{ width: "20px" }} className="w-100 text-danger">
+							<span style={{ width: "20px" }} className="w-50 text-danger">
 								<i className="fas fa-signal fa-fw me-3 p-1"></i>
 								<label className="d-none d-sm-inline">Advanced</label>
 							</span>
@@ -84,7 +82,7 @@ const SubjectItem = ({ subject }) => {
 									{subjectsDraft[studentSubjectIndex] !== undefined && (
 										<>
 											<button
-												className="btn ms-5 mt-1 btn-danger btn-round"
+												className="btn ms-4 mt-1 btn-danger btn-round px-2"
 												data-id={
 													subjectsDraft[studentSubjectIndex].student_subject_id
 												}
@@ -106,7 +104,7 @@ const SubjectItem = ({ subject }) => {
 							) : (
 								<>
 									<button
-										className="btn ms-5 mt-1 btn-info btn-round"
+										className="btn ms-4 mt-1 btn-info btn-round px-2"
 										data-id={subject.subject.id}
 										data-bs-toggle="tooltip"
 										data-bs-placement="bottom"
@@ -120,7 +118,7 @@ const SubjectItem = ({ subject }) => {
 						</>
 					) : (
 						<>
-							<span className="btn ms-5 mt-1 btn-warning btn-round">
+							<span className="btn ms-4 mt-1 btn-warning btn-round px-2">
 								<div
 									className="spinner-border text-dark"
 									role="status"

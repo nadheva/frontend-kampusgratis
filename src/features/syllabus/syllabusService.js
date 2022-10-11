@@ -97,12 +97,29 @@ const getMyStudyPlan = async () => {
 	return response.data;
 };
 
+const doSendDraft = async () => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+
+	const response = await axios.put(API_URL + `subject/sendDraft`, {}, config);
+
+	return response.data;
+};
+
 const silabusService = {
 	getMajors,
 	getSubjectByMajor,
 	getMyStudyPlan,
 	takeStudyPlan,
 	removeStudyPlan,
+	doSendDraft,
 };
 
 export default silabusService;
