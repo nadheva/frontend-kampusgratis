@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import useEffectOnce from '../../helpers/useEffectOnce';
-import { getMajors, reset, resetAll } from '../../features/syllabus/syllabusSlice';
+import { getMajors, reset, resetAll, getMyStudyPlan } from '../../features/syllabus/syllabusSlice';
 import { toast } from 'react-toastify';
 import { getMyAdministration } from '../../features/administration/administrationSlice';
 import MajorItem from '../../components/Syllabus/MajorItem';
@@ -15,6 +15,9 @@ import Header from '../../components/default/Header';
 import Footer from '../../components/default/Footer';
 
 const Main = () => {
+  const [currentUserMajors, setCurrentUserMajors] = useState([]);
+  const [isEligible, setIsEligible] = useState(false);
+
   const [searchTerm, setSearchTerm] = useState('')
 
   const [isPageLoad, setIsPageLoad] = useState(false);
@@ -43,7 +46,8 @@ const Main = () => {
       await Promise.all([
         dispatch(resetAll()),
         dispatch(getMyAdministration()),
-        dispatch(getMajors({ currentPage, search: searchTerm }))
+        dispatch(getMajors({ currentPage, search: searchTerm })),
+        dispatch(getMyStudyPlan())
       ]);
     } catch (error) {
       console.error(error);
@@ -76,6 +80,11 @@ const Main = () => {
   );
 
   useEffect(() => {
+    if (data?.subjects?.students_information?.majors) {
+      setIsEligible(data?.subjects?.students_information?.majors.find(major => major === data?.subjects?.major?.id))
+      setCurrentUserMajors(data?.subjects?.students_information?.majors);
+    }
+
     if (data?.majors && Object.keys(data?.majors).length !== 0) {
       setIsPageLoad(true);
       setLastPage(data.majors.max_page);
@@ -211,9 +220,11 @@ const Main = () => {
                 </> : <>
                   {dataAdministration?.is_approved && isPageLoad && !isLoadingAdministration && <>
                     {dataAdministration?.is_approved?.overall ? <>
-                      <span className='alert alert-info mb-1'>
-                        Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
-                      </span>
+                      {currentUserMajors.length > 1 && <>
+                        <span className='alert alert-info mb-1'>
+                          Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
+                        </span>
+                      </>}
                     </> : <>
                       <span className='alert alert-danger'>
                         Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { getMyStudyPlan, getSubjectsByMajor, reset, takeCurrentMajor } from '../../features/syllabus/syllabusSlice';
+import { getMyAdministration } from '../../features/administration/administrationSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 import Header from '../../components/default/Header';
@@ -34,6 +35,7 @@ const ListSubject = () => {
     try {
       await Promise.all([
         dispatch(getMe()),
+        dispatch(getMyAdministration()),
         dispatch(getSubjectsByMajor(majorId)),
         dispatch(getMyStudyPlan())
       ]);
@@ -66,9 +68,9 @@ const ListSubject = () => {
   });
 
   useEffect(() => {
-    if (data?.subjects?.studentsInformation?.majors) {
-      setIsEligible(data?.subjects?.studentsInformation?.majors.find(major => major === data?.subjects?.major?.id))
-      setCurrentUserMajors(data?.subjects?.studentsInformation?.majors)
+    if (data?.subjects?.students_information?.majors) {
+      setIsEligible(data?.subjects?.students_information?.majors.find(major => major === data?.subjects?.major?.id))
+      setCurrentUserMajors(data?.subjects?.students_information?.majors)
     }
 
     if (message === 'Exceeded maximum credit') {
