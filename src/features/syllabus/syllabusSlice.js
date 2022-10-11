@@ -65,6 +65,17 @@ export const getMyStudyPlan = createAsyncThunk(
 	}
 );
 
+export const doSendDraft = createAsyncThunk(
+	"syllabus/send-draft",
+	async (_, thunkAPI) => {
+		try {
+			return await syllabusService.doSendDraft();
+		} catch (error) {
+			return thunkAPI.rejectWithValue(extractErrorMessage(error));
+		}
+	}
+);
+
 export const syllabusSlice = createSlice({
 	name: "syllabus",
 	initialState,
@@ -148,6 +159,20 @@ export const syllabusSlice = createSlice({
 				state.data.study_plan = action.payload.data;
 			})
 			.addCase(removeStudyPlan.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
+			})
+			.addCase(doSendDraft.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(doSendDraft.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.message = action.payload.message;
+				state.data.study_plan = action.payload.data;
+			})
+			.addCase(doSendDraft.rejected, (state, action) => {
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;

@@ -86,27 +86,42 @@ function Login() {
 			<main>
 				<section className="p-0 d-flex align-items-center position-relative overflow-hidden">
 					<div className="container-fluid">
-						<div className="row">
-							<div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
-								<div className="p-3 p-lg-5">
-									<div className="text-center">
-										<h2 className="fw-bold">Selamat datang di Kampus Gratis</h2>
-										<p className="mb-0 h6 fw-light">
+						<div className="row bg-custom">
+							<div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-opacity-10 vh-lg-100 bg-custom bg-line">
+								<div className="p-3 p-lg-5 bg-blur mx-4">
+									<div className="text-left">
+										<h1 className="fw-bold text-white">
+											Selamat Datang <br /> Di Kampus Gratis!
+										</h1>
+										<p className="mb-0 h6 fw-light text-white">
 											Dapatkan materi yang kamu butuhkan dari pakar sekarang!
 										</p>
 									</div>
 									<img
-										src="assets/images/element/02.svg"
+										src="/assets/images/element/02.svg"
 										className="mt-5"
 										alt=""
 									/>
 								</div>
 							</div>
-							<div className="col-12 col-lg-6 m-auto">
+							<div className="col-12 col-lg-6 bg-white pt-3">
 								<div className="row my-5">
 									<div className="col-sm-10 col-xl-8 m-auto">
-										<span className="mb-0 fs-1">👋</span>
-										<h1 className="fs-2">Masuk ke Kampus Gratis!</h1>
+										<div className="text-center">
+											<Link className="me-0" to="/">
+												<img
+													className="light-mode-item h-40px"
+													src="/assets/images/logo-kampus-gratis.png"
+													alt="Kampus Gratis"
+												/>
+												<img
+													className="dark-mode-item h-40px"
+													src="/assets/images/logo-kampus-gratis.png"
+													alt="Kampus Gratis"
+												/>
+											</Link>
+										</div>
+										<h1 className="fs-2 pt-5">Masuk ke Kampus Gratis!</h1>
 										<p className="lead mb-4">
 											Halooo! Login dengan Akun yang kamu daftarkan.
 										</p>
