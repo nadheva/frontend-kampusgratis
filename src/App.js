@@ -49,6 +49,8 @@ import Calendar from "./pages/kalender/Calendar";
 
 import ScrollToTop from "./pages/default/ScrollToTop";
 
+import ViewPDF from "./pages/studiku/ViewPDF";
+
 function App() {
 	return (
 		<>
@@ -136,7 +138,9 @@ function App() {
 						<Route path="/calender" exact element={<PrivateRoute />}>
 							<Route path="/calender" exact element={<Calendar />} />
 						</Route>
-
+						<Route path="/view-pdf/:dokumenId" exact element={<PrivateRoute />}>
+							<Route path="/view-pdf/:dokumenId" element={<ViewPDF />} />
+						</Route>
 						<Route path="/*" element={<PageNotFound />} />
 						<Route path="/401" element={<Unauthorized />} />
 						<Route path="/403" element={<Forbidden />} />

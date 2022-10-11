@@ -9,6 +9,7 @@ import sessionReducer from '../features/session/sessionSlice';
 import moduleReducer from '../features/module/moduleSlice';
 import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
 import videoReducer from '../features/video/videoSlice';
+import dokumentReducer from '../features/dokument/dokumentSlice';
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
     session: sessionReducer,
     module: moduleReducer,
     detailModule: detailModuleReducer,
-    video: videoReducer
+    video: videoReducer,
+    dokument: dokumentReducer
   }
 });
