@@ -76,6 +76,17 @@ export const doSendDraft = createAsyncThunk(
   }
 )
 
+export const takeCurrentMajor = createAsyncThunk(
+  'syllabus/take-major',
+  async (majorId, thunkAPI) => {
+    try {
+      return await syllabusService.takeCurrentMajor(majorId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error));
+    }
+  }
+)
+
 export const syllabusSlice = createSlice({
   name: 'syllabus',
   initialState,
@@ -173,6 +184,19 @@ export const syllabusSlice = createSlice({
         state.data.study_plan = action.payload.data;
       })
       .addCase(doSendDraft.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(takeCurrentMajor.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(takeCurrentMajor.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.message = action.payload.message;
+      })
+      .addCase(takeCurrentMajor.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

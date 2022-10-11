@@ -1,14 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { doSendDraft } from '../../features/syllabus/syllabusSlice';
+import { toast } from 'react-toastify';
+import { doSendDraft, reset } from '../../features/syllabus/syllabusSlice';
 
 const StudyPlanItem = () => {
   const { data, message, isLoading } = useSelector(
     (state) => state.syllabus
   );
 
-  const { study_plan } = data;
+  const { study_plan } = data || {};
 
   const dispatch = useDispatch();
 
@@ -17,8 +19,15 @@ const StudyPlanItem = () => {
     dispatch(doSendDraft());
   }
 
+  useEffect(() => {
+    if (message === "Student is not in that major") {
+      toast.error("Kamu tidak dapat mengambil mata kuliah ini karena berbeda jurusan.");
+      dispatch(reset());
+    }
+  }, [message]);
+
   return <>
-    <div className='card card-shadow rounded-2 p-0'>
+    <div className='card shadow rounded-2 p-0'>
       <div className='card-header border-bottom px-4 py-3'>
         <h5 className='text-center'>Daftar Pengajuan KRS Kamu</h5>
         <p className='text-center'>Pengajuan ini digunakan untuk mengatur Kartu Rencana Studi untuk kamu.</p>
@@ -45,7 +54,7 @@ const StudyPlanItem = () => {
                   <ul className='list-group'>
                     {study_plan?.draft?.subjects.map((subject, i) => <>
                       <li className='list-group-item d-flex justify-content-between align-items-center'>
-                        <span>{i + 1}. {subject.name}</span>
+                        <span>{i + 1}. {subject.name} - {subject.credit} SKS</span>
                         <span className='btn-danger-soft btn-sm px-2 btn-round me-0 user-select-auto my-1'>
                           <i className='fa fa-trash-alt fa-fw me-0'></i>
                         </span>

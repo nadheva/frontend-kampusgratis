@@ -52,7 +52,7 @@ const SubjectItem = ({ subject }) => {
           {subject.subject.credit} SKS
         </span>
         <div
-          className='mb-0 h6 fw-light text-start' style={{ width: '15%' }}>
+          className='mb-0 h6 fw-light text-start' style={{ width: '43%' }}>
           {subject.subject.level === 'Basic' && <span style={{ width: '20px' }} className='w-50 text-success'>
             <i className='fas fa-signal fa-fw me-3 p-1'></i>
             <label className='d-none d-sm-inline'>Basic</label>

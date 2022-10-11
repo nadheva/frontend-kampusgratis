@@ -99,13 +99,30 @@ const doSendDraft = async () => {
   return response.data;
 }
 
+const takeCurrentMajor = async (majorId) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.put(API_URL + `major/take/${majorId}`, {}, config);
+
+  return response.data;
+}
+
 const silabusService = {
   getMajors,
   getSubjectByMajor,
   getMyStudyPlan,
   takeStudyPlan,
   removeStudyPlan,
-  doSendDraft
+  doSendDraft,
+  takeCurrentMajor
 }
 
 export default silabusService;

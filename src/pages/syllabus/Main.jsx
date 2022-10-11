@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import { getMajors, reset, resetAll } from '../../features/syllabus/syllabusSlice';
 import { toast } from 'react-toastify';
-
+import { getMyAdministration } from '../../features/administration/administrationSlice';
 import MajorItem from '../../components/Syllabus/MajorItem';
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
@@ -38,6 +38,18 @@ const Main = () => {
     dispatch(getMajors({ currentPage: page, search: searchTerm }));
   }
 
+  const fetchingData = async () => {
+    try {
+      await Promise.all([
+        dispatch(resetAll()),
+        dispatch(getMyAdministration()),
+        dispatch(getMajors({ currentPage, search: searchTerm }))
+      ]);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   const doFilter = (e) => {
     e.preventDefault();
 
@@ -51,14 +63,16 @@ const Main = () => {
 
   useEffectOnce(() => {
     // window.scrollTo(0, 0);
-
-    dispatch(resetAll());
-    dispatch(getMajors({ currentPage, search: searchTerm }));
+    fetchingData();
     setShowLastPage(true);
   });
 
   const { data, isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.syllabus
+  );
+
+  const { data: dataAdministration, isLoading: isLoadingAdministration } = useSelector(
+    (state) => state.administration
   );
 
   useEffect(() => {
@@ -71,6 +85,8 @@ const Main = () => {
 
       if (currentPage === lastPage) setShowLastPage(false);
       else setShowLastPage(true);
+
+      if (lastPage === 0) setShowLastPage(false);
 
       if (data?.result?.length === 0) {
         setIsPageLoad(false);
@@ -89,7 +105,6 @@ const Main = () => {
       dispatch(reset());
     }
   }, [currentPage, lastPage, isPageLoad, searchTerm, showFirstPage, showLastPage, data, isLoading, isError, isSuccess, message, dispatch]);
-
 
   const renderPage = () => {
     if (!isPageLoad) return <></>;
@@ -114,7 +129,7 @@ const Main = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <h1 className="text-white">Mata Kuliah Tersedia</h1>
+              <h1 className="text-white">Jurusan Tersedia</h1>
               <div className="d-flex justify-content-center">
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
@@ -191,8 +206,21 @@ const Main = () => {
           <div className="row mt-3">
             <div className="col-12">
               <div className="row g-4">
-                {data?.majors?.result?.length === 0 && isPageLoad && <>
+                {data?.majors?.result?.length === 0 && isPageLoad ? <>
                   <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
+                </> : <>
+                  {dataAdministration?.is_approved && isPageLoad && !isLoadingAdministration && <>
+                    {dataAdministration?.is_approved?.overall ? <>
+                      <span className='alert alert-info mb-1'>
+                        Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
+                      </span>
+                    </> : <>
+                      <span className='alert alert-danger'>
+                        Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
+                        Klik <Link to="/administrasi">di sini</Link> untuk melakukan administrasi.
+                      </span>
+                    </>}
+                  </>}
                 </>}
                 {data?.majors?.result && isPageLoad ? data?.majors?.result.map(major => <MajorItem key={major.id} major={major} />) : <>
                   <div className='col-sm-6 col-lg-4'>
