@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom'
 import moment from 'moment/moment'
 
 const CardItem = ({ artikel }) => {
-
-    const timeago = moment(artikel.created_at).fromNow();
-
     return (
         <div className="col-sm-6 col-lg-4 col-xl-3">
             <div className="card bg-transparent">
@@ -15,22 +12,17 @@ const CardItem = ({ artikel }) => {
                         className="card-img card-img-artikel"
                         alt="course"
                     />
-                    {/* Overlay */}
                     <div className="bg-overlay bg-dark opacity-4" />
-
                 </div>
-                {/* Card body */}
                 <div className="card-body">
-                    {/* Title */}
                     <h5 className="card-title">
                         <Link to={`/artikel/${artikel.id}`} >{artikel.title}</Link>
                     </h5>
                     <p className="text-truncate-2">
                         {artikel.description}
                     </p>
-                    {/* Info */}
                     <div className="d-flex justify-content-between">
-                        <span className="small">{timeago}</span>
+                        <span className="small">{moment(artikel.created_at).fromNow()}</span>
                     </div>
                 </div>
             </div>
