@@ -89,14 +89,20 @@ const Artikel = () => {
 							isLoading={isLoading}
 							currentPosts={currentPosts}
 						/>
-						{!(filteredArtikel.length > postsPerPage) ? null : (
-							<Pagination
-								itemsPerPage={postsPerPage}
-								totalItems={filteredArtikel.length}
-								paginate={paginate}
-								currentPage={currentPage}
-							/>
-						)}
+						{
+							isLoading ? (
+								<></>
+							) : (
+								!(filteredArtikel.length > postsPerPage) ? null : (
+									<Pagination
+										itemsPerPage={postsPerPage}
+										totalItems={filteredArtikel.length}
+										paginate={paginate}
+										currentPage={currentPage}
+									/>
+								)
+							)
+						}
 					</div>
 				</section>
 			</main>
