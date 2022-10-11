@@ -5,7 +5,7 @@ import CourseList from './CourseList';
 
 const MainContent = ({ course, isLoading, handleSearchFilter, searchValue }) => {
     return (
-        <div className="col-lg-8 col-xl-9 col-12">
+        <>
             <SearchBar
                 handleSearchFilter={handleSearchFilter}
                 searchValue={searchValue}
@@ -14,7 +14,7 @@ const MainContent = ({ course, isLoading, handleSearchFilter, searchValue }) => 
                 course={course}
                 isLoading={isLoading}
             />
-        </div>
+        </>
     )
 }
 
