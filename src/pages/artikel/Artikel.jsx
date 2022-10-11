@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import _ from "lodash";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 // component
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import CardItem from "../../components/artikel/CardItem";
+import CardList from "../../components/artikel/CardList";
 import Pagination from "../../components/element/Pagination";
 import Search from "../../components/artikel/Search";
 
@@ -87,50 +85,10 @@ const Artikel = () => {
 				/>
 				<section className="position-relative pt-0 pt-lg-5">
 					<div className="container">
-						{/* Row */}
-						<div className="row g-4">
-							{isLoading ? (
-								<div className="row">
-									<div className="col-sm-6 col-lg-4 col-xl-3">
-										<SkeletonTheme>
-											<Skeleton height={189} className="mb-2" />
-											<Skeleton height={26} />
-											<Skeleton height={22} />
-										</SkeletonTheme>
-									</div>
-									<div className="col-sm-6 col-lg-4 col-xl-3">
-										<SkeletonTheme>
-											<Skeleton height={189} className="mb-2" />
-											<Skeleton height={26} />
-											<Skeleton height={22} />
-										</SkeletonTheme>
-									</div>
-									<div className="col-sm-6 col-lg-4 col-xl-3">
-										<SkeletonTheme>
-											<Skeleton height={189} className="mb-2" />
-											<Skeleton height={26} />
-											<Skeleton height={22} />
-										</SkeletonTheme>
-									</div>
-									<div className="col-sm-6 col-lg-4 col-xl-3">
-										<SkeletonTheme>
-											<Skeleton height={189} className="mb-2" />
-											<Skeleton height={26} />
-											<Skeleton height={22} />
-										</SkeletonTheme>
-									</div>
-								</div>
-							) : currentPosts == null || currentPosts == 0 ? (
-								<span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
-							) : (
-								currentPosts.map((artikel) => (
-									<CardItem key={artikel.id} artikel={artikel} />
-								))
-							)}
-						</div>
-						{/* Row end */}
-
-						{/* Pagination */}
+						<CardList
+							isLoading={isLoading}
+							currentPosts={currentPosts}
+						/>
 						{!(filteredArtikel.length > postsPerPage) ? null : (
 							<Pagination
 								itemsPerPage={postsPerPage}
@@ -139,10 +97,8 @@ const Artikel = () => {
 								currentPage={currentPage}
 							/>
 						)}
-
 					</div>
 				</section>
-				{/* ======================= Page content END */}
 			</main>
 			<Footer />
 		</>
