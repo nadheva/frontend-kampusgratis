@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import Iframe from 'react-iframe';
 
 const VidioItem = ({ videos }) => {
 
     let url = videos.url.split("?v=")[1];
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     return (
         <>
@@ -25,11 +25,11 @@ const VidioItem = ({ videos }) => {
                 </div>
             </div>
 
-            <div className="col-lg-12">
+            {/* <div className="col-lg-12">
                 <Link to="" onClick={() => navigate(-1)} className="btn btn-secondary">
                     <i className="fas fa-arrow-left ms-2" /> Kembali
                 </Link>
-            </div>
+            </div> */}
         </>
     )
 }
