@@ -1,7 +1,13 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const Sidebar = () => {
+    // Get id
+    const { moduleId } = useParams()
+    console.log(moduleId)
+
+
     return (
         <div className="col-xl-4 col-lg-4 col-12">
             <div data-sticky data-margin-top="80" data-sticky-for="768">
