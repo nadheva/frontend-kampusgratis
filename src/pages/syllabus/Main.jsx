@@ -7,7 +7,10 @@ import {
 	getMajors,
 	reset,
 	resetAll,
+	getMyStudyPlan,
 } from "../../features/syllabus/syllabusSlice";
+import { getMyAdministration } from "../../features/administration/administrationSlice";
+
 import { toast } from "react-toastify";
 
 import MajorItem from "../../components/Syllabus/MajorItem";
@@ -19,6 +22,9 @@ import Header from "../default/Header";
 import Footer from "../default/Footer";
 
 const Main = () => {
+	const [currentUserMajors, setCurrentUserMajors] = useState([]);
+	const [isEligible, setIsEligible] = useState(false);
+
 	const [searchTerm, setSearchTerm] = useState("");
 
 	const [isPageLoad, setIsPageLoad] = useState(false);
@@ -42,6 +48,19 @@ const Main = () => {
 		dispatch(getMajors({ currentPage: page, search: searchTerm }));
 	};
 
+	const fetchingData = async () => {
+		try {
+			await Promise.all([
+				dispatch(resetAll()),
+				dispatch(getMyAdministration()),
+				dispatch(getMajors({ currentPage, search: searchTerm })),
+				dispatch(getMyStudyPlan()),
+			]);
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	const doFilter = (e) => {
 		e.preventDefault();
 
@@ -55,9 +74,7 @@ const Main = () => {
 
 	useEffectOnce(() => {
 		// window.scrollTo(0, 0);
-
-		dispatch(resetAll());
-		dispatch(getMajors({ currentPage, search: searchTerm }));
+		fetchingData();
 		setShowLastPage(true);
 	});
 
@@ -65,7 +82,19 @@ const Main = () => {
 		(state) => state.syllabus
 	);
 
+	const { data: dataAdministration, isLoading: isLoadingAdministration } =
+		useSelector((state) => state.administration);
+
 	useEffect(() => {
+		if (data?.subjects?.students_information?.majors) {
+			setIsEligible(
+				data?.subjects?.students_information?.majors.find(
+					(major) => major === data?.subjects?.major?.id
+				)
+			);
+			setCurrentUserMajors(data?.subjects?.students_information?.majors);
+		}
+
 		if (data?.majors && Object.keys(data?.majors).length !== 0) {
 			setIsPageLoad(true);
 			setLastPage(data.majors.max_page);
@@ -75,6 +104,8 @@ const Main = () => {
 
 			if (currentPage === lastPage) setShowLastPage(false);
 			else setShowLastPage(true);
+
+			if (lastPage === 0) setShowLastPage(false);
 
 			if (data?.result?.length === 0) {
 				setIsPageLoad(false);
@@ -144,7 +175,7 @@ const Main = () => {
 					<div className="container">
 						<div className="row">
 							<div className="col-12 text-center">
-								<h1 className="text-white">Mata Kuliah Tersedia</h1>
+								<h1 className="text-white">Jurusan Tersedia</h1>
 								<div className="d-flex justify-content-center">
 									<nav aria-label="breadcrumb">
 										<ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
@@ -251,11 +282,43 @@ const Main = () => {
 						<div className="row mt-3">
 							<div className="col-12">
 								<div className="row g-4">
-									{data?.majors?.result?.length === 0 && isPageLoad && (
+									{data?.majors?.result?.length === 0 && isPageLoad ? (
 										<>
 											<span className="alert alert-danger">
 												Pencarian yang kamu cari tidak ditemukan.
 											</span>
+										</>
+									) : (
+										<>
+											{dataAdministration?.is_approved &&
+												isPageLoad &&
+												!isLoadingAdministration && (
+													<>
+														{dataAdministration?.is_approved?.overall ? (
+															<>
+																{currentUserMajors.length > 1 && (
+																	<>
+																		<span className="alert alert-info mb-1">
+																			Kamu dapat mengambil Jurusan dan Mata
+																			Kuliah (KRS) dengan memilih jurusan di
+																			bawah ini.
+																		</span>
+																	</>
+																)}
+															</>
+														) : (
+															<>
+																<span className="alert alert-danger">
+																	Kamu tidak dapat mengambil Jurusan dan Mata
+																	Kuliah (KRS) apabila kamu belum melakukan
+																	administrasi. Klik{" "}
+																	<Link to="/administrasi">di sini</Link> untuk
+																	melakukan administrasi.
+																</span>
+															</>
+														)}
+													</>
+												)}
 										</>
 									)}
 									{data?.majors?.result && isPageLoad ? (
