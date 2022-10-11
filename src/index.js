@@ -13,17 +13,17 @@ root.render(
 		<App />
 		<Helmet>
 			<script
-				type="text/babel"
+				type="text/javascript"
 				src="/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"
 				defer
 			></script>
 			<script
-				type="text/babel"
+				type="text/javascript"
 				src="/assets/vendor/choices/js/choices.min.js"
 				defer
 			></script>
 			<script
-				type="text/babel"
+				type="text/javascript"
 				src="/assets/js/functions.js"
 				defer
 			></script>
