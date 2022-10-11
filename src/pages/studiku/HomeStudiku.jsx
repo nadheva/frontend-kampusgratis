@@ -84,7 +84,7 @@ const Main = () => {
 				<section className="py-5">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-8 col-xl-9 col-12">
+							<div className="col-lg-8 col-xl-9 ">
 								<MainContent
 									course={currentPosts}
 									isLoading={isLoading}

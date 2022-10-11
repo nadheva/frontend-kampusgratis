@@ -13,7 +13,7 @@ const VidioItem = ({ videos }) => {
                 <Iframe url={`https://www.youtube.com/embed/${url}`}
                     title="YouTube video"
                     width="100%"
-                    height="500x"
+                    height="443px"
                     display="block"
                     position="relative" />
             </div>
