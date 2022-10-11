@@ -8,6 +8,10 @@ import Header from "../default/Header";
 import Footer from "../default/Footer";
 
 const StartQuiz = () => {
+	useEffect(() => {
+		document.title = "Kampus Gratis | Quiz";
+	});
+
 	// All Quizs, Current Question, Index of Current Question, Answer, Selected Answer, Total Marks
 	const [quizs, setQuizs] = useState([]);
 	const [question, setQuesion] = useState({});

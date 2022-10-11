@@ -12,6 +12,9 @@ import {
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const ViewPDF = () => {
+    useEffect(() => {
+        document.title = "Kampus Gratis";
+    });
 
     // Get id
     const { dokumenId } = useParams();

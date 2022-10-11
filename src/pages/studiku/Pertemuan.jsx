@@ -14,6 +14,10 @@ import { getSessions, reset } from '../../features/session/sessionSlice'
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 const Pertemuan = () => {
+    useEffect(() => {
+        document.title = "Kampus Gratis | Pertemuan";
+    });
+
     // Get id
     const { subjectId } = useParams()
 

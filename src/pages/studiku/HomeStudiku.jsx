@@ -17,6 +17,10 @@ import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Main = () => {
 
+	useEffect(() => {
+		document.title = "Kampus Gratis | Studiku";
+	});
+
 	// redux
 	const dispatch = useDispatch();
 	const { subjects, isLoading, isError, isSuccess, message } = useSelector(

@@ -18,6 +18,10 @@ import {
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const DetailModul = () => {
+	useEffect(() => {
+		document.title = "Kampus Gratis | Modul";
+	});
+
 	// Get id
 	const { moduleId } = useParams();
 

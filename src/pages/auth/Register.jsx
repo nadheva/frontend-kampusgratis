@@ -10,6 +10,11 @@ import { toast } from "react-toastify";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 function Register() {
+
+	useEffect(() => {
+		document.title = "Kampus Gratis | Register";
+	});
+
 	const [registerData, setRegisterData] = useState({
 		full_name: "",
 		email: "",

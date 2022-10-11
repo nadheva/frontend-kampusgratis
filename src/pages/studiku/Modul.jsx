@@ -14,6 +14,10 @@ import { getModules, reset } from "../../features/module/moduleSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Modul = () => {
+	useEffect(() => {
+		document.title = "Kampus Gratis | Modul";
+	});
+
 	// Get id
 	const { sessionId } = useParams();
 

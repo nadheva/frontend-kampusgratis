@@ -12,6 +12,11 @@ import useEffectOnce from "../../helpers/useEffectOnce";
 import { getMe } from "../../features/profile/profileSlice";
 
 function Login() {
+
+	useEffect(() => {
+		document.title = "Kampus Gratis | Login";
+	});
+
 	const [loginData, setLoginData] = useState({
 		email: "",
 		password: "",
@@ -183,7 +188,7 @@ function Login() {
 												</div>
 												<div className="text-primary-hover">
 													<a
-														href="forgot-password.html"
+														href=" "
 														className="text-secondary"
 													>
 														<u>Lupa password akun-mu?</u>

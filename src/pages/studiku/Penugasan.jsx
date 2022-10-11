@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,6 +6,10 @@ import Header from "../default/Header";
 import Footer from "../default/Footer";
 
 const Penugasan = () => {
+	useEffect(() => {
+		document.title = "Kampus Gratis | Penugasan";
+	});
+
 	const [file, setFile] = useState("201904020-ibnu-trpl.pdf");
 
 	function handleFileChange(e) {

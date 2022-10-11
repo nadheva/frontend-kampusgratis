@@ -14,6 +14,7 @@ import { getVideos, reset } from '../../features/video/videoSlice'
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 const VidioPlayer = () => {
+
     // Get id
     const { videoId } = useParams()
 
@@ -38,6 +39,10 @@ const VidioPlayer = () => {
         }
 
     }, [videos, isLoading, isError, isSuccess, message, dispatch])
+
+    useEffect(() => {
+        document.title = `${videos.title}`;
+    });
 
     return (
         <>
