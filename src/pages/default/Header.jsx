@@ -22,7 +22,7 @@ const Header = () => {
 	const dispatch = useDispatch();
 	const location = useLocation();
 
-	useScript("http://localhost:3000/assets/js/functions.js");
+	useScript("/assets/js/functions.js");
 
 	const onLogout = () => {
 		auth.signOut();

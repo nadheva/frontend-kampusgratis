@@ -53,7 +53,7 @@ const SubjectItem = ({ subject }) => {
 					<span className="text-truncate ms-2 mb-0 h6 fw-light w-100px">
 						{subject.subject.credit} SKS
 					</span>
-					<div className="mb-0 h6 fw-light text-start" style={{ width: "15%" }}>
+					<div className="mb-0 h6 fw-light text-start" style={{ width: "43%" }}>
 						{subject.subject.level === "Basic" && (
 							<span style={{ width: "20px" }} className="w-50 text-success">
 								<i className="fas fa-signal fa-fw me-3 p-1"></i>
