@@ -9,7 +9,7 @@ const ModulItem = ({ modul, i }) => {
                     <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                         <div>
                             <h5 className="card-title mb-0">
-                                <Link to={`/detail-modul/${modul.id}`} >Modul {i} </Link>
+                                <Link to={`/studi-ku/pertemuan/modul/detail-modul/${modul.id}`} >Modul {i} </Link>
                             </h5>
                         </div>
                         <a href=" " className="p-2 mb-0 text-success"

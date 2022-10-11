@@ -12,7 +12,7 @@ function CourseItem({ course }) {
             <p className="badge bg-purple bg-opacity-10 text-purple">{course.progress}%</p>
           </div>
           <h5 className="card-title">
-            <Link to={`/pertemuan/${course.item.id}`}>{course.item.Subject.name}</Link>
+            <Link to={`/studi-ku/pertemuan/${course.item.id}`}>{course.item.Subject.name}</Link>
           </h5>
           <p className="mb-2 text-truncate-2">
             <b>Dosen : </b>

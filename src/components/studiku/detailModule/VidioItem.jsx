@@ -5,7 +5,7 @@ const VidioItem = ({ vidio, dModules }) => {
         <>
             <div className="d-sm-flex justify-content-sm-between align-items-center">
                 <div className="d-flex">
-                    <a href={`/vidio-player/${vidio.id}/${dModules.module.id}`} className="btn btn-danger-soft btn-round mb-0">
+                    <a href={`/studi-ku/pertemuan/modul/detail-modul/vidio-player/${vidio.id}/${dModules.module.id}`} className="btn btn-danger-soft btn-round mb-0">
                         <i className="fas fa-play" />
                     </a>
                     <div className="ms-2 ms-sm-3 mt-1 mt-sm-0">
@@ -13,7 +13,7 @@ const VidioItem = ({ vidio, dModules }) => {
                         {/* <p className="mb-2 mb-sm-0 small">{vidio.description.substring(0, 60)}</p> */}
                     </div>
                 </div>
-                <a href={`/vidio-player/${vidio.id}/${dModules.module.id}`} className="btn btn-sm btn-success mb-0 mt-3">
+                <a href={`/studi-ku/pertemuan/modul/detail-modul/vidio-player/${vidio.id}/${dModules.module.id}`} className="btn btn-sm btn-success mb-0 mt-3">
                     Play
                 </a>
             </div>

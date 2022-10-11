@@ -57,36 +57,42 @@ function App() {
 			<Router>
 				<ScrollToTop>
 					<Routes>
+						{/* START : AUTH */}
+						<Route path="/login" exact element={<Login />} />
+						<Route path="/register" exact element={<Register />} />
+						{/* END : AUTH */}
+
 						<Route path="/" exact element={<Main />} />
 
 						<Route path="/administrasi" exact element={<PrivateRoute />}>
 							<Route path="/administrasi" exact element={<Administration />} />
 						</Route>
 
-						<Route path="/profile" exact element={<PrivateRoute />}>
-							<Route path="/profile" exact element={<Profile />} />
-						</Route>
-
 						<Route path="/kategori" exact element={<Categories />} />
 
+						{/* START : STUDIKU */}
 						<Route path="/studi-ku" exact element={<PrivateRoute />}>
 							<Route path="/studi-ku" element={<HomeStudiku />} />
 						</Route>
 
-						<Route path="/pertemuan/:subjectId" element={<PrivateRoute />}>
-							<Route path="/pertemuan/:subjectId" element={<Pertemuan />} />
+						<Route path="/studi-ku/pertemuan/:subjectId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/:subjectId" element={<Pertemuan />} />
 						</Route>
 
-						<Route path="/modul/:sessionId" element={<PrivateRoute />}>
-							<Route path="/modul/:sessionId" element={<Modul />} />
+						<Route path="/studi-ku/pertemuan/modul/:sessionId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/modul/:sessionId" element={<Modul />} />
 						</Route>
 
-						<Route path="/detail-modul/:moduleId" element={<PrivateRoute />}>
-							<Route path="/detail-modul/:moduleId" element={<DetailModul />} />
+						<Route path="/studi-ku/pertemuan/modul/detail-modul/:moduleId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/modul/detail-modul/:moduleId" element={<DetailModul />} />
 						</Route>
 
-						<Route path="/vidio-player/:videoId/:moduleId" element={<PrivateRoute />}>
-							<Route path="/vidio-player/:videoId/:moduleId" element={<VidioPlayer />} />
+						<Route path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId" element={<VidioPlayer />} />
+						</Route>
+
+						<Route path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId" exact element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId" element={<ViewPDF />} />
 						</Route>
 
 						<Route path="/quiz" element={<PrivateRoute />}>
@@ -109,11 +115,33 @@ function App() {
 							<Route path="/penugasan" element={<Penugasan />} />
 						</Route>
 
-						<Route path="/ManageCourse" element={<PrivateRoute />}>
-							<Route path="/ManageCourse" element={<ManageCourse />} />
-						</Route>
+						{/* END : STUDIKU */}
 
-						{/* Students */}
+
+						{/* START : SEKILAS ILMU/ARTIKEL */}
+						<Route path="/artikel" element={<Artikel />} />
+						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
+						{/* END : SEKILAS ILMU/ARTIKEL */}
+
+
+						{/* START : SILABUS */}
+						<Route path="/silabus/:majorId" element={<PrivateRoute />}>
+							<Route path="/silabus/:majorId" element={<SilabusSubject />} />
+						</Route>
+						<Route path="/silabus" exact element={<PrivateRoute />}>
+							<Route path="/silabus" exact element={<Silabus />} />
+						</Route>
+						{/* END : SILABUS */}
+
+
+						{/* START : KALENDER */}
+						<Route path="/calender" exact element={<PrivateRoute />}>
+							<Route path="/calender" exact element={<Calendar />} />
+						</Route>
+						{/* END : KALENDER */}
+
+
+						{/* START : STUDENTS */}
 						<Route path="/dashboard" element={<PrivateRoute />}>
 							<Route path="/dashboard" element={<StudentDashboard />} />
 						</Route>
@@ -123,32 +151,27 @@ function App() {
 						<Route path="/settings" element={<PrivateRoute />}>
 							<Route path="/settings" element={<Setting />} />
 						</Route>
+						{/* END : STUDENTS */}
 
-						<Route path="/artikel" element={<Artikel />} />
-						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 
-						<Route path="/silabus/:majorId" element={<PrivateRoute />}>
-							<Route path="/silabus/:majorId" element={<SilabusSubject />} />
+						<Route path="/profile" exact element={<PrivateRoute />}>
+							<Route path="/profile" exact element={<Profile />} />
 						</Route>
 
-						<Route path="/silabus" exact element={<PrivateRoute />}>
-							<Route path="/silabus" exact element={<Silabus />} />
+						<Route path="/ManageCourse" element={<PrivateRoute />}>
+							<Route path="/ManageCourse" element={<ManageCourse />} />
 						</Route>
 
-						<Route path="/calender" exact element={<PrivateRoute />}>
-							<Route path="/calender" exact element={<Calendar />} />
-						</Route>
-						<Route path="/view-pdf/:dokumenId" exact element={<PrivateRoute />}>
-							<Route path="/view-pdf/:dokumenId" element={<ViewPDF />} />
-						</Route>
+
+						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
 						<Route path="/401" element={<Unauthorized />} />
 						<Route path="/403" element={<Forbidden />} />
 						<Route path="/500" element={<ServerError />} />
 						<Route path="/503" element={<ServiceUnavailable />} />
+						{/* END : ERROR PAGE */}
 
-						<Route path="/login" exact element={<Login />} />
-						<Route path="/register" exact element={<Register />} />
+
 					</Routes>
 				</ScrollToTop>
 			</Router>
