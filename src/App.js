@@ -111,8 +111,8 @@ function App() {
 							<Route path="/isi-forum-diskusi" element={<IsiForum />} />
 						</Route>
 
-						<Route path="/penugasan" element={<PrivateRoute />}>
-							<Route path="/penugasan" element={<Penugasan />} />
+						<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<Penugasan />} />
 						</Route>
 
 						{/* END : STUDIKU */}

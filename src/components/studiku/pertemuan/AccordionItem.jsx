@@ -81,7 +81,7 @@ const AccordionItem = ({ session }) => {
                                     <i className="fas fa-fw fa-file-signature fs-5"></i>
                                 </a>
                                 <div className="ms-3">
-                                    <NavLink to="/penugasan"
+                                    <NavLink to={`/studi-ku/pertemuan/penugasan/${session.id}`}
                                         className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">Tugas</NavLink>
                                 </div>
                             </div>
