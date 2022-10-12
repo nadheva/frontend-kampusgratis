@@ -1,21 +1,20 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
-import moduleService from './assignmentService';
+import assignmentService from './assignmentService';
 
 const initialState = {
-  modules: [],
+  data: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: ''
+  message: "",
 };
 
-export const getModules = createAsyncThunk(
-  'module/session/',
+export const getAssignments = createAsyncThunk(
+  'assignment/session/',
   async (sessionId, thunkAPI) => {
     try {
-
-      const { data } = await moduleService.getModule(sessionId);
+      const { data } = await assignmentService.getAssignment(sessionId);
       return data;
 
     } catch (error) {
@@ -24,36 +23,35 @@ export const getModules = createAsyncThunk(
   }
 )
 
-
-export const moduleSlice = createSlice({
-  name: 'module',
+export const assignmentSlice = createSlice({
+  name: 'assignment',
   initialState,
   reducers: {
     reset: (state) => {
-      state.isLoading = false;
       state.isError = false;
       state.isSuccess = false;
-      state.message = '';
+      state.isLoading = false;
+      state.message = "";
     },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getModules.pending, (state) => {
+      .addCase(getAssignments.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(getModules.fulfilled, (state, action) => {
+      .addCase(getAssignments.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.modules = action.payload;
+        state.data = action.payload;
       })
-      .addCase(getModules.rejected, (state, action) => {
+      .addCase(getAssignments.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.modules = null;
+        state.data = null;
       })
   }
 });
 
-export const { reset } = moduleSlice.actions;
-export default moduleSlice.reducer;
+export const { reset, resetAll } = assignmentSlice.actions;
+export default assignmentSlice.reducer;
