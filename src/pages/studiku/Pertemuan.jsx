@@ -41,7 +41,6 @@ const Pertemuan = () => {
             dispatch(reset());
         }
     }, [sessions, isLoading, isError, isSuccess, message, dispatch])
-
     return (
         <>
             <Header />

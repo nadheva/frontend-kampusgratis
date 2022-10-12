@@ -33,7 +33,7 @@ const Intro = ({ subjectId }) => {
     }, [subjects, isLoading, isError, isSuccess, message, dispatch])
 
     // Filter data
-    const thisSubject = subjects.find(prod => prod.item.id == subjectId)
+    const thisSubject = subjects.find(prod => prod.item.subject_id == subjectId)
 
     return (
         <section className="bg-blue">
