@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import { extractErrorMessage } from '../../utils';
 import administrationService from './administrationService';
 
 const initialState = {

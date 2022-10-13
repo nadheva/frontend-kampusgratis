@@ -981,7 +981,6 @@ var e = {
     let theme = localStorage.getItem('data-theme');
     var style = document.getElementById("style-switch");
     var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
-
     var changeThemeToDark = () => {
       document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
       if (dir == 'rtl') {

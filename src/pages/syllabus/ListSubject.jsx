@@ -68,9 +68,11 @@ const ListSubject = () => {
   });
 
   useEffect(() => {
-    if (data?.subjects?.students_information?.majors) {
-      setIsEligible(data?.subjects?.students_information?.majors.find(major => major === data?.subjects?.major?.id))
-      setCurrentUserMajors(data?.subjects?.students_information?.majors)
+    if (message === 'Major ID not found' || !majorId) return <PageNotFound />
+
+    if (data?.subjects?.students_information?.Majors) {
+      setIsEligible(data?.subjects?.students_information?.Majors.find(major => major === data?.subjects?.major?.id))
+      setCurrentUserMajors(data?.subjects?.students_information?.Majors)
     }
 
     if (message === 'Exceeded maximum credit') {
@@ -109,7 +111,6 @@ const ListSubject = () => {
     }
   }, [message, dispatch]);
 
-  if (message === 'Major ID not found') return <PageNotFound />
 
   return <>
     <Header />
@@ -189,7 +190,7 @@ const ListSubject = () => {
                   </>}
                   <div className='card shadow rounded-2 p-0'>
                     <div className='card-header border-bottom px-4 py-3'>
-                      <ul className={`nav nav-pills nav-tabs-line py-0 ${dataAdministration?.is_approved?.overall && 'justify-content-between'}`} id='course-pills-tab' role='tablist'>
+                      <ul className={`nav nav-pills nav-tabs-line py-0 ${dataAdministration?.is_approved?.overall && isEligible && 'justify-content-between'}`} id='course-pills-tab' role='tablist'>
                         <li className='nav-item me-2 me-sm-4' role='presentation'>
                           <button className='nav-link mb-2 mb-md-0 active' id='course-pills-tab-1' data-bs-toggle='pill'
                             data-bs-target='#course-pills-1' type='button' role='tab' aria-controls='course-pills-1'
@@ -202,7 +203,7 @@ const ListSubject = () => {
                             aria-selected='false'>Kurikulum / Mata Kuliah
                           </button>
                         </li>
-                        {dataAdministration?.is_approved && <>
+                        {dataAdministration?.is_approved && isEligible && <>
                           {dataAdministration?.is_approved?.overall && <>
                             {!isLoading ? <li>
                               <button className='btn btn-primary btn-sm' onClick={() => doTakeCurrentMajor(data?.subjects?.major?.id)}>Ambil Mata Kuliah</button>

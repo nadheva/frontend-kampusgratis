@@ -1,7 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { reset, takeStudyPlan, removeStudyPlan } from '../../features/syllabus/syllabusSlice';
+import { takeStudyPlan, removeStudyPlan } from '../../features/syllabus/syllabusSlice';
 
 import { toast } from 'react-toastify';
 import { useState } from 'react';

@@ -22,6 +22,7 @@ import Administration from './pages/Administration';
 import SilabusSubject from './pages/syllabus/ListSubject';
 
 import ScrollToTop from './components/default/ScrollToTop';
+import Subject from './pages/my-study/Subject';
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -50,6 +51,10 @@ function App() {
 
             <Route path='/login' exact element={<Login />} />
             <Route path='/register' exact element={<Register />} />
+
+            <Route path='/studi-ku/:subjectId' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku/:subjectId' exact element={<Subject />} />
+            </Route>
 
             <Route path='/studi-ku' exact element={<PrivateRoute />}>
               <Route path='/studi-ku' exact element={<MyStudy />} />

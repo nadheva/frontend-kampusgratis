@@ -220,7 +220,7 @@ const Main = () => {
                 </> : <>
                   {dataAdministration?.is_approved && isPageLoad && !isLoadingAdministration && <>
                     {dataAdministration?.is_approved?.overall ? <>
-                      {currentUserMajors.length > 1 && <>
+                      {currentUserMajors.length >= 0 && currentUserMajors.length !== 2 && <>
                         <span className='alert alert-info mb-1'>
                           Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
                         </span>
