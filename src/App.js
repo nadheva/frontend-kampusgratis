@@ -25,7 +25,7 @@ import ForumDiskusi from "./pages/studiku/ForumDiskusi";
 import IsiForum from "./pages/studiku/IsiForum";
 // import MulaiQuiz from "./pages/studiku/MulaiQuiz";
 import StartQuiz from "./pages/studiku/StartQuiz";
-import Penugasan from "./pages/studiku/Penugasan";
+import Penugasan from "./pages/studiku/Assignment";
 import ManageCourse from "./pages/instructor/ManageCourse";
 import Categories from "./pages/landing-page/Categories";
 import Administration from "./pages/Administration";
@@ -111,8 +111,8 @@ function App() {
 							<Route path="/isi-forum-diskusi" element={<IsiForum />} />
 						</Route>
 
-						<Route path="/penugasan" element={<PrivateRoute />}>
-							<Route path="/penugasan" element={<Penugasan />} />
+						<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<PrivateRoute />}>
+							<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<Penugasan />} />
 						</Route>
 
 						{/* END : STUDIKU */}
