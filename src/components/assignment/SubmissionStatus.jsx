@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SubmissionStatus = ({ assignment, isLoading }) => {
+const SubmissionStatus = () => {
     return (
         <div className="col-12 mt-5">
             <h3>Submission status</h3>
@@ -17,7 +17,7 @@ const SubmissionStatus = ({ assignment, isLoading }) => {
                         </tr>
                         <tr>
                             <th>Due date </th>
-                            <td>{assignment.duration}</td>
+                            <td>xxx</td>
                         </tr>
                         <tr>
                             <th>Time remaining </th>

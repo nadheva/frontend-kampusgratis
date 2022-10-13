@@ -11,8 +11,7 @@ const SubmissionUpload = () => {
                 />
                 <div>
                     <h6 className="my-2">
-                        Upload tugas disini
-                        <a href="#!" className="text-primary">
+                        Upload tugas disini <a href="#!" className="text-primary">
                             Browse
                         </a>
                     </h6>

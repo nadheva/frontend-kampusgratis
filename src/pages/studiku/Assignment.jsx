@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { toast } from 'react-toastify';
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // component
@@ -24,17 +22,13 @@ const Assignment = () => {
 		document.title = "Kampus Gratis | Penugasan";
 	});
 
-	// testing
-	// const [file, setFile] = useState("201904020-ibnu-trpl.pdf");
-	// function handleFileChange(e) {
-	// 	setFile(e.target.value);
-	// }
-
 	// Get id
 	const { sessionId } = useParams();
 
 	// Redux
 	const dispatch = useDispatch();
+	const [assigments, setAssigments] = useState();
+
 	const { data, isLoading, isError, isSuccess, message } = useSelector(
 		(state) => state.assignment
 	);
@@ -44,15 +38,9 @@ const Assignment = () => {
 	});
 
 	useEffect(() => {
-		if (isError && !isSuccess) {
-			toast.error(message);
-			dispatch(reset());
-		}
-		if (isSuccess && message && !isError) {
-			toast.success(message);
-			dispatch(reset());
-		}
-	}, [data, isLoading, isError, isSuccess, message, dispatch]);
+		if (data?.assigments) setAssigments(data.assigments);
+
+	}, [data]);
 
 	return (
 		<>
@@ -65,13 +53,10 @@ const Assignment = () => {
 							<div className="card shadow rounded-2 p-0 ">
 								<div className="card-body p-sm-4">
 									<Instruction
-										assignment={data}
+										assigments={assigments}
 										isLoading={isLoading}
 									/>
-									<SubmissionStatus
-										assignment={data}
-										isLoading={isLoading}
-									/>
+									<SubmissionStatus />
 									<SubmissionUpload />
 								</div>
 							</div>

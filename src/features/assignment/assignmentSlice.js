@@ -7,7 +7,7 @@ const initialState = {
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: "",
+  message: ''
 };
 
 export const getAssignments = createAsyncThunk(
@@ -28,10 +28,17 @@ export const assignmentSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.message = '';
+    },
+    resetAll: (state) => {
+      state.data = {};
       state.isError = false;
       state.isSuccess = false;
       state.isLoading = false;
-      state.message = "";
+      state.message = '';
     },
   },
   extraReducers: (builder) => {
@@ -42,13 +49,13 @@ export const assignmentSlice = createSlice({
       .addCase(getAssignments.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data = action.payload;
+        state.data.assigments = action.payload;
       })
       .addCase(getAssignments.rejected, (state, action) => {
+        state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.data = null;
       })
   }
 });
