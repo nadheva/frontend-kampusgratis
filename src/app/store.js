@@ -10,6 +10,7 @@ import moduleReducer from '../features/module/moduleSlice';
 import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
 import videoReducer from '../features/video/videoSlice';
 import dokumentReducer from '../features/dokument/dokumentSlice';
+import assignmentReducer from '../features/assignment/assignmentSlice';
 
 export const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ export const store = configureStore({
     module: moduleReducer,
     detailModule: detailModuleReducer,
     video: videoReducer,
-    dokument: dokumentReducer
+    dokument: dokumentReducer,
+    assignment: assignmentReducer
   }
 });
