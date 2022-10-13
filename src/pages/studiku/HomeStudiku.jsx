@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // component
 import Intro from "../../components/studiku/homeStudiku/Intro";
 import MainContent from "../../components/studiku/homeStudiku/MainContent";
-import Sidebar from "../../components/studiku/homeStudiku/Sidebar";
+// import Sidebar from "../../components/studiku/homeStudiku/Sidebar";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 
@@ -43,13 +43,13 @@ const Main = () => {
 				<section className="py-5">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-8 col-xl-9 ">
+							<div className="col-lg-12 col-xl-12 ">
 								<MainContent
 									course={currentSubject.result}
 									isLoading={isLoading}
 								/>
 							</div>
-							<Sidebar />
+							{/* <Sidebar /> */}
 						</div>
 					</div>
 				</section>

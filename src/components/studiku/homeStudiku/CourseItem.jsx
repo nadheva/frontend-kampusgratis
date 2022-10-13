@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function CourseItem({ course }) {
   return (
-    <div className="col-sm-6 col-xl-4">
+    <div className="col-sm-6 col-lg-4 col-xl-3">
       <div className="card shadow  h-100 ">
         <img src={course.item.Subject.thumbnail_link} className="card-img-top card-img-artikel" alt="courseimage" />
         <div className="card-body pb-0">
