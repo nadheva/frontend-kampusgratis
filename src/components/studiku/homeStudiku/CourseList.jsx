@@ -31,7 +31,7 @@ const CourseList = ({ course, isLoading }) => {
             ) : course == null || course == 0 ? (
                 <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
             ) : (
-                course.result.map((course) => (
+                course.map((course) => (
                     <CourseItem key={course.item.id} course={course} />
                 ))
             )}

@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import Intro from "../../components/studiku/homeStudiku/Intro";
 import MainContent from "../../components/studiku/homeStudiku/MainContent";
 import Sidebar from "../../components/studiku/homeStudiku/Sidebar";
-import Pagination from "../../components/element/Pagination";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
 
@@ -42,28 +41,6 @@ const Main = () => {
 		}
 	}, [subjects, isLoading, isError, isSuccess, message, dispatch]);
 
-
-	console.log(subjects)
-
-	// Pagination
-	// const [filteredData, setFilteredData] = useState([]);
-	// const [currentPage, setCurrentPage] = useState(1);
-	// const [postsPerPage] = useState(9);
-
-	// useEffect(() => {
-	// 	setFilteredData(subjects);
-	// }, []);
-
-	// const indexOfLastPost = currentPage * postsPerPage;
-	// const indexOfFirstPost = indexOfLastPost - postsPerPage;
-	// const currentPosts = filteredData.slice(indexOfFirstPost, indexOfLastPost);
-
-	// const paginate = (e, pageNumber) => {
-	// 	e.preventDefault();
-	// 	setCurrentPage(pageNumber);
-	// };
-
-
 	return (
 		<>
 			<Header />
@@ -74,23 +51,9 @@ const Main = () => {
 						<div className="row">
 							<div className="col-lg-8 col-xl-9 ">
 								<MainContent
-									course={subjects}
+									course={subjects.result}
 									isLoading={isLoading}
 								/>
-								{/* {
-									isLoading ? (
-										<></>
-									) : (
-										!(filteredData.length > postsPerPage) ? null : (
-											<Pagination
-												itemsPerPage={postsPerPage}
-												totalItems={filteredData.length}
-												paginate={paginate}
-												currentPage={currentPage}
-											/>
-										)
-									)
-								} */}
 							</div>
 							<Sidebar />
 						</div>
