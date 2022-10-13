@@ -10,7 +10,9 @@ const SubjectItem = ({ subject }) => {
   return <>
     <div className="col-sm-6 col-xl-4">
       <div className="card shadow h-100">
-        <img src={subject.Subject.thumbnail_link} style={{ height: "180px", objectFit: "cover" }} className="card-img-top" alt={subject.Subject.name} />
+        <Link to={subject.Subject.id}>
+          <img src={subject.Subject.thumbnail_link} style={{ height: "180px", objectFit: "cover" }} className="card-img-top" alt={subject.Subject.name} />
+        </Link>
         <div className="card-body pb-0">
           <h5 className="card-title d-flex align-items-center">
             <Link to={subject.Subject.id}>

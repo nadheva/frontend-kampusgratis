@@ -4,7 +4,7 @@ import useEffectOnce from '../../helpers/useEffectOnce';
 
 import SubjectItem from './SubjectItem';
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { getMySubjects, resetAll } from '../../features/my-study/myStudySlice';
+import { getMySubjects, reset, resetAll } from '../../features/my-study/myStudySlice';
 
 const SubjectsList = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -59,16 +59,18 @@ const SubjectsList = () => {
   }
 
   useEffectOnce(() => {
+    dispatch(resetAll());
+    setIsPageLoad(false);
     dispatch(getMySubjects({ currentPage, search: searchTerm }));
   });
 
   useEffect(() => {
-    const { max_page: maxPage, result } = data || null;
+    const { max_page: maxPage, result } = data?.subjects || {};
     if (maxPage !== 0) setLastPage(maxPage);
     if (result) setResults(result);
 
     if (maxPage && result) setIsPageLoad(true);
-  }, [data]);
+  }, [data, isPageLoad]);
 
   return <>
     <div className="col-lg-12">
@@ -141,4 +143,4 @@ const SubjectsList = () => {
   </>
 }
 
-export default SubjectsList
+export default SubjectsList;

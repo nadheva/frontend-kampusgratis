@@ -111,7 +111,6 @@ const ListSubject = () => {
     }
   }, [message, dispatch]);
 
-
   return <>
     <Header />
     <main>

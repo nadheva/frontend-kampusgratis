@@ -19,8 +19,24 @@ const getMySubjects = async (currentPage, search) => {
   return response.data;
 }
 
+const getSubject = async (subjectId) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.get(API_URL + `subject/${subjectId}`, config);
+
+  return response.data;
+}
+
 const myStudyService = {
-  getMySubjects
+  getMySubjects, getSubject
 }
 
 export default myStudyService;

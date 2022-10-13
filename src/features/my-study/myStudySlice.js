@@ -23,6 +23,19 @@ export const getMySubjects = createAsyncThunk(
   }
 )
 
+export const getSubject = createAsyncThunk(
+  'my-study/get-subject-by-id',
+  async (subjectId, thunkAPI) => {
+    try {
+      const { data } = await myStudyService.getSubject(subjectId);
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+    }
+  }
+)
+
 export const myStudySlice = createSlice({
   name: 'my-study',
   initialState,
@@ -49,14 +62,27 @@ export const myStudySlice = createSlice({
       .addCase(getMySubjects.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data = action.payload;
+        state.data.subjects = action.payload;
       })
       .addCase(getMySubjects.rejected, (state, action) => {
         state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.user = null;
+      })
+      .addCase(getSubject.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getSubject.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.subject = action.payload;
+      })
+      .addCase(getSubject.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
       })
   }
 });
