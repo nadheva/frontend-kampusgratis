@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 
 // component
@@ -10,7 +10,7 @@ import Footer from "../default/Footer";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getSubjects, reset } from "../../features/subject/subjectSlice";
+import { getMySubjects, reset } from "../../features/subject/subjectSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Main = () => {
@@ -21,24 +21,20 @@ const Main = () => {
 
 	// redux
 	const dispatch = useDispatch();
-	const { subjects, isLoading, isError, isSuccess, message } = useSelector(
+	const [currentSubject, setCurrentSubject] = useState({});
+
+	const { data, isLoading, isError, isSuccess, message } = useSelector(
 		(state) => state.subject
 	);
 
 	useEffectOnce(() => {
-		dispatch(getSubjects());
+		dispatch(getMySubjects());
 	});
 
 	useEffect(() => {
-		if (isError && !isSuccess) {
-			toast.error(message);
-			dispatch(reset());
-		}
-		if (isSuccess && message && !isError) {
-			toast.success(message);
-			dispatch(reset());
-		}
-	}, [subjects, isLoading, isError, isSuccess, message, dispatch]);
+		if (data?.subjects) setCurrentSubject(data.subjects);
+
+	}, [data]);
 
 	return (
 		<>
@@ -50,7 +46,7 @@ const Main = () => {
 						<div className="row">
 							<div className="col-lg-8 col-xl-9 ">
 								<MainContent
-									course={subjects.result}
+									course={currentSubject.result}
 									isLoading={isLoading}
 								/>
 							</div>

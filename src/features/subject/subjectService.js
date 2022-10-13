@@ -3,7 +3,8 @@ import { getAuth } from 'firebase/auth';
 
 const API_URL = 'https://fe-integration-test.herokuapp.com/api/v1/'
 
-const getSubject = async () => {
+
+const getMySubjects = async () => {
 	const auth = getAuth();
 	const token = await auth.currentUser.getIdToken();
 
@@ -20,8 +21,26 @@ const getSubject = async () => {
 }
 
 
+const getSubject = async (subjectId) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+
+	const response = await axios.get(API_URL + `subject/${subjectId}`, config);
+
+	return response.data;
+}
+
+
 const subjectService = {
 	getSubject,
+	getMySubjects
 }
 
 export default subjectService;

@@ -3,27 +3,38 @@ import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 import subjectService from './subjectService';
 
 const initialState = {
-	subjects: [],
+	data: {},
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
 	message: ''
 };
 
-export const getSubjects = createAsyncThunk(
-	'subject/enrolledsubjects',
+export const getMySubjects = createAsyncThunk(
+	'my-study/get-my-subjects',
 	async (_, thunkAPI) => {
 		try {
+			const { data } = await subjectService.getMySubjects();
 
-			const { data } = await subjectService.getSubject();
 			return data;
-
 		} catch (error) {
 			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
 )
 
+export const getSubject = createAsyncThunk(
+	'my-study/get-subject-by-id',
+	async (subjectId, thunkAPI) => {
+		try {
+			const { data } = await subjectService.getSubject(subjectId);
+
+			return data;
+		} catch (error) {
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+		}
+	}
+)
 
 export const subjectSlice = createSlice({
 	name: 'subject',
@@ -35,25 +46,46 @@ export const subjectSlice = createSlice({
 			state.isSuccess = false;
 			state.message = '';
 		},
+		resetAll: (state) => {
+			state.data = {};
+			state.isError = false;
+			state.isSuccess = false;
+			state.isLoading = false;
+			state.message = '';
+		},
 	},
 	extraReducers: (builder) => {
 		builder
-			.addCase(getSubjects.pending, (state) => {
+			.addCase(getMySubjects.pending, (state) => {
 				state.isLoading = true;
 			})
-			.addCase(getSubjects.fulfilled, (state, action) => {
+			.addCase(getMySubjects.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.isSuccess = true;
-				state.subjects = action.payload;
+				state.data.subjects = action.payload;
 			})
-			.addCase(getSubjects.rejected, (state, action) => {
+			.addCase(getMySubjects.rejected, (state, action) => {
+				state.isSuccess = false;
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
-				state.subjects = null;
+			})
+			.addCase(getSubject.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(getSubject.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.data.subject = action.payload;
+			})
+			.addCase(getSubject.rejected, (state, action) => {
+				state.isSuccess = false;
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
 			})
 	}
 });
 
-export const { reset } = subjectSlice.actions;
+export const { reset, resetAll } = subjectSlice.actions;
 export default subjectSlice.reducer;
