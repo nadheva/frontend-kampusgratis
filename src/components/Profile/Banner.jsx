@@ -11,7 +11,7 @@ const Banner = () => {
 					className="bg-blue h-100px h-md-200px rounded-0"
 					style={{
 						background:
-							"url(/assets/images/pattern/04.png) no-repeat center center",
+							"url(assets/images/pattern/04.png) no-repeat center center",
 						backgroundSize: "cover",
 					}}
 				></div>
@@ -26,9 +26,9 @@ const Banner = () => {
 										<img
 											className="avatar-img rounded-circle border border-white border-3 shadow"
 											src={
-												user.display_name != null
-													? user.display_name
-													: "/assets/images/avatar/empty-display-picture.png"
+												user.display_picture_link != null
+													? user.display_picture_link
+													: "assets/images/avatar/empty-display-picture.png"
 											}
 											alt={user.full_name}
 										/>
