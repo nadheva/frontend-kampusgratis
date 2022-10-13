@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SearchBar = ({ handleSearchFilter, searchValue }) => {
+const SearchBar = () => {
     return (
         <div className="row mb-4 align-items-center">
             <div className="col-xl-12">
@@ -10,8 +10,6 @@ const SearchBar = ({ handleSearchFilter, searchValue }) => {
                             className="form-control me-1"
                             type="search"
                             placeholder="Cari matakuliah"
-                            value={searchValue}
-                            onChange={handleSearchFilter}
                         />
                     </div>
                 </form>

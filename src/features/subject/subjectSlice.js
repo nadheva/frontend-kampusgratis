@@ -1,38 +1,39 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { extartErrorFirebase, extractErrorMessage } from "../../utils";
-import subjectService from "./subjectService";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { extartErrorFirebase, extractErrorMessage } from '../../utils';
+import subjectService from './subjectService';
 
 const initialState = {
 	subjects: [],
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
-	message: "",
+	message: ''
 };
 
 export const getSubjects = createAsyncThunk(
-	"subject/enrolledsubjects",
+	'subject/enrolledsubjects',
 	async (_, thunkAPI) => {
 		try {
+
 			const { data } = await subjectService.getSubject();
 			return data;
+
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
+
 
 export const subjectSlice = createSlice({
-	name: "subject",
+	name: 'subject',
 	initialState,
 	reducers: {
 		reset: (state) => {
 			state.isLoading = false;
 			state.isError = false;
 			state.isSuccess = false;
-			state.message = "";
+			state.message = '';
 		},
 	},
 	extraReducers: (builder) => {
@@ -50,8 +51,8 @@ export const subjectSlice = createSlice({
 				state.isError = true;
 				state.message = action.payload;
 				state.subjects = null;
-			});
-	},
+			})
+	}
 });
 
 export const { reset } = subjectSlice.actions;

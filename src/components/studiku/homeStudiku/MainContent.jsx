@@ -3,12 +3,10 @@ import React from 'react'
 import SearchBar from './SearchBar';
 import CourseList from './CourseList';
 
-const MainContent = ({ course, isLoading, handleSearchFilter, searchValue }) => {
+const MainContent = ({ course, isLoading }) => {
     return (
         <>
             <SearchBar
-                handleSearchFilter={handleSearchFilter}
-                searchValue={searchValue}
             />
             <CourseList
                 course={course}
