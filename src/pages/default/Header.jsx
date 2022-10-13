@@ -35,7 +35,7 @@ const Header = () => {
 
 		toast.info("Kamu berhasil keluar.");
 
-		if (location.pathname != "/") navigate("/");
+		if (location.pathname !== "/") navigate("/");
 		// else window.location.reload();
 	};
 
@@ -62,7 +62,7 @@ const Header = () => {
 							className="navbar-toggler ms-auto"
 							type="button"
 							data-bs-toggle="collapse"
-							data-bs-target="#navbarCollapse"
+							data-bs-target=" navbarCollapse"
 							aria-controls="navbarCollapse"
 							aria-expanded="false"
 							aria-label="Toggle navigation"
@@ -91,7 +91,7 @@ const Header = () => {
 							<div className="dropdown ms-1 ms-lg-0">
 								<a
 									className="avatar avatar-sm p-0"
-									href="#"
+									href=" "
 									id="profileDropdown"
 									role="button"
 									data-bs-auto-close="outside"
@@ -128,7 +128,7 @@ const Header = () => {
 												/>
 											</div>
 											<div>
-												<a className="h6" href="#">
+												<a className="h6" href=" ">
 													{getFirstName(user.full_name)}
 												</a>
 												<p className="small m-0">{user.email}</p>
@@ -149,9 +149,9 @@ const Header = () => {
 										</NavLink>
 									</li>
 									<li>
-										<NavLink className="dropdown-item" to="/profil">
+										<NavLink className="dropdown-item" to="/profile">
 											<i className="bi bi-person fa-fw me-2"></i>
-											Profil
+											Profile
 										</NavLink>
 									</li>
 									<li>

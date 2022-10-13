@@ -173,15 +173,15 @@ const FormEdit = () => {
 						</div>
 					</div>
 					{/* <div className="col-md-6">
-				<label className="form-label">Alamat Email</label>
-				<input
-				  className="form-control"
-				  type="text"
-				  value="example@gmail.com"
-				  placeholder="Alamat Email"
-				  readOnly
-				/>
-			  </div> */}
+			  <label className="form-label">Alamat Email</label>
+			  <input
+				className="form-control"
+				type="text"
+				value="example@gmail.com"
+				placeholder="Alamat Email"
+				readOnly
+			  />
+			</div> */}
 					<div className="col-md-6">
 						<label className="form-label">Nomor Handphone</label>
 						<input

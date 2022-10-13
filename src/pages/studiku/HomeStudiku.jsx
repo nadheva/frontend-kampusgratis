@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 // component
 import Intro from "../../components/studiku/homeStudiku/Intro";
@@ -16,7 +16,6 @@ import { getSubjects, reset } from "../../features/subject/subjectSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Main = () => {
-
 	useEffect(() => {
 		document.title = "Kampus Gratis | Studiku";
 	});
@@ -95,20 +94,16 @@ const Main = () => {
 									handleSearchFilter={handleSearchFilter}
 									searchValue={searchValue}
 								/>
-								{
-									isLoading ? (
-										<></>
-									) : (
-										!(filteredData.length > postsPerPage) ? null : (
-											<Pagination
-												itemsPerPage={postsPerPage}
-												totalItems={filteredData.length}
-												paginate={paginate}
-												currentPage={currentPage}
-											/>
-										)
-									)
-								}
+								{isLoading ? (
+									<></>
+								) : !(filteredData.length > postsPerPage) ? null : (
+									<Pagination
+										itemsPerPage={postsPerPage}
+										totalItems={filteredData.length}
+										paginate={paginate}
+										currentPage={currentPage}
+									/>
+								)}
 							</div>
 							<Sidebar />
 						</div>
