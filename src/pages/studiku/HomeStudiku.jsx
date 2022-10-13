@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { toast } from 'react-toastify';
 
 // component
 import Intro from "../../components/studiku/homeStudiku/Intro";
