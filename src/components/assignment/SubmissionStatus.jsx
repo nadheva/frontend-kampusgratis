@@ -16,57 +16,102 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                             <Skeleton height={20} />
                         </SkeletonTheme>
                     </div>
-                ) : assigments == undefined || assigments.length == 0 ? (
-                    <>
-                    </>
+                ) : assigments == undefined || assigments.length == 0 || assigments == null ? (
+                    <div className="table-responsive">
+                        <table className="table table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <th>Grading status</th>
+                                    <td>Not graded</td>
+                                </tr>
+                                <tr>
+                                    <th> Grade</th>
+                                    <td>Not graded</td>
+                                </tr>
+                                <tr>
+                                    <th>Due date </th>
+                                    <td>-</td>
+                                </tr>
+                                {/* <tr>
+                                    <th>Time remaining </th>
+                                    <td>-</td>
+                                </tr> */}
+                                <tr>
+                                    <th>Last modified </th>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <th>File submissions </th>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 ) : (
                     <div className="table-responsive">
                         <table className="table table-striped table-hover">
                             <tbody>
                                 <tr>
-                                    <th>Submission status</th>
-                                    <td>
-                                        {
-                                            assigments.students_work.status == 0 || assigments.students_work.status == null ? (
-                                                <>Not graded</>
-                                            ) : (
-                                                <>{assigments.students_work.status}</>
-                                            )
-                                        }
-
-                                    </td>
+                                    <th>Grading status</th>
+                                    {
+                                        assigments.students_work.status == 0 || assigments.students_work.status == null ? (
+                                            <td>Not graded</td>
+                                        ) : (
+                                            <td className="table-success">
+                                                {assigments.students_work.status}
+                                            </td>
+                                        )
+                                    }
                                 </tr>
                                 <tr>
-                                    <th>Grading status </th>
-                                    <td>
-                                        {
-                                            assigments.students_work.score == 0 || assigments.students_work.score == null ? (
-                                                <>Not graded</>
-                                            ) : (
-                                                <>
-                                                    {assigments.students_work.score}
-                                                </>
-                                            )
-                                        }
-                                    </td>
+                                    <th> Grade</th>
+                                    {
+                                        assigments.students_work.score == 0 || assigments.students_work.score == null ? (
+                                            <td>Not graded</td>
+                                        ) : (
+                                            <td className="table-success">
+                                                {assigments.students_work.score}
+                                            </td>
+                                        )
+                                    }
                                 </tr>
                                 <tr>
                                     <th>Due date </th>
-                                    <td>Monday, 17 January 2022, 12:00 AM</td>
+                                    <td>-</td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th>Time remaining </th>
                                     <td>
                                         Assignment is overdue by: 270 days 10 hours
                                     </td>
-                                </tr>
+                                </tr> */}
                                 <tr>
                                     <th>Last modified </th>
-                                    <td>Friday, 22 April 2022, 11:11 AM</td>
+                                    <td>-</td>
+                                    {/* {
+                                        assigments.students_work.activity_detail.date_submit == null || assigments.students_work.activity_detail.date_submit == undefined ? (
+                                            <td>-</td>
+                                        ) : (
+                                            <td >
+                                                {assigments.students_work.activity_detail.date_submit}
+                                            </td>
+                                        )
+                                    } */}
                                 </tr>
                                 <tr>
                                     <th>File submissions </th>
-                                    <td>namfile</td>
+                                    <td>-</td>
+                                    {/* {
+                                        assigments.students_work.activity_detail.file_assignment == 0 || assigments.students_work.activity_detail.file_assignment == null ? (
+                                            <td>-</td>
+                                        ) : (
+                                            <td >
+                                                <p className="bg-light">
+                                                    {assigments.students_work.activity_detail.file_assignment}
+                                                </p>
+                                            </td>
+                                        )
+                                    } */}
                                 </tr>
                             </tbody>
                         </table>
