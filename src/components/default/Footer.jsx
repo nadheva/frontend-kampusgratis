@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../assets/images/logo-kampus-gratis.png';
+import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 const Footer = () => {
   return <>
@@ -11,7 +12,7 @@ const Footer = () => {
           <div className="col-lg-3">
             <a className="me-0" href="index.html">
               <img className="light-mode-item h-40px" src={Logo} alt="Kampus Gratis" />
-              <img className="dark-mode-item h-40px" src={Logo} alt="Kampus Gratis" />
+              <img className="dark-mode-item h-40px" src={LogoDark} alt="Kampus Gratis" />
             </a>
             <p className="my-3">Jl. Radio IV No. 08 B, RW 4, Kramat Pela, Kec. Kebayoran Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
             <ul className="list-inline mb-0 mt-3">
@@ -98,4 +99,4 @@ const Footer = () => {
   </>
 }
 
-export default Footer
+export default Footer;

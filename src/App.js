@@ -23,6 +23,9 @@ import SilabusSubject from './pages/syllabus/ListSubject';
 
 import ScrollToTop from './components/default/ScrollToTop';
 import Subject from './pages/my-study/Subject';
+import ModuleList from './pages/my-study/ModuleList';
+import ModuleDetail from './pages/my-study/ModuleDetail';
+import VideoDetail from './pages/my-study/VideoDetail';
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -51,6 +54,23 @@ function App() {
 
             <Route path='/login' exact element={<Login />} />
             <Route path='/register' exact element={<Register />} />
+
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul' exact element={<ModuleList />} />
+            </Route>
+
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId' exact element={<ModuleDetail />} />
+            </Route>
+
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/vidio/:videoId' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/vidio/:videoId' exact element={<VideoDetail />} />
+            </Route>
+
+            {/* 
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<PrivateRoute />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<ModuleDetail />} />
+            </Route> */}
 
             <Route path='/studi-ku/:subjectId' exact element={<PrivateRoute />}>
               <Route path='/studi-ku/:subjectId' exact element={<Subject />} />

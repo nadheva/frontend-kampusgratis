@@ -981,12 +981,15 @@ var e = {
     let theme = localStorage.getItem('data-theme');
     var style = document.getElementById("style-switch");
     var dir = document.getElementsByTagName("html")[0].getAttribute('dir');
+    var profile = document.getElementById("profileDropdown").getElementsByTagName("img")[0];
+
     var changeThemeToDark = () => {
       document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
       if (dir == 'rtl') {
         style.setAttribute('href', '/assets/css/style-dark-rtl.css');
       } else {
         style.setAttribute('href', '/assets/css/style-dark.css');
+        profile.setAttribute('style', "border: 1px solid white; padding: 2px;");
       }
       localStorage.setItem("data-theme", "dark") // save theme to local storage
     }
@@ -997,6 +1000,7 @@ var e = {
         style.setAttribute('href', '/assets/css/style-rtl.css');
       } else {
         style.setAttribute('href', '/assets/css/style.css');
+        profile.setAttribute('style', "border: 1px solid black; padding: 2px;");
       }
 
       localStorage.setItem("data-theme", 'light') // save theme to local storage

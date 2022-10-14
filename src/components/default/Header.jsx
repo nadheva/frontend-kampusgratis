@@ -7,8 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import Logo from '../../assets/images/logo-kampus-gratis.png';
+import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 import useScript from '../../hooks/useScript';
+import { useEffect } from 'react';
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");
@@ -50,7 +52,7 @@ const Header = () => {
           <div className="container">
             <Link className="navbar-brand me-0" to='/'>
               <img className="light-mode-item navbar-brand-item" src={Logo} alt="Kampus Gratis" />
-              <img className="dark-mode-item navbar-brand-item" src={Logo} alt="Kampus Gratis" />
+              <img className="dark-mode-item navbar-brand-item" src={LogoDark} alt="Kampus Gratis" />
             </Link>
             <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-animation">

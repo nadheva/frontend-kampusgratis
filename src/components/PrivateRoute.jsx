@@ -10,15 +10,6 @@ const PrivateRoute = () => {
 
   if (checkingStatus) {
     return;
-    // <>
-    //   <Header />
-    //   <div className="container text-center" style={{ margin: "200px 0" }}>
-    //     <div class="spinner-border" role="status">
-    //       <span class="visually-hidden">Loading...</span>
-    //     </div>
-    //   </div>
-    //   <Footer />
-    // </>
   }
 
   return loggedIn ? <Outlet /> : <Navigate to='/login' />

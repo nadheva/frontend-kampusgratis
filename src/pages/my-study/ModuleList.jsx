@@ -1,23 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { getModuleBySession, getSubject, resetAll } from '../../features/my-study/myStudySlice';
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import Header from '../../components/default/Header';
 import Footer from '../../components/default/Footer';
-import PageNotFound from '../../components/default/PageNotFound';
-import useEffectOnce from '../../helpers/useEffectOnce';
-import { getSessions, getSubject } from '../../features/my-study/myStudySlice';
-import SubjectDetail from '../../components/My-Study/SubjectDetail';
+import Header from '../../components/default/Header';
+import ModuleDetail from '../../components/My-Study/ModuleDetail';
 
-const Subject = () => {
+const Module = () => {
   const dispatch = useDispatch();
-  const [currentSubject, setCurrentSubject] = useState({});
-  const [sessions, setSessions] = useState([]);
 
-  const { subjectId } = useParams();
+  const { subjectId, sessionId, moduleId } = useParams();
+  const [modules, setModules] = useState([]);
+  const [currentSubject, setCurrentSubject] = useState({});
   const { data, message, isLoading } = useSelector(
     (state) => state.myStudy
   );
@@ -25,24 +24,25 @@ const Subject = () => {
   const fetchAll = async () => {
     await Promise.all([
       dispatch(getSubject(subjectId)),
-      dispatch(getSessions(subjectId))
+      dispatch(getModuleBySession(sessionId))
     ]);
   }
 
   useEffectOnce(() => {
+    dispatch(resetAll());
     fetchAll();
   });
 
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
-    if (message === 'Subject ID not found' || !subjectId || subjectId.length !== 36) return <PageNotFound />
-    if (data?.sessions) setSessions(data.sessions);
+    if (data?.modules) setModules(data.modules);
+    // if (message === 'Subject ID not found' || !subjectId || subjectId.length !== 36) return <PageNotFound />
   }, [data]);
 
   return <>
     <Header />
     <main>
-      {isLoading || !currentSubject ? <>
+      {isLoading || currentSubject.length === 0 || modules.length === 0 ? <>
         <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
@@ -55,7 +55,8 @@ const Subject = () => {
                     <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
                       <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Mata Kuliah</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Modul</li>
                     </ol>
                   </nav>
                 </div>
@@ -85,7 +86,8 @@ const Subject = () => {
                     <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
                       <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Mata Kuliah</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Modul</li>
                     </ol>
                   </nav>
                 </div>
@@ -96,7 +98,7 @@ const Subject = () => {
         <section className='pb-0 py-lg-5'>
           <div className="container">
             <div className="row">
-              {isLoading ? (
+              {isLoading && modules ? (
                 <>
                   <div className="col-sm-12 col-xl-12">
                     <SkeletonTheme>
@@ -120,7 +122,7 @@ const Subject = () => {
                   </div>
                 </>
               ) : (<>
-                <SubjectDetail subject={currentSubject} sessions={sessions} />
+                {modules.map((module, i) => <><ModuleDetail module={module} key={i} count={i} /></>)}
               </>)}
             </div>
           </div>
@@ -131,4 +133,4 @@ const Subject = () => {
   </>
 }
 
-export default Subject;
+export default Module;

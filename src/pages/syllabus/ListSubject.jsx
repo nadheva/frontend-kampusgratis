@@ -58,12 +58,6 @@ const ListSubject = () => {
   }
 
   useEffectOnce(() => {
-    // window.scrollTo({
-    //   top: 0,
-    //   left: 0,
-    //   behavior: 'smooth'
-    // });
-
     fetchingData();
   });
 
@@ -176,7 +170,7 @@ const ListSubject = () => {
               {user?.role === 'student' && <>
                 <img className='img-thumbnail p-2' src={data?.subjects?.major?.thumbnail_link} alt={data?.subjects?.major?.name} style={{ height: '360px', objectFit: 'cover' }} />
                 <div className='col-lg-7 mt-4 '>
-                  {!isEligible && currentUserMajors.length !== 0 ? <>
+                  {!isEligible && currentUserMajors.length >= 1 ? <>
                     <div className="alert alert-danger mb-4">
                       Kamu tidak dapat mengambil Jurusan / Mata Kuliah ini karena berbeda dengan Jurusan yang kamu ambil sebelumnya.
                     </div>
@@ -202,17 +196,15 @@ const ListSubject = () => {
                             aria-selected='false'>Kurikulum / Mata Kuliah
                           </button>
                         </li>
-                        {dataAdministration?.is_approved && isEligible && <>
-                          {dataAdministration?.is_approved?.overall && <>
-                            {!isLoading ? <li>
-                              <button className='btn btn-primary btn-sm' onClick={() => doTakeCurrentMajor(data?.subjects?.major?.id)}>Ambil Mata Kuliah</button>
-                            </li> : <li>
-                              <button className="btn btn-primary mb-0 btn-sm" disabled={isLoading}>
-                                <span className="spinner-border spinner-border-sm"></span>&nbsp;
-                                &nbsp;Loading...
-                              </button>
-                            </li>}
-                          </>}
+                        {dataAdministration?.is_approved?.overall && isEligible && <>
+                          {!isLoading ? <li>
+                            <button className='btn btn-primary btn-sm' onClick={() => doTakeCurrentMajor(data?.subjects?.major?.id)}>Ambil Mata Kuliah</button>
+                          </li> : <li>
+                            <button className="btn btn-primary mb-0 btn-sm" disabled={isLoading}>
+                              <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                              &nbsp;Loading...
+                            </button>
+                          </li>}
                         </>}
                       </ul>
                     </div>
@@ -221,7 +213,7 @@ const ListSubject = () => {
                         <div className='tab-pane fade show active' id='course-pills-1' role='tabpanel'
                           aria-labelledby='course-pills-tab-1'>
                           <h5 className='mb-3'>
-                            Course Description
+                            Deskripsi Mata Kuliah
                           </h5>
                           <p className='mb-3'>Welcome to the <strong> Digital Marketing Ultimate Course Bundle - 12 Courses in 1
                             (Over 36 hours of content)</strong></p>

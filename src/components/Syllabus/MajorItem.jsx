@@ -16,7 +16,9 @@ const MajorItem = ({ major }) => {
           <a href="#" className="h6 fw-light mb-0"><i className="far fa-heart"></i></a>
         </div>
         <h5 className="card-title">
-          <Link to={`/silabus/${major.id}`}>{major.name}</Link>
+          <Link to={`/silabus/${major.id}`}>
+            {major.name}
+          </Link>
         </h5>
         <p>{major.description}</p>
       </div>

@@ -14,9 +14,6 @@ const SubjectsList = () => {
   const [lastPage, setLastPage] = useState(1);
   const [results, setResults] = useState([]);
 
-  // const [showFirstPage, setShowFirstPage] = useState(false);
-  // const [showLastPage, setShowLastPage] = useState(false);
-
   const dispatch = useDispatch();
 
   const { data, isLoading } = useSelector(
@@ -30,8 +27,6 @@ const SubjectsList = () => {
     dispatch(getMySubjects({ currentPage, search: searchTerm }));
 
     setIsPageLoad(false);
-    // setShowFirstPage(false);
-    // setShowLastPage(false);
   }
 
   const renderPage = () => {
@@ -70,7 +65,7 @@ const SubjectsList = () => {
     if (result) setResults(result);
 
     if (maxPage && result) setIsPageLoad(true);
-  }, [data, isPageLoad]);
+  }, [data, isPageLoad, results]);
 
   return <>
     <div className="col-lg-12">
@@ -87,8 +82,10 @@ const SubjectsList = () => {
           <button className="btn btn-primary mb-0 d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar" aria-controls="offcanvasSidebar">
             <i className="fas fa-sliders-h me-1"></i> Show filter
           </button>
-          {results.length !== 0 && <>
-            <p className="mb-0 text-end">Memunculkan {results.length} dari {data?.total_subject} Mata Kuliah</p>
+          {results.length !== 0 && isPageLoad && <>
+            <p className="mb-0 text-end">
+              Memunculkan {results.length} dari {data?.subjects?.total_subject} Mata Kuliah
+            </p>
           </>}
         </div>
       </div>
@@ -116,7 +113,7 @@ const SubjectsList = () => {
           </>
         </> : <>
           {Object.values(results).length !== 0 && <>
-            {results.map((subject, i) => <SubjectItem key={i} subject={subject.item} />)}
+            {results.map((subject, i) => <SubjectItem key={i} subject={subject.item} student={subject.student_count} lecturers={subject.lecturers} />)}
           </>}
         </>}
       </div>
