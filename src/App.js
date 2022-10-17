@@ -51,6 +51,9 @@ import ScrollToTop from "./pages/default/ScrollToTop";
 
 import ViewPDF from "./pages/studiku/ViewPDF";
 
+// Nilai & sertifikat
+import Nilai from "./pages/nilai-sertifikat/Nilai";
+
 function App() {
 	return (
 		<>
@@ -162,6 +165,11 @@ function App() {
 							<Route path="/ManageCourse" element={<ManageCourse />} />
 						</Route>
 
+						{/* START : NILAI & SERTIFIKAT */}
+						<Route path="/nilai" element={<PrivateRoute />}>
+							<Route path="/nilai" element={<Nilai />} />
+						</Route>
+						{/* END : NILAI & SERTIFIKAT */}
 
 						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
