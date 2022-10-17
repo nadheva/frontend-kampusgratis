@@ -53,6 +53,7 @@ import ViewPDF from "./pages/studiku/ViewPDF";
 
 // Nilai & sertifikat
 import Nilai from "./pages/nilai-sertifikat/Nilai";
+import Sertifikat from "./pages/nilai-sertifikat/Sertifikat";
 
 function App() {
 	return (
@@ -168,6 +169,9 @@ function App() {
 						{/* START : NILAI & SERTIFIKAT */}
 						<Route path="/nilai" element={<PrivateRoute />}>
 							<Route path="/nilai" element={<Nilai />} />
+						</Route>
+						<Route path="/sertifikat" element={<PrivateRoute />}>
+							<Route path="/sertifikat" element={<Sertifikat />} />
 						</Route>
 						{/* END : NILAI & SERTIFIKAT */}
 
