@@ -55,6 +55,9 @@ import ViewPDF from "./pages/studiku/ViewPDF";
 import Nilai from "./pages/nilai-sertifikat/Nilai";
 import Sertifikat from "./pages/nilai-sertifikat/Sertifikat";
 
+// Acara kampus
+import AcaraKampus from "./pages/acara-kampus/AcaraKampus";
+
 function App() {
 	return (
 		<>
@@ -174,6 +177,12 @@ function App() {
 							<Route path="/sertifikat" element={<Sertifikat />} />
 						</Route>
 						{/* END : NILAI & SERTIFIKAT */}
+
+						{/* START : Acara Kampus */}
+						<Route path="/acara-kampus" element={<PrivateRoute />}>
+							<Route path="/acara-kampus" element={<AcaraKampus />} />
+						</Route>
+						{/* END : Acara Kampus */}
 
 						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
