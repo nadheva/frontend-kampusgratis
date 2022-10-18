@@ -91,9 +91,9 @@ const AcaraKampus = () => {
                                             Zoom
                                         </a>
                                         <h5 className="card-title mb-0">
-                                            <a href="shop-product-detail.html" className="stretched-link">
+                                            <Link to="/acara-kampus-detail" className="stretched-link">
                                                 Webinar : Design and Build Websites (Paperback)
-                                            </a>
+                                            </Link>
                                         </h5>
                                     </div>
                                     <div className="card-footer pt-0 px-3">
@@ -132,9 +132,9 @@ const AcaraKampus = () => {
                                             Zoom
                                         </a>
                                         <h5 className="card-title mb-0">
-                                            <a href="shop-product-detail.html" className="stretched-link">
+                                            <Link to="/acara-kampus-detail" className="stretched-link">
                                                 Webinar : Design and Build Websites
-                                            </a>
+                                            </Link>
                                         </h5>
                                     </div>
                                     <div className="card-footer pt-0 px-3">
@@ -172,9 +172,9 @@ const AcaraKampus = () => {
                                             Zoom
                                         </a>
                                         <h5 className="card-title mb-0">
-                                            <a href="shop-product-detail.html" className="stretched-link">
+                                            <Link to="/acara-kampus-detail" className="stretched-link">
                                                 Webinar : Belajar ngoding
-                                            </a>
+                                            </Link>
                                         </h5>
                                     </div>
                                     <div className="card-footer pt-0 px-3">
@@ -214,9 +214,9 @@ const AcaraKampus = () => {
                                             Zoom
                                         </a>
                                         <h5 className="card-title mb-0">
-                                            <a href="shop-product-detail.html" className="stretched-link">
+                                            <Link to="/acara-kampus-detail" className="stretched-link">
                                                 Webinar : Design and Build Flutter
-                                            </a>
+                                            </Link>
                                         </h5>
                                     </div>
                                     <div className="card-footer pt-0 px-3">
