@@ -28,40 +28,40 @@ const Footer = () => {
 							</p>
 							<ul className="list-inline mb-0 mt-3">
 								<li className="list-inline-item">
-									{" "}
+
 									<a
 										className="btn btn-white btn-sm shadow px-2 text-facebook"
 										href=" "
 									>
 										<i className="fab fa-fw fa-facebook-f"></i>
-									</a>{" "}
+									</a>
 								</li>
 								<li className="list-inline-item">
-									{" "}
+
 									<a
 										className="btn btn-white btn-sm shadow px-2 text-instagram"
 										href=" "
 									>
 										<i className="fab fa-fw fa-instagram"></i>
-									</a>{" "}
+									</a>
 								</li>
 								<li className="list-inline-item">
-									{" "}
+
 									<a
 										className="btn btn-white btn-sm shadow px-2 text-twitter"
 										href=" "
 									>
 										<i className="fab fa-fw fa-twitter"></i>
-									</a>{" "}
+									</a>
 								</li>
 								<li className="list-inline-item">
-									{" "}
+
 									<a
 										className="btn btn-white btn-sm shadow px-2 text-linkedin"
 										href=" "
 									>
 										<i className="fab fa-fw fa-linkedin-in"></i>
-									</a>{" "}
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -165,7 +165,7 @@ const Footer = () => {
 							<div className="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
 								<div className="text-primary-hover">
 									<Link to="/" className="text-body">
-										Kampus Gratis © 2022{" "}
+										Kampus Gratis © 2022
 									</Link>
 									- Hak Cipta Dilindungi.
 								</div>

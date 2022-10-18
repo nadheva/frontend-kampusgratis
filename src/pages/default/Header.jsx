@@ -62,7 +62,7 @@ const Header = () => {
 							className="navbar-toggler ms-auto"
 							type="button"
 							data-bs-toggle="collapse"
-							data-bs-target=" navbarCollapse"
+							data-bs-target="#navbarCollapse" //Jangan dihapus
 							aria-controls="navbarCollapse"
 							aria-expanded="false"
 							aria-label="Toggle navigation"
