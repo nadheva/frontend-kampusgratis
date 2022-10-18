@@ -134,6 +134,40 @@ const Categories = () => {
 							</div>
 						</div>
 						<div className="col-sm-6 col-md-4 col-xl-3">
+							<div className="card card-body  bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
+								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
+									<img
+										loading="lazy"
+										src="/assets/images/element/photography.svg"
+										alt=""
+										style={{ filter: "grayscale(100%)" }}
+									/>
+								</div>
+								<h5 className="mb-2">
+									<Link to="/acara-kampus" className="stretched-link" disabled>
+										Acara Kampus
+									</Link>
+								</h5>
+							</div>
+						</div>
+						<div className="col-sm-6 col-md-4 col-xl-3">
+							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
+								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
+									<img
+										loading="lazy"
+										src="/assets/images/element/18.svg"
+										alt=""
+										style={{ filter: "grayscale(100%)" }}
+									/>
+								</div>
+								<h5 className="mb-2">
+									<Link to="/nilai" className="stretched-link" disabled>
+										Nilai &amp; Sertifikat
+									</Link>
+								</h5>
+							</div>
+						</div>
+						<div className="col-sm-6 col-md-4 col-xl-3">
 							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
@@ -223,40 +257,6 @@ const Categories = () => {
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
-										src="/assets/images/element/18.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Nilai &amp; Sertifikat
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/photography.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Acara Kampus
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
 										src="/assets/images/element/music.svg"
 										alt=""
 										style={{ filter: "grayscale(100%)" }}
@@ -298,7 +298,7 @@ const Categories = () => {
 								</div>
 								<h5 className="mb-2">
 									<Link to=" " className="stretched-link" disabled>
-										Perencanaan Karir{" "}
+										Perencanaan Karir
 									</Link>
 								</h5>
 							</div>

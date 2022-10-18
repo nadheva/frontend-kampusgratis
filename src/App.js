@@ -57,6 +57,7 @@ import Sertifikat from "./pages/nilai-sertifikat/Sertifikat";
 
 // Acara kampus
 import AcaraKampus from "./pages/acara-kampus/AcaraKampus";
+import AcaraKampusDetail from "./pages/acara-kampus/AcaraKampusDetail";
 
 function App() {
 	return (
@@ -181,6 +182,9 @@ function App() {
 						{/* START : Acara Kampus */}
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
+						</Route>
+						<Route path="/acara-kampus-detail" element={<PrivateRoute />}>
+							<Route path="/acara-kampus-detail" element={<AcaraKampusDetail />} />
 						</Route>
 						{/* END : Acara Kampus */}
 
