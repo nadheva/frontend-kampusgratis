@@ -59,6 +59,9 @@ import Sertifikat from "./pages/nilai-sertifikat/Sertifikat";
 import AcaraKampus from "./pages/acara-kampus/AcaraKampus";
 import AcaraKampusDetail from "./pages/acara-kampus/AcaraKampusDetail";
 
+// Penyaluran kerja
+import PenyaluranKerja from "./pages/penyaluran-kerja/PenyaluranKerja";
+
 function App() {
 	return (
 		<>
@@ -187,6 +190,11 @@ function App() {
 							<Route path="/acara-kampus-detail" element={<AcaraKampusDetail />} />
 						</Route>
 						{/* END : Acara Kampus */}
+
+						{/* Penyaluran Kerja */}
+						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja" element={<PenyaluranKerja />} />
+						</Route>
 
 						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
