@@ -168,24 +168,7 @@ const Categories = () => {
 							</div>
 						</div>
 						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/help.svg"
-										alt="x"
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/studi-ku" className="stretched-link">
-										Panduan
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
+							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
 								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 									<img
 										loading="lazy"
@@ -195,7 +178,7 @@ const Categories = () => {
 									/>
 								</div>
 								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
+									<Link to="/penyaluran-kerja" className="stretched-link" disabled>
 										Penyaluran Kerja
 									</Link>
 								</h5>
@@ -214,6 +197,23 @@ const Categories = () => {
 								<h5 className="mb-2">
 									<Link to=" " className="stretched-link" disabled>
 										Diskusi Perkuliahan
+									</Link>
+								</h5>
+							</div>
+						</div>
+						<div className="col-sm-6 col-md-4 col-xl-3">
+							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
+								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
+									<img
+										loading="lazy"
+										src="/assets/images/element/help.svg"
+										alt="x"
+										style={{ filter: "grayscale(100%)" }}
+									/>
+								</div>
+								<h5 className="mb-2">
+									<Link to="/studi-ku" className="stretched-link">
+										Panduan
 									</Link>
 								</h5>
 							</div>
