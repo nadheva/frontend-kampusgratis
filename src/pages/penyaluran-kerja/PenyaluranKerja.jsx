@@ -10,6 +10,7 @@ const penyaluranKerja = () => {
 
             <main>
                 {/* ======================= Page Banner START */}
+                {/* Intro */}
                 <section className="py-0">
                     <div className="container">
                         <div className="row">
@@ -36,8 +37,11 @@ const penyaluranKerja = () => {
                 {/* ======================= Page Banner END */}
 
                 {/* ======================= Inner part START */}
+                {/* MainCOntent */}
                 <section className="pt-4">
                     <div className="container">
+
+                        {/* FilterBar */}
                         <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
                             <div className="row g-3">
                                 <div className="col-xl-3">
@@ -92,6 +96,8 @@ const penyaluranKerja = () => {
                                 </div>
                             </div>
                         </form>
+
+                        {/* CardList */}
                         <div className="row g-4 ">
 
                             <div className="col-lg-10 col-xl-6">
@@ -200,6 +206,7 @@ const penyaluranKerja = () => {
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </section>
                 {/* ======================= Inner part END */}
