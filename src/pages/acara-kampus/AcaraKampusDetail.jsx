@@ -6,7 +6,6 @@ const AcaraKampusDetail = () => {
     return (
         <>
             <Header />
-
             <main>
                 {/* ======================= Main Banner START */}
                 <section>
@@ -25,7 +24,6 @@ const AcaraKampusDetail = () => {
                                 </div>
                             </div>
                             <div className="col-lg-8">
-
                                 <h1>Webinar : Design logo using Adobe Illustrator and Photoshop.</h1>
                                 <div className="d-sm-flex justify-content-between align-items-center mb-2">
                                     <div className="mt-sm-0">
@@ -36,7 +34,6 @@ const AcaraKampusDetail = () => {
                                             Zoom
                                         </a>
                                     </div>
-
                                     <div className="mt-sm-0">
                                         <div className="icon-md bg-dark rounded-circle fs-5">
                                             <a href=" " className="text-white">
@@ -62,7 +59,6 @@ const AcaraKampusDetail = () => {
                                     <a href=" " className="btn btn-blue mb-2">
                                         Ikuti Kegiatan
                                     </a>
-
                                     <ul className="avatar-group mb-1 justify-content-center">
                                         <li className="avatar avatar-sm">
                                             <img
@@ -93,7 +89,6 @@ const AcaraKampusDetail = () => {
                                             />
                                         </li>
                                     </ul>
-
                                     <p className="mb-0">Bergabunglah diacara kami</p>
                                 </div>
                             </div>
@@ -236,7 +231,6 @@ const AcaraKampusDetail = () => {
                 </section>
                 {/* ======================= Detail END */}
             </main>
-
 
             <Footer />
         </>
