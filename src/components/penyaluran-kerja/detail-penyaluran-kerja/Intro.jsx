@@ -12,7 +12,7 @@ const Intro = () => {
 						<h1>M-Knows Consulting</h1>
 					</div>
 					<div className="col-lg-4 position-relative text-end">
-						<Link to=" " className="btn btn-primary">
+						<Link to="/form-penyaluran-kerja" className="btn btn-primary">
 							Lamar Sekarang
 						</Link>
 					</div>

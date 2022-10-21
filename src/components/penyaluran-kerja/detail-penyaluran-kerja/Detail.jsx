@@ -300,28 +300,6 @@ const Detail = () => {
 								</div>
 								{/* Card END */}
 							</div>
-							<div className="col-md-6 col-xl-4">
-								{/* Card START */}
-								<div className="card card-body shadow p-4 align-items-start">
-									{/* Image */}
-									<img
-										className="rounded-1 h-60px"
-										src="assets/images/client/uni-logo-04.svg"
-										alt="university logo"
-									/>
-									{/* Title */}
-									<h5 className="card-title mt-3 mb-0">Andeerson Campus</h5>
-									<span>A Public University In Canada</span>
-									{/* Button */}
-									<a
-										href="index-6.html"
-										className="btn btn-lg btn-link p-0 mt-3 stretched-link"
-									>
-										<u>Visit University</u>
-									</a>
-								</div>
-								{/* Card END */}
-							</div>
 						</div>
 					</div>
 				</div>

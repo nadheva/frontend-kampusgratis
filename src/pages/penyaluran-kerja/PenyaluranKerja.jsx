@@ -115,7 +115,7 @@ const penyaluranKerja = () => {
                                                 <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                                                     <div>
                                                         <h5 className="card-title mb-0">
-                                                            <a href="#">Frontend Developer</a>
+                                                            <a href="/detail-penyaluran-kerja">Frontend Developer</a>
                                                         </h5>
                                                         <p className="small mb-2 mb-sm-0">
                                                             NBS (PT Kode Aplikasi Indonesia)
