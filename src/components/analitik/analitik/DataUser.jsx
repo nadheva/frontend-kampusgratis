@@ -12,7 +12,7 @@ const DataUser = () => {
                                     <div className="rounded-3">
                                         <img
                                             src="assets/images/instructor/07.jpg"
-                                            className="card-img"
+                                            className="card-img img-profile-khs "
                                             alt="course image"
                                         />
                                     </div>

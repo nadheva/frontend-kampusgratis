@@ -66,6 +66,7 @@ import FormPenyaluranKerja from "./pages/penyaluran-kerja/FormPenyaluranKerja";
 
 // Analitik
 import Analitik from "./pages/analitik/Analitik";
+import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 
 function App() {
 	return (
@@ -253,7 +254,10 @@ function App() {
 						<Route path="/analitik" element={<PrivateRoute />}>
 							<Route path="/analitik" element={<Analitik />} />
 						</Route>
-						
+						<Route path="/analitik-detail" element={<PrivateRoute />}>
+							<Route path="/analitik-detail" element={<AnalitikDetail />} />
+						</Route>
+
 						{/* END : Analitik*/}
 
 						{/* START : ERROR PAGE */}

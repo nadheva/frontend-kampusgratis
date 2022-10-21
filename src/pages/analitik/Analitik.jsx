@@ -2,9 +2,9 @@ import React from 'react'
 
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import DataUser from '../../components/analitik/DataUser';
-import Chart from '../../components/analitik/Chart';
-import DataKhs from '../../components/analitik/DataKhs';
+import DataUser from '../../components/analitik/analitik/DataUser';
+import Chart from '../../components/analitik/analitik/Chart';
+import DataKhs from '../../components/analitik/analitik/DataKhs';
 
 const Analitik = () => {
     return (

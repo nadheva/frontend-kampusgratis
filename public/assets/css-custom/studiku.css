@@ -1,5 +1,7 @@
-.width-full {
-    width: 100%;
+.img-profile-khs {
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Kalender */
