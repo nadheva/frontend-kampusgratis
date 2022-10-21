@@ -1,3 +1,7 @@
+.width-full {
+    width: 100%;
+}
+
 /* Kalender */
 .Kalend__Calendar__root.Kalend__main {
     height: 100vh !important;

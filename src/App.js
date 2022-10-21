@@ -64,6 +64,9 @@ import PenyaluranKerja from "./pages/penyaluran-kerja/PenyaluranKerja";
 import DetailPenyaluranKerja from "./pages/penyaluran-kerja/DetailPenyaluranKerja";
 import FormPenyaluranKerja from "./pages/penyaluran-kerja/FormPenyaluranKerja";
 
+// Analitik
+import Analitik from "./pages/analitik/Analitik";
+
 function App() {
 	return (
 		<>
@@ -243,7 +246,15 @@ function App() {
 						<Route path="/form-penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/form-penyaluran-kerja" element={<FormPenyaluranKerja />} />
 						</Route>
-						{/* END : Penyaluran Kerj */}
+						{/* END : Penyaluran Kerja */}
+
+
+						{/* START : Analitik */}
+						<Route path="/analitik" element={<PrivateRoute />}>
+							<Route path="/analitik" element={<Analitik />} />
+						</Route>
+						
+						{/* END : Analitik*/}
 
 						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
