@@ -61,6 +61,7 @@ import AcaraKampusDetail from "./pages/acara-kampus/AcaraKampusDetail";
 
 // Penyaluran kerja
 import PenyaluranKerja from "./pages/penyaluran-kerja/PenyaluranKerja";
+import DetailPenyaluranKerja from "./pages/penyaluran-kerja/DetailPenyaluranKerja";
 
 function App() {
 	return (
@@ -86,24 +87,55 @@ function App() {
 							<Route path="/studi-ku" element={<HomeStudiku />} />
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/:subjectId" element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/:subjectId" element={<Pertemuan />} />
+						<Route
+							path="/studi-ku/pertemuan/:subjectId"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/:subjectId"
+								element={<Pertemuan />}
+							/>
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/modul/:sessionId" element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/modul/:sessionId" element={<Modul />} />
+						<Route
+							path="/studi-ku/pertemuan/modul/:sessionId"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/modul/:sessionId"
+								element={<Modul />}
+							/>
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/modul/detail-modul/:moduleId" element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/modul/detail-modul/:moduleId" element={<DetailModul />} />
+						<Route
+							path="/studi-ku/pertemuan/modul/detail-modul/:moduleId"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/modul/detail-modul/:moduleId"
+								element={<DetailModul />}
+							/>
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId" element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId" element={<VidioPlayer />} />
+						<Route
+							path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/modul/detail-modul/vidio-player/:videoId/:moduleId"
+								element={<VidioPlayer />}
+							/>
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId" exact element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId" element={<ViewPDF />} />
+						<Route
+							path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId"
+							exact
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/modul/detail-modul/view-pdf/:dokumenId"
+								element={<ViewPDF />}
+							/>
 						</Route>
 
 						<Route path="/quiz" element={<PrivateRoute />}>
@@ -122,18 +154,22 @@ function App() {
 							<Route path="/isi-forum-diskusi" element={<IsiForum />} />
 						</Route>
 
-						<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<PrivateRoute />}>
-							<Route path="/studi-ku/pertemuan/penugasan/:sessionId" element={<Penugasan />} />
+						<Route
+							path="/studi-ku/pertemuan/penugasan/:sessionId"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/studi-ku/pertemuan/penugasan/:sessionId"
+								element={<Penugasan />}
+							/>
 						</Route>
 
 						{/* END : STUDIKU */}
-
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
 						<Route path="/artikel" element={<Artikel />} />
 						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 						{/* END : SEKILAS ILMU/ARTIKEL */}
-
 
 						{/* START : SILABUS */}
 						<Route path="/silabus/:majorId" element={<PrivateRoute />}>
@@ -144,13 +180,11 @@ function App() {
 						</Route>
 						{/* END : SILABUS */}
 
-
 						{/* START : KALENDER */}
 						<Route path="/calender" exact element={<PrivateRoute />}>
 							<Route path="/calender" exact element={<Calendar />} />
 						</Route>
 						{/* END : KALENDER */}
-
 
 						{/* START : STUDENTS */}
 						<Route path="/dashboard" element={<PrivateRoute />}>
@@ -163,7 +197,6 @@ function App() {
 							<Route path="/settings" element={<Setting />} />
 						</Route>
 						{/* END : STUDENTS */}
-
 
 						<Route path="/profile" exact element={<PrivateRoute />}>
 							<Route path="/profile" exact element={<Profile />} />
@@ -187,13 +220,23 @@ function App() {
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
 						<Route path="/acara-kampus-detail" element={<PrivateRoute />}>
-							<Route path="/acara-kampus-detail" element={<AcaraKampusDetail />} />
+							<Route
+								path="/acara-kampus-detail"
+								element={<AcaraKampusDetail />}
+							/>
 						</Route>
 						{/* END : Acara Kampus */}
 
 						{/* Penyaluran Kerja */}
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja" element={<PenyaluranKerja />} />
+						</Route>
+
+						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
+							<Route
+								path="/detail-penyaluran-kerja"
+								element={<DetailPenyaluranKerja />}
+							/>
 						</Route>
 
 						{/* START : ERROR PAGE */}
@@ -203,8 +246,6 @@ function App() {
 						<Route path="/500" element={<ServerError />} />
 						<Route path="/503" element={<ServiceUnavailable />} />
 						{/* END : ERROR PAGE */}
-
-
 					</Routes>
 				</ScrollToTop>
 			</Router>
