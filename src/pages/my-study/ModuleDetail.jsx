@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { getModuleBySession, getSingleModule, getSubject, resetAll } from '../../features/my-study/myStudySlice';
+import { finishModule, getModuleBySession, getSingleModule, getSubject, resetAll } from '../../features/my-study/myStudySlice';
 
 import Footer from '../../components/default/Footer';
 import Header from '../../components/default/Header';
@@ -15,6 +15,7 @@ const ModuleDetail = () => {
   const dispatch = useDispatch();
   const [currentSubject, setCurrentSubject] = useState({});
   const [currentModule, setCurrentModule] = useState({});
+  const [textDoneModule, setTextDoneModule] = useState("");
 
   const { subjectId, sessionId, moduleId } = useParams();
 
@@ -34,16 +35,20 @@ const ModuleDetail = () => {
     fetchAll();
   });
 
+  const submitFinishModule = moduleId => {
+    dispatch(finishModule({ moduleId, textDoneModule }));
+  }
+
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
     if (data?.module) setCurrentModule(data.module);
-  }, [data, currentSubject, currentModule]);
+  }, [data, currentSubject, currentModule, textDoneModule]);
 
   return <>
     <Header />
     <main>
       {isLoading || Object.keys(currentSubject).length === 0 || Object.keys(currentModule).length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -57,7 +62,7 @@ const ModuleDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Detail</li>
+                      <li className='breadcrumb-item active' aria-current='page'>List</li>
                     </ol>
                   </nav>
                 </div>
@@ -77,7 +82,7 @@ const ModuleDetail = () => {
           </div>
         </section>
       </> : <>
-        <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className="bg-blue align-items-center d-flex" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center">
@@ -89,7 +94,7 @@ const ModuleDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Detail</li>
+                      <li className='breadcrumb-item active' aria-current='page'>List</li>
                     </ol>
                   </nav>
                 </div>
@@ -138,32 +143,36 @@ const ModuleDetail = () => {
                               <h6 className="mb-0">{video.title}</h6>
                             </Link>
                           </div>
-                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0 mt-3">
-                            Lihat Vidio
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0">
+                            <i className='fa fa-eye me-2'></i>Lihat
                           </Link>
                         </div>
                         <hr />
                       </>)}
                     </div>
-
                     <div className="col-12">
                       <h5 className="mb-4">List Dokumen</h5>
                       {currentModule.documents.map(document => <>
                         <div className="d-sm-flex justify-content-sm-between align-items-center">
                           <div className="d-flex">
-                            <a href={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light btn-round mb-0">
+                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light btn-round mb-0">
                               <i className="fas fa-solid fa-file"></i>
-                            </a>
+                            </Link>
                             <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
                               <h6 className="mb-0">{document.content}</h6>
                             </Link>
                           </div>
-                          <a href={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0 mt-3">
-                            Lihat Dokumen
-                          </a>
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0">
+                            <i className='fa fa-eye me-2'></i>Lihat
+                          </Link>
                         </div>
                         <hr />
                       </>)}
+                    </div>
+                    <div className="col-12 text-end">
+                      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule("")}>
+                        <i className="fas fa-check-circle me-2"></i> Selesai Modul
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -174,6 +183,30 @@ const ModuleDetail = () => {
       </>}
     </main>
     <Footer />
+    <div className="modal fade" id="doneModule" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={"-1"} aria-labelledby="doneModuleLabel" aria-hidden="true">
+      <div className="modal-dialog modal-lg">
+        <div className="modal-content">
+          <div className="modal-header bg-dark">
+            <h5 className="modal-title text-white fs-5" id="doneModuleLabel">Apa pelajaran yang kamu dapat dari modul ini?</h5>
+            <button type="button" className="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close">
+              <i className="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <div className="modal-body">
+            <div className="row">
+              <div className="col-12">
+                <textarea className="form-control" rows="3" placeholder='Tulis materi yang kamu dapat di sini ...' value={textDoneModule} onChange={(e) => setTextDoneModule(e.target.value)} />
+                <div className="form-text">Materi kamu akan di-review oleh dosen atau pembimbing kamu. Pastikan kamu mengisi dengan sesuai!</div>
+              </div>``
+            </div>
+          </div>
+          <div className="modal-footer">
+            <button type="button" className="btn btn-danger-soft my-0" data-bs-dismiss="modal">Batal</button>
+            <button type="button" className="btn btn-success my-0" onClick={() => submitFinishModule(moduleId)}>Kirim</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </>
 }
 

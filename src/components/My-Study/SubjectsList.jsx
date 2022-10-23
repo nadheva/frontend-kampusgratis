@@ -112,8 +112,12 @@ const SubjectsList = () => {
             </div>
           </>
         </> : <>
-          {Object.values(results).length !== 0 && <>
+          {Object.values(results).length !== 0 ? <>
             {results.map((subject, i) => <SubjectItem key={i} subject={subject.item} student={subject.student_count} lecturers={subject.lecturers} />)}
+          </> : <>
+            <div className="col-md-12">
+              <div className="alert alert-info">Kamu belum mengambil mata kuliah atau belum melakukan administrasi.</div>
+            </div>
           </>}
         </>}
       </div>

@@ -77,14 +77,14 @@ const SubjectDetail = ({ subject, sessions }) => {
                                       className="fas fa-question-circle fa-fw fs-5"></i>
                                   </a>
                                   <div className="ms-3">
-                                    <Link to={`/studi-ku/${subject.id}/quiz/${session.id}`}
+                                    <Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/quiz`}
                                       className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">
                                       Quiz
                                     </Link>
                                   </div>
                                 </div>
                               </div>
-                              <Link to={`/studi-ku/${subject.id}/quiz/${session.id}`} className="p-2 mb-0 text-secondary"
+                              <Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/quiz`} className="p-2 mb-0 text-secondary"
                                 data-bs-toggle="tooltip" data-bs-placement="top"
                                 title="Tandai Sebagai Selesai">
                                 <i className="bi bi-check-circle-fill"></i>
@@ -121,14 +121,14 @@ const SubjectDetail = ({ subject, sessions }) => {
                                     <i className="fas fa-comment fa-fw fs-5"></i>
                                   </a>
                                   <div className="ms-3">
-                                    <Link to={`/studi-ku/${subject.id}/forum/${session.id}`}
+                                    <Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/forum`}
                                       className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">
-                                      Forum Diskusi
+                                      Forum dan Diskusi
                                     </Link>
                                   </div>
                                 </div>
                               </div>
-                              <Link to={`/studi-ku/${subject.id}/forum/${session.id}`} className="p-2 mb-0 text-secondary"
+                              <Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/forum`} className="p-2 mb-0 text-secondary"
                                 data-bs-toggle="tooltip" data-bs-placement="top"
                                 title="Tandai Sebagai Tandai Sebagai Selesai">
                                 <i className="bi bi-check-circle-fill"></i>

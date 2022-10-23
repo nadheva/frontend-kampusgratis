@@ -26,6 +26,10 @@ import Subject from './pages/my-study/Subject';
 import ModuleList from './pages/my-study/ModuleList';
 import ModuleDetail from './pages/my-study/ModuleDetail';
 import VideoDetail from './pages/my-study/VideoDetail';
+import DocumentDetail from './pages/my-study/DocumentDetail';
+import Forum from './pages/my-study/ForumBase';
+import ForumDiscussion from './pages/my-study/ForumDiscussion';
+import QuizDetail from './pages/my-study/QuizDetail';
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -40,51 +44,62 @@ function App() {
 
             <Route path='/kategori' exact element={<Categories />} />
 
-            <Route path='/dashboard' exact element={<PrivateRoute />}>
+            <Route path='/dashboard' exact element={<PrivateRoute redirect />}>
               <Route path='/dashboard' exact element={<Dashboard />} />
             </Route>
 
-            <Route path='/administrasi' exact element={<><PrivateRoute /></>}>
+            <Route path='/administrasi' exact element={<><PrivateRoute redirect /></>}>
               <Route path='/administrasi' exact element={<Administration />} />
             </Route>
 
-            <Route path='/profil' exact element={<><PrivateRoute /></>}>
+            <Route path='/profil' exact element={<><PrivateRoute redirect /></>}>
               <Route path='/profil' exact element={<Profile />} />
             </Route>
 
             <Route path='/login' exact element={<Login />} />
             <Route path='/register' exact element={<Register />} />
 
-            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul' exact element={<PrivateRoute redirect />}>
               <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul' exact element={<ModuleList />} />
             </Route>
 
-            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId' exact element={<PrivateRoute redirect />}>
               <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId' exact element={<ModuleDetail />} />
             </Route>
 
-            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/vidio/:videoId' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/vidio/:videoId' exact element={<PrivateRoute redirect />}>
               <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/vidio/:videoId' exact element={<VideoDetail />} />
             </Route>
 
-            {/* 
-            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<PrivateRoute />}>
-              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<ModuleDetail />} />
-            </Route> */}
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<PrivateRoute redirect />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/modul/:moduleId/dokumen/:documentId' exact element={<DocumentDetail />} />
+            </Route>
 
-            <Route path='/studi-ku/:subjectId' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/forum' exact element={<PrivateRoute redirect />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/forum' exact element={<Forum />} />
+            </Route>
+
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/forum/:discussionId' exact element={<PrivateRoute redirect />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/forum/:discussionId' exact element={<ForumDiscussion />} />
+            </Route>
+
+            <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<PrivateRoute redirect />}>
+              <Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<QuizDetail />} />
+            </Route>
+
+            <Route path='/studi-ku/:subjectId' exact element={<PrivateRoute redirect />}>
               <Route path='/studi-ku/:subjectId' exact element={<Subject />} />
             </Route>
 
-            <Route path='/studi-ku' exact element={<PrivateRoute />}>
+            <Route path='/studi-ku' exact element={<PrivateRoute redirect />}>
               <Route path='/studi-ku' exact element={<MyStudy />} />
             </Route>
 
-            <Route path='/silabus/:majorId' element={<PrivateRoute />}>
+            <Route path='/silabus/:majorId' element={<PrivateRoute redirect />}>
               <Route path='/silabus/:majorId' element={<SilabusSubject />} />
             </Route>
 
-            <Route path='/silabus' exact element={<PrivateRoute />}>
+            <Route path='/silabus' exact element={<PrivateRoute redirect />}>
               <Route path='/silabus' exact element={<Silabus />} />
             </Route>
 

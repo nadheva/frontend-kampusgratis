@@ -5,14 +5,15 @@ import Header from './default/Header';
 
 // import Spinner from './Spinner';
 
-const PrivateRoute = () => {
+const PrivateRoute = ({ redirect }) => {
   const { loggedIn, checkingStatus } = useAuthStatus();
 
   if (checkingStatus) {
     return;
   }
 
-  return loggedIn ? <Outlet /> : <Navigate to='/login' />
+  if (redirect) return loggedIn ? <Outlet /> : <Navigate to='/login' />
+  return <Outlet />
 }
 
 export default PrivateRoute;

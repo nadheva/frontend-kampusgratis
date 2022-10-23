@@ -86,7 +86,7 @@ export const authSlice = createSlice({
       .addCase(register.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.message = action.payload.message;
+        state.message = "Register berhasil! Silahkan lihat email kamu (inbox atau spam) untuk melakukan verifikasi akun."; //action.payload.message;
       })
       .addCase(register.rejected, (state, action) => {
         state.isLoading = false;

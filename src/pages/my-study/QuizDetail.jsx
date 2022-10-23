@@ -1,48 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
-
-import Header from '../../components/default/Header';
 import Footer from '../../components/default/Footer';
-import PageNotFound from '../../components/default/PageNotFound';
+import Header from '../../components/default/Header';
+import { getQuizBySession, getSubject, resetAll, startQuiz } from '../../features/my-study/myStudySlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
-import { getSessions, getSubject } from '../../features/my-study/myStudySlice';
-import SubjectDetail from '../../components/My-Study/SubjectDetail';
 
-const Subject = () => {
+const QuizDetail = () => {
   const dispatch = useDispatch();
-  const [currentSubject, setCurrentSubject] = useState({});
-  const [sessions, setSessions] = useState([]);
 
-  const { subjectId } = useParams();
-  const { data, message, isLoading } = useSelector(
+  const { sessionId, subjectId } = useParams();
+  const [currentQuiz, setCurrentQuiz] = useState({});
+  const [currentSubject, setCurrentSubject] = useState({});
+
+  const { isLoading, data } = useSelector(
     (state) => state.myStudy
   );
 
   const fetchAll = async () => {
     await Promise.all([
       dispatch(getSubject(subjectId)),
-      dispatch(getSessions(subjectId))
+      dispatch(getQuizBySession(sessionId))
     ]);
   }
 
   useEffectOnce(() => {
+    dispatch(resetAll());
     fetchAll();
   });
 
+  const takeQuiz = quizId => {
+    dispatch(startQuiz(quizId));
+  }
+
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
-    if (message === 'Subject ID not found' || !subjectId || subjectId.length !== 36) return <PageNotFound />
-    if (data?.sessions) setSessions(data.sessions);
+    if (data?.quiz) setCurrentQuiz(data.quiz);
+
   }, [data]);
 
   return <>
     <Header />
     <main>
-      {isLoading || !currentSubject || sessions.length === 0 ? <>
+      {isLoading || Object.keys(currentQuiz).length === 0 ? <>
         <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
@@ -55,7 +57,8 @@ const Subject = () => {
                     <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
                       <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Mata Kuliah</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Quiz</li>
                     </ol>
                   </nav>
                 </div>
@@ -75,17 +78,18 @@ const Subject = () => {
           </div>
         </section>
       </> : <>
-        <section className="bg-blue align-items-center d-flex" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12 text-center">
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
+          <div className='container'>
+            <div className='row'>
+              <div className='col-12 text-center'>
                 <h1 className="text-white">{currentSubject.name}</h1>
-                <div className="d-flex justify-content-center">
-                  <nav aria-label="breadcrumb">
-                    <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                <div className='d-flex justify-content-center'>
+                  <nav aria-label='breadcrumb'>
+                    <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
                       <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Mata Kuliah</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Quiz</li>
                     </ol>
                   </nav>
                 </div>
@@ -96,32 +100,27 @@ const Subject = () => {
         <section className='pb-0 py-lg-5'>
           <div className="container">
             <div className="row">
-              {isLoading ? (
-                <>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
+              <div className="card shadow">
+                <div className="card-body py-4">
+                  <div className="col-lg-12 col-xl-12 mb-4">
+                    <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
+                      <div>
+                        <h5 className="card-title mb-0">
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${module.id}`}>
+                            {currentQuiz.quiz.description}
+                          </Link>
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="d-sm-flex align-items-center">
+                      <button className='btn btn-dark' onClick={() => takeQuiz(currentQuiz.quiz.id)}>
+                        <i className="fas fa-play me-3"></i>
+                        Mulai Quiz
+                      </button>
+                    </div>
                   </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                </>
-              ) : (<>
-                <SubjectDetail subject={currentSubject} sessions={sessions} />
-              </>)}
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -131,4 +130,4 @@ const Subject = () => {
   </>
 }
 
-export default Subject;
+export default QuizDetail;

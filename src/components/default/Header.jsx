@@ -66,7 +66,7 @@ const Header = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/">Beranda</NavLink>
                 </li>
-                <li className="nav-item" style={{ marginRight: "85px" }}>
+                <li className="nav-item">
                   <NavLink className="nav-link" to="/kategori">Kategori</NavLink>
                 </li>
               </ul>
@@ -128,15 +128,24 @@ const Header = () => {
                 </ul>
               </div>
             ) : (
-              <div className="navbar-nav ms-2">
-                <Link className="btn btn-sm btn-dark mb-0" to='/login'>
-                  <i className="bi bi-power me-2"></i>Masuk
-                </Link>
-              </div>
+              <>
+                <div className="navbar-nav ms-2">
+                  <div className="modeswitch-wrap" id="darkModeSwitch">
+                    <div className="modeswitch-item">
+                      <div className="modeswitch-icon"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="navbar-nav ms-2">
+                  <Link className="btn btn-sm btn-dark mb-0" to='/login'>
+                    <i className="bi bi-power me-2"></i>Masuk
+                  </Link>
+                </div>
+              </>
             )}
           </div>
-        </nav>
-      </header>
+        </nav >
+      </header >
     </>
   );
 }

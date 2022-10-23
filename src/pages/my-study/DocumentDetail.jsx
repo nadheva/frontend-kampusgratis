@@ -7,16 +7,17 @@ import Footer from '../../components/default/Footer';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 import useEffectOnce from '../../helpers/useEffectOnce';
-import { resetAll, getSubject, getVideo, getSingleModule, getModuleBySession } from '../../features/my-study/myStudySlice';
+import { resetAll, getSubject, getDocument, getSingleModule } from '../../features/my-study/myStudySlice';
 import { Link, useParams } from 'react-router-dom';
 
 const DocumentDetail = () => {
   const dispatch = useDispatch();
 
-  const { subjectId, sessionId, videoId, moduleId } = useParams();
+  const { subjectId, sessionId, documentId, moduleId } = useParams();
   const [currentSubject, setCurrentSubject] = useState({});
-  const [currentVideo, setCurrentVideo] = useState({});
+  const [currentDocument, setCurrentDocument] = useState({});
   const [currentModule, setCurrentModule] = useState({});
+  const [isPageReloaded, setIsPageReloaded] = useState(false);
 
   const { isLoading, data } = useSelector(
     (state) => state.myStudy
@@ -26,7 +27,7 @@ const DocumentDetail = () => {
     await Promise.all([
       dispatch(getSubject(subjectId)),
       dispatch(getSingleModule(moduleId)),
-      dispatch(getVideo(videoId)),
+      dispatch(getDocument(documentId))
     ]);
   }
 
@@ -38,14 +39,21 @@ const DocumentDetail = () => {
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
     if (data?.module) setCurrentModule(data.module);
-    if (data?.video) setCurrentVideo(data.video);
-  }, [data, currentSubject, currentModule, currentVideo]);
+    if (data?.document && !isPageReloaded) {
+      setCurrentDocument(data.document);
+      if (data.document.id !== documentId) {
+        setIsPageReloaded(true);
+        dispatch(resetAll());
+        fetchAll();
+      }
+    } setIsPageReloaded(false);
+  }, [data, currentSubject, currentModule, currentDocument, documentId]);
 
   return <>
     <Header />
     <main>
-      {isLoading || Object.keys(currentVideo).length === 0 || Object.keys(currentModule).length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+      {isLoading || Object.keys(currentDocument).length === 0 || Object.keys(currentModule).length === 0 ? <>
+        <section className="bg-blue h-100px h-md-200px rounded-0" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -59,8 +67,8 @@ const DocumentDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>Detail</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Vidio dan Dokumen</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>List</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Dokumen</li>
                     </ol>
                   </nav>
                 </div>
@@ -80,7 +88,7 @@ const DocumentDetail = () => {
           </div>
         </section>
       </> : <>
-        <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className="bg-blue align-items-center d-flex" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center">
@@ -92,8 +100,8 @@ const DocumentDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>Detail</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Vidio dan Dokumen</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>List</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Dokumen</li>
                     </ol>
                   </nav>
                 </div>
@@ -123,17 +131,15 @@ const DocumentDetail = () => {
                     ) : (
                       <>
                         <div className="col-12 position-relative">
-                          <iframe src={`https://www.youtube.com/embed/${currentVideo.url.split("?v=")[1]}`}
-                            title={currentVideo.content}
+                          <iframe src={currentDocument.link}
+                            title={currentDocument.content}
                             width="100%"
-                            height="443px"
-                            display="block"
-                            position="relative" />
+                            height="443px" frameborder="0" />
                         </div>
                         <div className="col-lg-12">
                           <div className="bg-body shadow rounded-2 p-4">
-                            <h5 className="mb-3 ">{currentVideo.title}</h5>
-                            <p className="mb-0">{currentVideo.description}</p>
+                            <h5 className="mb-3 ">{currentDocument?.title ? currentDocument.title : "Tidak ada judul."}</h5>
+                            <p className="mb-0">{currentDocument?.description ? currentDocument.description : "Tidak ada deskripsi."}</p>
                           </div>
                         </div>
                       </>
@@ -146,28 +152,28 @@ const DocumentDetail = () => {
                   <div className="card card-body shadow  p-4">
                     <div className="row g-5">
                       <div className="col-12">
-                        <h5 className="mb-4">Vidio Lainnya</h5>
-                        {currentModule.videos.map(video => <>
+                        <h5 className="mb-4">Dokumen Lainnya</h5>
+                        {currentModule.documents.map(document => <>
                           <div className="d-sm-flex justify-content-sm-between align-items-center">
-                            {video.id !== videoId ? <>
+                            {document.id !== documentId ? <>
                               <div className="d-flex">
-                                <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-danger-soft btn-round mb-0" style={video.id === videoId && { 'cursor': 'not-allowed' }}>
-                                  <i className="fas fa-play" />
+                                <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light text-dark btn-round mb-0">
+                                  <i className="fas fa-solid fa-file"></i>
                                 </Link>
-                                <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center" style={video.id === videoId && { 'cursor': 'not-allowed' }}>
-                                  <h6 className="mb-0">{video.title}</h6>
+                                <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
+                                  <h6 className="mb-0">{document.content}</h6>
                                 </Link>
                               </div>
-                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0">
-                                Lihat Vidio
+                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0">
+                                Buka
                               </Link>
                             </> : <>
                               <div className="d-flex">
-                                <span to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-danger-soft btn-round mb-0" style={{ 'cursor': 'not-allowed' }}>
-                                  <i className="fas fa-play" />
+                                <span to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light text-dark btn-round mb-0" style={{ 'cursor': 'not-allowed' }}>
+                                  <i className="fas fa-solid fa-file"></i>
                                 </span>
-                                <span to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center" style={{ 'cursor': 'not-allowed' }}>
-                                  <h6 className="mb-0">{video.title}</h6>
+                                <span to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center" style={{ 'cursor': 'not-allowed' }}>
+                                  <h6 className="mb-0">{document.content}</h6>
                                 </span>
                               </div>
                               <span className='badge bg-secondary' style={{ 'cursor': 'not-allowed' }}>Sedang dibuka</span>
@@ -177,19 +183,19 @@ const DocumentDetail = () => {
                         </>)}
                       </div>
                       <div className="col-12">
-                        <h5 className="mb-4">Dokumen Lainnya</h5>
-                        {currentModule.documents.map(document => <>
+                        <h5 className="mb-4">Vidio Lainnya</h5>
+                        {currentModule.videos.map(video => <>
                           <div className="d-sm-flex justify-content-sm-between align-items-center">
                             <div className="d-flex">
-                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light text-dark btn-round mb-0">
-                                <i className="fas fa-solid fa-file"></i>
+                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-danger-soft btn-round mb-0">
+                                <i className="fas fa-play" />
                               </Link>
-                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
-                                <h6 className="mb-0">{document.content}</h6>
+                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center" >
+                                <h6 className="mb-0">{video.title}</h6>
                               </Link>
                             </div>
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0">
-                              Lihat Dokumen
+                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0">
+                              Buka
                             </Link>
                           </div>
                           <hr />

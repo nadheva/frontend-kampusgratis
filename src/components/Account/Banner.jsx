@@ -9,7 +9,7 @@ const BannerProfile = () => {
   return (
     <section className="pt-0">
       <div className="container-fluid px-0">
-        <div className="bg-blue h-100px h-md-200px rounded-0" style={{ background: "url(assets/images/pattern/04.png) no-repeat center center", backgroundSize: 'cover' }}>
+        <div className="bg-blue h-100px h-md-200px rounded-0" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
         </div>
       </div>
       <div className="container mt-n4">

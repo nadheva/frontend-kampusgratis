@@ -1,13 +1,13 @@
 import React from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const ModuleDetail = ({ module, count }) => {
   const { subjectId, sessionId } = useParams();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  }, []);
+  // }, []);
 
   return <>
     <div className="col-lg-12 col-xl-12 mb-4">
@@ -31,8 +31,7 @@ const ModuleDetail = ({ module, count }) => {
           <div className="d-sm-flex align-items-center">
             <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${module.id}`} className='btn btn-dark'>
               <i className="fas fa-play me-2"></i> {module.content_length.number_of_video} Vidio
-            </Link>
-            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${module.id}`} className='btn btn-dark ms-2'>
+              <span className='mx-3'>|</span>
               <i className="fas fa-solid fa-file me-2"></i> {module.content_length.number_of_document} Dokumen
             </Link>
           </div>

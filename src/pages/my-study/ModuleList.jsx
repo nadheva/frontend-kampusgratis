@@ -43,7 +43,7 @@ const Module = () => {
     <Header />
     <main>
       {isLoading || currentSubject.length === 0 || modules.length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -76,7 +76,7 @@ const Module = () => {
           </div>
         </section>
       </> : <>
-        <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className="bg-blue align-items-center d-flex" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center">

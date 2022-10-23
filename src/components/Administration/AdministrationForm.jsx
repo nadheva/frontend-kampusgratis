@@ -61,7 +61,7 @@ const AdministrationForm = () => {
     if (e.target.files[0]) {
       setAdministrationFiles((prevState) => ({
         ...prevState,
-        [e.target.name]: e.target.files[0].name
+        [e.target.name]: e.target.files[0]
       }));
     }
   }
@@ -111,6 +111,7 @@ const AdministrationForm = () => {
 
   const onFormSubmitFiles = (e) => {
     e.preventDefault();
+
     dispatch(sendAdministrationFiles({ ...administrationFiles, administration_id }));
   }
 
@@ -135,7 +136,18 @@ const AdministrationForm = () => {
 
     if (data?.biodata) setAdministrationBiodata({ ...data?.biodata, ...appendData });
     if (data?.familial) setAdministrationFamilial(data.familial);
-    if (data?.files) setAdministrationFiles(data.files);
+    if (data?.files) {
+      for (const [key, value] of Object.entries(data.files)) {
+        if (value?.startsWith("documents/administrations/")) {
+          setAdministrationFiles((prevState) => ({
+            ...prevState,
+            [key]: {
+              name: value
+            }
+          }));
+        }
+      }
+    }
     if (data?.degree) setAdministrationDegree({ degree: data.degree });
 
     if (isError && !isSuccess) {
@@ -339,8 +351,8 @@ const AdministrationForm = () => {
                 <div className="row">
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Pakta Integritas</label>
-                    {integrity_pact && <div className="bg-light mb-3 p-3">
-                      {integrity_pact}
+                    {integrity_pact?.name && <div className="bg-light mb-3 p-3">
+                      {integrity_pact?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="integrity_pact" type="file" className="form-control" onChange={onChangeFile} />
@@ -349,8 +361,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Pas Foto</label>
-                    {photo && <div className="bg-light mb-3 p-3">
-                      {photo}
+                    {photo?.name && <div className="bg-light mb-3 p-3">
+                      {photo?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="photo" type="file" className="form-control" onChange={onChangeFile} />
@@ -359,8 +371,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Kartu Tanda Penduduk (KTP)</label>
-                    {nin_card && <div className="bg-light mb-3 p-3">
-                      {nin_card}
+                    {nin_card?.name && <div className="bg-light mb-3 p-3">
+                      {nin_card?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="nin_card" type="file" className="form-control" onChange={onChangeFile} />
@@ -369,8 +381,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Kartu Keluarga (KK)</label>
-                    {family_card && <div className="bg-light mb-3 p-3">
-                      {family_card}
+                    {family_card?.name && <div className="bg-light mb-3 p-3">
+                      {family_card?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="family_card" type="file" className="form-control" onChange={onChangeFile} />
@@ -379,8 +391,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Sertifikat</label>
-                    {certificate && <div className="bg-light mb-3 p-3">
-                      {certificate}
+                    {certificate?.name && <div className="bg-light mb-3 p-3">
+                      {certificate?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="certificate" type="file" className="form-control" onChange={onChangeFile} />
@@ -389,8 +401,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Transkrip Nilai Terbaru</label>
-                    {transcript && <div className="bg-light mb-3 p-3">
-                      {transcript}
+                    {transcript?.name && <div className="bg-light mb-3 p-3">
+                      {transcript?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="transcript" type="file" className="form-control" onChange={onChangeFile} />
@@ -399,8 +411,8 @@ const AdministrationForm = () => {
                   </div>
                   <div className="col-12">
                     <label className="form-label"><span className='text-danger'>*</span> Surat Rekomendasi</label>
-                    {recommendation_letter && <div className="bg-light mb-3 p-3">
-                      {recommendation_letter}
+                    {recommendation_letter?.name && <div className="bg-light mb-3 p-3">
+                      {recommendation_letter?.name}
                     </div>}
                     <div className="input-group mb-3">
                       <input name="recommendation_letter" type="file" className="form-control" onChange={onChangeFile} />
@@ -416,7 +428,8 @@ const AdministrationForm = () => {
                     </button>
                   ) : (
                     <button type="submit" className="btn btn-primary mb-0">Simpan Berkas</button>
-                  )}                </div>
+                  )}
+                </div>
               </form>
             </div>
           </div>

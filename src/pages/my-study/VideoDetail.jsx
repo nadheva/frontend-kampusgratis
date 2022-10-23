@@ -17,6 +17,7 @@ const VideoDetail = () => {
   const [currentSubject, setCurrentSubject] = useState({});
   const [currentVideo, setCurrentVideo] = useState({});
   const [currentModule, setCurrentModule] = useState({});
+  const [isPageReloaded, setIsPageReloaded] = useState(false);
 
   const { isLoading, data } = useSelector(
     (state) => state.myStudy
@@ -38,14 +39,21 @@ const VideoDetail = () => {
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
     if (data?.module) setCurrentModule(data.module);
-    if (data?.video) setCurrentVideo(data.video);
-  }, [data, currentSubject, currentModule, currentVideo]);
+    if (data?.video && !isPageReloaded) {
+      setCurrentVideo(data.video);
+      if (data.video.id !== videoId) {
+        setIsPageReloaded(true);
+        dispatch(resetAll());
+        fetchAll();
+      }
+    } setIsPageReloaded(false);
+  }, [data, currentSubject, currentModule, currentVideo, videoId]);
 
   return <>
     <Header />
     <main>
       {isLoading || Object.keys(currentVideo).length === 0 || Object.keys(currentModule).length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -59,8 +67,8 @@ const VideoDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>Detail</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Vidio dan Dokumen</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>List</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Vidio</li>
                     </ol>
                   </nav>
                 </div>
@@ -80,7 +88,7 @@ const VideoDetail = () => {
           </div>
         </section>
       </> : <>
-        <section className="bg-blue align-items-center d-flex" style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className="bg-blue align-items-center d-flex" style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className="container">
             <div className="row">
               <div className="col-12 text-center">
@@ -92,8 +100,8 @@ const VideoDetail = () => {
                       <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
                       <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>Detail</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Vidio dan Dokumen</li>
+                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}`}>List</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Vidio</li>
                     </ol>
                   </nav>
                 </div>
@@ -132,8 +140,8 @@ const VideoDetail = () => {
                         </div>
                         <div className="col-lg-12">
                           <div className="bg-body shadow rounded-2 p-4">
-                            <h5 className="mb-3 ">{currentVideo.title}</h5>
-                            <p className="mb-0">{currentVideo.description}</p>
+                            <h5 className="mb-3 ">{currentVideo?.title ? currentVideo.title : "Tidak ada judul."}</h5>
+                            <p className="mb-0">{currentVideo?.description ? currentVideo.description : "Tidak ada deskripsi."}</p>
                           </div>
                         </div>
                       </>

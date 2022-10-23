@@ -109,7 +109,7 @@ const ListSubject = () => {
     <Header />
     <main>
       {!isLoaded ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -141,7 +141,7 @@ const ListSubject = () => {
           </div>
         </section>
       </> : <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: 'url(assets/images/pattern/04.png) no-repeat center center', backgroundSize: 'cover' }}>
+        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
               <div className='col-12 text-center'>
@@ -235,7 +235,7 @@ const ListSubject = () => {
                                     <span className='small ms-0 ms-sm-2'>| {semester.subjects.length} Dosen atau Mentor</span>
                                   </button>
                                 </h6>
-                                {isEligible && <>
+                                {isEligible && semester?.subjects !== null && <>
                                   <div id={`collapse-${i + 1}`} className='accordion-collapse collapse' aria-labelledby={`heading-${i + 1}`}>
                                     <div className='accordion-body mt-3'>
                                       {semester.subjects.length === 0 && <>
