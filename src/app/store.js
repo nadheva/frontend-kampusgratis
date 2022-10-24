@@ -11,6 +11,7 @@ import detailModuleReducer from '../features/detailmodule/detailModuleSlice';
 import videoReducer from '../features/video/videoSlice';
 import dokumentReducer from '../features/dokument/dokumentSlice';
 import assignmentReducer from '../features/assignment/assignmentSlice';
+import myStudyReducer from '../features/my-study/myStudySlice';
 
 export const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ export const store = configureStore({
     detailModule: detailModuleReducer,
     video: videoReducer,
     dokument: dokumentReducer,
-    assignment: assignmentReducer
+    assignment: assignmentReducer,
+    myStudy: myStudyReducer
   }
 });
