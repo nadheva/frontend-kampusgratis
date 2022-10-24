@@ -9,7 +9,6 @@ const MainContent = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="card shadow rounded-2 p-0 mt-n5">
-
                             <div className="card-body p-sm-4">
                                 <div className="tab-content" id="course-pills-tabContent">
                                     <div className="tab-pane fade show active" id="course-pills-3" role="tabpanel"
