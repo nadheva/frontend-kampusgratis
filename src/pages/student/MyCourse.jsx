@@ -88,6 +88,9 @@ const MyCourse = () => {
 							isLoading={isLoading}
 							results={results}
 							
+							doFilter={doFilter}
+							setSearchTerm={setSearchTerm}
+
 							isPageLoad={isPageLoad}
 							currentPage={currentPage}
 							lastPage={lastPage}
