@@ -6,7 +6,7 @@ const Search = ({ setSearchTerm, doFilter }) => {
       <div className="col-xl-12">
         <form className="border rounded p-2" onSubmit={doFilter}>
           <div className="input-group input-borderless">
-            <input className="form-control me-1" type="search" placeholder="Cara mata kuliah" onChange={(e) => setSearchTerm(e.target.value)} />
+            <input className="form-control me-1" type="search" placeholder="Cari mata kuliah" onChange={(e) => setSearchTerm(e.target.value)} />
             <button type="submit" className="btn btn-primary mb-0 rounded z-index-1"><i className="fas fa-search"></i></button>
           </div>
         </form>

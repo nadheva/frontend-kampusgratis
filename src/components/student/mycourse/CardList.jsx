@@ -4,7 +4,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import CardItem from './CardItem'
 
 const CardList = ({ isLoading, results }) => {
-  console.log(results)
+
   return (
     <div className="row g-4">
       {isLoading ? <>

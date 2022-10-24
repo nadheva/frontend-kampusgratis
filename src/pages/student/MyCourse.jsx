@@ -87,7 +87,7 @@ const MyCourse = () => {
 						<MainContent
 							isLoading={isLoading}
 							results={results}
-							
+
 							doFilter={doFilter}
 							setSearchTerm={setSearchTerm}
 
