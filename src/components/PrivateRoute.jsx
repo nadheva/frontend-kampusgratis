@@ -11,8 +11,8 @@ const PrivateRoute = () => {
 		<>
 			{/* <Header />
       <div className="container text-center" style={{ margin: "200px 0" }}>
-        <div class="spinner-border" role="status">
-          <span class="visually-hidden">Loading...</span>
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
       <Footer /> */}

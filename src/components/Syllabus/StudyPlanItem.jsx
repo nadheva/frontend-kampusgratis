@@ -45,7 +45,7 @@ const StudyPlanItem = () => {
 						id="accordionSubjects"
 					>
 						{study_plan?.draft?.subjects.length === 0 ||
-						study_plan?.draft?.subjects === undefined ? (
+							study_plan?.draft?.subjects === undefined ? (
 							<>
 								<div className="alert alert-secondary">
 									Kamu belum memiliki Draft KRS saat ini.
@@ -95,14 +95,14 @@ const StudyPlanItem = () => {
 																	</li>
 																</>
 															))}
-															<div class="d-sm-flex justify-content-end mt-2">
+															<div className="d-sm-flex justify-content-end mt-2">
 																{!isLoading ? (
 																	<button
 																		type="button"
-																		class="btn btn-primary mb-0 btn-sm"
+																		className="btn btn-primary mb-0 btn-sm"
 																		onClick={sendDraft}
 																	>
-																		<i class="bi bi-send me-2"></i>
+																		<i className="bi bi-send me-2"></i>
 																		Kirim Draft
 																	</button>
 																) : (
@@ -125,7 +125,7 @@ const StudyPlanItem = () => {
 						)}
 
 						{study_plan?.pending?.subjects.length === 0 ||
-						study_plan?.pending?.subjects === undefined ? (
+							study_plan?.pending?.subjects === undefined ? (
 							<>
 								<div className="alert alert-secondary">
 									Kamu belum memiliki KRS yang tertunda / menunggu konfirmasi.
@@ -179,7 +179,7 @@ const StudyPlanItem = () => {
 						)}
 
 						{study_plan?.ongoing?.subjects.length === 0 ||
-						study_plan?.ongoing?.subjects === undefined ? (
+							study_plan?.ongoing?.subjects === undefined ? (
 							<>
 								<div className="alert alert-info">
 									Kamu belum memiliki KRS yang sedang berjalan.
@@ -220,7 +220,7 @@ const StudyPlanItem = () => {
 																{i + 1}. {subject.name}
 															</span>
 															<span className="btn-success-soft btn-sm px-2 btn-round me-0 user-select-auto my-1">
-																<i class="fa fa-check fa-fw me-0"></i>
+																<i className="fa fa-check fa-fw me-0"></i>
 															</span>
 														</li>
 													</>

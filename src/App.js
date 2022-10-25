@@ -68,6 +68,11 @@ import FormPenyaluranKerja from "./pages/penyaluran-kerja/FormPenyaluranKerja";
 import Analitik from "./pages/analitik/Analitik";
 import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 
+// Konsultasi & Layanan
+import HomeLayanan from "./pages/layanan-konsultasi/HomeLayanan";
+import BookingKonsultasi from "./pages/layanan-konsultasi/BookingKonsultasi";
+import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiForm";
+
 function App() {
 	return (
 		<>
@@ -257,8 +262,19 @@ function App() {
 						<Route path="/analitik-detail" element={<PrivateRoute />}>
 							<Route path="/analitik-detail" element={<AnalitikDetail />} />
 						</Route>
-
 						{/* END : Analitik*/}
+
+						{/* START : Konsultasi & Layanan */}
+						<Route path="/layanan-konsultasi" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi" element={<HomeLayanan />} />
+						</Route>
+						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
+							<Route path="/booking-konsultasi" element={<BookingKonsultasi />} />
+						</Route>
+						<Route path="/form-booking-konsultasi" element={<PrivateRoute />}>
+							<Route path="/form-booking-konsultasi" element={<BookingKonsultasiForm />} />
+						</Route>
+						{/* END : Konsultasi & Layanan*/}
 
 						{/* START : ERROR PAGE */}
 						<Route path="/*" element={<PageNotFound />} />
