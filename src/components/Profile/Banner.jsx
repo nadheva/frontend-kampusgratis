@@ -1,8 +1,28 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useState } from "react";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getAchievements, reset } from "../../features/profile/profileSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
+
 
 const Banner = () => {
+
+	// redux
 	const { user } = useSelector((state) => state.profile);
+
+	const dispatch = useDispatch();
+	const [achievements, setAchievements] = useState({});
+
+	useEffectOnce(() => {
+		dispatch(getAchievements());
+	});
+
+	useEffect(() => {
+		if (user?.achievements) setAchievements(user.achievements);
+
+	}, [user]);
 
 	return (
 		<section className="pt-0">
@@ -39,24 +59,22 @@ const Banner = () => {
 								</div>
 								<div className="col d-sm-flex justify-content-between align-items-center">
 									<div>
-										<h1 className="my-1 fs-4">{user.full_name}</h1>
+										<h1 className="my-1 fs-4">{user.full_name} </h1>
 										<ul className="list-inline mb-0">
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
-												<span className="h6">255</span>
-												<span className="text-body fw-light"> Points</span>
+												<span className="h6">{achievements.finished_subjects} </span>
+												<span className="text-body fw-light"> Matkul Terselesaikan</span>
 											</li>
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
-												<span className="h6">7</span>
+												<span className="h6">{achievements.subject_taken} </span>
 												<span className="text-body fw-light">
-													{" "}
-													Completed courses
+													Matkul Terdaftar
 												</span>
 											</li>
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
-												<span className="h6">52</span>
+												<span className="h6">{achievements.students_certificate} </span>
 												<span className="text-body fw-light">
-													{" "}
-													Completed lessons
+												Certificates
 												</span>
 											</li>
 										</ul>

@@ -11,7 +11,7 @@ const Counter = () => {
     const dispatch = useDispatch();
     const [achievements, setAchievements] = useState({});
 
-    const { user, isLoading, isError, isSuccess, message } = useSelector(
+    const { user } = useSelector(
         (state) => state.profile
     );
 
