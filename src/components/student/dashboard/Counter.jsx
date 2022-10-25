@@ -1,6 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getAchievements, reset } from "../../../features/profile/profileSlice";
+import useEffectOnce from "../../../helpers/useEffectOnce";
 
 const Counter = () => {
+
+    // redux
+    const dispatch = useDispatch();
+    const [achievements, setAchievements] = useState({});
+
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.profile
+    );
+
+    useEffectOnce(() => {
+        dispatch(getAchievements());
+    });
+
+    useEffect(() => {
+        if (user?.achievements) setAchievements(user.achievements);
+
+    }, [user]);
+
     return (
         <div className="row g-4 mb-4">
             <div className="col-md-4 col-xxl-4">
@@ -8,7 +31,7 @@ const Counter = () => {
                     <div className="d-flex justify-content-between align-items-center">
                         <div>
                             <h2 className="purecounter mb-0 fw-bold" data-purecounter-start="0"
-                                data-purecounter-end="1958" data-purecounter-delay="200">20</h2>
+                                data-purecounter-end="1958" data-purecounter-delay="200">{achievements.finished_subjects}                                    </h2>
                             <span className="mb-0 h6 fw-light">Matkul Terselesaikan</span>
                         </div>
 
@@ -23,7 +46,7 @@ const Counter = () => {
 
                         <div>
                             <h2 className="purecounter mb-0 fw-bold" data-purecounter-start="0"
-                                data-purecounter-end="1600" data-purecounter-delay="200">30</h2>
+                                data-purecounter-end="1600" data-purecounter-delay="200">{achievements.subject_taken}</h2>
                             <span className="mb-0 h6 fw-light">Matkul Terdaftar</span>
                         </div>
 
@@ -38,7 +61,7 @@ const Counter = () => {
 
                         <div>
                             <h2 className="purecounter mb-0 fw-bold" data-purecounter-start="0"
-                                data-purecounter-end="1235" data-purecounter-delay="200">40</h2>
+                                data-purecounter-end="1235" data-purecounter-delay="200">{achievements.students_certificate}</h2>
                             <span className="mb-0 h6 fw-light">Achieved Certificates</span>
                         </div>
 

@@ -23,6 +23,23 @@ const getMe = async () => {
 	return response.data;
 };
 
+const getAchievements = async () => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+
+	const response = await axios.get(API_URL + 'profile/achievements', config);
+
+	return response.data;
+}
+
+
 const updateProfile = async (body) => {
 	const auth = getAuth();
 	const token = await auth.currentUser.getIdToken();
@@ -46,6 +63,7 @@ const updateProfile = async (body) => {
 const profileService = {
 	getMe,
 	updateProfile,
+	getAchievements
 };
 
 export default profileService;
