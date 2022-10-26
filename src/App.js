@@ -76,6 +76,7 @@ import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
 import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
 import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
 import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
+import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 
 function App() {
 	return (
@@ -280,6 +281,9 @@ function App() {
 						</Route>
 						<Route path="/chat-konsultasi" element={<PrivateRoute />}>
 							<Route path="/chat-konsultasi" element={<ChatKonsultasi />} />
+						</Route>
+						<Route path="/pilih-dokument" element={<PrivateRoute />}>
+							<Route path="/pilih-dokument" element={<PilihDokument />} />
 						</Route>
 
 						<Route path="/booking-konsultasi" element={<PrivateRoute />}>

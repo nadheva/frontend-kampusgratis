@@ -78,34 +78,36 @@ const CardItem = () => {
                 </Link>
             </div>
             <div className="col-md-6 col-xl-4">
-                <div className="card bg-light shadow-hover h-100">
-                    <div className="card-header bg-light pb-0 border-0">
-                        <i className="bi bi-file-earmark-text fs-1 text-orange" />
-                        <h5 className="card-title mb-0 mt-2">Layanan Dokumen </h5>
+                <Link to="/pilih-dokument">
+                    <div className="card bg-light shadow-hover h-100">
+                        <div className="card-header bg-light pb-0 border-0">
+                            <i className="bi bi-file-earmark-text fs-1 text-orange" />
+                            <h5 className="card-title mb-0 mt-2">Layanan Dokumen </h5>
+                        </div>
+                        <div className="card-body">
+                            <ul className="nav flex-column">
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Unduh dokumen untuk pengajuan Jenjang Karir
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Konsentrasi Mata Kuliah
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Jenis Magang
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="card-body">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Unduh dokumen untuk pengajuan Jenjang Karir
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Konsentrasi Mata Kuliah
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Jenis Magang
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </Link>
             </div>
             <div className="col-md-6 col-xl-4">
                 <Link to="/pengajuan-dokument">
