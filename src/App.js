@@ -75,6 +75,7 @@ import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiF
 import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
 import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
 import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
+import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 
 function App() {
 	return (
@@ -277,15 +278,18 @@ function App() {
 						<Route path="/status-dokument" element={<PrivateRoute />}>
 							<Route path="/status-dokument" element={<StatusDokument />} />
 						</Route>
-
 						<Route path="/chat-konsultasi" element={<PrivateRoute />}>
 							<Route path="/chat-konsultasi" element={<ChatKonsultasi />} />
 						</Route>
+
 						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
 							<Route path="/booking-konsultasi" element={<BookingKonsultasi />} />
 						</Route>
 						<Route path="/form-booking-konsultasi" element={<PrivateRoute />}>
 							<Route path="/form-booking-konsultasi" element={<BookingKonsultasiForm />} />
+						</Route>
+						<Route path="/status-booking" element={<PrivateRoute />}>
+							<Route path="/status-booking" element={<StatusBooking />} />
 						</Route>
 						{/* END : Konsultasi & Layanan*/}
 
