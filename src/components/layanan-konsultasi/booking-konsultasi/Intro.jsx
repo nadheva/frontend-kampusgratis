@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Intro = () => {
     return (
@@ -39,6 +40,11 @@ const Intro = () => {
                             Mahasiswa bisa booking konsultasi online, lihat jadwal dan informasi
                             Anda dengan mudah bersama Kampus Gratis.
                         </p>
+                        <Link to="/status-booking" className="btn btn-lg btn-warning me-2 mb-4 mb-sm-0">
+                            View status booking
+                            <i className="bi bi-arrow-right ms-2" />
+                        </Link>
+
                     </div>
                     <div className="col-lg-3 col-xl-4 col-xxl-3">
                         <div className="row g-4 align-items-center me-n4">

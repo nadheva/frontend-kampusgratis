@@ -72,6 +72,11 @@ import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 import HomeLayanan from "./pages/layanan-konsultasi/HomeLayanan";
 import BookingKonsultasi from "./pages/layanan-konsultasi/BookingKonsultasi";
 import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiForm";
+import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
+import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
+import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
+import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
+import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 
 function App() {
 	return (
@@ -268,11 +273,27 @@ function App() {
 						<Route path="/layanan-konsultasi" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi" element={<HomeLayanan />} />
 						</Route>
+						<Route path="/pengajuan-dokument" element={<PrivateRoute />}>
+							<Route path="/pengajuan-dokument" element={<PengajuanDokument />} />
+						</Route>
+						<Route path="/status-dokument" element={<PrivateRoute />}>
+							<Route path="/status-dokument" element={<StatusDokument />} />
+						</Route>
+						<Route path="/chat-konsultasi" element={<PrivateRoute />}>
+							<Route path="/chat-konsultasi" element={<ChatKonsultasi />} />
+						</Route>
+						<Route path="/pilih-dokument" element={<PrivateRoute />}>
+							<Route path="/pilih-dokument" element={<PilihDokument />} />
+						</Route>
+
 						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
 							<Route path="/booking-konsultasi" element={<BookingKonsultasi />} />
 						</Route>
 						<Route path="/form-booking-konsultasi" element={<PrivateRoute />}>
 							<Route path="/form-booking-konsultasi" element={<BookingKonsultasiForm />} />
+						</Route>
+						<Route path="/status-booking" element={<PrivateRoute />}>
+							<Route path="/status-booking" element={<StatusBooking />} />
 						</Route>
 						{/* END : Konsultasi & Layanan*/}
 
