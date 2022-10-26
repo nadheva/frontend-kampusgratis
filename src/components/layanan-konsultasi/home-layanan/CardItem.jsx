@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CardItem = () => {
     return (
@@ -103,23 +104,25 @@ const CardItem = () => {
                 </div>
             </div>
             <div className="col-md-6 col-xl-4">
-                <div className="card bg-light shadow-hover h-100">
-                    <div className="card-header bg-light pb-0 border-0">
-                        <i className="bi bi-file-bar-graph fs-1 text-primary" />
-                        <h5 className="card-title mb-0 mt-2">Layanan Proses Dokument </h5>
+                <Link to="/pengajuan-dokument">
+                    <div className="card bg-light shadow-hover h-100">
+                        <div className="card-header bg-light pb-0 border-0">
+                            <i className="bi bi-file-bar-graph fs-1 text-primary" />
+                            <h5 className="card-title mb-0 mt-2">Layanan Proses Dokument </h5>
+                        </div>
+                        <div className="card-body">
+                            <ul className="nav flex-column">
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Ajukan dokumen yang sudah anda download agar dapat di proses
+                                        oleh pihak admin
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="card-body">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Ajukan dokumen yang sudah anda download agar dapat di proses
-                                    oleh pihak admin
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </Link>
             </div>
             <div className="col-md-6 col-xl-4">
                 <div className="card bg-light shadow-hover h-100">

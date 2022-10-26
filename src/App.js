@@ -72,6 +72,7 @@ import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 import HomeLayanan from "./pages/layanan-konsultasi/HomeLayanan";
 import BookingKonsultasi from "./pages/layanan-konsultasi/BookingKonsultasi";
 import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiForm";
+import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
 
 function App() {
 	return (
@@ -268,6 +269,10 @@ function App() {
 						<Route path="/layanan-konsultasi" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi" element={<HomeLayanan />} />
 						</Route>
+						<Route path="/pengajuan-dokument" element={<PrivateRoute />}>
+							<Route path="/pengajuan-dokument" element={<PengajuanDokument />} />
+						</Route>
+
 						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
 							<Route path="/booking-konsultasi" element={<BookingKonsultasi />} />
 						</Route>
