@@ -5,7 +5,7 @@ const CardItem = () => {
     return (
         <>
             <div className="col-md-6 col-xl-4">
-                <Link to="/booking-konsultasi">
+                <Link to="/chat-konsultasi">
                     <div className="card shadow-hover bg-light h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-person-workspace fs-1 text-success" />
@@ -39,41 +39,43 @@ const CardItem = () => {
                 </Link>
             </div>
             <div className="col-md-6 col-xl-4">
-                <div className="card shadow-hover bg-light h-100">
-                    <div className="card-header bg-light pb-0 border-0">
-                        <i className="bi bi-layers fs-1 text-warning" />
-                        <h5 className="card-title mb-0 mt-2">Konsultasi Akademik</h5>
+                <Link to="/booking-konsultasi">
+                    <div className="card shadow-hover bg-light h-100">
+                        <div className="card-header bg-light pb-0 border-0">
+                            <i className="bi bi-layers fs-1 text-warning" />
+                            <h5 className="card-title mb-0 mt-2">Konsultasi Akademik</h5>
+                        </div>
+                        <div className="card-body">
+                            <ul className="nav flex-column">
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Skripsi
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Magang
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        penugasan
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link d-flex" href=" ">
+                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                        Hal-hal terkait penilaian prestasi kampus atau kinerja di
+                                        kampus
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div className="card-body">
-                        <ul className="nav flex-column">
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Skripsi
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Magang
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    penugasan
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link d-flex" href=" ">
-                                    <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                    Hal-hal terkait penilaian prestasi kampus atau kinerja di
-                                    kampus
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                </Link>
             </div>
             <div className="col-md-6 col-xl-4">
                 <div className="card bg-light shadow-hover h-100">
