@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SertifikatItem = ({ sertifikat }) => {
     return (
@@ -10,14 +11,12 @@ const SertifikatItem = ({ sertifikat }) => {
                     </div>
                     <div className="ms-3">
                         <h5 className="mb-0">
-                            <a
-                                href=" "
+                            <Link
+                                to={`/certificates/${sertifikat.id}`}
                                 className="stretched-link"
-                                data-bs-toggle="modal"
-                                data-bs-target="#exampleModal"
                             >
                                 {sertifikat.title}
-                            </a>
+                            </Link>
                         </h5>
                     </div>
                 </div>

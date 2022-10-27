@@ -77,6 +77,7 @@ import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
 import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
 import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
+import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
 
 function App() {
 	return (
@@ -225,8 +226,11 @@ function App() {
 						<Route path="/nilai" element={<PrivateRoute />}>
 							<Route path="/nilai" element={<Nilai />} />
 						</Route>
-						<Route path="/sertifikat" element={<PrivateRoute />}>
-							<Route path="/sertifikat" element={<Sertifikat />} />
+						<Route path="/certificates" element={<PrivateRoute />}>
+							<Route path="/certificates" element={<Sertifikat />} />
+						</Route>
+						<Route path="/certificates/:id" element={<PrivateRoute />}>
+							<Route path="/certificates/:id" element={<ViewSertifikat />} />
 						</Route>
 						{/* END : NILAI & SERTIFIKAT */}
 

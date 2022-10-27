@@ -24,7 +24,12 @@ root.render(
 			></script>
 			<script
 				type="text/javascript"
-				src="/assets/js/functions.js"
+				src="assets/vendor/glightbox/js/glightbox.js"
+				defer
+			></script>
+			<script
+				type="text/javascript"
+				src="/assets/js/functions.js"	
 				defer
 			></script>
 		</Helmet>
