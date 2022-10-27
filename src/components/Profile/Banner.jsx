@@ -3,26 +3,30 @@ import { useState } from "react";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getAchievements, reset } from "../../features/profile/profileSlice";
+import { getAchievements } from "../../features/achievement/achievementSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
-
 
 const Banner = () => {
 
-	// redux
+	// redux 1
 	const { user } = useSelector((state) => state.profile);
 
+	// redux 2
 	const dispatch = useDispatch();
 	const [achievements, setAchievements] = useState({});
+
+	const { data, isLoading } = useSelector(
+		(state) => state.achievement
+	);
 
 	useEffectOnce(() => {
 		dispatch(getAchievements());
 	});
 
 	useEffect(() => {
-		if (user?.achievements) setAchievements(user.achievements);
+		if (data?.achievements) setAchievements(data.achievements);
 
-	}, [user]);
+	}, [data]);
 
 	return (
 		<section className="pt-0">
@@ -62,7 +66,7 @@ const Banner = () => {
 										<h1 className="my-1 fs-4">{user.full_name} </h1>
 										<ul className="list-inline mb-0">
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
-												<span className="h6">{achievements.finished_subjects} </span>
+												<span className="h6">{achievements.finished_subjects}</span>
 												<span className="text-body fw-light"> Matkul Terselesaikan</span>
 											</li>
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
@@ -74,7 +78,7 @@ const Banner = () => {
 											<li className="list-inline-item me-3 mb-1 mb-sm-0">
 												<span className="h6">{achievements.students_certificate} </span>
 												<span className="text-body fw-light">
-												Certificates
+													Certificates
 												</span>
 											</li>
 										</ul>

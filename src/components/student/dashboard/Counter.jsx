@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getAchievements, reset } from "../../../features/profile/profileSlice";
+import { getAchievements } from "../../../features/achievement/achievementSlice";
 import useEffectOnce from "../../../helpers/useEffectOnce";
 
 const Counter = () => {
@@ -11,8 +11,8 @@ const Counter = () => {
     const dispatch = useDispatch();
     const [achievements, setAchievements] = useState({});
 
-    const { user } = useSelector(
-        (state) => state.profile
+    const { data } = useSelector(
+        (state) => state.achievement
     );
 
     useEffectOnce(() => {
@@ -20,9 +20,9 @@ const Counter = () => {
     });
 
     useEffect(() => {
-        if (user?.achievements) setAchievements(user.achievements);
+        if (data?.achievements) setAchievements(data.achievements);
 
-    }, [user]);
+    }, [data]);
 
     return (
         <div className="row g-4 mb-4">
