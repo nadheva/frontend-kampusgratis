@@ -24,7 +24,7 @@ root.render(
 			></script>
 			<script
 				type="text/javascript"
-				src="assets/vendor/glightbox/js/glightbox.js"
+				src="/assets/vendor/glightbox/js/glightbox.js"
 				defer
 			></script>
 			<script
