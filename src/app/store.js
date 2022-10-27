@@ -12,6 +12,7 @@ import videoReducer from '../features/video/videoSlice';
 import dokumentReducer from '../features/dokument/dokumentSlice';
 import assignmentReducer from '../features/assignment/assignmentSlice';
 import myStudyReducer from '../features/my-study/myStudySlice';
+import achievementReducer from '../features/achievement/achievementSlice';
 
 export const store = configureStore({
   reducer: {
@@ -27,6 +28,7 @@ export const store = configureStore({
     video: videoReducer,
     dokument: dokumentReducer,
     assignment: assignmentReducer,
-    myStudy: myStudyReducer
+    myStudy: myStudyReducer,
+    achievement: achievementReducer
   }
 });
