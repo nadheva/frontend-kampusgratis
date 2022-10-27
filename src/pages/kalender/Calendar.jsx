@@ -4,8 +4,8 @@ import { DateTime } from "luxon";
 import Kalend, { CalendarView, OnEventDragFinish } from "kalend";
 import "kalend/dist/styles/index.css";
 
-import Header from "../default/Header";
-import Footer from "../default/Footer";
+import Header from "../../components/default/Header";
+import Footer from "../../components/default/Footer";
 
 const Calendar = (props) => {
 	const [demoEvents, setDemoEvents] = useState([]);

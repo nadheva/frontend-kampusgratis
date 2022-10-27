@@ -5,6 +5,7 @@ import administrationReducer from "../features/administration/administrationSlic
 import syllabusReducer from "../features/syllabus/syllabusSlice";
 import myStudyReducer from "../features/my-study/myStudySlice";
 import artikelReducer from "../features/artikel/artikelSlice";
+import achievementReducer from "../features/achievement/achievementSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
 		syllabus: syllabusReducer,
 		myStudy: myStudyReducer,
 		artikel: artikelReducer,
+		achievement: achievementReducer,
 	},
 });

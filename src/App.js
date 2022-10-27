@@ -11,7 +11,10 @@ import Register from "./pages/auth/Register";
 import Profile from "./pages/Profile";
 
 import Main from "./pages/landing-page/Main";
-import Dashboard from "./pages/Dashboard";
+// Students
+import StudentDashboard from "./pages/student/StudentDashboard";
+import MyCourse from "./pages/student/MyCourse";
+// import Dashboard from "./pages/Dashboard";
 import Categories from "./pages/landing-page/Categories";
 
 import MyStudy from "./pages/my-study/Main";
@@ -30,10 +33,28 @@ import DocumentDetail from "./pages/my-study/DocumentDetail";
 import Forum from "./pages/my-study/ForumBase";
 import ForumDiscussion from "./pages/my-study/ForumDiscussion";
 import QuizDetail from "./pages/my-study/QuizDetail";
+import Setting from "./pages/Setting";
 
 // Artikel
 import Artikel from "./pages/artikel/Artikel";
 import DetailArtikel from "./pages/artikel/DetailArtikel";
+
+import Calendar from "./pages/kalender/Calendar";
+
+// Acara kampus
+import AcaraKampus from "./pages/acara-kampus/AcaraKampus";
+import AcaraKampusDetail from "./pages/acara-kampus/AcaraKampusDetail";
+
+import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
+
+// Nilai & sertifikat
+import Nilai from "./pages/nilai-sertifikat/Nilai";
+import Sertifikat from "./pages/nilai-sertifikat/Sertifikat";
+
+// Penyaluran kerja
+import PenyaluranKerja from "./pages/penyaluran-kerja/PenyaluranKerja";
+import DetailPenyaluranKerja from "./pages/penyaluran-kerja/DetailPenyaluranKerja";
+import FormPenyaluranKerja from "./pages/penyaluran-kerja/FormPenyaluranKerja";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -48,9 +69,17 @@ function App() {
 
 						<Route path="/kategori" exact element={<Categories />} />
 
-						<Route path="/dashboard" exact element={<PrivateRoute redirect />}>
-							<Route path="/dashboard" exact element={<Dashboard />} />
+						{/* START : STUDENTS */}
+						<Route path="/dashboard" element={<PrivateRoute />}>
+							<Route path="/dashboard" element={<StudentDashboard />} />
 						</Route>
+						<Route path="/mycourse" element={<PrivateRoute />}>
+							<Route path="/mycourse" element={<MyCourse />} />
+						</Route>
+						<Route path="/settings" element={<PrivateRoute />}>
+							<Route path="/settings" element={<Setting />} />
+						</Route>
+						{/* END : STUDENTS */}
 
 						<Route
 							path="/administrasi"
@@ -187,6 +216,56 @@ function App() {
 						<Route path="/artikel" element={<Artikel />} />
 						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 						{/* END : SEKILAS ILMU/ARTIKEL */}
+
+						{/* START : KALENDER */}
+						<Route path="/calender" exact element={<PrivateRoute />}>
+							<Route path="/calender" exact element={<Calendar />} />
+						</Route>
+						{/* END : KALENDER */}
+
+						{/* START : Acara Kampus */}
+						<Route path="/acara-kampus" element={<PrivateRoute />}>
+							<Route path="/acara-kampus" element={<AcaraKampus />} />
+						</Route>
+						<Route path="/acara-kampus-detail" element={<PrivateRoute />}>
+							<Route
+								path="/acara-kampus-detail"
+								element={<AcaraKampusDetail />}
+							/>
+						</Route>
+						{/* END : Acara Kampus */}
+
+						{/* START : NILAI & SERTIFIKAT */}
+						<Route path="/nilai" element={<PrivateRoute />}>
+							<Route path="/nilai" element={<Nilai />} />
+						</Route>
+						<Route path="/certificates" element={<PrivateRoute />}>
+							<Route path="/certificates" element={<Sertifikat />} />
+						</Route>
+						<Route path="/certificates/:id" element={<PrivateRoute />}>
+							<Route path="/certificates/:id" element={<ViewSertifikat />} />
+						</Route>
+						{/* END : NILAI & SERTIFIKAT */}
+
+						{/* START : Penyaluran Kerja */}
+						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja" element={<PenyaluranKerja />} />
+						</Route>
+
+						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
+							<Route
+								path="/detail-penyaluran-kerja"
+								element={<DetailPenyaluranKerja />}
+							/>
+						</Route>
+
+						<Route path="/form-penyaluran-kerja" element={<PrivateRoute />}>
+							<Route
+								path="/form-penyaluran-kerja"
+								element={<FormPenyaluranKerja />}
+							/>
+						</Route>
+						{/* END : Penyaluran Kerja */}
 
 						<Route path="/*" element={<PageNotFound />} />
 					</Routes>
