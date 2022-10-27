@@ -4,8 +4,7 @@ import Banner from '../../components/Profile/Banner';
 import Sidebar from "../../components/Profile/Sidebar";
 import Header from "../default/Header";
 import Footer from "../default/Footer";
-import Modal from '../../components/nilai-sertifikat/sertifikat/Modal';
-import SertifikatList from '../../components/nilai-sertifikat/sertifikat/SertifikatList';
+import MainContent from '../../components/nilai-sertifikat/sertifikat/MainContent';
 
 
 const Sertifikat = () => {
@@ -22,13 +21,12 @@ const Sertifikat = () => {
                                 <div className="card-header bg-transparent border-bottom">
                                     <h3 className="mb-0">List Sertifikat</h3>
                                 </div>
-                                <SertifikatList />
+                                <MainContent />
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <Modal />
             <Footer />
         </>
     )

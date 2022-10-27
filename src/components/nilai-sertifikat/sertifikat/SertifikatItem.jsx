@@ -7,7 +7,7 @@ const SertifikatItem = ({ sertifikat }) => {
             <div className="card card-body shadow rounded-3">
                 <div className="d-flex align-items-center">
                     <div className="icon-lg bg-blue bg-opacity-10 rounded-circle text-blue">
-                        <i className="fas fa-file-pdf" />
+                        <i className="fas fa-certificate"></i>
                     </div>
                     <div className="ms-3">
                         <h5 className="mb-0">
