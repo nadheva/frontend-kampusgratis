@@ -9,7 +9,7 @@ const Intro = () => {
                         <div
                             className="card card-body shadow p-2 h-200px h-sm-400px position-relative overflow-hidden"
                             style={{
-                                backgroundImage: "url(assets/images/about/28.jpg)",
+                                backgroundImage: "url(/assets/images/about/28.jpg)",
                                 backgroundPosition: "center left",
                                 backgroundSize: "cover"
                             }}

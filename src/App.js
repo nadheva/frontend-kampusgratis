@@ -238,9 +238,9 @@ function App() {
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
-						<Route path="/acara-kampus-detail" element={<PrivateRoute />}>
+						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
 							<Route
-								path="/acara-kampus-detail"
+								path="/acara-kampus/:id"
 								element={<AcaraKampusDetail />}
 							/>
 						</Route>
