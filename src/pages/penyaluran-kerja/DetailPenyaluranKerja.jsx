@@ -4,8 +4,8 @@ import Intro from "../../components/penyaluran-kerja/detail-penyaluran-kerja/Int
 import Detail from "../../components/penyaluran-kerja/detail-penyaluran-kerja/Detail";
 import Maps from "../../components/penyaluran-kerja/detail-penyaluran-kerja/Maps";
 
-import Header from "../default/Header";
-import Footer from "../default/Footer";
+import Header from "../../components/default/Header";
+import Footer from "../../components/default/Footer";
 
 const DetailPenyaluranKerja = () => {
 	return (

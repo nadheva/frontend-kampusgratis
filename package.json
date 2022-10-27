@@ -1,15 +1,16 @@
 {
-	"name": "frontend-kampusgratis-aryo",
-	"proxy": "http://localhost:5000/",
+	"name": "frontend-kampusgratis",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@faker-js/faker": "^7.6.0",
 		"@reduxjs/toolkit": "^1.8.5",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
 		"axios": "^0.27.2",
 		"firebase": "^9.9.4",
+		"kalend": "^0.16.3",
 		"moment": "^2.29.4",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
