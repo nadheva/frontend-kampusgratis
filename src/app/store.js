@@ -13,6 +13,7 @@ import dokumentReducer from '../features/dokument/dokumentSlice';
 import assignmentReducer from '../features/assignment/assignmentSlice';
 import myStudyReducer from '../features/my-study/myStudySlice';
 import achievementReducer from '../features/achievement/achievementSlice';
+import certificateReducer from '../features/sertifikat/certificateSlice';
 
 export const store = configureStore({
   reducer: {
@@ -29,6 +30,7 @@ export const store = configureStore({
     dokument: dokumentReducer,
     assignment: assignmentReducer,
     myStudy: myStudyReducer,
-    achievement: achievementReducer
+    achievement: achievementReducer,
+    certificate: certificateReducer
   }
 });
