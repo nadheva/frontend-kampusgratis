@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const SertifikatItem = ({ sertifikat }) => {
+const SertifikatItem = ({ data }) => {
     return (
         <div className="col-sm-12 col-lg-12 col-xl-12">
             <div className="card card-body shadow rounded-3">
@@ -12,10 +12,10 @@ const SertifikatItem = ({ sertifikat }) => {
                     <div className="ms-3">
                         <h5 className="mb-0">
                             <Link
-                                to={`/certificates/${sertifikat.id}`}
+                                to={`/certificates/${data.id_certificate}`}
                                 className="stretched-link"
                             >
-                                {sertifikat.title}
+                                {data.subject.name}
                             </Link>
                         </h5>
                     </div>

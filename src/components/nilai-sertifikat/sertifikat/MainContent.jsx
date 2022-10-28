@@ -1,7 +1,7 @@
 import React from 'react'
 import SertifikatList from './SertifikatList'
 
-const MainContent = () => {
+const MainContent = ({ data, isLoading }) => {
     return (
         <div className="card-body">
             <div className="row mb-4 align-items-center">
@@ -14,7 +14,10 @@ const MainContent = () => {
                     </form>
                 </div>
             </div>
-            <SertifikatList />
+            <SertifikatList
+                data={data}
+                isLoading={isLoading}
+            />
         </div>
     )
 }
