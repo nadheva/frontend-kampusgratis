@@ -142,7 +142,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
               <div className="d-flex mb-4 mt-4" data-comment-id={comment.id}>
                 <div className="avatar avatar-sm flex-shrink-0 me-2">
                   <a href="#">
-                    <img className="avatar-img rounded-circle" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.full_name} />
+                    <img className="avatar-img rounded-circle" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
                   </a>
                 </div>
                 <form className="w-100 d-flex">

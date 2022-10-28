@@ -180,7 +180,7 @@ const ForumDiscussion = () => {
                       <div class="d-flex mb-4">
                         <div class="avatar avatar-sm flex-shrink-0 me-2">
                           <a href="#">
-                            <img class="avatar-img rounded-circle" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.full_name} />
+                            <img class="avatar-img rounded-circle" src={user?.display_picture_link != null ? `${user?.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
                           </a>
                         </div>
                         <form class="w-100 d-flex">

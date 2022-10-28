@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
-import { finishModule, getModuleBySession, getSingleModule, getSubject, resetAll } from '../../features/my-study/myStudySlice';
+import { finishModule, getModuleBySession, getSingleModule, getSubject, reset, resetAll } from '../../features/my-study/myStudySlice';
 
 import Footer from '../../components/default/Footer';
 import Header from '../../components/default/Header';
@@ -10,6 +10,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 import useEffectOnce from '../../helpers/useEffectOnce';
+import { toast } from 'react-toastify';
 
 const ModuleDetail = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const ModuleDetail = () => {
 
   const { subjectId, sessionId, moduleId } = useParams();
 
-  const { data, isLoading } = useSelector(
+  const { data, isLoading, isSuccess } = useSelector(
     (state) => state.myStudy
   );
 
@@ -35,13 +36,30 @@ const ModuleDetail = () => {
     fetchAll();
   });
 
-  const submitFinishModule = moduleId => {
-    dispatch(finishModule({ moduleId, textDoneModule }));
+  const submitFinishModule = (e) => {
+    e.preventDefault();
+    dispatch(finishModule({ moduleId: moduleId, textDoneModule }));
   }
 
   useEffect(() => {
+    if (data?.module_submit && isSuccess) {
+      setCurrentModule({
+        ...currentModule,
+        takeaway: data.module_submit.activity_detail.takeaway,
+        date_submitted: data.module_submit.activity_detail.date_submitted
+      });
+
+      setTextDoneModule(data.module_submit.activity_detail.takeaway);
+      dispatch(resetAll());
+      toast.info("Modul ini telah kamu selesaikan dan materi telah dikirim ke mentor kamu.");
+    }
+
     if (data?.subject) setCurrentSubject(data.subject);
     if (data?.module) setCurrentModule(data.module);
+    if (data?.module?.takeaway) {
+      setTextDoneModule(data.module.takeaway);
+      dispatch(resetAll());
+    }
   }, [data, currentSubject, currentModule, textDoneModule]);
 
   return <>
@@ -133,6 +151,11 @@ const ModuleDetail = () => {
                   <div className="card-body py-4">
                     <div className="col-12">
                       <h5 className="mb-4">List Vidio</h5>
+                      {currentModule.videos.length === 0 && <>
+                        <div className="alert alert-info">
+                          Sepertinya belum ada vidio yang ditambahkan pada modul ini.
+                        </div>
+                      </>}
                       {currentModule.videos.map(video => <>
                         <div className="d-sm-flex justify-content-sm-between align-items-center">
                           <div className="d-flex">
@@ -152,6 +175,11 @@ const ModuleDetail = () => {
                     </div>
                     <div className="col-12">
                       <h5 className="mb-4">List Dokumen</h5>
+                      {currentModule.documents.length === 0 && <>
+                        <div className="alert alert-info">
+                          Sepertinya belum ada dokumen yang ditambahkan pada modul ini.
+                        </div>
+                      </>}
                       {currentModule.documents.map(document => <>
                         <div className="d-sm-flex justify-content-sm-between align-items-center">
                           <div className="d-flex">
@@ -169,11 +197,22 @@ const ModuleDetail = () => {
                         <hr />
                       </>)}
                     </div>
-                    <div className="col-12 text-end">
-                      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule("")}>
-                        <i className="fas fa-check-circle me-2"></i> Selesai Modul
-                      </button>
-                    </div>
+                    {currentModule.documents.length !== 1 && currentModule.videos.length !== 1 && <>
+                      {!currentModule?.date_submitted ? <>
+                        <div className="col-12 text-end">
+                          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule("")}>
+                            <i className="fas fa-check-circle me-1"></i> Selesaikan Modul
+                          </button>
+                        </div>
+                      </> : <>
+                        <div className="col-12 text-end">
+                          <span className='badge bg-dark me-3'>Terakhir dikirim pada {new Date(currentModule.date_submitted.replace(' ', 'T')).toLocaleString('en-US')}</span>
+                          <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule(textDoneModule)}>
+                            <i className="fas fa-edit me-1"></i> Selesaikan Modul
+                          </button>
+                        </div>
+                      </>}
+                    </>}
                   </div>
                 </div>
               </>)}
@@ -186,24 +225,26 @@ const ModuleDetail = () => {
     <div className="modal fade" id="doneModule" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex={"-1"} aria-labelledby="doneModuleLabel" aria-hidden="true">
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
-          <div className="modal-header bg-dark">
-            <h5 className="modal-title text-white fs-5" id="doneModuleLabel">Apa pelajaran yang kamu dapat dari modul ini?</h5>
-            <button type="button" className="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close">
-              <i className="bi bi-x-lg"></i>
-            </button>
-          </div>
-          <div className="modal-body">
-            <div className="row">
-              <div className="col-12">
-                <textarea className="form-control" rows="3" placeholder='Tulis materi yang kamu dapat di sini ...' value={textDoneModule} onChange={(e) => setTextDoneModule(e.target.value)} />
-                <div className="form-text">Materi kamu akan di-review oleh dosen atau pembimbing kamu. Pastikan kamu mengisi dengan sesuai!</div>
-              </div>``
+          <form onSubmit={submitFinishModule}>
+            <div className="modal-header bg-dark">
+              <h5 className="modal-title text-white fs-5" id="doneModuleLabel">Apa pelajaran yang kamu dapat dari modul ini?</h5>
+              <button type="button" className="btn btn-sm btn-light mb-0" data-bs-dismiss="modal" aria-label="Close">
+                <i className="bi bi-x-lg"></i>
+              </button>
             </div>
-          </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-danger-soft my-0" data-bs-dismiss="modal">Batal</button>
-            <button type="button" className="btn btn-success my-0" onClick={() => submitFinishModule(moduleId)}>Kirim</button>
-          </div>
+            <div className="modal-body">
+              <div className="row">
+                <div className="col-12">
+                  <textarea className="form-control" rows="3" placeholder='Tulis materi yang kamu dapat di sini ...' value={textDoneModule} onChange={(e) => setTextDoneModule(e.target.value)} />
+                  <div className="form-text">Materi kamu akan di-review oleh dosen atau pembimbing kamu. Pastikan kamu mengisi dengan sesuai!</div>
+                </div>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-danger-soft my-0" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" className="btn btn-success my-0" data-bs-dismiss="modal">Kirim</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

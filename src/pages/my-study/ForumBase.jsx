@@ -43,7 +43,7 @@ const ForumBase = () => {
   return <>
     <Header />
     <main>
-      {isLoading && !isPageLoad ? <>
+      {isLoading || !isPageLoad || !currentSubject ? <>
         <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
           <div className='container'>
             <div className='row'>
@@ -103,47 +103,48 @@ const ForumBase = () => {
                 <div className="card-body py-4">
                   <div className="col-12">
                     <h4 className="mb-4">Daftar Diskusi</h4>
-                    {currentDiscussions.length === 0 && <>
+                    {currentDiscussions.length === 0 ? <>
                       <div className="alert alert-info mt-4">
                         Belum ada diskusi yang telah dibuat. Silahkan buka lagi dilain waktu.
                       </div>
-                    </>}
-                    <div className="card-body p-0 pt-3">
-                      <div className="vstack gap-3 mb-2"></div>
-                      {currentDiscussions.map(discussion => <>
-                        <div className="card shadow h-100 mb-4">
-                          <div className="card-body p-3">
-                            <div className="d-sm-flex justify-content-sm-between mb-3">
-                              <div className="d-flex align-items-center">
-                                <div className="avatar avatar-sm flex-shrink-0">
-                                  <img
-                                    className="avatar-img rounded-circle"
-                                    src={discussion.User.display_picture_link}
-                                    alt={discussion.User.full_name}
-                                  />
-                                </div>
-                                <div className="ms-2">
-                                  <h6 className="mb-0">
-                                    <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${discussion.id}`}>
-                                      {discussion.User.full_name}
-                                    </Link>
-                                  </h6>
-                                  <small>
-                                    {currentSubject.name} - {discussion.created_at.split("T")[0].split("-").reverse().join("/")} - {discussion.created_at.split("T")[1].split(".")[0]}
-                                  </small>
+                    </> : <>
+                      <div className="card-body p-0 pt-3">
+                        <div className="vstack gap-3 mb-2"></div>
+                        {currentDiscussions.map(discussion => <>
+                          <div className="card shadow h-100 mb-4">
+                            <div className="card-body p-3">
+                              <div className="d-sm-flex justify-content-sm-between mb-3">
+                                <div className="d-flex align-items-center">
+                                  <div className="avatar avatar-sm flex-shrink-0">
+                                    <img
+                                      className="avatar-img rounded-circle"
+                                      src={discussion.User.display_picture_link}
+                                      alt={discussion.User.full_name}
+                                    />
+                                  </div>
+                                  <div className="ms-2">
+                                    <h6 className="mb-0">
+                                      <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${discussion.id}`}>
+                                        {discussion.User.full_name}
+                                      </Link>
+                                    </h6>
+                                    <small>
+                                      {currentSubject.name} - {discussion.created_at.split("T")[0].split("-").reverse().join("/")} - {discussion.created_at.split("T")[1].split(".")[0]}
+                                    </small>
+                                  </div>
                                 </div>
                               </div>
+                              <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${discussion.id}`}>
+                                <h5>{discussion.title}</h5>
+                              </Link>
+                              <p className="mb-2">
+                                {discussion.content}
+                              </p>
                             </div>
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${discussion.id}`}>
-                              <h5>{discussion.title}</h5>
-                            </Link>
-                            <p className="mb-2">
-                              {discussion.content}
-                            </p>
                           </div>
-                        </div>
-                      </>)}
-                    </div>
+                        </>)}
+                      </div>
+                    </>}
                   </div>
                 </div>
               </div>

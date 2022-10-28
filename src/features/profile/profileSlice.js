@@ -2,7 +2,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import profileService from "./profileService";
 import { extartErrorFirebase, extractErrorMessage } from "../../utils";
 
-const user = JSON.parse(localStorage.getItem("user"));
+let user;
+
+try {
+	user = localStorage.getItem("user");
+	if (user) user = JSON.parse(user);
+} catch (error) {
+	user = null;
+}
 
 const initialState = {
 	user: user ? user : null,

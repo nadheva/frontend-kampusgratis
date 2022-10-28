@@ -35,9 +35,10 @@ const Subject = () => {
 
   useEffect(() => {
     if (data?.subject) setCurrentSubject(data.subject);
-    if (message === 'Subject ID not found' || !subjectId || subjectId.length !== 36) return <PageNotFound />
     if (data?.sessions) setSessions(data.sessions);
-  }, [data]);
+  }, [data, message]);
+
+  if (message === 'Subject ID not found' || !subjectId || message === "Invalid Subject ID." || subjectId.length !== 36) return <PageNotFound />
 
   return <>
     <Header />

@@ -32,6 +32,11 @@ root.render(
 				src="/assets/js/functions.js"
 				defer
 			></script>
+			<script
+				type="text/javascript"
+				src="/assets/vendor/stepper/js/bs-stepper.min.js"
+				defer
+			></script>
 		</Helmet>
 	</Provider>
 );

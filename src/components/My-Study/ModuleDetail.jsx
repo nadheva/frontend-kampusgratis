@@ -19,11 +19,19 @@ const ModuleDetail = ({ module, count }) => {
                 <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${module.id}`}>Modul {count + 1}</Link>
               </h5>
             </div>
-            <a href=" " className="p-2 mb-0 text-success"
-              data-bs-toggle="tooltip" data-bs-placement="top"
-              title="Completed">
-              <i className="bi bi-check-circle-fill"></i>
-            </a>
+            {module.status === "FINISHED" ? <>
+              <span className="p-2 mb-0 text-success"
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Telah diselesaikan">
+                <i className="bi bi-check-circle-fill"></i>
+              </span>
+            </> : <>
+              <span className="p-2 mb-0 text-secondary"
+                data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Belum diselesaikan">
+                <i className="bi bi-check-circle-fill"></i>
+              </span>
+            </>}
           </div>
           <p className="text-truncate-2 mb-3">
             {module.description}

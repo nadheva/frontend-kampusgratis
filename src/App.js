@@ -32,6 +32,7 @@ import VideoDetail from "./pages/my-study/VideoDetail";
 import DocumentDetail from "./pages/my-study/DocumentDetail";
 import Forum from "./pages/my-study/ForumBase";
 import ForumDiscussion from "./pages/my-study/ForumDiscussion";
+import QuizStart from "./pages/my-study/QuizStart";
 import QuizDetail from "./pages/my-study/QuizDetail";
 import Setting from "./pages/Setting";
 
@@ -210,6 +211,30 @@ function App() {
 
 						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
 							<Route path="/silabus" exact element={<Silabus />} />
+						</Route>
+
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
+								exact
+								element={<QuizStart />}
+							/>
+						</Route>
+
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
+								exact
+								element={<QuizDetail />}
+							/>
 						</Route>
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
