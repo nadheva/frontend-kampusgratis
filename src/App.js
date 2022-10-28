@@ -195,18 +195,6 @@ function App() {
 						</Route>
 
 						<Route
-							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
-							exact
-							element={<PrivateRoute redirect />}
-						>
-							<Route
-								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
-								exact
-								element={<QuizDetail />}
-							/>
-						</Route>
-
-						<Route
 							path="/studi-ku/:subjectId"
 							exact
 							element={<PrivateRoute redirect />}
