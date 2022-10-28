@@ -26,7 +26,7 @@ const ViewSertifikat = () => {
 									<div className="card-img-overlay">
 										<div className="position-absolute top-50 start-50 translate-middle">
 											<a
-												href="https://firebasestorage.googleapis.com/v0/b/kampus-gratis2.appspot.com/o/documents%2Fassignments%2F05e5d1cc-e96c-4cbf-90d9-7431dbe135fc-video.pdf?alt=media&token=99625832-6ffd-4d16-a3e4-614a6b0fb0f4z"
+												href="https://firebasestorage.googleapis.com/v0/b/kampus-gratis2.appspot.com/o/documents%2Fcertificate%2FK739FJY2G5LQ-aryo%20bhodro-certificat.pdf?alt=media&token=489f09ab-5454-483f-8efb-ceb06eb34e68z"
 												className="btn btn-lg text-info btn-round btn-white-shadow mb-0"
 												data-glightbox=""
 												data-gallery="video-tour"
