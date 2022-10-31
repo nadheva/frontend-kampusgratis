@@ -41,8 +41,6 @@ const Assignment = () => {
 		if (data?.assigments) setAssigments(data.assigments);
 	}, [data]);
 
-
-	console.log(assigments)
 	return (
 		<>
 			<Header />

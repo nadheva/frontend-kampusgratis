@@ -15,12 +15,10 @@ const Instruction = ({ assigments, isLoading }) => {
                     </div>
                 ) : assigments == undefined || assigments.length == 0 ? (
                     <>
-                        <h4>Tugas </h4>
-                        <hr />
                     </>
                 ) : (
                     <>
-                        <h4>Tugas {assigments.assignment.content}</h4>
+                        <h4> {assigments.assignment.content}</h4>
                         <hr />
                         <p>
                             {assigments.assignment.description}
@@ -34,7 +32,7 @@ const Instruction = ({ assigments, isLoading }) => {
                                         <div className="fs-4">
                                             <i className="bi bi-file-earmark-pdf" />
                                         </div>
-                                        {/* <span className="fs-6 mb-0">Tugas 5 pdf</span> */}
+                                        <span className="fs-6 mb-0">{assigments.assignment.file_assignment}</span>
                                     </a>
                                 </div>
                             )

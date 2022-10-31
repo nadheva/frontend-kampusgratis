@@ -1,3 +1,4 @@
+import moment from 'moment/moment';
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -31,6 +32,7 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Due date </th>
                                     <td>-</td>
+                                    {/* <td>Assignment is overdue by: 270 days 10 hours</td> */}
                                 </tr>
                                 {/* <tr>
                                     <th>Time remaining </th>
@@ -77,41 +79,31 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 </tr>
                                 <tr>
                                     <th>Due date </th>
-                                    <td>-</td>
+                                    <td>
+                                        {assigments.assignment.deadline}
+                                    </td>
                                 </tr>
-                                {/* <tr>
+                                <tr>
                                     <th>Time remaining </th>
                                     <td>
-                                        Assignment is overdue by: 270 days 10 hours
+                                        {assigments.assignment.duration}
                                     </td>
-                                </tr> */}
+                                </tr>
                                 <tr>
                                     <th>Last modified </th>
-                                    <td>-</td>
-                                    {/* {
-                                        assigments.students_work.activity_detail.date_submit == null || assigments.students_work.activity_detail.date_submit == undefined ? (
-                                            <td>-</td>
-                                        ) : (
-                                            <td >
-                                                {assigments.students_work.activity_detail.date_submit}
-                                            </td>
-                                        )
-                                    } */}
+                                    <td >
+                                        {assigments?.students_work?.activity_detail?.date_submit ?? '-'}
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>File submissions </th>
-                                    <td>-</td>
-                                    {/* {
-                                        assigments.students_work.activity_detail.file_assignment == 0 || assigments.students_work.activity_detail.file_assignment == null ? (
-                                            <td>-</td>
-                                        ) : (
-                                            <td >
-                                                <p className="bg-light">
-                                                    {assigments.students_work.activity_detail.file_assignment}
-                                                </p>
-                                            </td>
-                                        )
-                                    } */}
+                                    <td>
+                                        {
+                                            <p className="bg-light">
+                                                {assigments?.students_work?.activity_detail?.file_assignment ?? '-'}
+                                            </p>
+                                        }
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
