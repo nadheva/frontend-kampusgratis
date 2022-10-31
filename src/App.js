@@ -35,7 +35,6 @@ import ForumDiscussion from "./pages/my-study/ForumDiscussion";
 import QuizStart from "./pages/my-study/QuizStart";
 import QuizDetail from "./pages/my-study/QuizDetail";
 import Setting from "./pages/Setting";
-
 // Artikel
 import Artikel from "./pages/artikel/Artikel";
 import DetailArtikel from "./pages/artikel/DetailArtikel";
@@ -69,6 +68,7 @@ import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
 import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
+import Assignment from "./pages/my-study/Assignment";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -235,6 +235,16 @@ function App() {
 								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
 								exact
 								element={<QuizDetail />}
+							/>
+						</Route>
+
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
+								element={<Assignment />}
 							/>
 						</Route>
 
