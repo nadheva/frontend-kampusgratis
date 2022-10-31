@@ -25,11 +25,11 @@ const Assignment = () => {
 	// Get id
 	const { sessionId } = useParams();
 
-	// Redux
+	// // Redux
 	const dispatch = useDispatch();
 	const [assigments, setAssigments] = useState();
 
-	const { data, isLoading, isError, isSuccess, message } = useSelector(
+	const { data, isLoading } = useSelector(
 		(state) => state.assignment
 	);
 
@@ -41,6 +41,8 @@ const Assignment = () => {
 		if (data?.assigments) setAssigments(data.assigments);
 	}, [data]);
 
+
+	console.log(assigments)
 	return (
 		<>
 			<Header />

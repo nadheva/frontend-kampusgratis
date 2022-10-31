@@ -40,6 +40,7 @@ const Subject = () => {
 
   if (message === 'Subject ID not found' || !subjectId || message === "Invalid Subject ID." || subjectId.length !== 36) return <PageNotFound />
 
+  console.log(sessions)
   return <>
     <Header />
     <main>
