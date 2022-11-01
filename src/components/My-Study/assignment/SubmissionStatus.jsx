@@ -1,4 +1,3 @@
-import moment from 'moment/moment';
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -99,7 +98,9 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                     <td>
                                         {
                                             <p className={assigments?.students_work?.activity_detail?.file_assignment ? "bg-light" : ""}>
-                                                {assigments?.students_work?.activity_detail?.file_assignment ?? '-'}
+                                                <a href={assigments?.students_work?.activity_detail?.file_assignment_link} target="_blank">
+                                                    {assigments?.students_work?.activity_detail?.file_assignment ?? '-'}
+                                                </a>
                                             </p>
                                         }
                                     </td>
