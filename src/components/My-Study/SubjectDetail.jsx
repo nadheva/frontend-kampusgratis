@@ -178,9 +178,10 @@ const SubjectDetail = ({ subject, sessions }) => {
 																			>
 																				<i className="fas fa-fw fa-file-signature fs-5"></i>
 																			</a>
+																			{/* TODO: Kalo rubah ini rubah juga di APP.js nya juga */}
 																			<div className="ms-3">
 																				<Link
-																					to={`/studi-ku/${subject.id}/penugasan/${session.id}`}
+																					to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
 																					className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"
 																				>
 																					Penugasan
@@ -189,7 +190,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 																		</div>
 																	</div>
 																	<Link
-																		to={`/studi-ku/${subject.id}/penugasan/${session.id}`}
+																		to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
 																		className="p-2 mb-0 text-secondary"
 																		data-bs-toggle="tooltip"
 																		data-bs-placement="top"
