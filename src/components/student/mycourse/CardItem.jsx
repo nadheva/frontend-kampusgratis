@@ -12,7 +12,7 @@ const CardItem = ({ lecturers, subject, student, progress }) => {
 						<p className="badge bg-purple bg-opacity-10 text-purple">{progress}%</p>
 					</div>
 					<h5 className="card-title">
-						<Link to={`/studi-ku/pertemuan/${subject.subject_id}`}>{subject.Subject.name}</Link>
+						<Link to={`/studi-ku/${subject.subject_id}`}>{subject.Subject.name}</Link>
 					</h5>
 					<p className="mb-2 text-truncate-2">
 						<b>Dosen : </b>

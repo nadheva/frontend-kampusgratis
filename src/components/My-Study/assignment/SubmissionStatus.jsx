@@ -32,12 +32,11 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Due date </th>
                                     <td>-</td>
-                                    {/* <td>Assignment is overdue by: 270 days 10 hours</td> */}
                                 </tr>
-                                {/* <tr>
+                                <tr>
                                     <th>Time remaining </th>
                                     <td>-</td>
-                                </tr> */}
+                                </tr>
                                 <tr>
                                     <th>Last modified </th>
                                     <td>-</td>
@@ -59,7 +58,7 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                         assigments.students_work.status == 0 || assigments.students_work.status == null ? (
                                             <td>Not graded</td>
                                         ) : (
-                                            <td className="table-success">
+                                            <td className={assigments?.students_work?.status === "LATE" ? "table-danger" : ""}>
                                                 {assigments.students_work.status}
                                             </td>
                                         )
@@ -80,13 +79,13 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Due date </th>
                                     <td>
-                                        {assigments.assignment.deadline}
+                                        {assigments?.assignment?.deadline ?? '-'}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Time remaining </th>
                                     <td>
-                                        {assigments.assignment.duration}
+                                        {assigments?.assignment?.duration ?? '-'}
                                     </td>
                                 </tr>
                                 <tr>
@@ -99,7 +98,7 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                     <th>File submissions </th>
                                     <td>
                                         {
-                                            <p className="bg-light">
+                                            <p className={assigments?.students_work?.activity_detail?.file_assignment ? "bg-light" : ""}>
                                                 {assigments?.students_work?.activity_detail?.file_assignment ?? '-'}
                                             </p>
                                         }

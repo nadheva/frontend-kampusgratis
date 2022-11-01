@@ -56,7 +56,8 @@ const Assignment = () => {
 										assigments={assigments}
 										isLoading={isLoading}
 									/>
-									<SubmissionUpload />
+									<SubmissionUpload
+										assigments={assigments} />
 								</div>
 							</div>
 						</div>

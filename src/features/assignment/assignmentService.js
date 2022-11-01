@@ -37,8 +37,27 @@ const sendAssignment = async (sessionId, assignment) => {
   return response.data;
 }
 
+const updateAssignment = async (sessionId, assignment) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.put(API_URL + `assignment/edit/${sessionId}`, {
+    file_assignment: assignment
+  }, config);
+
+  return response.data;
+}
+
+
 const assignmentService = {
-  getAssignment, sendAssignment
+  getAssignment, sendAssignment, updateAssignment
 }
 
 export default assignmentService;

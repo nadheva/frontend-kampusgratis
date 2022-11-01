@@ -27,8 +27,22 @@ export const submitAssignment = createAsyncThunk(
   'assignment/submit/',
   async ({ sessionId, assignment }, thunkAPI) => {
     try {
-      console.log(sessionId, assignment);
+
       const { data } = await assignmentService.sendAssignment(sessionId, assignment);
+      return data;
+
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+    }
+  }
+)
+
+export const updateAssignment = createAsyncThunk(
+  'assignment/edit/',
+  async ({ sessionId, assignment }, thunkAPI) => {
+    try {
+
+      const { data } = await assignmentService.updateAssignment(sessionId, assignment);
       return data;
 
     } catch (error) {
@@ -80,6 +94,20 @@ export const assignmentSlice = createSlice({
         state.data.assigment = action.payload;
       })
       .addCase(submitAssignment.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateAssignment.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateAssignment.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.assigment2 = action.payload;
+      })
+      .addCase(updateAssignment.rejected, (state, action) => {
         state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;

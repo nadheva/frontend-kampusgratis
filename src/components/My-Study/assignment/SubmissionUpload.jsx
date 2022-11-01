@@ -6,15 +6,15 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import PageNotFound from "../../../components/default/PageNotFound";
-import { submitAssignment } from "../../../features/assignment/assignmentSlice";
+import { submitAssignment, updateAssignment } from "../../../features/assignment/assignmentSlice";
 
-const SubmissionUpload = () => {
+const SubmissionUpload = ({ assigments }) => {
+
 	const dispatch = useDispatch();
 	const { sessionId } = useParams();
-
 	const [assignment, setAssignment] = useState({});
-
 	const { message } = useSelector((state) => state.assignment);
+
 	const onChangeAssignment = (e) => {
 		if (e.target.files[0]) {
 			setAssignment(e.target.files[0]);
@@ -26,7 +26,15 @@ const SubmissionUpload = () => {
 		e.preventDefault();
 
 		if (!assignment.length === 0) toast.error("File masih kosong.");
-		dispatch(submitAssignment({ sessionId, assignment }));
+
+		if (assigments?.students_work?.activity_detail) {
+			dispatch(updateAssignment({ sessionId, assignment }))
+			toast.success("Sukses Update")
+		}
+		else {
+			dispatch(submitAssignment({ sessionId, assignment }))
+			toast.success("Sukses Upload")
+		}
 	};
 
 	useEffect(() => {
@@ -44,10 +52,7 @@ const SubmissionUpload = () => {
 					/>
 					<div>
 						<h6 className="my-2">
-							Upload tugas disini
-							<a href="#!" className="text-primary">
-								Browse
-							</a>
+							Upload tugas disini <a href="#!" className="text-primary"> Browse </a>
 						</h6>
 						<label style={{ cursor: "pointer" }}>
 							<span>
@@ -66,7 +71,9 @@ const SubmissionUpload = () => {
 					</div>
 				</div>
 				<button type="submit" className="btn btn-primary mt-4">
-					Kirim Tugas
+					{
+						assigments?.students_work?.activity_detail ? 'Update Tugas' : 'Kirim Tugas'
+					}
 				</button>
 			</form>
 		</div>

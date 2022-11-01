@@ -15,7 +15,7 @@ const CourseItem = ({ subject, progress }) => {
                     </div>
                     <div className="mb-0 ms-2 flex-fill">
                         <h6>
-                            <Link to={`/studi-ku/pertemuan/${subject.subject_id}`}>{subject.Subject.name}</Link>
+                            <Link to={`/studi-ku/${subject.subject_id}`}>{subject.Subject.name}</Link>
                         </h6>
                         <div className="overflow-hidden">
                             <h6 className="mb-0 text-end">{progress}%</h6>
@@ -38,7 +38,7 @@ const CourseItem = ({ subject, progress }) => {
                 </div>
             </td>
             <td>
-                <Link to={`/studi-ku/pertemuan/${subject.subject_id}`} className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0">
+                <Link to={`/studi-ku/${subject.subject_id}`} className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0">
                     <i className="bi bi-play-circle me-1" />
                     Continue
                 </Link>
