@@ -613,7 +613,7 @@ export const myStudySlice = createSlice({
 				state.message = action.payload;
 			})
 			.addCase(startQuiz.pending, (state) => {
-				// state.isLoading = true;
+				state.isLoading = true;
 			})
 			.addCase(startQuiz.fulfilled, (state, action) => {
 				state.isLoading = false;
@@ -661,6 +661,7 @@ export const myStudySlice = createSlice({
 			.addCase(submitQuiz.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.isSuccess = true;
+				state.message = "QUIZ_SUBMITED";
 				state.data.submit_quiz = action.payload;
 			})
 			.addCase(submitQuiz.rejected, (state, action) => {

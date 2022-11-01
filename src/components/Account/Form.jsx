@@ -30,14 +30,8 @@ const FormEdit = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
-	const {
-		full_name,
-		gender,
-		phone,
-		username,
-		display_picture,
-		display_picture_link,
-	} = profileData;
+	const { full_name, gender, phone, username, display_picture_link } =
+		profileData; // display_picture,
 
 	const { user, isLoading, isError, isSuccess, message } = useSelector(
 		(state) => state.profile
@@ -81,8 +75,6 @@ const FormEdit = () => {
 	useEffect(() => {
 		setIsLoaded(true);
 
-		console.log(user);
-
 		if (user)
 			setProfileData({
 				full_name: user.full_name,
@@ -106,135 +98,156 @@ const FormEdit = () => {
 
 	return (
 		<>
-			{user ? (
+			{isLoading ? (
 				<>
-					<div className="card border rounded-3">
-						<div className="card-header border-bottom">
-							<h3 className="card-header-title mb-0">Profil</h3>
-						</div>
-						<div className="card-body">
-							<form className="row g-4" onSubmit={onFormSubmit}>
-								<div className="col-12 justify-content-center align-items-center">
-									<label className="form-label">Tampilan Foto</label>
-									<div className="d-flex align-items-center">
-										<label
-											className="position-relative me-4"
-											htmlFor="uploadfile-1"
-											title="Replace this pic"
-										>
-											<span className="avatar avatar-xl">
-												<img
-													id="uploadfile-1-preview"
-													className="avatar-img rounded-circle border border-white border-3 shadow"
-													src={
-														imageData
-															? imageData
-															: display_picture_link != null
-															? display_picture_link
-															: "assets/images/avatar/empty-display-picture.png"
-													}
-													alt=""
-												/>
-											</span>
-										</label>
-										<label
-											className="btn btn-primary-soft mb-0"
-											htmlFor="uploadfile-1"
-										>
-											Ubah
-										</label>
-										<input
-											id="uploadfile-1"
-											name="display_picture"
-											className="form-control d-none"
-											type="file"
-											onChange={onChangePicture}
-										/>
-									</div>
+					<div
+						className="container text-center"
+						style={{ marginTop: "188px", marginBottom: "188px" }}
+					>
+						<div className="row">
+							<div className="col-12">
+								<div className="spinner-border" role="status">
+									<span className="visually-hidden">Loading...</span>
 								</div>
-								<div className="col-6">
-									<label className="form-label">Nama Lengkap</label>
-									<div className="input-group">
-										<input
-											type="text"
-											className="form-control"
-											name="full_name"
-											value={full_name}
-											onChange={onFormChange}
-											placeholder="Nama Lengkap"
-										/>
-									</div>
-								</div>
-								<div className="col-md-6">
-									<label className="form-label">Username</label>
-									<div className="input-group">
-										<span className="input-group-text">kampusgratis.com</span>
-										<input
-											type="text"
-											className="form-control"
-											value={username}
-											readOnly
-										/>
-									</div>
-								</div>
-								{/* <div className="col-md-6">
-            <label className="form-label">Alamat Email</label>
-            <input
-              className="form-control"
-              type="text"
-              value="example@gmail.com"
-              placeholder="Alamat Email"
-              readOnly
-            />
-          </div> */}
-								<div className="col-md-6">
-									<label className="form-label">Nomor Handphone</label>
-									<input
-										type="text"
-										className="form-control"
-										name="phone"
-										value={phone}
-										onChange={onFormChange}
-										placeholder="Nomor Handphone"
-									/>
-								</div>
-								<div className="col-md-6">
-									<label className="form-label">Jenis Kelamin</label>
-									<select
-										className="form-select"
-										onChange={onFormChange}
-										name="gender"
-										value={gender}
-									>
-										{genderOptions.map((option) => (
-											<option key={option.value} value={option.value}>
-												{option.label}
-											</option>
-										))}
-									</select>
-								</div>
-								<div className="d-sm-flex justify-content-end">
-									{isLoading && !isLoaded ? (
-										<button
-											type="submit"
-											className="btn btn-primary mb-0"
-											disabled={isLoading}
-										>
-											<span className="spinner-border spinner-border-sm"></span>
-											&nbsp; Menyimpan Perubahan ...
-										</button>
-									) : (
-										<button type="submit" className="btn btn-primary mb-0">
-											Simpan Perubahan
-										</button>
-									)}
-								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</>
 			) : (
-				<></>
+				<>
+					{user ? (
+						<>
+							<div className="card border rounded-3">
+								<div className="card-header border-bottom">
+									<h3 className="card-header-title mb-0">Profil</h3>
+								</div>
+								<div className="card-body">
+									<form className="row g-4" onSubmit={onFormSubmit}>
+										<div className="col-12 justify-content-center align-items-center">
+											<label className="form-label">Tampilan Foto</label>
+											<div className="d-flex align-items-center">
+												<label
+													className="position-relative me-4"
+													htmlFor="uploadfile-1"
+													title="Replace this pic"
+												>
+													<span className="avatar avatar-xl">
+														<img
+															id="uploadfile-1-preview"
+															className="avatar-img rounded-circle border border-white border-3 shadow"
+															src={
+																imageData
+																	? imageData
+																	: display_picture_link != null
+																	? display_picture_link
+																	: "assets/images/avatar/empty-display-picture.png"
+															}
+															alt=""
+														/>
+													</span>
+												</label>
+												<label
+													className="btn btn-primary-soft mb-0"
+													htmlFor="uploadfile-1"
+												>
+													Ubah
+												</label>
+												<input
+													id="uploadfile-1"
+													name="display_picture"
+													className="form-control d-none"
+													type="file"
+													onChange={onChangePicture}
+												/>
+											</div>
+										</div>
+										<div className="col-6">
+											<label className="form-label">Nama Lengkap</label>
+											<div className="input-group">
+												<input
+													type="text"
+													className="form-control"
+													name="full_name"
+													value={full_name}
+													onChange={onFormChange}
+													placeholder="Nama Lengkap"
+												/>
+											</div>
+										</div>
+										<div className="col-md-6">
+											<label className="form-label">Username</label>
+											<div className="input-group">
+												<span className="input-group-text">
+													kampusgratis.com
+												</span>
+												<input
+													type="text"
+													className="form-control"
+													value={username}
+													readOnly
+												/>
+											</div>
+										</div>
+										{/* <div className='col-md-6'>
+            <label className='form-label'>Alamat Email</label>
+            <input
+              className='form-control'
+              type='text'
+              value='example@gmail.com'
+              placeholder='Alamat Email'
+              readOnly
+            />
+          </div> */}
+										<div className="col-md-6">
+											<label className="form-label">Nomor Handphone</label>
+											<input
+												type="text"
+												className="form-control"
+												name="phone"
+												value={phone}
+												onChange={onFormChange}
+												placeholder="Nomor Handphone"
+											/>
+										</div>
+										<div className="col-md-6">
+											<label className="form-label">Jenis Kelamin</label>
+											<select
+												className="form-select"
+												onChange={onFormChange}
+												name="gender"
+												value={gender}
+											>
+												{genderOptions.map((option) => (
+													<option key={option.value} value={option.value}>
+														{option.label}
+													</option>
+												))}
+											</select>
+										</div>
+										<div className="d-sm-flex justify-content-end">
+											{isLoading && !isLoaded ? (
+												<button
+													type="submit"
+													className="btn btn-primary mb-0"
+													disabled={isLoading}
+												>
+													<span className="spinner-border spinner-border-sm"></span>
+													&nbsp; Menyimpan Perubahan ...
+												</button>
+											) : (
+												<button type="submit" className="btn btn-primary mb-0">
+													Simpan Perubahan
+												</button>
+											)}
+										</div>
+									</form>
+								</div>
+							</div>
+						</>
+					) : (
+						<></>
+					)}
+				</>
 			)}
 		</>
 	);

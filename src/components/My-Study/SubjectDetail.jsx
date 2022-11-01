@@ -80,7 +80,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 								>
 									{sessions.map((session, i) => (
 										<>
-											{i === 0 ? (
+											{session.session_no === 0 ? (
 												<></>
 											) : (
 												<>
@@ -180,7 +180,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 																			</a>
 																			<div className="ms-3">
 																				<Link
-																					to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
+																					to={`/studi-ku/${subject.id}/penugasan/${session.id}`}
 																					className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px"
 																				>
 																					Penugasan
@@ -189,7 +189,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 																		</div>
 																	</div>
 																	<Link
-																		to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
+																		to={`/studi-ku/${subject.id}/penugasan/${session.id}`}
 																		className="p-2 mb-0 text-secondary"
 																		data-bs-toggle="tooltip"
 																		data-bs-placement="top"
