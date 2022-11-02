@@ -92,6 +92,7 @@ const ViewSertifikat = () => {
 										className="btn btn-info"
 										href={currentCertificate.link}
 										download
+										target="_blank"
 									>
 										<i className="fas fa-download me-2" />
 										Download Sertifikat
