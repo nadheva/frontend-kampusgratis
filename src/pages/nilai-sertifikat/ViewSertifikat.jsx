@@ -49,18 +49,6 @@ const ViewSertifikat = () => {
 												backgroundSize: "cover"
 											}}>
 											<div className="bg-overlay bg-dark opacity-6" />
-											<div className="card-img-overlay">
-												<div className="position-absolute top-50 start-50 translate-middle">
-													<a
-														href={currentCertificate.link}
-														className="btn btn-lg text-info btn-round btn-white-shadow mb-0"
-														data-glightbox=""
-														data-gallery="video-tour"
-													>
-														<i className="fas fa-eye" />
-													</a>
-												</div>
-											</div>
 										</div>
 									</> : <>
 										<div className="card card-body img-object shadow p-2 h-300px h-sm-400px h-md-500px h-lg-500px  position-relative overflow-hidden"
@@ -70,34 +58,22 @@ const ViewSertifikat = () => {
 												backgroundSize: "cover"
 											}}>
 											<div className="bg-overlay bg-dark opacity-6" />
-											<div className="card-img-overlay">
-												<div className="position-absolute top-50 start-50 translate-middle">
-													<a
-														href={currentCertificate.link}
-														className="btn btn-lg text-info btn-round btn-white-shadow mb-0"
-														data-glightbox=""
-														data-gallery="video-tour"
-													>
-														<i className="fas fa-eye" />
-													</a>
-												</div>
-											</div>
 										</div>
 									</>
 								}
 							</div>
-							<div className="row justify-content-center">
-								<div className="col-auto my-2 d-none d-lg-block pt-4">
-									<a
-										className="btn btn-info"
-										href={currentCertificate.link}
-										download
-										target="_blank"
-									>
-										<i className="fas fa-download me-2" />
-										Download Sertifikat
-									</a>
-								</div>
+						</div>
+						<div className="row justify-content-center text-center">
+							<div className="col-12 pt-4">
+								<a
+									className="btn btn-info"
+									href={currentCertificate.link}
+									download
+									target="_blank"
+								>
+									<i className="fas fa-download me-2" />
+									Download Sertifikat
+								</a>
 							</div>
 						</div>
 					</div>
