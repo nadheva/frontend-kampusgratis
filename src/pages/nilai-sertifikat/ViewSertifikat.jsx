@@ -30,8 +30,7 @@ const ViewSertifikat = () => {
 		if (data?.certificate) setCurrentCertificate(data.certificate);
 
 	}, [data]);
-	console.log(currentCertificate)
-	console.log(currentCertificate.thumbnail_link)
+
 	return (
 		<>
 			<Header />
