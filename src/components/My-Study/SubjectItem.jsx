@@ -34,8 +34,10 @@ const SubjectItem = ({ subject, student, progress, lecturers }) => {
 							<Link to={subject.Subject.id}>{subject.Subject.name}</Link>
 						</h5>
 						<p className="mb-0 text-truncate-2">
+							{/* TODO : Ini error
+							
 							{subject.Subject.indicator.trim().charAt(0).toUpperCase() +
-								subject.Subject.indicator.trim().slice(1)}
+								subject.Subject.indicator.trim().slice(1)} */}
 						</p>
 					</div>
 					<div className="card-footer pt-0 pb-3">

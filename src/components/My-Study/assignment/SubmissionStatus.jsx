@@ -54,11 +54,11 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Grading status</th>
                                     {
-                                        assigments.students_work.status == 0 || assigments.students_work.status == null ? (
+                                        assigments?.students_work?.status == 0 || assigments?.students_work?.status == null ? (
                                             <td>Not graded</td>
                                         ) : (
                                             <td className={assigments?.students_work?.status === "LATE" ? "table-danger" : ""}>
-                                                {assigments.students_work.status}
+                                                {assigments?.students_work?.status}
                                             </td>
                                         )
                                     }
@@ -66,11 +66,11 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th> Grade</th>
                                     {
-                                        assigments.students_work.score == 0 || assigments.students_work.score == null ? (
+                                        assigments?.students_work?.score == 0 || assigments?.students_work?.score == null ? (
                                             <td>Not graded</td>
                                         ) : (
                                             <td className="table-success">
-                                                {assigments.students_work.score}
+                                                {assigments?.students_work?.score}
                                             </td>
                                         )
                                     }
