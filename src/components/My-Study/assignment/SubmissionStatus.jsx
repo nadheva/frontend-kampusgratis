@@ -81,12 +81,12 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                         {assigments?.assignment?.deadline ?? '-'}
                                     </td>
                                 </tr>
-                                <tr>
+                                {/* <tr>
                                     <th>Time remaining </th>
                                     <td>
                                         {assigments?.assignment?.duration ?? '-'}
                                     </td>
-                                </tr>
+                                </tr> */}
                                 <tr>
                                     <th>Last modified </th>
                                     <td >

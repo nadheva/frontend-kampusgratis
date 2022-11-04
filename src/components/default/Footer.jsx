@@ -6,6 +6,7 @@ import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 const Footer = () => {
   return <>
+    <div className="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
     <footer className="bg-light pt-5">
       <div className="container">
         <div className="row g-4">
