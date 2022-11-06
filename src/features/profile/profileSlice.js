@@ -1,11 +1,11 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import profileService from "./profileService";
-import { extartErrorFirebase, extractErrorMessage } from "../../utils";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import profileService from './profileService';
+import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 
 let user;
 
 try {
-	user = localStorage.getItem("user");
+	user = localStorage.getItem('user');
 	if (user) user = JSON.parse(user);
 } catch (error) {
 	user = null;
@@ -16,50 +16,49 @@ const initialState = {
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
-	message: "",
+	message: ''
 };
 
-export const getMe = createAsyncThunk("profile/get-me", async (_, thunkAPI) => {
-	try {
-		const { data } = await profileService.getMe();
+export const getMe = createAsyncThunk(
+	'profile/get-me',
+	async (_, thunkAPI) => {
+		try {
+			const { data } = await profileService.getMe();
 
-		return data;
-	} catch (error) {
-		return thunkAPI.rejectWithValue(
-			extartErrorFirebase(error) || extractErrorMessage(error)
-		);
+			return data;
+		} catch (error) {
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+		}
 	}
-});
+)
 
 export const updateProfile = createAsyncThunk(
-	"profile/put-me",
+	'profile/put-me',
 	async (data, thunkAPI) => {
 		try {
 			return await profileService.updateProfile(data);
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const profileSlice = createSlice({
-	name: "profile",
+	name: 'profile',
 	initialState,
 	reducers: {
 		resetState: (state) => {
 			state.isLoading = false;
 			state.isError = false;
 			state.isSuccess = false;
-			state.message = "";
+			state.message = '';
 		},
 		reset: (state) => {
 			state.isLoading = false;
 			state.isError = false;
 			state.isSuccess = false;
-			state.message = "";
-			state.user = "";
+			state.message = '';
+			state.user = '';
 		},
 	},
 	extraReducers: (builder) => {
@@ -93,8 +92,8 @@ export const profileSlice = createSlice({
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
-			});
-	},
+			})
+	}
 });
 
 export const { resetState, reset } = profileSlice.actions;
