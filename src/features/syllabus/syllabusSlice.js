@@ -153,7 +153,7 @@ export const syllabusSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = action.payload.message;
-        state.data.study_plan = action.payload.data;
+        state.data.study_plan.subjects_enrolled = action.payload.data;
       })
       .addCase(takeStudyPlan.rejected, (state, action) => {
         state.isLoading = false;
@@ -167,7 +167,7 @@ export const syllabusSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = action.payload.message;
-        state.data.study_plan = action.payload.data;
+        state.data.study_plan.subjects_enrolled = action.payload.data;
       })
       .addCase(removeStudyPlan.rejected, (state, action) => {
         state.isLoading = false;
@@ -181,7 +181,7 @@ export const syllabusSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = action.payload.message;
-        state.data.study_plan = action.payload.data;
+        state.data.study_plan.subjects_enrolled = action.payload.data;
       })
       .addCase(doSendDraft.rejected, (state, action) => {
         state.isLoading = false;
@@ -195,6 +195,7 @@ export const syllabusSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = action.payload.message;
+        state.data.study_plan = action.payload.data;
       })
       .addCase(takeCurrentMajor.rejected, (state, action) => {
         state.isLoading = false;

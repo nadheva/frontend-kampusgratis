@@ -94,7 +94,7 @@ const doSendDraft = async () => {
     }
   }
 
-  const response = await axios.put(API_URL + `subject/sendDraft`, {}, config);
+  const response = await axios.put(API_URL + `subject/senddraft`, {}, config);
 
   return response.data;
 }
@@ -110,7 +110,7 @@ const takeCurrentMajor = async (majorId) => {
     }
   }
 
-  const response = await axios.put(API_URL + `major/take/${majorId}`, {}, config);
+  const response = await axios.post(API_URL + `major/take/${majorId}`, {}, config);
 
   return response.data;
 }
