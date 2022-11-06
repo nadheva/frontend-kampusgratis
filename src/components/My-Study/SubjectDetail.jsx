@@ -157,12 +157,12 @@ const SubjectDetail = ({ subject, sessions }) => {
 																				</span>
 																			</div>
 																		</> : <>
-																			<Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/quiz`}
+																			<Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
 																				className="icon-md mb-0 position-static flex-shrink-0 text-body">
 																				<i className="fas fa-question-circle fa-fw fs-5"></i>
 																			</Link>
 																			<div className="ms-3">
-																				<Link to={`/studi-ku/${subject.id}/penugasan/${session.id}`}
+																				<Link to={`/studi-ku/${subject.id}/pertemuan/${session.id}/penugasan`}
 																					className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">
 																					Penugasan
 																				</Link>
