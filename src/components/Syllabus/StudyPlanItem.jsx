@@ -23,6 +23,11 @@ const StudyPlanItem = () => {
       toast.error('Kamu tidak dapat mengambil mata kuliah ini karena berbeda jurusan.');
       dispatch(reset());
     }
+
+    if (message === "Sent Draft") {
+      toast.success("Draft kamu telah dikirim. Harap tunggu dosen menerima KRS kamu.");
+      dispatch(reset());
+    }
   }, [message, study_plan, data]);
 
   return <>
@@ -32,7 +37,7 @@ const StudyPlanItem = () => {
         <p className='text-center'>Pengajuan ini digunakan untuk mengatur Kartu Rencana Studi (KRS) kamu.</p>
       </div>
       <div className='card-body'>
-        <h6 className=''>Total SKS Kamu: {study_plan.subjects_enrolled.total_credit || 0} SKS</h6>
+        <h6 className=''>Total SKS Kamu: {study_plan?.subjects_enrolled?.total_credit || 0} SKS</h6>
         <div className='accordion accordion-icon accordion-bg-light' id='accordionSubjects'>
           {study_plan?.subjects_enrolled?.draft?.subjects.length === 0 || study_plan?.subjects_enrolled?.draft?.subjects === undefined ? <>
             <div className='alert alert-secondary'>
@@ -48,7 +53,7 @@ const StudyPlanItem = () => {
                   <span className='small ms-0 ms-sm-2'>({study_plan?.subjects_enrolled?.draft?.subjects.length} Mata Kuliah)</span>
                 </button>
               </h6>
-              {study_plan?.subjects_enrolled?.draft?.subjects.length !== 0 || study_plan?.subjects_enrolled?.draft?.subjects !== undefined && <>
+              {study_plan?.subjects_enrolled?.draft?.subjects.length !== 0 && <>
                 <div id={`collapse-draft`} className='accordion-collapse collapse' aria-labelledby={`heading-draft`}>
                   <div className='accordion-body mt-3 px-1'>
                     <ul className='list-group'>
@@ -96,9 +101,9 @@ const StudyPlanItem = () => {
                     {study_plan?.subjects_enrolled?.pending?.subjects.map((subject, i) => <>
                       <li className='list-group-item d-flex justify-content-between align-items-center'>
                         <span>{i + 1}. {subject.name}</span>
-                        <button className='btn btn-danger-soft btn-sm px-2 btn-round'>
-                          <i className='fa fa-trash-alt fa-fw'></i>
-                        </button>
+                        <span className='btn-danger-soft btn-sm px-2 btn-round me-0 user-select-auto my-1'>
+                          <i className='fa fa-trash-alt fa-fw me-0'></i>
+                        </span>
                       </li>
                     </>)}
                   </ul>

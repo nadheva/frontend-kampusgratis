@@ -18,11 +18,13 @@ import MyCourse from "./pages/student/MyCourse";
 import Categories from "./pages/landing-page/Categories";
 
 import MyStudy from "./pages/my-study/Main";
-import Silabus from "./pages/syllabus/Main";
 
 import PageNotFound from "./components/default/PageNotFound";
 import Administration from "./pages/Administration";
+
 import SilabusSubject from "./pages/syllabus/ListSubject";
+import SubjectsList from './pages/syllabus/SubjectsList';
+import Silabus from "./pages/syllabus/Main";
 
 import ScrollToTop from "./components/default/ScrollToTop";
 import Subject from "./pages/my-study/Subject";
@@ -73,6 +75,7 @@ import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
+
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -210,9 +213,10 @@ function App() {
 							<Route path="/studi-ku" exact element={<MyStudy />} />
 						</Route>
 
-						<Route path="/silabus/:majorId" element={<PrivateRoute redirect />}>
-							<Route path="/silabus/:majorId" element={<SilabusSubject />} />
+						<Route path='/silabus/:majorId' element={<PrivateRoute redirect />}>
+							<Route path='/silabus/:majorId' element={<SubjectsList />} />
 						</Route>
+
 
 						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
 							<Route path="/silabus" exact element={<Silabus />} />
