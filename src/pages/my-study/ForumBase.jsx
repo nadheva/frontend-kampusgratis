@@ -44,27 +44,6 @@ const ForumBase = () => {
     <Header />
     <main>
       {isLoading || !isPageLoad || !currentSubject ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-12 text-center'>
-                <h1 className='text-white'>
-                  ...
-                </h1>
-                <div className='d-flex justify-content-center'>
-                  <nav aria-label='breadcrumb'>
-                    <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
-                      <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
-                      <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Forum</li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className='bg-light py-0 py-sm-5'>
           <div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
             <div className='row'>
@@ -105,7 +84,7 @@ const ForumBase = () => {
                     <h4 className="mb-4">Daftar Diskusi</h4>
                     {currentDiscussions.length === 0 ? <>
                       <div className="alert alert-info mt-4">
-                        Belum ada diskusi yang telah dibuat. Silahkan buka lagi dilain waktu.
+                        Belum ada diskusi yang telah dibuat. Silahkan buka lagi di lain waktu.
                       </div>
                     </> : <>
                       <div className="card-body p-0 pt-3">

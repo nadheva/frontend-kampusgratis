@@ -75,6 +75,7 @@ import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
+import Detail from "./pages/my-study/quiz/Detail";
 
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
@@ -222,28 +223,12 @@ function App() {
 							<Route path="/silabus" exact element={<Silabus />} />
 						</Route>
 
-						<Route
-							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
-							exact
-							element={<PrivateRoute redirect />}
-						>
-							<Route
-								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
-								exact
-								element={<QuizStart />}
-							/>
+						<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<PrivateRoute redirect />}>
+							<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<QuizStart />} />
 						</Route>
 
-						<Route
-							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
-							exact
-							element={<PrivateRoute redirect />}
-						>
-							<Route
-								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
-								exact
-								element={<QuizDetail />}
-							/>
+						<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId' exact element={<PrivateRoute redirect />}>
+							<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId' exact element={<Detail />} />
 						</Route>
 
 						<Route

@@ -14,6 +14,8 @@ import { toast } from 'react-toastify';
 
 const ModuleDetail = () => {
   const dispatch = useDispatch();
+
+  const [isLoaded, setIsLoaded] = useState(false);
   const [currentSubject, setCurrentSubject] = useState({});
   const [currentModule, setCurrentModule] = useState({});
   const [textDoneModule, setTextDoneModule] = useState("");
@@ -29,6 +31,8 @@ const ModuleDetail = () => {
       dispatch(getSubject(subjectId)),
       dispatch(getSingleModule(moduleId))
     ]);
+
+    setIsLoaded(true);
   }
 
   useEffectOnce(() => {
@@ -38,11 +42,14 @@ const ModuleDetail = () => {
 
   const submitFinishModule = (e) => {
     e.preventDefault();
+    dispatch(reset());
     dispatch(finishModule({ moduleId: moduleId, textDoneModule }));
   }
 
   useEffect(() => {
+    console.log(currentModule);
     if (data?.module_submit && isSuccess) {
+      console.log(data);
       setCurrentModule({
         ...currentModule,
         takeaway: data.module_submit.activity_detail.takeaway,
@@ -50,8 +57,8 @@ const ModuleDetail = () => {
       });
 
       setTextDoneModule(data.module_submit.activity_detail.takeaway);
-      dispatch(resetAll());
       toast.info("Modul ini telah kamu selesaikan dan materi telah dikirim ke mentor kamu.");
+      dispatch(resetAll());
     }
 
     if (data?.subject) setCurrentSubject(data.subject);
@@ -60,36 +67,14 @@ const ModuleDetail = () => {
       setTextDoneModule(data.module.takeaway);
       dispatch(resetAll());
     }
-  }, [data, currentSubject, currentModule, textDoneModule]);
+  }, [data, isSuccess, currentSubject, currentModule, isLoading]);
 
   return <>
     <Header />
     <main>
-      {isLoading || Object.keys(currentSubject).length === 0 || Object.keys(currentModule).length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-12 text-center'>
-                <h1 className='text-white'>
-                  ...
-                </h1>
-                <div className='d-flex justify-content-center'>
-                  <nav aria-label='breadcrumb'>
-                    <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
-                      <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
-                      <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul`}>Modul</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>List</li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {isLoading && !isLoaded || Object.keys(currentSubject).length === 0 || Object.keys(currentModule).length === 0 ? <>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
+          <div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>
@@ -123,99 +108,88 @@ const ModuleDetail = () => {
         <section className='pb-0 py-lg-5'>
           <div className="container">
             <div className="row">
-              {isLoading ? (
-                <>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                  <div className="col-sm-12 col-xl-12">
-                    <SkeletonTheme>
-                      <Skeleton height={50} />
-                    </SkeletonTheme>
-                  </div>
-                </>
-              ) : (<>
-                <div className="card shadow">
-                  <div className="card-body py-4">
-                    <div className="col-12">
-                      <h5 className="mb-4">List Vidio</h5>
-                      {currentModule.videos.length === 0 && <>
-                        <div className="alert alert-info">
-                          Sepertinya belum ada vidio yang ditambahkan pada modul ini.
-                        </div>
-                      </>}
-                      {currentModule.videos.map(video => <>
-                        <div className="d-sm-flex justify-content-sm-between align-items-center">
-                          <div className="d-flex">
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-danger-soft btn-round mb-0">
-                              <i className="fas fa-play" />
-                            </Link>
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
-                              <h6 className="mb-0">{video.title}</h6>
-                            </Link>
-                          </div>
-                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0">
-                            <i className='fa fa-eye me-2'></i>Lihat
+              <div className="card shadow">
+                <div className="card-body py-4">
+                  <div className="col-12">
+                    <h5 className="mb-4">List Vidio</h5>
+                    {currentModule.videos.length === 0 && <>
+                      <div className="alert alert-info">
+                        Sepertinya belum ada vidio yang ditambahkan pada modul ini.
+                      </div>
+                    </>}
+                    {currentModule.videos.map(video => <>
+                      <div className="d-sm-flex justify-content-sm-between align-items-center">
+                        <div className="d-flex">
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-danger-soft btn-round mb-0">
+                            <i className="fas fa-play" />
+                          </Link>
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
+                            <h6 className="mb-0">{video.title}</h6>
                           </Link>
                         </div>
-                        <hr />
-                      </>)}
-                    </div>
-                    <div className="col-12">
-                      <h5 className="mb-4">List Dokumen</h5>
-                      {currentModule.documents.length === 0 && <>
-                        <div className="alert alert-info">
-                          Sepertinya belum ada dokumen yang ditambahkan pada modul ini.
-                        </div>
-                      </>}
-                      {currentModule.documents.map(document => <>
-                        <div className="d-sm-flex justify-content-sm-between align-items-center">
-                          <div className="d-flex">
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light btn-round mb-0">
-                              <i className="fas fa-solid fa-file"></i>
-                            </Link>
-                            <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
-                              <h6 className="mb-0">{document.content}</h6>
-                            </Link>
-                          </div>
-                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0">
-                            <i className='fa fa-eye me-2'></i>Lihat
+                        <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/vidio/${video.id}`} className="btn btn-sm btn-success mb-0">
+                          <i className='fa fa-eye me-2'></i>Lihat
+                        </Link>
+                      </div>
+                      <hr />
+                    </>)}
+                  </div>
+                  <div className="col-12">
+                    <h5 className="mb-4">List Dokumen</h5>
+                    {currentModule.documents.length === 0 && <>
+                      <div className="alert alert-info">
+                        Sepertinya belum ada dokumen yang ditambahkan pada modul ini.
+                      </div>
+                    </>}
+                    {currentModule.documents.map(document => <>
+                      <div className="d-sm-flex justify-content-sm-between align-items-center">
+                        <div className="d-flex">
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-light btn-round mb-0">
+                            <i className="fas fa-solid fa-file"></i>
+                          </Link>
+                          <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="ms-2 ms-sm-3 mt-1 mt-sm-0 d-flex align-items-center">
+                            <h6 className="mb-0">{document.content}</h6>
                           </Link>
                         </div>
-                        <hr />
-                      </>)}
-                    </div>
-                    {currentModule.documents.length !== 1 && currentModule.videos.length !== 1 && <>
-                      {!currentModule?.date_submitted ? <>
-                        <div className="col-12 text-end">
+                        <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${moduleId}/dokumen/${document.id}`} className="btn btn-sm btn-success mb-0">
+                          <i className='fa fa-eye me-2'></i>Lihat
+                        </Link>
+                      </div>
+                      <hr />
+                    </>)}
+                  </div>
+                  {currentModule.documents.length !== 0 && currentModule.videos.length !== 0 && <>
+                    {!currentModule?.date_submitted ? <>
+                      <div className="col-12 text-end">
+                        {isLoading ? <>
+                          <button type="button" className="btn btn-primary" disabled>
+                            <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                            &nbsp;Mengirim ...
+                          </button>
+                        </> : <>
                           <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule("")}>
                             <i className="fas fa-check-circle me-1"></i> Selesaikan Modul
                           </button>
-                        </div>
-                      </> : <>
-                        <div className="col-12 text-end">
-                          <span className='badge bg-dark me-3'>Terakhir dikirim pada {new Date(currentModule.date_submitted.replace(' ', 'T')).toLocaleString('en-US')}</span>
+                        </>}
+                      </div>
+                    </> : <>
+                      <div className="col-12 text-end">
+                        <span className='badge bg-dark me-3'>Terakhir dikirim pada {currentModule.date_submitted}</span>
+                        {isLoading ? <>
+                          <button type="button" className="btn btn-warning" disabled>
+                            <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                            &nbsp;Mengirim ...
+                          </button>
+                        </> : <>
                           <button type="button" className="btn btn-warning" data-bs-toggle="modal" data-bs-target="#doneModule" onClick={() => setTextDoneModule(textDoneModule)}>
                             <i className="fas fa-edit me-1"></i> Selesaikan Modul
                           </button>
-                        </div>
-                      </>}
+                        </>}
+                      </div>
                     </>}
-                  </div>
+                  </>}
                 </div>
-              </>)}
+              </div>
             </div>
           </div>
         </section>
