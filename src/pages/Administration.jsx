@@ -1,22 +1,24 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
-import Banner from "../components/Account/Banner";
-import Sidebar from "../components/Account/Sidebar";
+import Banner from '../components/Account/Banner';
+import Sidebar from '../components/Account/Sidebar';
 
-import useEffectOnce from "../helpers/useEffectOnce";
+import useEffectOnce from '../helpers/useEffectOnce';
 
-// import AdministrationForm from "../components/Administration/AdministrationForm";
-import { getMyAdministration } from "../features/administration/administrationSlice";
+// import AdministrationForm from '../components/Administration/AdministrationForm';
+import { getMyAdministration } from '../features/administration/administrationSlice';
 
-import Header from "../components/default/Header";
-import Footer from "../components/default/Footer";
-import Form from "../components/Administration/Form";
+import Header from '../components/default/Header';
+import Footer from '../components/default/Footer';
+import Form from '../components/Administration/Form';
 
 const Administration = () => {
 	const dispatch = useDispatch();
 
-	const { data } = useSelector((state) => state.administration);
+	const { data } = useSelector(
+		(state) => state.administration
+	);
 
 	useEffectOnce(() => {
 		dispatch(getMyAdministration());
@@ -35,18 +37,10 @@ const Administration = () => {
 								<div className="card-header bg-transparent border-bottom">
 									<div className="row">
 										<div className="col-sm-6 d-flex align-items-center">
-											<h3 className="card-header-title mb-2 mb-sm-0 d-inline-flex">
-												Administrasi
-											</h3>
-											{data?.is_approved?.overall === true ? (
-												<span className="badge bg-success bg-opacity-10 ms-3 text-dark py-2">
-													accepted
-												</span>
-											) : (
-												<span className="badge bg-primary bg-opacity-10 ms-3 text-primary py-2">
-													waiting
-												</span>
-											)}
+											<h3 className="card-header-title mb-2 mb-sm-0 d-inline-flex">Administrasi</h3>
+											{data?.is_approved?.overall === true
+												? <span className='badge bg-success bg-opacity-10 ms-3 text-dark py-2'>accepted</span>
+												: <span className="badge bg-primary bg-opacity-10 ms-3 text-primary py-2">waiting</span>}
 										</div>
 									</div>
 								</div>
@@ -60,7 +54,7 @@ const Administration = () => {
 			</section>
 			<Footer />
 		</>
-	);
-};
+	)
+}
 
-export default Administration;
+export default Administration

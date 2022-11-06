@@ -131,6 +131,7 @@ const Form = () => {
     e.preventDefault();
     if (data?.is_approved?.overall) return toast.warning("Kamu tidak dapat merubah data administrasi karena administrasimu sudah dikonfirmasi!");
 
+    dispatch(resetState());
     dispatch(sendAdministrationFiles({ ...administrationFiles, administration_id }));
   }
 
