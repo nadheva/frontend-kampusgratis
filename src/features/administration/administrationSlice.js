@@ -133,7 +133,7 @@ export const administrationSlice = createSlice({
         state.isLoading = false;
         state.isSuccess = true;
         state.message = "Administrasi Berkas telah disimpan."; // action.payload.message;
-        state.data = action.payload.data;
+        // state.data = action.payload.data;
       })
       .addCase(sendAdministrationFiles.rejected, (state, action) => {
         state.isLoading = false;
