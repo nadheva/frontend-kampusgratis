@@ -1,368 +1,314 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import myStudyService from "./myStudyService";
-import { extartErrorFirebase, extractErrorMessage } from "../../utils";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import myStudyService from './myStudyService';
+import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 
 const initialState = {
 	data: {},
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
-	message: "",
+	message: ''
 };
 
 export const getMySubjects = createAsyncThunk(
-	"my-study/get-my-subjects",
+	'my-study/get-my-subjects',
 	async ({ currentPage, search }, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getMySubjects(currentPage, search);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getModuleBySession = createAsyncThunk(
-	"my-study/get-module-by-session-id",
+	'my-study/get-module-by-session-id',
 	async (sessionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getModuleBySession(sessionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getVideo = createAsyncThunk(
-	"my-study/get-video-by-video-id",
+	'my-study/get-video-by-video-id',
 	async (sessionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getVideo(sessionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getDocument = createAsyncThunk(
-	"my-study/get-document-by-document-id",
+	'my-study/get-document-by-document-id',
 	async (documentId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getDocument(documentId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getSingleModule = createAsyncThunk(
-	"my-study/get-module-by-module-id",
+	'my-study/get-module-by-module-id',
 	async (moduleId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getSingleModule(moduleId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getSubject = createAsyncThunk(
-	"my-study/get-subject-by-session-id",
+	'my-study/get-subject-by-session-id',
 	async (subjectId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getSubject(subjectId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getQuizBySession = createAsyncThunk(
-	"my-study/get-quiz-by-session-id",
+	'my-study/get-quiz-by-session-id',
 	async (sessionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getQuizBySession(sessionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getCurrentQuizzes = createAsyncThunk(
-	"my-study/get-current-quizzes",
+	'my-study/get-current-quizzes',
 	async (_, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getCurrentQuizzes();
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getQuestions = createAsyncThunk(
-	"my-study/get-questions",
+	'my-study/get-questions',
 	async (materialId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getQuestions(materialId);
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const submitQuiz = createAsyncThunk(
-	"my-study/submit-quiz",
+	'my-study/submit-quiz',
 	async (_, thunkAPI) => {
 		try {
-			const { data } = await myStudyService.submitQuiz(
-				_.answers,
-				_.quizId,
-				_.materialId
-			);
+			const { data } = await myStudyService.submitQuiz(_.answers, _.quizId, _.materialId);
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const startQuiz = createAsyncThunk(
-	"my-study/start-quiz-by-quiz-id",
+	'my-study/start-quiz-by-quiz-id',
 	async (sessionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.startQuiz(sessionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getSingleDiscussion = createAsyncThunk(
-	"my-study/get-discussion-by-discussion-id",
+	'my-study/get-discussion-by-discussion-id',
 	async (discussionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getSingleDiscussion(discussionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const finishModule = createAsyncThunk(
-	"my-study/finish-module-by-module-id",
+	'my-study/finish-module-by-module-id',
 	async (_, thunkAPI) => {
 		try {
-			const { data } = await myStudyService.finishModule(
-				_.moduleId,
-				_.textDoneModule
-			);
+			const { data } = await myStudyService.finishModule(_.moduleId, _.textDoneModule);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getSessions = createAsyncThunk(
-	"my-study/get-sessions-by-subject-id",
+	'my-study/get-sessions-by-subject-id',
 	async (subjectId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getSessions(subjectId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const getDiscussions = createAsyncThunk(
-	"my-study/forum-get-discussions",
+	'my-study/forum-get-discussions',
 	async (sessionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.getDiscussions(sessionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const sendComment = createAsyncThunk(
-	"my-study/forum-insert-comment",
+	'my-study/forum-insert-comment',
 	async (_, thunkAPI) => {
 		try {
-			const { data } = await myStudyService.sendComment(
-				_.discussionId,
-				_.comment
-			);
+			const { data } = await myStudyService.sendComment(_.discussionId, _.comment);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const sendReply = createAsyncThunk(
-	"my-study/forum-insert-reply",
+	'my-study/forum-insert-reply',
 	async (_, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.sendReply(_.commentId, _.comment);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const deleteComment = createAsyncThunk(
-	"my-study/forum-delete-comment",
+	'my-study/forum-delete-comment',
 	async (commentId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.deleteComment(commentId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const deleteReply = createAsyncThunk(
-	"my-study/forum-delete-reply",
+	'my-study/forum-delete-reply',
 	async (replyId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.deleteReply(replyId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const likeDiscussion = createAsyncThunk(
-	"my-study/forum-like-discussion",
+	'my-study/forum-like-discussion',
 	async (discussionId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.likeDiscussion(discussionId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const likeComment = createAsyncThunk(
-	"my-study/forum-like-comment",
+	'my-study/forum-like-comment',
 	async (commentId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.likeComment(commentId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const likeReply = createAsyncThunk(
-	"my-study/forum-like-reply",
+	'my-study/forum-like-reply',
 	async (replyId, thunkAPI) => {
 		try {
 			const { data } = await myStudyService.likeReply(replyId);
 
 			return data;
 		} catch (error) {
-			return thunkAPI.rejectWithValue(
-				extartErrorFirebase(error) || extractErrorMessage(error)
-			);
+			return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
 		}
 	}
-);
+)
 
 export const myStudySlice = createSlice({
-	name: "my-study",
+	name: 'my-study',
 	initialState,
 	reducers: {
 		reset: (state) => {
 			state.isLoading = false;
 			state.isError = false;
 			state.isSuccess = false;
-			state.message = "";
+			state.message = '';
 		},
 		resetAll: (state) => {
 			state.data = {};
 			state.isError = false;
 			state.isSuccess = false;
 			state.isLoading = false;
-			state.message = "";
+			state.message = '';
 		},
 	},
 	extraReducers: (builder) => {
@@ -618,7 +564,7 @@ export const myStudySlice = createSlice({
 			.addCase(startQuiz.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.isSuccess = true;
-				state.message = "SUCCESS_TAKE_QUIZ";
+				state.message = "SUCCESS_TAKE_QUIZ"
 				state.data.quiz_detail = action.payload;
 			})
 			.addCase(startQuiz.rejected, (state, action) => {
@@ -628,7 +574,7 @@ export const myStudySlice = createSlice({
 				state.message = action.payload;
 			})
 			.addCase(finishModule.pending, (state) => {
-				// state.isLoading = true;
+				state.isLoading = true;
 			})
 			.addCase(finishModule.fulfilled, (state, action) => {
 				state.isLoading = false;
@@ -656,7 +602,7 @@ export const myStudySlice = createSlice({
 				state.message = action.payload;
 			})
 			.addCase(submitQuiz.pending, (state) => {
-				// state.isLoading = true;
+				state.isLoading = true;
 			})
 			.addCase(submitQuiz.fulfilled, (state, action) => {
 				state.isLoading = false;
@@ -683,9 +629,9 @@ export const myStudySlice = createSlice({
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
-			});
-	},
+			})
+	}
 });
 
 export const { reset, resetAll } = myStudySlice.actions;
-export default myStudySlice.reducer;
+export default myStudySlice.reducer;  
