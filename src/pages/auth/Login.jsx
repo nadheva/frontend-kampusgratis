@@ -194,21 +194,12 @@ function Login() {
 											<div className="align-items-center mt-0">
 												<div className="d-grid">
 													{isLoading ? (
-														<button
-															className="btn btn-primary mb-0"
-															type="submit"
-															disabled={isLoading}
-														>
-															<span className="spinner-border spinner-border-sm"></span>
+														<button className="btn btn-primary mb-0" type="submit" disabled={isLoading}>
+															<span className="spinner-border spinner-border-sm"></span>&nbsp;
 															&nbsp;Loading...
 														</button>
 													) : (
-														<button
-															className="btn btn-primary mb-0"
-															type="submit"
-														>
-															Login
-														</button>
+														<button className="btn btn-primary mb-0" type="submit">Login</button>
 													)}
 												</div>
 											</div>
