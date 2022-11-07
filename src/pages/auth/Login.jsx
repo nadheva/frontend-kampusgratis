@@ -186,9 +186,9 @@ function Login() {
 													</label>
 												</div>
 												<div className="text-primary-hover">
-													<a href=" " className="text-secondary">
+													<Link to="/forgot-password" className="text-secondary">
 														<u>Lupa password akun-mu?</u>
-													</a>
+													</Link>
 												</div>
 											</div>
 											<div className="align-items-center mt-0">

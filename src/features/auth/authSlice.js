@@ -25,6 +25,17 @@ export const register = createAsyncThunk(
   }
 )
 
+export const forgotPassword = createAsyncThunk(
+  'auth/forget-password',
+  async (user, thunkAPI) => {
+    try {
+      return await authService.forgotPassword(user);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error));
+    }
+  }
+)
+
 export const login = createAsyncThunk(
   'auth/login-with-email',
   async (loginData, thunkAPI) => {
@@ -89,6 +100,20 @@ export const authSlice = createSlice({
         state.message = "Register berhasil! Silahkan lihat email kamu (inbox atau spam) untuk melakukan verifikasi akun."; //action.payload.message;
       })
       .addCase(register.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+        state.token = null;
+      })
+      .addCase(forgotPassword.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(forgotPassword.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.message = "Reset Password berhasil! Silahkan lihat email kamu (inbox atau spam)"; //action.payload.message;
+      })
+      .addCase(forgotPassword.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

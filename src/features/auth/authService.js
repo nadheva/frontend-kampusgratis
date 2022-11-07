@@ -14,6 +14,20 @@ const register = async (userData) => {
   return response.data;
 }
 
+
+const forgotPassword = async (userData) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }
+
+  const response = await axios.post(API_URL + 'auth/forget-password', userData, config);
+
+  return response.data;
+}
+
+
 const googleValidate = async (token) => {
   const config = {
     headers: {
@@ -29,7 +43,8 @@ const googleValidate = async (token) => {
 
 const authService = {
   googleValidate,
-  register
+  register,
+  forgotPassword
 }
 
 export default authService;
