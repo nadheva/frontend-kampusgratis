@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
 
 // Redux
@@ -8,42 +8,28 @@ import {
     forgotPassword,
     reset,
 } from "../../features/auth/authSlice";
-import useEffectOnce from "../../helpers/useEffectOnce";
+import FormForgotPassword from '../../components/auth/FormForgotPassword';
 
 const ForgotPassword = () => {
     useEffect(() => {
         document.title = "Kampus Gratis | Lupa Password";
     });
 
-    const [eemail, setEemail] = useState({
-        email: "",
-    });
-    
-    const { email } = eemail;
-    console.log(email)
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const { token, isLoading, isError, isSuccess, message } = useSelector(
+    const [email, setEmail] = useState();
+
+    const { isLoading, isError, isSuccess, message } = useSelector(
         (state) => state.auth
     );
 
-    const onFormChange = (e) => {
-        setEemail((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value,
-        }));
-    };
-
     const onFormSubmit = (e) => {
         e.preventDefault();
-
-        const userData = {
-            email,
-        };
-
-        dispatch(forgotPassword(userData));
+        const user = {
+            email: email
+        }
+        dispatch(forgotPassword(user));
     };
 
     useEffect(() => {
@@ -51,81 +37,45 @@ const ForgotPassword = () => {
             dispatch(reset());
             toast.error(message);
         }
-
         if (isSuccess) {
             navigate("/login");
-        }
-
-        if (isSuccess) {
             toast.success(message);
-
-            setEemail({
+            setEmail({
                 email: "",
             });
         }
-    }, [isError, isSuccess, token, message, navigate, dispatch]);
-
+    }, [isError, isSuccess, message, navigate, dispatch]);
 
     return (
         <main>
             <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
                 <div className="container-fluid">
-                    <div className="row bg-custom">
-                        <div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-opacity-10 vh-lg-100 bg-custom bg-line">
-                            <div className="p-3 p-lg-5 bg-blur mx-4">
-                                <div className="text-left">
-                                    <h1 className="fw-bold text-white">Selamat Datang <br /> Di Kampus Gratis!</h1>
-                                    <p className="mb-0 h6 fw-light text-white">
+                    <div className="row">
+                        <div className="col-12 col-lg-6 d-md-flex align-items-center justify-content-center bg-primary bg-opacity-10 vh-lg-100">
+                            <div className="p-3 p-lg-5">
+                                <div className="text-center">
+                                    <h1 className="fw-bold ">Selamat Datang <br /> Di Kampus Gratis!</h1>
+                                    <p className="mb-0 h6 fw-light ">
                                         Mari belajar sesuatu yang baru hari ini!
                                     </p>
                                 </div>
-                                <img
-                                    src="assets/images/element/02.svg"
-                                    className="mt-5"
-                                    alt=""
-                                />
+                                <img src="assets/images/element/02.svg" className="mt-5" alt="x" />
                             </div>
                         </div>
-                        <div className="col-12 col-lg-6 d-flex justify-content-center bg-white">
+                        <div className="col-12 col-lg-6 d-flex justify-content-center">
                             <div className="row my-5">
                                 <div className="col-sm-10 col-xl-12 m-auto">
-                                    <Link to="/">
-                                        <img
-                                            className="light-mode-item h-40px"
-                                            src="/assets/images/logo-kampus-gratis.png"
-                                            alt="Kampus Gratis"
-                                        />
-                                        <img
-                                            className="dark-mode-item h-40px"
-                                            src="/assets/images/logo-kampus-gratis.png"
-                                            alt="Kampus Gratis"
-                                        />
-                                    </Link>
-                                    <h1 className="fs-2 mt-4" role="img">Lupa Password?</h1>
-                                    <h5 className="fw-light mb-4">Untuk menerima kata sandi baru, masukkan alamat email Anda di bawah ini</h5>
-                                    <form onSubmit={onFormSubmit}>
-                                        <div className="mb-4">
-                                            <label htmlFor="exampleInputEmail1" className="form-label">Email address *</label>
-                                            <div className="input-group input-group-lg">
-                                                <span className="input-group-text bg-light rounded-start border-0 text-secondary px-3"><i className="bi bi-envelope-fill"></i></span>
-                                                <input
-                                                    type="email"
-                                                    className="form-control border-0 bg-light rounded-end ps-1"
-                                                    placeholder="E-mail"
-                                                    id="email"
-                                                    name="email"
-                                                    onChange={onFormChange}
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="align-items-center">
-                                            <div className="d-grid">
-                                                <button className="btn btn-blue" type="submit" >
-                                                    Reset password
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <span className="mb-0 fs-1">🤔</span>
+                                    <h1 className="fs-2">Lupa Password?</h1>
+                                    <h5 className="fw-light mb-4">
+                                        Untuk menerima kata sandi baru, masukkan alamat email Anda di bawah ini.
+                                    </h5>
+
+                                    <FormForgotPassword
+                                        onFormSubmit={onFormSubmit}
+                                        setEmail={setEmail}
+                                        isLoading={isLoading}
+                                    />
                                 </div>
                             </div>
                         </div>
