@@ -97,14 +97,14 @@ const SubjectItem = ({ subject }) => {
 						{subjectsPending.find(sub => subject.subject.name === sub.name) ? <>
 							{subjectsPending[studentSubjectIndexPending] !== undefined && <>
 								<button className='btn ms-4 mt-1 btn-warning btn-round px-2' data-id={subjectsPending[studentSubjectIndexPending].subject_id} data-bs-toggle='tooltip' data-bs-placement='bottom' title='KRS Pending' style={{ cursor: "not-allowed" }}>
-									<i class="fa fa-ban text-dark"></i>
+									<i className="fa fa-ban text-dark"></i>
 								</button>
 							</>}
 						</> : <>
 							{subjectsOngoing.find(sub => subject.subject.name === sub.name) ? <>
 								{subjectsOngoing[studentSubjectIndexOngoing] !== undefined && <>
 									<button className='btn ms-4 mt-1 btn-success-soft btn-round px-2' data-id={subjectsOngoing[studentSubjectIndexOngoing].subject_id} data-bs-toggle='tooltip' data-bs-placement='bottom' title='KRS Ongoing (Telah Terkonfirmasi)' >
-										<i class="fa fa-check text-success"></i>
+										<i className="fa fa-check text-success"></i>
 									</button>
 								</>}
 							</> : <>

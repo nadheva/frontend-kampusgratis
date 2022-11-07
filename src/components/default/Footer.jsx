@@ -6,7 +6,7 @@ import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 const Footer = () => {
   return <>
-    <div className="back-top"><i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
+    <div className="back-top"><i className="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
     <footer className="bg-light pt-5">
       <div className="container">
         <div className="row g-4">
@@ -18,22 +18,22 @@ const Footer = () => {
             <p className="my-3">Jl. Radio IV No. 08 B, RW 4, Kramat Pela, Kec. Kebayoran Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
             <ul className="list-inline mb-0 mt-3">
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-facebook" href="#">
+                <a className="btn btn-white btn-sm shadow px-2 text-facebook" href=" ">
                   <i className="fab fa-fw fa-facebook-f"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-instagram" href="#">
+                <a className="btn btn-white btn-sm shadow px-2 text-instagram" href=" ">
                   <i className="fab fa-fw fa-instagram"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-twitter" href="#">
+                <a className="btn btn-white btn-sm shadow px-2 text-twitter" href=" ">
                   <i className="fab fa-fw fa-twitter"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-linkedin" href="#">
+                <a className="btn btn-white btn-sm shadow px-2 text-linkedin" href=" ">
                   <i className="fab fa-fw fa-linkedin-in"></i>
                 </a>
               </li>
@@ -44,28 +44,28 @@ const Footer = () => {
               <div className="col-6 col-md-4">
                 <h5 className="mb-2 mb-md-4">Company</h5>
                 <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href="#">About us</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Contact us</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">News and Blogs</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Library</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Career</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">About us</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Contact us</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">News and Blogs</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Library</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Career</a></li>
                 </ul>
               </div>
               <div className="col-6 col-md-4">
                 <h5 className="mb-2 mb-md-4">Community</h5>
                 <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href="#">Documentation</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Faq</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Forum</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Sitemap</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Documentation</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Faq</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Forum</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Sitemap</a></li>
                 </ul>
               </div>
               <div className="col-6 col-md-4">
                 <h5 className="mb-2 mb-md-4">Teaching</h5>
                 <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href="#">Become a teacher</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">How to guide</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#">Terms &amp; Conditions</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Become a teacher</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">How to guide</a></li>
+                  <li className="nav-item"><a className="nav-link" href=" ">Terms &amp; Conditions</a></li>
                 </ul>
               </div>
             </div>
@@ -88,8 +88,8 @@ const Footer = () => {
               </div>
               <div className="justify-content-center mt-3 mt-lg-0">
                 <ul className="nav list-inline justify-content-center mb-0">
-                  <li className="list-inline-item"><a className="nav-link" href="#">Terms of use</a></li>
-                  <li className="list-inline-item"><a className="nav-link pe-0" href="#">Privacy policy</a></li>
+                  <li className="list-inline-item"><a className="nav-link" href=" ">Terms of use</a></li>
+                  <li className="list-inline-item"><a className="nav-link pe-0" href=" ">Privacy policy</a></li>
                 </ul>
               </div>
             </div>

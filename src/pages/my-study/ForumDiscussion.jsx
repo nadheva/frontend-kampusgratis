@@ -174,20 +174,20 @@ const ForumDiscussion = () => {
                     </div>
                   </div>
                   <hr />
-                  <div class="col-12 mt-2">
-                    <h5 class="mb-4">Diskusi</h5>
+                  <div className="col-12 mt-2">
+                    <h5 className="mb-4">Diskusi</h5>
                     {showCommentBox && <>
-                      <div class="d-flex mb-4">
-                        <div class="avatar avatar-sm flex-shrink-0 me-2">
-                          <a href="#">
-                            <img class="avatar-img rounded-circle" src={user?.display_picture_link != null ? `${user?.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
+                      <div className="d-flex mb-4">
+                        <div className="avatar avatar-sm flex-shrink-0 me-2">
+                          <a href=" ">
+                            <img className="avatar-img rounded-circle" src={user?.display_picture_link != null ? `${user?.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
                           </a>
                         </div>
-                        <form class="w-100 d-flex">
-                          <textarea class="one form-control pe-4 bg-light" id="autoheighttextarea" rows="1"
+                        <form className="w-100 d-flex">
+                          <textarea className="one form-control pe-4 bg-light" id="autoheighttextarea" rows="1"
                             placeholder="Tambah komentar ..." onChange={(e) => setMyComment(e.target.value)} value={myComment} autoFocus>
                           </textarea>
-                          <button class="btn btn-primary ms-2 mb-0" type="button" onClick={() => addComment()}>
+                          <button className="btn btn-primary ms-2 mb-0" type="button" onClick={() => addComment()}>
                             Kirim
                           </button>
                         </form>
