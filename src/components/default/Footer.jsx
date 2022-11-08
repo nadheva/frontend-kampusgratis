@@ -10,12 +10,17 @@ const Footer = () => {
     <footer className="bg-light pt-5">
       <div className="container">
         <div className="row g-4">
-          <div className="col-lg-3">
+          <div className="col-lg-4">
             <a className="me-0" href="index.html">
               <img className="light-mode-item h-40px" src={Logo} alt="Kampus Gratis" />
               <img className="dark-mode-item h-40px" src={LogoDark} alt="Kampus Gratis" />
             </a>
-            <p className="my-3">Jl. Radio IV No. 08 B, RW 4, Kramat Pela, Kec. Kebayoran Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130</p>
+            <p className="my-3">
+              KampusGratis merupakan sistem
+              manajemen E-learning yang mencantumkan laporan peningkatan
+              atau progres pembelajaran mahasiswa
+              layaknya seperti perguruan tinggi.
+            </p>
             <ul className="list-inline mb-0 mt-3">
               <li className="list-inline-item">
                 <a className="btn btn-white btn-sm shadow px-2 text-facebook" href=" ">
@@ -39,42 +44,36 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-6">
-            <div className="row g-4">
-              <div className="col-6 col-md-4">
-                <h5 className="mb-2 mb-md-4">Company</h5>
+          <div className="col-lg-5">
+            <div className="row g-2">
+              <div className="col-12 col-md-12">
+                <h5 className="mb-2 mb-md-4">Alamat</h5>
                 <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href=" ">About us</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Contact us</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">News and Blogs</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Library</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Career</a></li>
-                </ul>
-              </div>
-              <div className="col-6 col-md-4">
-                <h5 className="mb-2 mb-md-4">Community</h5>
-                <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href=" ">Documentation</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Faq</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Forum</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Sitemap</a></li>
-                </ul>
-              </div>
-              <div className="col-6 col-md-4">
-                <h5 className="mb-2 mb-md-4">Teaching</h5>
-                <ul className="nav flex-column">
-                  <li className="nav-item"><a className="nav-link" href=" ">Become a teacher</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">How to guide</a></li>
-                  <li className="nav-item"><a className="nav-link" href=" ">Terms &amp; Conditions</a></li>
+                  <li className="nav-item">
+                    <p >
+                      Primary :
+                      <span className="h6 fw-light ms-2">Jl. Radio IV No.8 B, RW.4,Kramat Pela, Kec. Kby.Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130 </span>
+                    </p>
+                  </li>
+                  <li className="nav-item">
+                    <p >
+                      Second  :
+                      <span className="h6 fw-light ms-2">Jl. Raya Cirendeu No.60 Cirendeu Kec. Ciputat Timur, Kota Tangerang </span>
+                    </p>
+                  </li>
+                  <li className="nav-item">
+                    <p >
+                      Tertiary :
+                      <span className="h6 fw-light ms-2">Jl. Raya Darmo Permai III Surabaya. 60119 </span>
+                    </p>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="col-lg-3">
-            <h5 className="mb-2 mb-md-4">Contact</h5>
-            <p className="mb-2">
-              Toll free:<span className="h6 fw-light ms-2">+1234 568 963</span>
-              <span className="d-block small">(9:AM to 8:PM IST)</span>
+            <h5 className="mb-2 mb-md-4">Kontak</h5>
+            <p className="mb-2">Primary :<span className="h6 fw-light ms-2"> 0812-1046 8281</span>
             </p>
             <p className="mb-0">Email:<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
           </div>
@@ -84,7 +83,7 @@ const Footer = () => {
           <div className="container px-0">
             <div className="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
               <div className="text-primary-hover">
-                <Link to="/" className="text-body">Kampus Gratis © 2022 </Link>- Hak Cipta Dilindungi.
+                <Link to="/" className="text-body">2022 - www.kampusgratis.id. </Link> All Rights Reserved
               </div>
               <div className="justify-content-center mt-3 mt-lg-0">
                 <ul className="nav list-inline justify-content-center mb-0">
