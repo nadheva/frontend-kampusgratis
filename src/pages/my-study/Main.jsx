@@ -62,7 +62,7 @@ const Main = () => {
                       <p className="mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced.</p>
                     </div>
                     <div className="col-lg-4 text-lg-end">
-                      <a href="#" className="btn btn-warning mb-0">Schedule Tour</a>
+                      <a href=" " className="btn btn-warning mb-0">Schedule Tour</a>
                     </div>
                   </div>
                 </div>

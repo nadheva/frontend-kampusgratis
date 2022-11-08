@@ -1,100 +1,114 @@
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";
-import _ from "lodash";
 
 // component
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 import CardList from "../../components/artikel/CardList";
-import Pagination from "../../components/element/Pagination";
 import Search from "../../components/artikel/Search";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { artikelAll, reset } from "../../features/artikel/artikelSlice";
+import { artikelAll, reset, resetAll } from "../../features/artikel/artikelSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Artikel = () => {
-	// redux
+	// Redux
+	// const dispatch = useDispatch();
+	// const [currentArtikels, setCurrentArtikels] = useState({});
+
+	// const { data, isLoading } = useSelector(
+	// 	(state) => state.artikel
+	// );
+
+	// useEffectOnce(() => {
+	// 	dispatch(artikelAll());
+	// });
+
+	// useEffect(() => {
+	// 	if (data?.artikels) setCurrentArtikels(data?.artikels);
+	// }, [data]);
+
+	const [searchTerm, setSearchTerm] = useState("");
+
+	const [isPageLoad, setIsPageLoad] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [lastPage, setLastPage] = useState(1);
+	const [results, setResults] = useState([]);
+
 	const dispatch = useDispatch();
-	const { artikels, isLoading, isError, isSuccess, message } = useSelector(
+
+	const { data, isLoading } = useSelector(
 		(state) => state.artikel
 	);
 
+	const doFilter = (e) => {
+		e.preventDefault();
+
+		dispatch(resetAll());
+		dispatch(artikelAll({ currentPage, search: searchTerm }));
+
+		setIsPageLoad(false);
+	};
+
+	const renderPage = () => {
+		if (!isPageLoad) return <></>;
+
+		let page = [];
+
+		for (let i = 1; i <= lastPage; i++) {
+			page.push(
+				<li className={`page-item mb-0 ${i === currentPage ? "active" : ""}`}>
+					{i === currentPage ? (
+						<span className="page-link">{i}</span>
+					) : (
+						<button className="page-link" onClick={() => changePage(i)}>
+							{i}
+						</button>
+					)}
+				</li>
+			);
+		}
+
+		return page;
+	};
+
+	const changePage = (page) => {
+		setIsPageLoad(false);
+		setCurrentPage(page);
+		setResults([]);
+		dispatch(resetAll());
+		dispatch(artikelAll({ currentPage: page, search: searchTerm }));
+	};
+
 	useEffectOnce(() => {
-		dispatch(artikelAll());
+		dispatch(resetAll());
+		setIsPageLoad(false);
+		dispatch(artikelAll({ currentPage, search: searchTerm }));
 	});
 
 	useEffect(() => {
-		if (isError && !isSuccess) {
-			toast.error(message);
-			dispatch(reset());
-		}
-		if (isSuccess && message && !isError) {
-			toast.success(message);
-			dispatch(reset());
-		}
-	}, [artikels, isLoading, isError, isSuccess, message, dispatch]);
+		console.log(data?.artikels)
+		// const { max_page: maxPage, result } = data?.artikels || {};
+		// if (maxPage !== 0) setLastPage(maxPage);
+		// console.log(result)
+		// if (result) setResults(result);
+		// console.log(result)
 
-	// Pagination
-	const [filteredArtikel, setFilteredArtikel] = useState([]);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage] = useState(8);
+		// if (maxPage && result) setIsPageLoad(true);
+	}, [data, isPageLoad, results]);
 
-	useEffect(() => {
-		setFilteredArtikel(artikels);
-	}, []);
 
-	const indexOfLastPost = currentPage * postsPerPage;
-	const indexOfFirstPost = indexOfLastPost - postsPerPage;
-	const currentPosts = filteredArtikel.slice(indexOfFirstPost, indexOfLastPost);
+	console.log(results)
 
-	const paginate = (e, pageNumber) => {
-		e.preventDefault();
-		setCurrentPage(pageNumber);
-	};
-
-	// search
-	const [searchValue, setSearchValue] = useState("");
-
-	const handleSearchFilter = (e) => {
-		setSearchValue(e.target.value);
-	};
-
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			const filter = _.filter(artikels, (data) => {
-				return _.includes(
-					_.lowerCase(JSON.stringify(_.values(data))),
-					_.lowerCase(searchValue)
-				);
-			});
-			setFilteredArtikel(filter);
-		}, 200);
-		return () => clearTimeout(timeout);
-	}, [searchValue, filteredArtikel]);
 
 	return (
 		<>
 			<Header />
 			<main>
-				<Search
-					handleSearchFilter={handleSearchFilter}
-					searchValue={searchValue}
-				/>
+				<Search />
 				<section className="position-relative pt-0 pt-lg-5">
 					<div className="container">
-						<CardList isLoading={isLoading} currentPosts={currentPosts} />
-						{isLoading ? (
-							<></>
-						) : !(filteredArtikel.length > postsPerPage) ? null : (
-							<Pagination
-								itemsPerPage={postsPerPage}
-								totalItems={filteredArtikel.length}
-								paginate={paginate}
-								currentPage={currentPage}
-							/>
-						)}
+						{/* <CardList isLoading={isLoading} currentPosts={resetAll} /> */}
 					</div>
 				</section>
 			</main>

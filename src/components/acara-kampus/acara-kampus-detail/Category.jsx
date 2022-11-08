@@ -13,7 +13,7 @@ const Category = () => {
                                 </div>
                                 <div className="ms-3">
                                     <h5 className="mb-0">
-                                        <a href="#" className="stretched-link">
+                                        <a href=" " className="stretched-link">
                                             Kapasitas
                                         </a>
                                     </h5>
@@ -30,7 +30,7 @@ const Category = () => {
                                 </div>
                                 <div className="ms-3">
                                     <h5 className="mb-0">
-                                        <a href="#" className="stretched-link">
+                                        <a href=" " className="stretched-link">
                                             Harga Tiket
                                         </a>
                                     </h5>
@@ -47,7 +47,7 @@ const Category = () => {
                                 </div>
                                 <div className="ms-3">
                                     <h5 className="mb-0">
-                                        <a href="#" className="stretched-link">
+                                        <a href=" " className="stretched-link">
                                             Jenis Kegiatan
                                         </a>
                                     </h5>
@@ -64,7 +64,7 @@ const Category = () => {
                                 </div>
                                 <div className="ms-3">
                                     <h5 className="mb-0">
-                                        <a href="#" className="stretched-link">
+                                        <a href=" " className="stretched-link">
                                             15 Agustus 2022
                                         </a>
                                     </h5>

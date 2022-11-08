@@ -73,7 +73,7 @@ const Header = () => {
             </div>
             {user ? (
               <div className="dropdown ms-1 ms-lg-0">
-                <a className="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button" data-bs-auto-close="outside"
+                <a className="avatar avatar-sm p-0" href=" " id="profileDropdown" role="button" data-bs-auto-close="outside"
                   data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                   <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                 </a>
@@ -84,7 +84,7 @@ const Header = () => {
                         <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                       </div>
                       <div>
-                        <a className="h6" href="#">{getFirstName(user.full_name)}</a>
+                        <a className="h6" href=" ">{getFirstName(user.full_name)}</a>
                         <p className="small m-0">{user.email}</p>
                       </div>
                     </div>
