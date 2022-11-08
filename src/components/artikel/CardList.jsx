@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 import CardItem from './CardItem';
 
-const CardList = ({ currentPosts, isLoading }) => {
+const CardList = ({ isLoading, results }) => {
     return (
         <div className="row g-4">
             {isLoading ? (
@@ -38,9 +38,9 @@ const CardList = ({ currentPosts, isLoading }) => {
                         </SkeletonTheme>
                     </div>
                 </div>
-            ) : Object.values(currentPosts).length !== 0 ? (
-                currentPosts.map((artikel) => (
-                    <CardItem key={artikel.id} artikel={artikel} />
+            ) : Object.values(results).length !== 0 ? (
+                results.map((artikel, index) => (
+                    <CardItem key={index} artikel={artikel} />
                 ))
             ) : (
                 <span className='alert alert-danger'>Belum ada postingan</span>

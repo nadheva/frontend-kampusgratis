@@ -8,7 +8,7 @@ import Search from "../../components/artikel/Search";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { artikelAll, reset, resetAll } from "../../features/artikel/artikelSlice";
+import { artikelAll, resetAll } from "../../features/artikel/artikelSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Artikel = () => {
@@ -87,14 +87,11 @@ const Artikel = () => {
 	});
 
 	useEffect(() => {
-		console.log(data?.artikels)
-		// const { max_page: maxPage, result } = data?.artikels || {};
-		// if (maxPage !== 0) setLastPage(maxPage);
-		// console.log(result)
-		// if (result) setResults(result);
-		// console.log(result)
+		const { max_page: maxPage, result } = data?.artikels || {};
+		if (maxPage !== 0) setLastPage(maxPage);
+		if (result) setResults(result);
 
-		// if (maxPage && result) setIsPageLoad(true);
+		if (maxPage && result) setIsPageLoad(true);
 	}, [data, isPageLoad, results]);
 
 
@@ -105,10 +102,42 @@ const Artikel = () => {
 		<>
 			<Header />
 			<main>
-				<Search />
+				<Search
+					doFilter={doFilter}
+					setSearchTerm={setSearchTerm}
+				/>
 				<section className="position-relative pt-0 pt-lg-5">
 					<div className="container">
-						{/* <CardList isLoading={isLoading} currentPosts={resetAll} /> */}
+						<CardList
+							isLoading={isLoading}
+							results={results}
+							isPageLoad={isPageLoad}
+							currentPage={currentPage}
+							lastPage={lastPage}
+							changePage={changePage}
+							renderPage={renderPage}
+						/>
+
+						<div className="col-12">
+							<nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
+								<ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
+									{isPageLoad && <>
+										{currentPage !== 1 && lastPage > 2 && <li className="page-item mb-0">
+											<button className="page-link" onClick={() => changePage(1)}>
+												<i className="fas fa-angle-double-left"></i>
+											</button>
+										</li>}
+										{renderPage()}
+										{currentPage !== lastPage && lastPage > 2 && <li className="page-item mb-0">
+											<button className="page-link" onClick={() => changePage(lastPage)} >
+												<i className="fas fa-angle-double-right"></i>
+											</button>
+										</li>}
+									</>}
+								</ul>
+							</nav>
+						</div>
+
 					</div>
 				</section>
 			</main>
