@@ -40,7 +40,7 @@ const CourseItem = ({ subject, progress }) => {
             <td>
                 <Link to={`/studi-ku/${subject.subject_id}`} className="btn btn-sm btn-primary-soft me-1 mb-1 mb-md-0">
                     <i className="bi bi-play-circle me-1" />
-                    Continue
+                    Lanjutkan
                 </Link>
             </td>
         </tr>

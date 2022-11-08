@@ -5,7 +5,11 @@ const CardItem = ({ lecturers, subject, student, progress }) => {
 	return (
 		<div className="col-sm-6 col-lg-4 col-xl-4">
 			<div className="card shadow  h-100 ">
-				<img src={subject.Subject.thumbnail_link} className="card-img-top card-img-artikel" alt="courseimage" />
+				<img
+					src={subject.Subject.thumbnail_link}
+					className="card-img-top card-img-artikel"
+					alt="courseimage"
+				/>
 				<div className="card-body pb-0">
 					<div className="d-flex justify-content-between mb-2">
 						<p className="badge bg-success bg-opacity-10 text-success"> {subject.Subject.level}</p>

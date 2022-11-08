@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-// componentf
+// component
 import Banner from "../../components/Account/Banner";
 import Sidebar from "../../components/Account/Sidebar";
 import Header from "../../components/default/Header";
@@ -9,26 +9,76 @@ import MainContent from '../../components/nilai-sertifikat/sertifikat/MainConten
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getCertificates, reset, resetAll } from "../../features/sertifikat/certificateSlice";
+import { getCertificates, resetAll } from "../../features/sertifikat/certificateSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Sertifikat = () => {
 	// Redux
-	const dispatch = useDispatch();
-	const [currentCertificates, setCurrentCertificates] = useState({});
+	const [searchTerm, setSearchTerm] = useState("");
 
-	const { data, isLoading } = useSelector(
-		(state) => state.certificate
-	);
+	const [isPageLoad, setIsPageLoad] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [lastPage, setLastPage] = useState(1);
+	const [results, setResults] = useState([]);
+
+	const dispatch = useDispatch();
+
+	const { data, isLoading } = useSelector((state) => state.certificate);
+
+	const doFilter = (e) => {
+		e.preventDefault();
+
+		dispatch(resetAll());
+		dispatch(getCertificates({ currentPage, search: searchTerm }));
+
+		setIsPageLoad(false);
+	};
+
+	const renderPage = () => {
+		if (!isPageLoad) return <></>;
+
+		let page = [];
+
+		for (let i = 1; i <= lastPage; i++) {
+			page.push(
+				<li className={`page-item mb-0 ${i === currentPage ? "active" : ""}`}>
+					{i === currentPage ? (
+						<span className="page-link">{i}</span>
+					) : (
+						<button className="page-link" onClick={() => changePage(i)}>
+							{i}
+						</button>
+					)}
+				</li>
+			);
+		}
+
+		return page;
+	};
+
+	const changePage = (page) => {
+		setIsPageLoad(false);
+		setCurrentPage(page);
+		setResults([]);
+		dispatch(resetAll());
+		dispatch(getCertificates({ currentPage: page, search: searchTerm }));
+	};
 
 	useEffectOnce(() => {
-		dispatch(getCertificates());
+		dispatch(resetAll());
+		setIsPageLoad(false);
+		dispatch(getCertificates({ currentPage, search: searchTerm }));
 	});
 
 	useEffect(() => {
-		if (data?.certificates) setCurrentCertificates(data.certificates);
+		const { max_page: maxPage, result } = data?.certificates || {};
+		if (maxPage !== 0) setLastPage(maxPage);
+		if (result) setResults(result);
 
-	}, [data]);
+		if (maxPage && result) setIsPageLoad(true);
+	}, [data, isPageLoad, results]);
+
+	console.log(results)
 
 	return (
 		<>
@@ -41,11 +91,18 @@ const Sertifikat = () => {
 						<div className="col-xl-9">
 							<div className="card border bg-transparent rounded-3">
 								<div className="card-header bg-transparent border-bottom">
-									<h3 className="mb-0">List Sertifikat</h3>
+									<h3 className="mb-0">Daftar Sertifikat</h3>
 								</div>
 								<MainContent
-									data={currentCertificates}
 									isLoading={isLoading}
+									results={results}
+									doFilter={doFilter}
+									setSearchTerm={setSearchTerm}
+									isPageLoad={isPageLoad}
+									currentPage={currentPage}
+									lastPage={lastPage}
+									changePage={changePage}
+									renderPage={renderPage}
 								/>
 							</div>
 						</div>

@@ -3,7 +3,7 @@ import { getAuth } from 'firebase/auth';
 
 const API_URL = 'https://fe-integration-test.herokuapp.com/api/v1/';
 
-const getCertificates = async () => {
+const getCertificates = async (currentPage, search) => {
   const auth = getAuth();
   const token = await auth.currentUser.getIdToken();
 
@@ -14,7 +14,7 @@ const getCertificates = async () => {
     }
   }
 
-  const response = await axios.get(API_URL + `certificate`, config);
+  const response = await axios.get(API_URL + `certificate?page=${currentPage}&limit=8&search=${search}`, config);
 
   return response.data;
 }

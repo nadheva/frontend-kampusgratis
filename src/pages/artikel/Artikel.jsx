@@ -10,23 +10,9 @@ import Search from "../../components/artikel/Search";
 import { useSelector, useDispatch } from "react-redux";
 import { artikelAll, resetAll } from "../../features/artikel/artikelSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
+import Pagination from "../../components/default/Pagination";
 
 const Artikel = () => {
-	// Redux
-	// const dispatch = useDispatch();
-	// const [currentArtikels, setCurrentArtikels] = useState({});
-
-	// const { data, isLoading } = useSelector(
-	// 	(state) => state.artikel
-	// );
-
-	// useEffectOnce(() => {
-	// 	dispatch(artikelAll());
-	// });
-
-	// useEffect(() => {
-	// 	if (data?.artikels) setCurrentArtikels(data?.artikels);
-	// }, [data]);
 
 	const [searchTerm, setSearchTerm] = useState("");
 
@@ -94,10 +80,6 @@ const Artikel = () => {
 		if (maxPage && result) setIsPageLoad(true);
 	}, [data, isPageLoad, results]);
 
-
-	console.log(results)
-
-
 	return (
 		<>
 			<Header />
@@ -111,33 +93,14 @@ const Artikel = () => {
 						<CardList
 							isLoading={isLoading}
 							results={results}
+						/>
+						<Pagination
 							isPageLoad={isPageLoad}
 							currentPage={currentPage}
 							lastPage={lastPage}
 							changePage={changePage}
 							renderPage={renderPage}
 						/>
-
-						<div className="col-12">
-							<nav className="mt-4 d-flex justify-content-center" aria-label="navigation">
-								<ul className="pagination pagination-primary-soft d-inline-block d-md-flex rounded mb-0">
-									{isPageLoad && <>
-										{currentPage !== 1 && lastPage > 2 && <li className="page-item mb-0">
-											<button className="page-link" onClick={() => changePage(1)}>
-												<i className="fas fa-angle-double-left"></i>
-											</button>
-										</li>}
-										{renderPage()}
-										{currentPage !== lastPage && lastPage > 2 && <li className="page-item mb-0">
-											<button className="page-link" onClick={() => changePage(lastPage)} >
-												<i className="fas fa-angle-double-right"></i>
-											</button>
-										</li>}
-									</>}
-								</ul>
-							</nav>
-						</div>
-
 					</div>
 				</section>
 			</main>

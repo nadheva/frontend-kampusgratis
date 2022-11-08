@@ -190,8 +190,8 @@ function App() {
 
 
 						{/* START : KALENDER */}
-						<Route path="/calender" exact element={<PrivateRoute />}>
-							<Route path="/calender" exact element={<Calendar />} />
+						<Route path="/kalender" exact element={<PrivateRoute />}>
+							<Route path="/kalender" exact element={<Calendar />} />
 						</Route>
 						{/* END : KALENDER */}
 

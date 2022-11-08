@@ -12,10 +12,10 @@ const SertifikatItem = ({ data }) => {
                     <div className="ms-3">
                         <h5 className="mb-0">
                             <Link
-                                to={`/certificates/${data.id_certificate}`}
+                                to={`/certificates/${data?.id_certificate}`}
                                 className="stretched-link"
                             >
-                                {data.subject.name}
+                                {data?.subject?.name}
                             </Link>
                         </h5>
                     </div>
