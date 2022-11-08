@@ -168,7 +168,7 @@ const ForumDiscussion = () => {
                         {currentDiscussion.student_like.length} Penyuka
                       </button>
                       <button className={`btn btn-sm w-50 py-2 border ms-2`} onClick={() => setShowCommentBox(showCommentBox ? false : true)}>
-                        <i class={`fa fa-solid ${showCommentBox ? "fa-comment-slash" : "fa-comment"} text-center text-dark`}></i>&nbsp;
+                        <i className={`fa fa-solid ${showCommentBox ? "fa-comment-slash" : "fa-comment"} text-center text-dark`}></i>&nbsp;
                         {showCommentBox ? "Tutup Komentar" : "Tambah Komentar"}
                       </button>
                     </div>

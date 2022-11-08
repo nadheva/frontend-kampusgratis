@@ -1,94 +1,89 @@
 import { useState, useEffect } from "react";
 
-let cachedScripts = {};
-const useScript = (src) => {
-	// Keeping track of script loaded and error state
+let cachedScripts = [];
+
+export function useScript(src) {
 	const [state, setState] = useState({
 		loaded: false,
-		error: false,
+		error: false
 	});
 
 	useEffect(() => {
-		const onScriptLoad = () => {
-			cachedScripts[src].loaded = true;
-			setState({
-				loaded: true,
-				error: false,
-			});
-		};
+		console.log("yaman");
+		if (cachedScripts.includes(src)) {
+			let script = document.getElementById('functions');
 
-		const onScriptError = () => {
-			// Remove it from cache, so that it can be re-attempted if someone tries to load it again
-			delete cachedScripts[src];
+			script.remove();
 
-			setState({
-				loaded: true,
-				error: true,
-			});
-		};
+			let new_script = document.createElement("script");
+			new_script.setAttribute('id', 'functions');
+			new_script.src = src;
+			new_script.async = true;
 
-		let scriptLoader = cachedScripts[src];
-		if (scriptLoader) {
-			// Loading was attempted earlier
-			if (scriptLoader.loaded) {
-				// Script was successfully loaded
-				let script = scriptLoader.script;
+			const onScriptLoad = () => {
+				setState({
+					loaded: true,
+					error: false
+				});
+			};
 
-				script.src = src;
-				script.async = true;
-				script.defer = true;
-
-				script.addEventListener("load", onScriptLoad);
-				script.addEventListener("error", onScriptError);
+			const onScriptError = () => {
+				const index = cachedScripts.indexOf(src);
+				if (index >= 0) cachedScripts.splice(index, 1);
+				new_script.remove();
 
 				setState({
 					loaded: true,
-					error: false,
+					error: true
 				});
+			};
 
-				return () => {
-					script.removeEventListener("load", onScriptLoad);
-					script.removeEventListener("error", onScriptError);
-				};
-			} else {
-				//Script is still loading
-				let script = scriptLoader.script;
+			new_script.addEventListener("load", onScriptLoad);
+			new_script.addEventListener("error", onScriptError);
 
-				script.addEventListener("load", onScriptLoad);
-				script.addEventListener("error", onScriptError);
+			document.body.appendChild(new_script);
 
-				return () => {
-					script.removeEventListener("load", onScriptLoad);
-					script.removeEventListener("error", onScriptError);
-				};
-			}
+			return () => {
+				new_script.removeEventListener("load", onScriptLoad);
+				new_script.removeEventListener("error", onScriptError);
+			};
 		} else {
-			// Create script
+			cachedScripts.push(src);
+
 			let script = document.createElement("script");
-			script.setAttribute("id", src.split("/")[src.split("/").length - 1]);
+			script.setAttribute('id', 'functions');
 			script.src = src;
 			script.async = true;
-			script.defer = true;
 
-			// Script event listener callbacks for load and error
+			const onScriptLoad = () => {
+				setState({
+					loaded: true,
+					error: false
+				});
+			};
+
+			const onScriptError = () => {
+				const index = cachedScripts.indexOf(src);
+				if (index >= 0) cachedScripts.splice(index, 1);
+				script.remove();
+
+				setState({
+					loaded: true,
+					error: true
+				});
+			};
 
 			script.addEventListener("load", onScriptLoad);
 			script.addEventListener("error", onScriptError);
 
-			// Add script to document body
 			document.body.appendChild(script);
 
-			cachedScripts[src] = { loaded: false, script };
-
-			// Remove event listeners on cleanup
 			return () => {
 				script.removeEventListener("load", onScriptLoad);
 				script.removeEventListener("error", onScriptError);
 			};
 		}
-	}, [src]); // Only re-run effect if script src changes
+	}, [src]);
 
 	return [state.loaded, state.error];
-};
-
-export default useScript;
+}

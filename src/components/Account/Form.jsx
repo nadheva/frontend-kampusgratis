@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateProfile, getMe, resetState } from '../../features/profile/profileSlice';
+import { updateProfile, getMe, resetState, reset } from '../../features/profile/profileSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import { toast } from 'react-toastify';
 
@@ -33,7 +33,6 @@ const FormEdit = () => {
 	);
 
 	useEffectOnce(() => {
-		dispatch(resetState());
 		dispatch(getMe());
 	});
 
@@ -63,21 +62,22 @@ const FormEdit = () => {
 
 	const onFormSubmit = (e) => {
 		e.preventDefault();
-		setIsLoaded(false);
 		dispatch(updateProfile(profileData));
 	}
 
 	useEffect(() => {
-		setIsLoaded(true);
-
-		if (user) setProfileData({
-			full_name: user.full_name,
-			phone: user.phone,
-			gender: user.gender,
-			username: user.username,
-			display_picture: user.display_picture,
-			display_picture_link: user.display_picture_link
-		});
+		if (!isLoading && isSuccess) setIsLoaded(true);
+		if (user) {
+			setProfileData({
+				full_name: user.full_name,
+				phone: user.phone,
+				gender: user.gender,
+				username: user.username,
+				display_picture: user.display_picture,
+				display_picture_link: user.display_picture_link,
+				...profileData
+			});
+		}
 
 		if (isError && !isSuccess) {
 			toast.error(message);
@@ -88,10 +88,10 @@ const FormEdit = () => {
 			toast.success(message);
 			dispatch(resetState());
 		}
-	}, [isError, isSuccess, user, message, navigate, dispatch]);
+	}, [isError, isLoading, isSuccess, user, message, isLoaded, navigate, dispatch]);
 
 	return <>
-		{isLoading ? <>
+		{isLoading && !isLoaded ? <>
 			<div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
 				<div className='row'>
 					<div className='col-12'>
@@ -147,6 +147,7 @@ const FormEdit = () => {
 										name='full_name'
 										value={full_name}
 										onChange={onFormChange}
+										disabled={isLoading}
 										placeholder='Nama Lengkap'
 									/>
 								</div>
@@ -176,19 +177,22 @@ const FormEdit = () => {
 									name='phone'
 									value={phone}
 									onChange={onFormChange}
+									disabled={isLoading}
 									placeholder='Nomor Handphone'
 								/>
 							</div>
 							<div className='col-md-6'>
 								<label className='form-label'>Jenis Kelamin</label>
-								<select className='form-select' onChange={onFormChange} name='gender' value={gender}>
+								<select className='form-select' onChange={onFormChange}
+									disabled={isLoading}
+									name='gender' value={gender}>
 									{genderOptions.map(option => (
 										<option key={option.value} value={option.value} >{option.label}</option>
 									))}
 								</select>
 							</div>
 							<div className='d-sm-flex justify-content-end'>
-								{isLoading && !isLoaded ? (
+								{isLoading && isLoaded ? (
 									<button type='submit' className='btn btn-primary mb-0' disabled={isLoading}>
 										<span className='spinner-border spinner-border-sm'></span>&nbsp;
 										Menyimpan Perubahan ...

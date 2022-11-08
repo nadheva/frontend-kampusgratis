@@ -138,7 +138,7 @@ const SubjectsList = () => {
       setEligibleTakeMajor(true);
       setEligibleEnroll(false);
     }
-  }, [data, message, eligibleTakeMajor, eligibleEnroll, userMajors, dispatch]);
+  }, [data, message, eligibleTakeMajor, eligibleEnroll, userMajors, isTakingMajor, majorId, dispatch]);
 
   return <>
     <Header />

@@ -5,6 +5,121 @@ import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 
 const Categories = () => {
+	const categoryList = [
+		{
+			name: "Studi-Ku",
+			url: "/studi-ku",
+			src: "/assets/images/element/instructor-course.svg",
+			background: "bg-primary",
+			disabled: false
+		},
+		{
+			name: "Silabus",
+			url: "/silabus",
+			src: "/assets/images/element/online.svg",
+			background: "bg-secondary",
+			disabled: false
+		},
+		{
+			name: "Sekilas Ilmu",
+			url: "/artikel",
+			src: "/assets/images/element/data-science.svg",
+			background: "bg-success",
+			disabled: false
+		},
+		{
+			name: "Kalender Saya",
+			url: "/kalender",
+			src: "/assets/images/element/account.svg",
+			background: "bg-danger",
+			disabled: false
+		},
+		{
+			name: "Acara Kampus",
+			url: "/acara-kampus",
+			src: "/assets/images/element/photography.svg",
+			background: "bg-warning",
+			disabled: false
+		},
+		{
+			name: "Nilai & Sertifikat",
+			url: "/nilai",
+			src: "/assets/images/element/18.svg",
+			background: "bg-info",
+			disabled: false
+		},
+		{
+			name: "Penyaluran Kerja",
+			url: "/penyaluran-kerja",
+			src: "/assets/images/element/coding.svg",
+			background: "bg-primary",
+			disabled: false
+		},
+		{
+			name: "Analitik",
+			url: "/analitik",
+			src: "/assets/images/element/exam.svg",
+			background: "bg-secondary",
+			disabled: false
+		},
+		{
+			name: "Konsultasi & Layanan",
+			url: "/silabus",
+			src: "/assets/images/element/online.svg",
+			background: "bg-success",
+			disabled: false
+		},
+		{
+			name: "Diskusi Perkuliahan",
+			url: "#",
+			src: "/assets/images/element/25.svg",
+			background: "bg-danger",
+			disabled: true
+		},
+		{
+			name: "Panduan",
+			url: "#",
+			src: "/assets/images/element/help.svg",
+			background: "bg-warning",
+			disabled: true
+		},
+		{
+			name: "Penugasan",
+			url: "#",
+			src: "/assets/images/element/home.svg",
+			background: "bg-info",
+			disabled: true
+		},
+		{
+			name: "Papan Skor",
+			url: "#",
+			src: "/assets/images/element/music.svg",
+			background: "bg-primary",
+			disabled: true
+		},
+		{
+			name: "Ruang Simulasi",
+			url: "#",
+			src: "/assets/images/element/account.svg",
+			background: "bg-light",
+			disabled: true
+		},
+		{
+			name: "Perencanaan Karir",
+			url: "#",
+			src: "/assets/images/element/engineering.svg",
+			background: "bg-success",
+			disabled: true
+		},
+		{
+			name: "Absensi",
+			url: "#",
+			src: "/assets/images/element/marketing.svg",
+			background: "bg-danger",
+			disabled: true
+		},
+	];
+
 	return (
 		<>
 			<Header />
@@ -64,285 +179,32 @@ const Categories = () => {
 						</div>
 					</div>
 					<div className="row g-4">
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/instructor-course.svg"
-										alt="x"
-									/>
+						{categoryList.map(category => <>
+							<div className="col-sm-6 col-md-4 col-xl-3">
+								<div className={`card card-body ${category.disabled ? "bg-dark" : category.background} bg-opacity-10 text-center position-relative btn-transition p-4`}>
+									<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
+										<img
+											loading="lazy"
+											src={category.src}
+											alt={category.name}
+											style={category.disabled ? { filter: "grayscale(100%)" } : {}}
+										/>
+									</div>
+									<h5 className="mb-2">
+										{category.disabled ? <>
+											<Link to="#" onClick={(e) => e.preventDefault()} className="stretched-link" disabled style={{ "cursor": "not-allowed" }}>
+												{category.name}
+											</Link>
+										</> : <>
+											<Link to={category.url} className="stretched-link" dstyle={{ "cursor": "not-allowed" }}>
+												{category.name}
+											</Link>
+										</>}
+									</h5>
 								</div>
-								<h5 className="mb-2">
-									<Link to="/studi-ku" className="stretched-link">
-										Studi-Ku
-									</Link>
-								</h5>
 							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-danger bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/online.svg"
-										alt="Silabus"
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/silabus" className="stretched-link">
-										Silabus
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-orange bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/data-science.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/artikel" className="stretched-link" disabled>
-										Sekilas Ilmu
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/account.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/calender" className="stretched-link" disabled>
-										Kalender Saya
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body  bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/photography.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/acara-kampus" className="stretched-link" disabled>
-										Acara Kampus
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/18.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/nilai" className="stretched-link" disabled>
-										Nilai &amp; Sertifikat
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/coding.svg"
-										alt="x"
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link
-										to="/penyaluran-kerja"
-										className="stretched-link"
-										disabled
-									>
-										Penyaluran Kerja
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/exam.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/analitik" className="stretched-link" disabled>
-										Analystic
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-success bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/04.svg"
-										alt="x"
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link
-										to="/layanan-konsultasi"
-										className="stretched-link"
-										disabled
-									>
-										Konsultasi &amp; Layanan
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/25.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Diskusi Perkuliahan
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/help.svg"
-										alt="x"
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to="/studi-ku" className="stretched-link">
-										Panduan
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-15 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/home.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Penugasan
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/music.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Papan Skor
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/account.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Ruang Simulasi
-									</Link>
-								</h5>
-							</div>
-						</div>
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/engineering.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link" disabled>
-										Perencanaan Karir
-									</Link>
-								</h5>
-							</div>
-						</div>
-
-						<div className="col-sm-6 col-md-4 col-xl-3">
-							<div className="card card-body bg-dark bg-opacity-10 text-center position-relative btn-transition p-4">
-								<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
-									<img
-										loading="lazy"
-										src="/assets/images/element/marketing.svg"
-										alt=""
-										style={{ filter: "grayscale(100%)" }}
-									/>
-								</div>
-								<h5 className="mb-2">
-									<Link to=" " className="stretched-link">
-										Absensi
-									</Link>
-								</h5>
-							</div>
-						</div>
+						</>
+						)}
 					</div>
 				</div>
 			</section>
