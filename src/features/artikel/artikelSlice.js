@@ -12,10 +12,10 @@ const initialState = {
 
 export const artikelAll = createAsyncThunk(
   'article/index',
-  async (_, thunkAPI) => {
+  async ({ currentPage, search }, thunkAPI) => {
     try {
 
-      const { data } = await artikelService.artikelAll();
+      const { data } = await artikelService.artikelAll(currentPage, search);
       return data;
 
     } catch (error) {
@@ -90,5 +90,5 @@ export const artikelSlice = createSlice({
   }
 });
 
-export const { reset } = artikelSlice.actions;
+export const { reset, resetAll } = artikelSlice.actions;
 export default artikelSlice.reducer;
