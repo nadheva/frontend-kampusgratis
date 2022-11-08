@@ -58,8 +58,8 @@ const QuizDetail = () => {
 	}
 
 	const doSubmitQuiz = () => {
-		console.log(location.pathname.split("/").pop())
-		console.log(location.pathname.split("/").pop().join("/"));
+		// console.log(location.pathname.split("/").pop())
+		// console.log(location.pathname.split("/").pop().join("/"));
 
 		let answersDoubt = Object.values(userAnswersDoubt);
 		if (answersDoubt.find(data => data === true)) return toast.error("Kamu masih memiliki jawaban yang ragu.");
@@ -213,7 +213,7 @@ const QuizDetail = () => {
 																			&nbsp;
 																			{currentQuizNumber === currentQuizQuestions.length && <>
 																				<button type="button" className="btn btn-success mb-0" onClick={doSubmitQuiz}>
-																					<i className="fa fa-paper-plane"></i> Submit Quiz
+																					<i className="fa fa-paper-plane"></i> Selesaikan Quiz
 																				</button>
 																			</>}
 																		</div>

@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import Logo from '../../assets/images/logo-kampus-gratis.png';
 import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
-import useScript from '../../hooks/useScript';
+import { useScript } from '../../hooks/useScript';
 import { useEffect } from 'react';
 
 const getFirstName = (fullName) => {

@@ -1,9 +1,8 @@
-import React from 'react'
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import AccordionList from './AccordionList'
+import React from 'react';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+// import AccordionList from './AccordionList'
 
-const TableNilai = ({ data, isLoading }) => {
-
+const TableScore = ({ data, isLoading }) => {
     return (
         <div className="card border bg-transparent rounded-3 mt-4">
             <div className="card-header bg-transparent border-bottom px-3">
@@ -15,16 +14,16 @@ const TableNilai = ({ data, isLoading }) => {
                         <thead>
                             <tr>
                                 <th scope="col" className="border-0 rounded-start">
-                                    Nama Matakuliah
+                                    Nama Mata Kuliah
                                 </th>
                                 <th scope="col" className="border-0">
-                                    Credit
+                                    SKS
                                 </th>
                                 <th scope="col" className="border-0">
-                                    Score
+                                    Nilai
                                 </th>
                                 <th scope="col" className="border-0">
-                                    Predicate
+                                    Predikat
                                 </th>
                             </tr>
                         </thead>
@@ -39,16 +38,25 @@ const TableNilai = ({ data, isLoading }) => {
                                             <td>  <Skeleton height={50} /> </td>
                                         </SkeletonTheme>
                                     </tr>
-                                ) : (
-                                    data?.subject?.map((x, index) =>
+                                ) : <>
+                                    {data?.subject?.length === 0 && <>
+                                        <tr>
+                                            <td colSpan={4} className="p-0">
+                                                <div className="alert alert-info my-0 text-center">
+                                                    Kamu belum memiliki penilaian.
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </>}
+                                    {data?.subject?.map((x, index) =>
                                         <tr key={index}>
                                             <td>{x.name}</td>
                                             <td>{x.credit}</td>
                                             <td>{x.score}</td>
                                             <td>{x.predicate}</td>
                                         </tr>
-                                    )
-                                )
+                                    )}
+                                </>
                             }
                         </tbody>
                     </table>
@@ -61,4 +69,4 @@ const TableNilai = ({ data, isLoading }) => {
     )
 }
 
-export default TableNilai
+export default TableScore

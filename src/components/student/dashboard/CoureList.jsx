@@ -20,7 +20,7 @@ const CoureList = ({ isLoading, results }) => {
 				<tbody>
 					{isLoading ? <>
 						<>
-							<tr className="col-sm-6 col-xl-4">
+							<tr>
 								<td>
 									<SkeletonTheme>
 										<Skeleton height={50} />
@@ -32,7 +32,7 @@ const CoureList = ({ isLoading, results }) => {
 									</SkeletonTheme>
 								</td>
 							</tr>
-							<tr className="col-sm-6 col-xl-4">
+							<tr>
 								<td>
 									<SkeletonTheme>
 										<Skeleton height={50} />
@@ -55,9 +55,13 @@ const CoureList = ({ isLoading, results }) => {
 								/>)
 							}
 						</> : <>
-							<div className="col-md-12">
-								<div className="alert alert-info">Data kosong</div>
-							</div>
+							<tr className="pb-0">
+								<td colSpan={2} className="p-0 m-0">
+									<div className="col-md-12">
+										<div className="alert alert-info my-2">Data kosong</div>
+									</div>
+								</td>
+							</tr>
 						</>}
 					</>}
 				</tbody>

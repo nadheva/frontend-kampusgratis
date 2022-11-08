@@ -57,13 +57,13 @@ const SidebarProfile = () => {
 									Sertifikat
 								</NavLink>
 								<NavLink className="list-group-item" to="/profil">
-									<i className="bi bi-pencil-square fa-fw me-2"></i>Edit Profile
+									<i className="bi bi-person fa-fw me-2"></i>Profil
 								</NavLink>
 								<NavLink className="list-group-item" to="/administrasi">
 									<i className="bi bi-card-list fa-fw me-2"></i>Administrasi
 								</NavLink>
 								<NavLink to="/settings" className="list-group-item" href=" ">
-									<i className="bi bi-gear fa-fw me-2"></i>Settings
+									<i className="bi bi-gear fa-fw me-2"></i>Pengaturan
 								</NavLink>
 								<button
 									className="list-group-item text-danger bg-danger-soft-hover"

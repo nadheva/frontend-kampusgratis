@@ -116,7 +116,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 																		</>}
 																	</div>
 																</div>
-																{subject?.quiz_done ? <>
+																{session?.quiz_done ? <>
 																	<span className="p-2 mb-0 text-success"
 																		data-bs-toggle="tooltip" data-bs-placement="top"
 																		title="Quiz Telah Selesai">

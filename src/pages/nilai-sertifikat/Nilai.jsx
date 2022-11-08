@@ -6,7 +6,7 @@ import Sidebar from "../../components/Account/Sidebar";
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 import DataMahasiswa from "../../components/nilai-sertifikat/nilai/DataMahasiswa";
-import TableNilai from "../../components/nilai-sertifikat/nilai/TableNilai";
+import TableScore from "../../components/nilai-sertifikat/nilai/TableScore";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
@@ -42,7 +42,7 @@ const Nilai = () => {
 							<DataMahasiswa
 								data={currentReport}
 							/>
-							<TableNilai
+							<TableScore
 								isLoading={isLoading}
 								data={currentReport}
 							/>

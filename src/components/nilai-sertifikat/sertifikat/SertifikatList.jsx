@@ -25,7 +25,7 @@ const SertifikatList = ({ data, isLoading }) => {
                     }
                 </> : <>
                     <div className="col-md-12">
-                        <div className="alert alert-info">Data kosong</div>
+                        <div className="alert alert-info text-center">Kamu belum memiliki sertifikat.</div>
                     </div>
                 </>}
             </>}

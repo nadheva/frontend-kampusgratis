@@ -1,8 +1,28 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+
+import { getSubject } from '../../../features/my-study/myStudySlice';
+import useEffectOnce from '../../../helpers/useEffectOnce';
 
 const Intro = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const { sessionId, subjectId } = useParams();
+    const [currentSubject, setCurrentSubject] = useState({});
+
+    const { data } = useSelector(
+        (state) => state.myStudy
+    );
+
+    useEffectOnce(() => {
+        dispatch(getSubject(subjectId))
+    });
+
+    useEffect(() => {
+        if (data?.subject) setCurrentSubject(data.subject);
+    });
 
     return (
         <section
@@ -15,22 +35,15 @@ const Intro = () => {
         >
             <div className="container">
                 <div className="row">
-                    <div className="col-12 text-center">
-                        <h1 className="text-white">Penugasan</h1>
-                        <div className="d-flex justify-content-center">
-                            <nav aria-label="breadcrumb">
-                                <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                                    <li className="breadcrumb-item">
-                                        <Link to="" onClick={() => navigate(-1)}>
-                                            Pertemuan
-                                        </Link>
-                                    </li>
-                                    <li
-                                        className="breadcrumb-item active"
-                                        aria-current="page"
-                                    >
-                                        Penugasan
-                                    </li>
+                    <div className='col-12 text-center'>
+                        <h1 className="text-white">{currentSubject.name}</h1>
+                        <div className='d-flex justify-content-center'>
+                            <nav aria-label='breadcrumb'>
+                                <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
+                                    <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
+                                    <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
+                                    <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
+                                    <li className='breadcrumb-item active' aria-current='page'>Penugasan</li>
                                 </ol>
                             </nav>
                         </div>

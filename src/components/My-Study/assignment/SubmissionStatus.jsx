@@ -5,7 +5,7 @@ import 'react-loading-skeleton/dist/skeleton.css';
 const SubmissionStatus = ({ assigments, isLoading }) => {
     return (
         <div className="col-12 mt-5">
-            <h3>Submission status</h3>
+            <h3>Status Penugasan</h3>
             {
                 isLoading ? (
                     <div className="col-lg-8 mb-5">
@@ -21,27 +21,27 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                         <table className="table table-striped table-hover">
                             <tbody>
                                 <tr>
-                                    <th>Grading status</th>
-                                    <td>Not graded</td>
+                                    <th>Status Penilaian</th>
+                                    <td>Belum ada status.</td>
                                 </tr>
                                 <tr>
-                                    <th> Grade</th>
-                                    <td>Not graded</td>
+                                    <th>Nilai</th>
+                                    <td>Belum dinilai.</td>
                                 </tr>
                                 <tr>
-                                    <th>Due date </th>
+                                    <th>Batas Waktu</th>
                                     <td>-</td>
                                 </tr>
                                 <tr>
-                                    <th>Time remaining </th>
+                                    <th>Waktu Tersisa</th>
                                     <td>-</td>
                                 </tr>
                                 <tr>
-                                    <th>Last modified </th>
+                                    <th>Terakhir Diubah</th>
                                     <td>-</td>
                                 </tr>
                                 <tr>
-                                    <th>File submissions </th>
+                                    <th>Berkas Penugasan</th>
                                     <td>-</td>
                                 </tr>
                             </tbody>
@@ -52,10 +52,10 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                         <table className="table table-striped table-hover">
                             <tbody>
                                 <tr>
-                                    <th>Grading status</th>
+                                    <th>Status Penilaian</th>
                                     {
                                         assigments?.students_work?.status == 0 || assigments?.students_work?.status == null ? (
-                                            <td>Not graded</td>
+                                            <td>Belum ada status.</td>
                                         ) : (
                                             <td className={assigments?.students_work?.status === "LATE" ? "table-danger" : ""}>
                                                 {assigments?.students_work?.status}
@@ -64,10 +64,10 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                     }
                                 </tr>
                                 <tr>
-                                    <th> Grade</th>
+                                    <th>Nilai</th>
                                     {
                                         assigments?.students_work?.score == 0 || assigments?.students_work?.score == null ? (
-                                            <td>Not graded</td>
+                                            <td>Belum dinilai.</td>
                                         ) : (
                                             <td className="table-success">
                                                 {assigments?.students_work?.score}
@@ -76,25 +76,25 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                     }
                                 </tr>
                                 <tr>
-                                    <th>Due date </th>
+                                    <th>Waktu Tersisa</th>
                                     <td>
                                         {assigments?.assignment?.deadline ?? '-'}
                                     </td>
                                 </tr>
                                 {/* <tr>
-                                    <th>Time remaining </th>
+                                    <th>Waktu Tersisa </th>
                                     <td>
                                         {assigments?.assignment?.duration ?? '-'}
                                     </td>
                                 </tr> */}
                                 <tr>
-                                    <th>Last modified </th>
+                                    <th>Terakhir Diubah</th>
                                     <td >
                                         {assigments?.students_work?.activity_detail?.date_submit ?? '-'}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>File submissions </th>
+                                    <th>Berkas Tugas</th>
                                     <td>
                                         {
                                             <p className={assigments?.students_work?.activity_detail?.file_assignment ? "bg-light" : ""}>

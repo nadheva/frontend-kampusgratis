@@ -10,7 +10,7 @@ const initialState = {
 	message: ''
 };
 
-export const getAchievements = createAsyncThunk("profile/me", async (_, thunkAPI) => {
+export const getAchievements = createAsyncThunk("achievement/me", async (_, thunkAPI) => {
 	try {
 		const { data } = await achievementService.getAchievements();
 

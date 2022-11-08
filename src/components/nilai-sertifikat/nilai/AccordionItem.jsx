@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AccordionItem = ({nilai}) => {
+const AccordionItem = ({ nilai }) => {
 
     const dataTarget = `#data${nilai.id}`;
     const dataId = `data${nilai.id}`;
@@ -32,18 +32,17 @@ const AccordionItem = ({nilai}) => {
                 data-bs-parent="#accordionExample2">
                 <div className="accordion-body mt-3">
                     <div className="table-responsive border-0">
-
                         <table className="table table-dark-gray align-middle p-4 mb-0 table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col" className="border-0 rounded-start">
-                                        Nama Matakuliah
+                                        Nama Mata Kuliah
                                     </th>
                                     <th scope="col" className="border-0">
                                         Nilai
                                     </th>
                                     <th scope="col" className="border-0">
-                                        Grade
+                                        Predikat
                                     </th>
                                 </tr>
                             </thead>
@@ -65,7 +64,6 @@ const AccordionItem = ({nilai}) => {
                                 </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
