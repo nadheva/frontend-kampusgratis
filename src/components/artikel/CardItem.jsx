@@ -8,7 +8,7 @@ const CardItem = ({ artikel }) => {
             <div className="card bg-transparent">
                 <div className="overflow-hidden rounded-3">
                     <img
-                        src={artikel.image_link}
+                        src={artikel?.image_link}
                         className="card-img card-img-artikel"
                         alt="course"
                     />
@@ -16,13 +16,13 @@ const CardItem = ({ artikel }) => {
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">
-                        <Link to={`/artikel/${artikel.id}`} >{artikel.title}</Link>
+                        <Link to={`/artikel/${artikel?.id}`} >{artikel?.title}</Link>
                     </h5>
                     <p className="text-truncate-2">
-                        {artikel.description}
+                        {artikel?.description}
                     </p>
                     <div className="d-flex justify-content-between">
-                        <span className="small">{moment(artikel.created_at).fromNow()}</span>
+                        <span className="small">{moment(artikel?.created_at).fromNow()}</span>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({ handleSearchFilter, searchValue }) => {
+const Search = () => {
     return (
         <section className="py-5">
             <div className="container">
@@ -12,9 +12,10 @@ const Search = ({ handleSearchFilter, searchValue }) => {
                                     className="form-control border-0 me-1"
                                     type="search"
                                     placeholder="Search ..."
-                                    value={searchValue}
-                                    onChange={handleSearchFilter}
                                 />
+                                <button type="button" className="btn btn-primary mb-0 rounded">
+                                    <i className="fas fa-search"></i>
+                                </button>
                             </div>
                         </form>
                     </div>

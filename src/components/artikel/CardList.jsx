@@ -38,12 +38,12 @@ const CardList = ({ currentPosts, isLoading }) => {
                         </SkeletonTheme>
                     </div>
                 </div>
-            ) : currentPosts == null || currentPosts == 0 ? (
-                <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
-            ) : (
+            ) : Object.values(currentPosts).length !== 0 ? (
                 currentPosts.map((artikel) => (
                     <CardItem key={artikel.id} artikel={artikel} />
                 ))
+            ) : (
+                <span className='alert alert-danger'>Belum ada postingan</span>
             )}
         </div>
     )

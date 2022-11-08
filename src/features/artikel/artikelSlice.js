@@ -3,7 +3,7 @@ import artikelService from './artikelService';
 import { extartErrorFirebase, extractErrorMessage } from '../../utils';
 
 const initialState = {
-  artikels: [],
+  data: {},
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -24,6 +24,20 @@ export const artikelAll = createAsyncThunk(
   }
 )
 
+export const artikel = createAsyncThunk(
+  'article/id',
+  async (id, thunkAPI) => {
+    try {
+
+      const { data } = await artikelService.artikel(id);
+      return data;
+
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+    }
+  }
+)
+
 
 export const artikelSlice = createSlice({
   name: 'artikel',
@@ -35,6 +49,13 @@ export const artikelSlice = createSlice({
       state.isSuccess = false;
       state.message = '';
     },
+    resetAll: (state) => {
+      state.data = {};
+      state.isError = false;
+      state.isSuccess = false;
+      state.isLoading = false;
+      state.message = '';
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -44,13 +65,27 @@ export const artikelSlice = createSlice({
       .addCase(artikelAll.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.artikels = action.payload;
+        state.data.artikels = action.payload;
       })
       .addCase(artikelAll.rejected, (state, action) => {
+        state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;
-        state.artikels = null;
+      })
+      .addCase(artikel.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(artikel.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.artikel = action.payload;
+      })
+      .addCase(artikel.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
       })
   }
 });

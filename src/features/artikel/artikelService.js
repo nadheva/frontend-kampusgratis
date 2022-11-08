@@ -14,9 +14,22 @@ const artikelAll = async () => {
   return response.data;
 }
 
+const artikel = async (id) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  }
+
+  const response = await axios.get(API_URL + `article/${id}`, config);
+
+  return response.data;
+}
+
 
 const artikelService = {
   artikelAll,
+  artikel
 }
 
 export default artikelService;
