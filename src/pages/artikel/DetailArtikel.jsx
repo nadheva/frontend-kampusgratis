@@ -31,6 +31,8 @@ const DetailArtikel = () => {
 		if (data?.artikel) setCurrentArtikel(data?.artikel);
 	}, [data]);
 
+	console.log(currentArtikel)
+
 	return (
 		<>
 			<Header />
@@ -56,7 +58,13 @@ const DetailArtikel = () => {
 								<div className="col-lg-8 position-relative">
 									<h1>{currentArtikel?.title}</h1>
 									<p className="small">
-										{moment(currentArtikel?.created_at).fromNow()}
+										{
+											currentArtikel.created_at ? (
+												moment(currentArtikel?.created_at).format('LL')
+											) : (
+												<></>
+											)
+										}
 									</p>
 								</div>
 							</div>
@@ -73,7 +81,7 @@ const DetailArtikel = () => {
 					<section className="pt-9">
 						<div className="container">
 							<div className="row">
-							<div className="col-12">
+								<div className="col-12">
 									<p>{currentArtikel?.description}</p>
 								</div>
 							</div>

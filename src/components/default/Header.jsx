@@ -69,6 +69,9 @@ const Header = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/kategori">Kategori</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link" to="/artikel">Artikel</NavLink>
+                </li>
               </ul>
             </div>
             {user ? (

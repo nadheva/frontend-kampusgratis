@@ -22,7 +22,15 @@ const CardItem = ({ artikel }) => {
                         {artikel?.description}
                     </p>
                     <div className="d-flex justify-content-between">
-                        <span className="small">{moment(artikel?.created_at).fromNow()}</span>
+                        <span className="small">
+                            {
+                                artikel?.created_at ? (
+                                    moment(artikel?.created_at).format('LL')
+                                ) : (
+                                    <></>
+                                )
+                            }
+                        </span>
                     </div>
                 </div>
             </div>
