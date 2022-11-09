@@ -105,7 +105,7 @@ const Main = () => {
     } else setIsPageLoad(false);
 
     if (isError && !isSuccess) {
-      toast.error(message);
+      // toast.error(message);
       dispatch(reset());
     }
 
@@ -155,55 +155,8 @@ const Main = () => {
         <div className="container">
           <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative" onSubmit={doFilter}>
             <div className="row g-3">
-              <div className="col-xl-3">
+              <div className="col-xl-10">
                 <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang ingin dicari ..." onChange={(e) => setSearchTerm(e.target.value)} />
-              </div>
-              <div className="col-xl-8">
-                <div className="row g-3">
-                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                      <option value="">Categories</option>
-                      <option>All</option>
-                      <option>Development</option>
-                      <option>Design</option>
-                      <option>Accounting</option>
-                      <option>Translation</option>
-                      <option>Finance</option>
-                      <option>Legal</option>
-                      <option>Photography</option>
-                      <option>Writing</option>
-                      <option>Marketing</option>
-                    </select>
-                  </div>
-                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                      <option value="">Price level</option>
-                      <option>All</option>
-                      <option>Free</option>
-                      <option>Paid</option>
-                    </select>
-                  </div>
-                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                      <option value="">Skill level</option>
-                      <option>All levels</option>
-                      <option>Beginner</option>
-                      <option>Intermediate</option>
-                      <option>Advanced</option>
-                    </select>
-                  </div>
-                  <div className="col-sm-6 col-md-3 pb-2 pb-md-0">
-                    <select className="form-select form-select-sm js-choice" aria-label=".form-select-sm example">
-                      <option value="">Language</option>
-                      <option>English</option>
-                      <option>Francas</option>
-                      <option>Russian</option>
-                      <option>Hindi</option>
-                      <option>Bengali</option>
-                      <option>Spanish</option>
-                    </select>
-                  </div>
-                </div>
               </div>
               <div className="col-xl-1">
                 <button type="submit" className="btn btn-primary mb-0 rounded z-index-1 w-100">
@@ -226,10 +179,12 @@ const Main = () => {
                         </span>
                       </>}
                     </> : <>
-                      <span className='alert alert-danger'>
-                        Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
-                        Klik <Link to="/administrasi">di sini</Link> untuk melakukan administrasi.
-                      </span>
+                      <div className="col-md-12">
+                        <span className='alert alert-danger'>
+                          Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
+                          Klik <Link to="/administrasi">di sini</Link> untuk melakukan administrasi.
+                        </span>
+                      </div>
                     </>}
                   </>}
                 </>}

@@ -2,18 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MajorItem = ({ major }) => {
-  return <div className="col-sm-6 col-lg-4">
+  return <div className="col-sm-6 col-lg-4 mt-4">
     <div className="card shadow h-100">
       <div className="overflow-hidden">
-        <img src={major.thumbnail_link} className="card-img-top rounded-2" style={{ height: "220px", objectFit: "cover" }} alt={major.name} />
+        <img src={major.thumbnail_link} className="card-img-top rounded-2" style={{ height: "220px", objectFit: "cover" }} alt={major.name} onError={({ currentTarget }) => {
+          currentTarget.onerror = null; // prevents looping
+          currentTarget.src = "https://random.imagecdn.app/500/150";
+        }} />
         <div className="card-img-overlay">
           <div className="ribbon"><span>S1</span></div>
         </div>
       </div>
       <div className="card-body pb-0">
         <div className="d-flex justify-content-between mb-2">
-          <a href=" " className="badge bg-purple bg-opacity-10 text-purple">Medium</a>
-          <a href=" " className="h6 fw-light mb-0"><i className="far fa-heart"></i></a>
+          {/* <a href=" " className="badge bg-purple bg-opacity-10 text-purple">Medium</a> */}
+          {/* <a href=" " className="h6 fw-light mb-0"><i className="far fa-heart"></i></a> */}
         </div>
         <h5 className="card-title">
           <Link to={`/silabus/${major.id}`}>
