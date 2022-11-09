@@ -8,25 +8,11 @@ import Search from "../../components/artikel/Search";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { artikelAll, reset, resetAll } from "../../features/artikel/artikelSlice";
+import { artikelAll, resetAll } from "../../features/artikel/artikelSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
+import Pagination from "../../components/default/Pagination";
 
 const Artikel = () => {
-	// Redux
-	// const dispatch = useDispatch();
-	// const [currentArtikels, setCurrentArtikels] = useState({});
-
-	// const { data, isLoading } = useSelector(
-	// 	(state) => state.artikel
-	// );
-
-	// useEffectOnce(() => {
-	// 	dispatch(artikelAll());
-	// });
-
-	// useEffect(() => {
-	// 	if (data?.artikels) setCurrentArtikels(data?.artikels);
-	// }, [data]);
 
 	const [searchTerm, setSearchTerm] = useState("");
 
@@ -87,28 +73,34 @@ const Artikel = () => {
 	});
 
 	useEffect(() => {
-		console.log(data?.artikels)
-		// const { max_page: maxPage, result } = data?.artikels || {};
-		// if (maxPage !== 0) setLastPage(maxPage);
-		// console.log(result)
-		// if (result) setResults(result);
-		// console.log(result)
+		const { max_page: maxPage, result } = data?.artikels || {};
+		if (maxPage !== 0) setLastPage(maxPage);
+		if (result) setResults(result);
 
-		// if (maxPage && result) setIsPageLoad(true);
+		if (maxPage && result) setIsPageLoad(true);
 	}, [data, isPageLoad, results]);
-
-
-	console.log(results)
-
 
 	return (
 		<>
 			<Header />
 			<main>
-				<Search />
+				<Search
+					doFilter={doFilter}
+					setSearchTerm={setSearchTerm}
+				/>
 				<section className="position-relative pt-0 pt-lg-5">
 					<div className="container">
-						{/* <CardList isLoading={isLoading} currentPosts={resetAll} /> */}
+						<CardList
+							isLoading={isLoading}
+							results={results}
+						/>
+						<Pagination
+							isPageLoad={isPageLoad}
+							currentPage={currentPage}
+							lastPage={lastPage}
+							changePage={changePage}
+							renderPage={renderPage}
+						/>
 					</div>
 				</section>
 			</main>

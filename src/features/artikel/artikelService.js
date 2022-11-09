@@ -9,7 +9,7 @@ const artikelAll = async (currentPage, search) => {
     }
   }
 
-  const response = await axios.get(API_URL + `article/index?page=${currentPage}&limit=6&search=${search}`, config);
+  const response = await axios.get(API_URL + `article/index?page=${currentPage}&limit=8&search=${search}`, config);
 
   return response.data;
 }

@@ -58,11 +58,11 @@ const Main = () => {
                 <div className="col-11 mx-auto position-relative">
                   <div className="row align-items-center">
                     <div className="col-lg-8">
-                      <h3>Find out why families love eduport! Schedule your Personal Tour today.</h3>
-                      <p className="mb-3 mb-lg-0">Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced.</p>
+                      <h3>Bangun Karier Anda di Tempat yang Tepat.</h3>
+                      <p className="mb-3 mb-lg-0">Program dari Kampus Gratis membantu Anda dalam membangun dan meningkatkan karir dengan memilihkan perusahaan yang tepat dengan skill yang Anda miliki.</p>
                     </div>
                     <div className="col-lg-4 text-lg-end">
-                      <a href=" " className="btn btn-warning mb-0">Schedule Tour</a>
+                      <Link to="/login" className="btn btn-warning mb-0">Daftar Sekarang</Link>
                     </div>
                   </div>
                 </div>

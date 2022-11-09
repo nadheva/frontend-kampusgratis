@@ -59,12 +59,12 @@ const Categories = () => {
 			name: "Analitik",
 			url: "/analitik",
 			src: "/assets/images/element/exam.svg",
-			background: "bg-secondary",
+			background: "bg-success",
 			disabled: false
 		},
 		{
 			name: "Konsultasi & Layanan",
-			url: "/silabus",
+			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
 			background: "bg-success",
 			disabled: false

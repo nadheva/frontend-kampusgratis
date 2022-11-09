@@ -9,21 +9,19 @@
     height: 100vh !important;
 }
 
-/* img */
+
 .card-img-artikel {
     height: 189px;
     object-fit: cover;
     object-position: center;
 }
-
-/* Btn */
+/* 
 .btn-studiku {
     background: linear-gradient(325.17deg, #3827A6 0%, rgba(81, 56, 238, 0.6) 100%);
     border-radius: 10px;
 }
 
 
-/* Right sidebar  */
 .card-body-right {
     background: linear-gradient(325.17deg, #573DFF 0%, rgba(81, 56, 238, 0.6) 100%) !important;
     border-radius: 20px;
@@ -35,7 +33,6 @@
     color: white;
 }
 
-/*  Main content */
 .bg-body-pertemuan {
     background: linear-gradient(320.79deg, #573DFF 0%, rgba(81, 56, 238, 0.6) 100%);
     border-radius: 20px;
@@ -59,4 +56,4 @@
 
 .bg-body-pertemuan .text-truncate {
     color: white;
-}
+} */

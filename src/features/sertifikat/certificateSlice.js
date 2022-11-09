@@ -12,9 +12,9 @@ const initialState = {
 
 export const getCertificates = createAsyncThunk(
   'certificate',
-  async (_, thunkAPI) => {
+  async ({ currentPage, search }, thunkAPI) => {
     try {
-      const { data } = await certificateService.getCertificates();
+      const { data } = await certificateService.getCertificates(currentPage, search);
 
       return data;
     } catch (error) {
