@@ -10,7 +10,7 @@ import TableScore from "../../components/nilai-sertifikat/nilai/TableScore";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getReports, reset, resetAll } from "../../features/report/reportSlice";
+import { getReports } from "../../features/report/reportSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 const Nilai = () => {
@@ -40,6 +40,7 @@ const Nilai = () => {
 						<Sidebar />
 						<div className="col-xl-9">
 							<DataMahasiswa
+								isLoading={isLoading}
 								data={currentReport}
 							/>
 							<TableScore

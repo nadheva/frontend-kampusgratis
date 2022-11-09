@@ -83,7 +83,7 @@ const Banner = () => {
 														{achievements?.finished_subjects || 0}{" "}
 													</span>
 													<span className="text-body fw-light">
-														Mata Kuliah Selesai
+														Mata Kuliah Terselesaikan
 													</span>
 												</li>
 												<li className="list-inline-item me-3 mb-1 mb-sm-0">

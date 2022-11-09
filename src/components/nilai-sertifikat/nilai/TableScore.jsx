@@ -30,14 +30,22 @@ const TableScore = ({ data, isLoading }) => {
                         <tbody>
                             {
                                 isLoading ? (
-                                    <tr>
+                                    <>
                                         <SkeletonTheme>
-                                            <td>  <Skeleton height={50} /> </td>
-                                            <td>  <Skeleton height={50} /> </td>
-                                            <td>  <Skeleton height={50} /> </td>
-                                            <td>  <Skeleton height={50} /> </td>
+                                            <tr>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                                <td>  <Skeleton height={50} /> </td>
+                                            </tr>
                                         </SkeletonTheme>
-                                    </tr>
+                                    </>
                                 ) : <>
                                     {data?.subject?.length === 0 && <>
                                         <tr>

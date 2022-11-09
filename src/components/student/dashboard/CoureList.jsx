@@ -12,7 +12,7 @@ const CoureList = ({ isLoading, results }) => {
 						<th className="border-0 rounded-start">
 							Mata Kuliah
 						</th>
-						<th>
+						<th className="col-2">
 							Action
 						</th>
 					</tr>
