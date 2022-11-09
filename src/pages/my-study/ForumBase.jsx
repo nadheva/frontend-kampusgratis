@@ -45,7 +45,7 @@ const ForumBase = () => {
     <main>
       {isLoading || !isPageLoad || !currentSubject ? <>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
+          <div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>
@@ -81,7 +81,7 @@ const ForumBase = () => {
               <div className="card shadow">
                 <div className="card-body py-4">
                   <div className="col-12">
-                    <h4 className="mb-4">Daftar Diskusi</h4>
+                    <h4>Daftar Diskusi</h4>
                     {currentDiscussions.length === 0 ? <>
                       <div className="alert alert-info mt-4">
                         Belum ada diskusi yang telah dibuat. Silahkan buka lagi di lain waktu.
@@ -108,7 +108,7 @@ const ForumBase = () => {
                                       </Link>
                                     </h6>
                                     <small>
-                                      {currentSubject.name} - {discussion.created_at.split("T")[0].split("-").reverse().join("/")} - {discussion.created_at.split("T")[1].split(".")[0]}
+                                      {currentSubject.name} - {discussion?.created_at?.split("T")[0]?.split("-")?.reverse()?.join("/") || 'Tidak diketahui'} - {discussion?.created_at?.split("T")[1]?.split(".")[0] || 'Tidak diketahui'}
                                     </small>
                                   </div>
                                 </div>

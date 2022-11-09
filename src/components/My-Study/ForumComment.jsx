@@ -53,7 +53,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
             <div className="avatar avatar-sm flex-shrink-0">
               <img
                 className="avatar-img rounded-circle"
-                src={comment.User.display_picture_link}
+                src={comment.User.display_picture_link || '/assets/images/avatar/empty-display-picture.png'}
                 alt={comment.User.full_name}
               />
             </div>
@@ -64,7 +64,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
                 </Link>
               </h6>
               <small>
-                {new Date(comment.created_at).toLocaleString('en-US')}
+                {new Date(comment.created_at).toLocaleString('id-ID')}
                 {/* {comment.created_at.split("T")[0].split("-").reverse().join("/")} - {comment.created_at.split("T")[1].split(".")[0]} */}
               </small>
               <p className="my-2">
@@ -88,7 +88,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
               {comment.student_like.length} Penyuka
             </button>
             <button className='btn btn-sm w-50 py-2 border ms-2' onClick={() => showHideComment()}>
-              <i className="fa fa-regular fa-comments text-center text-dark"></i>
+              <i className={`fa fa-regular ${showCommentBox ? "fa-comment-slash" : "fa-comment"} text-center text-dark`}></i> {showCommentBox ? 'Tutup Balasan' : 'Tambah Balasan'}
             </button>
           </div>
           <ul className="list-unstyled ms-4 mt-4">
@@ -109,7 +109,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
                       </Link>
                     </h6>
                     <small>
-                      {new Date(reply.created_at).toLocaleString('en-US')}
+                      {new Date(reply.created_at).toLocaleString('id-ID')}
                       {/* {reply.created_at.split("T")[0].split("-").reverse().join("/")} - {reply.created_at.split("T")[1].split(".")[0]} */}
                     </small>
                     <p className="my-2">

@@ -32,9 +32,9 @@ const Counter = () => {
 								data-purecounter-end="1958"
 								data-purecounter-delay="200"
 							>
-								{achievements.finished_subjects}{" "}
+								{achievements.finished_subjects || 0}{" "}
 							</h2>
-							<span className="mb-0 h6 fw-light">Matkul Terselesaikan</span>
+							<span className="mb-0 h6 fw-light">Mata Kuliah Selesai</span>
 						</div>
 
 						<div className="icon-lg rounded-circle bg-warning text-white mb-0">
@@ -53,9 +53,9 @@ const Counter = () => {
 								data-purecounter-end="1600"
 								data-purecounter-delay="200"
 							>
-								{achievements.subject_taken}
+								{achievements.subject_taken || 0}
 							</h2>
-							<span className="mb-0 h6 fw-light">Matkul Terdaftar</span>
+							<span className="mb-0 h6 fw-light">Mata Kuliah Terdaftar</span>
 						</div>
 
 						<div className="icon-lg rounded-circle bg-purple text-white mb-0">
@@ -74,9 +74,9 @@ const Counter = () => {
 								data-purecounter-end="1235"
 								data-purecounter-delay="200"
 							>
-								{achievements.students_certificate}
+								{achievements.students_certificate || 0}
 							</h2>
-							<span className="mb-0 h6 fw-light">Achieved Certificates</span>
+							<span className="mb-0 h6 fw-light">Sertifikat Diraih</span>
 						</div>
 
 						<div className="icon-lg rounded-circle bg-primary text-white mb-0">

@@ -9,7 +9,6 @@ export function useScript(src) {
 	});
 
 	useEffect(() => {
-		console.log("yaman");
 		if (cachedScripts.includes(src)) {
 			let script = document.getElementById('functions');
 

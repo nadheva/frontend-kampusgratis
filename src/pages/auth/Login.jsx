@@ -50,7 +50,7 @@ function Login() {
 		if (isSuccess && token && user) {
 			navigate('/');
 			toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
-			dispatch(resetDefault());
+			// dispatch(resetDefault());
 		}
 
 	}, [isError, isSuccess, token, user, message, navigate, dispatch]);
@@ -89,6 +89,7 @@ function Login() {
 						<FormLogin
 							onFormSubmit={onFormSubmit}
 							isLoading={isLoading}
+							isSuccess={isSuccess}
 							onFormChange={onFormChange}
 							onLoginWithGoogle={onLoginWithGoogle}
 							email={email}

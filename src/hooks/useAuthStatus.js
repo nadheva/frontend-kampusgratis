@@ -14,6 +14,18 @@ export const useAuthStatus = () => {
 	useEffect(() => {
 		if (isMounted) {
 			const auth = getAuth();
+			const user = auth.currentUser;
+
+			// if (!user) {
+			// 	setLoggedIn(false);
+			// 	setCheckingStatus(false);
+
+			// 	dispatch(reset());
+			// 	// toast.info("Session kamu telah berakhir!");
+
+			// 	localStorage.removeItem('token');
+			// 	localStorage.removeItem('user');
+			// }
 
 			onAuthStateChanged(auth, async (user) => {
 				if (user) {

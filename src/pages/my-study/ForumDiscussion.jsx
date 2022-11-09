@@ -76,30 +76,8 @@ const ForumDiscussion = () => {
     <Header />
     <main>
       {isLoading || Object.keys(currentDiscussion).length === 0 ? <>
-        <section className='bg-blue align-items-center d-flex' style={{ background: "url('/assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-12 text-center'>
-                <h1 className='text-white'>
-                  ...
-                </h1>
-                <div className='d-flex justify-content-center'>
-                  <nav aria-label='breadcrumb'>
-                    <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
-                      <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
-                      <li className='breadcrumb-item'><Link to='/studi-ku'>Studi-Ku</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}`}>Mata Kuliah</Link></li>
-                      <li className='breadcrumb-item'><Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum`}>Forum</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Diskusi</li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
+          <div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>
@@ -141,7 +119,7 @@ const ForumDiscussion = () => {
                         <div className="avatar avatar-sm flex-shrink-0">
                           <img
                             className="avatar-img rounded-circle"
-                            src={currentDiscussion.User.display_picture_link}
+                            src={currentDiscussion.User.display_picture_link || '/assets/images/avatar/empty-display-picture.png'}
                             alt={currentDiscussion.User.full_name}
                           />
                         </div>
@@ -152,7 +130,7 @@ const ForumDiscussion = () => {
                             </Link>
                           </h6>
                           <small>
-                            {new Date(currentDiscussion.created_at).toLocaleString('en-US')}
+                            {new Date(currentDiscussion.created_at).toLocaleString('id-ID')}
                             {/* {currentSubject.name} - {currentDiscussion.created_at.split("T")[0].split("-").reverse().join("/")} - {currentDiscussion.created_at.split("T")[1].split(".")[0]} */}
                           </small>
                         </div>

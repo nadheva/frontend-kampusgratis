@@ -58,7 +58,7 @@ const CoureList = ({ isLoading, results }) => {
 							<tr className="pb-0">
 								<td colSpan={2} className="p-0 m-0">
 									<div className="col-md-12">
-										<div className="alert alert-info my-2">Data kosong</div>
+										<div className="alert alert-info my-2">Mata Kuliah tidak ditemukan.</div>
 									</div>
 								</td>
 							</tr>

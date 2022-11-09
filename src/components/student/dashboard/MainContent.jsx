@@ -13,7 +13,7 @@ const MainContent = ({ isLoading, results, isPageLoad, currentPage, lastPage, ch
                 <div className="col-12">
                     <div className="card bg-transparent border rounded-3">
                         <div className="card-header bg-transparent border-bottom">
-                            <h3 className="mb-0">My Active Progress</h3>
+                            <h3 className="mb-0">Progress Aktif</h3>
                         </div>
                         <div className="card-body">
                             <Search
