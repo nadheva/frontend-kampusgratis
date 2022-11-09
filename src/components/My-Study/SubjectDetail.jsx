@@ -153,7 +153,7 @@ const SubjectDetail = ({ subject, sessions }) => {
 																				<span
 																					style={{ cursor: "not-allowed" }}
 																					className="d-inline-block text-truncate mb-0 h6 fw-normal w-100px w-sm-200px w-md-400px">
-																					Quiz
+																					Penugasan
 																				</span>
 																			</div>
 																		</> : <>

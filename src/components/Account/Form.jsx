@@ -68,15 +68,14 @@ const FormEdit = () => {
 	useEffect(() => {
 		if (!isLoading && isSuccess) setIsLoaded(true);
 		if (user) {
-			setProfileData({
+			setProfileData(Object.assign(profileData, {
 				full_name: user.full_name,
 				phone: user.phone,
 				gender: user.gender,
 				username: user.username,
 				display_picture: user.display_picture,
 				display_picture_link: user.display_picture_link,
-				...profileData
-			});
+			}));
 		}
 
 		if (isError && !isSuccess) {
@@ -121,7 +120,7 @@ const FormEdit = () => {
 											<img
 												id='uploadfile-1-preview'
 												className='avatar-img rounded-circle border border-white border-3 shadow'
-												src={imageData ? imageData : display_picture_link != null ? display_picture_link : 'assets/images/avatar/empty-display-picture.png'}
+												src={imageData ? imageData : display_picture_link != null ? display_picture_link : '/assets/images/avatar/empty-display-picture.png'}
 												alt=''
 											/>
 										</span>

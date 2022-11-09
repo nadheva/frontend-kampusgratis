@@ -74,7 +74,7 @@ const QuizStart = () => {
 		<main>
 			{isLoading || Object.keys(currentSubject).length === 0 || Object.keys(currentQuiz).length === 0 ? <>
 				<section className='bg-light py-0 py-sm-5'>
-					<div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
+					<div className='container text-center' style={{ marginTop: '165px', marginBottom: '165px' }}>
 						<div className='row'>
 							<div className='col-12'>
 								<div className='spinner-border' role='status'>
@@ -125,7 +125,7 @@ const QuizStart = () => {
 												</div>
 											</div>
 											<div className="d-sm-flex align-items-center">
-												<Link className='btn btn-dark' to={`${currentQuizzes[currentQuizIndex].material_enrolled_id}`}>
+												<Link className='btn btn-dark' to={`${currentQuizzes[currentQuizIndex]?.material_enrolled_id}`}>
 													<i className="fas fa-play me-3"></i>
 													Lanjutkan Quiz
 												</Link>

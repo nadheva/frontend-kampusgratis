@@ -51,19 +51,19 @@ const Footer = () => {
                 <ul className="nav flex-column">
                   <li className="nav-item">
                     <p >
-                      Primary :
+                      Utama :
                       <span className="h6 fw-light ms-2">Jl. Radio IV No.8 B, RW.4,Kramat Pela, Kec. Kby.Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130 </span>
                     </p>
                   </li>
                   <li className="nav-item">
                     <p >
-                      Second  :
+                      Kantor  :
                       <span className="h6 fw-light ms-2">Jl. Raya Cirendeu No.60 Cirendeu Kec. Ciputat Timur, Kota Tangerang </span>
                     </p>
                   </li>
                   <li className="nav-item">
                     <p >
-                      Tertiary :
+                      Kantor :
                       <span className="h6 fw-light ms-2">Jl. Raya Darmo Permai III Surabaya. 60119 </span>
                     </p>
                   </li>
@@ -73,9 +73,9 @@ const Footer = () => {
           </div>
           <div className="col-lg-3">
             <h5 className="mb-2 mb-md-4">Kontak</h5>
-            <p className="mb-2">Primary :<span className="h6 fw-light ms-2"> 0812-1046 8281</span>
+            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span>
             </p>
-            <p className="mb-0">Email:<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
+            <p className="mb-0">Email :<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
           </div>
         </div>
         <hr className="mt-4 mb-0" />
@@ -83,7 +83,7 @@ const Footer = () => {
           <div className="container px-0">
             <div className="d-lg-flex justify-content-between align-items-center py-3 text-center text-md-left">
               <div className="text-primary-hover">
-                <Link to="/" className="text-body">2022 - www.kampusgratis.id. </Link> All Rights Reserved
+                <Link to="/" className="text-body">2022 - www.kampusgratis.id -</Link> Hak Cipta Dilindungi.
               </div>
               <div className="justify-content-center mt-3 mt-lg-0">
                 <ul className="nav list-inline justify-content-center mb-0">
