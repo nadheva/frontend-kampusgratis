@@ -155,7 +155,7 @@ const Main = () => {
         <div className="container">
           <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative" onSubmit={doFilter}>
             <div className="row g-3">
-              <div className="col-xl-10">
+              <div className="col-xl-11">
                 <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang ingin dicari ..." onChange={(e) => setSearchTerm(e.target.value)} />
               </div>
               <div className="col-xl-1">
@@ -167,16 +167,19 @@ const Main = () => {
           </form>
           <div className="row mt-3">
             <div className="col-12">
-              <div className="row g-4">
+
+              <div className="row">
                 {data?.majors?.result?.length === 0 && isPageLoad ? <>
                   <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
                 </> : <>
                   {dataAdministration?.is_approved && isPageLoad && !isLoadingAdministration && <>
                     {dataAdministration?.is_approved?.overall ? <>
                       {currentUserMajors.length >= 0 && currentUserMajors.length !== 2 && <>
-                        <span className='alert alert-info mb-1'>
-                          Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
-                        </span>
+                        <div className="col-12 ">
+                          <div className="alert alert-info" role="alert">
+                            Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
+                          </div>
+                        </div>
                       </>}
                     </> : <>
                       <div className="col-md-12">

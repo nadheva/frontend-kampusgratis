@@ -38,8 +38,8 @@ const FormLogin = ({ onFormSubmit, isLoading, onFormChange, onLoginWithGoogle, e
                         </div>
                         <div className="mb-4 d-flex justify-content-between mb-4">
                             <div className="form-check">
-                                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                                <label className="form-check-label" htmlFor="exampleCheck1">Ingat saya</label>
+                                {/* <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                                <label className="form-check-label" htmlFor="exampleCheck1">Ingat saya</label> */}
                             </div>
                             <div className="text-primary-hover">
                                 <Link to="/forgot-password" className="text-secondary">

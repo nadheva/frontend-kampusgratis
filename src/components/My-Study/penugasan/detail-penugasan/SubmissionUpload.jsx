@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
-import PageNotFound from "../../../components/default/PageNotFound";
-import { submitAssignment, updateAssignment } from "../../../features/assignment/assignmentSlice";
+import PageNotFound from "../../../../components/default/PageNotFound";
+import { submitAssignment, updateAssignment } from "../../../../features/assignment/assignmentSlice";
 
 const SubmissionUpload = ({ assigments }) => {
 
@@ -18,7 +18,7 @@ const SubmissionUpload = ({ assigments }) => {
 	const onChangeAssignment = (e) => {
 		if (e.target.files[0]) {
 			setAssignment(e.target.files[0]);
-			console.log(assignment);
+			// console.log(assignment);
 		}
 	};
 

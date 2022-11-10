@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import { getSubject } from '../../../features/my-study/myStudySlice';
-import useEffectOnce from '../../../helpers/useEffectOnce';
+import { getSubject } from '../../../../features/my-study/myStudySlice';
+import useEffectOnce from '../../../../helpers/useEffectOnce';
 
 const Intro = () => {
     const dispatch = useDispatch();
