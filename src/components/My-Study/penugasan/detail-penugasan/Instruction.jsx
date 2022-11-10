@@ -13,7 +13,7 @@ const Instruction = ({ assigments, isLoading }) => {
                             <Skeleton height={20} width={300} />
                         </SkeletonTheme>
                     </div>
-                ) : assigments == undefined || assigments.length == 0  ? (
+                ) : assigments == undefined || assigments.length == 0 ? (
                     <>
                         <h4 className="text-danger">Belum ada tugas</h4>
                         <hr />
@@ -34,7 +34,9 @@ const Instruction = ({ assigments, isLoading }) => {
                                         <div className="fs-4">
                                             <i className="bi bi-file-earmark-pdf" />
                                         </div>
-                                        <span className="fs-6 mb-0">{assigments?.assignment?.file_assignment}</span>
+                                        <span className="fs-6 mb-0">
+                                            {assigments?.assignment?.file_assignment.split("document_assignment/")[1]}
+                                        </span>
                                     </a>
                                 </div>
                             )

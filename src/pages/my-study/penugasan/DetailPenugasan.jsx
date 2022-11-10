@@ -17,7 +17,7 @@ import {
 } from "../../../features/assignment/assignmentSlice";
 import useEffectOnce from "../../../helpers/useEffectOnce";
 
-const Assignment = () => {
+const DetailPenugasan = () => {
 	useEffect(() => {
 		document.title = "Kampus Gratis | Penugasan";
 	});
@@ -69,4 +69,4 @@ const Assignment = () => {
 	);
 };
 
-export default Assignment;
+export default DetailPenugasan;
