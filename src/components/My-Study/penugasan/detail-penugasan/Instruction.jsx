@@ -13,26 +13,28 @@ const Instruction = ({ assigments, isLoading }) => {
                             <Skeleton height={20} width={300} />
                         </SkeletonTheme>
                     </div>
-                ) : assigments == undefined || assigments.length == 0 ? (
+                ) : assigments == undefined || assigments.length == 0  ? (
                     <>
+                        <h4 className="text-danger">Belum ada tugas</h4>
+                        <hr />
                     </>
                 ) : (
                     <>
-                        <h4> {assigments.assignment.content}</h4>
+                        <h4> {assigments?.assignment?.content}</h4>
                         <hr />
                         <p>
-                            {assigments.assignment.description}
+                            {assigments?.assignment?.description}
                         </p>
                         {
-                            assigments.assignment.file_assignment_link.length == 0 ? (
+                            assigments?.assignment?.file_assignment_link?.length == 0 ? (
                                 <></>
                             ) : (
                                 <div className="hstack gap-3 flex-wrap">
-                                    <a href={assigments.assignment.file_assignment_link} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-light">
+                                    <a href={assigments?.assignment?.file_assignment_link} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-light">
                                         <div className="fs-4">
                                             <i className="bi bi-file-earmark-pdf" />
                                         </div>
-                                        <span className="fs-6 mb-0">{assigments.assignment.file_assignment}</span>
+                                        <span className="fs-6 mb-0">{assigments?.assignment?.file_assignment}</span>
                                     </a>
                                 </div>
                             )
