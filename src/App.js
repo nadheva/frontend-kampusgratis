@@ -70,13 +70,14 @@ import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
 import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
-import Penugasan from "./pages/my-study/penugasan/DetailPenugasan";
+import DetailPenugasan from "./pages/my-study/penugasan/DetailPenugasan";
 import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
 import Detail from "./pages/my-study/quiz/Detail";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import Penugasan from "./pages/my-study/penugasan/Penugasan";
 
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
@@ -231,14 +232,12 @@ function App() {
 							<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId' exact element={<Detail />} />
 						</Route>
 
-						<Route
-							path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
-							element={<PrivateRoute redirect />}>
+						<Route path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan" element={<PrivateRoute redirect />}>
+							<Route path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan" element={<DetailPenugasan />} />
+						</Route>
 
-							<Route
-								path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
-								element={<Penugasan />}
-							/>
+						<Route path="/penugasan" element={<PrivateRoute />}>
+							<Route path="/penugasan" element={<Penugasan/>} />
 						</Route>
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
