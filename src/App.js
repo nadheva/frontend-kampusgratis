@@ -70,7 +70,7 @@ import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
 import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
-import Assignment from "./pages/my-study/Assignment";
+import Penugasan from "./pages/my-study/penugasan/DetailPenugasan";
 import Unauthorized from "./pages/error/401";
 import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
@@ -235,7 +235,7 @@ function App() {
 
 							<Route
 								path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
-								element={<Assignment />}
+								element={<Penugasan />}
 							/>
 						</Route>
 

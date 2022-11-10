@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // component
-import Header from "../../components/default/Header";
-import Footer from "../../components/default/Footer";
-import Intro from "../../components/My-Study/assignment/Intro";
-import Instruction from "../../components/My-Study/assignment/Instruction";
-import SubmissionStatus from "../../components/My-Study/assignment/SubmissionStatus";
-import SubmissionUpload from "../../components/My-Study/assignment/SubmissionUpload";
+import Header from "../../../components/default/Header";
+import Footer from "../../../components/default/Footer";
+
+import Intro from "../../../components/My-Study/penugasan/detail-penugasan/Intro";
+import Instruction from "../../../components/My-Study/penugasan/detail-penugasan/Instruction";
+import SubmissionStatus from "../../../components/My-Study/penugasan/detail-penugasan/SubmissionStatus";
+import SubmissionUpload from "../../../components/My-Study/penugasan/detail-penugasan/SubmissionUpload";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
 	getAssignments,
-	reset,
-} from "../../features/assignment/assignmentSlice";
-import useEffectOnce from "../../helpers/useEffectOnce";
+} from "../../../features/assignment/assignmentSlice";
+import useEffectOnce from "../../../helpers/useEffectOnce";
 
 const Assignment = () => {
 	useEffect(() => {
@@ -41,7 +41,6 @@ const Assignment = () => {
 		if (data?.assigments) setAssigments(data.assigments);
 	}, [data]);
 
-	console.log(assigments)
 	return (
 		<>
 			<Header />

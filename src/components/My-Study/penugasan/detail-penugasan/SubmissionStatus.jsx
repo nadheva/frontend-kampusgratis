@@ -8,7 +8,7 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
             <h3>Status Penugasan</h3>
             {
                 isLoading ? (
-                    <div className="col-lg-8 mb-5">
+                    <div className="col-lg-12 mb-5">
                         <SkeletonTheme >
                             <Skeleton height={20} />
                             <Skeleton height={20} />
