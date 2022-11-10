@@ -76,6 +76,7 @@ import Forbidden from "./pages/error/403";
 import ServerError from "./pages/error/500";
 import ServiceUnavailable from "./pages/error/503";
 import Detail from "./pages/my-study/quiz/Detail";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
@@ -127,6 +128,7 @@ function App() {
 
 						<Route path="/login" exact element={<Login />} />
 						<Route path="/register" exact element={<Register />} />
+						<Route path="/forgot-password" exact element={<ForgotPassword />} />
 
 						<Route
 							path="/studi-ku/:subjectId/pertemuan/:sessionId/modul"
