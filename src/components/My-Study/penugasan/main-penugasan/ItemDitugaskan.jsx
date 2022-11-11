@@ -6,16 +6,16 @@ const ItemDitugaskan = ({ ongoing }) => {
             <div className="d-flex justify-content-between align-items-center">
                 <div className="mt-3">
                     <h5 className="m-0 mb-1">
-                        Tugas Matriks & Bahasa Jepang
+                        {`Tugas Pertemuan ${ongoing?.Session?.session_no}`}
                     </h5>
                     <p>
-                        Matematika
+                        {ongoing?.Subject?.name}
                     </p>
                 </div>
                 <div className="d-flex flex-column align-items-center">
                     <i className="bi bi-clock-history fs-5 text-primary"></i>
                     <p className="m-0 text-primary small">{ongoing?.status}</p>
-                    <p className="m-0 small">Deadline 24 Juni 2022, 09:00</p>
+                    <p className="m-0 small">{ongoing?.deadline}</p>
                 </div>
             </div>
         </div>

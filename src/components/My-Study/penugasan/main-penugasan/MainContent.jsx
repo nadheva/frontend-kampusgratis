@@ -3,7 +3,7 @@ import React from 'react'
 import CardBody from './CardBody'
 import CardHeader from './CardHeader'
 
-const MainContent = ({ assigments, ongoing, isLoading, grading, late }) => {
+const MainContent = ({ assignments, ongoing, isLoading, grading, late }) => {
     return (
         <section className="pt-0">
             <div className="container">
@@ -12,7 +12,7 @@ const MainContent = ({ assigments, ongoing, isLoading, grading, late }) => {
                         <div className="card shadow rounded-2 p-0 mt-n5">
                             <CardHeader />
                             <CardBody
-                                assigments={assigments}
+                                assignments={assignments}
                                 ongoing={ongoing}
                                 grading={grading}
                                 late={late}

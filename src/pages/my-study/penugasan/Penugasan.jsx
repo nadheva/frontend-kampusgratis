@@ -55,7 +55,7 @@ const Penugasan = () => {
             <main>
                 <Intro />
                 <MainContent
-                    assigments={assigments}
+                    assignments={assigments}
                     ongoing={ongoing}
                     grading={grading}
                     late={late}
