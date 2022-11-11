@@ -30,13 +30,9 @@ const Instruction = ({ assigments, isLoading }) => {
                                 <></>
                             ) : (
                                 <div className="hstack gap-3 flex-wrap">
-                                    <a href={assigments?.assignment?.file_assignment_link} target="_blank" rel="noopener noreferrer" className="btn btn-lg btn-light">
-                                        <div className="fs-4">
-                                            <i className="bi bi-file-earmark-pdf" />
-                                        </div>
-                                        <span className="fs-6 mb-0">
-                                            {assigments?.assignment?.file_assignment.split("document_assignment/")[1]}
-                                        </span>
+                                    <a target="_blank" href={assigments?.assignment?.file_assignment_link}>
+                                        {assigments?.assignment?.file_assignment.split("document_assignment/")}
+                                        <i className="fas fa-external-link-square-alt ms-1"></i>
                                     </a>
                                 </div>
                             )
