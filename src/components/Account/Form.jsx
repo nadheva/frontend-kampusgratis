@@ -67,7 +67,7 @@ const FormEdit = () => {
 
 	useEffect(() => {
 		if (!isLoading && isSuccess) setIsLoaded(true);
-		if (user) {
+		if (user && !isLoading) {
 			setProfileData(Object.assign(profileData, {
 				full_name: user.full_name,
 				phone: user.phone,
