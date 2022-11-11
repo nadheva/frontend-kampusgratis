@@ -10,7 +10,6 @@ const CardBody = ({ assignments, ongoing, isLoading, grading, late }) => {
             <div className="tab-content" id="course-pills-tabContent">
                 <ListSemua
                     assignments={assignments}
-                    isLoading={isLoading}
                 />
                 <ListDitugaskan
                     ongoing={ongoing}
