@@ -140,6 +140,7 @@ export const authSlice = createSlice({
       .addCase(loginWithGoogle.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
+        state.message = "Login berhasil! Halaman akan dialihkan.";
         state.token = action.payload;
       })
       .addCase(loginWithGoogle.rejected, (state, action) => {

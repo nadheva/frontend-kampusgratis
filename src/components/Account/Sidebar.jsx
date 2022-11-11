@@ -31,7 +31,7 @@ const SidebarProfile = () => {
 				>
 					<div className="offcanvas-header bg-light">
 						<h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-							My profile
+							Akun Saya
 						</h5>
 						<button
 							type="button"
@@ -47,7 +47,7 @@ const SidebarProfile = () => {
 									<i className="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
 								</NavLink>
 								<NavLink className="list-group-item" to="/mycourse">
-									<i className="bi bi-basket fa-fw me-2"></i>Mata Kuliah
+									<i class="bi bi-collection me-2"></i>Mata Kuliah
 								</NavLink>
 								<NavLink className="list-group-item" to="/nilai">
 									<i className="bi bi-clipboard fa-fw me-2"></i>Nilai
@@ -69,7 +69,7 @@ const SidebarProfile = () => {
 									className="list-group-item text-danger bg-danger-soft-hover"
 									onClick={onLogout}
 								>
-									<i className="fas fa-sign-out-alt fa-fw me-2"></i>Sign Out
+									<i className="fas fa-sign-out-alt fa-fw me-2"></i>Keluar
 								</button>
 							</div>
 						</div>
