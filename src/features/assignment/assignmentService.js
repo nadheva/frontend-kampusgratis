@@ -3,6 +3,22 @@ import { getAuth } from 'firebase/auth';
 
 const API_URL = 'https://fe-integration-test.herokuapp.com/api/v1/'
 
+const getAssignments = async () => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.get(API_URL + `assignment/submissiondata`, config);
+
+  return response.data;
+}
+
 const getAssignment = async (sessionId) => {
   const auth = getAuth();
   const token = await auth.currentUser.getIdToken();
@@ -57,7 +73,7 @@ const updateAssignment = async (sessionId, assignment) => {
 
 
 const assignmentService = {
-  getAssignment, sendAssignment, updateAssignment
+  getAssignment, sendAssignment, updateAssignment, getAssignments
 }
 
 export default assignmentService;

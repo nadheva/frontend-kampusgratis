@@ -13,7 +13,7 @@ import SubmissionUpload from "../../../components/My-Study/penugasan/detail-penu
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
-	getAssignments,
+	getAssignment,
 } from "../../../features/assignment/assignmentSlice";
 import useEffectOnce from "../../../helpers/useEffectOnce";
 
@@ -34,11 +34,11 @@ const DetailPenugasan = () => {
 	);
 
 	useEffectOnce(() => {
-		dispatch(getAssignments(sessionId));
+		dispatch(getAssignment(sessionId));
 	});
 
 	useEffect(() => {
-		if (data?.assigments) setAssigments(data.assigments);
+		if (data?.assigment) setAssigments(data.assigment);
 	}, [data]);
 
 	return (
