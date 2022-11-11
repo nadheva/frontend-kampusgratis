@@ -167,7 +167,6 @@ const Main = () => {
           </form>
           <div className="row mt-3">
             <div className="col-12">
-
               <div className="row">
                 {data?.majors?.result?.length === 0 && isPageLoad ? <>
                   <span className='alert alert-danger'>Pencarian yang kamu cari tidak ditemukan.</span>
