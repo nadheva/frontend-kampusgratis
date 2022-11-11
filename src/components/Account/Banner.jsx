@@ -60,8 +60,7 @@ const Banner = () => {
 													alt={user?.full_name}
 												/>
 												<span className="badge bg-success text-white rounded-pill position-absolute top-50 start-100 translate-middle mt-4 mt-md-5 ms-n3 px-md-3">
-													{user.role.charAt(0).toUpperCase() +
-														user.role.slice(1)}
+													{user.role.charAt(0).toUpperCase() + user.role.slice(1)}
 												</span>
 											</>}
 										</div>

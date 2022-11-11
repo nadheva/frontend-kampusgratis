@@ -21,7 +21,6 @@ const FormRegister = ({ onFormSubmit, isLoading, onFormChange, onLoginWithGoogle
                     {/* <img src="assets/images/element/03.svg" className="h-40px mb-2" alt="Kampus Gratis" /> */}
                     <h2 className="mt-4">Daftarkan Akun Kamu!</h2>
                     <p className="lead mb-4 ">Senang bertemu dengan kamu! Silakan daftar diri-mu.</p>
-
                     <form onSubmit={onFormSubmit}>
                         <div className="mb-4">
                             <label htmlFor="input-email-address" className="form-label">Alamat Email *</label>
@@ -79,7 +78,6 @@ const FormRegister = ({ onFormSubmit, isLoading, onFormChange, onLoginWithGoogle
                             </div>
                         </div>
                     </form>
-
                     <div className="row">
                         <div className="position-relative my-4">
                             <hr />
@@ -90,13 +88,13 @@ const FormRegister = ({ onFormSubmit, isLoading, onFormChange, onLoginWithGoogle
                         <div className="d-grid">
                             {isLoading ? (
                                 <button className="btn bg-google mb-2 mb-xxl-0" disabled={isLoading}>
-                                    <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                                    <span className="spinner-border spinner-border-sm"></span>
                                     &nbsp;Loading...
                                 </button>
                             ) : (
                                 <button className="btn bg-google mb-2 mb-xxl-0" onClick={onLoginWithGoogle}>
-                                    <i className="fab fa-fw fa-google text-white me-2"></i>
-                                    Daftar dengan Google
+                                    <i className="fab fa-fw fa-google text-white"></i>
+                                    &nbsp;Daftar dengan Google
                                 </button>
                             )}
                         </div>
@@ -104,7 +102,6 @@ const FormRegister = ({ onFormSubmit, isLoading, onFormChange, onLoginWithGoogle
                     <div className="mt-4 text-center">
                         <span>Sudah punya akun?<Link to="/login"> Login di sini</Link></span>
                     </div>
-
                 </div>
             </div>
         </div>

@@ -84,7 +84,7 @@ const Header = () => {
                         <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                       </div>
                       <div>
-                        <a className="h6" href=" ">{getFirstName(user.full_name)}</a>
+                        <a className="h6" href=" ">Halo, {getFirstName(user.full_name)}!</a>
                         <p className="small m-0">{user.email}</p>
                       </div>
                     </div>

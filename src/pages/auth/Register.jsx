@@ -4,7 +4,8 @@ import { toast } from 'react-toastify';
 
 // Redux
 import { useSelector, useDispatch } from 'react-redux'
-import { register, loginWithGoogle, reset } from '../../features/auth/authSlice';
+import { register, loginWithGoogle, reset, resetDefault } from '../../features/auth/authSlice';
+import { getMe } from '../../features/profile/profileSlice';
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 // Component
@@ -74,6 +75,11 @@ function Register() {
 
 		if (isSuccess && user) {
 			navigate('/login');
+		}
+
+		if (isSuccess && !user) {
+			dispatch(getMe());
+			dispatch(resetDefault());
 		}
 
 		if (isSuccess) {

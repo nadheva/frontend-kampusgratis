@@ -5,6 +5,7 @@ import Logo from '../../assets/images/logo-kampus-gratis.png';
 import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 const Footer = () => {
+  const isLoading = false;
   return <>
     <div className="back-top"><i className="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
     <footer className="bg-light pt-5">
@@ -16,7 +17,7 @@ const Footer = () => {
               <img className="dark-mode-item h-40px" src={LogoDark} alt="Kampus Gratis" />
             </a>
             <p className="my-3">
-              KampusGratis merupakan sistem
+              Kampus Gratis merupakan sistem
               manajemen E-learning yang mencantumkan laporan peningkatan
               atau progres pembelajaran mahasiswa
               layaknya seperti perguruan tinggi.
@@ -44,6 +45,10 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          {isLoading ? <>
+          </> : <>
+          </>
+          }
           <div className="col-lg-5">
             <div className="row g-2">
               <div className="col-12 col-md-12">
