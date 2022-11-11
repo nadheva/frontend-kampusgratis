@@ -42,20 +42,13 @@ const Penugasan = () => {
         if (data?.assigments?.grading) setGrading(data?.assigments?.grading);
     }, [data]);
 
-    // console.log(assigments.ongoing)
-    // ongoing.map((x) => console.log(x.id))
-    // console.log(late)
-    // console.log(grading)
-
-    // console.log(Object.values(assigments.grading).length)
-
     return (
         <>
             <Header />
             <main>
                 <Intro />
                 <MainContent
-                    assigments={assigments}
+                    assignments={assigments}
                     ongoing={ongoing}
                     grading={grading}
                     late={late}

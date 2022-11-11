@@ -13,7 +13,7 @@ import SubmissionUpload from "../../../components/My-Study/penugasan/detail-penu
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
-	getAssignment,
+	getAssignment, submitAssignment, updateAssignment
 } from "../../../features/assignment/assignmentSlice";
 import useEffectOnce from "../../../helpers/useEffectOnce";
 
