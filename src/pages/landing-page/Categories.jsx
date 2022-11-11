@@ -85,10 +85,10 @@ const Categories = () => {
 		},
 		{
 			name: "Penugasan",
-			url: "#",
+			url: "/penugasan",
 			src: "/assets/images/element/home.svg",
-			background: "bg-info",
-			disabled: true
+			background: "bg-danger",
+			disabled: false
 		},
 		{
 			name: "Papan Skor",

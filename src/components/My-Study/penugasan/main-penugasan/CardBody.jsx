@@ -4,13 +4,12 @@ import ListSelesai from './ListSelesai'
 import ListSemua from './ListSemua'
 import ListTerlambat from './ListTerlambat'
 
-const CardBody = ({ assigments, ongoing, isLoading, grading, late }) => {
+const CardBody = ({ assignments, ongoing, isLoading, grading, late }) => {
     return (
         <div className="card-body p-sm-4">
             <div className="tab-content" id="course-pills-tabContent">
                 <ListSemua
-                    assigments={assigments}
-                    isLoading={isLoading}
+                    assignments={assignments}
                 />
                 <ListDitugaskan
                     ongoing={ongoing}
