@@ -7,6 +7,13 @@ import Footer from "../../components/default/Footer";
 const Categories = () => {
 	const categoryList = [
 		{
+			name: "Silabus",
+			url: "/silabus",
+			src: "/assets/images/element/online.svg",
+			background: "bg-secondary",
+			disabled: false
+		},
+		{
 			name: "Studi-Ku",
 			url: "/studi-ku",
 			src: "/assets/images/element/instructor-course.svg",
@@ -14,10 +21,10 @@ const Categories = () => {
 			disabled: false
 		},
 		{
-			name: "Silabus",
-			url: "/silabus",
-			src: "/assets/images/element/online.svg",
-			background: "bg-secondary",
+			name: "Penugasan",
+			url: "/penugasan",
+			src: "/assets/images/element/home.svg",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -31,42 +38,42 @@ const Categories = () => {
 			name: "Kalender Saya",
 			url: "/kalender",
 			src: "/assets/images/element/account.svg",
-			background: "bg-danger",
+			background: "bg-black",
 			disabled: false
 		},
 		{
 			name: "Acara Kampus",
 			url: "/acara-kampus",
 			src: "/assets/images/element/photography.svg",
-			background: "bg-warning",
+			background: "bg-black",
 			disabled: false
 		},
 		{
 			name: "Nilai & Sertifikat",
 			url: "/nilai",
 			src: "/assets/images/element/18.svg",
-			background: "bg-info",
+			background: "bg-black",
 			disabled: false
 		},
 		{
 			name: "Penyaluran Kerja",
 			url: "/penyaluran-kerja",
 			src: "/assets/images/element/coding.svg",
-			background: "bg-primary",
+			background: "bg-black",
 			disabled: false
 		},
 		{
 			name: "Analitik",
 			url: "/analitik",
 			src: "/assets/images/element/exam.svg",
-			background: "bg-success",
+			background: "bg-black",
 			disabled: false
 		},
 		{
 			name: "Konsultasi & Layanan",
 			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
-			background: "bg-success",
+			background: "bg-black",
 			disabled: false
 		},
 		{
@@ -82,13 +89,6 @@ const Categories = () => {
 			src: "/assets/images/element/help.svg",
 			background: "bg-warning",
 			disabled: true
-		},
-		{
-			name: "Penugasan",
-			url: "/penugasan",
-			src: "/assets/images/element/home.svg",
-			background: "bg-danger",
-			disabled: false
 		},
 		{
 			name: "Papan Skor",

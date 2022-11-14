@@ -165,6 +165,7 @@ const Main = () => {
               </div>
             </div>
           </form>
+
           <div className="row mt-3">
             <div className="col-12">
               <div className="row">
@@ -181,11 +182,11 @@ const Main = () => {
                         </div>
                       </>}
                     </> : <>
-                      <div className="col-md-12">
-                        <span className='alert alert-danger'>
+                      <div className="col-12">
+                        <div className="alert alert-danger" role="alert">
                           Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
                           Klik <Link to="/administrasi">di sini</Link> untuk melakukan administrasi.
-                        </span>
+                        </div>
                       </div>
                     </>}
                   </>}
