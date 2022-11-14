@@ -47,7 +47,7 @@ const ModuleDetail = () => {
   }
 
   useEffect(() => {
-    console.log(currentModule);
+    // console.log(currentModule);
     if (data?.module_submit && isSuccess) {
       console.log(data);
       setCurrentModule({
