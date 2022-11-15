@@ -47,7 +47,7 @@ const SidebarProfile = () => {
 									<i className="bi bi-ui-checks-grid fa-fw me-2"></i>Dashboard
 								</NavLink>
 								<NavLink className="list-group-item" to="/mycourse">
-									<i class="bi bi-collection me-2"></i>Mata Kuliah
+									<i className="bi bi-collection me-2"></i>Mata Kuliah
 								</NavLink>
 								<NavLink className="list-group-item" to="/nilai">
 									<i className="bi bi-clipboard fa-fw me-2"></i>Nilai

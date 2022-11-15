@@ -20,13 +20,10 @@ const getCertificates = async (currentPage, search) => {
 }
 
 const getCertificate = async (id) => {
-  const auth = getAuth();
-  const token = await auth.currentUser.getIdToken();
 
   const config = {
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
     }
   }
 

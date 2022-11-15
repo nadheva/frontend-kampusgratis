@@ -463,9 +463,9 @@ const Form = () => {
           <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour">
             <div className="accordion-body mt-3">
               <form onSubmit={onFormSubmitDegree}>
-                <div className="col-md-6">
+                <div className="col-md-12">
                   <label className="form-label"><span className='text-danger'><sup>*</sup></span> Jenjang Pendidikan</label>
-                  <input type="text" className="form-control mb-3" name="degree" value={degree} placeholder="Jenjang Pendidikan" onChange={onFormChangeAdministrationDegree} />
+                  <input type="text" className="form-control mb-3" name="degree" value={degree} placeholder="Jenjang Pendidikan" onChange={onFormChangeAdministrationDegree} disabled={isAdministrationAccepted}/>
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
                   {isLoading ? (

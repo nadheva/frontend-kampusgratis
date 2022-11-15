@@ -11,7 +11,7 @@ const SertifikatItem = ({ currentCertificate , isLoading}) => {
                             <SkeletonTheme>
                                 <Skeleton height={300} />
                             </SkeletonTheme>
-                        ) : currentCertificate.link === undefined || currentCertificate.link === null ? (
+                        ) : currentCertificate?.link === undefined || currentCertificate?.link === null ? (
                             <div className="card card-body img-object shadow p-2 h-300px h-sm-400px h-md-500px h-lg-500px  position-relative overflow-hidden"
                                 style={{
                                     backgroundImage: `url(/assets/images/about/29.jpg)`,
@@ -21,7 +21,7 @@ const SertifikatItem = ({ currentCertificate , isLoading}) => {
                                 <div className="bg-overlay bg-dark opacity-6" />
                             </div>
                         ) : (
-                            <iframe src={currentCertificate.link}
+                            <iframe src={currentCertificate?.link}
                                 title='x'
                                 frameBorder="0"
                                 width="100%"

@@ -237,7 +237,7 @@ function App() {
 						</Route>
 
 						<Route path="/penugasan" element={<PrivateRoute />}>
-							<Route path="/penugasan" element={<Penugasan/>} />
+							<Route path="/penugasan" element={<Penugasan />} />
 						</Route>
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
@@ -267,9 +267,9 @@ function App() {
 						<Route path="/certificates" element={<PrivateRoute />}>
 							<Route path="/certificates" element={<Sertifikat />} />
 						</Route>
-						<Route path="/certificates/:id" element={<PrivateRoute />}>
-							<Route path="/certificates/:id" element={<ViewSertifikat />} />
-						</Route>
+
+						<Route path="/certificates/:id" element={<ViewSertifikat />} />
+
 						{/* END : NILAI & SERTIFIKAT */}
 
 						{/* START : Penyaluran Kerja */}

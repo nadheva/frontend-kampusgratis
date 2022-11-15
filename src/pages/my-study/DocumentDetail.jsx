@@ -111,7 +111,7 @@ const DocumentDetail = () => {
                           <iframe src={currentDocument.link}
                             title={currentDocument.content}
                             width="100%"
-                            height="443px" frameborder="0" />
+                            height="443px" frameBorder="0" />
                         </div>
                         <div className="col-lg-12">
                           <div className="bg-body shadow rounded-2 p-4">

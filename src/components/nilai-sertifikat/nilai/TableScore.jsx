@@ -3,6 +3,8 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 // import AccordionList from './AccordionList'
 
 const TableScore = ({ data, isLoading }) => {
+
+    console.log(data?.subject)
     return (
         <div className="card border bg-transparent rounded-3 mt-4">
             <div className="card-header bg-transparent border-bottom px-3">
@@ -47,9 +49,9 @@ const TableScore = ({ data, isLoading }) => {
                                         </SkeletonTheme>
                                     </>
                                 ) : <>
-                                    {data?.subject?.length === 0 && <>
+                                    {data?.subject?.length === 0 || data?.subject === undefined && <>
                                         <tr>
-                                            <td colSpan={4} className="p-0">
+                                            <td colSpan={4} className="p-0 pt-2">
                                                 <div className="alert alert-info my-0 text-center">
                                                     Kamu belum memiliki penilaian.
                                                 </div>

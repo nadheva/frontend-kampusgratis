@@ -7,13 +7,7 @@ import Footer from "../../components/default/Footer";
 const Categories = () => {
 	const categoryList = [
 		{
-			name: "Studi-Ku",
-			url: "/studi-ku",
-			src: "/assets/images/element/instructor-course.svg",
-			background: "bg-primary",
-			disabled: false
-		},
-		{
+			id: "1",
 			name: "Silabus",
 			url: "/silabus",
 			src: "/assets/images/element/online.svg",
@@ -21,69 +15,15 @@ const Categories = () => {
 			disabled: false
 		},
 		{
-			name: "Sekilas Ilmu",
-			url: "/artikel",
-			src: "/assets/images/element/data-science.svg",
-			background: "bg-success",
-			disabled: false
-		},
-		{
-			name: "Kalender Saya",
-			url: "/kalender",
-			src: "/assets/images/element/account.svg",
-			background: "bg-danger",
-			disabled: false
-		},
-		{
-			name: "Acara Kampus",
-			url: "/acara-kampus",
-			src: "/assets/images/element/photography.svg",
-			background: "bg-warning",
-			disabled: false
-		},
-		{
-			name: "Nilai & Sertifikat",
-			url: "/nilai",
-			src: "/assets/images/element/18.svg",
-			background: "bg-info",
-			disabled: false
-		},
-		{
-			name: "Penyaluran Kerja",
-			url: "/penyaluran-kerja",
-			src: "/assets/images/element/coding.svg",
+			id: "2",
+			name: "Studi-Ku",
+			url: "/studi-ku",
+			src: "/assets/images/element/instructor-course.svg",
 			background: "bg-primary",
 			disabled: false
 		},
 		{
-			name: "Analitik",
-			url: "/analitik",
-			src: "/assets/images/element/exam.svg",
-			background: "bg-success",
-			disabled: false
-		},
-		{
-			name: "Konsultasi & Layanan",
-			url: "/layanan-konsultasi",
-			src: "/assets/images/element/online.svg",
-			background: "bg-success",
-			disabled: false
-		},
-		{
-			name: "Diskusi Perkuliahan",
-			url: "#",
-			src: "/assets/images/element/25.svg",
-			background: "bg-danger",
-			disabled: true
-		},
-		{
-			name: "Panduan",
-			url: "#",
-			src: "/assets/images/element/help.svg",
-			background: "bg-warning",
-			disabled: true
-		},
-		{
+			id: "3",
 			name: "Penugasan",
 			url: "/penugasan",
 			src: "/assets/images/element/home.svg",
@@ -91,6 +31,79 @@ const Categories = () => {
 			disabled: false
 		},
 		{
+			id: "4",
+			name: "Sekilas Ilmu",
+			url: "/artikel",
+			src: "/assets/images/element/data-science.svg",
+			background: "bg-success",
+			disabled: false
+		},
+		{
+			id: "5",
+			name: "Kalender Saya",
+			url: "/kalender",
+			src: "/assets/images/element/account.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "6",
+			name: "Acara Kampus",
+			url: "/acara-kampus",
+			src: "/assets/images/element/photography.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "7",
+			name: "Nilai & Sertifikat",
+			url: "/nilai",
+			src: "/assets/images/element/18.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "8",
+			name: "Penyaluran Kerja",
+			url: "/penyaluran-kerja",
+			src: "/assets/images/element/coding.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "9",
+			name: "Analitik",
+			url: "/analitik",
+			src: "/assets/images/element/exam.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "11",
+			name: "Konsultasi & Layanan",
+			url: "/layanan-konsultasi",
+			src: "/assets/images/element/online.svg",
+			background: "bg-black",
+			disabled: false
+		},
+		{
+			id: "12",
+			name: "Diskusi Perkuliahan",
+			url: "#",
+			src: "/assets/images/element/25.svg",
+			background: "bg-danger",
+			disabled: true
+		},
+		{
+			id: "13",
+			name: "Panduan",
+			url: "#",
+			src: "/assets/images/element/help.svg",
+			background: "bg-warning",
+			disabled: true
+		},
+		{
+			id: "14",
 			name: "Papan Skor",
 			url: "#",
 			src: "/assets/images/element/music.svg",
@@ -98,6 +111,7 @@ const Categories = () => {
 			disabled: true
 		},
 		{
+			id: "15",
 			name: "Ruang Simulasi",
 			url: "#",
 			src: "/assets/images/element/account.svg",
@@ -105,6 +119,7 @@ const Categories = () => {
 			disabled: true
 		},
 		{
+			id: "16",
 			name: "Perencanaan Karir",
 			url: "#",
 			src: "/assets/images/element/engineering.svg",
@@ -112,6 +127,7 @@ const Categories = () => {
 			disabled: true
 		},
 		{
+			id: "17",
 			name: "Absensi",
 			url: "#",
 			src: "/assets/images/element/marketing.svg",
@@ -180,7 +196,7 @@ const Categories = () => {
 					</div>
 					<div className="row g-4">
 						{categoryList.map(category => <>
-							<div className="col-sm-6 col-md-4 col-xl-3">
+							<div className="col-sm-6 col-md-4 col-xl-3" key={category.id}>
 								<div className={`card card-body ${category.disabled ? "bg-dark" : category.background} bg-opacity-10 text-center position-relative btn-transition p-4`}>
 									<div className="icon-xl bg-body mx-auto rounded-circle mb-3">
 										<img
