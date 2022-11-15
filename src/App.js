@@ -267,7 +267,9 @@ function App() {
 						<Route path="/certificates" element={<PrivateRoute />}>
 							<Route path="/certificates" element={<Sertifikat />} />
 						</Route>
+
 						<Route path="/certificates/:id" element={<ViewSertifikat />} />
+
 						{/* END : NILAI & SERTIFIKAT */}
 
 						{/* START : Penyaluran Kerja */}
