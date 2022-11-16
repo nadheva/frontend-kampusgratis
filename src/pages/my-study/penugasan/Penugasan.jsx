@@ -22,7 +22,7 @@ const Penugasan = () => {
     // // Redux
     const dispatch = useDispatch();
 
-    const [assigments, setAssigments] = useState([]);
+    const [assignments, setAssignments] = useState([]);
     const [ongoing, setOngoing] = useState([]);
     const [late, setLate] = useState([]);
     const [grading, setGrading] = useState([]);
@@ -36,10 +36,10 @@ const Penugasan = () => {
     });
 
     useEffect(() => {
-        if (data?.assigments) setAssigments(data.assigments);
-        if (data?.assigments?.ongoing) setOngoing(data?.assigments?.ongoing);
-        if (data?.assigments?.late) setLate(data?.assigments?.late);
-        if (data?.assigments?.grading) setGrading(data?.assigments?.grading);
+        if (data?.assignments) setAssignments(data.assignments);
+        if (data?.assignments?.ongoing) setOngoing(data?.assignments?.ongoing);
+        if (data?.assignments?.late) setLate(data?.assignments?.late);
+        if (data?.assignments?.grading) setGrading(data?.assignments?.grading);
     }, [data]);
 
     return (
@@ -48,7 +48,7 @@ const Penugasan = () => {
             <main>
                 <Intro />
                 <MainContent
-                    assignments={assigments}
+                    assignments={assignments}
                     ongoing={ongoing}
                     grading={grading}
                     late={late}

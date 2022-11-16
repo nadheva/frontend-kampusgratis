@@ -22,12 +22,10 @@ const DetailPenugasan = () => {
 		document.title = "Kampus Gratis | Penugasan";
 	});
 
-	// Get id
 	const { sessionId } = useParams();
 
-	// // Redux
 	const dispatch = useDispatch();
-	const [assigments, setAssigments] = useState();
+	const [assignments, setAssignments] = useState();
 
 	const { data, isLoading } = useSelector(
 		(state) => state.assignment
@@ -38,7 +36,7 @@ const DetailPenugasan = () => {
 	});
 
 	useEffect(() => {
-		if (data?.assigment) setAssigments(data.assigment);
+		if (data?.assignment) setAssignments(data.assignment);
 	}, [data]);
 
 	return (
@@ -51,13 +49,13 @@ const DetailPenugasan = () => {
 						<div className="row g-4">
 							<div className="card shadow rounded-2 p-0 ">
 								<div className="card-body p-sm-4">
-									<Instruction assigments={assigments} isLoading={isLoading} />
+									<Instruction assignments={assignments} isLoading={isLoading} />
 									<SubmissionStatus
-										assigments={assigments}
+										assignments={assignments}
 										isLoading={isLoading}
 									/>
 									<SubmissionUpload
-										assigments={assigments} />
+										assignments={assignments} />
 								</div>
 							</div>
 						</div>

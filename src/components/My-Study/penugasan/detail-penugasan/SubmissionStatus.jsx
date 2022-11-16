@@ -1,8 +1,7 @@
 import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
-import 'react-loading-skeleton/dist/skeleton.css';
 
-const SubmissionStatus = ({ assigments, isLoading }) => {
+const SubmissionStatus = ({ assignments, isLoading }) => {
     return (
         <div className="col-12 mt-5">
             <h3>Status Penugasan</h3>
@@ -16,7 +15,7 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                             <Skeleton height={20} />
                         </SkeletonTheme>
                     </div>
-                ) : assigments == undefined || assigments.length == 0 || assigments == null ? (
+                ) : assignments == undefined || assignments.length == 0 || assignments == null ? (
                     <div className="table-responsive">
                         <table className="table table-striped table-hover">
                             <tbody>
@@ -54,11 +53,11 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Status Penilaian</th>
                                     {
-                                        assigments?.students_work?.status == 0 || assigments?.students_work?.status == null ? (
+                                        assignments?.students_work?.status == 0 || assignments?.students_work?.status == null ? (
                                             <td>Belum ada status.</td>
                                         ) : (
-                                            <td className={assigments?.students_work?.status === "LATE" ? "table-danger" : ""}>
-                                                {assigments?.students_work?.status}
+                                            <td className={assignments?.students_work?.status === "LATE" ? "table-danger" : ""}>
+                                                {assignments?.students_work?.status}
                                             </td>
                                         )
                                     }
@@ -66,11 +65,11 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Nilai</th>
                                     {
-                                        assigments?.students_work?.score == 0 || assigments?.students_work?.score == null ? (
+                                        assignments?.students_work?.score == 0 || assignments?.students_work?.score == null ? (
                                             <td>Belum dinilai.</td>
                                         ) : (
                                             <td className="table-success">
-                                                {assigments?.students_work?.score}
+                                                {assignments?.students_work?.score}
                                             </td>
                                         )
                                     }
@@ -78,28 +77,28 @@ const SubmissionStatus = ({ assigments, isLoading }) => {
                                 <tr>
                                     <th>Waktu Tersisa</th>
                                     <td>
-                                        {assigments?.assignment?.deadline ?? '-'}
+                                        {assignments?.assignment?.deadline ?? '-'}
                                     </td>
                                 </tr>
                                 {/* <tr>
                                     <th>Waktu Tersisa </th>
                                     <td>
-                                        {assigments?.assignment?.duration ?? '-'}
+                                        {assignments?.assignment?.duration ?? '-'}
                                     </td>
                                 </tr> */}
                                 <tr>
                                     <th>Terakhir Diubah</th>
                                     <td >
-                                        {assigments?.students_work?.activity_detail?.date_submit ?? '-'}
+                                        {assignments?.students_work?.activity_detail?.date_submit ?? '-'}
                                     </td>
                                 </tr>
                                 <tr>
                                     <th>Berkas Tugas</th>
                                     <td>
                                         {
-                                            <p className={assigments?.students_work?.activity_detail?.file_assignment ? "bg-light" : ""}>
-                                                <a href={assigments?.students_work?.activity_detail?.file_assignment_link} target="_blank">
-                                                    {assigments?.students_work?.activity_detail?.file_assignment ?? '-'}
+                                            <p className={assignments?.students_work?.activity_detail?.file_assignment ? "bg-light" : ""}>
+                                                <a href={assignments?.students_work?.activity_detail?.file_assignment_link} target="_blank">
+                                                    {assignments?.students_work?.activity_detail?.file_assignment ?? '-'}
                                                 </a>
                                             </p>
                                         }

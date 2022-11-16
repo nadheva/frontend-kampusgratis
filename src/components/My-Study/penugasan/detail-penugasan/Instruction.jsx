@@ -2,7 +2,7 @@ import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css';
 
-const Instruction = ({ assigments, isLoading }) => {
+const Instruction = ({ assignments, isLoading }) => {
     return (
         <div className="col-12">
             {
@@ -13,25 +13,25 @@ const Instruction = ({ assigments, isLoading }) => {
                             <Skeleton height={20} width={300} />
                         </SkeletonTheme>
                     </div>
-                ) : assigments == undefined || assigments.length == 0 ? (
+                ) : assignments == undefined || assignments.length == 0 ? (
                     <>
                         <h4 className="text-danger">Belum ada tugas</h4>
                         <hr />
                     </>
                 ) : (
                     <>
-                        <h4> {assigments?.assignment?.content}</h4>
+                        <h4> {assignments?.assignment?.content}</h4>
                         <hr />
                         <p>
-                            {assigments?.assignment?.description}
+                            {assignments?.assignment?.description}
                         </p>
                         {
-                            assigments?.assignment?.file_assignment_link?.length == 0 ? (
+                            assignments?.assignment?.file_assignment_link?.length == 0 ? (
                                 <></>
                             ) : (
                                 <div className="hstack gap-3 flex-wrap">
-                                    <a target="_blank" href={assigments?.assignment?.file_assignment_link}>
-                                        {assigments?.assignment?.file_assignment.split("document_assignment/")}
+                                    <a target="_blank" href={assignments?.assignment?.file_assignment_link}>
+                                        {assignments?.assignment?.file_assignment.split("document_assignment/")}
                                         <i className="fas fa-external-link-square-alt ms-1"></i>
                                     </a>
                                 </div>

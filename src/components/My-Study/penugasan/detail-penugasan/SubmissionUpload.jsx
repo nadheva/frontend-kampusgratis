@@ -6,19 +6,17 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 import PageNotFound from "../../../../components/default/PageNotFound";
-import { submitAssignment, updateAssignment } from "../../../../features/assignment/assignmentSlice";
+import { reset, submitAssignment, updateAssignment } from "../../../../features/assignment/assignmentSlice";
 
-const SubmissionUpload = ({ assigments }) => {
-
+const SubmissionUpload = ({ assignments }) => {
 	const dispatch = useDispatch();
 	const { sessionId } = useParams();
 	const [assignment, setAssignment] = useState({});
-	const { message } = useSelector((state) => state.assignment);
+	const { message, isSuccess, isLoading, data } = useSelector((state) => state.assignment);
 
 	const onChangeAssignment = (e) => {
 		if (e.target.files[0]) {
 			setAssignment(e.target.files[0]);
-			// console.log(assignment);
 		}
 	};
 
@@ -27,18 +25,19 @@ const SubmissionUpload = ({ assigments }) => {
 
 		if (!assignment.length === 0) toast.error("File masih kosong.");
 
-		if (assigments?.students_work?.activity_detail) {
+		if (assignments?.students_work?.activity_detail) {
 			dispatch(updateAssignment({ sessionId, assignment }))
-			toast.success("Sukses Update")
-		}
-		else {
+		} else {
 			dispatch(submitAssignment({ sessionId, assignment }))
-			toast.success("Sukses Upload")
 		}
 	};
 
 	useEffect(() => {
 		if (!sessionId) return <PageNotFound />;
+		if (isSuccess && data?.assignment?.students_work?.activity_detail?.file_assignment && message === "SUCCESS_UPLOAD") {
+			toast.success("Pengunggahan tugas berhasil!");
+			dispatch(reset());
+		}
 	}, [assignment, message, sessionId]);
 
 	return (
@@ -52,7 +51,8 @@ const SubmissionUpload = ({ assigments }) => {
 					/>
 					<div>
 						<h6 className="my-2">
-							Upload tugas disini <a href="#!" className="text-primary"> Browse </a>
+							Unggah tugas kamu di sini!
+							<a href="#!" className="text-primary"> Pilih Tugas</a>
 						</h6>
 						<label style={{ cursor: "pointer" }}>
 							<span>
@@ -65,15 +65,26 @@ const SubmissionUpload = ({ assigments }) => {
 							</span>
 						</label>
 						<p className="small mb-0 mt-2">
-							<b>Note:</b> Pastikan berkas sudah sesuai dengan ketentuan tugas
-							submission
+							<b>Note:</b> Pastikan berkas sudah sesuai dengan ketentuan tugas!
 						</p>
 					</div>
 				</div>
 				<button type="submit" className="btn btn-primary mt-4">
-					{
-						assigments?.students_work?.activity_detail ? 'Update Tugas' : 'Kirim Tugas'
-					}
+					{assignments?.students_work?.activity_detail ? <>
+						{isLoading ? <>
+							<span className="spinner-border spinner-border-sm"></span>&nbsp;
+							Mengirim Tugas ...
+						</> : <>
+							Ubah Tugas
+						</>}
+					</> : <>
+						{isLoading ? <>
+							<span className="spinner-border spinner-border-sm"></span>&nbsp;
+							Mengirim Tugas ...
+						</> : <>
+							Unggah Tugas
+						</>}
+					</>}
 				</button>
 			</form>
 		</div>

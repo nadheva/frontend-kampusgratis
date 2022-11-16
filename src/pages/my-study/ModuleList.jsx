@@ -44,7 +44,7 @@ const Module = () => {
     <main>
       {isLoading || currentSubject.length === 0 || modules.length === 0 ? <>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
+          <div className='container text-center' style={{ marginTop: '165px', marginBottom: '165px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>

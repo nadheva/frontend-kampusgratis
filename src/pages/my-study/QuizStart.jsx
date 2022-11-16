@@ -14,6 +14,7 @@ const QuizStart = () => {
 	const navigate = useNavigate();
 
 	const [isQuizSubmit, setIsQuizSumbit] = useState(false);
+	const [isLoaded, setIsLoaded] = useState(false);
 	const { sessionId, subjectId } = useParams();
 	const [currentQuiz, setCurrentQuiz] = useState({});
 	const [currentQuizzes, setCurrentQuizzes] = useState([]);
@@ -30,6 +31,8 @@ const QuizStart = () => {
 			dispatch(getQuizBySession(sessionId)),
 			dispatch(getCurrentQuizzes())
 		]);
+
+		setIsLoaded(true);
 	}
 
 	useEffectOnce(() => {
@@ -72,7 +75,7 @@ const QuizStart = () => {
 	return <>
 		<Header />
 		<main>
-			{isLoading || Object.keys(currentSubject).length === 0 || Object.keys(currentQuiz).length === 0 ? <>
+			{isLoading && !isLoaded || Object.keys(currentSubject).length === 0 || Object.keys(currentQuiz).length === 0 ? <>
 				<section className='bg-light py-0 py-sm-5'>
 					<div className='container text-center' style={{ marginTop: '165px', marginBottom: '165px' }}>
 						<div className='row'>

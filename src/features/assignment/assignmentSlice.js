@@ -90,7 +90,7 @@ export const assignmentSlice = createSlice({
       .addCase(getAssignments.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data.assigments = action.payload;
+        state.data.assignments = action.payload;
       })
       .addCase(getAssignments.rejected, (state, action) => {
         state.isSuccess = false;
@@ -104,7 +104,7 @@ export const assignmentSlice = createSlice({
       .addCase(getAssignment.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data.assigment = action.payload;
+        state.data.assignment = action.payload;
       })
       .addCase(getAssignment.rejected, (state, action) => {
         state.isSuccess = false;
@@ -118,7 +118,7 @@ export const assignmentSlice = createSlice({
       .addCase(submitAssignment.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data.assigment = action.payload;
+        state.data.assignment = action.payload;
       })
       .addCase(submitAssignment.rejected, (state, action) => {
         state.isSuccess = false;
@@ -132,7 +132,8 @@ export const assignmentSlice = createSlice({
       .addCase(updateAssignment.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.data.assigment2 = action.payload;
+        state.message = "SUCCESS_UPLOAD";
+        state.data.assignment = action.payload;
       })
       .addCase(updateAssignment.rejected, (state, action) => {
         state.isSuccess = false;

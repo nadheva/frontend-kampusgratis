@@ -168,7 +168,7 @@ const Detail = () => {
     <main>
       {isLoading && !isLoaded || Object.keys(questions).length === 0 || Object.keys(questionsAnswers).length === 0 ? <>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '188px', marginBottom: '188px' }}>
+          <div className='container text-center' style={{ marginTop: '165px', marginBottom: '165px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>

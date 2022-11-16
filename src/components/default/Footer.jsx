@@ -5,7 +5,6 @@ import Logo from '../../assets/images/logo-kampus-gratis.png';
 import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 const Footer = () => {
-  const isLoading = false;
   return <>
     <div className="back-top"><i className="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle"></i></div>
     <footer className="bg-light pt-5">
@@ -45,10 +44,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          {isLoading ? <>
-          </> : <>
-          </>
-          }
           <div className="col-lg-5">
             <div className="row g-2">
               <div className="col-12 col-md-12">
@@ -57,12 +52,12 @@ const Footer = () => {
                   <li className="nav-item">
                     <p >
                       Utama :
-                      <span className="h6 fw-light ms-2">Jl. Radio IV No.8 B, RW.4,Kramat Pela, Kec. Kby.Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130 </span>
+                      <span className="h6 fw-light ms-2">Jl. Radio IV No.8 B, RW.4, Kramat Pela, Kec. Kby.Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130 </span>
                     </p>
                   </li>
                   <li className="nav-item">
                     <p >
-                      Kantor  :
+                      Kantor :
                       <span className="h6 fw-light ms-2">Jl. Raya Cirendeu No.60 Cirendeu Kec. Ciputat Timur, Kota Tangerang </span>
                     </p>
                   </li>
@@ -78,8 +73,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-3">
             <h5 className="mb-2 mb-md-4">Kontak</h5>
-            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span>
-            </p>
+            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span></p>
             <p className="mb-0">Email :<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
           </div>
         </div>

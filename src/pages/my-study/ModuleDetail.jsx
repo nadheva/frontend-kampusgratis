@@ -47,7 +47,6 @@ const ModuleDetail = () => {
   }
 
   useEffect(() => {
-    // console.log(currentModule);
     if (data?.module_submit && isSuccess) {
       console.log(data);
       setCurrentModule({
@@ -74,7 +73,7 @@ const ModuleDetail = () => {
     <main>
       {isLoading && !isLoaded || Object.keys(currentSubject).length === 0 || Object.keys(currentModule).length === 0 ? <>
         <section className='bg-light py-0 py-sm-5'>
-          <div className='container text-center' style={{ marginTop: '173px', marginBottom: '173px' }}>
+          <div className='container text-center' style={{ marginTop: '165px', marginBottom: '165px' }}>
             <div className='row'>
               <div className='col-12'>
                 <div className='spinner-border' role='status'>
@@ -159,7 +158,7 @@ const ModuleDetail = () => {
                     </>)}
                   </div>
                   {currentModule.documents.length !== 0 && currentModule.videos.length !== 0 && <>
-                    {!currentModule?.date_submitted ? <>
+                    {!currentModule?.date_submitted || currentModule?.date_submitted === "Invalid date" ? <>
                       <div className="col-12 text-end">
                         {isLoading ? <>
                           <button type="button" className="btn btn-primary" disabled>

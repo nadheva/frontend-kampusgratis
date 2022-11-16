@@ -219,7 +219,6 @@ function App() {
 							<Route path='/silabus/:majorId' element={<SubjectsList />} />
 						</Route>
 
-
 						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
 							<Route path="/silabus" exact element={<Silabus />} />
 						</Route>
