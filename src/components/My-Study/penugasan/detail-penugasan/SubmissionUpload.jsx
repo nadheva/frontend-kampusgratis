@@ -1,45 +1,6 @@
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { toast } from "react-toastify";
 
-import PageNotFound from "../../../../components/default/PageNotFound";
-import { reset, submitAssignment, updateAssignment } from "../../../../features/assignment/assignmentSlice";
-
-const SubmissionUpload = ({ assignments }) => {
-	const dispatch = useDispatch();
-	const { sessionId } = useParams();
-	const [assignment, setAssignment] = useState({});
-	const { message, isSuccess, isLoading, data } = useSelector((state) => state.assignment);
-
-	const onChangeAssignment = (e) => {
-		if (e.target.files[0]) {
-			setAssignment(e.target.files[0]);
-		}
-	};
-
-	const doSubmitAssignment = (e) => {
-		e.preventDefault();
-
-		if (!assignment.length === 0) toast.error("File masih kosong.");
-
-		if (assignments?.students_work?.activity_detail) {
-			dispatch(updateAssignment({ sessionId, assignment }))
-		} else {
-			dispatch(submitAssignment({ sessionId, assignment }))
-		}
-	};
-
-	useEffect(() => {
-		if (!sessionId) return <PageNotFound />;
-		if (isSuccess && data?.assignment?.students_work?.activity_detail?.file_assignment && message === "SUCCESS_UPLOAD") {
-			toast.success("Pengunggahan tugas berhasil!");
-			dispatch(reset());
-		}
-	}, [assignment, message, sessionId]);
-
+const SubmissionUpload = ({ assignments, doSubmitAssignment, onChangeAssignment, isLoading, handleDelete }) => {
 	return (
 		<div className="col-12 mt-4">
 			<form onSubmit={doSubmitAssignment}>
@@ -69,24 +30,30 @@ const SubmissionUpload = ({ assignments }) => {
 						</p>
 					</div>
 				</div>
-				<button type="submit" className="btn btn-primary mt-4">
-					{assignments?.students_work?.activity_detail ? <>
-						{isLoading ? <>
-							<span className="spinner-border spinner-border-sm"></span>&nbsp;
-							Mengirim Tugas ...
+
+				<div className="text-left">
+					<button type="submit" className="btn btn-primary mt-4">
+						{assignments?.students_work?.activity_detail ? <>
+							{isLoading ? <>
+								<span className="spinner-border spinner-border-sm"></span>&nbsp;
+								Mengirim Tugas ...
+							</> : <>
+								Ubah Tugas
+							</>}
 						</> : <>
-							Ubah Tugas
+							{isLoading ? <>
+								<span className="spinner-border spinner-border-sm"></span>&nbsp;
+								Mengirim Tugas ...
+							</> : <>
+								Unggah Tugas
+							</>}
 						</>}
-					</> : <>
-						{isLoading ? <>
-							<span className="spinner-border spinner-border-sm"></span>&nbsp;
-							Mengirim Tugas ...
-						</> : <>
-							Unggah Tugas
-						</>}
-					</>}
-				</button>
+					</button>
+				</div>
 			</form>
+			{/* <button type="submit" className="btn  btn-danger mt-4 mx-2" onClick={() => handleDelete()}>
+				Hapus Tugas
+			</button> */}
 		</div>
 	);
 };

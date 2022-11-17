@@ -26,7 +26,7 @@ const Instruction = ({ assignments, isLoading }) => {
                             {assignments?.assignment?.description}
                         </p>
                         {
-                            assignments?.assignment?.file_assignment_link?.length == 0 ? (
+                            assignments?.assignment?.file_assignment_link?.length === 0 ? (
                                 <></>
                             ) : (
                                 <div className="hstack gap-3 flex-wrap">
