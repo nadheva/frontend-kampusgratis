@@ -72,8 +72,25 @@ const updateAssignment = async (sessionId, assignment) => {
 }
 
 
+const deleteAssignment = async (sessionId) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.delete(API_URL + `assignment/delete/${sessionId}`, config);
+
+  return response.data;
+}
+
+
 const assignmentService = {
-  getAssignment, sendAssignment, updateAssignment, getAssignments
+  getAssignment, sendAssignment, updateAssignment, getAssignments, deleteAssignment
 }
 
 export default assignmentService;

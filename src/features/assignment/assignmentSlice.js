@@ -64,6 +64,19 @@ export const updateAssignment = createAsyncThunk(
   }
 )
 
+export const deleteAssignment = createAsyncThunk(
+  'assignment/delete/',
+  async (sessionId, thunkAPI) => {
+    try {
+      const { data } = await assignmentService.deleteAssignment(sessionId);
+      return data;
+
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+    }
+  }
+)
+
 export const assignmentSlice = createSlice({
   name: 'assignment',
   initialState,
@@ -136,6 +149,21 @@ export const assignmentSlice = createSlice({
         state.data.assignment = action.payload;
       })
       .addCase(updateAssignment.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(deleteAssignment.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(deleteAssignment.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.message = "DELETE_ASSIGNMENT";
+        state.data.assignment = action.payload;
+      })
+      .addCase(deleteAssignment.rejected, (state, action) => {
         state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;

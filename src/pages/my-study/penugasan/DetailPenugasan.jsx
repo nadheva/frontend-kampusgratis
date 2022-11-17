@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 // component
 import Header from "../../../components/default/Header";
 import Footer from "../../../components/default/Footer";
-
 import Intro from "../../../components/My-Study/penugasan/detail-penugasan/Intro";
 import Instruction from "../../../components/My-Study/penugasan/detail-penugasan/Instruction";
 import SubmissionStatus from "../../../components/My-Study/penugasan/detail-penugasan/SubmissionStatus";
@@ -13,9 +14,14 @@ import SubmissionUpload from "../../../components/My-Study/penugasan/detail-penu
 // redux
 import { useSelector, useDispatch } from "react-redux";
 import {
-	getAssignment
+	getAssignment,
+	reset,
+	submitAssignment,
+	updateAssignment,
+	deleteAssignment,
 } from "../../../features/assignment/assignmentSlice";
 import useEffectOnce from "../../../helpers/useEffectOnce";
+import PageNotFound from "../../../components/default/PageNotFound";
 
 const DetailPenugasan = () => {
 	useEffect(() => {
@@ -25,9 +31,10 @@ const DetailPenugasan = () => {
 	const { sessionId } = useParams();
 
 	const dispatch = useDispatch();
-	const [assignments, setAssignments] = useState();
+	const [assignments, setAssignments] = useState({});
+	const [assignment, setAssignment] = useState({});
 
-	const { data, isLoading } = useSelector(
+	const { message, isSuccess, isLoading, data } = useSelector(
 		(state) => state.assignment
 	);
 
@@ -38,6 +45,60 @@ const DetailPenugasan = () => {
 	useEffect(() => {
 		if (data?.assignment) setAssignments(data.assignment);
 	}, [data]);
+
+	// post & put 
+	const onChangeAssignment = (e) => {
+		if (e.target.files[0]) {
+			setAssignment(e.target.files[0]);
+		}
+	};
+
+	const doSubmitAssignment = (e) => {
+		e.preventDefault();
+
+		if (!assignment.length === 0) toast.error("File masih kosong.");
+
+		if (assignments?.students_work?.activity_detail) {
+			dispatch(updateAssignment({ sessionId, assignment }))
+		} else {
+			dispatch(submitAssignment({ sessionId, assignment }))
+		}
+	};
+
+	useEffect(() => {
+		if (!sessionId) return <PageNotFound />;
+		if (isSuccess && data?.assignment?.students_work?.activity_detail?.file_assignment && message === "SUCCESS_UPLOAD") {
+			toast.success("Pengunggahan tugas berhasil!");
+			dispatch(reset());
+		}
+
+		if (isSuccess && message === "DELETE_ASSIGNMENT") {
+			dispatch(reset());
+		}
+
+	}, [assignment, message, sessionId, deleteAssignment]);
+
+
+	const handleDelete = () => {
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+			if (result.isConfirmed) {
+				dispatch(deleteAssignment(sessionId))
+				// Swal.fire(
+				// 	'Deleted!',
+				// 	'Your file has been deleted.',
+				// 	'success'
+				// )
+			}
+		})
+	}
 
 	return (
 		<>
@@ -55,7 +116,11 @@ const DetailPenugasan = () => {
 										isLoading={isLoading}
 									/>
 									<SubmissionUpload
-										assignments={assignments} />
+										assignments={assignments}
+										handleDelete={handleDelete}
+										onChangeAssignment={onChangeAssignment}
+										doSubmitAssignment={doSubmitAssignment}
+									/>
 								</div>
 							</div>
 						</div>
