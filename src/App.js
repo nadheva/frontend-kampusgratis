@@ -78,6 +78,7 @@ import Detail from "./pages/my-study/quiz/Detail";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Penugasan from "./pages/my-study/penugasan/Penugasan";
 import Session from "./pages/my-study/Session";
+import { Notifikasi } from "./pages/notifikasi/Notifikasi";
 
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
@@ -102,7 +103,9 @@ function App() {
 						<Route path="/settings" element={<PrivateRoute />}>
 							<Route path="/settings" element={<Setting />} />
 						</Route>
-
+						<Route path="/notifikasi" element={<PrivateRoute />}>
+							<Route path="/notifikasi" element={<Notifikasi />} />
+						</Route>
 						<Route
 							path="/administrasi"
 							exact

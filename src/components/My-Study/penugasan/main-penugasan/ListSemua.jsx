@@ -2,11 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { useSelector } from 'react-redux'
 import ItemSemua from './ItemSemua'
 
 const ListSemua = ({ assignments }) => {
     const [allAsignments, setAllAsignments] = useState([]);
-
+    const { isLoading } = useSelector(
+        (state) => state.assignment
+    );
     useEffect(() => {
         if (allAsignments.length === 0 && Object.values(assignments).length !== 0) {
             assignments?.ongoing.map(ongoing => setAllAsignments(prevValue => [...prevValue, ongoing]));
@@ -22,7 +25,7 @@ const ListSemua = ({ assignments }) => {
             role="tabpanel"
             aria-labelledby="course-pills-tab-4">
             {
-                allAsignments.length === 0 ? <>
+                allAsignments.length === 0 && isLoading? <>
                     <SkeletonTheme>
                         <Skeleton height={50} className="mb-2" />
                         <Skeleton height={50} className="mb-2" />
