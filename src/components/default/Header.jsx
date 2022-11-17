@@ -72,61 +72,125 @@ const Header = () => {
               </ul>
             </div>
             {user ? (
-              <div className="dropdown ms-1 ms-lg-0">
-                <a className="avatar avatar-sm p-0" href=" " id="profileDropdown" role="button" data-bs-auto-close="outside"
-                  data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
-                </a>
-                <ul className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
-                  <li className="px-3">
-                    <div className="d-flex align-items-center">
-                      <div className="avatar me-3">
-                        <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+              <>
+                <div className="dropdown ms-3">
+                  <a className="btn btn-light btn-round mb-0"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-bs-auto-close="outside">
+                    <i className="bi bi-bell fa-fw" />
+                  </a>
+                  <span className="notif-badge animation-blink" />
+                  <div className="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
+                    <div className="card bg-transparent">
+                      <div className="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
+                        <h6 className="m-0">
+                          Notifikasi
+                          <span className="badge bg-danger bg-opacity-10 text-danger ms-2">
+                            2 terbaru
+                          </span>
+                        </h6>
+                        <a className="small" href="#">
+                          Baca semua
+                        </a>
                       </div>
-                      <div>
-                        <a className="h6" href=" ">Halo, {getFirstName(user.full_name)}!</a>
-                        <p className="small m-0">{user.email}</p>
+                      <div className="card-body p-0">
+                        <ul className="list-group list-unstyled list-group-flush">
+
+                          <li>
+                            <a
+                              href="#"
+                              className="list-group-item-action border-0 border-bottom d-flex p-3"
+                            >
+                              <div className="me-3">
+                                <div className="avatar avatar-md">
+                                  <img
+                                    className="avatar-img rounded-circle"
+                                    src="assets/images/avatar/03.jpg"
+                                    alt="avatar"
+                                  />
+                                </div>
+                              </div>
+                              <div>
+                                <h6 className="mb-1">Update v2.3 completed successfully</h6>
+                                <p className="small text-body m-0">
+                                  What's new! Find out about new features
+                                </p>
+                                <small className="text-body">5 min ago</small>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="card-footer bg-transparent border-0 py-3 text-center position-relative">
+                        <Link to="/notifikasi" className="stretched-link">
+                          Lihat semua notifikasi
+                        </Link>
                       </div>
                     </div>
-                    <hr />
-                  </li>
-                  <li>
-                    <NavLink className="dropdown-item" to="/dashboard">
-                      <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
-                      Dashboard
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="dropdown-item" to="/administrasi">
-                      <i className="bi bi-card-list fa-fw me-2"></i>
-                      Administrasi
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink className="dropdown-item" to="/profil">
-                      <i className="bi bi-person fa-fw me-2"></i>
-                      Profil
-                    </NavLink>
-                  </li>
-                  <li>
-                    <button className="dropdown-item bg-danger-soft-hover" onClick={onLogout}>
-                      <i className="fas fa-sign-out-alt fa-fw me-2"></i>
-                      Keluar
-                    </button>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <div className="modeswitch-wrap" id="darkModeSwitch">
-                      <div className="modeswitch-item">
-                        <div className="modeswitch-icon"></div>
+                  </div>
+
+                </div>
+
+                <div className="dropdown ms-3">
+                  <a className="avatar avatar-sm p-0" href=" " id="profileDropdown" role="button" data-bs-auto-close="outside"
+                    data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+                  </a>
+                  <ul className="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3" aria-labelledby="profileDropdown">
+                    <li className="px-3">
+                      <div className="d-flex align-items-center">
+                        <div className="avatar me-3">
+                          <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
+                        </div>
+                        <div>
+                          <a className="h6" href=" ">Halo, {getFirstName(user.full_name)}!</a>
+                          <p className="small m-0">{user.email}</p>
+                        </div>
                       </div>
-                      <span>Mode Gelap</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+                      <hr />
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/dashboard">
+                        <i className="bi bi-ui-checks-grid fa-fw me-2"></i>
+                        Dashboard
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/administrasi">
+                        <i className="bi bi-card-list fa-fw me-2"></i>
+                        Administrasi
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/profil">
+                        <i className="bi bi-person fa-fw me-2"></i>
+                        Profil
+                      </NavLink>
+                    </li>
+                    <li>
+                      <button className="dropdown-item bg-danger-soft-hover" onClick={onLogout}>
+                        <i className="fas fa-sign-out-alt fa-fw me-2"></i>
+                        Keluar
+                      </button>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <div className="modeswitch-wrap" id="darkModeSwitch">
+                        <div className="modeswitch-item">
+                          <div className="modeswitch-icon"></div>
+                        </div>
+                        <span>Mode Gelap</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </>
             ) : (
               <>
                 <div className="navbar-nav ms-2">
