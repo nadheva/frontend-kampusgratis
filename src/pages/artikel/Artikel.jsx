@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 import CardList from "../../components/artikel/CardList";
-import Search from "../../components/artikel/Search";
+import Search from "../../components/default/Search";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
@@ -85,6 +85,7 @@ const Artikel = () => {
 			<Header />
 			<main>
 				<Search
+					placeholder={"Search ..."}
 					doFilter={doFilter}
 					setSearchTerm={setSearchTerm}
 				/>

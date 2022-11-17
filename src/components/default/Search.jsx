@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({ setSearchTerm, doFilter }) => {
+const Search = ({ setSearchTerm, doFilter, placeholder, search }) => {
     return (
         <section className="py-5">
             <div className="container">
@@ -11,7 +11,7 @@ const Search = ({ setSearchTerm, doFilter }) => {
                                 <input
                                     className="form-control border-0 me-1"
                                     type="search"
-                                    placeholder="Search ..."
+                                    placeholder={placeholder}
                                     onChange={(e) => setSearchTerm(e.target.value)}
                                 />
                                 <button type="submit" className="btn btn-primary mb-0 rounded">
