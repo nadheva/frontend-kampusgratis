@@ -1,77 +1,106 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+
+import { useDispatch, useSelector } from 'react-redux';
+import useEffectOnce from '../../helpers/useEffectOnce';
+import { getMySubjects, resetAll } from '../../features/my-study/myStudySlice';
 
 import Footer from '../../components/default/Footer';
 import Header from '../../components/default/Header';
-import SubjectsList from '../../components/My-Study/SubjectsList';
+import Banner from '../../components/My-Study/subject/Banner';
+import Intro from '../../components/My-Study/subject/Intro';
+import SubjectList from '../../components/My-Study/subject/SubjectList';
+import Pagination from '../../components/default/Pagination';
+import SearchBar from '../../components/My-Study/subject/SearchBar';
 
 const Main = () => {
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [isPageLoad, setIsPageLoad] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [lastPage, setLastPage] = useState(1);
+  const [results, setResults] = useState([]);
+
+  const dispatch = useDispatch();
+
+  const { data, isLoading } = useSelector(
+    (state) => state.myStudy
+  );
+
+  const doFilter = (e) => {
+    e.preventDefault();
+
+    dispatch(resetAll());
+    dispatch(getMySubjects({ currentPage, search: searchTerm }));
+
+    setIsPageLoad(false);
+  }
+
+  const renderPage = () => {
+    if (!isPageLoad) return <></>;
+
+    let page = [];
+
+    for (let i = 1; i <= lastPage; i++) {
+      page.push(<li className={`page-item mb-0 ${i === currentPage ? "active" : ""}`} >
+        {i === currentPage
+          ? <span className="page-link">{i}</span>
+          : <button className="page-link" onClick={() => changePage(i)}>{i}</button>}
+      </li>);
+    }
+
+    return page;
+  }
+
+  const changePage = (page) => {
+    setIsPageLoad(false);
+    setCurrentPage(page);
+    setResults([]);
+    dispatch(resetAll());
+    dispatch(getMySubjects({ currentPage: page, search: searchTerm }));
+  }
+
+  useEffectOnce(() => {
+    dispatch(resetAll());
+    setIsPageLoad(false);
+    dispatch(getMySubjects({ currentPage, search: searchTerm }));
+  });
+
+  useEffect(() => {
+    const { max_page: maxPage, result } = data?.subjects || {};
+    if (maxPage !== 0) setLastPage(maxPage);
+    if (result) setResults(result);
+
+    if (maxPage && result) setIsPageLoad(true);
+  }, [data, isPageLoad, results]);
+
   return <>
     <Header />
     <main>
-      <section className="bg-blue align-items-center d-flex" style={{ background: "url('assets/images/pattern/04.png') no-repeat center center", backgroundSize: 'cover' }}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12 text-center">
-              <h1 className="text-white">Daftar Studi-Ku</h1>
-              <div className="d-flex justify-content-center">
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                    <li className="breadcrumb-item"><Link to="/kategori">Kategori</Link></li>
-                    <li className="breadcrumb-item active" aria-current="page">Studi-Ku</li>
-                  </ol>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Intro />
       <section className="py-5">
         <div className="container">
           <div className="row">
-            <SubjectsList />
-          </div>
-        </div>
-      </section >
-      <section className="pt-0 pt-md-3">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="bg-light p-4 p-sm-5 rounded-3 position-relative overflow-hidden">
-                <figure className="position-absolute top-0 start-0 d-none d-lg-block ms-n7">
-                  <svg width="294.5px" height="261.6px" viewBox="0 0 294.5 261.6" >
-                    <path className="fill-warning opacity-5" d="M280.7,84.9c-4.6-9.5-10.1-18.6-16.4-27.2c-18.4-25.2-44.9-45.3-76-54.2c-31.7-9.1-67.7-0.2-93.1,21.6 C82,36.4,71.9,50.6,65.4,66.3c-4.6,11.1-9.5,22.3-17.2,31.8c-6.8,8.3-15.6,15-22.8,23C10.4,137.6-0.1,157.2,0,179 c0.1,28,11.4,64.6,40.4,76.7c23.9,10,50.7-3.1,75.4-4.7c23.1-1.5,43.1,10.4,65.5,10.6c53.4,0.6,97.8-42,109.7-90.4 C298.5,140.9,293.4,111.5,280.7,84.9z"></path>
-                  </svg>
-                </figure>
-                <figure className="position-absolute top-50 start-50 translate-middle">
-                  <svg width="453px" height="211px">
-                    <path className="fill-orange" d="M16.002,8.001 C16.002,12.420 12.420,16.002 8.001,16.002 C3.582,16.002 -0.000,12.420 -0.000,8.001 C-0.000,3.582 3.582,-0.000 8.001,-0.000 C12.420,-0.000 16.002,3.582 16.002,8.001 Z"></path>
-                    <path className="fill-warning" d="M176.227,203.296 C176.227,207.326 172.819,210.593 168.614,210.593 C164.409,210.593 161.000,207.326 161.000,203.296 C161.000,199.266 164.409,196.000 168.614,196.000 C172.819,196.000 176.227,199.266 176.227,203.296 Z"></path>
-                    <path className="fill-primary" d="M453.002,65.001 C453.002,69.420 449.420,73.002 445.001,73.002 C440.582,73.002 437.000,69.420 437.000,65.001 C437.000,60.582 440.582,57.000 445.001,57.000 C449.420,57.000 453.002,60.582 453.002,65.001 Z"></path>
-                  </svg>
-                </figure>
-                <figure className="position-absolute top-0 end-0 mt-5 me-n5 d-none d-sm-block">
-                  <svg width="285px" height="272px">
-                    <path className="fill-info opacity-4" d="M142.500,-0.000 C221.200,-0.000 285.000,60.889 285.000,136.000 C285.000,211.111 221.200,272.000 142.500,272.000 C63.799,272.000 -0.000,211.111 -0.000,136.000 C-0.000,60.889 63.799,-0.000 142.500,-0.000 Z"></path>
-                  </svg>
-                </figure>
-                <div className="col-11 mx-auto position-relative">
-                  <div className="row align-items-center">
-                    <div className="col-lg-8">
-                      <h3>Bangun Karier Anda di Tempat yang Tepat.</h3>
-                      <p className="mb-3 mb-lg-0">Program dari Kampus Gratis membantu Anda dalam membangun dan meningkatkan karir dengan memilihkan perusahaan yang tepat dengan skill yang Anda miliki.</p>
-                    </div>
-                    <div className="col-lg-4 text-lg-end">
-                      <Link to="/login" className="btn btn-warning mb-0">Daftar Sekarang</Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="col-lg-12">
+              <SearchBar
+                doFilter={doFilter}
+                setSearchTerm={setSearchTerm}
+              />
+              <SubjectList
+                isLoading={isLoading}
+                results={results}
+              />
+              <Pagination
+                isPageLoad={isPageLoad}
+                currentPage={currentPage}
+                lastPage={lastPage}
+                changePage={changePage}
+                renderPage={renderPage}
+              />
             </div>
           </div>
         </div>
-
-      </section>
+      </section >
+      <Banner />
     </main>
     <Footer />
   </>

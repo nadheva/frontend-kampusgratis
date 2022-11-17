@@ -11,10 +11,10 @@ const SubjectItem = ({ subject, student, progress, lecturers }) => {
 				</Link>
 				<div className="card-body pb-0">
 					<div className="d-flex justify-content-between mb-2 mx-0">
-						<span className='badge bg-primary rounded-pill' style={{ fontSize: "0.9rem" }}>
+						<span className='badge bg-primary rounded-pill bg-opacity-10 text-primary' style={{ fontSize: "0.9rem" }}>
 							{subject.Subject.credit} SKS
 						</span>
-						<span className='badge bg-success rounded-pill ms-2' style={{ fontSize: "0.9rem" }}>
+						<span className='badge bg-success bg-opacity-10 text-success rounded-pill ms-2' style={{ fontSize: "0.9rem" }}>
 							Progress {progress}%
 						</span>
 					</div>
