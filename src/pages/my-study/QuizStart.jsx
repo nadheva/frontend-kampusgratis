@@ -143,17 +143,22 @@ const QuizStart = () => {
 												<div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
 													<div>
 														<h5 className="card-title mb-0">
-															<Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/modul/${module.id}`}>
-																{currentQuiz.quiz.description}
-															</Link>
+															{currentQuiz.quiz.description}
 														</h5>
 													</div>
 												</div>
 												<div className="d-sm-flex align-items-center">
-													<button className='btn btn-dark' onClick={() => takeQuiz(currentQuiz.quiz.id)}>
-														<i className="fas fa-play me-3"></i>
-														Mulai Quiz
-													</button>
+													{isLoading && isLoaded ? <>
+														<button className='btn btn-dark' style={{ cursor: 'not-allowed' }}>
+															<span className="spinner-border spinner-border-sm"></span>&nbsp;
+															&nbsp;Memulai Quiz ...
+														</button>
+													</> : <>
+														<button className='btn btn-dark' onClick={() => takeQuiz(currentQuiz.quiz.id)}>
+															<i className="fas fa-play me-3"></i>
+															Mulai Quiz
+														</button>
+													</>}
 												</div>
 											</> : <>
 												<div className="alert alert-info mb-0">

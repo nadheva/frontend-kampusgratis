@@ -80,7 +80,6 @@ import Penugasan from "./pages/my-study/penugasan/Penugasan";
 import Session from "./pages/my-study/Session";
 import { Notifikasi } from "./pages/notifikasi/Notifikasi";
 
-
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
 
@@ -94,39 +93,25 @@ function App() {
 
 						<Route path="/kategori" exact element={<Categories />} />
 
-						<Route path="/dashboard" element={<PrivateRoute />}>
+						<Route path="/dashboard" element={<PrivateRoute redirect />}>
 							<Route path="/dashboard" element={<StudentDashboard />} />
 						</Route>
-						<Route path="/mycourse" element={<PrivateRoute />}>
+						<Route path="/mycourse" element={<PrivateRoute redirect />}>
 							<Route path="/mycourse" element={<MyCourse />} />
 						</Route>
-						<Route path="/settings" element={<PrivateRoute />}>
+						<Route path="/settings" element={<PrivateRoute redirect />}>
 							<Route path="/settings" element={<Setting />} />
 						</Route>
-						<Route path="/notifikasi" element={<PrivateRoute />}>
+
+						<Route path="/notifikasi" element={<PrivateRoute redirect />} >
 							<Route path="/notifikasi" element={<Notifikasi />} />
 						</Route>
-						<Route
-							path="/administrasi"
-							exact
-							element={
-								<>
-									<PrivateRoute redirect />
-								</>
-							}
-						>
+
+						<Route path="/administrasi" exact element={<><PrivateRoute redirect /></>}>
 							<Route path="/administrasi" exact element={<Administration />} />
 						</Route>
 
-						<Route
-							path="/profil"
-							exact
-							element={
-								<>
-									<PrivateRoute redirect />
-								</>
-							}
-						>
+						<Route path="/profil" exact element={<><PrivateRoute redirect /></>}>
 							<Route path="/profil" exact element={<Profile />} />
 						</Route>
 

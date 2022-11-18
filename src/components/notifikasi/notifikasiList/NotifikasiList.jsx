@@ -9,9 +9,9 @@ const NotifikasiList = ({ notif, isLoading }) => {
                 <div className="row g-4">
                     <div className="col-12">
                         <div className="card bg-transparent shadow h-100">
-                            <div className="card-body pb-0">
+                            <div className="card-body py-4">
                                 <div className="table-responsive">
-                                    <table className="table table-hover p-4 mb-0 ">
+                                    <table className={`table ${isLoading ? "" : "table-hover"} p-4 mb-0`}>
                                         <tbody>
                                             {
                                                 isLoading ? (
@@ -42,7 +42,7 @@ const NotifikasiList = ({ notif, isLoading }) => {
                                                     <tr className="pb-0">
                                                         <td colSpan={2} className="p-0 m-0">
                                                             <div className="col-md-12">
-                                                                <div className="alert alert-info my-2">Notifikasi  tidak ditemukan.</div>
+                                                                <div className="alert alert-info my-2">Notifikasi tidak ditemukan.</div>
                                                             </div>
                                                         </td>
                                                     </tr>

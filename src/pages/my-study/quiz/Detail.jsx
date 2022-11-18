@@ -102,6 +102,7 @@ const Detail = () => {
     if (data?.subject) setCurrentSubject(data.subject);
     if (data?.questions?.quiz?.questions) {
       setQuiz(data.questions);
+      const randomize = data.questions.quiz.questions.answers;
       setQuestions(data.questions.quiz.questions);
     }
 

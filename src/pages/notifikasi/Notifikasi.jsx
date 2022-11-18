@@ -10,7 +10,6 @@ import Intro from '../../components/notifikasi/notifikasiList/Intro'
 import NotifikasiList from '../../components/notifikasi/notifikasiList/NotifikasiList'
 
 export const Notifikasi = () => {
-
     const dispatch = useDispatch();
     const [notif, setNotif] = useState({});
 
