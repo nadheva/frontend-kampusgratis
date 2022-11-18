@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { useSelector, useDispatch } from "react-redux";
-import { getNotifications } from '../../../features/notification/notificationSlice';
+import { getNotifications, readNotification } from '../../../features/notification/notificationSlice';
 import useEffectOnce from "../../../helpers/useEffectOnce";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import NotifikasiItem from './NotifikasiItem';
@@ -14,6 +14,10 @@ const SectionNotifikasi = () => {
     const { data, isLoading } = useSelector(
         (state) => state.notification
     );
+
+    const handleRead = () => {
+        dispatch(readNotification());
+    }
 
     useEffectOnce(() => {
         dispatch(getNotifications());
@@ -45,9 +49,11 @@ const SectionNotifikasi = () => {
                                 {notifications?.length} terbaru
                             </span>
                         </h6>
-                        <a className="small" href="#">
-                            Baca semua
-                        </a>
+                        {notifications?.length !== 0 ? <>
+                            <button onClick={handleRead} className="small btn btn-link">
+                                Baca semua
+                            </button>
+                        </> : null}
                     </div>
                     <div className="card-body p-0">
                         <ul className="list-group list-unstyled list-group-flush">
@@ -77,7 +83,7 @@ const SectionNotifikasi = () => {
                                         />
                                     ))
                                 ) : (
-                                    <div className="alert text-danger text-center my-2">Notifikasi tidak ditemukan.</div>
+                                    <div className="alert text-danger text-center my-2">Tidak ada notifikasi baru.</div>
                                 )
                             }
                         </ul>

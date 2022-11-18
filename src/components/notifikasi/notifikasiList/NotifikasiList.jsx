@@ -40,14 +40,14 @@ const NotifikasiList = ({ notif, isLoading }) => {
                                                         <tr>
                                                             <td>
                                                                 <SkeletonTheme>
-                                                                    <Skeleton height={50} />
+                                                                    <Skeleton height={92} />
                                                                 </SkeletonTheme>
                                                             </td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <SkeletonTheme>
-                                                                    <Skeleton height={50} />
+                                                                    <Skeleton height={94} />
                                                                 </SkeletonTheme>
                                                             </td>
                                                         </tr>
