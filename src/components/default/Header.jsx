@@ -98,21 +98,8 @@ const Header = () => {
                       </div>
                       <div className="card-body p-0">
                         <ul className="list-group list-unstyled list-group-flush">
-
                           <li>
-                            <a
-                              href="#"
-                              className="list-group-item-action border-0 border-bottom d-flex p-3"
-                            >
-                              <div className="me-3">
-                                <div className="avatar avatar-md">
-                                  <img
-                                    className="avatar-img rounded-circle"
-                                    src="assets/images/avatar/03.jpg"
-                                    alt="avatar"
-                                  />
-                                </div>
-                              </div>
+                            <a href="#" className="list-group-item-action border-0 border-bottom d-flex p-3" >
                               <div>
                                 <h6 className="mb-1">Update v2.3 completed successfully</h6>
                                 <p className="small text-body m-0">

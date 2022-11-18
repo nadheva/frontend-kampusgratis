@@ -32,7 +32,7 @@ const NotifikasiList = () => {
                     <div className="col-12">
                         <div className="card bg-transparent shadow h-100">
                             <div className="card-body pb-0">
-                                <div className="table-responsive border-0">
+                                <div className="table-responsive">
                                     <table className="table table-hover p-4 mb-0 ">
                                         <tbody>
                                             {
