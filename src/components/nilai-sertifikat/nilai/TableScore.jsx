@@ -4,7 +4,6 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const TableScore = ({ data, isLoading }) => {
 
-    console.log(data?.subject)
     return (
         <div className="card border bg-transparent rounded-3 mt-4">
             <div className="card-header bg-transparent border-bottom px-3">

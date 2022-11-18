@@ -9,6 +9,7 @@ import achievementReducer from "../features/achievement/achievementSlice";
 import assignmentReducer from '../features/assignment/assignmentSlice';
 import certificateReducer from '../features/sertifikat/certificateSlice';
 import reportReducer from '../features/report/reportSlice';
+import notificationReducer from "../features/notification/notificationSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -21,6 +22,7 @@ export const store = configureStore({
 		achievement: achievementReducer,
 		assignment: assignmentReducer,
 		certificate: certificateReducer,
-		report: reportReducer
+		report: reportReducer,
+		notification: notificationReducer
 	},
 });
