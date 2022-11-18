@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom'
 const NotifikasiItem = ({ notif }) => {
     return (
         <li>
-            <Link to="" className="list-group-item-action border-0 border-bottom d-flex p-3" >
+            <Link to="/notifikasi" className="list-group-item-action border-0 border-bottom d-flex p-3" >
                 <div>
                     <h6 className="mb-1">{notif?.title}</h6>
                     <p className="small text-body m-0">
                         {/* {notif?.notification} */}
                     </p>
-                    <small className="text-body">{moment(notif?.created_at).format('LL')} </small>
+                    <small className="text-body">{moment(notif?.created_at).format('LLL')} </small>
                 </div>
             </Link>
         </li>
