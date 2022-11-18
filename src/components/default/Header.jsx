@@ -65,10 +65,10 @@ const Header = () => {
             <div className="navbar-collapse collapse" id="navbarCollapse">
               <ul className="navbar-nav navbar-nav-scroll mx-auto">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/">Beranda</NavLink>
+                  <NavLink className="nav-link ms-lg-4" to="/">Beranda</NavLink>
                 </li>
                 <li className="nav-item me-lg-5 me-md-3">
-                  <NavLink className="nav-link me-lg-5 me-md-3" to="/kategori">Kategori</NavLink>
+                  <NavLink className="nav-link" to="/kategori">Kategori</NavLink>
                 </li>
               </ul>
             </div>
@@ -76,7 +76,7 @@ const Header = () => {
               <>
                 <Notifikasi />
                 <div className="dropdown ms-3">
-                  <a className="avatar avatar-sm p-0" href=" " id="profileDropdown" role="button" data-bs-auto-close="outside"
+                  <a className="avatar avatar-sm p-0" href="" id="profileDropdown" role="button" data-bs-auto-close="outside"
                     data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
                     <img className="avatar-img rounded-circle" style={{ border: "1px solid black", padding: "2px" }} src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                   </a>
@@ -87,7 +87,7 @@ const Header = () => {
                           <img className="avatar-img rounded-circle shadow" src={user.display_picture_link != null ? `${user.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user.fullName} />
                         </div>
                         <div>
-                          <a className="h6" href=" ">Halo, {getFirstName(user.full_name)}!</a>
+                          <span className="h6">Halo, {getFirstName(user.full_name)}!</span>
                           <p className="small m-0">{user.email}</p>
                         </div>
                       </div>
