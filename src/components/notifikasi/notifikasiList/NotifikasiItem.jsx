@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const NotifikasiItem = ({ notif }) => {
+    console.log(notif)
     return (
-        <tr >
+        <tr className={notif.is_read ? "" : "table-secondary"}>
             <td className="d-flex align-items-center row-hover">
                 <div className="d-sm-flex align-items-center mb-1 mb-sm-0">
                     <div className="ms-0 ms-sm-2 mt-2 mt-sm-0">
