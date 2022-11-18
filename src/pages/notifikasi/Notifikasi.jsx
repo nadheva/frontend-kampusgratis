@@ -17,13 +17,8 @@ export const Notifikasi = () => {
         (state) => state.notification
     );
 
-    useEffectOnce(() => {
-        dispatch(getNotifications());
-    });
-
     useEffect(() => {
         if (data?.notifications) setNotif(data?.notifications);
-
     }, [data]);
 
     const handleRead = () => {

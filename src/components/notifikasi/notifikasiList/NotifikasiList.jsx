@@ -1,8 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { useDispatch, useSelector } from 'react-redux'
 import NotifikasiItem from './NotifikasiItem'
+import { toast } from 'react-toastify';
+import { reset } from '../../../features/notification/notificationSlice';
 
 const NotifikasiList = ({ notif, isLoading }) => {
+    const dispatch = useDispatch();
+
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const { message, isSuccess } = useSelector(
+        (state) => state.notification
+    );
+
+    useEffect(() => {
+        if (Object.values(notif).length !== 0) setIsLoaded(true);
+
+        if (message === "SUCCESS_READ" && isSuccess) {
+            toast.success("Notifikasi telah dibaca semua.");
+            dispatch(reset());
+        }
+    }, [message, isSuccess, isLoaded, notif]);
+
     return (
         <section className="pt-0 ">
             <div className="container">
@@ -14,7 +35,7 @@ const NotifikasiList = ({ notif, isLoading }) => {
                                     <table className={`table ${isLoading ? "" : "table-hover"} p-4 mb-0`}>
                                         <tbody>
                                             {
-                                                isLoading ? (
+                                                isLoading && !isLoaded ? (
                                                     <>
                                                         <tr>
                                                             <td>

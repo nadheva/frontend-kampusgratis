@@ -55,14 +55,14 @@ const SectionNotifikasi = () => {
                                 isLoading ? (
                                     <>
                                         <li>
-                                            <div className="list-group-item-action">
+                                            <div className="list-group-item-action p-3">
                                                 <SkeletonTheme>
                                                     <Skeleton height={50} />
                                                 </SkeletonTheme>
                                             </div>
                                         </li>
                                         <li>
-                                            <div className="list-group-item-action">
+                                            <div className="list-group-item-action p-3">
                                                 <SkeletonTheme>
                                                     <Skeleton height={50} />
                                                 </SkeletonTheme>

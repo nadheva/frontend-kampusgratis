@@ -69,11 +69,16 @@ export const notificationSlice = createSlice({
 			})
 			.addCase(readNotification.pending, (state) => {
 				state.isLoading = true;
+				state.isSuccess = true;
+				state.data.notifications = state.data.notifications.map(notification => ({ ...notification, is_read: true }));
+				state.message = "SUCCESS_READ";
 			})
 			.addCase(readNotification.fulfilled, (state, action) => {
 				state.isLoading = false;
 				state.isSuccess = true;
-				state.data.notification = action.payload;
+				// let notifications = 
+				// console.log(notifications);
+				// state.data.notifications = state.data.notifications.map(notification => ({ ...notification, is_read: true }));
 			})
 			.addCase(readNotification.rejected, (state, action) => {
 				state.isSuccess = false;
