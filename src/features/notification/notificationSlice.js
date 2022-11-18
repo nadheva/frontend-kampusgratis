@@ -22,6 +22,17 @@ export const getNotifications = createAsyncThunk("notification/get", async (_, t
 	}
 });
 
+export const readNotification = createAsyncThunk("notification/read", async (_, thunkAPI) => {
+	try {
+		return await notificationService.readNotification();
+
+	} catch (error) {
+		return thunkAPI.rejectWithValue(
+			extartErrorFirebase(error) || extractErrorMessage(error)
+		);
+	}
+});
+
 export const notificationSlice = createSlice({
 	name: "notification",
 	initialState,
@@ -51,6 +62,20 @@ export const notificationSlice = createSlice({
 				state.data.notifications = action.payload;
 			})
 			.addCase(getNotifications.rejected, (state, action) => {
+				state.isSuccess = false;
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
+			})
+			.addCase(readNotification.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(readNotification.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.data.notification = action.payload;
+			})
+			.addCase(readNotification.rejected, (state, action) => {
 				state.isSuccess = false;
 				state.isLoading = false;
 				state.isError = true;
