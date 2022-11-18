@@ -10,7 +10,6 @@ import NotifikasiItem from './NotifikasiItem';
 const SectionNotifikasi = () => {
     const [notifications, setNotifications] = useState([]);
     const dispatch = useDispatch();
-    const [notif, setNotif] = useState({});
 
     const { data, isLoading } = useSelector(
         (state) => state.notification
@@ -21,8 +20,7 @@ const SectionNotifikasi = () => {
     });
 
     useEffect(() => {
-        if(data?.notifications) {
-            setNotif(data?.notifications);
+        if (data?.notifications) {
             setNotifications(data?.notifications.filter(notification => notification.is_read == false));
         }
     }, [data]);
@@ -37,7 +35,7 @@ const SectionNotifikasi = () => {
                 data-bs-auto-close="outside">
                 <i className="bi bi-bell fa-fw" />
             </a>
-            <span className="notif-badge animation-blink" />
+            {notifications?.length !== 0 ? <span className="notif-badge animation-blink" /> : ""}
             <div className="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
                 <div className="card bg-transparent">
                     <div className="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
@@ -79,7 +77,7 @@ const SectionNotifikasi = () => {
                                         />
                                     ))
                                 ) : (
-                                    <div className="alert alert-info my-2">Notifikasi  tidak ditemukan.</div>
+                                    <div className="alert text-danger text-center my-2">Notifikasi tidak ditemukan.</div>
                                 )
                             }
                         </ul>

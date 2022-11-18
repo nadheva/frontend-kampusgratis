@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
-import { getNotifications } from '../../features/notification/notificationSlice';
+import { getNotifications, readNotification, reset } from '../../features/notification/notificationSlice';
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Footer from '../../components/default/Footer'
@@ -26,11 +26,17 @@ export const Notifikasi = () => {
 
     }, [data]);
 
+    const handleRead = () => {
+        dispatch(readNotification());
+    }
+
     return (
         <>
             <Header />
             <main>
-                <Intro />
+                <Intro
+                    handleRead={handleRead}
+                />
                 <NotifikasiList
                     notif={notif}
                     isLoading={isLoading}

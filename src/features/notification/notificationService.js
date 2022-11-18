@@ -19,9 +19,26 @@ const getNotifications = async () => {
 	return response.data;
 }
 
+const readNotification = async () => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+
+	const response = await axios.put(API_URL + 'notification/read', {}, config);
+
+	return response.data;
+}
+
 
 const notificationService = {
-	getNotifications
+	getNotifications,
+	readNotification
 };
 
 export default notificationService;
