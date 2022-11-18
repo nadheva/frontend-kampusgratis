@@ -8,7 +8,7 @@ const Intro = () => {
                     <div className="col-12">
                         <div className="shadow p-4 rounded-3  d-flex justify-content-between align-items-center" >
                             <h3 className="m-0">Notifikasi</h3>
-                            <a href=" " className="stretched-link fw-bold">
+                            <a href=" " className="fw-bold">
                                 Baca Semua
                             </a>
                         </div>

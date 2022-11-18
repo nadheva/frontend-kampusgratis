@@ -85,6 +85,7 @@ const Artikel = () => {
 			<Header />
 			<main>
 				<Search
+					placeholder={"Search ..."}
 					doFilter={doFilter}
 					setSearchTerm={setSearchTerm}
 				/>
