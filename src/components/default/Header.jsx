@@ -11,6 +11,7 @@ import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 import { useScript } from '../../hooks/useScript';
 import { useEffect } from 'react';
+import Notifikasi from '../notifikasi/notifikasiNavbar/SectionNotifikasi';
 
 const getFirstName = (fullName) => {
   const names = fullName.split(" ");
@@ -73,55 +74,7 @@ const Header = () => {
             </div>
             {user ? (
               <>
-                <div className="dropdown ms-3">
-                  <a className="btn btn-light btn-round mb-0"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    data-bs-auto-close="outside">
-                    <i className="bi bi-bell fa-fw" />
-                  </a>
-                  <span className="notif-badge animation-blink" />
-                  <div className="dropdown-menu dropdown-animation dropdown-menu-end dropdown-menu-size-md p-0 shadow-lg border-0">
-                    <div className="card bg-transparent">
-                      <div className="card-header bg-transparent border-bottom py-4 d-flex justify-content-between align-items-center">
-                        <h6 className="m-0">
-                          Notifikasi
-                          <span className="badge bg-danger bg-opacity-10 text-danger ms-2">
-                            2 terbaru
-                          </span>
-                        </h6>
-                        <a className="small" href="#">
-                          Baca semua
-                        </a>
-                      </div>
-                      <div className="card-body p-0">
-                        <ul className="list-group list-unstyled list-group-flush">
-                          <li>
-                            <a href="#" className="list-group-item-action border-0 border-bottom d-flex p-3" >
-                              <div>
-                                <h6 className="mb-1">Update v2.3 completed successfully</h6>
-                                <p className="small text-body m-0">
-                                  What's new! Find out about new features
-                                </p>
-                                <small className="text-body">5 min ago</small>
-                              </div>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-
-                      <div className="card-footer bg-transparent border-0 py-3 text-center position-relative">
-                        <Link to="/notifikasi" className="stretched-link">
-                          Lihat semua notifikasi
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
+                <Notifikasi />
                 <div className="dropdown ms-3">
                   <a className="avatar avatar-sm p-0" href=" " id="profileDropdown" role="button" data-bs-auto-close="outside"
                     data-bs-display="static" data-bs-toggle="dropdown" aria-expanded="false">
