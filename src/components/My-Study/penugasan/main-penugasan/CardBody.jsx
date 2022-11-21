@@ -3,8 +3,9 @@ import ListDitugaskan from './ListDitugaskan'
 import ListSelesai from './ListSelesai'
 import ListSemua from './ListSemua'
 import ListTerlambat from './ListTerlambat'
+import ListGrading from './ListGrading'
 
-const CardBody = ({ assignments, ongoing, isLoading, grading, late }) => {
+const CardBody = ({ assignments, ongoing, isLoading, grading, late, finished }) => {
     return (
         <div className="card-body p-sm-4">
             <div className="tab-content" id="course-pills-tabContent">
@@ -19,8 +20,12 @@ const CardBody = ({ assignments, ongoing, isLoading, grading, late }) => {
                     late={late}
                     isLoading={isLoading}
                 />
-                <ListSelesai
+                <ListGrading
+                    isLoading={isLoading}
                     grading={grading}
+                />
+                <ListSelesai
+                    finished={finished}
                     isLoading={isLoading}
                 />
             </div>

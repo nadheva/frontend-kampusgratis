@@ -26,6 +26,7 @@ const Penugasan = () => {
     const [ongoing, setOngoing] = useState([]);
     const [late, setLate] = useState([]);
     const [grading, setGrading] = useState([]);
+    const [finished, setFinished] = useState([]);
 
     const { data, isLoading } = useSelector(
         (state) => state.assignment
@@ -40,8 +41,9 @@ const Penugasan = () => {
         if (data?.assignments?.ongoing) setOngoing(data?.assignments?.ongoing);
         if (data?.assignments?.late) setLate(data?.assignments?.late);
         if (data?.assignments?.grading) setGrading(data?.assignments?.grading);
+        if (data?.assignments?.finished) setFinished(data?.assignments?.finished);
     }, [data]);
-
+console.log()
     return (
         <>
             <Header />
@@ -52,6 +54,7 @@ const Penugasan = () => {
                     ongoing={ongoing}
                     grading={grading}
                     late={late}
+                    finished={finished}
                     isLoading={isLoading}
                 />
             </main>

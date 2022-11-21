@@ -1,13 +1,13 @@
 import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import ItemSelesai from './ItemSelesai'
+import ItemGrading from './ItemGrading'
 
-const ListSelesai = ({ finished, isLoading }) => {
+const ListGrading = ({ grading, isLoading }) => {
     return (
         <div className="tab-pane fade"
-            id="course-pills-3"
+            id="course-pills-5"
             role="tabpanel"
-            aria-labelledby="course-pills-tab-3">
+            aria-labelledby="course-pills-tab-5">
             {
                 isLoading ? (
                     <SkeletonTheme>
@@ -15,18 +15,18 @@ const ListSelesai = ({ finished, isLoading }) => {
                         <Skeleton height={50} className="mb-2" />
                         <Skeleton height={50} className="mb-2" />
                     </SkeletonTheme>
-                ) : Object.values(finished).length !== 0 ? (
-                    finished.map((x) => (
-                        <ItemSelesai
+                ) : Object.values(grading).length !== 0 ? (
+                    grading.map((x) => (
+                        <ItemGrading
                             key={x.id}
-                            finished={x}
+                            grading={x}
                         />
                     ))
                 ) : (
                     <div className="card border border-info border-2 shadow-lg rounded-2 px-4 py-2 my-4">
                         <div className="d-flex justify-content-between align-items-center">
                             <h5 className="m-0 text-info">
-                                Belum ada tugas yang selesai
+                                Belum ada tugas yang dalam penilaian
                             </h5>
                         </div>
                     </div>
@@ -36,4 +36,4 @@ const ListSelesai = ({ finished, isLoading }) => {
     )
 }
 
-export default ListSelesai
+export default ListGrading

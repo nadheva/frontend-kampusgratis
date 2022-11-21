@@ -48,6 +48,19 @@ const CardHeader = () => {
                         className="nav-link mb-2 mb-md-0"
                         id="course-pills-tab-3"
                         data-bs-toggle="pill"
+                        data-bs-target="#course-pills-5"
+                        type="button"
+                        role="tab"
+                        aria-controls="course-pills-5"
+                        aria-selected="false">
+                        Penilaian
+                    </button>
+                </li>
+                <li className="nav-item me-2 me-sm-4" role="presentation">
+                    <button
+                        className="nav-link mb-2 mb-md-0"
+                        id="course-pills-tab-3"
+                        data-bs-toggle="pill"
                         data-bs-target="#course-pills-3"
                         type="button"
                         role="tab"
