@@ -43,7 +43,7 @@ const Penugasan = () => {
         if (data?.assignments?.grading) setGrading(data?.assignments?.grading);
         if (data?.assignments?.finished) setFinished(data?.assignments?.finished);
     }, [data]);
-console.log()
+
     return (
         <>
             <Header />

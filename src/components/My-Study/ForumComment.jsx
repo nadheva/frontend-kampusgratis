@@ -98,7 +98,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
                   <div className="avatar avatar-sm flex-shrink-0">
                     <img
                       className="avatar-img rounded-circle"
-                      src={reply.User.display_picture_link}
+                      src={comment.User.display_picture_link || '/assets/images/avatar/empty-display-picture.png'}
                       alt={reply.User.full_name}
                     />
                   </div>
