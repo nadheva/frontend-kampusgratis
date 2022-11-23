@@ -10,15 +10,15 @@ const Categories = () => {
 
 	const categoryList = [
 		{
-			id: "1",
-			name: "Studi-Ku",
-			url: "/studi-ku",
-			src: "/assets/images/element/instructor-course.svg",
-			background: "bg-primary",
+			id: "0",
+			name: "Administrasi",
+			url: "/administrasi",
+			src: "/assets/images/element/marketing.svg",
+			background: "bg-warning",
 			disabled: false
 		},
 		{
-			id: "2",
+			id: "1",
 			name: "Silabus",
 			url: "/silabus",
 			src: "/assets/images/element/online.svg",
@@ -26,11 +26,19 @@ const Categories = () => {
 			disabled: false
 		},
 		{
+			id: "2",
+			name: "Studi-Ku",
+			url: "/studi-ku",
+			src: "/assets/images/element/instructor-course.svg",
+			background: "bg-primary",
+			disabled: false
+		},
+		{
 			id: "3",
-			name: "Penugasan",
-			url: "/penugasan",
-			src: "/assets/images/element/home.svg",
-			background: "bg-danger",
+			name: "Nilai & Sertifikat",
+			url: "/nilai",
+			src: "/assets/images/element/18.svg",
+			background: "bg-info",
 			disabled: false
 		},
 		{
@@ -46,7 +54,7 @@ const Categories = () => {
 			name: "Kalender Saya",
 			url: "/kalender",
 			src: "/assets/images/element/account.svg",
-			background: "bg-black",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -54,15 +62,15 @@ const Categories = () => {
 			name: "Acara Kampus",
 			url: "/acara-kampus",
 			src: "/assets/images/element/photography.svg",
-			background: "bg-black",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
 			id: "7",
-			name: "Nilai & Sertifikat",
-			url: "/nilai",
-			src: "/assets/images/element/18.svg",
-			background: "bg-black",
+			name: "Penugasan",
+			url: "/penugasan",
+			src: "/assets/images/element/home.svg",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -70,7 +78,7 @@ const Categories = () => {
 			name: "Penyaluran Kerja",
 			url: "/penyaluran-kerja",
 			src: "/assets/images/element/coding.svg",
-			background: "bg-black",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -78,7 +86,7 @@ const Categories = () => {
 			name: "Analitik",
 			url: "/analitik",
 			src: "/assets/images/element/exam.svg",
-			background: "bg-black",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -86,7 +94,7 @@ const Categories = () => {
 			name: "Konsultasi & Layanan",
 			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
-			background: "bg-black",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -129,14 +137,7 @@ const Categories = () => {
 			background: "bg-success",
 			disabled: true
 		},
-		{
-			id: "17",
-			name: "Absensi",
-			url: "#",
-			src: "/assets/images/element/marketing.svg",
-			background: "bg-danger",
-			disabled: true
-		},
+
 	];
 
 	return (

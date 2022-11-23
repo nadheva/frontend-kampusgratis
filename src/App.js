@@ -91,7 +91,7 @@ function App() {
 					<Routes>
 						<Route path="/" exact element={<Main />} />
 
-						<Route path="/kategori" exact element={<Categories />} />
+						<Route path="kategori" exact element={<Categories />} />
 
 						<Route path="/dashboard" element={<PrivateRoute redirect />}>
 							<Route path="/dashboard" element={<StudentDashboard />} />
@@ -323,7 +323,7 @@ function App() {
 
 
 						{/* START : ERROR PAGE */}
-						<Route path="/*" element={<PageNotFound />} />
+						<Route path="*" element={<PageNotFound />} />
 						{/* <Route path="/401" element={<Unauthorized />} />
 						<Route path="/403" element={<Forbidden />} />
 						<Route path="/500" element={<ServerError />} />
