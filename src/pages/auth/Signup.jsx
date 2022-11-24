@@ -26,12 +26,12 @@ const Signup = () => {
                                         <div className="p-4 p-sm-7 p-xl-6">
                                             <Link className="me-0" to="/">
                                                 <img
-                                                    className="h-30px mb-4"
+                                                    className="h-40px mb-4"
                                                     src="/assets/images/logo-kampus-gratis.png"
                                                     alt="Kampus Gratis"
                                                 />
                                             </Link>
-                                            <h1 className="mb-2 h3-title">Buat akun baru</h1>
+                                            <h1 className="mb-2 h2">Buat akun baru</h1>
                                             <p className="mb-0">
                                                 Sudah punya akun? <Link to="/signin" style={{ color: "#5143d9 " }}> Login</Link>
                                             </p>

@@ -1,13 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Signin = () => {
-    const [passwordShown, setPasswordShown] = useState(false);
-
-    const togglePasswordVisiblity = () => {
-        setPasswordShown(passwordShown ? false : true);
-    };
-
+const ForgotPasword = () => {
     return (
         <main>
             <section className="vh-xxl-100">
@@ -18,7 +12,7 @@ const Signin = () => {
                                 <div className="row g-0">
                                     <div className="col-lg-6 d-flex align-items-center order-2 order-lg-1">
                                         <div className="p-3 p-lg-5">
-                                            <img src="assets/images/element/signin.svg" alt="" />
+                                            <img src="assets/images/element/forgot-pass.svg" alt="" />
                                         </div>
                                         <div className="vr opacity-1 d-none d-lg-block" />
                                     </div>
@@ -31,53 +25,29 @@ const Signin = () => {
                                                     alt="Kampus Gratis"
                                                 />
                                             </Link>
-                                            <h1 className="mb-2 h2">Selamat datang</h1>
+                                            <h1 className="mb-2 h2">Lupa Password?</h1>
                                             <p className="mb-0">
-                                                Belum punya akun?<Link to="/signup" style={{ color: "#5143d9 " }}> Daftar di sini</Link>
+                                                Masukkan alamat email yang terkait dengan akun.
                                             </p>
                                             <form className="mt-4 text-start">
                                                 <div className="mb-3">
                                                     <label className="form-label">Email</label>
                                                     <input type="email" className="form-control" />
                                                 </div>
-                                                <div className="mb-3 position-relative">
-                                                    <label className="form-label">Password</label>
-                                                    <input
-                                                        className="form-control fakepassword"
-                                                        type={passwordShown ? "text" : "password"}
-                                                        id="psw-input"
-                                                    />
-                                                    <span className="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
-                                                        <i
-                                                            className={
-                                                                passwordShown
-                                                                    ? "fakepasswordicon fas fa-eye cursor-pointer p-2"
-                                                                    : "fakepasswordicon fas fa-eye-slash cursor-pointer p-2"
-                                                            }
-                                                            onClick={togglePasswordVisiblity}
-                                                        ></i>
-                                                    </span>
-                                                </div>
-                                                <div className="mb-3 d-sm-flex justify-content-between">
-                                                    <div>
-                                                        <input
-                                                            type="checkbox"
-                                                            className="form-check-input "
-                                                            id="rememberCheck" />
-                                                        <label
-                                                            className="form-check-label px-2"
-                                                            htmlFor="rememberCheck">
-                                                            Remember me?
-                                                        </label>
-                                                    </div>
-                                                    <Link to="/forgotPassword" style={{ color: "#5143d9 " }}>Lupa password akun-mu?</Link>
+                                                <div className="mb-3 text-center">
+                                                    <label
+                                                        className="form-check-label"
+                                                        htmlFor="rememberCheck">
+                                                        Kembali ke
+                                                    </label>
+                                                    <Link to="/signin" style={{ color: "#5143d9 " }}> Login</Link>
                                                 </div>
                                                 <div>
                                                     <button
                                                         type="submit"
                                                         style={{ backgroundColor: "#5143d9 " }}
                                                         className="btn btn-primary w-100 mb-0">
-                                                        Login
+                                                        Reset Password
                                                     </button>
                                                 </div>
                                                 <div className="position-relative my-4">
@@ -103,4 +73,4 @@ const Signin = () => {
     )
 }
 
-export default Signin
+export default ForgotPasword
