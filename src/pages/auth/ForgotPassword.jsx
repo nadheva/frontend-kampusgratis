@@ -86,7 +86,7 @@ const ForgotPassword = () => {
                                                         htmlFor="rememberCheck">
                                                         Kembali ke
                                                     </label>
-                                                    <Link to="/signin" style={{ color: "#5143d9 " }}> Login</Link>
+                                                    <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link>
                                                 </div>
                                                 <div>
                                                     {isLoading ? (

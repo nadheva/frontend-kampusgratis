@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./config/firebase";
 import PrivateRoute from "./components/PrivateRoute";
 
-import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Profile from "./pages/Profile";
 
@@ -117,10 +116,9 @@ function App() {
 							<Route path="/profil" exact element={<Profile />} />
 						</Route>
 
-						<Route path="/login" exact element={<Login />} />
+						<Route path="login" exact element={<Signin />} />
 						<Route path="/register" exact element={<Register />} />
 
-						<Route path="/signin" exact element={<Signin />} />
 						<Route path="/signup" exact element={<Signup />} />
 						<Route path="/forgot-password" exact element={<ForgotPassword />} />
 

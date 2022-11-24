@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Signup = () => {
+    useEffect(() => {
+        document.title = "Kampus Gratis | Register";
+    });
+
     const [passwordShown, setPasswordShown] = useState(false);
 
     const togglePasswordVisiblity = () => {
@@ -33,7 +37,7 @@ const Signup = () => {
                                             </Link>
                                             <h1 className="mb-2 h2">Buat akun baru</h1>
                                             <p className="mb-0">
-                                                Sudah punya akun? <Link to="/signin" style={{ color: "#5143d9 " }}> Login</Link>
+                                                Sudah punya akun? <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link>
                                             </p>
                                             <form className="mt-4 text-start">
                                                 <div className="mb-3">
