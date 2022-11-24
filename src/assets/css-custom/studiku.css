@@ -60,3 +60,39 @@
 .bg-body-pertemuan .text-truncate {
     color: white;
 }
+
+
+/* Sigin */
+
+.bg-mode {
+    background: var(#fff) !important;
+}
+
+.bg-mode {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(255, 255, 255), var(--bs-bg-opacity)) !important;
+}
+
+.order-1 {
+    -webkit-box-ordinal-group: 2 !important;
+    -ms-flex-order: 1 !important;
+    order: 1 !important;
+}
+
+.order-lg-1 {
+    -webkit-box-ordinal-group: 2 !important;
+    -ms-flex-order: 1 !important;
+    order: 1 !important;
+}
+
+
+.h3-title {
+    font-size: calc(1.355rem + 1.26vw);
+    color: #0B0A12;
+}
+
+@media (min-width: 1200px) {
+    .h3-title {
+        font-size: 2.3rem;
+    }
+}
