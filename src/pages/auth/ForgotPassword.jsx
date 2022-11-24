@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { Navigate } from 'react-router-dom';
 
-// Redux
 import { useSelector, useDispatch } from "react-redux";
 import {
     forgotPassword,
     reset,
 } from "../../features/auth/authSlice";
-
-// Component
-import FormForgotPassword from '../../components/auth/forgotPassword/FormForgotPassword';
-import LeftContent from '../../components/auth/forgotPassword/LeftContent';
+import VektorImage from '../../components/auth/forgotPassword/VektorImage';
+import Form from '../../components/auth/forgotPassword/Form';
 
 const ForgotPassword = () => {
+
     useEffect(() => {
         document.title = "Kampus Gratis | Lupa Password";
     });
 
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-
     const [email, setEmail] = useState();
 
     const { isLoading, isError, isSuccess, message } = useSelector(
         (state) => state.auth
+    );
+
+    const { user } = useSelector(
+        (state) => state.profile
     );
 
     const onFormSubmit = (e) => {
@@ -41,30 +41,43 @@ const ForgotPassword = () => {
             toast.error(message);
         }
         if (isSuccess) {
-            navigate("/login");
             toast.success(message);
-            setEmail({
-                email: "",
-            });
+            dispatch(reset());
+            setEmail("");
         }
-    }, [isError, isSuccess, message, navigate, dispatch]);
+    }, [isError, isSuccess, message, dispatch]);
 
     return (
-        <main>
-            <section className="p-0 d-flex align-items-center position-relative overflow-hidden">
-                <div className="container-fluid">
-                    <div className="row">
-                        <LeftContent />
-                        <FormForgotPassword
-                            onFormSubmit={onFormSubmit}
-                            setEmail={setEmail}
-                            isLoading={isLoading}
-                        />
-                    </div>
-                </div>
-            </section>
-        </main>
-    );
-};
+        <>
+            {
+                user ? (
+                    <Navigate to="/" />
+                ) : (
+                    <main>
+                        <section className="vh-xxl-100">
+                            <div className="container h-100 d-flex px-0 px-sm-4">
+                                <div className="row justify-content-center align-items-center m-auto">
+                                    <div className="col-12">
+                                        <div className="bg-mode shadow rounded-3 overflow-hidden">
+                                            <div className="row g-0">
+                                                <VektorImage />
+                                                <Form
+                                                    onFormSubmit={onFormSubmit}
+                                                    setEmail={setEmail}
+                                                    email={email}
+                                                    isLoading={isLoading}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section >
+                    </main >
+                )
+            }
+        </>
+    )
+}
 
-export default ForgotPassword;
+export default ForgotPassword

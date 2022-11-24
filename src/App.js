@@ -6,8 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./config/firebase";
 import PrivateRoute from "./components/PrivateRoute";
 
-import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
 import Profile from "./pages/Profile";
 
 import Main from "./pages/landing-page/Main";
@@ -22,7 +20,7 @@ import MyStudy from "./pages/my-study/Main";
 import PageNotFound from "./components/default/PageNotFound";
 import Administration from "./pages/Administration";
 
-import SilabusSubject from "./pages/syllabus/ListSubject";
+// import SilabusSubject from "./pages/syllabus/ListSubject";
 import SubjectsList from './pages/syllabus/SubjectsList';
 import Silabus from "./pages/syllabus/Main";
 
@@ -34,7 +32,7 @@ import DocumentDetail from "./pages/my-study/DocumentDetail";
 import Forum from "./pages/my-study/ForumBase";
 import ForumDiscussion from "./pages/my-study/ForumDiscussion";
 import QuizStart from "./pages/my-study/QuizStart";
-import QuizDetail from "./pages/my-study/QuizDetail";
+// import QuizDetail from "./pages/my-study/QuizDetail";
 import Setting from "./pages/Setting";
 // Artikel
 import Artikel from "./pages/artikel/Artikel";
@@ -70,18 +68,17 @@ import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
 import DetailPenugasan from "./pages/my-study/penugasan/DetailPenugasan";
-import Unauthorized from "./pages/error/401";
-import Forbidden from "./pages/error/403";
-import ServerError from "./pages/error/500";
-import ServiceUnavailable from "./pages/error/503";
+// import Unauthorized from "./pages/error/401";
+// import Forbidden from "./pages/error/403";
+// import ServerError from "./pages/error/500";
+// import ServiceUnavailable from "./pages/error/503";
 import Detail from "./pages/my-study/quiz/Detail";
-import ForgotPassword from "./pages/auth/ForgotPassword";
 import Penugasan from "./pages/my-study/penugasan/Penugasan";
 import Session from "./pages/my-study/Session";
 import { Notifikasi } from "./pages/notifikasi/Notifikasi";
 import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
-import ForgotPasword from "./pages/auth/ForgotPasword";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -118,13 +115,9 @@ function App() {
 							<Route path="/profil" exact element={<Profile />} />
 						</Route>
 
-						<Route path="/login" exact element={<Login />} />
-						<Route path="/register" exact element={<Register />} />
+						<Route path="login" exact element={<Signin />} />
+						<Route path="/register" exact element={<Signup />} /> 
 						<Route path="/forgot-password" exact element={<ForgotPassword />} />
-
-						<Route path="/signin" exact element={<Signin />} />
-						<Route path="/signup" exact element={<Signup />} />
-						<Route path="/forgotPassword" exact element={<ForgotPasword />} />
 
 						<Route
 							path="/studi-ku/:subjectId/pertemuan/:sessionId/modul"
