@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const Signin = () => {
+const Signup = () => {
     const [passwordShown, setPasswordShown] = useState(false);
 
     const togglePasswordVisiblity = () => {
@@ -31,14 +31,18 @@ const Signin = () => {
                                                     alt="Kampus Gratis"
                                                 />
                                             </Link>
-                                            <h1 className="mb-2 h3-title">Selamat datang</h1>
+                                            <h1 className="mb-2 h3-title">Buat akun baru</h1>
                                             <p className="mb-0">
-                                                Belum punya akun?<Link to="/signup" style={{ color: "#5143d9 " }}> Daftar di sini</Link>
+                                                Sudah punya akun? <Link to="/signin" style={{ color: "#5143d9 " }}> Login</Link>
                                             </p>
                                             <form className="mt-4 text-start">
                                                 <div className="mb-3">
                                                     <label className="form-label">Email</label>
                                                     <input type="email" className="form-control" />
+                                                </div>
+                                                <div className="mb-3">
+                                                    <label className="form-label">Nama Lengkap</label>
+                                                    <input type="text" className="form-control" />
                                                 </div>
                                                 <div className="mb-3 position-relative">
                                                     <label className="form-label">Password</label>
@@ -47,7 +51,6 @@ const Signin = () => {
                                                         type={passwordShown ? "text" : "password"}
                                                         id="psw-input"
                                                     />
-
                                                     <span className="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
                                                         <i
                                                             className={
@@ -59,6 +62,12 @@ const Signin = () => {
                                                         ></i>
                                                     </span>
                                                 </div>
+                                                <div className="mb-3 position-relative">
+                                                    <label className="form-label">Konfirmasi Password</label>
+                                                    <input
+                                                        className="form-control fakepassword"
+                                                        type="password" />
+                                                </div>
                                                 <div className="mb-3 d-sm-flex justify-content-between">
                                                     <div>
                                                         <input
@@ -68,17 +77,16 @@ const Signin = () => {
                                                         <label
                                                             className="form-check-label px-2"
                                                             htmlFor="rememberCheck">
-                                                            Remember me?
+                                                            Saya setuju dengan terms of service.
                                                         </label>
                                                     </div>
-                                                    <Link to="" style={{ color: "#5143d9 " }}>Lupa password akun-mu?</Link>
                                                 </div>
                                                 <div>
                                                     <button
                                                         type="submit"
                                                         style={{ backgroundColor: "#5143d9 " }}
                                                         className="btn btn-primary w-100 mb-0">
-                                                        Login
+                                                        Daftar
                                                     </button>
                                                 </div>
                                                 <div className="position-relative my-4">
@@ -104,4 +112,4 @@ const Signin = () => {
     )
 }
 
-export default Signin
+export default Signup

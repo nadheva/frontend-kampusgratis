@@ -80,6 +80,7 @@ import Penugasan from "./pages/my-study/penugasan/Penugasan";
 import Session from "./pages/my-study/Session";
 import { Notifikasi } from "./pages/notifikasi/Notifikasi";
 import Signin from "./pages/auth/Signin";
+import Signup from "./pages/auth/Signup";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -121,6 +122,7 @@ function App() {
 						<Route path="/forgot-password" exact element={<ForgotPassword />} />
 
 						<Route path="/signin" exact element={<Signin />} />
+						<Route path="/signup" exact element={<Signup />} />
 
 						<Route
 							path="/studi-ku/:subjectId/pertemuan/:sessionId/modul"
