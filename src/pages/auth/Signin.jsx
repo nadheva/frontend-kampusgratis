@@ -70,7 +70,7 @@ const Signin = () => {
                                                             Remember me?
                                                         </label>
                                                     </div>
-                                                    <Link to="/forgotPassword" style={{ color: "#5143d9 " }}>Lupa password akun-mu?</Link>
+                                                    <Link to="/forgot-password" style={{ color: "#5143d9 " }}>Lupa password akun-mu?</Link>
                                                 </div>
                                                 <div>
                                                     <button
