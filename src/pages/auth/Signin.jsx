@@ -23,6 +23,7 @@ const Signin = () => {
     const [loginData, setLoginData] = useState({
         email: '', password: ''
     });
+
     const { email, password } = loginData;
 
     const navigate = useNavigate();
@@ -35,14 +36,6 @@ const Signin = () => {
     const { user } = useSelector(
         (state) => state.profile
     );
-
-    useEffectOnce(() => {
-        if (user && token) {
-            return navigate('/');
-        }
-
-        dispatch(reset());
-    });
 
     useEffect(() => {
         if (token && !user) {
@@ -57,7 +50,7 @@ const Signin = () => {
         if (isSuccess && token && user) {
             navigate('/');
             toast.success(`Selamat datang di Kampus Gratis, ${user.full_name.split(" ")[0]}!`);
-            // dispatch(resetDefault());
+            dispatch(reset());
         }
 
     }, [isError, isSuccess, token, user, message, navigate, dispatch]);
@@ -181,27 +174,27 @@ const Signin = () => {
                                                     <hr />
                                                     <p className="small  position-absolute top-50 start-50 translate-middle bg-body px-5">Atau</p>
                                                 </div>
-                                                <div className="vstack gap-3">
-                                                    {isLoading ? (
-                                                        <button
-                                                            className="btn bg-light mb-0"
-                                                            disabled={isLoading}
-                                                        >
-                                                            <span className="spinner-border spinner-border-sm"></span>&nbsp;
-                                                            &nbsp;Loading...
-                                                        </button>
-                                                    ) : (
-                                                        <button
-                                                            className="btn bg-light mb-0"
-                                                            onClick={onLoginWithGoogle}
-                                                            disabled={isSuccess}
-                                                        >
-                                                            <i className="fab fa-fw fa-google text-google-icon me-2" />
-                                                            Masuk dengan Google
-                                                        </button>
-                                                    )}
-                                                </div>
                                             </form>
+                                            <div className="vstack gap-3">
+                                                {isLoading ? (
+                                                    <button
+                                                        className="btn bg-light mb-0"
+                                                        disabled={isLoading}
+                                                    >
+                                                        <span className="spinner-border spinner-border-sm"></span>&nbsp;
+                                                        &nbsp;Loading...
+                                                    </button>
+                                                ) : (
+                                                    <button
+                                                        className="btn bg-light mb-0"
+                                                        onClick={onLoginWithGoogle}
+                                                        disabled={isSuccess}
+                                                    >
+                                                        <i className="fab fa-fw fa-google text-google-icon me-2" />
+                                                        Masuk dengan Google
+                                                    </button>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

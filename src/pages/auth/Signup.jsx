@@ -1,5 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+// Redux
+import { useSelector, useDispatch } from 'react-redux'
+import { register, loginWithGoogle, reset, resetDefault } from '../../features/auth/authSlice';
+import { getMe } from '../../features/profile/profileSlice';
+import useEffectOnce from '../../helpers/useEffectOnce';
 
 const Signup = () => {
     useEffect(() => {
@@ -11,6 +18,84 @@ const Signup = () => {
     const togglePasswordVisiblity = () => {
         setPasswordShown(passwordShown ? false : true);
     };
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [registerData, setRegisterData] = useState({
+        full_name: '', email: '',
+        password: '', confirm_password: ''
+    });
+
+    const { full_name, email, password, confirm_password } = registerData;
+
+    const { token, isLoading, isError, isSuccess, message } = useSelector(
+        (state) => state.auth
+    );
+
+    const { user } = useSelector(
+        (state) => state.profile
+    );
+
+    const onFormChange = (e) => {
+        setRegisterData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value
+        }));
+    }
+
+    const onFormSubmit = (e) => {
+        e.preventDefault();
+
+        if (password !== confirm_password && password.length !== confirm_password.length) {
+            return toast.error("Password harus sama dengan Konfirmasi Password.");
+        }
+
+        const userData = {
+            full_name,
+            email,
+            password,
+            gender: 1
+        };
+
+        dispatch(register(userData));
+    }
+
+    useEffect(() => {
+        if (isError) {
+            dispatch(reset());
+            toast.error(message);
+        }
+
+        if (isSuccess && !user) {
+            dispatch(getMe());
+            dispatch(resetDefault());
+        }
+
+        if (isSuccess && user) {
+            navigate('/login');
+        }
+
+        if (isSuccess) {
+            toast.success(message);
+
+            setRegisterData({
+                full_name: '', email: '',
+                password: '', confirm_password: ''
+            });
+        }
+
+        if (token && user) {
+            navigate('/');
+            dispatch(reset());
+        }
+
+    }, [isError, isSuccess, user, token, message, navigate, dispatch])
+
+    const onLoginWithGoogle = (e) => {
+        e.preventDefault();
+        dispatch(loginWithGoogle());
+    }
 
     return (
         <main>
@@ -39,21 +124,35 @@ const Signup = () => {
                                             <p className="mb-0">
                                                 Sudah punya akun? <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link>
                                             </p>
-                                            <form className="mt-4 text-start">
+                                            <form onSubmit={onFormSubmit} className="mt-4 text-start">
                                                 <div className="mb-3">
                                                     <label className="form-label">Email</label>
-                                                    <input type="email" className="form-control" />
+                                                    <input
+                                                        type="email"
+                                                        className="form-control"
+                                                        name="email"
+                                                        value={email}
+                                                        onChange={onFormChange}
+                                                    />
                                                 </div>
                                                 <div className="mb-3">
                                                     <label className="form-label">Nama Lengkap</label>
-                                                    <input type="text" className="form-control" />
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        name="full_name"
+                                                        value={full_name}
+                                                        onChange={onFormChange}
+                                                    />
                                                 </div>
                                                 <div className="mb-3 position-relative">
                                                     <label className="form-label">Password</label>
                                                     <input
                                                         className="form-control fakepassword"
                                                         type={passwordShown ? "text" : "password"}
-                                                        id="psw-input"
+                                                        name="password"
+                                                        value={password}
+                                                        onChange={onFormChange}
                                                     />
                                                     <span className="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
                                                         <i
@@ -70,7 +169,11 @@ const Signup = () => {
                                                     <label className="form-label">Konfirmasi Password</label>
                                                     <input
                                                         className="form-control fakepassword"
-                                                        type="password" />
+                                                        type="password"
+                                                        name="confirm_password"
+                                                        value={confirm_password}
+                                                        onChange={onFormChange}
+                                                    />
                                                 </div>
                                                 <div className="mb-3 d-sm-flex justify-content-between">
                                                     <div>
@@ -86,24 +189,42 @@ const Signup = () => {
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <button
-                                                        type="submit"
-                                                        style={{ backgroundColor: "#5143d9 " }}
-                                                        className="btn btn-primary w-100 mb-0">
-                                                        Daftar
-                                                    </button>
+                                                    {isLoading ? (
+                                                        <button
+                                                            style={{ backgroundColor: "#5143d9 " }}
+                                                            className="btn btn-primary w-100 mb-0" type="submit"
+                                                            disabled={isLoading}
+                                                        >
+                                                            <span className="spinner-border spinner-border-sm"></span>
+                                                            &nbsp;Loading...
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            type="submit"
+                                                            style={{ backgroundColor: "#5143d9 " }}
+                                                            className="btn btn-primary w-100 mb-0">
+                                                            Daftar
+                                                        </button>
+                                                    )}
                                                 </div>
                                                 <div className="position-relative my-4">
                                                     <hr />
                                                     <p className="small  position-absolute top-50 start-50 translate-middle bg-body px-5">Atau</p>
                                                 </div>
-                                                <div className="vstack gap-3">
-                                                    <a href=" " className="btn bg-light mb-0">
+                                            </form>
+                                            <div className="vstack gap-3">
+                                                {isLoading ? (
+                                                    <button className="btn bg-light mb-0" disabled={isLoading}>
+                                                        <span className="spinner-border spinner-border-sm"></span>
+                                                        &nbsp;Loading...
+                                                    </button>
+                                                ) : (
+                                                    <button className="btn bg-light mb-0" onClick={onLoginWithGoogle}>
                                                         <i className="fab fa-fw fa-google text-google-icon me-2" />
                                                         Masuk dengan Google
-                                                    </a>
-                                                </div>
-                                            </form>
+                                                    </button>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
