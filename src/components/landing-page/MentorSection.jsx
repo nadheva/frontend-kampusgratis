@@ -1,17 +1,43 @@
 import React from 'react'
 
 const MentorSection = () => {
+
+    const data = [
+        {
+            id: 1,
+            name: "Kembar Cahyono",
+            title: "Build your brand &amp; business",
+            img: "/assets/images/instructor/01.jpg",
+        },
+        {
+            id: 2,
+            name: "Apud Salapudin",
+            title: "   Create brand using vector illustration",
+            img: "/assets/images/instructor/08.jpg",
+        },
+        {
+            id: 3,
+            name: "Master in logo design",
+            title: "Alyuhannas",
+            img: "/assets/images/instructor/03.jpg",
+        },
+        {
+            id: 4,
+            name: "M Alam",
+            title: "   Develop your marketing skills style",
+            img: "/assets/images/instructor/11.jpg",
+        },
+    ]
+
     return (
         <section className="py-5">
             <div className="container">
-                {/* Title */}
                 <div className="row mb-4">
                     <div className="col-12">
                         <h2 className="fs-1 fw-bold">
-                            <span className="position-relative z-index-9">Beberapa </span>
+                            <span className="position-relative z-index-9"></span>
                             <span className="position-relative z-index-1">
                                 Mentor
-                                {/* SVG START */}
                                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
                                     <svg width="163.9px" height="48.6px">
                                         <path
@@ -20,7 +46,6 @@ const MentorSection = () => {
                                         />
                                     </svg>
                                 </span>
-                                {/* SVG END */}
                             </span>
                             <span> di Kampus Gratis</span>
                         </h2>
@@ -29,105 +54,30 @@ const MentorSection = () => {
                         </p>
                     </div>
                 </div>
-
-                {/* Instructor grid */}
                 <div className="row g-4">
-                    {/* Card item START */}
-                    <div className="col-sm-6 col-lg-4 col-xl-3">
-                        <div className="card p-2 shadow  h-100">
-                            <div className="card-image-scale rounded-3 position-relative">
-                                {/* Card */}
-                                <img
-                                    src="/assets/images/instructor/01.jpg"
-                                    className="card-img"
-                                    alt=""
-                                />
+                    {
+                        data.map((x) => (
+                            <div className="col-sm-6 col-lg-4 col-xl-3" key={x.id}>
+                                <div className="card p-2 shadow  h-100">
+                                    <div className="card-image-scale rounded-3 position-relative">
+                                        <img
+                                            src={x.img}
+                                            className="card-img"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="card-body px-2">
+                                        <h5 className="card-title">
+                                            <a href="workshop-detail.html" className="stretched-link">
+                                                {x.title}
+                                            </a>
+                                        </h5>
+                                        <h6 className="mb-0 fw-normal">{x.name}</h6>
+                                    </div>
+                                </div>
                             </div>
-                            {/* Card body */}
-                            <div className="card-body px-2">
-                                {/* Title */}
-                                <h5 className="card-title">
-                                    <a href="workshop-detail.html" className="stretched-link">
-                                        Build your brand &amp; business
-                                    </a>
-                                </h5>
-                                <h6 className="mb-0 fw-normal">Kembar Cahyono</h6>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Card item END */}
-                    {/* Card item START */}
-                    <div className="col-sm-6 col-lg-4 col-xl-3">
-                        <div className="card p-2 shadow h-100">
-                            <div className="card-image-scale rounded-3 position-relative">
-                                {/* Card */}
-                                <img
-                                    src="/assets/images/instructor/08.jpg"
-                                    className="card-img"
-                                    alt=""
-                                />
-                            </div>
-                            {/* Card body */}
-                            <div className="card-body px-2">
-                                {/* Title */}
-                                <h5 className="card-title">
-                                    <a href="workshop-detail.html" className="stretched-link">
-                                        Master in logo design
-                                    </a>
-                                </h5>
-                                <h6 className="mb-0 fw-normal">Alyuhannas</h6>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Card item END */}
-                    {/* Card item START */}
-                    <div className="col-sm-6 col-lg-4 col-xl-3">
-                        <div className="card p-2 shadow h-100">
-                            <div className="card-image-scale rounded-3 position-relative">
-                                {/* Card */}
-                                <img
-                                    src="/assets/images/instructor/03.jpg"
-                                    className="card-img"
-                                    alt=""
-                                />
-                            </div>
-                            {/* Card body */}
-                            <div className="card-body px-2">
-                                {/* Title */}
-                                <h5 className="card-title">
-                                    <a href="workshop-detail.html" className="stretched-link">
-                                        Create brand using vector illustration
-                                    </a>
-                                </h5>
-                                <h6 className="mb-0 fw-normal">Apud Salapudin</h6>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Card item END */}
-                    {/* Card item START */}
-                    <div className="col-sm-6 col-lg-4 col-xl-3">
-                        <div className="card p-2 shadow h-100">
-                            <div className="card-image-scale rounded-3 position-relative">
-                                {/* Card */}
-                                <img
-                                    src="/assets/images/instructor/11.jpg"
-                                    className="card-img"
-                                    alt=""
-                                />
-                            </div>
-                            {/* Card body */}
-                            <div className="card-body px-2">
-                                {/* Title */}
-                                <h5 className="card-title">
-                                    <a href="workshop-detail.html" className="stretched-link">
-                                        Develop your marketing skills style
-                                    </a>
-                                </h5>
-                                <h6 className="mb-0 fw-normal">M. Alam</h6>
-                            </div>
-                        </div>
-                    </div>
-                    {/* Card item END */}
+                        ))
+                    }
                 </div>
             </div>
         </section>

@@ -6,21 +6,21 @@ const JurusanSection = () => {
         {
             id: "1",
             img: "/assets/images/courses/4by3/16.jpg",
-            title: "The Complete Digital Marketing Course - 12 Courses in 1",
+            title: "Management",
             status: "Gratis",
             totalMahasiswa: "500",
         },
         {
             id: "2",
             img: "/assets/images/courses/4by3/14.jpg",
-            title: "Angular  The Complete Guide (2021 Edition)",
+            title: "Accounting",
             status: "Gratis",
             totalMahasiswa: "200",
         },
         {
             id: "3",
             img: "/assets/images/courses/4by3/15.jpg",
-            title: "Time Management Mastery: Do More, Stress Less",
+            title: "Japanese Culture",
             status: "Gratis",
             totalMahasiswa: "1000",
         }

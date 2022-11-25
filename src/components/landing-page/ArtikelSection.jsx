@@ -1,18 +1,50 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import moment from 'moment/moment';
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { artikelAll, resetAll } from "../../features/artikel/artikelSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const ArtikelSection = () => {
+    const [searchTerm, setSearchTerm] = useState("");
+
+    const [isPageLoad, setIsPageLoad] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [lastPage, setLastPage] = useState(1);
+    const [results, setResults] = useState([]);
+
+    const dispatch = useDispatch();
+
+    const { data, isLoading } = useSelector(
+        (state) => state.artikel
+    );
+
+    useEffectOnce(() => {
+        dispatch(resetAll());
+        setIsPageLoad(false);
+        dispatch(artikelAll({ currentPage, search: searchTerm }));
+    });
+
+    useEffect(() => {
+        const { max_page: maxPage, result } = data?.artikels || {};
+        if (maxPage !== 0) setLastPage(maxPage);
+        if (result) setResults(result);
+
+        if (maxPage && result) setIsPageLoad(true);
+    }, [data, isPageLoad, results]);
+
     return (
         <section className="py-5">
             <div className="container">
-                {/* Title */}
                 <div className="row mb-4">
                     <div className="col-12 ">
                         <h2 className="fs-1 fw-bold">
                             <span className="position-relative z-index-9"></span>
                             <span className="position-relative z-index-1">
                                 Artikel
-                                {/* SVG START */}
                                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
                                     <svg width="163.9px" height="48.6px">
                                         <path
@@ -21,118 +53,83 @@ const ArtikelSection = () => {
                                         />
                                     </svg>
                                 </span>
-                                {/* SVG END */}
                             </span>
                             <span> Terbaru</span>
                         </h2>
                     </div>
                 </div>
-                {/* Body */}
                 <div className="row">
-                    {/* Card item START */}
-                    <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
-                        <div className="position-relative">
-                            <img
-                                src="/assets/images/courses/4by3/21.jpg"
-                                className="card-img"
-                                alt="course"
-                            />
-                            {/* Overlay */}
-                            <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <div className="w-100 mt-auto">
-                                    {/* Category */}
-                                    <a href=" " className="badge text-bg-white fs-6 rounded-1">
-                                        <i className="far fa-calendar-alt text-orange me-2" />
-                                        29 September 2021
-                                    </a>
-                                </div>
+                    {isLoading ? (
+                        <div className="row">
+                            <div className="col-sm-6 col-lg-4 col-xl-4">
+                                <SkeletonTheme>
+                                    <Skeleton height={189} className="mb-2" />
+                                    <Skeleton height={26} />
+                                    <Skeleton height={22} />
+                                </SkeletonTheme>
+                            </div>
+                            <div className="col-sm-6 col-lg-4 col-xl-4">
+                                <SkeletonTheme>
+                                    <Skeleton height={189} className="mb-2" />
+                                    <Skeleton height={26} />
+                                    <Skeleton height={22} />
+                                </SkeletonTheme>
+                            </div>
+                            <div className="col-sm-6 col-lg-4 col-xl-4">
+                                <SkeletonTheme>
+                                    <Skeleton height={189} className="mb-2" />
+                                    <Skeleton height={26} />
+                                    <Skeleton height={22} />
+                                </SkeletonTheme>
                             </div>
                         </div>
-                        {/* Card body */}
-                        <div className="card-body px-2 ">
-                            {/* Title */}
-                            <h5 className="card-title">
-                                <Link to="/detail-artikel">
-                                    Global Education Fall Meeting for Everyone
-                                </Link>
-                            </h5>
-                            <p className="mb-0 text-truncate-2">
-                                Satisfied conveying a dependent contented he gentleman
-                                agreeable do be.
-                            </p>
-                        </div>
-                    </div>
-                    {/* Card item END */}
-                    {/* Card item START */}
-                    <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
-                        <div className="position-relative">
-                            <img
-                                src="/assets/images/courses/4by3/16.jpg"
-                                className="card-img"
-                                alt="course"
-                            />
-                            {/* Overlay */}
-                            <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <div className="w-100 mt-auto">
-                                    {/* Category */}
-                                    <a href=" " className="badge text-bg-white fs-6 rounded-1">
-                                        <i className="far fa-calendar-alt text-orange me-2" />
-                                        Tomorrow
-                                    </a>
+                    ) : Object.values(results).length !== 0 ? (
+                        results.slice(0, 3).map((artikel, index) => (
+                            <div key={index} className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
+                                <div className="position-relative">
+                                    <img
+                                        src={artikel?.image_link}
+                                        className="card-img card-img-artikels"
+                                        alt="course"
+                                        style={{
+                                            height: "260px",
+                                            objectFit: "cover",
+                                            objectPosition: "center",
+                                        }}
+                                    />
+                                    <div className="card-img-overlay d-flex align-items-start flex-column p-3">
+                                        <div className="w-100 mt-auto">
+                                            <a href=" " className="badge text-bg-white fs-6 rounded-1">
+                                                <i className="far fa-calendar-alt text-orange me-2" />
+                                                {
+                                                    artikel?.created_at ? (
+                                                        moment(artikel?.created_at).format('LL')
+                                                    ) : (
+                                                        <></>
+                                                    )
+                                                }
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card-body px-2 ">
+                                    <h5 className="card-title">
+                                        <Link to={`/artikel/${artikel?.id}`} >{artikel?.title}</Link>
+                                    </h5>
+                                    <p className="mb-0 text-truncate-2">
+                                        {artikel?.description}
+                                    </p>
                                 </div>
                             </div>
-                        </div>
-                        {/* Card body */}
-                        <div className="card-body px-2">
-                            {/* Title */}
-                            <h5 className="card-title">
-                                <Link to="/detail-artikel">
-                                    International Conference on Information Technology
-                                </Link>
-                            </h5>
-                            <p className="mb-0 text-truncate-2">
-                                Kindness owns whatever betrayed her moreover procured replying
-                                for and. Proposal indulged no do.
-                            </p>
-                        </div>
-                    </div>
-                    {/* Card item END */}
-                    {/* Card item START */}
-                    <div className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
-                        <div className="position-relative">
-                            <img
-                                src="/assets/images/courses/4by3/18.jpg"
-                                className="card-img"
-                                alt="course"
-                            />
-                            {/* Overlay */}
-                            <div className="card-img-overlay d-flex align-items-start flex-column p-3">
-                                <div className="w-100 mt-auto">
-                                    {/* Category */}
-                                    <a href=" " className="badge text-bg-white fs-6 rounded-1">
-                                        <i className="far fa-calendar-alt text-orange me-2" />2
-                                        July 2022
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Card body */}
-                        <div className="card-body px-2">
-                            {/* Title */}
-                            <h5 className="card-title">
-                                <Link to="/detail-artikel">UK Demo Day 2022</Link>
-                            </h5>
-                            <p className="mb-0 text-truncate-2">
-                                Points afraid but may end law lasted. Rooms oh fully taken by
-                                worse do may end law lasted.
-                            </p>
-                        </div>
-                    </div>
-                    {/* Card item END */}
+                        ))
+                    ) : (
+                        <span className='alert alert-danger'>Belum ada postingan</span>
+                    )}
                 </div>
-
                 <div className="text-center mt-5">
-                    <Link to="/artikel" class="btn btn-primary-soft mb-0">Lihat semua artikel<i class="fas fa-sync ms-2"></i></Link>
+                    <Link to="/artikel" className="btn btn-primary-soft mb-0">Lihat semua artikel
+                        <i className="fas fa-sync ms-2"></i>
+                    </Link>
                 </div>
             </div>
         </section>
