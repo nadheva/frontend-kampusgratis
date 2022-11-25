@@ -70,7 +70,7 @@ const AboutSection = () => {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="bg-danger bg-opacity-10 p-4 p-xl-5 text-center rounded-3 mb-4">
-                                    <h6>Since</h6>
+                                    <h6>Sejak</h6>
                                     <span className="h2 text-danger mb-2">2022</span>
                                 </div>
                                 <div className="bg-light p-4 p-xl-5 text-center rounded-3">

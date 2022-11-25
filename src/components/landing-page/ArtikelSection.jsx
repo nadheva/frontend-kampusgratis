@@ -130,6 +130,10 @@ const ArtikelSection = () => {
                     </div>
                     {/* Card item END */}
                 </div>
+
+                <div className="text-center mt-5">
+                    <Link to="/artikel" class="btn btn-primary-soft mb-0">Lihat semua artikel<i class="fas fa-sync ms-2"></i></Link>
+                </div>
             </div>
         </section>
     )
