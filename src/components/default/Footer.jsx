@@ -23,22 +23,22 @@ const Footer = () => {
             </p>
             <ul className="list-inline mb-0 mt-3">
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-facebook" href=" ">
-                  <i className="fab fa-fw fa-facebook-f"></i>
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-instagram" href=" ">
+                <a href="https://instagram.com/kampus.gratis" target="_blank" className="btn btn-white btn-sm shadow px-2 text-instagram" >
                   <i className="fab fa-fw fa-instagram"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-twitter" href=" ">
-                  <i className="fab fa-fw fa-twitter"></i>
+                <a href="https://www.facebook.com/learningkampusgratis/" target="_blank" className="btn btn-white btn-sm shadow px-2 text-facebook" >
+                  <i className="fab fa-fw fa-facebook-f"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="btn btn-white btn-sm shadow px-2 text-linkedin" href=" ">
+                <a href="https://vt.tiktok.com/ZSeteH6CK/" target="_blank" className="btn btn-white btn-sm shadow px-2 text-twitter" >
+                  <i className="fab fa-fw fa-tiktok"></i>
+                </a>
+              </li>
+              <li className="list-inline-item">
+                <a href="https://www.linkedin.com/in/kampusgratis/" target="_blank" className="btn btn-white btn-sm shadow px-2 text-linkedin" >
                   <i className="fab fa-fw fa-linkedin-in"></i>
                 </a>
               </li>
@@ -86,8 +86,8 @@ const Footer = () => {
               </div>
               <div className="justify-content-center mt-3 mt-lg-0">
                 <ul className="nav list-inline justify-content-center mb-0">
-                  <li className="list-inline-item"><a className="nav-link" href=" ">Terms of use</a></li>
-                  <li className="list-inline-item"><a className="nav-link pe-0" href=" ">Privacy policy</a></li>
+                  <li className="list-inline-item"><a className="nav-link" >Terms of use</a></li>
+                  <li className="list-inline-item"><a className="nav-link pe-0" >Privacy policy</a></li>
                 </ul>
               </div>
             </div>

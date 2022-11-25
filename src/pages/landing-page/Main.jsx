@@ -1,5 +1,8 @@
 import React from "react";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Footer from "../../components/default/Footer";
 import Header from "../../components/default/Header";
 import AboutSection from "../../components/landing-page/AboutSection";
@@ -9,6 +12,7 @@ import HeroSection from "../../components/landing-page/HeroSection";
 import JurusanSection from "../../components/landing-page/JurusanSection";
 import MentorSection from "../../components/landing-page/MentorSection";
 import Testimonial from "../../components/landing-page/Testimonial";
+import ClientSTART from "../../components/landing-page/ClientSTART";
 
 const Main = () => {
 	return (
@@ -22,6 +26,7 @@ const Main = () => {
 				<Testimonial />
 				<ArtikelSection />
 				<ActionBoxSection />
+				<ClientSTART />
 			</main>
 			<Footer />
 		</>

@@ -1,10 +1,90 @@
 import React from 'react'
+import Slider from "react-slick";
 
 const Testimonial = () => {
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 3000,
+        slidesToShow: 3,
+        slidesToScroll: 2,
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true,
+                }
+            }
+        ]
+    };
+
+    const data = [
+        {
+            id: 1,
+            img: "assets/images/avatar/01.jpg",
+            name: "Kennis",
+            title: "MOrganized conviction For every delay in they  Extremity now strangers contained breakfast",
+        },
+        {
+            id: 2,
+            img: "assets/images/avatar/02.jpg",
+            name: "Lucas",
+            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
+        },
+        {
+            id: 3,
+            img: "assets/images/avatar/03.jpg",
+            name: "Aryo",
+            title: "Conviction For every delay in they  Extremity now strangers contained breakfast",
+        },
+        {
+            id: 4,
+            img: "assets/images/avatar/04.jpg",
+            name: "Rizki",
+            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
+        },
+        {
+            id: 5,
+            img: "assets/images/avatar/05.jpg",
+            name: "Ibnu",
+            title: "Conviction For every delay in they  Extremity now strangers contained breakfast",
+        },
+        {
+            id: 6,
+            img: "assets/images/avatar/06.jpg",
+            name: "Azis",
+            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
+        }
+    ]
+
     return (
         <section className="py-5">
             <div className="container">
-                <div className="p-4 rounded-3">
+                <div className="p-4 rounded-3 ">
                     <div className="row mb-4">
                         <div className="col-12 text-center">
                             <h2 className="fs-1 fw-bold">
@@ -12,7 +92,7 @@ const Testimonial = () => {
                                     Apa Kata Mereka
                                 </span>
                                 <span className="position-relative z-index-1">
-                                    Tentang Kami
+                                    <span>  Tentang Kami</span>
                                     <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
                                         <svg width="163.9px" height="48.6px">
                                             <path
@@ -25,74 +105,31 @@ const Testimonial = () => {
                             </h2>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="card card-body h-100 bg-light">
-                                <div className="d-sm-flex justify-content-between align-items-center mb-3">
-                                    <div className="d-flex align-items-center mb-1 mb-sm-0">
-                                        <div className="avatar avatar-sm">
-                                            <img
-                                                className="avatar-img rounded-circle"
-                                                src="/assets/images/avatar/03.jpg"
-                                                alt="avatar"
-                                            />
+                    <Slider {...settings}  >
+                        {
+                            data.map((x) => (
+                                <div key={x.id}>
+                                    <div className="card card-body h-100 ">
+                                        <div className="d-sm-flex justify-content-between align-items-center mb-3">
+                                            <div className="d-flex align-items-center mb-1 mb-sm-0">
+                                                <div className="avatar avatar-sm">
+                                                    <img
+                                                        className="avatar-img rounded-circle"
+                                                        src={x.img}
+                                                        alt="avatar"
+                                                    />
+                                                </div>
+                                                <div className="ms-2">
+                                                    <h6 className="mb-0">{x.name}</h6>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div className="ms-2">
-                                            <h6 className="mb-0">Dennis Barrett</h6>
-                                        </div>
+                                        <h6 className="fw-normal mb-0">{x.title}</h6>
                                     </div>
                                 </div>
-                                <h6 className="fw-normal mb-0">
-                                    "Make my life easier and organized conviction For every
-                                    delay in they Extremity now strangers contained breakfast"
-                                </h6>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="card card-body h-100 bg-light">
-                                <div className="d-sm-flex justify-content-between align-items-center mb-3">
-                                    <div className="d-flex align-items-center mb-1 mb-sm-0">
-                                        <div className="avatar avatar-sm">
-                                            <img
-                                                className="avatar-img rounded-circle"
-                                                src="/assets/images/avatar/02.jpg"
-                                                alt="avatar"
-                                            />
-                                        </div>
-                                        <div className="ms-2">
-                                            <h6 className="mb-0">Billy Vasquez</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 className="fw-normal mb-0">
-                                    "Life easier and organized conviction For every delay in
-                                    they Extremity now strangers contained breakfast"
-                                </h6>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="card card-body h-100 bg-light">
-                                <div className="d-sm-flex justify-content-between align-items-center mb-3">
-                                    <div className="d-flex align-items-center mb-1 mb-sm-0">
-                                        <div className="avatar avatar-sm">
-                                            <img
-                                                className="avatar-img rounded-circle"
-                                                src="/assets/images/avatar/05.jpg"
-                                                alt="avatar"
-                                            />
-                                        </div>
-                                        <div className="ms-2">
-                                            <h6 className="mb-0">Lori Stevens</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h6 className="fw-normal mb-0">
-                                    "Easier and organized conviction For every delay in they
-                                    Extremity now strangers contained breakfast makes my life."
-                                </h6>
-                            </div>
-                        </div>
-                    </div>
+                            ))
+                        }
+                    </Slider>
                 </div>
             </div>
         </section>
