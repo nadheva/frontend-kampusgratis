@@ -13,6 +13,7 @@ import JurusanSection from "../../components/landing-page/JurusanSection";
 import MentorSection from "../../components/landing-page/MentorSection";
 import Testimonial from "../../components/landing-page/Testimonial";
 import ClientSTART from "../../components/landing-page/ClientSTART";
+import WhayUseSection from "../../components/landing-page/WhayUseSection";
 
 const Main = () => {
 	return (
@@ -21,6 +22,7 @@ const Main = () => {
 			<main>
 				<HeroSection />
 				<AboutSection />
+				<WhayUseSection />
 				<JurusanSection />
 				<MentorSection />
 				<Testimonial />

@@ -160,9 +160,9 @@ const HeroSection = () => {
                             </svg>
                         </figure>
                         <h1 className="mb-0 display-6">
-                            Limitless learning at your
+                            Solusi Pendidikan Gratis &
                             <span className="position-relative">
-                                fingertips
+                               <span> Berkualitas</span> 
                                 <span className="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
                                     <svg
                                         width="300px"
@@ -180,7 +180,7 @@ const HeroSection = () => {
                             </span>
                         </h1>
                         <p className="my-4 lead">
-                            Solusi pendidikan tinggi yang gratis, berkualitas, bisa diakses siapapun khususnya kaum marginal, dan selalu update layaknya platform Wikipedia.
+                            Aplikasi belajar gratis pertama di Indonesia, belajar mudah dengan kampus gratis bisa diakses siapapun khususnya kaum marginal, dan selalu update layaknya platform Wikipedia.
                         </p>
                         <ul className="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
                             <li className="list-inline-item">

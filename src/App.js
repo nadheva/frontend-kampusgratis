@@ -116,7 +116,7 @@ function App() {
 						</Route>
 
 						<Route path="login" exact element={<Signin />} />
-						<Route path="/register" exact element={<Signup />} /> 
+						<Route path="/register" exact element={<Signup />} />
 						<Route path="/forgot-password" exact element={<ForgotPassword />} />
 
 						<Route
@@ -203,7 +203,7 @@ function App() {
 							<Route path='/silabus/:majorId' element={<SubjectsList />} />
 						</Route>
 
-						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
+						<Route path="/silabus" exact element={<PrivateRoute redirect/>}>
 							<Route path="/silabus" exact element={<Silabus />} />
 						</Route>
 
@@ -219,8 +219,8 @@ function App() {
 							<Route path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan" element={<DetailPenugasan />} />
 						</Route>
 
-						<Route path="/penugasan" element={<PrivateRoute />}>
-							<Route path="/penugasan" element={<Penugasan />} />
+						<Route path="/penugasan" exact element={<PrivateRoute redirect />}>
+							<Route path="/penugasan" exact element={<Penugasan />} />
 						</Route>
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
@@ -244,15 +244,13 @@ function App() {
 						{/* END : Acara Kampus */}
 
 						{/* START : NILAI & SERTIFIKAT */}
-						<Route path="/nilai" element={<PrivateRoute />}>
-							<Route path="/nilai" element={<Nilai />} />
+						<Route path="/nilai" exact element={<PrivateRoute redirect />}>
+							<Route path="/nilai" exact element={<Nilai redirect />} />
 						</Route>
-						<Route path="/certificates" element={<PrivateRoute />}>
-							<Route path="/certificates" element={<Sertifikat />} />
+						<Route path="/certificates" element={<PrivateRoute redirect />}>
+							<Route path="/certificates" element={<Sertifikat redirect />} />
 						</Route>
-
-						<Route path="/certificates/:id" element={<ViewSertifikat />} />
-
+						<Route path="/certificates/:id" element={<ViewSertifikat redirect />} />
 						{/* END : NILAI & SERTIFIKAT */}
 
 						{/* START : Penyaluran Kerja */}

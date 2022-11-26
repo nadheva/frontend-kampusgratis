@@ -89,7 +89,7 @@ const Testimonial = () => {
                         <div className="col-12 text-center">
                             <h2 className="fs-1 fw-bold">
                                 <span className="position-relative z-index-9">
-                                    Apa Kata Mereka
+                                    Tanggapan Mereka
                                 </span>
                                 <span className="position-relative z-index-1">
                                     <span>  Tentang Kami</span>
