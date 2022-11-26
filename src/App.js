@@ -79,6 +79,7 @@ import { Notifikasi } from "./pages/notifikasi/Notifikasi";
 import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
+import Panduan from "./pages/panduan/Panduan";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -203,7 +204,7 @@ function App() {
 							<Route path='/silabus/:majorId' element={<SubjectsList />} />
 						</Route>
 
-						<Route path="/silabus" exact element={<PrivateRoute redirect/>}>
+						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
 							<Route path="/silabus" exact element={<Silabus />} />
 						</Route>
 
@@ -227,6 +228,11 @@ function App() {
 						<Route path="/artikel" element={<Artikel />} />
 						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 						{/* END : SEKILAS ILMU/ARTIKEL */}
+
+
+						{/* START : */}
+						<Route path="/panduan" element={<Panduan />} />
+						{/* END : */}
 
 						{/* START : KALENDER */}
 						<Route path="/kalender" exact element={<PrivateRoute />}>
@@ -327,6 +333,10 @@ function App() {
 						<Route path="/500" element={<ServerError />} />
 						<Route path="/503" element={<ServiceUnavailable />} /> */}
 						{/* END : ERROR PAGE */}
+
+						{/* START : */}
+
+						{/* END : */}
 
 					</Routes>
 				</ScrollToTop>

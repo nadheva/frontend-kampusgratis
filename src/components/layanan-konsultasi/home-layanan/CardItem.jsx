@@ -6,7 +6,7 @@ const CardItem = () => {
         <>
             <div className="col-md-6 col-xl-4">
                 <Link to="/chat-konsultasi">
-                    <div className="card shadow-hover bg-light h-100">
+                    <div className="card shadow bg-light h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-person-workspace fs-1 text-success" />
                             <h5 className="card-title mb-0 mt-2">
@@ -40,7 +40,7 @@ const CardItem = () => {
             </div>
             <div className="col-md-6 col-xl-4">
                 <Link to="/booking-konsultasi">
-                    <div className="card shadow-hover bg-light h-100">
+                    <div className="card shadow bg-light h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-layers fs-1 text-warning" />
                             <h5 className="card-title mb-0 mt-2">Konsultasi Akademik</h5>
@@ -79,7 +79,7 @@ const CardItem = () => {
             </div>
             <div className="col-md-6 col-xl-4">
                 <Link to="/pilih-dokument">
-                    <div className="card bg-light shadow-hover h-100">
+                    <div className="card bg-light shadow h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-file-earmark-text fs-1 text-orange" />
                             <h5 className="card-title mb-0 mt-2">Layanan Dokumen </h5>
@@ -111,7 +111,7 @@ const CardItem = () => {
             </div>
             <div className="col-md-6 col-xl-4">
                 <Link to="/pengajuan-dokument">
-                    <div className="card bg-light shadow-hover h-100">
+                    <div className="card bg-light shadow h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-file-bar-graph fs-1 text-primary" />
                             <h5 className="card-title mb-0 mt-2">Layanan Proses Dokument </h5>
@@ -132,7 +132,7 @@ const CardItem = () => {
             </div>
             <div className="col-md-6 col-xl-4">
                 <Link to="/status-dokument">
-                    <div className="card bg-light shadow-hover h-100">
+                    <div className="card bg-light shadow h-100">
                         <div className="card-header bg-light pb-0 border-0">
                             <i className="bi bi-file-check fs-1 text-purple" />
                             <h5 className="card-title mb-0 mt-2">
