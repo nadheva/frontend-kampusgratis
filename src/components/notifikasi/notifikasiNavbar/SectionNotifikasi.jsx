@@ -76,7 +76,7 @@ const SectionNotifikasi = () => {
                                         </li>
                                     </>
                                 ) : Object.values(notifications).length !== 0 ? (
-                                    notifications.map((x) => (
+                                    notifications.slice(0, 4).map((x) => (
                                         <NotifikasiItem
                                             key={x.id}
                                             notif={x}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Banner = () => {
     return (
@@ -23,9 +23,9 @@ const Banner = () => {
                                         Dapatkan program sertifikat profesional yang tepat untuk
                                         Anda.
                                     </p>
-                                    <Link to=" " className="btn btn-primary mb-0">
+                                    {/* <Link to=" " className="btn btn-primary mb-0">
                                         Lihat Program
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>
@@ -47,9 +47,9 @@ const Banner = () => {
                                         Daftar sekarang di kursus paling populer dan berperingkat
                                         terbaik.
                                     </p>
-                                    <Link to=" " className="btn btn-warning mb-0">
+                                    {/* <Link to=" " className="btn btn-warning mb-0">
                                         Lihat Kursus
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </div>
                         </div>

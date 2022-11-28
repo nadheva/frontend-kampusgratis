@@ -63,7 +63,7 @@ const SidebarProfile = () => {
 									<i className="bi bi-card-list fa-fw me-2"></i>Administrasi
 								</NavLink>
 								<NavLink to="/settings" className="list-group-item" href=" ">
-									<i className="bi bi-gear fa-fw me-2"></i>Pengaturan
+									<i className="bi bi-key fa-fw me-2"></i>Reset Password
 								</NavLink>
 								<button
 									className="list-group-item text-danger bg-danger-soft-hover"

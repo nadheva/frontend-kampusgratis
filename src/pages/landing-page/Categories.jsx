@@ -14,7 +14,7 @@ const Categories = () => {
 			name: "Administrasi",
 			url: "/administrasi",
 			src: "/assets/images/element/marketing.svg",
-			background: "bg-warning",
+			background: "bg-success",
 			disabled: false
 		},
 		{
@@ -22,7 +22,7 @@ const Categories = () => {
 			name: "Silabus",
 			url: "/silabus",
 			src: "/assets/images/element/online.svg",
-			background: "bg-secondary",
+			background: "bg-orange",
 			disabled: false
 		},
 		{
@@ -30,7 +30,7 @@ const Categories = () => {
 			name: "Studi-Ku",
 			url: "/studi-ku",
 			src: "/assets/images/element/instructor-course.svg",
-			background: "bg-primary",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -38,7 +38,7 @@ const Categories = () => {
 			name: "Nilai & Sertifikat",
 			url: "/nilai",
 			src: "/assets/images/element/18.svg",
-			background: "bg-info",
+			background: "bg-purple",
 			disabled: false
 		},
 		{
@@ -46,7 +46,7 @@ const Categories = () => {
 			name: "Sekilas Ilmu",
 			url: "/artikel",
 			src: "/assets/images/element/data-science.svg",
-			background: "bg-success",
+			background: "bg-info",
 			disabled: false
 		},
 		{
@@ -54,7 +54,7 @@ const Categories = () => {
 			name: "Kalender Saya",
 			url: "/kalender",
 			src: "/assets/images/element/account.svg",
-			background: "bg-danger",
+			background: "bg-blue",
 			disabled: false
 		},
 		{
@@ -62,7 +62,7 @@ const Categories = () => {
 			name: "Acara Kampus",
 			url: "/acara-kampus",
 			src: "/assets/images/element/photography.svg",
-			background: "bg-danger",
+			background: "bg-warning",
 			disabled: false
 		},
 		{
@@ -70,7 +70,7 @@ const Categories = () => {
 			name: "Penugasan",
 			url: "/penugasan",
 			src: "/assets/images/element/home.svg",
-			background: "bg-danger",
+			background: "bg-dark",
 			disabled: false
 		},
 		{
@@ -78,7 +78,7 @@ const Categories = () => {
 			name: "Penyaluran Kerja",
 			url: "/penyaluran-kerja",
 			src: "/assets/images/element/coding.svg",
-			background: "bg-danger",
+			background: "bg-purple",
 			disabled: false
 		},
 		{
@@ -94,7 +94,7 @@ const Categories = () => {
 			name: "Konsultasi & Layanan",
 			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
-			background: "bg-danger",
+			background: "bg-success",
 			disabled: false
 		},
 		{
@@ -102,7 +102,7 @@ const Categories = () => {
 			name: "Diskusi Perkuliahan",
 			url: "#",
 			src: "/assets/images/element/25.svg",
-			background: "bg-danger",
+			background: "bg-primary",
 			disabled: true
 		},
 		{
@@ -111,7 +111,7 @@ const Categories = () => {
 			url: "#",
 			src: "/assets/images/element/help.svg",
 			background: "bg-warning",
-			disabled: true
+			disabled: false
 		},
 		{
 			id: "14",
@@ -126,7 +126,7 @@ const Categories = () => {
 			name: "Ruang Simulasi",
 			url: "#",
 			src: "/assets/images/element/account.svg",
-			background: "bg-light",
+			background: "bg-info",
 			disabled: true
 		},
 		{
@@ -134,7 +134,7 @@ const Categories = () => {
 			name: "Perencanaan Karir",
 			url: "#",
 			src: "/assets/images/element/engineering.svg",
-			background: "bg-success",
+			background: "bg-orange",
 			disabled: true
 		},
 
