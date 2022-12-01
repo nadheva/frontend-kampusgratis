@@ -1,7 +1,48 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const HeroSection = () => {
+    const [loopNum, setLoopNum] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [text, setText] = useState('');
+    const [delta, setDelta] = useState(300 - Math.random() * 100);
+    const [index, setIndex] = useState(1);
+    const toRotate = ["Gratis & Berkualitas", "Gratis & Berkualitas"];
+    const period = 2000;
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => { clearInterval(ticker) };
+    }, [text])
+
+    const tick = () => {
+        let i = loopNum % toRotate.length;
+        let fullText = toRotate[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+        setText(updatedText);
+
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta / 2);
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setIndex(prevIndex => prevIndex - 1);
+            setDelta(period);
+        } else if (isDeleting && updatedText === '') {
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setIndex(1);
+            setDelta(500);
+        } else {
+            setIndex(prevIndex => prevIndex + 1);
+        }
+    }
+
     return (
         <section className="position-relative overflow-hidden pt-5 pt-lg-3">
             <figure className="position-absolute top-50 start-0 translate-middle-y ms-n7 d-none d-xxl-block">
@@ -160,9 +201,9 @@ const HeroSection = () => {
                             </svg>
                         </figure>
                         <h1 className="mb-0 display-6">
-                            Solusi Pendidikan Gratis &
+                            Solusi
                             <span className="position-relative">
-                               <span> Berkualitas</span> 
+                                <span> Pendidikan </span>
                                 <span className="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
                                     <svg
                                         width="300px"
@@ -178,6 +219,7 @@ const HeroSection = () => {
                                     </svg>
                                 </span>
                             </span>
+                            {text}
                         </h1>
                         <p className="my-4 lead">
                             Aplikasi belajar gratis pertama di Indonesia, belajar mudah dengan kampus gratis bisa diakses siapapun khususnya kaum marginal, dan selalu update layaknya platform Wikipedia.

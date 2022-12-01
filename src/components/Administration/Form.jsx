@@ -211,7 +211,7 @@ const Form = () => {
           <h6 className="accordion-header" id="headingOne">
             <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
               <span className="text-secondary fw-bold me-3">01</span>
-              <span className="fw-bold">Biodata Kamu</span>
+              <span className="fw-bold">Biodata</span>
             </button>
           </h6>
           <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne">
@@ -293,7 +293,7 @@ const Form = () => {
           <h6 className="accordion-header" id="headingTwo">
             <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
               <span className="text-secondary fw-bold me-3">02</span>
-              <span className="fw-bold">Data Keluarga Kamu</span>
+              <span className="fw-bold">Data Keluarga</span>
             </button>
           </h6>
           <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo">
@@ -359,7 +359,7 @@ const Form = () => {
           <h6 className="accordion-header" id="headingThree">
             <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               <span className="text-secondary fw-bold me-3">03</span>
-              <span className="fw-bold">Berkas Kamu</span>
+              <span className="fw-bold">Berkas</span>
               {/* &nbsp;<span className="badge text-bg-danger">5 data belum terverifikasi</span> */}
               {/* &nbsp;<span className="badge text-bg-info">3 data sudah terverifikasi</span> */}
             </button>
@@ -457,7 +457,7 @@ const Form = () => {
           <h6 className="accordion-header" id="headingFour">
             <button className="accordion-button rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
               <span className="text-secondary fw-bold me-3">04</span>
-              <span className="fw-bold">Jenjang Pendidikan Kamu</span>
+              <span className="fw-bold">Jenjang Pendidikan</span>
             </button>
           </h6>
           <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour">

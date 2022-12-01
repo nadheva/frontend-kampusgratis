@@ -71,7 +71,7 @@ const SubjectsList = () => {
 
     if (message.startsWith("Enrolled to") && isTakingMajor) {
       setIsTakingMajor(false);
-      toast.info(`Kamu telah mengambil jurusan ${message.split(" ")[message.split(" ").length - 1]}.`);
+      toast.info(`Kamu telah mengambil Rencana Studi ${message.split(" ")[message.split(" ").length - 1]}.`);
       dispatch(reset());
       // setUserTakeMajor(true);
       setEligibleEnroll(true);
@@ -89,7 +89,7 @@ const SubjectsList = () => {
 
     if (message === "Student's major doesn't have that subject") {
       dispatch(reset());
-      toast.error('Kamu tidak dapat mengambil Mata Kuliah ini karena berbeda dengan Jurusan kamu.');
+      toast.error('Kamu tidak dapat mengambil Mata Kuliah ini karena berbeda dengan Rencana Studi kamu.');
     }
 
     // if (message.startsWith('already enrolled in')) {
@@ -164,9 +164,9 @@ const SubjectsList = () => {
                 <div className='d-flex justify-content-center'>
                   <nav aria-label='breadcrumb'>
                     <ol className='breadcrumb breadcrumb-dark breadcrumb-dots mb-0'>
-                      <li className='breadcrumb-item'><Link to='/kategori'>Kategori</Link></li>
-                      <li className='breadcrumb-item'><Link to='/silabus'>Silabus</Link></li>
-                      <li className='breadcrumb-item active' aria-current='page'>Jurusan</li>
+                      <li className='breadcrumb-item'><Link to='/kategori'>Fitur</Link></li>
+                      <li className='breadcrumb-item'><Link to='/silabus'>Rencana Studi</Link></li>
+                      <li className='breadcrumb-item active' aria-current='page'>Rencana Studi</li>
                     </ol>
                   </nav>
                 </div>
@@ -180,7 +180,7 @@ const SubjectsList = () => {
               {user?.role === "guest" && <>
                 <div className='alert alert-info'>
                   Haaaii {user?.full_name.split(" ")[0]}!
-                  Kamu harus mengirimkan data <Link to='/administrasi'>administrasi</Link> sebelum mengambil jurusan atau mata kuliah.
+                  Kamu harus mengirimkan data <Link to='/administrasi'>administrasi</Link> sebelum mengambil Rencana Studi atau mata kuliah.
                 </div>
               </>}
               {user?.role === "student" && <>
@@ -204,7 +204,7 @@ const SubjectsList = () => {
                         {dataAdministration?.is_approved?.overall && eligibleTakeMajor && <>
                           {userMajors.length !== 1 && <li>
                             {!isLoading ? <>
-                              <button className='btn btn-primary btn-sm' onClick={() => doTakeMajor(data?.subjects?.major?.id)}>Ambil Jurusan</button>
+                              <button className='btn btn-primary btn-sm' onClick={() => doTakeMajor(data?.subjects?.major?.id)}>Ambil Rencana Studi</button>
                             </> : <>
                               <button className='btn btn-primary btn-sm'>
                                 <span className="spinner-border spinner-border-sm"></span>&nbsp;
@@ -270,7 +270,7 @@ const SubjectsList = () => {
                 <div className='col-lg-12 mt-4 order-1'>
                   {userMajors.length === 0 && eligibleTakeMajor && <>
                     <div className="alert alert-info">
-                      Kamu dapat mengambil Jurusan ini.
+                      Kamu dapat mengambil Rencana Studi ini.
                     </div>
                   </>}
                   {eligibleEnroll && !eligibleTakeMajor && <>
@@ -280,13 +280,13 @@ const SubjectsList = () => {
                       </div>
                     </> : <>
                       <div className="alert alert-success">
-                        Kamu dapat mengambil Mata Kuliah pada Jurusan ini.
+                        Kamu dapat mengambil Mata Kuliah pada Rencana Studi ini.
                       </div>
                     </>}
                   </>}
                   {!eligibleTakeMajor && !eligibleEnroll && userMajors.length > 0 && <>
                     <div className="alert alert-warning">
-                      Kamu telah mengambil jurusan <strong>{userMajors[0].name}</strong>. Kamu tidak dapat mengambil jurusan atau mata kuliah lainnya!
+                      Kamu telah mengambil Rencana Studi <strong>{userMajors[0].name}</strong>. Kamu tidak dapat mengambil Rencana Studi atau mata kuliah lainnya!
                     </div>
                   </>}
                   <StudyPlanItem />

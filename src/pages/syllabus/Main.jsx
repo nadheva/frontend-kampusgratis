@@ -138,12 +138,12 @@ const Main = () => {
         <div className="container">
           <div className="row">
             <div className="col-12 text-center">
-              <h1 className="text-white">Jurusan Tersedia</h1>
+              <h1 className="text-white">Pilih Rencana Studi</h1>
               <div className="d-flex justify-content-center">
                 <nav aria-label="breadcrumb">
                   <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
-                    <li className="breadcrumb-item"><Link to="/kategori">Kategori</Link></li>
-                    <li className="breadcrumb-item active" aria-current="page">Silabus</li>
+                    <li className="breadcrumb-item"><Link to="/kategori">Fitur</Link></li>
+                    <li className="breadcrumb-item active" aria-current="page">Rencana Studi</li>
                   </ol>
                 </nav>
               </div>
@@ -156,7 +156,7 @@ const Main = () => {
           <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative" onSubmit={doFilter}>
             <div className="row g-3">
               <div className="col-xl-11">
-                <input className="form-control me-1" type="search" placeholder="Masukkan Jurusan yang ingin dicari ..." onChange={(e) => setSearchTerm(e.target.value)} />
+                <input className="form-control me-1" type="search" placeholder="Masukkan Rencana Studi yang ingin dicari ..." onChange={(e) => setSearchTerm(e.target.value)} />
               </div>
               <div className="col-xl-1">
                 <button type="submit" className="btn btn-primary mb-0 rounded z-index-1 w-100">
@@ -177,14 +177,14 @@ const Main = () => {
                       {currentUserMajors.length >= 0 && currentUserMajors.length !== 2 && <>
                         <div className="col-12 ">
                           <div className="alert alert-info" role="alert">
-                            Kamu dapat mengambil Jurusan dan Mata Kuliah (KRS) dengan memilih jurusan di bawah ini.
+                            Kamu dapat mengambil Rencana Studi dan Mata Kuliah (KRS) dengan memilih Rencana Studi di bawah ini.
                           </div>
                         </div>
                       </>}
                     </> : <>
                       <div className="col-12">
                         <div className="alert alert-danger" role="alert">
-                          Kamu tidak dapat mengambil Jurusan dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
+                          Kamu tidak dapat mengambil Rencana Studi dan Mata Kuliah (KRS) apabila kamu belum melakukan administrasi.
                           Klik <Link to="/administrasi">di sini</Link> untuk melakukan administrasi.
                         </div>
                       </div>

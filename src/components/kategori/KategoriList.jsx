@@ -7,7 +7,7 @@ const KategoriList = ({ categoryList }) => {
             <div className="container">
                 <div className="row mb-4">
                     <div className="col-lg-8 mx-auto text-center">
-                        <h2>Beberapa Kategori di Kampus Gratis</h2>
+                        <h2>Fitur di Kampus Gratis</h2>
                         <p className="mb-0">Sudah siap belajar di Kampus Gratis?</p>
                     </div>
                 </div>
