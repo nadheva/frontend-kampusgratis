@@ -85,7 +85,7 @@ const ArtikelSection = () => {
                         </div>
                     ) : Object.values(results).length !== 0 ? (
                         results.slice(0, 3).map((artikel, index) => (
-                            <div key={index} className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3">
+                            <div key={index} className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3" data-aos="zoom-in-down">
                                 <div className="position-relative">
                                     <img
                                         src={artikel?.image_link}

@@ -44,7 +44,37 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-lg-5">
+          <div className="col-lg-2">
+            <h5 className="mb-2 mb-md-4">Fitur</h5>
+            <ul className="nav flex-column">
+              <li className="nav-item">
+                <Link className="nav-link" to="/administrasi">
+                  Administrasi
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/silabus">
+                  Rencana Studi
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/studi-ku">
+                  Studiku
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/artikel">
+                  Sekilas Ilmu
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-lg-2">
+            <h5 className="mb-2 mb-md-4">Kontak</h5>
+            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span></p>
+            <p className="mb-0">Email :<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
+          </div>
+          <div className="col-lg-4">
             <div className="row g-2">
               <div className="col-12 col-md-12">
                 <h5 className="mb-2 mb-md-4">Alamat</h5>
@@ -70,11 +100,6 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="col-lg-3">
-            <h5 className="mb-2 mb-md-4">Kontak</h5>
-            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span></p>
-            <p className="mb-0">Email :<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
           </div>
         </div>
         <hr className="mt-4 mb-0" />

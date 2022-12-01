@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const ActionBoxSection = () => {
     return (
-        <section className="py-0 pt-lg-5">
+        <section className="py-0 pt-lg-5" data-aos="fade-right">
             <div className="container">
                 <div className="row">
                     <div className="col-12 position-relative z-index-1">

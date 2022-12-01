@@ -55,7 +55,7 @@ const JurusanSection = () => {
                 <div className="row g-4">
                     {
                         data.map((data, index) => (
-                            <div className="col-md-6 col-xl-4" key={index}>
+                            <div className="col-md-6 col-xl-4" key={index} data-aos="fade-up" data-aos-duration="3000">
                                 <div className="card shadow-hover overflow-hidden bg-transparent">
                                     <div className="position-relative">
                                         <img

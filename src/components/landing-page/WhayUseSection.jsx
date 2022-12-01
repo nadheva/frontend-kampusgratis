@@ -37,7 +37,7 @@ const WhayUseSection = () => {
     <section>
       <div className="container">
         <div className="row g-4 align-items-center">
-          <div className="col-lg-5">
+          <div className="col-lg-5" data-aos="fade-up-right">
             <h2>
               Mengapa <span className="text-warning"> Harus </span> Memilih Kampus Gratis
               <span className="position-relative z-index-1">
@@ -59,7 +59,7 @@ const WhayUseSection = () => {
             <div className="row g-4">
               {
                 data.map((x) => (
-                  <div className="col-sm-6" key={x.id}>
+                  <div className="col-sm-6" key={x.id} data-aos="zoom-in" >
                     <div className={`icon-lg bg-opacity-10 rounded-2 ${x.color}`}>
                       <i className={x.icon} />
                     </div>

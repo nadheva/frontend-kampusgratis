@@ -80,6 +80,7 @@ import Signin from "./pages/auth/Signin";
 import Signup from "./pages/auth/Signup";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import Panduan from "./pages/panduan/Panduan";
+import VidioPanduan from "./pages/panduan/VidioPanduan";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -232,6 +233,7 @@ function App() {
 
 						{/* START : */}
 						<Route path="/panduan" element={<Panduan />} />
+						<Route path="/vidio-panduan" element={<VidioPanduan />} />
 						{/* END : */}
 
 						{/* START : KALENDER */}
