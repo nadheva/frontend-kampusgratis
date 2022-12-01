@@ -12,6 +12,7 @@ import { getMyAdministration } from '../features/administration/administrationSl
 import Header from '../components/default/Header';
 import Footer from '../components/default/Footer';
 import Form from '../components/Administration/Form';
+import { Link } from 'react-router-dom';
 
 const Administration = () => {
 	const dispatch = useDispatch();
@@ -42,6 +43,9 @@ const Administration = () => {
 												? <span className='badge bg-success bg-opacity-10 ms-3 text-dark py-2'>accepted</span>
 												: <span className="badge bg-primary bg-opacity-10 ms-3 text-primary py-2">waiting</span>}
 										</div>
+										{data?.is_approved?.overall === true
+											? <p>Administrasi Diterima, <Link to="/silabus"> Klik</Link> di sini untuk mengambil Rencana Studi.</p>
+											: <p className="text-danger">Administrasi harus di isi untuk bisa mengambil Rencana Studi!</p>}
 									</div>
 								</div>
 								<div className="card-body mt-2">

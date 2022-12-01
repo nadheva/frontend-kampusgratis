@@ -81,11 +81,16 @@ const Signin = () => {
         dispatch(loginWithGoogle());
     }
 
+    console.log(user?.role)
     return (
         <>
             {
                 user ? (
-                    <Navigate to="/" />
+                    user?.role !== "student" ? (
+                        <Navigate to="/administrasi" />
+                    ) : (
+                        <Navigate to="/" />
+                    )
                 ) : (
                     <main>
                         <section className="vh-xxl-100">

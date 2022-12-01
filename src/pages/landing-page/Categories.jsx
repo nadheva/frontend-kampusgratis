@@ -19,7 +19,7 @@ const Categories = () => {
 		},
 		{
 			id: "1",
-			name: "Silabus",
+			name: "Rencana Studi",
 			url: "/silabus",
 			src: "/assets/images/element/online.svg",
 			background: "bg-orange",
@@ -70,7 +70,7 @@ const Categories = () => {
 			name: "Penugasan",
 			url: "/penugasan",
 			src: "/assets/images/element/home.svg",
-			background: "bg-dark",
+			background: "bg-danger",
 			disabled: false
 		},
 		{
@@ -99,19 +99,19 @@ const Categories = () => {
 		},
 		{
 			id: "12",
+			name: "Panduan",
+			url: "/panduan",
+			src: "/assets/images/element/help.svg",
+			background: "bg-warning",
+			disabled: false
+		},
+		{
+			id: "13",
 			name: "Diskusi Perkuliahan",
 			url: "#",
 			src: "/assets/images/element/25.svg",
 			background: "bg-primary",
 			disabled: true
-		},
-		{
-			id: "13",
-			name: "Panduan",
-			url: "#",
-			src: "/assets/images/element/help.svg",
-			background: "bg-warning",
-			disabled: false
 		},
 		{
 			id: "14",
