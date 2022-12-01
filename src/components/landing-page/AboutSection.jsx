@@ -5,7 +5,7 @@ const AboutSection = () => {
         <section className="pt-0 pt-md-5">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-lg-5 col-xxl-6 position-relative">
+                    <div className="col-lg-5 col-xxl-6 position-relative" data-aos="fade-right">
                         <figure className="position-absolute bottom-0 end-0 me-6 d-none d-xl-block">
                             <svg
                                 className="fill-primary opacity-4"
@@ -65,7 +65,7 @@ const AboutSection = () => {
                         </ul>
                     </div>
 
-                    <div className="col-lg-7 col-xxl-6 my-5 mt-lg-0">
+                    <div className="col-lg-7 col-xxl-6 my-5 mt-lg-0" data-aos="fade-left">
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="bg-danger bg-opacity-10 p-4 p-xl-5 text-center rounded-3 mb-4">

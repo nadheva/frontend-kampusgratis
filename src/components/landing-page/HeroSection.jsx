@@ -189,7 +189,9 @@ const HeroSection = () => {
             </figure>
             <div className="container">
                 <div className="row align-items-center g-5">
-                    <div className="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
+                    <div
+                        className="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0"
+                        data-aos="fade-right">
                         <figure className="fill-warning position-absolute bottom-0 end-0 me-5 d-none d-xl-block">
                             <svg width="42px" height="42px">
                                 <path d="M21.000,-0.001 L28.424,13.575 L41.999,20.999 L28.424,28.424 L21.000,41.998 L13.575,28.424 L-0.000,20.999 L13.575,13.575 L21.000,-0.001 Z" />
@@ -256,7 +258,8 @@ const HeroSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-7 col-xl-6 text-center position-relative">
+                    <div className="col-lg-7 col-xl-6 text-center position-relative"
+                        data-aos="zoom-in-up">
                         <figure className="position-absolute bottom-0 start-50 translate-middle-x mt-4 mb-0">
                             <svg
                                 width="550px"

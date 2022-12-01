@@ -57,7 +57,7 @@ const MentorSection = () => {
                 <div className="row g-4">
                     {
                         data.map((x) => (
-                            <div className="col-sm-6 col-lg-4 col-xl-3" key={x.id}>
+                            <div className="col-sm-6 col-lg-4 col-xl-3" key={x.id} data-aos="zoom-in">
                                 <div className="card p-2 shadow  h-100">
                                     <div className="card-image-scale rounded-3 position-relative">
                                         <img

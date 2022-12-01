@@ -15,6 +15,10 @@ import Testimonial from "../../components/landing-page/Testimonial";
 import ClientSTART from "../../components/landing-page/ClientSTART";
 import WhayUseSection from "../../components/landing-page/WhayUseSection";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Main = () => {
 
 	useEffect(() => {
