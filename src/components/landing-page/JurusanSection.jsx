@@ -6,14 +6,14 @@ const JurusanSection = () => {
         {
             id: "1",
             img: "/assets/images/courses/4by3/16.jpg",
-            title: "Pembiayaan dan Management Ekonomi Digital",
+            title: "Pembiayaan dan Optimalisasi Bisnis",
             status: "Gratis",
-            totalMahasiswa: "500",
+            totalMahasiswa: "300",
         },
         {
             id: "2",
             img: "/assets/images/courses/4by3/14.jpg",
-            title: "Design Digital",
+            title: "Desain Digital",
             status: "Gratis",
             totalMahasiswa: "200",
         },
@@ -22,7 +22,7 @@ const JurusanSection = () => {
             img: "/assets/images/courses/4by3/15.jpg",
             title: "Teknologi Ekonomi Digital",
             status: "Gratis",
-            totalMahasiswa: "1000",
+            totalMahasiswa: "100",
         }
     ];
 
@@ -33,7 +33,7 @@ const JurusanSection = () => {
                 <div className="row mb-4">
                     <div className="col-12" data-aos="fade-right">
                         <h2 className="fs-1 fw-bold">
-                            <span className="position-relative z-index-9">Rencana Studi</span>
+                            <span className="position-relative z-index-9">Rencana Studi </span>
                             <span className="position-relative z-index-1">
                                 Kami
                                 <span className="position-absolute top-50 start-50 translate-middle z-index-n1">
@@ -47,7 +47,7 @@ const JurusanSection = () => {
                             </span>
                         </h2>
                         <p className="mb-0">
-                            Temukan Program Studi yang terbaik untuk profesi Anda
+                            Temukan Rencana Studi yang terbaik untuk profesi Anda
                         </p>
                     </div>
                 </div>

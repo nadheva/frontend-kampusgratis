@@ -342,8 +342,10 @@ const HeroSection = () => {
                                         "url(assets/images/pattern/01.png) no-repeat center center",
                                     backgroundSize: "cover"
                                 }}
+                                data-aos="fade-left"
+                                data-aos-duration="3000"
                             >
-                                <p className="text-white" data-aos="fade-left" data-aos-duration="3000">Siswa baru kami setiap hari</p>
+                                <p className="text-white">Siswa baru kami setiap hari</p>
                                 <ul className="avatar-group mb-0">
                                     <li className="avatar avatar-sm">
                                         <img
