@@ -8,15 +8,15 @@ const ActionBoxSection = () => {
                 <div className="row">
                     <div className="col-12 position-relative z-index-1">
                         <div className="d-none d-lg-block position-absolute bottom-0 start-0 ms-3 ms-xl-5">
-                            <img src="assets/images/element/01.png" alt="" />
+                            <img src="assets/images/element/01.png" alt="" className='animate-move-x' />
                         </div>
-                        <div className="position-absolute top-0 end-0 mt-n4 me-5">
-                            <img src="assets/images/client/pencil.svg" alt="" />
+                        <div className="position-absolute top-0 end-0 mt-n4 me-5 ">
+                            <img src="assets/images/client/pencil.svg" alt="" className='animate-move-y' />
                         </div>
-                        <div className="position-absolute bottom-0 start-50 mb-n4">
+                        <div className="position-absolute bottom-0 start-50 mb-n4 animate-move-x">
                             <img
                                 src="assets/images/client/graduated.svg"
-                                className="rotate-74"
+                                className="rotate-74 "
                                 alt=""
                             />
                         </div>

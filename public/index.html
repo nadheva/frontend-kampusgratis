@@ -35,10 +35,11 @@
 	<link id="style-switch" rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css-custom/style-kg-1.css" /> -->
 
 	<style>
-		.animate-move-up {
+		.animate-move-y {
 			-webkit-animation: mover 2s infinite alternate;
 			animation: mover 2s infinite alternate;
 		}
+
 		@-webkit-keyframes mover {
 			0% {
 				transform: translateY(0);
@@ -59,7 +60,28 @@
 			}
 		}
 
+		.animate-move-x {
+			-webkit-animation: mymove 2s infinite alternate;
+			animation: mymove 2s infinite alternate;
+		}
 
+		@keyframes mymove {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-20px);
+			}
+		}
+
+		@-webkit-keyframes mymove {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-20px);
+			}
+		}
 	</style>
 </head>
 
