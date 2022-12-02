@@ -33,6 +33,34 @@
 	<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css-custom/studiku.css" />
 	<!-- <link id="style-switch" rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css-custom/style.css" />
 	<link id="style-switch" rel="stylesheet" type="text/css" href="%PUBLIC_URL%/assets/css-custom/style-kg-1.css" /> -->
+
+	<style>
+		.animate-move-up {
+			-webkit-animation: mover 2s infinite alternate;
+			animation: mover 2s infinite alternate;
+		}
+		@-webkit-keyframes mover {
+			0% {
+				transform: translateY(0);
+			}
+
+			100% {
+				transform: translateY(-20px);
+			}
+		}
+
+		@keyframes mover {
+			0% {
+				transform: translateY(0);
+			}
+
+			100% {
+				transform: translateY(-20px);
+			}
+		}
+
+
+	</style>
 </head>
 
 <body>

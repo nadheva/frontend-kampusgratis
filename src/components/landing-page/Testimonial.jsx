@@ -86,7 +86,7 @@ const Testimonial = () => {
             <div className="container">
                 <div className="p-4 rounded-3 ">
                     <div className="row mb-4">
-                        <div className="col-12 text-center">
+                        <div className="col-12 text-center" data-aos="fade-right">
                             <h2 className="fs-1 fw-bold">
                                 <span className="position-relative z-index-9">
                                     Tanggapan Mereka

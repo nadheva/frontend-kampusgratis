@@ -258,7 +258,7 @@ const HeroSection = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-7 col-xl-6 text-center position-relative"
+                    <div className="col-lg-7 col-xl-6 text-center position-relative animate-move-up"
                         data-aos="zoom-in-up">
                         <figure className="position-absolute bottom-0 start-50 translate-middle-x mt-4 mb-0">
                             <svg
@@ -321,7 +321,9 @@ const HeroSection = () => {
                                             <i className="fas fa-check-circle text-success" />
                                         </span>
                                     </h6>
-                                    <p className="mb-0 small text-white">Penerimaan Anda selesai</p>
+                                    <p className="mb-0 small text-white">
+                                        Penerimaan Anda selesai
+                                    </p>
                                 </div>
                             </div>
                         </div>
