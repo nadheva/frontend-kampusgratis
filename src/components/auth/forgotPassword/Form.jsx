@@ -30,14 +30,6 @@ const Form = ({ onFormSubmit, setEmail, email, isLoading }) => {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <div className="mb-3 text-center">
-                        <label
-                            className="form-check-label"
-                            htmlFor="rememberCheck">
-                            Kembali ke
-                        </label>
-                        <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link>
-                    </div>
                     <div>
                         {isLoading ? (
                             <button
@@ -57,6 +49,17 @@ const Form = ({ onFormSubmit, setEmail, email, isLoading }) => {
                                 Reset Password
                             </button>
                         )}
+                    </div>
+                    <div class="position-relative my-4"><hr />
+                        <p class="small position-absolute top-50 start-50 translate-middle bg-body px-5">Atau</p>
+                    </div>
+                    <div className="mb-3 text-center">
+                        <label
+                            className="form-check-label"
+                            htmlFor="rememberCheck">
+                            Kembali ke
+                        </label>
+                        <Link to="/login" style={{ color: "#5143d9" }}> Login</Link>
                     </div>
                 </form>
             </div>
