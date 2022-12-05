@@ -18,7 +18,6 @@ const Form = ({ onFormSubmit, setEmail, email, isLoading }) => {
                 <p className="mb-0">
                     Masukkan alamat email yang terkait dengan akun.
                 </p>
-
                 <form onSubmit={onFormSubmit} className="mt-4 text-start">
                     <div className="mb-3">
                         <label className="form-label">Email</label>
