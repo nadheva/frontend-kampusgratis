@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/default/Footer'
 import Header from '../../components/default/Header'
 
@@ -14,6 +15,7 @@ const VidioPanduan = () => {
                         <div className="row position-relative">
                             <div className="col-lg-10 mx-auto text-center position-relative">
                                 <h1>Video Panduan</h1>
+                                <p>Berupa video tutorial penggunaan dan fungsi fitur yang ada di Web KG</p>
                             </div>
                             <div className="row position-relative">
                                 <div className="col-lg-10 mx-auto text-center position-relative">
@@ -41,6 +43,7 @@ const VidioPanduan = () => {
                     <div className="container">
                         <div className="row g-4">
                             {/* Card item START */}
+
                             <div className="col-sm-6 col-lg-4 col-xl-3">
                                 <div className="card bg-transparent">
                                     <div className="overflow-hidden rounded-3">
@@ -60,7 +63,7 @@ const VidioPanduan = () => {
                                     <div className="card-body">
                                         {/* Title */}
                                         <h5 className="card-title">
-                                            <a href="#">Student Loan Survey: Many Owe $50K-plus</a>
+                                            <Link to="/vidio-detail">Student Loan Survey: Many Owe $50K-plus</Link>
                                         </h5>
                                         <p className="text-truncate-2">
                                             Affronting imprudence do he he everything. Offered chiefly farther
@@ -98,7 +101,7 @@ const VidioPanduan = () => {
                                     <div className="card-body">
                                         {/* Title */}
                                         <h5 className="card-title">
-                                            <a href="#">How to make a college list</a>
+                                            <Link to="/vidio-detail">How to make a college list</Link>
                                         </h5>
                                         <p className="text-truncate-2">
                                             Prospective students should start broadly and then narrow their
@@ -135,7 +138,7 @@ const VidioPanduan = () => {
                                     <div className="card-body">
                                         {/* Title */}
                                         <h5 className="card-title">
-                                            <a href="#">Never underestimate the influence of Eduport</a>
+                                            <Link to="/vidio-detail">Never underestimate the influence of Eduport</Link>
                                         </h5>
                                         <p className="text-truncate-2">
                                             Prospective students should start broadly and then narrow their
@@ -171,7 +174,7 @@ const VidioPanduan = () => {
                                     <div className="card-body">
                                         {/* Title */}
                                         <h5 className="card-title">
-                                            <a href="#">Covid-19 and the college experienced</a>
+                                            <Link to="/vidio-detail">Covid-19 and the college experienced</Link>
                                         </h5>
                                         <p className="text-truncate-2">
                                             Rooms oh fully taken by worse do. Points afraid but may end law.

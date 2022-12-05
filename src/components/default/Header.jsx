@@ -65,10 +65,13 @@ const Header = () => {
             <div className="navbar-collapse collapse" id="navbarCollapse">
               <ul className="navbar-nav navbar-nav-scroll mx-auto">
                 <li className="nav-item">
-                  <NavLink className="nav-link ms-lg-4" to="/" style={{ fontSize: "17px" }}>Beranda</NavLink>
+                  <NavLink className="nav-link" to="/" style={{ fontSize: "17px" }}>Beranda</NavLink>
                 </li>
-                <li className="nav-item me-lg-5 me-md-3 ">
+                <li className="nav-item">
                   <NavLink className="nav-link " to="/kategori" style={{ fontSize: "17px" }}>Fitur</NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " to="/panduan" style={{ fontSize: "17px" }}>Panduan</NavLink>
                 </li>
               </ul>
             </div>

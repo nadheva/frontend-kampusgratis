@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -25,19 +26,28 @@ const Main = () => {
 		document.title = "Kampus Gratis";
 	});
 
+	const { user } = useSelector(
+		(state) => state.profile
+	);
+
 	return (
 		<>
 			<Header />
 			<main>
 				<HeroSection />
+				<ClientSTART />
 				<AboutSection />
 				<WhayUseSection />
 				<JurusanSection />
-				<MentorSection />
+				{
+					user?.role !== "student" ? (<></>) :
+						(
+							<MentorSection />
+						)
+				}
 				<Testimonial />
 				<ArtikelSection />
 				<ActionBoxSection />
-				<ClientSTART />
 			</main>
 			<Footer />
 		</>

@@ -63,6 +63,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/panduan">
+                  Panduan
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/artikel">
                   Sekilas Ilmu
                 </Link>

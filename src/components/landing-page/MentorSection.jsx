@@ -33,7 +33,7 @@ const MentorSection = () => {
         <section className="py-5">
             <div className="container">
                 <div className="row mb-4">
-                    <div className="col-12">
+                    <div className="col-12" data-aos="fade-right">
                         <h2 className="fs-1 fw-bold">
                             <span className="position-relative z-index-9"></span>
                             <span className="position-relative z-index-1">
