@@ -51,20 +51,19 @@ const Categories = () => {
 			disabled: true,
 		},
 		{
-			name: "Ruang Simulasi",
-			url: "#",
-			src: "/assets/images/element/account.svg",
-			background: "bg-info",
-			disabled: true,
-		},
-		{
 			name: "Konsultasi & Layanan",
 			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
 			background: "bg-success",
 			disabled: false,
 		},
-
+		{
+			name: "Ruang Simulasi",
+			url: "#",
+			src: "/assets/images/element/account.svg",
+			background: "bg-info",
+			disabled: true,
+		},
 		{
 			name: "Kalender Saya",
 			url: "/kalender",
@@ -73,18 +72,18 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Analitik",
-			url: "/analitik",
-			src: "/assets/images/element/exam.svg",
-			background: "bg-danger",
-			disabled: false,
-		},
-		{
 			name: "Papan Skor",
 			url: "#",
 			src: "/assets/images/element/music.svg",
 			background: "bg-primary",
 			disabled: true,
+		},
+		{
+			name: "Analitik",
+			url: "/analitik",
+			src: "/assets/images/element/exam.svg",
+			background: "bg-danger",
+			disabled: false,
 		},
 		{
 			name: "Panduan",
@@ -101,6 +100,13 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
+			name: "Acara Kampus",
+			url: "/acara-kampus",
+			src: "/assets/images/element/photography.svg",
+			background: "bg-warning",
+			disabled: false,
+		},
+		{
 			name: "Perencanaan Karir",
 			url: "#",
 			src: "/assets/images/element/engineering.svg",
@@ -112,13 +118,6 @@ const Categories = () => {
 			url: "/penyaluran-kerja",
 			src: "/assets/images/element/coding.svg",
 			background: "bg-purple",
-			disabled: false,
-		},
-		{
-			name: "Acara Kampus",
-			url: "/acara-kampus",
-			src: "/assets/images/element/photography.svg",
-			background: "bg-warning",
 			disabled: false,
 		},
 	];
