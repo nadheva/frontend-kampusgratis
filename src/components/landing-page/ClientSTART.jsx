@@ -73,7 +73,7 @@ const ClientSTART = () => {
         },
         {
             id: 1,
-            img: "assets/images/logo-kampus/AMIKOM_LOGO.svg.png"
+            img: "assets/images/logo-kampus/amikom.png"
         },
     ]
 

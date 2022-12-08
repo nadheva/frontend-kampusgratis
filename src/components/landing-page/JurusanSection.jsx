@@ -67,7 +67,7 @@ const JurusanSection = () => {
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">
-                                            <a href=" ">
+                                            <a href="javascript:void(0);">
                                                 {data.title}
                                             </a>
                                         </h5>

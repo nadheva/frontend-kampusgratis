@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const AboutSection = () => {
     return (
@@ -45,22 +46,30 @@ const AboutSection = () => {
                         <p className="mt-3 mb-0 ">
                             Dan berikut adalah beberapa program kami :
                         </p>
-                        <ul className="list-group list-group-borderless mt-4">
+                        <ul className="list-group list-group-borderless mt-3">
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <i className="bi bi-patch-check-fill text-success me-2" />
-                                Pendidikan S1
+                                <Link to="" >
+                                    <i className="bi bi-patch-check-fill text-success me-2" />
+                                    Pendidikan S1
+                                </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <i className="bi bi-patch-check-fill text-success me-2" />
-                                Pelatihan
+                                <Link to="" >
+                                    <i className="bi bi-patch-check-fill text-success me-2" />
+                                    Pelatihan
+                                </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <i className="bi bi-patch-check-fill text-success me-2" />
-                                Projek
+                                <Link to="" >
+                                    <i className="bi bi-patch-check-fill text-success me-2" />
+                                    Projek
+                                </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <i className="bi bi-patch-check-fill text-success me-2" />
-                                Magang
+                                <Link to="" >
+                                    <i className="bi bi-patch-check-fill text-success me-2" />
+                                    Magang
+                                </Link>
                             </li>
                         </ul>
                     </div>

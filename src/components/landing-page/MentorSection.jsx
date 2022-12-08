@@ -68,7 +68,7 @@ const MentorSection = () => {
                                     </div>
                                     <div className="card-body px-2 text-center">
                                         <h5 className="card-title">
-                                            <a href="" className="stretched-link">
+                                            <a href="javascript:void(0);" className="stretched-link">
                                                 {x.title}
                                             </a>
                                         </h5>
