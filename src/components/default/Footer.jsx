@@ -33,7 +33,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="list-inline-item">
-                <a href="https://vt.tiktok.com/ZSeteH6CK/" target="_blank" className="btn btn-white btn-sm shadow px-2 text-twitter" >
+                <a href="https://www.tiktok.com/@kampusgratis_" target="_blank" className="btn btn-white btn-sm shadow px-2 text-twitter" >
                   <i className="fab fa-fw fa-tiktok"></i>
                 </a>
               </li>
@@ -92,13 +92,13 @@ const Footer = () => {
                   </li>
                   <li className="nav-item">
                     <p >
-                      Kantor :
-                      <span className="h6 fw-light ms-2">Jl. Raya Cirendeu No.60 Cirendeu Kec. Ciputat Timur, Kota Tangerang </span>
+                      Cabang :
+                      <span className="h6 fw-light ms-2">Jl. Raya Cirendeu No.59, Cireundeu, Kec. Ciputat Timur., Kota Tangerang Selatan, Banten 15419</span>
                     </p>
                   </li>
                   <li className="nav-item">
                     <p >
-                      Kantor :
+                      Cabang :
                       <span className="h6 fw-light ms-2">Jl. Raya Darmo Permai III Surabaya. 60119 </span>
                     </p>
                   </li>
