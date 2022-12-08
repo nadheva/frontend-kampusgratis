@@ -5,7 +5,7 @@ const AboutSection = () => {
         <section className="pt-0 pt-md-5">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-lg-5 col-xxl-6 position-relative" data-aos="fade-right">
+                    <div className="col-lg-4 col-xxl-6 position-relative" data-aos="fade-right">
                         <figure className="position-absolute bottom-0 end-0 me-6 d-none d-xl-block">
                             <svg
                                 className="fill-primary opacity-4"
@@ -48,24 +48,24 @@ const AboutSection = () => {
                         <ul className="list-group list-group-borderless mt-4">
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
                                 <i className="bi bi-patch-check-fill text-success me-2" />
-                                Pendidikan D1 dan S1
+                                Pendidikan S1
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
                                 <i className="bi bi-patch-check-fill text-success me-2" />
-                                ODP ( Hybrid Crash Program )
+                                Pelatihan
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
                                 <i className="bi bi-patch-check-fill text-success me-2" />
-                                Bootcamp & Course
+                                Projek
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
                                 <i className="bi bi-patch-check-fill text-success me-2" />
-                                Project
+                                Magang
                             </li>
                         </ul>
                     </div>
 
-                    <div className="col-lg-7 col-xxl-6 my-5 mt-lg-0" data-aos="fade-left">
+                    <div className="col-lg-8 col-xxl-6 my-5 mt-lg-0" data-aos="fade-left">
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="bg-danger bg-opacity-10 p-4 p-xl-5 text-center rounded-3 mb-4">
@@ -73,8 +73,8 @@ const AboutSection = () => {
                                     <span className="h2 text-danger mb-2">2022</span>
                                 </div>
                                 <div className="bg-light p-4 p-xl-5 text-center rounded-3">
-                                    <span className="h2 text-primary mb-2">10+</span>
-                                    <h6>Pengajar Profesional</h6>
+                                    <span className="h2 text-primary mb-2">3</span>
+                                    <h6>Rencana Studi</h6>
                                 </div>
                             </div>
                             <div className="col-md-8 position-relative mt-5 mt-md-0">
@@ -111,13 +111,13 @@ const AboutSection = () => {
                                     </svg>
                                 </figure>
                                 <img
-                                    src="assets/images/about/25.jpg"
-                                    className="rounded-3"
+                                    src="assets/images/asset-kg/KGB00550.jpg"
+                                    className="rounded-3 aboutsec-img"
                                     alt="xx"
                                 />
                                 <div className="col-10 position-absolute top-100 start-0 translate-middle mt-n6 ms-n3 d-none d-md-block">
                                     <img
-                                        src="assets/images/about/26.jpg"
+                                        src="assets/images/asset-kg/KGB00498-about.JPG"
                                         className="rounded-3"
                                         alt="xx"
                                     />

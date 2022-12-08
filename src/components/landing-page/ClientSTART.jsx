@@ -47,32 +47,33 @@ const ClientSTART = () => {
 
     const data = [
         {
-            id: 1,
-            img: "assets/images/client/coca-cola.svg"
-        },
-        {
-            id: 2,
-            img: "assets/images/client/android.svg"
-        },
-        {
-            id: 3,
-            img: "assets/images/client/envato.svg"
+            id: 7,
+            img: "assets/images/logo-kampus/upi.png"
         },
         {
             id: 4,
-            img: "assets/images/client/microsoft.svg"
+            img: "assets/images/logo-kampus/Politeknik-Enjinering-Indorama.jpg"
+        },
+        {
+            id: 3,
+            img: "assets/images/logo-kampus/mercubuana.png"
+        },
+
+        {
+            id: 2,
+            img: "assets/images/logo-kampus/logo-ugm-png.png"
         },
         {
             id: 5,
-            img: "assets/images/client/netflix.svg"
+            img: "assets/images/logo-kampus/Universitas-Indonesia-Logo.png"
         },
         {
             id: 6,
-            img: "assets/images/client/google.svg"
+            img: "assets/images/logo-kampus/unsika.png"
         },
         {
-            id: 7,
-            img: "assets/images/client/linkedin.svg"
+            id: 1,
+            img: "assets/images/logo-kampus/AMIKOM_LOGO.svg.png"
         },
     ]
 

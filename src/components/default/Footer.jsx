@@ -48,12 +48,12 @@ const Footer = () => {
             <h5 className="mb-2 mb-md-4">Fitur</h5>
             <ul className="nav flex-column">
               <li className="nav-item">
-                <Link className="nav-link" to="/administrasi">
+                <Link className="nav-link" to="/administrasi" >
                   Administrasi
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/silabus">
+                <Link className="nav-link" to="/silabus" >
                   Rencana Studi
                 </Link>
               </li>
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
           <div className="col-lg-2">
             <h5 className="mb-2 mb-md-4">Kontak</h5>
-            <p className="mb-2">Utama :<span className="h6 fw-light ms-2">0812-1046 8281</span></p>
+            <p className="mb-2">Telp :<span className="h6 fw-light ms-2">0217209729</span></p>
             <p className="mb-0">Email :<span className="h6 fw-light ms-2">learning@m-knowsconsulting.com</span></p>
           </div>
           <div className="col-lg-4">
