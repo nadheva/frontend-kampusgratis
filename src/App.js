@@ -84,6 +84,10 @@ import VidioPanduan from "./pages/panduan/VidioPanduan";
 import VidioDetail from "./pages/panduan/VidioDetail";
 import KamusKG from "./pages/panduan/KamusKG";
 import KamusKgDetail from "./pages/panduan/KamusKgDetail";
+import PendidikanS1 from "./pages/landing-page/programkami/PendidikanS1";
+import Pelatihan from "./pages/landing-page/programkami/Pelatihan";
+import Magang from "./pages/landing-page/programkami/Magang";
+import Projek from "./pages/landing-page/programkami/Projek";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -95,6 +99,10 @@ function App() {
 				<ScrollToTop>
 					<Routes>
 						<Route path="/" exact element={<Main />} />
+						<Route path="/pendidikanS1" exact element={<PendidikanS1 />} />
+						<Route path="/pelatihan" exact element={<Pelatihan />} />
+						<Route path="/magang" exact element={<Magang />} />
+						<Route path="/projek" exact element={<Projek/>} />
 
 						<Route path="kategori" exact element={<Categories />} />
 

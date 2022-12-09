@@ -48,25 +48,25 @@ const AboutSection = () => {
                         </p>
                         <ul className="list-group list-group-borderless mt-3">
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <Link to="" >
+                                <Link to="/pendidikans1" >
                                     <i className="bi bi-patch-check-fill text-success me-2" />
                                     Pendidikan S1
                                 </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <Link to="" >
+                                <Link to="/pelatihan" >
                                     <i className="bi bi-patch-check-fill text-success me-2" />
                                     Pelatihan
                                 </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <Link to="" >
+                                <Link to="/projek" >
                                     <i className="bi bi-patch-check-fill text-success me-2" />
                                     Projek
                                 </Link>
                             </li>
                             <li className="list-group-item h6 d-flex fw-normal mb-0">
-                                <Link to="" >
+                                <Link to="/magang" >
                                     <i className="bi bi-patch-check-fill text-success me-2" />
                                     Magang
                                 </Link>
