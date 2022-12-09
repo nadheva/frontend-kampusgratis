@@ -8,7 +8,7 @@ const HeroSection = () => {
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const [index, setIndex] = useState(1);
     const toRotate = ["Gratis & Berkualitas", "Gratis & Berkualitas"];
-    const period = 2000;
+    const period = 500;
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -37,7 +37,7 @@ const HeroSection = () => {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
             setIndex(1);
-            setDelta(500);
+            setDelta(200);
         } else {
             setIndex(prevIndex => prevIndex + 1);
         }
@@ -387,7 +387,8 @@ const HeroSection = () => {
                         </div>
 
                         <div className="position-relative">
-                            <img src="assets/images/element/07.png" alt="" />
+                            {/* <img src="assets/images/element/07.png" alt="" /> */}
+                            <img src="./assets/images/asset-kg/romario.png" alt="" style={{ height: "600px" }} />
                         </div>
                     </div>
                 </div>

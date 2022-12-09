@@ -10,6 +10,7 @@ import assignmentReducer from '../features/assignment/assignmentSlice';
 import certificateReducer from '../features/sertifikat/certificateSlice';
 import reportReducer from '../features/report/reportSlice';
 import notificationReducer from "../features/notification/notificationSlice";
+import calenderReducer from "../features/calender/calenderSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -23,6 +24,7 @@ export const store = configureStore({
 		assignment: assignmentReducer,
 		certificate: certificateReducer,
 		report: reportReducer,
-		notification: notificationReducer
+		notification: notificationReducer,
+		calender: calenderReducer
 	},
 });

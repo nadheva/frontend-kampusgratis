@@ -4,16 +4,61 @@ import { DateTime } from "luxon";
 import Kalend, { CalendarView, OnEventDragFinish } from "kalend";
 import "kalend/dist/styles/index.css";
 
+
+import { useSelector, useDispatch } from "react-redux";
+import { getCalender } from "../../features/calender/calenderSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
+
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 
 const Calendar = (props) => {
+
+	const events = [
+		{
+			id: 1,
+			allDay: false,
+			color: "red",
+			endAt: "2022-12-09T01:00:11.383Z",
+			startAt: "2022-12-09T23:30:11.383Z",
+			summary: "Sasuke kennis",
+		},
+		{
+			id: "9ab50366-fc18-40aa-81a9-8053955ef49c",
+			allDay: false,
+			color: "dodgerblue",
+			endAt: "2022-12-07T01:00:11.383Z",
+			startAt: "2022-12-06T23:30:11.383Z",
+			summary: "Electronics"
+		},
+		{
+			id: 2,
+			allDay: true,
+			color: "blue",
+			endAt: "2022-12-18T02:44:11.087Z",
+			startAt: "2022-12-18T01:44:11.087Z",
+			summary: "Intermediate Accounting I Session no. 1, ASSIGNMENT",
+		},
+	]
+
 	const [demoEvents, setDemoEvents] = useState([]);
+
+	const dispatch = useDispatch();
+
+	const { data, isLoading } = useSelector((state) => state.calender);
+
+	useEffectOnce(() => {
+		dispatch(getCalender());
+	});
 
 	// Create and load demo events
 	useEffect(() => {
-		setDemoEvents(generateDemoEvents(DateTime.now(), 80));
-	}, []);
+		// setDemoEvents(generateDemoEvents(DateTime.now(), 80));
+		// setDemoEvents(datax)
+		if (data?.calender) setDemoEvents(JSON.parse(JSON.stringify(data?.calender)));
+	}, [data]);
+
+	console.log(demoEvents)
 
 	const onNewEventClick = (data) => {
 		const msg = `New event click action\n\n Callback data:\n\n${JSON.stringify({
@@ -32,7 +77,6 @@ const Calendar = (props) => {
 		const msg = `Click on event action\n\n Callback data:\n\n${JSON.stringify(
 			data
 		)}`;
-		// console.log(msg);
 	};
 
 	// Callback after dragging is finished
@@ -43,38 +87,44 @@ const Calendar = (props) => {
 	return (
 		<>
 			<Header />
-			<Kalend
-				kalendRef={props.kalendRef}
-				onNewEventClick={onNewEventClick}
-				initialView={CalendarView.WEEK}
-				disabledViews={[]}
-				onEventClick={onEventClick}
-				events={demoEvents}
-				initialDate={new Date().toISOString()}
-				hourHeight={60}
-				// showWeekNumbers={true}
+			{
+				isLoading ? (
+					<> ... Ngeng </>
+				) : (
+					<Kalend
+						kalendRef={props.kalendRef}
+						onNewEventClick={onNewEventClick}
+						initialView={CalendarView.WEEK}
+						disabledViews={[]}
+						onEventClick={onEventClick}
+						events={demoEvents}
+						initialDate={new Date().toISOString()}
+						hourHeight={60}
+						// showWeekNumbers={true}
 
-				// draggingDisabledConditions={{
-				//   summary: 'Computers',
-				//   allDay: false,
-				//   color: 'pink',
-				// }}
-				onEventDragFinish={onEventDragFinish}
-				onStateChange={props.onStateChange}
-				selectedView={props.selectedView}
-				showTimeLine={true}
-				isDark={false}
-				autoScroll={true}
-				// disabledDragging={true}
-				// colors={{
-				//   light: {
-				//     primaryColor: 'blue',
-				//   },
-				//   dark: {
-				//     primaryColor: 'orange',
-				//   },
-				// }}
-			/>
+						// draggingDisabledConditions={{
+						//   summary: 'Computers',
+						//   allDay: false,
+						//   color: 'pink',
+						// }}
+						onEventDragFinish={onEventDragFinish}
+						onStateChange={props.onStateChange}
+						selectedView={props.selectedView}
+						showTimeLine={true}
+						isDark={false}
+						autoScroll={true}
+					// disabledDragging={true}
+					// colors={{
+					// 	light: {
+					// 		primaryColor: 'blue',
+					// 	},
+					// 	dark: {
+					// 		primaryColor: 'orange',
+					// 	},
+					// }}
+					/>
+				)
+			}
 			<Footer />
 		</>
 	);

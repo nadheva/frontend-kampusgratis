@@ -58,7 +58,7 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Ruang Simulasi",
+			name: "Drill, simulasi & assessment ",
 			url: "#",
 			src: "/assets/images/element/account.svg",
 			background: "bg-info",

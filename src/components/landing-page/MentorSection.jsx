@@ -5,26 +5,26 @@ const MentorSection = () => {
     const data = [
         {
             id: 1,
-            name: "Kembar Cahyono",
-            title: "Build your brand &amp; business",
-            img: "/assets/images/instructor/01.jpg",
+            name: "Bunaiya",
+            title: "Bunaiya",
+            img: "/assets/images/asset-kg/KGB00660.jpg",
         },
         {
             id: 2,
             name: "Apud Salapudin",
-            title: "   Create brand using vector illustration",
-            img: "/assets/images/instructor/08.jpg",
+            title: "Alyuhannas ",
+            img: "/assets/images/asset-kg/KGB00654.jpg",
         },
         {
             id: 3,
-            name: "Master in logo design",
-            title: "Alyuhannas",
+            name: "Master in ",
+            title: "Apud Salapudin",
             img: "/assets/images/instructor/03.jpg",
         },
         {
             id: 4,
             name: "M Alam",
-            title: "   Develop your marketing skills style",
+            title: "M Alam",
             img: "/assets/images/instructor/11.jpg",
         },
     ]
@@ -62,17 +62,17 @@ const MentorSection = () => {
                                     <div className="card-image-scale rounded-3 position-relative">
                                         <img
                                             src={x.img}
-                                            className="card-img"
+                                            className="card-img mentor-img"
                                             alt=""
                                         />
                                     </div>
-                                    <div className="card-body px-2">
+                                    <div className="card-body px-2 text-center">
                                         <h5 className="card-title">
-                                            <a href="workshop-detail.html" className="stretched-link">
+                                            <a href="javascript:void(0);" className="stretched-link">
                                                 {x.title}
                                             </a>
                                         </h5>
-                                        <h6 className="mb-0 fw-normal">{x.name}</h6>
+                                        {/* <h6 className="mb-0 fw-normal">{x.name}</h6> */}
                                     </div>
                                 </div>
                             </div>

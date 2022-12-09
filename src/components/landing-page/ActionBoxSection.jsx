@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 
 const ActionBoxSection = () => {
     return (
-        <section className="py-0 pt-lg-5" data-aos="fade-right">
+        <section className="py-0 pt-lg-5 mb-5" data-aos="fade-right">
             <div className="container">
                 <div className="row">
                     <div className="col-12 position-relative z-index-1">
                         <div className="d-none d-lg-block position-absolute bottom-0 start-0 ms-3 ms-xl-5">
-                            <img src="assets/images/element/01.png" alt="" className='animate-move-x' />
+                            <img src="./assets/images/asset-kg/KGB00537.png" className='animate-move-x' style={{ height: "360px" }}/>
+                            {/* <img src="assets/images/element/01.png" alt="" className='animate-move-x'  /> */}
                         </div>
                         <div className="position-absolute top-0 end-0 mt-n4 me-5 ">
                             <img src="assets/images/client/pencil.svg" alt="" className='animate-move-y' />

@@ -53,7 +53,7 @@ const WhayUseSection = () => {
                 </span>
               </span>
             </h2>
-            <img src="assets/images/about/03.jpg" className="rounded-2" alt="about" />
+            <img src="assets/images/asset-kg/KGB00591-why.jpg" className="rounded-2" alt="about" />
           </div>
           <div className="col-lg-7 ps-4">
             <div className="row g-4">

@@ -14,27 +14,27 @@ const Panduan = () => {
         {
             id: 1,
             title: "Cara Mahasiswa Mendaftar Akun kampus Gratis",
-            link: ""
+            link: "javascript:void(0);"
         },
         {
             id: 2,
             title: "Cara login ke web Kampus Gratis",
-            link: ""
+            link: "javascript:void(0);"
         },
         {
             id: 3,
             title: "Cara mengisi Administrasi",
-            link: ""
+            link: "javascript:void(0);"
         },
         {
             id: 4,
             title: "Cara mengakses fitur Studiku",
-            link: ""
+            link: "javascript:void(0);"
         },
         {
             id: 5,
             title: "Bagaimana cara melihat Sertifikat",
-            link: ""
+            link: "javascript:void(0);"
         },
     ]
 
@@ -106,14 +106,14 @@ const Panduan = () => {
                     </div>
                 </section>
 
-                <section>
+                <section className="py-7 bg-light">
                     <div className="container">
                         <div className="row g-4">
                             {
                                 dataPanduan.map((x) => (
                                     <div className="col-md-6 col-xl-4" key={x.id}>
                                         <Link to={x.link}>
-                                            <div className="card shadow-hover bg-light h-100">
+                                            <div className="card shadow card-hover-border bg-light h-100">
                                                 <div className="card-header bg-light pb-0 border-0">
                                                     <i className={`bi fs-1 ${x.icon}`} />
                                                     <h5 className="card-title mb-0 mt-2">
@@ -134,6 +134,183 @@ const Panduan = () => {
                     </div>
                 </section>
 
+                <section className="pt-0 pt-md-5 bg-light">
+                    <div className="container">
+                        <div className="row g-4">
+                            <div className="col-lg-6 col-xl-5">
+                                <h2 className="fs-1">Pertanyaan yang Sering Diajukan</h2>
+                                <p className="mb-0">
+                                    Di samping ini pertanyaan-pertanyaan yang sering diajukan kepada kami. Harap dibaca dengan baik-baik.
+                                </p>
+                            </div>
+                            <div className="col-lg-6 ms-xl-auto">
+                                {/* Accordion START */}
+                                <div
+                                    className="accordion accordion-icon accordion-bg-light"
+                                    id="accordionFaq"
+                                >
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingOne">
+                                            <button
+                                                className="accordion-button h6 rounded"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne"
+                                                aria-expanded="true"
+                                                aria-controls="collapseOne"
+                                            >
+                                                Apa itu Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseOne"
+                                            className="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                Kampus Gratis adalah sebuah sistem manajemen e-learning yang gratis, berkualitas, bisa diakses siapapun, kapanpun, dimanapun, dan selalu update.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingTwo">
+                                            <button
+                                                className="accordion-button h6 rounded collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseTwo"
+                                                aria-expanded="false"
+                                                aria-controls="collapseTwo"
+                                            >
+                                                Berapakah biaya kuliah di Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseTwo"
+                                            className="accordion-collapse collapse"
+                                            aria-labelledby="headingTwo"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                Hampir seluruh program di kampus gratis bebas dari biaya, kecuali program yang melibatkan sertifikasi.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingThree">
+                                            <button
+                                                className="accordion-button h6 rounded collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseThree"
+                                                aria-expanded="false"
+                                                aria-controls="collapseThree"
+                                            >
+                                                Bagaimana alur pendaftaran kuliah di Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseThree"
+                                            className="accordion-collapse collapse"
+                                            aria-labelledby="headingThree"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                Sign up mobile app Kampus Gratis
+                                                Setelah berhasil, sign in mobile app Kampus Gratis
+                                                Isi data diri dan keluarga
+                                                Submit berkas-berkas administrasi
+                                                Verifikasi data-data dan berkas-berkas
+                                                Menyetujui legal statement Kampus Gratis untuk pembuatan akun mobile app Kampus Gratis
+                                                Registrasi berhasil
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingFour">
+                                            <button
+                                                className="accordion-button h6 rounded collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFour"
+                                                aria-expanded="false"
+                                                aria-controls="collapseFour"
+                                            >
+                                                Program studi apa saja yang ditawarkan oleh Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseFour"
+                                            className="accordion-collapse collapse"
+                                            aria-labelledby="headingFour"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                Program studi manajemen kredit dan pembiayaan bagi UMKM
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingFive">
+                                            <button
+                                                className="accordion-button h6 rounded collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseFive"
+                                                aria-expanded="false"
+                                                aria-controls="collapseFive"
+                                            >
+                                                Bolehkah mahasiswa yang kampusnya di bawah naungan Kementerian di luar Kemendikbud Ristek mendaftar kuliah di Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseFive"
+                                            className="accordion-collapse collapse"
+                                            aria-labelledby="headingFive"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                Boleh, selama pihak kampus asal mahasiswa mengakui kredit transfer yang didapatkan mahasiswa pada program kampus gratis, maka mahasiswa diperbolehkan mengikut program-program pada platform kampus gratis
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Accordion item */}
+                                    <div className="accordion-item">
+                                        <h2 className="accordion-header" id="headingSix">
+                                            <button
+                                                className="accordion-button h6 rounded collapsed"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseSix"
+                                                aria-expanded="false"
+                                                aria-controls="collapseSix"
+                                            >
+                                                Jika ada kampus yang belum bermitra tetapi ingin ikut program Kampus Gratis?
+                                            </button>
+                                        </h2>
+                                        <div
+                                            id="collapseSix"
+                                            className="accordion-collapse collapse"
+                                            aria-labelledby="headingSix"
+                                            data-bs-parent="#accordionFaq"
+                                        >
+                                            <div className="accordion-body">
+                                                perwakilan kampus dapat mendaftar sebagai mitra kampus gratis melalui form yang tersedia di laman “mitra” pada web dan aplikasi kampus gratis. Calon mitra juga menghubungi tim Kampus gratis melalui email  atau telepon staf admin 085855407510 untuk membuat jadwal permintaan presentasi mengenai program kampus gratis oleh tim kampus gratis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* Accordion END */}
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
 
             </main>
