@@ -8,11 +8,40 @@ import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 
 const Calendar = (props) => {
+
+	const events = [
+		{
+			id: 1,
+			allDay: false,
+			color: "red",
+			endAt: "2022-12-09T01:00:11.383Z",
+			startAt: "2022-12-09T23:30:11.383Z",
+			summary: "Sasuke kennis"
+		},
+		{
+			id: "9ab50366-fc18-40aa-81a9-8053955ef49c",
+			allDay: false,
+			color: "dodgerblue",
+			endAt: "2022-12-07T01:00:11.383Z",
+			startAt: "2022-12-06T23:30:11.383Z",
+			summary: "Electronics"
+		},
+		{
+			id: 2,
+			allDay: false,
+			color: "blue",
+			endAt: "2022-12-18T02:44:11.087Z",
+			startAt: "2022-12-18T01:44:11.087Z",
+			summary: "Intermediate Accounting I Session no. 1, ASSIGNMENT",
+		},
+	]
+
 	const [demoEvents, setDemoEvents] = useState([]);
 
 	// Create and load demo events
 	useEffect(() => {
-		setDemoEvents(generateDemoEvents(DateTime.now(), 80));
+		// setDemoEvents(generateDemoEvents(DateTime.now(), 80));
+		setDemoEvents(events)
 	}, []);
 
 	const onNewEventClick = (data) => {
@@ -32,7 +61,6 @@ const Calendar = (props) => {
 		const msg = `Click on event action\n\n Callback data:\n\n${JSON.stringify(
 			data
 		)}`;
-		// console.log(msg);
 	};
 
 	// Callback after dragging is finished
@@ -65,15 +93,15 @@ const Calendar = (props) => {
 				showTimeLine={true}
 				isDark={false}
 				autoScroll={true}
-				// disabledDragging={true}
-				// colors={{
-				//   light: {
-				//     primaryColor: 'blue',
-				//   },
-				//   dark: {
-				//     primaryColor: 'orange',
-				//   },
-				// }}
+			// disabledDragging={true}
+			// colors={{
+			// 	light: {
+			// 		primaryColor: 'blue',
+			// 	},
+			// 	dark: {
+			// 		primaryColor: 'orange',
+			// 	},
+			// }}
 			/>
 			<Footer />
 		</>
