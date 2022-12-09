@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const KategoriItem = ({ category }) => {
     return (
-        <div className="col-sm-6 col-md-4 col-xl-3" key={category.id}>
+        <div className="col-sm-6 col-md-4 col-xl-4" key={category.id}>
             <div className={`card card-body ${category.disabled ? "bg-dark" : category.background} bg-opacity-10 text-center position-relative btn-transition p-4`}>
                 <div className="icon-xl bg-body mx-auto rounded-circle mb-3">
                     <img

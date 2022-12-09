@@ -58,17 +58,10 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Simulasi",
+			name: "Drill, simulasi & assessment ",
 			url: "#",
 			src: "/assets/images/element/account.svg",
 			background: "bg-info",
-			disabled: true,
-		},
-		{
-			name: "Drill & Assessment",
-			url: "#",
-			src: "/assets/images/element/20.svg",
-			background: "bg-primary",
 			disabled: true,
 		},
 		{
