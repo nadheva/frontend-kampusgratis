@@ -120,7 +120,7 @@ const AboutSection = () => {
                                     </svg>
                                 </figure>
                                 <img
-                                    src="./assets/images/asset-kg/KGB00550.jpg"
+                                    src="./assets/images/asset-kg/KGB00550.JPG"
                                     className="rounded-3 aboutsec-img"
                                     alt="xx"
                                 />

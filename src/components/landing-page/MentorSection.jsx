@@ -13,7 +13,7 @@ const MentorSection = () => {
             id: 2,
             name: "Apud Salapudin",
             title: "Alyuhannas ",
-            img: "./assets/images/asset-kg/KGB00654.jpg",
+            img: "./assets/images/asset-kg/KGB00654.JPG",
         },
         {
             id: 3,
