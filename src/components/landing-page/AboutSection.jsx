@@ -120,13 +120,13 @@ const AboutSection = () => {
                                     </svg>
                                 </figure>
                                 <img
-                                    src="assets/images/asset-kg/KGB00550.jpg"
+                                    src="./assets/images/asset-kg/KGB00550.JPG"
                                     className="rounded-3 aboutsec-img"
                                     alt="xx"
                                 />
                                 <div className="col-10 position-absolute top-100 start-0 translate-middle mt-n6 ms-n3 d-none d-md-block">
                                     <img
-                                        src="assets/images/asset-kg/KGB00498-about.JPG"
+                                        src="./assets/images/asset-kg/KGB00498-about.JPG"
                                         className="rounded-3"
                                         alt="xx"
                                     />
