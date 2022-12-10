@@ -7,25 +7,25 @@ const MentorSection = () => {
             id: 1,
             name: "Bunaiya",
             title: "Bunaiya",
-            img: "/assets/images/asset-kg/KGB00660.jpg",
+            img: "./assets/images/asset-kg/KGB00660.jpg",
         },
         {
             id: 2,
             name: "Apud Salapudin",
             title: "Alyuhannas ",
-            img: "/assets/images/asset-kg/KGB00654.jpg",
+            img: "./assets/images/asset-kg/KGB00654.jpg",
         },
         {
             id: 3,
             name: "Master in ",
             title: "Apud Salapudin",
-            img: "/assets/images/instructor/03.jpg",
+            img: "./assets/images/instructor/03.jpg",
         },
         {
             id: 4,
             name: "M Alam",
             title: "M Alam",
-            img: "/assets/images/instructor/11.jpg",
+            img: "./assets/images/instructor/11.jpg",
         },
     ]
 
