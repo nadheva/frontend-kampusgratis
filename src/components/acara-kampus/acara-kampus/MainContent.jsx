@@ -7,7 +7,7 @@ const MainContent = () => {
     return (
         <section className="pt-0">
             <div className="container">
-                <FilterBar />
+                {/* <FilterBar /> */}
                 <CardList />
             </div>
         </section>

@@ -4,14 +4,14 @@ const FilterBar = () => {
     return (
         <form className="bg-light border p-4 rounded-3 my-4 z-index-9 position-relative">
             <div className="row g-3">
-                <div className="col-xl-8">
+                <div className="col-xl-11">
                     <input
                         className="form-control me-1"
                         type="search"
                         placeholder="Cari Acara"
                     />
                 </div>
-                <div className="col-xl-3">
+                {/* <div className="col-xl-3">
                     <select
                         className="form-select form-select-sm js-choice"
                         aria-label=".form-select-sm example">
@@ -20,7 +20,7 @@ const FilterBar = () => {
                         <option>Update Terbaru</option>
                         <option>Segera Berakhir</option>
                     </select>
-                </div>
+                </div> */}
                 <div className="col-xl-1">
                     <button
                         type="button"
