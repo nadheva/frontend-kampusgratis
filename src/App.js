@@ -89,6 +89,8 @@ import Pelatihan from "./pages/landing-page/programkami/Pelatihan";
 import Magang from "./pages/landing-page/programkami/Magang";
 import Projek from "./pages/landing-page/programkami/Projek";
 
+import Leaderboard from './pages/leaderboard/Single';
+
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
 
@@ -260,6 +262,11 @@ function App() {
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
+
+						<Route path="/leaderboard" element={<PrivateRoute />}>
+							<Route path="/leaderboard" element={<Leaderboard />} />
+						</Route>
+
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
 							<Route path="/acara-kampus/:id" element={<AcaraKampusDetail />} />
 						</Route>
