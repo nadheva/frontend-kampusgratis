@@ -9,7 +9,7 @@ const Form = ({ onFormSubmit, isLoading, isSuccess, email, onFormChange, full_na
                 <Link className="me-0" to="/">
                     <img
                         className="h-40px mb-4"
-                        src="/assets/images/logo-kampus-gratis.png"
+                        src="/assets/images/1.png"
                         alt="Kampus Gratis"
                     />
                 </Link>

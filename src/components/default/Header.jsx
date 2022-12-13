@@ -6,7 +6,7 @@ import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import Logo from '../../assets/images/logo-kampus-gratis.png';
+// import Logo from '../../assets/images/1.png';
 import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
 import { useScript } from '../../hooks/useScript';
@@ -52,7 +52,7 @@ const Header = () => {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
             <Link className="navbar-brand me-0" to='/'>
-              <img className="light-mode-item navbar-brand-item" src={Logo} alt="Kampus Gratis" />
+              <img className="light-mode-item navbar-brand-item" src="../../assets/images/1.png" alt="Kampus Gratis" />
               <img className="dark-mode-item navbar-brand-item" src={LogoDark} alt="Kampus Gratis" />
             </Link>
             <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
