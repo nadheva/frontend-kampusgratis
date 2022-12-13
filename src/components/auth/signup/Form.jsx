@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BtnGoogle from '../BtnGoogle'
+import BtnGoogle from '../BtnGoogle';
 
 const Form = ({ onFormSubmit, isLoading, isSuccess, email, onFormChange, full_name, confirm_password, password, passwordShown, togglePasswordVisiblity, onLoginWithGoogle }) => {
     return (
@@ -14,9 +14,7 @@ const Form = ({ onFormSubmit, isLoading, isSuccess, email, onFormChange, full_na
                     />
                 </Link>
                 <h1 className="mb-2 h2">Buat akun baru</h1>
-                <p className="mb-0">
-                    Sudah punya akun? <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link>
-                </p>
+                <p className="mb-0">Sudah punya akun? <Link to="/login" style={{ color: "#5143d9 " }}> Login</Link></p>
                 <form onSubmit={onFormSubmit} className="mt-4 text-start">
                     <div className="mb-3">
                         <label className="form-label">Email</label>
