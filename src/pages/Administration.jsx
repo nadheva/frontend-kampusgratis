@@ -44,8 +44,8 @@ const Administration = () => {
 												: <span className="badge bg-primary bg-opacity-10 ms-3 text-primary py-2">waiting</span>}
 										</div>
 										{data?.is_approved?.overall === true
-											? <p>Administrasi Diterima, <Link to="/silabus"> Klik</Link> di sini untuk mengambil Rencana Studi.</p>
-											: <p className="text-danger">Administrasi harus di isi untuk bisa mengambil Rencana Studi!</p>}
+											? <p>Administrasi telah diterima, <Link to="/silabus"> Klik di sini</Link> untuk mengambil Rencana Studi.</p>
+											: <p className="text-danger mb-1">Kamu harus mengisi administrasi untuk bisa mengambil Rencana Studi!</p>}
 									</div>
 								</div>
 								<div className="card-body mt-2">
