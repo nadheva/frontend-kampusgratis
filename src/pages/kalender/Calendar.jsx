@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { generateDemoEvents } from "../../helpers/generateDemoEvents";
-import { DateTime } from "luxon";
+// import { generateDemoEvents } from "../../helpers/generateDemoEvents";
+// import { DateTime } from "luxon";
 import Kalend, { CalendarView, OnEventDragFinish } from "kalend";
 import "kalend/dist/styles/index.css";
 
@@ -13,33 +13,6 @@ import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 
 const Calendar = (props) => {
-
-	const events = [
-		{
-			id: 1,
-			allDay: false,
-			color: "red",
-			endAt: "2022-12-09T01:00:11.383Z",
-			startAt: "2022-12-09T23:30:11.383Z",
-			summary: "Sasuke kennis",
-		},
-		{
-			id: "9ab50366-fc18-40aa-81a9-8053955ef49c",
-			allDay: false,
-			color: "dodgerblue",
-			endAt: "2022-12-07T01:00:11.383Z",
-			startAt: "2022-12-06T23:30:11.383Z",
-			summary: "Electronics"
-		},
-		{
-			id: 2,
-			allDay: true,
-			color: "blue",
-			endAt: "2022-12-18T02:44:11.087Z",
-			startAt: "2022-12-18T01:44:11.087Z",
-			summary: "Intermediate Accounting I Session no. 1, ASSIGNMENT",
-		},
-	]
 
 	const [demoEvents, setDemoEvents] = useState([]);
 
@@ -89,7 +62,19 @@ const Calendar = (props) => {
 			<Header />
 			{
 				isLoading ? (
-					<> ... Ngeng </>
+					<section className="py-0 py-sm-5">
+						<div
+							className="container text-center"
+							style={{ marginTop: "178px", marginBottom: "178px" }}>
+							<div className="row">
+								<div className="col-12">
+									<div className="spinner-border" role="status">
+										<span className="visually-hidden">Loading...</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 				) : (
 					<Kalend
 						kalendRef={props.kalendRef}
