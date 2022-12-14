@@ -35,10 +35,27 @@ const getGuideBooks = async () => {
 	return response.data;
 }
 
+const getGuide = async (id) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+
+	const response = await axios.get(API_URL + `guide/getbyid/${id}`, config);
+
+	return response.data;
+}
+
 
 const guideService = {
 	getGuideVideos,
-	getGuideBooks
+	getGuideBooks,
+	getGuide,
 };
 
 export default guideService;

@@ -34,6 +34,19 @@ export const getGuideBooks = createAsyncThunk("guide/getbytype?type=book", async
     }
 });
 
+export const getGuide = createAsyncThunk("guide/getbyid/id", async (id, thunkAPI) => {
+    try {
+        const { data } = await guideService.getGuide(id);
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
+
 export const guideSlice = createSlice({
     name: "guide",
     initialState,
@@ -77,6 +90,20 @@ export const guideSlice = createSlice({
                 state.data.book = action.payload;
             })
             .addCase(getGuideBooks.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+            .addCase(getGuide.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getGuide.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.guide = action.payload;
+            })
+            .addCase(getGuide.rejected, (state, action) => {
                 state.isSuccess = false;
                 state.isLoading = false;
                 state.isError = true;
