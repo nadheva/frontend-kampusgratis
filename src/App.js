@@ -104,7 +104,7 @@ function App() {
 						<Route path="/pendidikanS1" exact element={<PendidikanS1 />} />
 						<Route path="/pelatihan" exact element={<Pelatihan />} />
 						<Route path="/magang" exact element={<Magang />} />
-						<Route path="/projek" exact element={<Projek/>} />
+						<Route path="/projek" exact element={<Projek />} />
 
 						<Route path="kategori" exact element={<Categories />} />
 
@@ -263,8 +263,8 @@ function App() {
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
 
-						<Route path="/leaderboard" element={<PrivateRoute />}>
-							<Route path="/leaderboard" element={<Leaderboard />} />
+						<Route path="/papan-skor" element={<PrivateRoute />}>
+							<Route path="/papan-skor" element={<Leaderboard />} />
 						</Route>
 
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
