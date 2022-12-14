@@ -71,11 +71,11 @@ const Panduan = () => {
 							<div className="col-lg-8 mx-auto text-center">
 								<h1 className="display-6">Hai, ada yang bisa kami bantu?</h1>
 								<p className="mb-0">
-									Cari informasi penggunaan website Kampus Gratis disini
+									Cari informasi penggunaan website Kampus Gratis di sini
 								</p>
 								<div className="row mt-4 align-items-center">
 									<div className="col-12">
-										<h5 className="mb-3">Topik populer</h5>
+										<h5 className="mb-3">Topik Populer</h5>
 										<div className="list-group list-group-horizontal gap-2 justify-content-center flex-wrap mb-0 border-0">
 											{dataPertanyaan.map((x) => (
 												<a
@@ -106,7 +106,6 @@ const Panduan = () => {
 						</div>
 					</div>
 				</section>
-
 				<section className="py-7 bg-light">
 					<div className="container">
 						<div className="row g-4">
@@ -128,7 +127,6 @@ const Panduan = () => {
 						</div>
 					</div>
 				</section>
-
 				<section className="pt-0 pt-md-5 bg-light">
 					<div className="container">
 						<div className="row g-4">
@@ -140,12 +138,10 @@ const Panduan = () => {
 								</p>
 							</div>
 							<div className="col-lg-6 ms-xl-auto">
-								{/* Accordion START */}
 								<div
 									className="accordion accordion-icon accordion-bg-light"
 									id="accordionFaq"
 								>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingOne">
 											<button
@@ -172,7 +168,6 @@ const Panduan = () => {
 											</div>
 										</div>
 									</div>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingTwo">
 											<button
@@ -198,7 +193,6 @@ const Panduan = () => {
 											</div>
 										</div>
 									</div>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingThree">
 											<button
@@ -228,7 +222,6 @@ const Panduan = () => {
 											</div>
 										</div>
 									</div>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingFour">
 											<button
@@ -254,7 +247,6 @@ const Panduan = () => {
 											</div>
 										</div>
 									</div>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingFive">
 											<button
@@ -284,7 +276,6 @@ const Panduan = () => {
 											</div>
 										</div>
 									</div>
-									{/* Accordion item */}
 									<div className="accordion-item">
 										<h2 className="accordion-header" id="headingSix">
 											<button
@@ -317,7 +308,6 @@ const Panduan = () => {
 										</div>
 									</div>
 								</div>
-								{/* Accordion END */}
 							</div>
 						</div>
 					</div>
