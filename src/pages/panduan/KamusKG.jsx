@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/default/Footer'
 import Header from '../../components/default/Header'
 
@@ -63,9 +64,9 @@ const KamusKG = () => {
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <a href="#" className="btn btn-dark mb-0">
+                                            <Link to="/kamus-KG/kamus-aplikasi" className="btn btn-dark mb-0">
                                                 Lihat Kamus
-                                            </a>
+                                            </Link>
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">
@@ -81,13 +82,13 @@ const KamusKG = () => {
                                     <div className="row g-3 align-items-center my-auto">
                                         {/* Content */}
                                         <div className="col-sm-7 col-lg-12 col-xl-7">
-                                            <h3 className="mb-1 fs-2">Glosarium Materi  </h3>
+                                            <h3 className="mb-1 fs-2">Glosarium Materi Kuliah</h3>
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <a href="#" className="btn btn-dark mb-0">
+                                            <Link to="/kamus-KG/glosarium" className="btn btn-dark mb-0">
                                                 Lihat Glosarium
-                                            </a>
+                                            </Link>
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">

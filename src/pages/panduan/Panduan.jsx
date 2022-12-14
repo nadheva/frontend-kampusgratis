@@ -43,7 +43,7 @@ const Panduan = () => {
 			icon: "bi-book text-success",
 			title: "Buku Panduan",
 			deskripsi: "Panduan ini berisi dokumen - dokumen panduan.",
-			link: "",
+			link: "/buku-panduan",
 		},
 		{
 			id: 2,
