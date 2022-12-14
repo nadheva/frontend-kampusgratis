@@ -255,10 +255,12 @@ function App() {
 							<Route path="/buku-panduan" element={<BukuPanduan />} />
 						</Route>
 						<Route path="/buku-panduan/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/buku-panduan/:id" element={<BukuPanduanDetial  />} />
+							<Route path="/buku-panduan/:id" element={<BukuPanduanDetial />} />
 						</Route>
-						
-						<Route path="/vidio-panduan" element={<VidioPanduan />} />
+						<Route path="/vidio-panduan" exact element={<PrivateRoute redirect />}>
+							<Route path="/vidio-panduan" element={<VidioPanduan />} />
+						</Route>
+
 						<Route path="/vidio-panduan/:id" element={<VidioDetail />} />
 						<Route path="/kamus-KG" element={<KamusKG />} />
 						<Route path="/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
