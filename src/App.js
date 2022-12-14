@@ -90,6 +90,8 @@ import Magang from "./pages/landing-page/programkami/Magang";
 import Projek from "./pages/landing-page/programkami/Projek";
 
 import Leaderboard from './pages/leaderboard/Single';
+import BukuPanduan from "./pages/panduan/BukuPanduan";
+import BukuPanduanDetial from "./pages/panduan/BukuPanduanDetial";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -246,8 +248,10 @@ function App() {
 
 						{/* START : */}
 						<Route path="/panduan" element={<Panduan />} />
+						<Route path="/buku-panduan" element={<BukuPanduan />} />
+						<Route path="/buku-panduan/:id" element={<BukuPanduanDetial />} />
 						<Route path="/vidio-panduan" element={<VidioPanduan />} />
-						<Route path="/vidio-detail" element={<VidioDetail />} />
+						<Route path="/vidio-panduan/:id" element={<VidioDetail />} />
 						<Route path="/kamus-KG" element={<KamusKG />} />
 						<Route path="/kamus-detail" element={<KamusKgDetail />} />
 						{/* END : */}
