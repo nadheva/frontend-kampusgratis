@@ -66,13 +66,30 @@ const getGlossaries = async (currentPage, search) => {
 	return response.data;
 }
 
+const getGlossary = async (id) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+
+	const response = await axios.get(API_URL + `guide/glossary/${id}`, config);
+
+	return response.data;
+}
+
 
 
 const guideService = {
 	getGuideVideos,
 	getGuideBooks,
 	getGuide,
-	getGlossaries
+	getGlossaries,
+	getGlossary
 };
 
 export default guideService;

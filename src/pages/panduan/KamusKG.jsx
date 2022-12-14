@@ -40,7 +40,7 @@ const KamusKG = () => {
                                         </div>
                                         {/* Image */}
                                         <div className="col-md-6 text-center">
-                                            <img src="assets/images/book/book-bg.svg" alt="" />
+                                            <img src="/assets/images/book/book-bg.svg" alt="" />
                                         </div>
                                     </div>
                                     {/* Row END */}
@@ -70,7 +70,7 @@ const KamusKG = () => {
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">
-                                            <img src="assets/images/element/29.svg" alt="" />
+                                            <img src="/assets/images/element/29.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@ const KamusKG = () => {
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">
-                                            <img src="assets/images/element/29.svg" alt="" />
+                                            <img src="/assets/images/element/29.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>

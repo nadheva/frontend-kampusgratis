@@ -251,26 +251,30 @@ function App() {
 
 						{/* START : */}
 						<Route path="/panduan" element={<Panduan />} />
-						<Route path="/buku-panduan" exact element={<PrivateRoute redirect />}>
-							<Route path="/buku-panduan" element={<BukuPanduan />} />
+						<Route path="/panduan/buku-panduan" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/buku-panduan" element={<BukuPanduan />} />
 						</Route>
-						<Route path="/buku-panduan/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/buku-panduan/:id" element={<BukuPanduanDetial />} />
+						<Route path="/panduan/buku-panduan/:id" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/buku-panduan/:id" element={<BukuPanduanDetial />} />
 						</Route>
-						<Route path="/vidio-panduan" exact element={<PrivateRoute redirect />}>
-							<Route path="/vidio-panduan" element={<VidioPanduan />} />
+						<Route path="/panduan/vidio-panduan" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/vidio-panduan" element={<VidioPanduan />} />
 						</Route>
-						<Route path="/vidio-panduan/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/vidio-panduan/:id" element={<VidioDetail />} />
+						<Route path="/panduan/vidio-panduan/:id" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/vidio-panduan/:id" element={<VidioDetail />} />
 						</Route>
-						<Route path="/kamus-KG" element={<KamusKG />} />
-						<Route path="/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
-						<Route path="/kamus-KG/kamus-aplikasi/:id" element={<KamusAplikasiDetail />} />
+						<Route path="/panduan/kamus-KG" element={<KamusKG />} />
 
-						<Route path="panduan/kamus-KG/glosarium" exact element={<PrivateRoute redirect />}>
+						<Route path="/panduan/kamus-KG/kamus-aplikasi" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
+						</Route>
+						<Route path="/panduan/kamus-KG/kamus-aplikasi/:id" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/kamus-KG/kamus-aplikasi/:id" element={<KamusAplikasiDetail />} />
+						</Route>
+						<Route path="/panduan/kamus-KG/glosarium" exact element={<PrivateRoute redirect />}>
 							<Route path="/panduan/kamus-KG/glosarium" element={<Glosarium />} />
 						</Route>
-						<Route path="panduan/kamus-KG/glosarium/:id" exact element={<PrivateRoute redirect />}>
+						<Route path="/panduan/kamus-KG/glosarium/:id" exact element={<PrivateRoute redirect />}>
 							<Route path="/panduan/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
 						</Route>
 

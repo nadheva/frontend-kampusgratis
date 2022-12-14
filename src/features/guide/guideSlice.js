@@ -58,6 +58,18 @@ export const getGlossaries = createAsyncThunk("guide/glossary", async ({ current
     }
 });
 
+export const getGlossary = createAsyncThunk("guide/glossary/id", async (id, thunkAPI) => {
+    try {
+        const { data } = await guideService.getGlossary(id);
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
 export const guideSlice = createSlice({
     name: "guide",
     initialState,
@@ -129,6 +141,20 @@ export const guideSlice = createSlice({
                 state.data.glossaries = action.payload;
             })
             .addCase(getGlossaries.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+            .addCase(getGlossary.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getGlossary.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.glossary = action.payload;
+            })
+            .addCase(getGlossary.rejected, (state, action) => {
                 state.isSuccess = false;
                 state.isLoading = false;
                 state.isError = true;

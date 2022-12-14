@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const BukuItem = ({ buku }) => {
     return (
-        <Link to={`/buku-panduan/${buku?.id}`} className="text-body">
+        <Link to={`/panduan/buku-panduan/${buku?.id}`} className="text-body">
             <div className="card border-top border-info border-4 shadow-lg rounded-2 px-4 py-4 my-4">
                 <div className="d-flex justify-content-between align-items-center">
                     <h5 className="m-0">
