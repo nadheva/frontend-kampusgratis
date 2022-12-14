@@ -79,7 +79,7 @@ const Calendar = (props) => {
 					) : (
 						<section className="my-3">
 							<div className="container">
-								<div className="shadow rounded-3" >
+								<div className="shadow rounded-3 p-2" >
 									<Kalend
 										kalendRef={props.kalendRef}
 										onNewEventClick={onNewEventClick}
