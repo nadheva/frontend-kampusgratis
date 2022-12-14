@@ -112,5 +112,5 @@ export const guideSlice = createSlice({
     },
 });
 
-export const { resetState, reset } = guideSlice.actions;
+export const { resetState, reset, resetAll } = guideSlice.actions;
 export default guideSlice.reducer;

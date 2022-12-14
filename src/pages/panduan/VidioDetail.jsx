@@ -1,36 +1,83 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+
+import { useSelector, useDispatch } from "react-redux";
+import { getGuide, resetAll, reset } from '../../features/guide/guideSlice';
+import useEffectOnce from "../../helpers/useEffectOnce";
+
+import { Link, useParams } from 'react-router-dom';
 
 import Header from '../../components/default/Header';
 import Footer from '../../components/default/Footer';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const VidioDetail = () => {
+
+    const { id } = useParams();
+
+    const dispatch = useDispatch();
+
+    const [demoEvents, setDemoEvents] = useState([]);
+
+    const { data, isLoading } = useSelector((state) => state.guide);
+
+    const fetchAll = async () => {
+        await Promise.all([
+            dispatch(getGuide(id)),
+        ]);
+    }
+
+    useEffectOnce(() => {
+        dispatch(resetAll());
+        fetchAll();
+    });
+
+    useEffect(() => {
+        if (data?.guide) setDemoEvents(data?.guide);
+    }, [data]);
+
     return (
         <>
             <Header />
             <main>
                 <section className="pt-3 pt-xl-5">
                     <div className="container" data-sticky-container>
-                        <div className="row g-4">
-                            <div className="col-xl-8 col-lg-8 col-12">
-                                <div className="row g-4">
-                                    <div className="col-12 position-relative">
-                                        <iframe src="https://www.youtube.com/embed/QB1eT6BbGW0"
-                                            title="vidio"
-                                            width="100%"
-                                            height="443px"
-                                            display="block"
-                                            position="relative" />
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <div className="bg-body shadow rounded-2 p-4">
-                                            <h5 className="mb-3 ">Judul</h5>
-                                            <p className="mb-0">Devices with aspect ratios greater than 16:9 are taller in relation to the width than the standard phone. 16:9, commonly known as widescreen, is the most common aspect ratio for mobile devices, TVs, and computer monitors, and is the international standard format for HDTV.</p>
+                        <div className="row g-4 justify-content-center">
+                            <div className="col-xl-9 col-lg-8 col-12">
+                                {
+                                    isLoading ? (
+                                        <div className='row'>
+                                            <div className="col-sm-12 col-xl-12">
+                                                <SkeletonTheme>
+                                                    <Skeleton height={300} />
+                                                </SkeletonTheme>
+                                            </div>
+                                            <div className="col-sm-12 col-xl-12">
+                                                <SkeletonTheme>
+                                                    <Skeleton height={100} />
+                                                </SkeletonTheme>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    ) : (
+                                        <>
+                                            <div className="col-12 position-relative">
+                                                <iframe src={`https://www.youtube.com/embed/${demoEvents?.content?.url.split("?v=")[1]}`}
+                                                    title={demoEvents?.title}
+                                                    width="100%"
+                                                    height="500px"
+                                                    display="block"
+                                                    position="relative" />
+                                            </div>
+                                            <div className="col-lg-12">
+                                                <div className="bg-body shadow rounded-2 p-4">
+                                                    <h5 className="mb-3 ">{demoEvents?.title ? demoEvents.title : "Tidak ada judul."}</h5>
+                                                    <p className="mb-0">{demoEvents?.description ? demoEvents.description : "Tidak ada deskripsi."}</p>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )
+                                }
                             </div>
-                            <div className="col-xl-4 col-lg-4 col-12">
+                            {/* <div className="col-xl-4 col-lg-4 col-12">
                                 <div data-sticky data-margin-top="80" data-sticky-for="768">
                                     <div className="card card-body shadow  p-4">
                                         <div className="row g-5">
@@ -54,7 +101,7 @@ const VidioDetail = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </section>

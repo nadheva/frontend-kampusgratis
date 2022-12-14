@@ -260,8 +260,9 @@ function App() {
 						<Route path="/vidio-panduan" exact element={<PrivateRoute redirect />}>
 							<Route path="/vidio-panduan" element={<VidioPanduan />} />
 						</Route>
-
-						<Route path="/vidio-panduan/:id" element={<VidioDetail />} />
+						<Route path="/vidio-panduan/:id" exact element={<PrivateRoute redirect />}>
+							<Route path="/vidio-panduan/:id" element={<VidioDetail />} />
+						</Route>
 						<Route path="/kamus-KG" element={<KamusKG />} />
 						<Route path="/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
 						<Route path="/kamus-KG/kamus-aplikasi/:id" element={<KamusAplikasiDetail />} />
