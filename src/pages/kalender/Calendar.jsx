@@ -60,56 +60,65 @@ const Calendar = (props) => {
 	return (
 		<>
 			<Header />
-			{
-				isLoading ? (
-					<section className="py-0 py-sm-5">
-						<div
-							className="container text-center"
-							style={{ marginTop: "178px", marginBottom: "178px" }}>
-							<div className="row">
-								<div className="col-12">
-									<div className="spinner-border" role="status">
-										<span className="visually-hidden">Loading...</span>
+			<main>
+				{
+					isLoading ? (
+						<section className="py-0 py-sm-5">
+							<div
+								className="container text-center"
+								style={{ marginTop: "178px", marginBottom: "178px" }}>
+								<div className="row">
+									<div className="col-12">
+										<div className="spinner-border" role="status">
+											<span className="visually-hidden">Loading...</span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</section>
-				) : (
-					<Kalend
-						kalendRef={props.kalendRef}
-						onNewEventClick={onNewEventClick}
-						initialView={CalendarView.WEEK}
-						disabledViews={[]}
-						onEventClick={onEventClick}
-						events={demoEvents}
-						initialDate={new Date().toISOString()}
-						hourHeight={60}
-						// showWeekNumbers={true}
+						</section>
+					) : (
+						<section className="my-3">
+							<div className="container">
+								<div className="shadow rounded-3" >
+									<Kalend
+										kalendRef={props.kalendRef}
+										onNewEventClick={onNewEventClick}
+										initialView={CalendarView.WEEK}
+										disabledViews={[]}
+										onEventClick={onEventClick}
+										events={demoEvents}
+										initialDate={new Date().toISOString()}
+										hourHeight={60}
+										// showWeekNumbers={true}
 
-						// draggingDisabledConditions={{
-						//   summary: 'Computers',
-						//   allDay: false,
-						//   color: 'pink',
-						// }}
-						onEventDragFinish={onEventDragFinish}
-						onStateChange={props.onStateChange}
-						selectedView={props.selectedView}
-						showTimeLine={true}
-						isDark={false}
-						autoScroll={true}
-					// disabledDragging={true}
-					// colors={{
-					// 	light: {
-					// 		primaryColor: 'blue',
-					// 	},
-					// 	dark: {
-					// 		primaryColor: 'orange',
-					// 	},
-					// }}
-					/>
-				)
-			}
+										// draggingDisabledConditions={{
+										//   summary: 'Computers',
+										//   allDay: false,
+										//   color: 'pink',
+										// }}
+										onEventDragFinish={onEventDragFinish}
+										onStateChange={props.onStateChange}
+										selectedView={props.selectedView}
+										showTimeLine={true}
+										isDark={false}
+										autoScroll={true}
+										language={'en'}
+									// disabledDragging={true}
+									// colors={{
+									// 	light: {
+									// 		primaryColor: 'blue',
+									// 	},
+									// 	dark: {
+									// 		primaryColor: 'orange',
+									// 	},
+									// }}
+									/>
+								</div>
+							</div>
+						</section>
+					)
+				}
+			</main>
 			<Footer />
 		</>
 	);

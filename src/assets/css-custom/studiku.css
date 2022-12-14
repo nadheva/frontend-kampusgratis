@@ -4,11 +4,6 @@
     object-position: center;
 }
 
-/* Kalender */
-.Kalend__Calendar__root.Kalend__main {
-    height: 100vh !important;
-}
-
 /* img */
 .card-img-artikel {
     height: 189px;
