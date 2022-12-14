@@ -51,11 +51,28 @@ const getGuide = async (id) => {
 	return response.data;
 }
 
+const getGlossaries = async (currentPage, search) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+	const response = await axios.get(API_URL + `guide/glossary?page=${currentPage}&limit=8&search=${search}&type=application`, config);
+
+	return response.data;
+}
+
+
 
 const guideService = {
 	getGuideVideos,
 	getGuideBooks,
 	getGuide,
+	getGlossaries
 };
 
 export default guideService;

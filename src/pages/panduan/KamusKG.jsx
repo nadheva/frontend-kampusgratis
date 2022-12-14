@@ -64,7 +64,7 @@ const KamusKG = () => {
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <Link to="/kamus-KG/kamus-aplikasi" className="btn btn-dark mb-0">
+                                            <Link to="/panduan/kamus-KG/kamus-aplikasi" className="btn btn-dark mb-0">
                                                 Lihat Kamus
                                             </Link>
                                         </div>
@@ -86,7 +86,7 @@ const KamusKG = () => {
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <Link to="/kamus-KG/glosarium" className="btn btn-dark mb-0">
+                                            <Link to="/panduan/kamus-KG/glosarium" className="btn btn-dark mb-0">
                                                 Lihat Glosarium
                                             </Link>
                                         </div>

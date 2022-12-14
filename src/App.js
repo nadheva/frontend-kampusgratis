@@ -266,8 +266,16 @@ function App() {
 						<Route path="/kamus-KG" element={<KamusKG />} />
 						<Route path="/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
 						<Route path="/kamus-KG/kamus-aplikasi/:id" element={<KamusAplikasiDetail />} />
-						<Route path="/kamus-KG/glosarium" element={<Glosarium />} />
-						<Route path="/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
+
+						<Route path="panduan/kamus-KG/glosarium" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/kamus-KG/glosarium" element={<Glosarium />} />
+						</Route>
+						<Route path="panduan/kamus-KG/glosarium/:id" exact element={<PrivateRoute redirect />}>
+							<Route path="/panduan/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
+						</Route>
+
+
+
 						{/* END : */}
 
 						{/* START : KALENDER */}
