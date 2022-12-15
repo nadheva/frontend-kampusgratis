@@ -6,7 +6,7 @@ const DataKerja = [
         pt: 'Dicoding Indonesia',
         alamat: 'Bandung',
         jamKerja: 'Full time ',
-        gaji: 'Rp. 1.000.000'
+        gaji: 'Rp 3.500.000-5.000.000'
     },
     {
         id: '2',
@@ -15,7 +15,7 @@ const DataKerja = [
         pt: 'PT Kita Lulus Internasional',
         alamat: 'Jakarta Pusat',
         jamKerja: 'Part time ',
-        gaji: 'Rp. 2.000.000'
+        gaji: 'Rp 3.500.000-5.000.000'
     },
     {
         id: '3',
@@ -24,7 +24,7 @@ const DataKerja = [
         pt: 'NBS (PT Kode Aplikasi Indonesia)',
         alamat: 'Jakarta Utara',
         jamKerja: 'Full time ',
-        gaji: 'Rp. 16.000.000'
+        gaji: 'Rp 3.500.000-5.000.000'
     },
     {
         id: '4',
@@ -33,7 +33,7 @@ const DataKerja = [
         pt: 'PT. Treetan Nusantara Network',
         alamat: 'Jakarta Selatan',
         jamKerja: 'Part time ',
-        gaji: 'Rp. 11.000.000'
+        gaji: 'Rp 3.500.000-5.000.000'
     },
 ];
 

@@ -26,7 +26,7 @@ const CardItem = ({ kerja }) => {
                                 </div>
                             </div>
                             <p className="text-truncate-2 mb-3">
-                                {kerja.jamKerja} | {kerja.alamat}
+                                {kerja.alamat}
                             </p>
                             <div className="d-sm-flex justify-content-sm-between align-items-center">
                                 <h6 className="text-orange mb-0">{kerja.gaji}</h6>
