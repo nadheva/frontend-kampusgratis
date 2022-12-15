@@ -14,7 +14,9 @@ export const getMyAdministration = createAsyncThunk(
   'administration/mine',
   async (token, thunkAPI) => {
     try {
-      return await administrationService.getMyAdministration(token);
+      let data = await administrationService.getMyAdministration(token);
+      delete data.data.biodata.nin;
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(extractErrorMessage(error));
     }

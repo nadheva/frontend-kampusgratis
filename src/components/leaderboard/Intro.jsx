@@ -7,15 +7,15 @@ const Intro = () => {
       <section className="py-4">
         <div className="row">
           <div className="col-12">
-            <h1 className="m-0">Papan Skor</h1>
+            <h1 className="m-0">Papan Skor Umum</h1>
             <div className="d-flex justify-content-center">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb breadcrumb-dots mb-0">
                   <li className="breadcrumb-item">
-                    <Link to="/menu">Fitur</Link>
+                    <Link to="/kategori">Fitur</Link>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    Leaderboard
+                    Papan Skor
                   </li>
                 </ol>
               </nav>

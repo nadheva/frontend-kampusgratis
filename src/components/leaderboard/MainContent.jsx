@@ -4,6 +4,7 @@ const MainContent = () => {
   return <>
     <section>
       <div className="container">
+        <div className="lead text-center mb-3">Daftar Nama Mahasiswa dengan <strong>nilai terbaik secara global</strong> (dilihat dari setiap mata kuliah).</div>
         <div className="card card-body bg-transparent pb-0 border py-4">
           <div className="table-responsive border-0 mb-4">
             <table className="table table-dark-gray align-middle p-4 mb-0 table-hover">

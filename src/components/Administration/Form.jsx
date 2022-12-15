@@ -14,15 +14,31 @@ const Form = () => {
     { value: '2', label: 'Perempuan' }
   ];
 
+  const occupationList = [
+    { value: '', label: '-' },
+    { value: 'Karyawan Swasta', label: 'Karyawan Swasta' },
+    { value: 'Wirausaha', label: 'Wirausaha' },
+    { value: 'Buruh Harian Lepas', label: 'Buruh Harian Lepas' },
+    { value: 'Lainnya', label: 'Lainnya' }
+  ];
+
+  const incomeList = [
+    { value: '', label: '-' },
+    { value: 'Rp1.000.000 s/d Rp2.000.000', label: 'Rp1.000.000 s/d Rp2.000.000' },
+    { value: 'Rp2.000.001 s/d Rp3.000.000', label: 'Rp2.000.001 s/d Rp3.000.000' },
+    { value: 'Rp3.000.001 s/d Rp4.000.000', label: 'Rp3.000.001 s/d Rp4.000.000' },
+    { value: 'Rp4.000.001 s/d Rp5.000.000', label: 'Rp4.000.001 s/d Rp5.000.000' }
+  ]
+
   const [isPageLoaded, setIsPageLoaded] = useState(false);
   const [isAdministrationAccepted, setisAdministrationAccepted] = useState(false);
 
   const [administrationBiodata, setAdministrationBiodata] = useState({
-    full_name: "", nin: "", nin_address: "", email: "",
-    residence_address: "", phone: "",
-    study_program: "", semester: "",
+    full_name: "", email: "", phone: "",
     birth_place: "", birth_date: "",
-    university_of_origin: "", gender: "", nsn: ""
+    gender: "",
+    nin_address: "", last_education: "", nsn: "",
+    university_of_origin: "", study_program: "", semester: ""
   });
 
   const [administrationFamilial, setAdministrationFamilial] = useState({
@@ -42,11 +58,7 @@ const Form = () => {
   });
 
   const {
-    full_name, nin, nin_address, email,
-    residence_address, phone,
-    study_program, semester,
-    birth_place, birth_date,
-    university_of_origin, gender, nsn
+    full_name, email, phone, birth_place, birth_date, gender, nin_address, last_education, nsn, university_of_origin, study_program, semester
   } = administrationBiodata;
 
   const {
@@ -65,7 +77,7 @@ const Form = () => {
     degree
   } = administrationDegree;
 
-  const { isLoading, data, message } = useSelector(
+  const { isLoading, data, message, isError, isSuccess } = useSelector(
     (state) => state.administration
   );
 
@@ -111,8 +123,14 @@ const Form = () => {
     e.preventDefault();
     if (data?.is_approved?.overall) return toast.warning("Kamu tidak dapat merubah data administrasi karena administrasimu sudah dikonfirmasi!");
 
-    if (Object.values(administrationBiodata).some(el => el === null))
-      return toast.error("Masih ada field yang kosong. Mohon isi semua field!");
+    if (Object.values(administrationBiodata).some((el, index) => {
+      let index_optional = ['study_program', 'semester', 'nsn', 'university_of_origin', 'residence_address'];
+      let name_index = Object.keys(administrationBiodata)[index];
+
+      if (index_optional.includes(name_index)) return false;
+
+      return el === null;
+    })) return toast.error("Masih ada field yang kosong. Mohon isi semua field!");
 
     dispatch(sendAdministrationBiodata({ ...administrationBiodata, administration_id }));
   }
@@ -120,6 +138,8 @@ const Form = () => {
   const onFormSubmitFamilial = (e) => {
     e.preventDefault();
     if (data?.is_approved?.overall) return toast.warning("Kamu tidak dapat merubah data administrasi karena administrasimu sudah dikonfirmasi!");
+
+    console.log(administrationFamilial);
 
     if (Object.values(administrationFamilial).some(el => el === null))
       return toast.error("Masih ada field yang kosong. Mohon isi semua field!");
@@ -153,8 +173,13 @@ const Form = () => {
   useEffect(() => {
     if (data?.is_approved?.overall) setisAdministrationAccepted(true);
 
-    if (message) {
-      toast.info(message);
+    if (message && isError) {
+      toast.error("Masih ada field yang kosong atau tidak valid. Mohon isi semua field!");
+      dispatch(reset());
+    }
+
+    if (message && isSuccess && !isError) {
+      toast.success(message);
       dispatch(reset());
     }
 
@@ -218,45 +243,17 @@ const Form = () => {
             <div className="accordion-body mt-3">
               <form onSubmit={onFormSubmitBiodata}>
                 <div className="row">
-                  <div className="col-md-12">
+                  <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Nama Lengkap</label>
                     <input type="text" className="form-control mb-3" name="full_name" value={full_name} placeholder="Nama Lengkap" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> NIK</label>
-                    <input type="text" className="form-control mb-3" name="nin" value={nin} placeholder="NIK" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Alamat Email</label>
                     <input type="text" className="form-control mb-3" name="email" value={email} placeholder="Alamat Email" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Program Studi</label>
-                    <input type="text" className="form-control mb-3" name="study_program" value={study_program} placeholder="Program Studi" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Semester</label>
-                    <input type="text" className="form-control mb-3" name="semester" value={semester} placeholder="Semester" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Alamat Lengkap</label>
-                    <input type="text" className="form-control mb-3" name="nin_address" value={nin_address} placeholder="Alamat Lengkap" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Alamat Domisili</label>
-                    <input type="text" className="form-control mb-3" name="residence_address" value={residence_address} placeholder="Alamat Domisili" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Tempat Lahir</label>
-                    <input type="text" className="form-control mb-3" name="birth_place" value={birth_place} placeholder="Tempat Lahir" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Tanggal Lahir</label>
-                    <input type="date" className="form-control mb-3" name="birth_date" value={birth_date} placeholder="dd/mm/yy" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
-                  </div>
-                  <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Jenis Kelamin</label>
-                    <select className="form-select" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="gender" value={gender}>
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="gender" value={gender}>
                       {genderOptions.map(option => (
                         <option key={option.value} value={option.value} >{option.label}</option>
                       ))}
@@ -267,12 +264,37 @@ const Form = () => {
                     <input type="text" className="form-control mb-3" name="phone" value={phone} placeholder="Nomor Handphone" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Universitas Asal</label>
+                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Tempat Lahir</label>
+                    <input type="text" className="form-control mb-3" name="birth_place" value={birth_place} placeholder="Tempat Lahir" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Tanggal Lahir</label>
+                    <input type="date" className="form-control mb-3" min="1901-01-01" max="2099-12-31" name="birth_date" value={birth_date} placeholder="dd/mm/yy" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Alamat Lengkap</label>
+                    <input type="text" className="form-control mb-3" name="nin_address" value={nin_address} placeholder="Alamat Lengkap" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Pendidikan Terakhir</label>
+                    <input type="text" className="form-control mb-3" name="last_education" value={last_education} placeholder="Pendidikan Terakhir" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-12"><hr /></div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'></span> NIM atau NPM</label><sub>&nbsp;(opsional)</sub>
+                    <input type="text" className="form-control mb-3" name="nsn" value={nsn} placeholder="NIM atau NPM" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'></span> Universitas Asal</label><sub>&nbsp;(opsional)</sub>
                     <input type="text" className="form-control mb-3" name="university_of_origin" value={university_of_origin} placeholder="Universitas Asal" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> NIM atau NPM</label>
-                    <input type="text" className="form-control mb-3" name="nsn" value={nsn} placeholder="NIM atau NPM" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <label className="form-label"><span className='text-danger'></span> Program Studi</label><sub>&nbsp;(opsional)</sub>
+                    <input type="text" className="form-control mb-3" name="study_program" value={study_program} placeholder="Program Studi" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'></span> Semester</label><sub>&nbsp;(opsional)</sub>
+                    <input type="text" className="form-control mb-3" name="semester" value={semester} placeholder="Semester" onChange={onFormChangeAdministrationBiodata} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
@@ -282,7 +304,7 @@ const Form = () => {
                       &nbsp;Loading...
                     </button>
                   ) : (
-                    <button type="submit" className="btn btn-primary mb-0" disabled={isAdministrationAccepted}>Simpan Biodata</button>
+                    <button type="submit" className="btn btn-primary mb-0" disabled={isLoading || isAdministrationAccepted}>Simpan Biodata</button>
                   )}
                 </div>
               </form>
@@ -304,33 +326,63 @@ const Form = () => {
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Nama Ayah</label>
                     <input type="text" className="form-control mb-3" name="father_name" value={father_name} placeholder="Nama Ayah" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
-                  <div className="col-md-6">
+                  {/* <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Pekerjaan Ayah</label>
                     <input type="text" className="form-control mb-3" name="father_occupation" value={father_occupation} placeholder="Pekerjaan Ayah" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                  </div> */}
+                  <div className="col-md-6">
+                    <label className="form-label"><span className='text-danger'><sup>*</sup></span> Pekerjaan Ayah</label>
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="father_occupation" value={father_occupation}>
+                      {occupationList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Penghasilan Ayah Perbulan</label>
-                    <input type="text" className="form-control mb-3" name="father_income" value={father_income} placeholder="Pekerjaan Ayah" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="father_income" value={father_income}>
+                      {incomeList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
+                  <div className="col-md-12"><hr /></div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Nama Ibu</label>
                     <input type="text" className="form-control mb-3" name="mother_name" value={mother_name} placeholder="Nama Ibu" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Pekerjaan Ibu</label>
-                    <input type="text" className="form-control mb-3" name="mother_occupation" value={mother_occupation} placeholder="Pekerjaan Ibu" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="mother_occupation" value={mother_occupation}>
+                      {occupationList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Penghasilan Ibu Perbulan</label>
-                    <input type="text" className="form-control mb-3" name="mother_income" value={mother_income} placeholder="Penghasilan Ibu Perbulan" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="mother_income" value={mother_income}>
+                      {incomeList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
+                  <div className="col-md-12"><hr /></div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Pekerjaan Sendiri</label>
-                    <input type="text" className="form-control mb-3" name="occupation" value={occupation} placeholder="Pekerjaan Sendiri" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="occupation" value={occupation}>
+                      {occupationList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Penghasilan Sendiri</label>
-                    <input type="text" className="form-control mb-3" name="income" value={income} placeholder="Penghasilan Sendiri" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} />
+                    <select className="form-select mb-3" onChange={onFormChangeAdministrationFamilial} readOnly={isLoading} disabled={isLoading || isAdministrationAccepted} name="income" value={income}>
+                      {incomeList.map(option => (
+                        <option key={option.value} value={option.value} >{option.label}</option>
+                      ))}
+                    </select>
                   </div>
                   <div className="col-md-6">
                     <label className="form-label"><span className='text-danger'><sup>*</sup></span> Tinggal Dengan</label>
@@ -348,7 +400,7 @@ const Form = () => {
                       &nbsp;Loading...
                     </button>
                   ) : (
-                    <button type="submit" className="btn btn-primary mb-0" disabled={isAdministrationAccepted}>Simpan Data Keluarga</button>
+                    <button type="submit" className="btn btn-primary mb-0" disabled={isLoading || isAdministrationAccepted}>Simpan Data Keluarga</button>
                   )}
                 </div>
               </form>
@@ -369,12 +421,32 @@ const Form = () => {
               <form onSubmit={onFormSubmitFiles}>
                 <div className="row">
                   <div className="col-12">
-                    <label className="form-label"><span className='text-danger'>*</span> Pakta Integritas</label>
-                    {integrity_pact?.name && <div className="bg-light mb-3 p-3">
-                      {integrity_pact?.name}
+                    <label className="form-label"><span className='text-danger'>*</span> Kartu Tanda Penduduk (KTP)</label>
+                    {nin_card?.name && <div className="bg-light mb-3 p-3">
+                      {nin_card?.name}
                     </div>}
                     <div className="input-group mb-3">
-                      <input name="integrity_pact" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
+                      <input name="nin_card" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
+                      <label className="input-group-text">.jpg, .jpeg, .png</label>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <label className="form-label"><span className='text-danger'>*</span> Ijazah Terakhir</label>
+                    {certificate?.name && <div className="bg-light mb-3 p-3">
+                      {certificate?.name}
+                    </div>}
+                    <div className="input-group mb-3">
+                      <input name="certificate" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
+                      <label className="input-group-text">.pdf</label>
+                    </div>
+                  </div>
+                  <div className="col-12">
+                    <label className="form-label"><span className='text-danger'>*</span> Kartu Keluarga (KK)</label>
+                    {family_card?.name && <div className="bg-light mb-3 p-3">
+                      {family_card?.name}
+                    </div>}
+                    <div className="input-group mb-3">
+                      <input name="family_card" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
                       <label className="input-group-text">.jpg, .jpeg, .png</label>
                     </div>
                   </div>
@@ -384,38 +456,8 @@ const Form = () => {
                       {photo?.name}
                     </div>}
                     <div className="input-group mb-3">
-                      <input name="photo" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
+                      <input name="photo" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
                       <label className="input-group-text">.jpg, .jpeg, .png</label>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <label className="form-label"><span className='text-danger'>*</span> Kartu Tanda Penduduk (KTP)</label>
-                    {nin_card?.name && <div className="bg-light mb-3 p-3">
-                      {nin_card?.name}
-                    </div>}
-                    <div className="input-group mb-3">
-                      <input name="nin_card" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
-                      <label className="input-group-text">.jpg, .jpeg, .png</label>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <label className="form-label"><span className='text-danger'>*</span> Kartu Keluarga (KK)</label>
-                    {family_card?.name && <div className="bg-light mb-3 p-3">
-                      {family_card?.name}
-                    </div>}
-                    <div className="input-group mb-3">
-                      <input name="family_card" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
-                      <label className="input-group-text">.jpg, .jpeg, .png</label>
-                    </div>
-                  </div>
-                  <div className="col-12">
-                    <label className="form-label"><span className='text-danger'>*</span> Sertifikat</label>
-                    {certificate?.name && <div className="bg-light mb-3 p-3">
-                      {certificate?.name}
-                    </div>}
-                    <div className="input-group mb-3">
-                      <input name="certificate" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
-                      <label className="input-group-text">.pdf</label>
                     </div>
                   </div>
                   <div className="col-12">
@@ -424,7 +466,7 @@ const Form = () => {
                       {transcript?.name}
                     </div>}
                     <div className="input-group mb-3">
-                      <input name="transcript" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
+                      <input name="transcript" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
                       <label className="input-group-text">.pdf</label>
                     </div>
                   </div>
@@ -434,7 +476,7 @@ const Form = () => {
                       {recommendation_letter?.name}
                     </div>}
                     <div className="input-group mb-3">
-                      <input name="recommendation_letter" type="file" className="form-control" onChange={onChangeFile} disabled={isAdministrationAccepted} />
+                      <input name="recommendation_letter" type="file" className="form-control" onChange={onChangeFile} disabled={isLoading || isAdministrationAccepted} />
                       <label className="input-group-text">.pdf</label>
                     </div>
                   </div>
@@ -446,7 +488,7 @@ const Form = () => {
                       &nbsp;Loading...
                     </button>
                   ) : (
-                    <button type="submit" className="btn btn-primary mb-0" disabled={isAdministrationAccepted}>Simpan Berkas</button>
+                    <button type="submit" className="btn btn-primary mb-0" disabled={isLoading || isAdministrationAccepted}>Simpan Berkas</button>
                   )}
                 </div>
               </form>
@@ -465,7 +507,7 @@ const Form = () => {
               <form onSubmit={onFormSubmitDegree}>
                 <div className="col-md-12">
                   <label className="form-label"><span className='text-danger'><sup>*</sup></span> Jenjang Pendidikan</label>
-                  <input type="text" className="form-control mb-3" name="degree" value={degree} placeholder="Jenjang Pendidikan" onChange={onFormChangeAdministrationDegree} disabled={isAdministrationAccepted}/>
+                  <input type="text" className="form-control mb-3" name="degree" value={degree} placeholder="Jenjang Pendidikan" onChange={onFormChangeAdministrationDegree} disabled={isLoading || isAdministrationAccepted} />
                 </div>
                 <div className="d-sm-flex justify-content-end mt-2">
                   {isLoading ? (
@@ -474,15 +516,16 @@ const Form = () => {
                       &nbsp;Loading...
                     </button>
                   ) : (
-                    <button type="submit" className="btn btn-primary mb-0" disabled={isAdministrationAccepted}>Simpan Jenjang</button>
+                    <button type="submit" className="btn btn-primary mb-0" disabled={isLoading || isAdministrationAccepted}>Simpan Jenjang</button>
                   )}
                 </div>
               </form>
             </div>
           </div>
         </div>
-      </>}
-    </div>
+      </>
+      }
+    </div >
   </>
 }
 

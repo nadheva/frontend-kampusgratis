@@ -73,7 +73,7 @@ const Categories = () => {
 		},
 		{
 			name: "Papan Skor",
-			url: "/leaderboard",
+			url: "/papan-skor",
 			src: "/assets/images/element/music.svg",
 			background: "bg-primary",
 			disabled: false,

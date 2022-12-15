@@ -293,8 +293,8 @@ function App() {
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
 
-						<Route path="/leaderboard" element={<PrivateRoute />}>
-							<Route path="/leaderboard" element={<Leaderboard />} />
+						<Route path="/papan-skor" element={<PrivateRoute />}>
+							<Route path="/papan-skor" element={<Leaderboard />} />
 						</Route>
 
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
