@@ -11,6 +11,8 @@ import certificateReducer from '../features/sertifikat/certificateSlice';
 import reportReducer from '../features/report/reportSlice';
 import notificationReducer from "../features/notification/notificationSlice";
 import calenderReducer from "../features/calender/calenderSlice";
+import guideReducer from "../features/guide/guideSlice";
+
 
 export const store = configureStore({
 	reducer: {
@@ -25,6 +27,8 @@ export const store = configureStore({
 		certificate: certificateReducer,
 		report: reportReducer,
 		notification: notificationReducer,
-		calender: calenderReducer
+		calender: calenderReducer,
+		guide: guideReducer,
+	
 	},
 });

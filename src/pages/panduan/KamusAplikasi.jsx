@@ -49,7 +49,7 @@ const KamusAplikasi = () => {
                                             </div>
                                             <div className="card-body p-0 pt-3">
                                                 <div className="vstack gap-3">
-                                                    <Link to="/kamus-KG/kamus-aplikasi/1">
+                                                    <Link to="/panduan/kamus-KG/kamus-aplikasi/1">
                                                         <div className="border-bottom py-2">
                                                             <h5>KHS </h5>
                                                         </div>

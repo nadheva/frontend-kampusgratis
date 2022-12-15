@@ -40,7 +40,7 @@ const KamusKG = () => {
                                         </div>
                                         {/* Image */}
                                         <div className="col-md-6 text-center">
-                                            <img src="assets/images/book/book-bg.svg" alt="" />
+                                            <img src="/assets/images/book/book-bg.svg" alt="" />
                                         </div>
                                     </div>
                                     {/* Row END */}
@@ -64,13 +64,13 @@ const KamusKG = () => {
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <Link to="/kamus-KG/kamus-aplikasi" className="btn btn-dark mb-0">
+                                            <Link to="/panduan/kamus-KG/kamus-aplikasi" className="btn btn-dark mb-0">
                                                 Lihat Kamus
                                             </Link>
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">
-                                            <img src="assets/images/element/29.svg" alt="" />
+                                            <img src="/assets/images/element/29.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
@@ -86,13 +86,13 @@ const KamusKG = () => {
                                             <p className="mb-3 h5 fw-light lead">
                                                 Panduan ini berisi dokumen - dokumen panduan.
                                             </p>
-                                            <Link to="/kamus-KG/glosarium" className="btn btn-dark mb-0">
+                                            <Link to="/panduan/kamus-KG/glosarium" className="btn btn-dark mb-0">
                                                 Lihat Glosarium
                                             </Link>
                                         </div>
                                         {/* Image */}
                                         <div className="col-sm-5 col-lg-12 col-xl-5">
-                                            <img src="assets/images/element/29.svg" alt="" />
+                                            <img src="/assets/images/element/29.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>

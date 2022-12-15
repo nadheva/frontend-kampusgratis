@@ -43,21 +43,21 @@ const Panduan = () => {
 			icon: "bi-book text-success",
 			title: "Buku Panduan",
 			deskripsi: "Panduan ini berisi dokumen - dokumen panduan.",
-			link: "/buku-panduan",
+			link: "/panduan/buku-panduan",
 		},
 		{
 			id: 2,
 			icon: "bi-fast-forward text-danger",
 			title: "Vidio Panduan",
 			deskripsi: "Panduan ini berisi video - video panduan.",
-			link: "/vidio-panduan",
+			link: "/panduan/vidio-panduan",
 		},
 		{
 			id: 3,
 			icon: "bi-journal-bookmark text-warning",
 			title: "Kamus KG",
 			deskripsi: "Panduan ini berisi konten kamus kampus gratis.",
-			link: "/kamus-KG",
+			link: "/panduan/kamus-KG",
 		},
 	];
 

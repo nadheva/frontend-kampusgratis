@@ -47,38 +47,56 @@ const Testimonial = () => {
             id: 1,
             img: "assets/images/avatar/01.jpg",
             name: "Kennis",
-            title: "MOrganized conviction For every delay in they  Extremity now strangers contained breakfast",
+            title: "Belajar di Kampus Gratis itu fleksibel dan konten pembelajarannya mudah dipahami.",
         },
         {
             id: 2,
             img: "assets/images/avatar/02.jpg",
-            name: "Lucas",
-            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
+            name: "Lukas",
+            title: "Video pembelajarannya asik banget! memotivasi saya untuk terus belajar.",
         },
         {
             id: 3,
             img: "assets/images/avatar/03.jpg",
             name: "Aryo",
-            title: "Conviction For every delay in they  Extremity now strangers contained breakfast",
+            title: "Fitur-fitur di website kampus gratis sangat lengkap dan menarik. menjawab semua kebutuhan saya .",
         },
         {
             id: 4,
             img: "assets/images/avatar/04.jpg",
             name: "Rizki",
-            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
+            title: "Pembelajaran mudah dipahami karena fokus pada konsep dan garis besar materi.",
         },
         {
             id: 5,
             img: "assets/images/avatar/05.jpg",
             name: "Ibnu",
-            title: "Conviction For every delay in they  Extremity now strangers contained breakfast",
+            title: "Kampus gratis adalah platform pendidikan yang menyediakan fasilitas gratis dan lengkap. Good job Kampus Gratis!",
         },
         {
             id: 6,
             img: "assets/images/avatar/06.jpg",
             name: "Azis",
-            title: "Make my life easier and organized conviction For every delay in they  Extremity now strangers contained breakfast",
-        }
+            title: "Sebelum belajar di Kampus Gratis, saya kesulitan mengakses bahan belajar. Sekarang alhamdulillah saya bisa belajar dengan bebas.",
+        },
+        {
+            id: 7,
+            img: "assets/images/avatar/07.jpg",
+            name: "Sasuke",
+            title: "Penjelasan dari para experts disampaikan dengan baik dan menarik, sehingga saya tidak bosan menonton semua video pembelajaran.",
+        },
+        {
+            id: 8,
+            img: "assets/images/avatar/08.jpg",
+            name: "Naruto",
+            title: "Banyak fitur belajar yang ditawarkan oleh Kampus Gratis dan semuanya sangat membantu saya dalam belajar. Terima kasih Kampus Gratis!",
+        },
+        {
+            id: 9,
+            img: "assets/images/avatar/09.jpg",
+            name: "Isan",
+            title: "Website Kampus Gratis sangat user friendly dan design nya menarik, sehingga membantu belajar menjadi lebih mudah dan menyenangkan.",
+        },
     ]
 
     return (

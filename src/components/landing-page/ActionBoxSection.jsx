@@ -52,7 +52,7 @@ const ActionBoxSection = () => {
                                 <div className="col-md-6">
                                     <h2 className="text-white">Tunggu apa lagi?</h2>
                                     <p className="text-white mb-0">
-                                        Tingkatkan pengetahuan Anda kembangkan keterampilan dengan kursus paling andal
+                                        Tingkatkan pengetahuan kembangkan keterampilan anda
                                     </p>
                                 </div>
                                 <div className="col-md-6 col-lg-3 text-md-end">

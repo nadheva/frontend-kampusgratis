@@ -31,7 +31,6 @@ const Calendar = (props) => {
 		if (data?.calender) setDemoEvents(JSON.parse(JSON.stringify(data?.calender)));
 	}, [data]);
 
-	console.log(demoEvents)
 
 	const onNewEventClick = (data) => {
 		const msg = `New event click action\n\n Callback data:\n\n${JSON.stringify({
