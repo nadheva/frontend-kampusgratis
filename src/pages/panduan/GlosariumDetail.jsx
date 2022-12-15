@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
 import { getGlossary } from '../../features/guide/guideSlice';
@@ -34,8 +34,19 @@ const GlosariumDetail = () => {
                         <div className="row justify-content-lg-between">
                             <div className="col-lg-12">
                                 <h1 className="text-white text-center">
-                                    KHS
+                                    {demoEvents?.word}
                                 </h1>
+                                <div className="d-flex justify-content-center">
+                                    <nav aria-label="breadcrumb">
+                                        <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                                            <li className='breadcrumb-item'><Link to='/kategori'>Fitur</Link></li>
+                                            <li className='breadcrumb-item'><Link to='/panduan'>Panduan</Link></li>
+                                            <li className='breadcrumb-item'><Link to='/panduan/kamus-KG'>Kamus KG</Link></li>
+                                            <li className='breadcrumb-item'><Link to='/panduan/kamus-KG/glosarium'>Glosarium</Link></li>
+                                            <li className='breadcrumb-item active' aria-current='page'>{demoEvents?.word}</li>
+                                        </ol>
+                                    </nav>
+                                </div>
                             </div>
                             <div className="col-lg-3"></div>
                         </div>
@@ -67,8 +78,8 @@ const GlosariumDetail = () => {
                                                             </section>
                                                         ) : Object.values(demoEvents).length !== 0 ? (
                                                             <div>
-                                                                <h5 className="border-bottom">{demoEvents.word}</h5>
-                                                                <p>{demoEvents.definition}</p>
+                                                                <h5 className="border-bottom">{demoEvents?.word}</h5>
+                                                                <p>{demoEvents?.definition}</p>
                                                             </div>
                                                         ) : (<></>)
                                                     }

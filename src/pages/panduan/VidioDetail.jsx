@@ -74,7 +74,7 @@ const VidioDetail = () => {
                                             ) : (
                                                 <>
                                                     <div className="col-12 position-relative">
-                                                        <iframe src={`https://www.youtube.com/embed/${demoEvents?.content?.url.split("?v=")[1]}`}
+                                                        <iframe src={`https://www.youtube.com/embed/${demoEvents?.content?.url?.split("?v=")[1]}`}
                                                             title={demoEvents?.title}
                                                             width="100%"
                                                             height="500px"

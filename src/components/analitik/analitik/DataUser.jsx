@@ -28,23 +28,9 @@ const DataUser = () => {
                             <li className="list-group-item px-0">
                                 <span className="h6 fw-light">
                                     <i className="fas fa-fw fa-user text-primary me-1 me-sm-3" />
-                                    Nim:
+                                    Nama:
                                 </span>
-                                <span>201904020</span>
-                            </li>
-                            <li className="list-group-item px-0">
-                                <span className="h6 fw-light">
-                                    <i className="fas fa-fw fa-building text-primary me-1 me-sm-3" />
-                                    Fakultas:
-                                </span>
-                                <span>Teknik</span>
-                            </li>
-                            <li className="list-group-item px-0">
-                                <span className="h6 fw-light">
-                                    <i className="fas fa-fw fa-school text-primary me-1 me-sm-3" />
-                                    Prodi:
-                                </span>
-                                <span>D4 Teknologi Rekayasa Perangkat Lunak</span>
+                                <span>Lori Stevens </span>
                             </li>
                             <li className="list-group-item px-0">
                                 <span className="h6 fw-light">
@@ -55,18 +41,35 @@ const DataUser = () => {
                             </li>
                             <li className="list-group-item px-0">
                                 <span className="h6 fw-light">
-                                    <i className="fas fa-fw fa-graduation-cap text-primary me-1 me-sm-3" />
-                                    Status
+                                    <i className="fas fa-fw fa-school text-primary me-1 me-sm-3" />
+                                    Program Studi:
                                 </span>
-                                <span>Aktif </span>
+                                <span>D4 Teknologi Rekayasa Perangkat Lunak</span>
                             </li>
                             <li className="list-group-item px-0">
                                 <span className="h6 fw-light">
                                     <i className="fas fa-fw fa-chalkboard text-primary me-1 me-sm-3" />
-                                    SKS
+                                    Jumlah SKS:
                                 </span>
-                                <span>100 </span>
+                                <span>100 Sks</span>
                             </li>
+
+                            <li className="list-group-item px-0">
+                                <span className="h6 fw-light">
+                                    <i className="fas fa-fw fa-building text-primary me-1 me-sm-3" />
+                                    Kepala Prodi:
+                                </span>
+                                <span>Rendy S.kom, M.Kom</span>
+                            </li>
+
+                            {/* <li className="list-group-item px-0">
+                                <span className="h6 fw-light">
+                                    <i className="fas fa-fw fa-graduation-cap text-primary me-1 me-sm-3" />
+                                    Status
+                                </span>
+                                <span>Aktif </span>
+                            </li> */}
+
                         </ul>
                     </div>
                 </div>

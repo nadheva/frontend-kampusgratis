@@ -8,7 +8,7 @@ const Form = ({ onFormSubmit, setEmail, email, isLoading }) => {
                 <Link className="me-0" to="/">
                     <img
                         className="h-40px mb-4"
-                        src="/assets/images/1.png"
+                        src="./assets/images/asset-kg/logo-orange.png"
                         alt="Kampus Gratis"
                     />
                 </Link>

@@ -13,7 +13,7 @@ const Analitik = () => {
 			<main>
 				<DataUser />
 				<Chart />
-				<DataKhs />
+				{/* <DataKhs /> */}
 			</main>
 			<Footer />
 		</>

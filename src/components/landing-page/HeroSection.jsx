@@ -334,13 +334,13 @@ const HeroSection = () => {
 								</span>
 								<div className="text-start ms-3">
 									<h6 className="mb-0 text-white">
-										Selamat
+										Pendaftaran
 										<span className="ms-4">
 											<i className="fas fa-check-circle text-success" />
 										</span>
 									</h6>
 									<p className="mb-0 small text-white">
-										Penerimaan Anda selesai
+										Pendaftaran sangat mudah
 									</p>
 								</div>
 							</div>
@@ -356,40 +356,40 @@ const HeroSection = () => {
 								data-aos="fade-left"
 								data-aos-duration="3000"
 							>
-								<p className="text-white">Siswa baru kami setiap hari</p>
+								<p className="text-white">Belajar lebih terarah</p>
 								<ul className="avatar-group mb-0">
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/avatar/01.jpg"
+											src="./assets/images/asset-kg/avatar-1.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/avatar/02.jpg"
+											src="./assets/images/asset-kg/avatar-4.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/avatar/03.jpg"
+											src="./assets/images/asset-kg/avatar-5.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/avatar/04.jpg"
+											src="./assets/images/asset-kg/avatar-6.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<div className="avatar-img rounded-circle border-white bg-primary">
 											<span className="text-white position-absolute top-50 start-50 translate-middle small">
-												1K+
+												++
 											</span>
 										</div>
 									</li>

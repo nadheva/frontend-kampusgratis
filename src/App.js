@@ -95,6 +95,7 @@ import BukuPanduanDetial from "./pages/panduan/BukuPanduanDetial";
 import Glosarium from "./pages/panduan/Glosarium";
 import KamusAplikasiDetail from "./pages/panduan/KamusAplikasiDetail";
 import GlosariumDetail from "./pages/panduan/GlosariumDetail";
+import ListPekerjaan from "./pages/penyaluran-kerja/ListPekerjaan";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -314,7 +315,10 @@ function App() {
 
 						{/* START : Penyaluran Kerja */}
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
-							<Route path="/penyaluran-kerja" element={<PenyaluranKerja />} />
+							<Route path="/penyaluran-kerja" element={<ListPekerjaan />} />
+						</Route>
+						<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PenyaluranKerja />} />
 						</Route>
 
 						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>

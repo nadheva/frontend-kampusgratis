@@ -14,7 +14,7 @@ const DetailPenyaluranKerja = () => {
 			<main>
 				<Intro />
 				<Detail />
-				<Maps />
+				{/* <Maps /> */}
 			</main>
 			<Footer />
 		</>
