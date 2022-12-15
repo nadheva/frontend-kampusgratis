@@ -82,8 +82,6 @@ const getGlossary = async (id) => {
 	return response.data;
 }
 
-
-
 const guideService = {
 	getGuideVideos,
 	getGuideBooks,
