@@ -246,7 +246,7 @@ const Chart = () => {
                             <ComposedChart
                                 width={500}
                                 height={400}
-                                data={data3}
+                                data={data3 }
                                 margin={{
                                     top: 20,
                                     right: 20,
