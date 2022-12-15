@@ -6,8 +6,8 @@ import { getAuth } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
+// import logoKG from '../../assets/images/asset-kg/logo-orange.png'
 
-// import Logo from '../../assets/images/1.png';
 import Logo from '../../assets/images/logo-kampus-gratis.png';
 import LogoDark from '../../assets/images/logo-kampus-gratis-dark.png';
 
