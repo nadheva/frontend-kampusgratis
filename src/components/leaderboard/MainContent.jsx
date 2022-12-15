@@ -1,31 +1,10 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import useEffectOnce from '../../helpers/useEffectOnce';
-
-import { getLeaderboardGlobal } from '../../features/leaderboard/leaderboardSlice';
-import { useState } from 'react';
+import React from 'react';
 
 const MainContent = () => {
-  const [leaderboardList, setLeaderboardList] = useState([]);
-  const dispatch = useDispatch();
-
-  const { data, isLoading } = useSelector(
-    (state) => state.leaderboard
-  );
-
-  useEffectOnce(() => {
-    dispatch(getLeaderboardGlobal());
-  });
-
-  useEffect(() => {
-    if (Object.values(data).length !== 0)
-      setLeaderboardList(data.leaderboard_global.data);
-  }, [data]);
-
   return <>
     <section>
       <div className="container">
-        <div className="lead text-center mb-3">Daftar Nama Mahasiswa dengan <strong>nilai terbaik secara global</strong> (akumulasi dari setiap mata kuliah).</div>
+        <div className="lead text-center mb-3">Daftar Nama Mahasiswa dengan <strong>nilai terbaik secara global</strong> (dilihat dari setiap mata kuliah).</div>
         <div className="card card-body bg-transparent pb-0 border py-4">
           <div className="table-responsive border-0 mb-4">
             <table className="table table-dark-gray align-middle p-4 mb-0 table-hover">
@@ -33,33 +12,70 @@ const MainContent = () => {
                 <tr>
                   <th className='border-0 rounded-start text-center'>#</th>
                   <th className='border-0'>Nama Mahasiswa</th>
-                  <th className='border-0 rounded-end text-center'>Skor</th>
+                  <th className='border-0 rounded-end'>Skor</th>
                 </tr>
               </thead>
               <tbody>
-                {leaderboardList.length === 0 ? <>
-                  <td colSpan={3}>
-                    <div className="alert alert-info text-center">...</div>
+                <tr>
+                  <td className='text-center h4'>🥇</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    <strong>Aryo Bhodro Irawan</strong>
                   </td>
-                </> : <>
-                  {console.log(leaderboardList)}
-                  {leaderboardList.map((data, index) => <>
-                    <tr>
-                      <td className='text-center h4'>
-                        {index == 0 ? "🥇" :
-                          index == 1 ? "🥈" :
-                            index == 2 ? "🥉" : index + 1}
-                      </td>
-                      <td>
-                        <div class="avatar mb-2 mb-md-0 me-3 border-2">
-                          <img src={data.User.display_picture_link ? data.User.display_picture_link : "/assets/images/avatar/empty-display-picture.png"} class="avatar-img rounded-circle shadow" alt={data.User.full_name} />
-                        </div>
-                        <strong>{data.User.full_name}</strong>
-                      </td>
-                      <td className='text-center'>{index < 3 ? <strong>{data.final_score}</strong> : data.final_score}</td>
-                    </tr>
-                  </>)}
-                </>}
+                  <td><strong>100</strong></td>
+                </tr>
+                <tr>
+                  <td className='text-center h4'>🥈</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    <strong>Muhammad Azis</strong>
+                  </td>
+                  <td><strong>97</strong></td>
+                </tr>
+                <tr>
+                  <td className='text-center h4'>🥉</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    <strong>Rizki Pratama</strong>
+                  </td>
+                  <td><strong>92</strong></td>
+                </tr>
+                <tr>
+                  <td className='text-center h6'>4.</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    Lalu Ibnu
+                  </td>
+                  <td>88</td>
+                </tr>
+                <tr>
+                  <td className='text-center h6'>5.</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    Kenniskiu
+                  </td>
+                  <td>82</td>
+                </tr>
+                <tr>
+                  <td className='text-center h6'>6.</td>
+                  <td>
+                    <div class="avatar avatar-xs mb-2 mb-md-0 me-3 border-2">
+                      <img src="assets/images/avatar/09.jpg" class="rounded-circle" alt="" />
+                    </div>
+                    Theopillus Lukas
+                  </td>
+                  <td>81</td>
+                </tr>
               </tbody>
             </table>
           </div>
