@@ -86,6 +86,16 @@ const KamusAplikasi = () => {
                                 <h1 className="text-white text-center">
                                     Kamus Aplikasi
                                 </h1>
+                                <div className="d-flex justify-content-center">
+                                    <nav aria-label="breadcrumb">
+                                        <ol className="breadcrumb breadcrumb-dark breadcrumb-dots mb-0">
+                                            <li className='breadcrumb-item'><Link to='/kategori'>Fitur</Link></li>
+                                            <li className='breadcrumb-item'><Link to='/panduan'>Panduan</Link></li>
+                                            <li className='breadcrumb-item'><Link to='/panduan/kamus-KG'>Kamus KG</Link></li>
+                                            <li className='breadcrumb-item active' aria-current='page'>Kamus Aplikasi</li>
+                                        </ol>
+                                    </nav>
+                                </div>
                             </div>
                             <div className="col-lg-3"></div>
                         </div>
