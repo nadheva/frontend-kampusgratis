@@ -262,7 +262,7 @@ const HeroSection = () => {
 								>
 									<i className="fas fa-play" />
 									<h6 className="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y ">
-										Putar vidio
+										Putar Vidio
 									</h6>
 								</a>
 							</div>
