@@ -34,7 +34,7 @@ const GlosariumDetail = () => {
                         <div className="row justify-content-lg-between">
                             <div className="col-lg-12">
                                 <h1 className="text-white text-center">
-                                    KHS
+                                    {demoEvents?.word}
                                 </h1>
                             </div>
                             <div className="col-lg-3"></div>
@@ -67,8 +67,8 @@ const GlosariumDetail = () => {
                                                             </section>
                                                         ) : Object.values(demoEvents).length !== 0 ? (
                                                             <div>
-                                                                <h5 className="border-bottom">{demoEvents.word}</h5>
-                                                                <p>{demoEvents.definition}</p>
+                                                                <h5 className="border-bottom">{demoEvents?.word}</h5>
+                                                                <p>{demoEvents?.definition}</p>
                                                             </div>
                                                         ) : (<></>)
                                                     }

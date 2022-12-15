@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom';
+
+import { useSelector, useDispatch } from "react-redux";
+import { getGlossary } from '../../features/guide/guideSlice';
+import useEffectOnce from "../../helpers/useEffectOnce";
+
 import Footer from '../../components/default/Footer'
 import Header from '../../components/default/Header'
 
 const KamusAplikasiDetail = () => {
+    const { id } = useParams();
+
+    const dispatch = useDispatch();
+    const [demoEvents, setDemoEvents] = useState([]);
+
+    const { data, isLoading } = useSelector((state) => state.guide);
+
+    useEffectOnce(() => {
+        dispatch(getGlossary(id));
+    });
+
+    useEffect(() => {
+        if (data?.glossary) setDemoEvents(data?.glossary);
+    }, [data]);
+
+    console.log(demoEvents)
     return (
         <>
             <Header />
@@ -12,7 +34,7 @@ const KamusAplikasiDetail = () => {
                         <div className="row justify-content-lg-between">
                             <div className="col-lg-12">
                                 <h1 className="text-white text-center">
-                                    KHS
+                                    {demoEvents?.word}
                                 </h1>
                             </div>
                             <div className="col-lg-3"></div>
@@ -28,10 +50,28 @@ const KamusAplikasiDetail = () => {
                                         <div className="card">
                                             <div className="card-body p-0 pt-3">
                                                 <div className="vstack gap-3">
-                                                    <div>
-                                                        <h5 className="border-bottom">KHS </h5>
-                                                        <p>KHS merupakan kumpulan definisi singkat dari istilah dan akronim yang digunakan di Mobile Aplikasi Kampus Gratis.</p>
-                                                    </div>
+                                                    {
+                                                        isLoading ? (
+                                                            <section className="py-0 py-sm-5">
+                                                                <div
+                                                                    className="container text-center"
+                                                                    style={{ marginTop: "178px", marginBottom: "178px" }}>
+                                                                    <div className="row">
+                                                                        <div className="col-12">
+                                                                            <div className="spinner-border" role="status">
+                                                                                <span className="visually-hidden">Loading...</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
+                                                        ) : Object.values(demoEvents).length !== 0 ? (
+                                                            <div>
+                                                                <h5 className="border-bottom">{demoEvents.word}</h5>
+                                                                <p>{demoEvents.definition}</p>
+                                                            </div>
+                                                        ) : (<></>)
+                                                    }
                                                 </div>
                                             </div>
                                         </div>

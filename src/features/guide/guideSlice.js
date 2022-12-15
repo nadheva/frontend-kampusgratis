@@ -46,6 +46,18 @@ export const getGuide = createAsyncThunk("guide/getbyid/id", async (id, thunkAPI
     }
 });
 
+export const getApplication = createAsyncThunk("guide/application", async ({ currentPage, search }, thunkAPI) => {
+    try {
+        const { data } = await guideService.getApplication(currentPage, search);
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
 export const getGlossaries = createAsyncThunk("guide/glossary", async ({ currentPage, search }, thunkAPI) => {
     try {
         const { data } = await guideService.getGlossaries(currentPage, search);
@@ -127,6 +139,20 @@ export const guideSlice = createSlice({
                 state.data.guide = action.payload;
             })
             .addCase(getGuide.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+            .addCase(getApplication.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getApplication.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.application = action.payload;
+            })
+            .addCase(getApplication.rejected, (state, action) => {
                 state.isSuccess = false;
                 state.isLoading = false;
                 state.isError = true;
