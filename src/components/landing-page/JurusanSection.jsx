@@ -56,7 +56,7 @@ const JurusanSection = () => {
                     {
                         data.map((data, index) => (
                             <div className="col-md-6 col-xl-4" key={index} data-aos="fade-up" data-aos-duration="3000">
-                                <div className="card shadow-hover overflow-hidden bg-transparent">
+                                <div className="card shadow overflow-hidden bg-transparent">
                                     <div className="position-relative">
                                         <img
                                             className="card-img-top"
@@ -74,10 +74,10 @@ const JurusanSection = () => {
                                         <hr />
                                         <div className="d-flex justify-content-between align-items-center mb-2">
                                             <h4 className="text-success mb-0">{data.status}</h4>
-                                            <span className="h6 fw-light mb-0 me-3">
+                                            {/* <span className="h6 fw-light mb-0 me-3">
                                                 <i className="far fa-user text-danger me-2" />
-                                                {data.totalMahasiswa} Mahasiswa
-                                            </span>
+                                                Hanya untuk {data.totalMahasiswa} Mahasiswa
+                                            </span> */}
                                         </div>
                                     </div>
                                 </div>

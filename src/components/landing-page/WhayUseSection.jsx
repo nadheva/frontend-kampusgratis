@@ -24,7 +24,7 @@ const WhayUseSection = () => {
 			icon: "bi bi-alarm-fill fs-5",
 			title: "Pembelajaran yang Fleksibel",
 			deskripsi:
-				"Memberikan pembelajar dengan pilihan tentang di mana, kapan, dan bagaimana pembelajaran terjadi, dengan menggunakan berbagai teknologi.",
+				"Memberikan pembelajaran efektif yang bisa diakses dimanapun dan kapanpun.",
 		},
 		{
 			id: 4,
