@@ -361,28 +361,28 @@ const HeroSection = () => {
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/asset-kg/avatar-1.jpg"
+											src="./assets/images/asset-kg/avatar-1.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/asset-kg/avatar-4.jpg"
+											src="./assets/images/asset-kg/avatar-4.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/asset-kg/avatar-5.jpg"
+											src="./assets/images/asset-kg/avatar-5.JPG"
 											alt="avatar"
 										/>
 									</li>
 									<li className="avatar avatar-sm">
 										<img
 											className="avatar-img rounded-circle border-white"
-											src="assets/images/asset-kg/avatar-6.jpg"
+											src="./assets/images/asset-kg/avatar-6.JPG"
 											alt="avatar"
 										/>
 									</li>
