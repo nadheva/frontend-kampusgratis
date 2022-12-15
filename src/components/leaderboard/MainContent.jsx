@@ -43,15 +43,15 @@ const MainContent = () => {
                   </td>
                 </> : <>
                   {leaderboardList.map((data, index) => <>
-                    <tr>
+                    <tr key={index}>
                       <td className='text-center h4'>
                         {index == 0 ? "🥇" :
                           index == 1 ? "🥈" :
                             index == 2 ? "🥉" : index + 1}
                       </td>
                       <td>
-                        <div class="avatar mb-2 mb-md-0 me-3 border-2">
-                          <img src={data.User.display_picture_link ? data.User.display_picture_link : "/assets/images/avatar/empty-display-picture.png"} class="avatar-img rounded-circle shadow" alt={data.User.full_name} />
+                        <div className="avatar mb-2 mb-md-0 me-3 border-2">
+                          <img loading="lazy" src={data.User.display_picture_link ? data.User.display_picture_link : "/assets/images/avatar/empty-display-picture.png"} className="avatar-img rounded-circle shadow" alt={data.User.full_name} />
                         </div>
                         <strong>{data.User.full_name}</strong>
                       </td>
