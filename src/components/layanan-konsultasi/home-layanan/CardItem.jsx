@@ -29,7 +29,7 @@ const CardItem = () => {
     const dataLayanan = [
         {
             title: "Dokumen (Unduh dokumen untuk pengajuan Jenjang Karir, Konsentrasi Mata Kuliah, Jenis Magang)",
-            link: "",
+            link: "/layanan-konsultasi/dokumen",
         },
         {
             title: "Proses Dokumen (Ajukan dokumen yang sudah anda download agar dapat di proses oleh pihak admin)",

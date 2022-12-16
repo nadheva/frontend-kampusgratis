@@ -9,8 +9,17 @@ const ChatKonsultasi = () => {
 		<>
 			<Header />
 			<main>
-				<section style={{ backgroundColor: "#eee" }}>
-					<div className="container py-5">
+				<section className="mb-3">
+					<div className="container-fluid">
+						<div className="row g-4 g-md-5 align-items-center justify-content-center mb-xxl-n7">
+							<div className="col-lg-6 col-xl-4 col-xxl-5 text-center ">
+								<h1 className="display-6">Pusat Bantuan</h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section >
+					<div className="container">
 						<div className="row d-flex justify-content-center">
 							<div className="col-md-8 col-lg-6 col-xl-12">
 								<div
@@ -29,7 +38,7 @@ const ChatKonsultasi = () => {
 										<p className="mb-0 fw-bold">Live chat</p>
 										<i className="fas fa-times"></i>
 									</div>
-									<div className="card-body">
+									<div className="card-body shadow rounded-3">
 										<div className="d-flex flex-row justify-content-start mb-4">
 											<img
 												src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"

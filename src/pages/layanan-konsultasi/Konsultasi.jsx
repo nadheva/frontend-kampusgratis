@@ -8,15 +8,15 @@ const Konsultasi = () => {
     const data = [
         {
             title: "Admin 1",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi/chat-konsultasi",
         },
         {
             title: "Admin 2",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi/chat-konsultasi",
         },
         {
             title: "Admin 3",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi/chat-konsultasi",
         },
     ]
     return (

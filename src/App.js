@@ -353,7 +353,12 @@ function App() {
 						<Route path="/layanan-konsultasi/konsultasi" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi/konsultasi" element={<Konsultasi />} />
 						</Route>
-
+						<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<ChatKonsultasi />} />
+						</Route>
+						<Route path="/layanan-konsultasi/dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/dokumen" element={<PilihDokument />} />
+						</Route>
 
 
 
@@ -366,12 +371,8 @@ function App() {
 						<Route path="/status-dokument" element={<PrivateRoute />}>
 							<Route path="/status-dokument" element={<StatusDokument />} />
 						</Route>
-						<Route path="/chat-konsultasi" element={<PrivateRoute />}>
-							<Route path="/chat-konsultasi" element={<ChatKonsultasi />} />
-						</Route>
-						<Route path="/pilih-dokument" element={<PrivateRoute />}>
-							<Route path="/pilih-dokument" element={<PilihDokument />} />
-						</Route>
+
+
 
 						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
 							<Route
