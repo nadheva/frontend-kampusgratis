@@ -30,21 +30,36 @@ const Magang = () => {
             <div className="row">
               <div className="col-12">
                 <p>
-                  Perceived end knowledge certainly day sweetness why cordially. On
-                  forth doubt miles of child. Exercise joy man children rejoiced. Yet
-                  uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. Handsome met
-                  debating sir dwelling age material. As style lived he worse dried.
-                  Offered related so visitors we private removed.
+                  PT. Menara Indonesia turut membuka program magang yang difokuskan untuk mahasiswa yang diharapkan dapat membantu dalam pembuatan dan pengembangan aplikasi Kampus Gratis itu sendiri. Hal ini guna mendukung sistem pembelajaran yang menarik, interaktif dan berkualitas melalui aktivitas magang.
                 </p>
                 <p>
-                  Yet uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. As style lived he
-                  worse dried. Offered related so visitors we private removed.
+                  Dengan bergabung di program ini, mahasiswa dapat langsung merasakan dan mempelajari bagaimana mengelola project, berkontribusi dalam proses pembuatan aplikasi dan pegembangan sistem pembelajaran berbasis online, serta bekerjasama dengan pihak internal dan eksternal dalam menjalin hubungan yang profesional selama program magang berlangsung.
+                </p>
+                <p>
+                  Aktivitas magang meliputi:
+                  <ol>
+                    <li>
+                      Pengembangan platform LMS dengan nama Kampus Gratis.
+                    </li>
+                    <li>
+                      Mendesain alur kurikulum up-to-date yang praktis dan memiliki link-and-match dengan dunia kerja.
+                    </li>
+                    <li>
+                      Membuat konten video, infografis dan pdf pembelajaran untuk mendukung materi Kampus Gratis
+                    </li>
+                    <li>
+                      Membuat alat tes dan uji pembelajaran yang sesuai dengan konsep materi yang di desain.
+                    </li>
+                    <li>
+                      Promosi Kampus Gratis pada beberapa industri pengguna dan universitas.
+                    </li>
+                    <li>
+                      Mencari & bekerja sama dengan calon pengajar.
+                    </li>
+                    <li>
+                      Mengembangkan mesin pencari konten otomatis berbasis AI.
+                    </li>
+                  </ol>
                 </p>
               </div>
             </div>

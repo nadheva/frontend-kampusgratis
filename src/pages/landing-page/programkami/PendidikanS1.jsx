@@ -30,21 +30,10 @@ const PendidikanS1 = () => {
             <div className="row">
               <div className="col-12">
                 <p>
-                  Perceived end knowledge certainly day sweetness why cordially. On
-                  forth doubt miles of child. Exercise joy man children rejoiced. Yet
-                  uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. Handsome met
-                  debating sir dwelling age material. As style lived he worse dried.
-                  Offered related so visitors we private removed.
+                  Kampus Gratis merupakan salah satu sistem manajemen e-learning yang mencantumkan laporan peningkatan atau progres pembelajaran mahasiswa layaknya seperti perguruan tinggi. Pengembangan platform pembelajaran ini merupakan salah satu inisiasi dari pendiri PT. Menara Indonesia atau M-Knows Consulting, yang ingin memberikan solusi pendidikan tinggi yang gratis, berkualitas, bisa diakses siapapun khususnya kaum marginal, dan selalu update layaknya platform Wikipedia.
                 </p>
                 <p>
-                  Yet uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. As style lived he
-                  worse dried. Offered related so visitors we private removed.
+                  Berbagai fitur yang tersedia, dapat digunakan oleh siapapun untuk menambah wawasan pengetahuan layaknya sedang berkuliah namun bisa diakses kapanpun dan dimanapun.
                 </p>
               </div>
             </div>

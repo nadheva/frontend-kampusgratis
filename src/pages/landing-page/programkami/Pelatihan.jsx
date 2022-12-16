@@ -29,21 +29,7 @@ const Pelatihan = () => {
             <div className="row">
               <div className="col-12">
                 <p>
-                  Perceived end knowledge certainly day sweetness why cordially. On
-                  forth doubt miles of child. Exercise joy man children rejoiced. Yet
-                  uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. Handsome met
-                  debating sir dwelling age material. As style lived he worse dried.
-                  Offered related so visitors we private removed.
-                </p>
-                <p>
-                  Yet uncommonly his ten who diminution astonished. Demesne had new
-                  manners savings staying had. Under folly balls, death own point now
-                  men. Match way these she avoids seeing death. She who drift their
-                  fat off. Ask a quick six seven offer see among. As style lived he
-                  worse dried. Offered related so visitors we private removed.
+                  Kampus Gratis memberikan pelatihan berupa topik - topik yang sedang populer dan sangat dibutuhkan di era ini. Materi yang diberikan dirancang agar dapat dipahami oleh pemula sekali pun, sehingga semua orang bisa mengikuti pelatihan ini. Output dari pelatihan ini diharapkan dapat melatih dan mengembangkan suatu keterampilan dan pengetahuan terhadap topik atau materi yang anda ambil.
                 </p>
               </div>
             </div>
