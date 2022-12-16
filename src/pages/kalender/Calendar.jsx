@@ -113,8 +113,36 @@ const Calendar = (props) => {
 									// }}
 									/>
 								</div>
+								<ul className="list-inline hstack flex-wrap gap-3 mb-0 justify-content-center mt-4">
+									<li className="list-inline-item">
+										<a className="" href="#" style={{ color: "#9747FF" }}>
+											<i className="bi bi-circle-fill" /> Acara Kampus
+										</a>
+									</li>
+									<li className="list-inline-item">
+										<a className="text-success" href="#">
+											<i className="bi bi-circle-fill" /> UAS
+										</a>
+									</li>
+									<li className="list-inline-item">
+										<a className="text-warning" href="#">
+											<i className="bi bi-circle-fill" /> Tugas
+										</a>
+									</li>
+									<li className="list-inline-item">
+										<a className="text-danger" href="#">
+											<i className="bi bi-circle-fill" /> UTS
+										</a>
+									</li>
+									<li className="list-inline-item">
+										<a className="" href="#" style={{ color: "#106FA4" }}>
+											<i className="bi bi-circle-fill" /> Jadwal Simulasi
+										</a>
+									</li>
+								</ul>
 							</div>
 						</section>
+
 					)
 				}
 			</main>

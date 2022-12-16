@@ -1,13 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../components/default/Footer'
 import Header from '../../components/default/Header'
 
 const Modul = () => {
+
+    const data = [
+        {
+            title: "Modul 1",
+            img: "../../assets/images/courses/4by3/08.jpg",
+            vidio: "3",
+            pdf: "8",
+        },
+        {
+            title: "Modul 2",
+            img: "../../assets/images/courses/4by3/07.jpg",
+            vidio: "4",
+            pdf: "1",
+        },
+        {
+            title: "Modul 3",
+            img: "../../assets/images/courses/4by3/06.jpg",
+            vidio: "3",
+            pdf: "2",
+        },
+        {
+            title: "Modul 4",
+            img: "../../assets/images/courses/4by3/05.jpg",
+            vidio: "3",
+            pdf: "2",
+        },
+    ]
+
     return (
         <>
             <Header />
             <main>
-
                 <section className="py-4">
                     <div className="container">
                         <div className="row">
@@ -37,70 +65,35 @@ const Modul = () => {
                         <div className="row mt-3">
                             <div className="col-12">
                                 <div className="row g-4">
-                                    <div className="col-sm-6 col-lg-4 col-xl-3">
-                                        <div className="card shadow h-100">
-                                            {/* Image */}
-                                            <img
-                                                src="../../assets/images/courses/4by3/08.jpg"
-                                                className="card-img-top"
-                                                alt="course image"
-                                            />
-                                            {/* Card body */}
-                                            <div className="card-body pb-0">
-                                                {/* Badge and favorite */}
-                                                <div className="d-flex justify-content-between mb-2">
-                                                    <a
-                                                        href="#"
-                                                        className="badge bg-purple bg-opacity-10 text-purple"
-                                                    >
-                                                        All level
-                                                    </a>
-                                                    <a href="#" className="h6 fw-light mb-0">
-                                                        <i className="far fa-heart" />
-                                                    </a>
-                                                </div>
-                                                {/* Title */}
-                                                <h5 className="card-title">
-                                                    <a href="#">Sketch from A to Z: for app designer</a>
-                                                </h5>
-                                                {/* Rating star */}
-                                                <ul className="list-inline mb-0">
-                                                    <li className="list-inline-item me-0 small">
-                                                        <i className="fas fa-star text-warning" />
-                                                    </li>
-                                                    <li className="list-inline-item me-0 small">
-                                                        <i className="fas fa-star text-warning" />
-                                                    </li>
-                                                    <li className="list-inline-item me-0 small">
-                                                        <i className="fas fa-star text-warning" />
-                                                    </li>
-                                                    <li className="list-inline-item me-0 small">
-                                                        <i className="fas fa-star text-warning" />
-                                                    </li>
-                                                    <li className="list-inline-item me-0 small">
-                                                        <i className="far fa-star text-warning" />
-                                                    </li>
-                                                    <li className="list-inline-item ms-2 h6 fw-light mb-0">
-                                                        4.0/5.0
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            {/* Card footer */}
-                                            <div className="card-footer pt-0 pb-3">
-                                                <hr />
-                                                <div className="d-flex justify-content-between">
-                                                    <span className="h6 fw-light mb-0">
-                                                        <i className="far fa-clock text-danger me-2" />
-                                                        12h 56m
-                                                    </span>
-                                                    <span className="h6 fw-light mb-0">
-                                                        <i className="fas fa-table text-orange me-2" />
-                                                        15 lectures
-                                                    </span>
+                                    {
+                                        data.map((x, i) => (
+                                            <div className="col-sm-6 col-lg-4 col-xl-3" key={i}>
+                                                <div className="card shadow h-100">
+                                                    <img
+                                                        src={x.img}
+                                                        className="card-img-top"
+                                                        alt="course image"
+                                                    />
+                                                    <div className="card-body pb-0">
+                                                        <h5 className="card-title">
+                                                            <Link to="" >{x.title}</Link>
+                                                        </h5>
+                                                    </div>
+                                                    <div className="card-footer pt-0 pb-3">
+                                                        <hr />
+                                                        <div className="d-flex justify-content-between">
+                                                            <span className="h6 fw-light mb-0">
+                                                                {x.vidio} Vidio
+                                                            </span>
+                                                            <span className="h6 fw-light mb-0">
+                                                                {x.pdf} Pdf
+                                                            </span>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
+                                        ))
+                                    }
                                 </div>
                             </div>
                         </div>
