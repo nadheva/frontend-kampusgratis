@@ -45,7 +45,7 @@ const Administration = () => {
 										</div>
 										{data?.is_approved?.overall === true
 											? <p>Administrasi telah diterima, <Link to="/silabus"> Klik di sini</Link> untuk mengambil Rencana Studi.</p>
-											: <p className="text-danger mb-1">Kamu harus mengisi administrasi untuk bisa mengambil Rencana Studi.</p>}
+											: <p className="text-danger mb-1">Kamu harus mengisi administrasi untuk bisa mengambil Rencana Studi!</p>}
 									</div>
 								</div>
 								<div className="card-body mt-2">
