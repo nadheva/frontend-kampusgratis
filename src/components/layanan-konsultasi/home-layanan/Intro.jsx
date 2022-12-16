@@ -4,7 +4,7 @@ const Intro = () => {
     return (
         <section>
             <div className="container">
-                <div className="row g-4">
+                <d  iv className="row g-4">
                     <div className="col-10 text-center mx-auto position-relative">
                         <figure className="position-absolute top-100 start-50 translate-middle mt-5 ms-n9 pt-5 d-none d-lg-block">
                             <svg>
@@ -43,7 +43,7 @@ const Intro = () => {
                         </h1>
                         <p>Halo, Ada yang bisa kami bantu?</p>
                     </div>
-                </div>
+                </d>
             </div>
         </section>
     )

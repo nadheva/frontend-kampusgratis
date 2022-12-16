@@ -6,23 +6,23 @@ const CardItem = () => {
     const dataKonsultasi = [
         {
             title: "Konsultasi Karir dan Cita Cita",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi",
         },
         {
             title: "Konsultasi Masalah Keluarga dan Keuangan",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi",
         },
         {
             title: "Konsultasi Masalah Pribadi dan Cuti Kuliah",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi",
         },
         {
             title: "Konsultasi Akademik",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi",
         },
         {
             title: "Konsultasi Lainnya",
-            link: "",
+            link: "/layanan-konsultasi/konsultasi",
         },
     ]
 
