@@ -2,43 +2,71 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const CardItem = () => {
+
+    const dataKonsultasi = [
+        {
+            title: "Konsultasi Karir dan Cita Cita",
+            link: "/layanan-konsultasi/konsultasi",
+        },
+        {
+            title: "Konsultasi Masalah Keluarga dan Keuangan",
+            link: "/layanan-konsultasi/konsultasi",
+        },
+        {
+            title: "Konsultasi Masalah Pribadi dan Cuti Kuliah",
+            link: "/layanan-konsultasi/konsultasi",
+        },
+        {
+            title: "Konsultasi Akademik",
+            link: "/layanan-konsultasi/konsultasi",
+        },
+        {
+            title: "Konsultasi Lainnya",
+            link: "/layanan-konsultasi/konsultasi",
+        },
+    ]
+
+    const dataLayanan = [
+        {
+            title: "Dokumen (Unduh dokumen untuk pengajuan Jenjang Karir, Konsentrasi Mata Kuliah, Jenis Magang)",
+            link: "/layanan-konsultasi/dokumen",
+        },
+        {
+            title: "Proses Dokumen (Ajukan dokumen yang sudah anda download agar dapat di proses oleh pihak admin)",
+            link: "/layanan-konsultasi/proses-dokumen",
+        },
+        {
+            title: "Cek Status Dokumen (Cek status pengajuan dokumen kamu disini)",
+            link: "/layanan-konsultasi/status-dokumen",
+        },
+    ]
     return (
         <>
-            <div className="col-md-6 col-xl-4">
-                <Link to="/chat-konsultasi">
-                    <div className="card shadow bg-light h-100">
-                        <div className="card-header bg-light pb-0 border-0">
-                            <i className="bi bi-person-workspace fs-1 text-success" />
-                            <h5 className="card-title mb-0 mt-2">
-                                Konsultasi Karir Dan Cita - Cita
-                            </h5>
-                        </div>
-                        <div className="card-body">
-                            <ul className="nav flex-column">
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Jenjang Karir
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Konsentrasi Mata Kuliah
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Jenis Magang
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+            <div className="col-md-6 col-xl-6">
+                <div className="card shadow bg-light h-100 ">
+                    <div className="card-header bg-light pb-0 border-0">
+                        <i className="bi bi-person-workspace fs-1 text-success" />
+                        <h5 className="card-title mb-0 mt-2">
+                            Konsultasi
+                        </h5>
                     </div>
-                </Link>
+                    <div className="card-body">
+                        <ul className="nav flex-column">
+                            {
+                                dataKonsultasi.map((x, i) => (
+                                    <li className="nav-item">
+                                        <Link to={x.link} className="nav-link d-flex" >
+                                            <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                            {x.title}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="col-md-6 col-xl-4">
+            {/* <div className="col-md-6 col-xl-4">
                 <Link to="/booking-konsultasi">
                     <div className="card shadow bg-light h-100">
                         <div className="card-header bg-light pb-0 border-0">
@@ -76,40 +104,30 @@ const CardItem = () => {
                         </div>
                     </div>
                 </Link>
-            </div>
-            <div className="col-md-6 col-xl-4">
-                <Link to="/pilih-dokument">
-                    <div className="card bg-light shadow h-100">
-                        <div className="card-header bg-light pb-0 border-0">
-                            <i className="bi bi-file-earmark-text fs-1 text-orange" />
-                            <h5 className="card-title mb-0 mt-2">Layanan Dokumen </h5>
-                        </div>
-                        <div className="card-body">
-                            <ul className="nav flex-column">
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Unduh dokumen untuk pengajuan Jenjang Karir
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Konsentrasi Mata Kuliah
-                                    </a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link d-flex" href=" ">
-                                        <i className="fas fa-angle-right text-primary pt-1 me-2" />
-                                        Jenis Magang
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+            </div> */}
+            <div className="col-md-6 col-xl-6">
+                <div className="card bg-light shadow h-100">
+                    <div className="card-header bg-light pb-0 border-0">
+                        <i className="bi bi-file-earmark-text fs-1 text-orange" />
+                        <h5 className="card-title mb-0 mt-2">Layanan</h5>
                     </div>
-                </Link>
+                    <div className="card-body">
+                        <ul className="nav flex-column">
+                            {
+                                dataLayanan.map((x, i) => (
+                                    <li className="nav-item">
+                                        <Link to={x.link} className="nav-link d-flex" >
+                                            <i className="fas fa-angle-right text-primary pt-1 me-2" />
+                                            {x.title}
+                                        </Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="col-md-6 col-xl-4">
+            {/* <div className="col-md-6 col-xl-4">
                 <Link to="/pengajuan-dokument">
                     <div className="card bg-light shadow h-100">
                         <div className="card-header bg-light pb-0 border-0">
@@ -129,8 +147,8 @@ const CardItem = () => {
                         </div>
                     </div>
                 </Link>
-            </div>
-            <div className="col-md-6 col-xl-4">
+            </div> */}
+            {/* <div className="col-md-6 col-xl-4">
                 <Link to="/status-dokument">
                     <div className="card bg-light shadow h-100">
                         <div className="card-header bg-light pb-0 border-0">
@@ -151,7 +169,7 @@ const CardItem = () => {
                         </div>
                     </div>
                 </Link>
-            </div>
+            </div> */}
         </>
     )
 }

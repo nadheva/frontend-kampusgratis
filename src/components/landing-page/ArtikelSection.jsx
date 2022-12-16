@@ -87,16 +87,31 @@ const ArtikelSection = () => {
                         results.slice(0, 3).map((artikel, index) => (
                             <div key={index} className="col-lg-4 col-md-4 col-12 card bg-transparent shadow-hover pt-3" data-aos="zoom-in-down">
                                 <div className="position-relative">
-                                    <img
-                                        src={artikel?.image_link}
-                                        className="card-img card-img-artikels"
-                                        alt="course"
-                                        style={{
-                                            height: "260px",
-                                            objectFit: "cover",
-                                            objectPosition: "center",
-                                        }}
-                                    />
+                                    {
+                                        artikel?.image_link !== null ? (
+                                            <img
+                                                src={artikel?.image_link}
+                                                className="card-img card-img-artikels"
+                                                alt={artikel?.title}
+                                                style={{
+                                                    height: "260px",
+                                                    objectFit: "cover",
+                                                    objectPosition: "center",
+                                                }}
+                                            />
+                                        ) : (
+                                            <img
+                                                src="https://random.imagecdn.app/500/150"
+                                                className="card-img card-img-artikels"
+                                                alt={artikel?.title}
+                                                style={{
+                                                    height: "260px",
+                                                    objectFit: "cover",
+                                                    objectPosition: "center",
+                                                }}
+                                            />
+                                        )
+                                    }
                                     <div className="card-img-overlay d-flex align-items-start flex-column p-3">
                                         <div className="w-100 mt-auto">
                                             <a href=" " className="badge text-bg-white fs-6 rounded-1">

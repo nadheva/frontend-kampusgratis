@@ -59,12 +59,9 @@ import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 
 // Konsultasi & Layanan
 import HomeLayanan from "./pages/layanan-konsultasi/HomeLayanan";
-import BookingKonsultasi from "./pages/layanan-konsultasi/BookingKonsultasi";
-import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiForm";
 import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
 import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
 import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
-import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
 import DetailPenugasan from "./pages/my-study/penugasan/DetailPenugasan";
@@ -96,6 +93,10 @@ import Glosarium from "./pages/panduan/Glosarium";
 import KamusAplikasiDetail from "./pages/panduan/KamusAplikasiDetail";
 import GlosariumDetail from "./pages/panduan/GlosariumDetail";
 import ListPekerjaan from "./pages/penyaluran-kerja/ListPekerjaan";
+import Konsultasi from "./pages/layanan-konsultasi/Konsultasi";
+import Index from "./pages/perencanaan-karir/Index";
+import HasilAnalisa from "./pages/perencanaan-karir/HasilAnalisa";
+import Modul from "./pages/perencanaan-karir/Modul";
 
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
@@ -349,39 +350,34 @@ function App() {
 						<Route path="/layanan-konsultasi" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi" element={<HomeLayanan />} />
 						</Route>
-						<Route path="/pengajuan-dokument" element={<PrivateRoute />}>
-							<Route
-								path="/pengajuan-dokument"
-								element={<PengajuanDokument />}
-							/>
+						<Route path="/layanan-konsultasi/konsultasi" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/konsultasi" element={<Konsultasi />} />
 						</Route>
-						<Route path="/status-dokument" element={<PrivateRoute />}>
-							<Route path="/status-dokument" element={<StatusDokument />} />
+						<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<ChatKonsultasi />} />
 						</Route>
-						<Route path="/chat-konsultasi" element={<PrivateRoute />}>
-							<Route path="/chat-konsultasi" element={<ChatKonsultasi />} />
+						<Route path="/layanan-konsultasi/dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/dokumen" element={<PilihDokument />} />
 						</Route>
-						<Route path="/pilih-dokument" element={<PrivateRoute />}>
-							<Route path="/pilih-dokument" element={<PilihDokument />} />
+						<Route path="/layanan-konsultasi/proses-dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/proses-dokumen" element={<PengajuanDokument />} />
 						</Route>
-
-						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
-							<Route
-								path="/booking-konsultasi"
-								element={<BookingKonsultasi />}
-							/>
-						</Route>
-						<Route path="/form-booking-konsultasi" element={<PrivateRoute />}>
-							<Route
-								path="/form-booking-konsultasi"
-								element={<BookingKonsultasiForm />}
-							/>
-						</Route>
-						<Route path="/status-booking" element={<PrivateRoute />}>
-							<Route path="/status-booking" element={<StatusBooking />} />
+						<Route path="/layanan-konsultasi/status-dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/status-dokumen" element={<StatusDokument />} />
 						</Route>
 						{/* END : Konsultasi & Layanan*/}
 
+						{/* START : Perencanaan Karir */}
+						<Route path="/perencanaan-karir" element={<PrivateRoute />}>
+							<Route path="/perencanaan-karir" element={<Index />} />
+						</Route>
+						<Route path="/perencanaan-karir/hasil-analisa" element={<PrivateRoute />}>
+							<Route path="/perencanaan-karir/hasil-analisa" element={<HasilAnalisa />} />
+						</Route>
+						<Route path="/perencanaan-karir/hasil-analisa/modul-karir" element={<PrivateRoute />}>
+							<Route path="/perencanaan-karir/hasil-analisa/modul-karir" element={<Modul />} />
+						</Route>
+						{/* END : Perencanaan Karir*/}
 
 						{/* START : ERROR PAGE */}
 						<Route path="*" element={<PageNotFound />} />

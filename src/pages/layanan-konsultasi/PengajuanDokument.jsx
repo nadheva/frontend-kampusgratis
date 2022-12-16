@@ -9,8 +9,8 @@ const PengajuanDokument = () => {
 		<>
 			<Header />
 			<main>
-				<section className="py-5">
-					<div className="container card shadow my-5 p-4">
+				<section className="">
+					<div className="container card shadow p-4">
 						<div className="card-header p-0">
 							<h4 className="mb-3">Pengajuan Dokument</h4>
 						</div>
@@ -63,23 +63,6 @@ const PengajuanDokument = () => {
 												className="form-control"
 												id="email"
 												name="email"
-											/>
-										</div>
-									</div>
-								</div>
-								<div className="col-12">
-									<div className="row g-xl-0 align-items-center">
-										<div className="col-lg-4">
-											<h6 className="mb-lg-0">
-												Nomer Wa <span className="text-danger">*</span>
-											</h6>
-										</div>
-										<div className="col-lg-8">
-											<input
-												type="tel"
-												className="form-control"
-												id="phone"
-												name="phone"
 											/>
 										</div>
 									</div>

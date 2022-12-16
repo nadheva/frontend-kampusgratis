@@ -23,7 +23,7 @@ const AboutSection = () => {
 
 						<h2 className="h1">
 							<span className="position-relative z-index-9">
-								Sekilas <span className="text-warning"> Tentang </span> <br />{" "}
+								Sekilas <span className="text-warning"> Tentang </span> <br />
 								Kampus Gratis
 							</span>
 							<span className="position-relative z-index-1">
@@ -47,8 +47,8 @@ const AboutSection = () => {
 						</p>
 						<p className="mt-3 mb-0">
 							Pengembangan platform pembelajaran ini merupakan salah satu
-							inisiasi dari pendiri{" "}
-							<span className="text-danger">PT Menara Indonesia</span> atau{" "}
+							inisiasi dari pendiri
+							<span className="text-danger">PT Menara Indonesia</span> atau
 							<span className="text-info">M-Knows Consulting</span>, yang ingin
 							memberikan solusi pendidikan tinggi yang gratis, berkualitas, bisa
 							diakses siapapun khususnya kaum marginal, dan selalu update
@@ -58,25 +58,25 @@ const AboutSection = () => {
 						<ul className="list-group list-group-borderless mt-3">
 							<li className="list-group-item h6 d-flex fw-normal mb-0">
 								<Link to="/pendidikans1">
-									<i className="bi bi-patch-check-fill text-success me-2" />
+									<i className="fas fa-angle-right text-primary pt-1 me-2"></i>
 									Pendidikan S1
 								</Link>
 							</li>
 							<li className="list-group-item h6 d-flex fw-normal mb-0">
 								<Link to="/pelatihan">
-									<i className="bi bi-patch-check-fill text-success me-2" />
+									<i className="fas fa-angle-right text-primary pt-1 me-2"></i>
 									Pelatihan
 								</Link>
 							</li>
 							<li className="list-group-item h6 d-flex fw-normal mb-0">
 								<Link to="/projek">
-									<i className="bi bi-patch-check-fill text-success me-2" />
+									<i className="fas fa-angle-right text-primary pt-1 me-2"></i>
 									Projek
 								</Link>
 							</li>
 							<li className="list-group-item h6 d-flex fw-normal mb-0">
 								<Link to="/magang">
-									<i className="bi bi-patch-check-fill text-success me-2" />
+									<i className="fas fa-angle-right text-primary pt-1 me-2"></i>
 									Magang
 								</Link>
 							</li>

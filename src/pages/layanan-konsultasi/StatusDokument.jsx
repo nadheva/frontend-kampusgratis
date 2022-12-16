@@ -13,12 +13,11 @@ const StatusDokument = () => {
 					<div className="container">
 						<div className="row text-center">
 							<div className="col-lg-12 pb-4">
-								<h1 className="text-white ">Status Pengajuan Dokumen</h1>
+								<h1 className="text-white ">Cek Status Dokumen</h1>
 							</div>
 						</div>
 					</div>
 				</section>
-
 				<section className="pt-0">
 					<div className="container">
 						<div className="row">
