@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+
 import { deleteComment, deleteReply, likeComment, likeReply, sendReply } from '../../features/my-study/myStudySlice';
 
-const ForumComment = ({ comment, subjectId, sessionId }) => {
+const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) => {
   const dispatch = useDispatch();
 
   const [myReply, setMyReply] = useState("");
@@ -133,7 +134,7 @@ const ForumComment = ({ comment, subjectId, sessionId }) => {
                     {reply.student_like.length} Penyuka
                   </button>
                   <button className='btn btn-sm w-50 py-2 border ms-2' onClick={() => showHideComment()}>
-                    <i className="fa fa-regular fa-comments text-center text-dark"></i>
+                    <i className={`fa fa-regular ${showCommentBox ? "fa-comment-slash" : "fa-comment"} text-center text-dark`}></i> {showCommentBox ? 'Tutup Balasan' : 'Tambah Balasan'}
                   </button>
                 </div>
               </li>
