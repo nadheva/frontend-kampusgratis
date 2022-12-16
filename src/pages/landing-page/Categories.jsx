@@ -108,10 +108,10 @@ const Categories = () => {
 		},
 		{
 			name: "Perencanaan Karir",
-			url: "#",
+			url: "/perencanaan-karir",
 			src: "/assets/images/element/engineering.svg",
 			background: "bg-orange",
-			disabled: true,
+			disabled: false,
 		},
 		{
 			name: "Penyaluran Kerja",
