@@ -55,7 +55,7 @@ const Categories = () => {
 			url: "/layanan-konsultasi",
 			src: "/assets/images/element/online.svg",
 			background: "bg-success",
-			disabled: true,
+			disabled: false,
 		},
 		{
 			name: "Drill, Simulasi & Assessment ",
