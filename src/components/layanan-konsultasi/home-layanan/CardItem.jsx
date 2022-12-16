@@ -33,11 +33,11 @@ const CardItem = () => {
         },
         {
             title: "Proses Dokumen (Ajukan dokumen yang sudah anda download agar dapat di proses oleh pihak admin)",
-            link: "",
+            link: "/layanan-konsultasi/proses-dokumen",
         },
         {
             title: "Cek Status Dokumen (Cek status pengajuan dokumen kamu disini)",
-            link: "",
+            link: "/layanan-konsultasi/status-dokumen",
         },
     ]
     return (

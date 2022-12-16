@@ -59,12 +59,9 @@ import AnalitikDetail from "./pages/analitik/AnalitikDetail";
 
 // Konsultasi & Layanan
 import HomeLayanan from "./pages/layanan-konsultasi/HomeLayanan";
-import BookingKonsultasi from "./pages/layanan-konsultasi/BookingKonsultasi";
-import BookingKonsultasiForm from "./pages/layanan-konsultasi/BookingKonsultasiForm";
 import PengajuanDokument from "./pages/layanan-konsultasi/PengajuanDokument";
 import StatusDokument from "./pages/layanan-konsultasi/StatusDokument";
 import ChatKonsultasi from "./pages/layanan-konsultasi/ChatKonsultasi";
-import StatusBooking from "./pages/layanan-konsultasi/StatusBooking";
 import PilihDokument from "./pages/layanan-konsultasi/PilihDokument";
 import ViewSertifikat from "./pages/nilai-sertifikat/ViewSertifikat";
 import DetailPenugasan from "./pages/my-study/penugasan/DetailPenugasan";
@@ -359,35 +356,11 @@ function App() {
 						<Route path="/layanan-konsultasi/dokumen" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi/dokumen" element={<PilihDokument />} />
 						</Route>
-
-
-
-						<Route path="/pengajuan-dokument" element={<PrivateRoute />}>
-							<Route
-								path="/pengajuan-dokument"
-								element={<PengajuanDokument />}
-							/>
+						<Route path="/layanan-konsultasi/proses-dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/proses-dokumen" element={<PengajuanDokument />} />
 						</Route>
-						<Route path="/status-dokument" element={<PrivateRoute />}>
-							<Route path="/status-dokument" element={<StatusDokument />} />
-						</Route>
-
-
-
-						<Route path="/booking-konsultasi" element={<PrivateRoute />}>
-							<Route
-								path="/booking-konsultasi"
-								element={<BookingKonsultasi />}
-							/>
-						</Route>
-						<Route path="/form-booking-konsultasi" element={<PrivateRoute />}>
-							<Route
-								path="/form-booking-konsultasi"
-								element={<BookingKonsultasiForm />}
-							/>
-						</Route>
-						<Route path="/status-booking" element={<PrivateRoute />}>
-							<Route path="/status-booking" element={<StatusBooking />} />
+						<Route path="/layanan-konsultasi/status-dokumen" element={<PrivateRoute />}>
+							<Route path="/layanan-konsultasi/status-dokumen" element={<StatusDokument />} />
 						</Route>
 						{/* END : Konsultasi & Layanan*/}
 
