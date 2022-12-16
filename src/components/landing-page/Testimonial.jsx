@@ -46,19 +46,19 @@ const Testimonial = () => {
         {
             id: 1,
             img: "./assets/images/asset-kg/avatar-1.JPG",
-            name: "Haris",
+            name: "M. Haris Basyaev",
             title: "Belajar di Kampus Gratis itu fleksibel dan konten pembelajarannya mudah dipahami.",
         },
         {
             id: 2,
             img: "./assets/images/asset-kg/avatar-2.JPG",
-            name: "Nabeel",
+            name: "Nabeel Fathurrahman",
             title: "Video pembelajarannya asik banget! memotivasi saya untuk terus belajar.",
         },
         {
             id: 3,
             img: "./assets/images/asset-kg/avatar-3.JPG",
-            name: "Kennis",
+            name: "Kenniskiu Fortino Kurniawan",
             title: "Fitur-fitur di website kampus gratis sangat lengkap dan menarik. menjawab semua kebutuhan saya .",
         },
         {
@@ -70,13 +70,13 @@ const Testimonial = () => {
         {
             id: 5,
             img: "./assets/images/asset-kg/avatar-5.JPG",
-            name: "Abiyuu",
+            name: "Abiyyu Hibban",
             title: "Kampus gratis adalah platform pendidikan yang menyediakan fasilitas gratis dan lengkap. Good job Kampus Gratis!",
         },
         {
             id: 6,
             img: "./assets/images/asset-kg/avatar-6.JPG",
-            name: "Isan",
+            name: "Ikhsan Rafli Fauzi",
             title: "Sebelum belajar di Kampus Gratis, saya kesulitan mengakses bahan belajar. Sekarang alhamdulillah saya bisa belajar dengan bebas.",
         },
         // {

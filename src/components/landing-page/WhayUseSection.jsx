@@ -6,17 +6,17 @@ const WhayUseSection = () => {
 			id: 1,
 			color: "bg-orange text-orange",
 			icon: "fas fa-user-tie fs-5",
-			title: "Belajar dengan para Experts",
+			title: "Dibimbing oleh mentor yang ahli ",
 			deskripsi:
-				"Dibimbing langsung oleh ahli dibidangnya yang membantu dalam proses belajar.",
+				"Dibimbing langsung oleh mentor yang sudah ahli dibidangnya yang menbantu dalam proses belajar.",
 		},
 		{
 			id: 2,
 			color: "bg-info text-info",
 			icon: "fas fa-book fs-5",
-			title: "Belajar secara Gratis",
+			title: "Belajar semua materi GRATIS",
 			deskripsi:
-				"Kamu akan mendapat sertifikat kelulusan resmi yang bisa digunakan untuk mempermudah mendapatkan pekerjaan.",
+				"Pembelajaran gratis dan mendapatkan sertifikat kelulusan resmi yang bisa mempermudah dalam mencari pekerjaan",
 		},
 		{
 			id: 3,
@@ -24,15 +24,15 @@ const WhayUseSection = () => {
 			icon: "bi bi-alarm-fill fs-5",
 			title: "Pembelajaran yang Fleksibel",
 			deskripsi:
-				"Memberikan pembelajaran efektif yang bisa diakses dimanapun dan kapanpun.",
+				"Belajar dimana aja, bisa di akses melalui HP, kapanpun mau belajar bisa dilakukan, sehingga belajar bisa jadi fleksibel dan tidak terikat oleh ruang dan waktu. ",
 		},
 		{
 			id: 4,
 			color: "bg-danger text-danger",
 			icon: "fas fa-university fs-5",
-			title: "Dukungan Karier untuk Masa Depan",
+			title: "Dukungan untuk karir masa depan",
 			deskripsi:
-				"Dibimbing untuk membuat CV dan portofolio, personal branding, persiapan wawancara, hingga koneksi pekerja di startup bergengsi.",
+				"Dibimbing untuk membuat CV dan portofolio, personal branding, persiapan wawancara, hingga koneksi pekerjaan pada startup bergengsi.",
 		},
 	];
 
