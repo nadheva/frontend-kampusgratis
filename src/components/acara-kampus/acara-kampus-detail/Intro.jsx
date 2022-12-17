@@ -1,7 +1,8 @@
 import moment from "moment";
-import React from "react";
+import React, { useState } from "react";
 
-const Intro = ({ event }) => {
+const Intro = ({ event, onClickDaftar }) => {
+
 	return (
 		<section className="pt-5">
 			<div className="container">
@@ -49,9 +50,9 @@ const Intro = ({ event }) => {
 						<div className="card card-body bg-light p-5 text-center">
 							<h5 className="fw-normal">Silakan Mendaftar Ke Event Ini</h5>
 							<h2>Gratis</h2>
-							<a href="#" className="btn btn-blue mb-2">
+							<button onClick={() => onClickDaftar()} type="submit" className="btn btn-blue mb-2">
 								Daftar Sekarang
-							</a>
+							</button>
 						</div>
 					</div>
 				</div>

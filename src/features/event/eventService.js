@@ -33,9 +33,28 @@ const getEvent = async (id) => {
 	return response.data;
 }
 
+
+const joinEvent = async (id, data) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+	const response = await axios.post(API_URL + `events/join/${id}`, data, config);
+
+	return response.data;
+}
+
+
+
 const eventService = {
 	getEvents,
-	getEvent
+	getEvent,
+	joinEvent
 };
 
 export default eventService;
