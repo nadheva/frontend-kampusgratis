@@ -18,8 +18,24 @@ const getEvents = async (currentPage) => {
 	return response.data;
 }
 
+const getEvent = async (id) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+	const response = await axios.get(API_URL + `events/event/${id}`, config);
+
+	return response.data;
+}
+
 const eventService = {
 	getEvents,
+	getEvent
 };
 
 export default eventService;

@@ -1,11 +1,12 @@
+import moment from "moment";
 import React from "react";
 
-const Intro = () => {
+const Intro = ({ event }) => {
 	return (
-		<section className="p-0">
+		<section className="pt-5">
 			<div className="container">
 				<div className="row g-4 g-md-5">
-					<div className="col-md-12 text-center mx-auto">
+					{/* <div className="col-md-12 text-center mx-auto">
 						<div
 							className="card card-body shadow p-2 h-200px h-sm-400px position-relative overflow-hidden"
 							style={{
@@ -16,36 +17,33 @@ const Intro = () => {
 						>
 							<div className="bg-overlay bg-dark opacity-6" />
 						</div>
-					</div>
+					</div> */}
 					<div className="col-lg-8">
-						<h1>Design logo using Adobe Illustrator and Photoshop.</h1>
+						<h1>{event.name}</h1>
 						<div className="d-sm-flex justify-content-between align-items-center mb-2">
 							<div className="d-flex align-items-center mb-3">
 								<div className="avatar">
 									<img
 										className="avatar-img rounded-circle"
-										src="/assets/images/avatar/05.jpg"
+										src="/assets/images/avatar/08.jpg"
 										alt="avatar"
 									/>
 								</div>
 								<div className="ms-2">
-									<p className="mb-0 small">Pemateri</p>
-									<h5 className="mb-0">Lori Stevens</h5>
+									<p className="mb-0 small">Speaker</p>
+									<h5 className="mb-0">{event?.speaker_details?.name}</h5>
 									<p className="mb-0">
-										CEO StartUp Milenial Indo Bisnis
+										{event?.speaker_details?.position}
 									</p>
 								</div>
 							</div>
 							<div className="mt-2 mt-sm-0">
 								<p className="text-danger mb-0">
 									<i className="bi bi-clock-history me-2" />
-									Start in: 22 Days 15:01:30
+									Registration Closed: {moment(event?.registration_closed).format('ll')}
 								</p>
 							</div>
 						</div>
-						{/* <p className="mb-0">
-							CEO StartUp Milenial Indo Bisnis
-						</p> */}
 					</div>
 					<div className="col-lg-4">
 						<div className="card card-body bg-light p-5 text-center">

@@ -31,8 +31,6 @@ const DetailArtikel = () => {
 		if (data?.artikel) setCurrentArtikel(data?.artikel);
 	}, [data]);
 
-	console.log(currentArtikel)
-
 	return (
 		<>
 			<Header />

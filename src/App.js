@@ -301,15 +301,14 @@ function App() {
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
-
-						<Route path="/papan-skor" element={<PrivateRoute />}>
-							<Route path="/papan-skor" element={<Leaderboard />} />
-						</Route>
-
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
 							<Route path="/acara-kampus/:id" element={<AcaraKampusDetail />} />
 						</Route>
 						{/* END : Acara Kampus */}
+
+						<Route path="/papan-skor" element={<PrivateRoute />}>
+							<Route path="/papan-skor" element={<Leaderboard />} />
+						</Route>
 
 						{/* START : NILAI & SERTIFIKAT */}
 						<Route path="/nilai" exact element={<PrivateRoute redirect />}>

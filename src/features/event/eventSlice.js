@@ -22,6 +22,18 @@ export const getEvents = createAsyncThunk("events/all", async ({ currentPage }, 
     }
 });
 
+export const getEvent = createAsyncThunk("events/event", async (id, thunkAPI) => {
+    try {
+        const { data } = await eventService.getEvent(id);
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
 export const eventSlice = createSlice({
     name: "event",
     initialState,
@@ -51,6 +63,20 @@ export const eventSlice = createSlice({
                 state.data.events = action.payload;
             })
             .addCase(getEvents.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+            .addCase(getEvent.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getEvent.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.event = action.payload;
+            })
+            .addCase(getEvent.rejected, (state, action) => {
                 state.isSuccess = false;
                 state.isLoading = false;
                 state.isError = true;

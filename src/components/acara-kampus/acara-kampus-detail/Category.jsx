@@ -1,6 +1,7 @@
+import moment from 'moment/moment'
 import React from 'react'
 
-const Category = () => {
+const Category = ({ event }) => {
     return (
         <section>
             <div className="container">
@@ -17,7 +18,7 @@ const Category = () => {
                                             Kapasitas
                                         </a>
                                     </h5>
-                                    <span>25/50</span>
+                                    <span>{event?.capacity} Orang</span>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +35,7 @@ const Category = () => {
                                             Harga Tiket
                                         </a>
                                     </h5>
-                                    <span>Gratis</span>
+                                    <span>Rp. {event?.price}</span>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +52,7 @@ const Category = () => {
                                             Jenis Kegiatan
                                         </a>
                                     </h5>
-                                    <span>Online</span>
+                                    <span>{event?.type}</span>
                                 </div>
                             </div>
                         </div>
@@ -65,10 +66,10 @@ const Category = () => {
                                 <div className="ms-3">
                                     <h5 className="mb-0">
                                         <a href=" " className="stretched-link">
-                                            15 Agustus 2022
+                                            {moment(event?.date_start).format('LL')}
                                         </a>
                                     </h5>
-                                    <span>19:00 - 21.30</span>
+                                    <span> {moment(event?.date_start).format('LT')}</span>
                                 </div>
                             </div>
                         </div>
