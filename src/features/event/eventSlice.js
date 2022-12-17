@@ -1,0 +1,63 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import eventService from "./eventService";
+import { extartErrorFirebase, extractErrorMessage } from "../../utils";
+
+const initialState = {
+    data: {},
+    isError: false,
+    isSuccess: false,
+    isLoading: false,
+    message: ''
+};
+
+export const getEvents = createAsyncThunk("events/all", async ({ currentPage }, thunkAPI) => {
+    try {
+        const { data } = await eventService.getEvents(currentPage);
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
+export const eventSlice = createSlice({
+    name: "event",
+    initialState,
+    reducers: {
+        reset: (state) => {
+            state.isLoading = false;
+            state.isError = false;
+            state.isSuccess = false;
+            state.message = '';
+        },
+        resetAll: (state) => {
+            state.data = {};
+            state.isError = false;
+            state.isSuccess = false;
+            state.isLoading = false;
+            state.message = '';
+        },
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(getEvents.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getEvents.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.events = action.payload;
+            })
+            .addCase(getEvents.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+    },
+});
+
+export const { resetState, reset, resetAll } = eventSlice.actions;
+export default eventSlice.reducer;
