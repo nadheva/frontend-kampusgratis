@@ -161,6 +161,7 @@ export const discussionGlobalSlice = createSlice({
       .addCase(getDiscussionDetail.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
+        state.message = "GET_DISCUSSION";
         state.data.discussion = action.payload;
       })
       .addCase(getDiscussionDetail.rejected, (state, action) => {
@@ -175,6 +176,7 @@ export const discussionGlobalSlice = createSlice({
       .addCase(likeDiscussion.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
+        state.message = "LIKE_DISCUSSION";
         state.data.discussion = action.payload.data;
       })
       .addCase(likeDiscussion.rejected, (state, action) => {
@@ -229,5 +231,5 @@ export const discussionGlobalSlice = createSlice({
   },
 });
 
-export const { resetState, reset, resetAll } = discussionGlobalSlice.actions;
+export const { reset, resetAll } = discussionGlobalSlice.actions;
 export default discussionGlobalSlice.reducer;

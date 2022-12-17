@@ -6,7 +6,7 @@ import moment from 'moment/moment';
 import { getDiscussionDetail, likeDiscussion, reset, resetAll, sendComment } from '../../features/discussion-global/discussionGlobalSlice';
 import { Link, useParams } from 'react-router-dom';
 
-import { resetAll as resetMyStudy } from '../../features/my-study/myStudySlice';
+import { reset as resetMyStudy } from '../../features/my-study/myStudySlice';
 
 import ForumComment from '../../components/Discussion-Global/Discussion';
 import { toast } from 'react-toastify';
@@ -20,7 +20,7 @@ const MainContent = () => {
 
   const [myComment, setMyComment] = useState("");
 
-  const { data, message } = useSelector(
+  const { data, message, isSuccess } = useSelector(
     (state) => state.discussionGlobal
   );
 
@@ -33,6 +33,8 @@ const MainContent = () => {
   );
 
   useEffectOnce(() => {
+    dispatch(resetAll());
+    setDiscussion({});
     dispatch(getDiscussionDetail(discussionId));
   });
 
@@ -59,24 +61,25 @@ const MainContent = () => {
 
     if (Object.values(data).length !== 0) {
       if (data?.discussion_insert && message === "SENT_COMMENT") {
-        setDiscussion(prevState => {
-          let discussionData = prevState;
+        // setDiscussion(prevState => {
+        //   let discussionData = prevState;
 
-          return {
-            ...prevState,
-            Comments: [data.discussion_insert, ...discussionData.Comments]
-          };
-        });
-
-        dispatch(resetAll());
+        //   return {
+        //     ...prevState,
+        //     Comments: [data.discussion_insert, ...discussionData.Comments]
+        //   };
+        // });
+        // setDiscussion({});
+        dispatch(getDiscussionDetail(discussionId));
+        dispatch(reset());
       }
-      else {
-        if (data?.discussion?.data) setDiscussion(data.discussion.data);
-        else setDiscussion(prevState => {
+      else if (message) {
+        if (data?.discussion?.data && message === "GET_DISCUSSION") setDiscussion(data.discussion.data);
+        if (message === "LIKE_DISCUSSION") setDiscussion(prevState => {
           return { ...prevState, student_like: data?.discussion?.student_like }
         });
 
-        dispatch(resetAll());
+        dispatch(reset());
       }
     }
   }, [data, discussion, messageForum]);
@@ -149,30 +152,28 @@ const MainContent = () => {
               </div>
               <hr />
               <div className="col-12 mt-2">
-                {showCommentBox && <>
-                  <div className="d-flex mb-4">
-                    <div className="avatar avatar-sm flex-shrink-0 me-2">
-                      <a href=" ">
-                        <img className="avatar-img rounded-circle" src={user?.display_picture_link != null ? `${user?.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
-                      </a>
-                    </div>
-                    <form className="w-100 d-flex">
-                      <textarea className="one form-control pe-4 bg-light" id="autoheighttextarea" rows="1"
-                        placeholder="Tambah komentar ..." onChange={(e) => setMyComment(e.target.value)} value={myComment} autoFocus>
-                      </textarea>
-                      <button className="btn btn-primary ms-2 mb-0" type="button" onClick={() => addComment()}>
-                        Kirim
-                      </button>
-                    </form>
+                <div className={`d-flex mb-4 ${showCommentBox ? 'd-block' : 'd-none'}`}>
+                  <div className="avatar avatar-sm flex-shrink-0 me-2">
+                    <a href=" ">
+                      <img className="avatar-img rounded-circle" src={user?.display_picture_link != null ? `${user?.display_picture_link}` : "/assets/images/avatar/empty-display-picture.png"} alt={user?.full_name} />
+                    </a>
                   </div>
-                </>}
+                  <form className="w-100 d-flex">
+                    <textarea className="one form-control pe-4 bg-light" id="autoheighttextarea" rows="1"
+                      placeholder="Tambah komentar ..." onChange={(e) => setMyComment(e.target.value)} value={myComment} autoFocus>
+                    </textarea>
+                    <button className="btn btn-primary ms-2 mb-0" type="button" onClick={() => addComment()}>
+                      Kirim
+                    </button>
+                  </form>
+                </div>
                 {discussion.Comments.length === 0 && <>
                   <div className="alert alert-info">
                     Belum ada balasan atau komentar pada diskusi ini.
                   </div>
                 </>}
-                {discussion.Comments.map(comment => <>
-                  <ForumComment comment={comment} />
+                {discussion.Comments.map((comment, key) => <>
+                  <ForumComment comment={comment} key={key} />
                 </>)}
               </div>
             </div>
