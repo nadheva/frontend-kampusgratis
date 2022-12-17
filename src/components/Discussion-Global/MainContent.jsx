@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import useEffectOnce from '../../helpers/useEffectOnce';
 import moment from 'moment/moment';
 
-import { getAllDiscussion, likeDiscussion } from '../../features/discussion-global/discussionGlobalSlice';
+import { getAllDiscussion, likeDiscussion, resetAll } from '../../features/discussion-global/discussionGlobalSlice';
 
 const MainContent = () => {
   const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
   const [discussions, setDiscussions] = useState([]);
   const [showCommentBox, setShowCommentBox] = useState(false);
 
@@ -20,12 +21,13 @@ const MainContent = () => {
   );
 
   useEffectOnce(() => {
+    dispatch(resetAll());
     dispatch(getAllDiscussion());
   });
 
   useEffect(() => {
     if (Object.values(data).length !== 0) {
-      setDiscussions(data.discussions.data);
+      if (data?.discussions?.data) setDiscussions(data.discussions.data);
 
       if (data?.discussion) setDiscussions(prevState => {
         let dataPrev = [...prevState];
@@ -45,11 +47,37 @@ const MainContent = () => {
     dispatch(likeDiscussion(discussionId));
   }
 
+  const doFilter = async () => {
+
+  }
+
   return <>
-    <div className="container my-5">
+    <div className="container my-2">
+      <section className="pb-4">
+        <div className="row position-relative">
+          <div className="col-lg-10">
+            <form className="bg-body shadow rounded p-2" onSubmit={doFilter}>
+              <div className="input-group">
+                <input
+                  className="form-control border-0 me-1"
+                  type="search"
+                  onChange={(e) => setSearch(e.target.value)}
+                  placeholder="Cari Diskusi"
+                />
+                <button type="submit" className="btn btn-primary mb-0 rounded">
+                  <i className="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div className="col-lg-2 p-2">
+            <button className='btn btn-primary'>Buat Diskusi Baru</button>
+          </div>
+        </div>
+      </section>
       {discussions.length > 0 ? <>
-        {discussions.map(discussion => <>
-          <div className="card shadow h-100 mt-1 mb-4">
+        {discussions.map((discussion, key) => <>
+          <div className="card shadow h-100 mt-1 mb-4" key={key}>
             <div className="card-body">
               <div className="vstack gap-3">
                 <div>
@@ -70,13 +98,17 @@ const MainContent = () => {
                   <p className='mb-2 text-dark'>{discussion.content}</p>
                   <div className="d-flex mt-3 justify-content-between">
                     <button className='btn btn-sm w-50 py-2 border' onClick={() => doLikeDiscussion(discussion.id)}>
-                      <i className={`bi ${!discussion.isLiked ? "bi-hand-thumbs-up-fill text-dark" : "bi-hand-thumbs-up"} text-center`}></i>&nbsp;
+                      <i className={`bi ${!discussion.isLiked ? "bi-hand-thumbs-up-fill text-dark" : "bi-hand-thumbs-up"} text-center me-1`}></i>
                       {discussion.teacher_like.length + discussion.student_like.length} Penyuka
                     </button>
                     <Link className={`btn btn-sm w-50 py-2 border ms-2`} to={`diskusi/${discussion.id}`}>
-                      <i className={`fa fa-solid fa-comment text-center text-dark`}></i>&nbsp;
+                      <i className={`fa fa-solid fa-comment text-center text-dark me-2`}></i>
                       Komentar
                     </Link>
+                    <button className='btn btn-sm w-50 py-2 border ms-2'>
+                      <i className='fa fa-sold fa-share-alt text-center text-dark me-2'></i>
+                      Bagikan Diskusi
+                    </button>
                   </div>
                   {/* <ul className="nav nav-divider pb-2 small">
                   bi bi-hand-thumbs-up-fill text-primary
