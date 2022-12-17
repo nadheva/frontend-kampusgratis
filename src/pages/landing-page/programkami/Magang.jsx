@@ -18,7 +18,7 @@ const Magang = () => {
             <div
               className="h-500px mb-n9 rounded-3"
               style={{
-                backgroundImage: "url(assets/images/asset-kg/magang.jpg)",
+                backgroundImage: "url(../../assets/images/asset-kg/magang.JPG)",
                 backgroundPosition: "center left",
                 backgroundSize: "cover"
               }}
