@@ -327,10 +327,9 @@ function App() {
 						<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PenyaluranKerja />} />
 						</Route>
-
-						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
+						<Route path="/penyaluran-kerja/pilih-pekerjaan/:id" element={<PrivateRoute />}>
 							<Route
-								path="/detail-penyaluran-kerja"
+								path="/penyaluran-kerja/pilih-pekerjaan/:id"
 								element={<DetailPenyaluranKerja />}
 							/>
 						</Route>

@@ -19,7 +19,7 @@ const CardItem = ({ kerja }) => {
                             <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                                 <div>
                                     <h5 className="card-title mb-0">
-                                        <Link to="/detail-penyaluran-kerja">{kerja?.position}</Link>
+                                        <Link to={`/penyaluran-kerja/pilih-pekerjaan/${kerja?.id}`}>{kerja?.position}</Link>
                                     </h5>
                                     <p className="small mb-2 mb-sm-0">
                                         {kerja?.Company?.company_name}

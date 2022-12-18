@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { getJobs, resetAll } from "../../features/jobs/jobsSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
-
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 import Intro from "../../components/penyaluran-kerja/penyaluran-kerja/Intro";
@@ -13,7 +12,7 @@ import CardList from "../../components/penyaluran-kerja/penyaluran-kerja/CardLis
 import Pagination from "../../components/default/Pagination";
 
 const PenyaluranKerja = () => {
-	const [type, setType] = useState(["finance"]);
+	const [type, setType] = useState([]);
 	const [isPageLoad, setIsPageLoad] = useState(false);
 	const [currentPage, setCurrentPage] = useState(1);
 	const [lastPage, setLastPage] = useState(1);
@@ -71,7 +70,7 @@ const PenyaluranKerja = () => {
 		if (result) setResults(result);
 
 		if (maxPage && result) setIsPageLoad(true);
-		setType(["finance"]);
+		// setType(["finance"]);
 	}, [data, isPageLoad, results]);
 
 	console.log(results)

@@ -22,6 +22,18 @@ export const getJobs = createAsyncThunk("jobs/all", async ({ dataJob, currentPag
     }
 });
 
+export const getJob = createAsyncThunk("jobs/job", async (id, thunkAPI) => {
+    try {
+        const { data } = await jobsService.getJob(id)
+
+        return data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(
+            extartErrorFirebase(error) || extractErrorMessage(error)
+        );
+    }
+});
+
 
 export const jobsSlice = createSlice({
     name: "jobs",
@@ -52,6 +64,20 @@ export const jobsSlice = createSlice({
                 state.data.jobs = action.payload;
             })
             .addCase(getJobs.rejected, (state, action) => {
+                state.isSuccess = false;
+                state.isLoading = false;
+                state.isError = true;
+                state.message = action.payload;
+            })
+            .addCase(getJob.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(getJob.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.data.job = action.payload;
+            })
+            .addCase(getJob.rejected, (state, action) => {
                 state.isSuccess = false;
                 state.isLoading = false;
                 state.isError = true;

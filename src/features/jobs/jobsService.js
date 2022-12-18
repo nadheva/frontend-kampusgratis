@@ -18,9 +18,28 @@ const getJobs = async (dataJob, currentPage) => {
 	return response.data;
 }
 
+const getJob = async (id) => {
+	const auth = getAuth();
+	const token = await auth.currentUser.getIdToken();
+
+	const config = {
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${token}`
+		}
+	}
+	const response = await axios.get(API_URL + `jobs/job/${id}`, config);
+
+	return response.data;
+}
+
+
+
+
 
 const jobsService = {
-	getJobs
+	getJobs,
+	getJob
 };
 
 export default jobsService;
