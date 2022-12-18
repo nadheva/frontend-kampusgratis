@@ -40,7 +40,7 @@ const ForumDiscussion = () => {
   });
 
   const addComment = async () => {
-    if (myComment.length === 0) toast.warning("Balasan masih kosong!");
+    if (myComment.length === 0) return toast.warning("Balasan masih kosong!");
 
     dispatch(sendComment({ discussionId, comment: myComment }));
     setMyComment("");
@@ -153,7 +153,6 @@ const ForumDiscussion = () => {
                   </div>
                   <hr />
                   <div className="col-12 mt-2">
-                    <h5 className="mb-4">Diskusi</h5>
                     {showCommentBox && <>
                       <div className="d-flex mb-4">
                         <div className="avatar avatar-sm flex-shrink-0 me-2">
@@ -187,7 +186,6 @@ const ForumDiscussion = () => {
         </section>
       </>}
     </main>
-
     <Footer />
   </>
 }

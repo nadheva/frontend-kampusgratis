@@ -2,6 +2,7 @@ import React from "react";
 
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
+
 import Intro from "../../components/kategori/Intro";
 import Banner from "../../components/kategori/Banner";
 import KategoriList from "../../components/kategori/KategoriList";
@@ -44,11 +45,11 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Diskusi Perkuliahan",
-			url: "#",
+			name: "Diskusi Global",
+			url: "/diskusi-global",
 			src: "/assets/images/element/25.svg",
-			background: "bg-primary",
-			disabled: true,
+			background: "bg-warning",
+			disabled: false,
 		},
 		{
 			name: "Konsultasi & Layanan",

@@ -98,6 +98,9 @@ import Index from "./pages/perencanaan-karir/Index";
 import HasilAnalisa from "./pages/perencanaan-karir/HasilAnalisa";
 import Modul from "./pages/perencanaan-karir/Modul";
 
+import DiscussionGlobal from './pages/Discussion-Global/Main';
+import DiscussionGlobalDetail from './pages/Discussion-Global/Detail';
+
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
 
@@ -245,11 +248,18 @@ function App() {
 							<Route path="/penugasan" exact element={<Penugasan />} />
 						</Route>
 
+						<Route path="/diskusi-global" exact element={<PrivateRoute redirect />}>
+							<Route path="/diskusi-global" exact element={<DiscussionGlobal />} />
+						</Route>
+
+						<Route path="/diskusi-global/diskusi/:discussionId" exact element={<PrivateRoute redirect />}>
+							<Route path="/diskusi-global/diskusi/:discussionId" exact element={<DiscussionGlobalDetail />} />
+						</Route>
+
 						{/* START : SEKILAS ILMU/ARTIKEL */}
 						<Route path="/artikel" element={<Artikel />} />
 						<Route path="/artikel/:artikelId" element={<DetailArtikel />} />
 						{/* END : SEKILAS ILMU/ARTIKEL */}
-
 
 						{/* START : */}
 						<Route path="/panduan" element={<Panduan />} />
@@ -279,9 +289,6 @@ function App() {
 						<Route path="/panduan/kamus-KG/glosarium/:id" exact element={<PrivateRoute redirect />}>
 							<Route path="/panduan/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
 						</Route>
-
-
-
 						{/* END : */}
 
 						{/* START : KALENDER */}
@@ -294,15 +301,14 @@ function App() {
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
-
-						<Route path="/papan-skor" element={<PrivateRoute />}>
-							<Route path="/papan-skor" element={<Leaderboard />} />
-						</Route>
-
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
 							<Route path="/acara-kampus/:id" element={<AcaraKampusDetail />} />
 						</Route>
 						{/* END : Acara Kampus */}
+
+						<Route path="/papan-skor" element={<PrivateRoute />}>
+							<Route path="/papan-skor" element={<Leaderboard />} />
+						</Route>
 
 						{/* START : NILAI & SERTIFIKAT */}
 						<Route path="/nilai" exact element={<PrivateRoute redirect />}>
@@ -318,13 +324,12 @@ function App() {
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja" element={<ListPekerjaan />} />
 						</Route>
-						<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PrivateRoute />}>
-							<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PenyaluranKerja />} />
+						<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PenyaluranKerja />} />
 						</Route>
-
-						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
+						<Route path="/penyaluran-kerja/pilih-pekerjaan/:id" element={<PrivateRoute />}>
 							<Route
-								path="/detail-penyaluran-kerja"
+								path="/penyaluran-kerja/pilih-pekerjaan/:id"
 								element={<DetailPenyaluranKerja />}
 							/>
 						</Route>

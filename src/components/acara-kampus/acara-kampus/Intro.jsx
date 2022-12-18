@@ -13,7 +13,7 @@ const Intro = () => {
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb breadcrumb-dots mb-0">
                                         <li className="breadcrumb-item">
-                                            <Link to="/kategori" >Category</Link>
+                                            <Link to="/kategori" >Fitur</Link>
                                         </li>
                                         <li className="breadcrumb-item active" aria-current="page">
                                             Acara Kampus
@@ -25,7 +25,7 @@ const Intro = () => {
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
     )
 }
 

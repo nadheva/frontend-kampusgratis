@@ -1,4 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getEvent, joinEvent } from "../../features/event/eventSlice";
+import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
@@ -7,13 +13,37 @@ import Category from "../../components/acara-kampus/acara-kampus-detail/Category
 import Desctriprion from "../../components/acara-kampus/acara-kampus-detail/Desctriprion";
 
 const AcaraKampusDetail = () => {
+
+	const { id } = useParams();
+
+	// Redux
+	const dispatch = useDispatch();
+	const [event, setEvent] = useState({});
+
+	const { data, isLoading, message } = useSelector(
+		(state) => state.event
+	);
+
+	useEffectOnce(() => {
+		dispatch(getEvent(id));
+	});
+
+	useEffect(() => {
+		if (data?.event) setEvent(data?.event);
+	}, [data]);
+
+	const onClickDaftar = () => {
+		console.log("haloo")
+		dispatch(joinEvent(id))
+	}
+
 	return (
 		<>
 			<Header />
 			<main>
-				<Intro />
-				<Category />
-				<Desctriprion />
+				<Intro event={event} onClickDaftar={onClickDaftar} />
+				<Category event={event} />
+				<Desctriprion event={event} />
 			</main>
 			<Footer />
 		</>

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useEffectOnce from '../../helpers/useEffectOnce';
 
 import { getLeaderboardGlobal } from '../../features/leaderboard/leaderboardSlice';
-import { useState } from 'react';
 
 const MainContent = () => {
   const [leaderboardList, setLeaderboardList] = useState([]);

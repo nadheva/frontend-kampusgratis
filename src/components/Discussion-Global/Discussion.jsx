@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { deleteComment, deleteReply, likeComment, likeReply, sendReply } from '../../features/my-study/myStudySlice';
 
-const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) => {
+const Discussion = ({ comment }) => {
   const dispatch = useDispatch();
 
   const [myReply, setMyReply] = useState("");
   const [showCommentBox, setShowCommentBox] = useState(false);
+
+  const { data, message } = useSelector(
+    (state) => state.discussionGlobal
+  );
 
   const { user } = useSelector(
     (state) => state.profile
@@ -32,10 +38,14 @@ const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) =>
 
   const doDeleteComment = commentId => {
     dispatch(deleteComment(commentId));
+    let elements = document.querySelectorAll(`div[data-id="${commentId}"]`);
+    elements.forEach((e) => { e.remove() });
   }
 
   const doDeleteReply = replyId => {
     dispatch(deleteReply(replyId));
+    let elements = document.querySelectorAll(`li[data-id="${replyId}"]`);
+    elements.forEach((e) => { e.remove() });
   }
 
   const doLikeComment = commentId => {
@@ -47,22 +57,21 @@ const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) =>
   }
 
   return <>
-    <div className="border p-2 p-sm-4 rounded-3 mb-4">
+    <div className="border p-2 p-sm-4 rounded-3 mb-4" data-id={comment.id}>
       <ul className="list-unstyled mb-0">
-        <li className="comment-item" data-id={comment.id}>
+        <li className="comment-item">
           <div className="d-flex">
             <div className="avatar avatar-sm flex-shrink-0">
               <img
                 className="avatar-img rounded-circle"
-                src={comment.User.display_picture_link || '/assets/images/avatar/empty-display-picture.png'}
-                alt={comment.User.full_name}
+                src={comment?.User?.display_picture_link == undefined ? user.display_picture_link :
+                  comment?.User?.display_picture_link == null ? '/assets/images/avatar/empty-display-picture.png' : comment?.User?.display_picture_link}
+                alt={comment?.User?.full_name != undefined ? comment?.User?.full_name : user?.full_name}
               />
             </div>
             <div className="ms-2 w-100">
               <h6 className="mb-0">
-                <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${comment.id}`}>
-                  {comment.User.full_name}
-                </Link>
+                {comment?.User?.full_name == undefined ? user.full_name : comment?.User?.full_name}
               </h6>
               <small>
                 {new Date(comment.created_at).toLocaleString('id-ID')}
@@ -72,7 +81,17 @@ const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) =>
                 {comment.content}
               </p>
             </div>
-            {comment.User.display_picture_link === user.display_picture_link && <>
+            {comment?.User?.full_name === undefined && <>
+              <div className="dropdown">
+                <span className="btn btn-xs btn-round mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                  X
+                </span>
+                <ul className="dropdown-menu">
+                  <li><button className="dropdown-item" type="submit" onClick={() => doDeleteComment(comment.id)}>Hapus Komentar</button></li>
+                </ul>
+              </div>
+            </>}
+            {comment?.User?.display_picture_link === user.display_picture_link && <>
               <div className="dropdown">
                 <span className="btn btn-xs btn-round mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="true">
                   X
@@ -94,20 +113,19 @@ const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) =>
           </div>
           <ul className="list-unstyled ms-4 mt-4">
             {comment.Replies && comment.Replies.map(reply => <>
-              <li className="comment-item mt-3">
+              <li className="comment-item mt-3" data-id={reply.id}>
                 <div className="d-flex">
                   <div className="avatar avatar-sm flex-shrink-0">
                     <img
                       className="avatar-img rounded-circle"
-                      src={comment.User.display_picture_link || '/assets/images/avatar/empty-display-picture.png'}
-                      alt={reply.User.full_name}
+                      src={reply?.User?.display_picture_link == undefined ? user.display_picture_link :
+                        reply?.User?.display_picture_link == null ? '/assets/images/avatar/empty-display-picture.png' : reply?.User?.display_picture_link}
+                      alt={reply?.User?.full_name != undefined ? reply?.User?.full_name : user?.full_name}
                     />
                   </div>
                   <div className="ms-2 w-100">
                     <h6 className="mb-0">
-                      <Link to={`/studi-ku/${subjectId}/pertemuan/${sessionId}/forum/${comment.id}`}>
-                        {reply.User.full_name}
-                      </Link>
+                      {reply.User.full_name}
                     </h6>
                     <small>
                       {new Date(reply.created_at).toLocaleString('id-ID')}
@@ -163,4 +181,4 @@ const ForumComment = ({ comment = null, subjectId = null, sessionId = null }) =>
   </>
 }
 
-export default ForumComment;
+export default Discussion

@@ -3,11 +3,11 @@ import React from 'react'
 import DataKerja from '../../../json/Kerja'
 import CardItem from './CardItem'
 
-const CardList = () => {
+const CardList = ({ results, isLoading }) => {
     return (
         <div className="row g-4 ">
             {
-                DataKerja.map((data) => (
+                results.map((data) => (
                     <CardItem key={data.id} kerja={data} />
                 ))
             }
