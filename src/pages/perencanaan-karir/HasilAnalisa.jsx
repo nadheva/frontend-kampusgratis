@@ -1,5 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from "react";
+// import { Link } from 'react-router-dom'
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getCareer } from '../../features/career/careerSlice';
+import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Footer from '../../components/default/Footer'
 import Header from '../../components/default/Header'
@@ -14,6 +19,25 @@ import ChangingProgressProvider from "../../assets/js/ChangingProgressProvider";
 const percentage = 66;
 
 const HasilAnalisa = () => {
+
+    // Redux
+    const dispatch = useDispatch();
+    const [currentCareer, setCurrentCareer] = useState({});
+
+    const { data, isLoading } = useSelector(
+        (state) => state.career
+    );
+
+    useEffectOnce(() => {
+        dispatch(getCareer());
+    });
+
+    useEffect(() => {
+        if (data?.career) setCurrentCareer(data?.career);
+    }, [data]);
+
+    console.log(currentCareer)
+
     return (
         <>
             <Header />
@@ -29,7 +53,7 @@ const HasilAnalisa = () => {
                                 /> */}
                                 <div className="d-flex justify-content-center mb-4">
                                     <div style={{ width: "25%" }}>
-                                        <ChangingProgressProvider values={[0, percentage]}
+                                        <ChangingProgressProvider values={[0, currentCareer?.accuracy]}
                                             className="h-200px h-md-300px mb-3">
                                             {(percentage) => (
                                                 <CircularProgressbar
@@ -46,15 +70,15 @@ const HasilAnalisa = () => {
                                 </div>
 
                                 <p>Karir yang cocok untuk kamu adalah</p>
-                                <h1>“Credit  Analyst”</h1>
+                                <h1>“{currentCareer?.career}”</h1>
                             </div>
                             <div className="col-12 text-center mt-5">
                                 <p className="mb-0">
-                                    Pelajari selengkapnya untuk menjadi <br /> <b>Credit Analyst</b>
+                                    Pelajari selengkapnya untuk menjadi <br /> <b>{currentCareer?.career}</b>
                                 </p>
-                                <Link to="/perencanaan-karir/hasil-analisa/modul-karir" type="button" className="btn btn-info mt-7 mb-0 rounded-5 px-4">
+                                {/* <Link to="/perencanaan-karir/hasil-analisa/modul-karir" type="button" className="btn btn-info mt-7 mb-0 rounded-5 px-4">
                                     Lihat detail modul
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>

@@ -16,6 +16,7 @@ import leaderboardReducer from "../features/leaderboard/leaderboardSlice";
 import discussionGlobalReducer from "../features/discussion-global/discussionGlobalSlice";
 import eventReducer from "../features/event/eventSlice";
 import jobsReducer from "../features/jobs/jobsSlice";
+import careerReducer from "../features/career/careerSlice";
 
 export const store = configureStore({
 	reducer: {
@@ -35,6 +36,7 @@ export const store = configureStore({
 		leaderboard: leaderboardReducer,
 		discussionGlobal: discussionGlobalReducer,
 		event: eventReducer,
-		jobs: jobsReducer
+		jobs: jobsReducer,
+		career: careerReducer
 	}
 });
