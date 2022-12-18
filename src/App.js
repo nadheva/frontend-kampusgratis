@@ -324,8 +324,8 @@ function App() {
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja" element={<ListPekerjaan />} />
 						</Route>
-						<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PrivateRoute />}>
-							<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PenyaluranKerja />} />
+						<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PenyaluranKerja />} />
 						</Route>
 
 						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
