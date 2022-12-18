@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Intro = () => {
+const Intro = ({ kerja }) => {
 	return (
 		<section className="bg-light">
 			<div className="container">
 				<div className="row position-relative">
 					<div className="col-lg-8 position-relative">
-						<h1 className="p-0 m-0">Content Creator</h1>
-						<p>PT. Gojek Indonesia</p>
+						<h1 className="p-0 m-0">{kerja?.position}</h1>
+						<p>{kerja?.Company?.company_name}</p>
 					</div>
 				</div>
 				<div className="row position-relative">
@@ -16,11 +16,11 @@ const Intro = () => {
 						<ul className="list-group list-group-borderless">
 							<li className="list-group-item h6 fw-normal d-flex mb-0">
 								<i className="bi bi-geo-alt-fill text-black me-2" />
-								Kota Depok, Jawa Barat
+								{kerja?.Company?.location}
 							</li>
 							<li className="list-group-item h6 fw-normal d-flex mb-0">
 								<i className="bi bi-currency-dollar text-black me-2"></i>
-								Rp 3.500.000-5.000.000
+								Rp {kerja?.salary}
 							</li>
 						</ul>
 					</div>
@@ -39,7 +39,7 @@ const Intro = () => {
 											data-purecounter-delay={200}
 											data-purecounter-duration={0}
 										>
-											Senin - Sabtu
+											{kerja?.work_days}
 										</h5>
 										<span className="mb-0 h5"></span>
 									</div>
@@ -61,7 +61,7 @@ const Intro = () => {
 											data-purecounter-delay={200}
 											data-purecounter-duration={0}
 										>
-											08:00 - 17:00
+											{kerja?.work_hour}
 										</h5>
 										<span className="mb-0 h5"></span>
 									</div>
@@ -83,7 +83,7 @@ const Intro = () => {
 											data-purecounter-delay={200}
 											data-purecounter-duration={0}
 										>
-											Fulltime
+											{kerja?.period}
 										</h5>
 										<span className="mb-0 h5"></span>
 									</div>
@@ -92,7 +92,6 @@ const Intro = () => {
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</section>

@@ -301,15 +301,14 @@ function App() {
 						<Route path="/acara-kampus" element={<PrivateRoute />}>
 							<Route path="/acara-kampus" element={<AcaraKampus />} />
 						</Route>
-
-						<Route path="/papan-skor" element={<PrivateRoute />}>
-							<Route path="/papan-skor" element={<Leaderboard />} />
-						</Route>
-
 						<Route path="/acara-kampus/:id" element={<PrivateRoute />}>
 							<Route path="/acara-kampus/:id" element={<AcaraKampusDetail />} />
 						</Route>
 						{/* END : Acara Kampus */}
+
+						<Route path="/papan-skor" element={<PrivateRoute />}>
+							<Route path="/papan-skor" element={<Leaderboard />} />
+						</Route>
 
 						{/* START : NILAI & SERTIFIKAT */}
 						<Route path="/nilai" exact element={<PrivateRoute redirect />}>
@@ -325,13 +324,12 @@ function App() {
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja" element={<ListPekerjaan />} />
 						</Route>
-						<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PrivateRoute />}>
-							<Route path="/penyaluran-kerja/pilih-pekerjaan" element={<PenyaluranKerja />} />
+						<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PrivateRoute />}>
+							<Route path="/penyaluran-kerja/pilih-pekerjaan" exact element={<PenyaluranKerja />} />
 						</Route>
-
-						<Route path="/detail-penyaluran-kerja" element={<PrivateRoute />}>
+						<Route path="/penyaluran-kerja/pilih-pekerjaan/:id" element={<PrivateRoute />}>
 							<Route
-								path="/detail-penyaluran-kerja"
+								path="/penyaluran-kerja/pilih-pekerjaan/:id"
 								element={<DetailPenyaluranKerja />}
 							/>
 						</Route>
