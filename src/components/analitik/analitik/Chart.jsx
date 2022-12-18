@@ -102,7 +102,7 @@ const Chart = () => (
 			</ChangingProgressProvider>
 		</Example>
 		<Example label="No animation when returning to 0">
-			<ChangingProgressProvider values={[0, 100]}>
+			<ChangingProgressProvider values={[0, 80]}>
 				{(percentage) => (
 					<CircularProgressbar
 						value={percentage}
