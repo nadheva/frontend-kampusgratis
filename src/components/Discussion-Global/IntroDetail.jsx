@@ -18,7 +18,7 @@ const IntroDetail = () => {
                     <Link to="/diskusi-global">Diskusi Global</Link>
                   </li>
                   <li className="breadcrumb-item active" aria-current="page">
-                    Diskusi Global
+                    Detail Diskusi
                   </li>
                 </ol>
               </nav>
