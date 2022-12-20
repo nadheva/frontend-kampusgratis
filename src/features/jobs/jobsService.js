@@ -3,7 +3,7 @@ import { getAuth } from "firebase/auth";
 
 const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
 
-const getJobs = async (dataJob, currentPage) => {
+const getJobs = async (currentPage, type) => {
 	const auth = getAuth();
 	const token = await auth.currentUser.getIdToken();
 
@@ -13,7 +13,7 @@ const getJobs = async (dataJob, currentPage) => {
 			'Authorization': `Bearer ${token}`
 		}
 	}
-	const response = await axios.post(API_URL + `jobs/all?page=${currentPage}&limit=8`, dataJob, config);
+	const response = await axios.get(API_URL + `jobs/all?page=${currentPage}&limit=8&type=${type}`, config);
 
 	return response.data;
 }

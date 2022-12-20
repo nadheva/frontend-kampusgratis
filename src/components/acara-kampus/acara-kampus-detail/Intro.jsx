@@ -1,7 +1,7 @@
 import moment from "moment";
 import React, { useState } from "react";
 
-const Intro = ({ event, onClickDaftar }) => {
+const Intro = ({ event, onClickDaftar, isLoading }) => {
 
 	return (
 		<section className="pt-5">
@@ -50,9 +50,22 @@ const Intro = ({ event, onClickDaftar }) => {
 						<div className="card card-body bg-light p-5 text-center">
 							<h5 className="fw-normal">Silakan Mendaftar Ke Event Ini</h5>
 							<h2>Gratis</h2>
-							<button onClick={() => onClickDaftar()} type="submit" className="btn btn-blue mb-2">
-								Daftar Sekarang
-							</button>
+							{
+								event?.joined ? (
+									<button type="submit" className="btn btn-success mb-2" disabled>
+										Sudah Terdaftar
+									</button>
+								) : (
+									<button onClick={() => onClickDaftar()} type="submit" className="btn btn-blue mb-2">
+										{isLoading ? <>
+											<span className="spinner-border spinner-border-sm"></span>&nbsp;
+											Loading ...
+										</> : <>
+											Daftar Sekarang
+										</>}
+									</button>
+								)
+							}
 						</div>
 					</div>
 				</div>
