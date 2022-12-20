@@ -79,7 +79,7 @@ const PenyaluranKerja = () => {
 				<Intro />
 				<section className="pt-4">
 					<div className="container">
-						<FilterBar />
+						{/* <FilterBar /> */}
 						<CardList
 							isLoading={isLoading}
 							results={results}

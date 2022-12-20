@@ -13,7 +13,7 @@ const getJobs = async (currentPage, type) => {
 			'Authorization': `Bearer ${token}`
 		}
 	}
-	const response = await axios.get(API_URL + `jobs/all?page=${currentPage}&limit=8&type=${type}`, config);
+	const response = await axios.get(API_URL + `jobs/all?type=${type}&limit=8&page=${currentPage}`, config);
 
 	return response.data;
 }
