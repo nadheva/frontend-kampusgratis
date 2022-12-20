@@ -24,7 +24,7 @@ const WhayUseSection = () => {
 			icon: "bi bi-alarm-fill fs-5",
 			title: "Pembelajaran yang Fleksibel",
 			deskripsi:
-				"Belajar dimana aja, bisa di akses melalui HP, kapanpun mau belajar bisa dilakukan, sehingga belajar bisa jadi fleksibel dan tidak terikat oleh ruang dan waktu. ",
+				"Belajar kapanpun, dan dimanapun, bisa di akses melalui Aplikasi, sehingga belajar jadi fleksibel dan tidak terikat oleh ruang dan waktu.",
 		},
 		{
 			id: 4,
