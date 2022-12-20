@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const CardItem = ({ kerja }) => {
+
+    const { type } = useParams();
+
     return (
         <div className="col-lg-10 col-xl-6">
             <div className="card shadow p-2">
@@ -19,7 +22,7 @@ const CardItem = ({ kerja }) => {
                             <div className="d-sm-flex justify-content-sm-between mb-2 mb-sm-3">
                                 <div>
                                     <h5 className="card-title mb-0">
-                                        <Link to={`/penyaluran-kerja/pilih-pekerjaan/${kerja?.id}`}>{kerja?.position}</Link>
+                                        <Link to={`/penyaluran-kerja/pilih-pekerjaan/${type}/${kerja?.id}`}>{kerja?.position}</Link>
                                     </h5>
                                     <p className="small mb-2 mb-sm-0">
                                         {kerja?.Company?.company_name}

@@ -10,21 +10,25 @@ const ListPekerjaan = () => {
             title: "Mitra Kami ",
             link: "/penyaluran-kerja/pilih-pekerjaan",
             img: "assets/images/element/kerja-1.svg",
+            type: "sponsored"
         },
         {
             title: "Design Digital & Creative ",
             link: "/penyaluran-kerja/pilih-pekerjaan",
             img: "assets/images/element/kerja-2.svg",
+            type: "design"
         },
         {
             title: "Finance & Accounting ",
             link: "/penyaluran-kerja/pilih-pekerjaan",
             img: "assets/images/element/kerja-3.svg",
+            type: "finance"
         },
         {
             title: "Teknologi & Programming",
             link: "/penyaluran-kerja/pilih-pekerjaan",
             img: "assets/images/element/kerja-4.svg",
+            type: "programming"
         },
     ]
 
@@ -66,12 +70,12 @@ const ListPekerjaan = () => {
                                                 <img src={x.img} alt="" />
                                             </div>
                                             <h5 className="mb-0">
-                                                <Link to={x.link} className="stretched-link">
+                                                <Link to={`/penyaluran-kerja/pilih-pekerjaan/${x.type}`} className="stretched-link">
                                                     {x.title}
                                                 </Link>
                                             </h5>
                                             <div className="d-sm-flex justify-content-center align-items-center pt-3">
-                                                <Link to={x.link} className="btn btn-link p-0 mb-0 text-body" >
+                                                <Link to={`/penyaluran-kerja/pilih-pekerjaan/${x.type}`} className="btn btn-link p-0 mb-0 text-body" >
                                                     Lihat Pekerjaan <i className="bi bi-arrow-right ms-2"></i>
                                                 </Link>
                                             </div>

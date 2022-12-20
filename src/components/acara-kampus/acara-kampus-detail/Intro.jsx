@@ -3,8 +3,6 @@ import React, { useState } from "react";
 
 const Intro = ({ event, onClickDaftar, isLoading }) => {
 
-	console.log(event?.joined)
-
 	return (
 		<section className="pt-5">
 			<div className="container">

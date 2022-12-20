@@ -10,9 +10,9 @@ const initialState = {
     message: ''
 };
 
-export const getJobs = createAsyncThunk("jobs/all", async ({ dataJob, currentPage }, thunkAPI) => {
+export const getJobs = createAsyncThunk("jobs/all", async ({ currentPage, type }, thunkAPI) => {
     try {
-        const { data } = await jobsService.getJobs(dataJob, currentPage)
+        const { data } = await jobsService.getJobs(currentPage, type)
 
         return data;
     } catch (error) {
