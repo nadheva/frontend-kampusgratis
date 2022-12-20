@@ -41,7 +41,11 @@ const AcaraKampusDetail = () => {
 		<>
 			<Header />
 			<main>
-				<Intro event={event} onClickDaftar={onClickDaftar} />
+				<Intro
+					event={event}
+					onClickDaftar={onClickDaftar}
+					isLoading={isLoading}
+				/>
 				<Category event={event} />
 				<Desctriprion event={event} />
 			</main>

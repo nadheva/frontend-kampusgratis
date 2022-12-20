@@ -12,6 +12,11 @@ const CardItem = ({ data }) => {
 						style={{ height: "258px", objectFit: "cover", objectPosition: "center" }} />
 				</div>
 				<div className="card-body px-3">
+					{
+						data?.joined ? (
+							<a href="#" className="badge bg-success bg-opacity-10 text-success mb-2">Terdaftar</a>
+						) : (<></>)
+					}
 					<h5 className="card-title mb-0">
 						<Link to={`/acara-kampus/${data.id}`} className="stretched-link ">
 							{data?.name}
