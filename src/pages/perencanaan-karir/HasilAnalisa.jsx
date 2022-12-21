@@ -13,9 +13,11 @@ import Header from "../../components/default/Header";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import ChangingProgressProvider from "../../assets/js/ChangingProgressProvider";
-const percentage = 66;
+import GradientSVG from "../../assets/js/GradientSVG";
 
 const HasilAnalisa = () => {
+	const idCSS = "hello";
+	const percentage = 66;
 	// Redux
 	const dispatch = useDispatch();
 	const [currentCareer, setCurrentCareer] = useState({});
@@ -23,14 +25,12 @@ const HasilAnalisa = () => {
 	const { data, isLoading } = useSelector((state) => state.career);
 
 	useEffectOnce(() => {
+		dispatch(resetAll());
 		dispatch(getCareer());
 	});
 
 	useEffect(() => {
-		if (data?.career) {
-			setCurrentCareer(data?.career);
-			dispatch(resetAll());
-		}
+		if (data?.career) setCurrentCareer(data?.career);
 	}, [data]);
 
 	return (
@@ -48,33 +48,48 @@ const HasilAnalisa = () => {
                                 /> */}
 								<div className="d-flex justify-content-center mb-4">
 									<div style={{ width: "25%" }}>
-										<ChangingProgressProvider
-											values={[0, currentCareer?.accuracy]}
-											className="h-200px h-md-300px mb-3"
-										>
-											{(percentage) => (
-												<CircularProgressbar
-													value={percentage}
-													text={`${percentage}%`}
-													styles={buildStyles({
-														pathTransition:
-															percentage === 0
-																? "none"
-																: "stroke-dashoffset 0.5s ease 0s",
-													})}
-												/>
-											)}
-										</ChangingProgressProvider>
+										<GradientSVG />
+										<CircularProgressbar
+											strokeWidth={12}
+											value={[currentCareer?.accuracy]}
+											text={currentCareer?.accuracy + "%"}
+											styles={{
+												path: { stroke: `url(#${idCSS})`, height: "100%" },
+												trail: {
+													stroke: "#eee",
+												},
+											}}
+										/>
 									</div>
 								</div>
 
 								<p>Karir yang cocok untuk kamu adalah</p>
-								<h1>“{currentCareer?.accuracy}”</h1>
+								{currentCareer?.career ? (
+									<>
+										<h1>
+											“
+											{currentCareer?.career.charAt(0).toUpperCase() +
+												currentCareer?.career.slice(1)}
+											”
+										</h1>
+									</>
+								) : (
+									"..."
+								)}
 							</div>
 							<div className="col-12 text-center mt-5">
 								<p className="mb-0">
 									Pelajari selengkapnya untuk menjadi <br />{" "}
-									<b>{currentCareer?.career}</b>
+									{currentCareer?.career ? (
+										<>
+											<b>
+												{currentCareer?.career.charAt(0).toUpperCase() +
+													currentCareer?.career.slice(1)}
+											</b>
+										</>
+									) : (
+										"..."
+									)}
 								</p>
 								{/* <Link to="/perencanaan-karir/hasil-analisa/modul-karir" type="button" className="btn btn-info mt-7 mb-0 rounded-5 px-4">
                                     Lihat detail modul

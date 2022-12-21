@@ -1,282 +1,104 @@
-import React from "react";
-import { render } from "react-dom";
+import React, { useEffect, useState } from "react";
+// import { Link } from 'react-router-dom'
+
+// redux
+import { useSelector, useDispatch } from "react-redux";
+import { getCareer, resetAll } from "../../../features/career/careerSlice";
+import useEffectOnce from "../../../helpers/useEffectOnce";
 
 // Import react-circular-progressbar module and styles
-import {
-	CircularProgressbar,
-	CircularProgressbarWithChildren,
-	buildStyles,
-} from "react-circular-progressbar";
+import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-
-// Animation
-import { easeQuadInOut } from "d3-ease";
-import AnimatedProgressProvider from "../../../assets/js/AnimatedProgressProvider";
 import ChangingProgressProvider from "../../../assets/js/ChangingProgressProvider";
+import GradientSVG from "../../../assets/js/GradientSVG";
 
-// Radial separators
-import RadialSeparators from "../../../assets/js/RadialSeparators";
+import "./style.css";
 
-const percentage = 66;
+const Chart = () => {
+	const idCSS = "hello";
+	const percentage = 66;
+	// Redux
+	const dispatch = useDispatch();
+	const [currentCareer, setCurrentCareer] = useState({});
 
-const Chart = () => (
-	<div style={{ padding: "40px 40px 40px 40px" }}>
-		<h1>react-circular-progressbar examples</h1>
-		<p>
-			<a href="https://github.com/kevinsqi/react-circular-progressbar">
-				<strong>View Github docs</strong>
-			</a>
-		</p>
+	const { data, isLoading } = useSelector((state) => state.career);
 
-		<h2>Common style customizations</h2>
-		<Example label="Default">
-			<CircularProgressbar value={percentage} text={`${percentage}%`} />
-		</Example>
-		<Example label="Stroke width">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				strokeWidth={5}
-			/>
-		</Example>
-		<Example label="Square linecaps">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				styles={buildStyles({
-					strokeLinecap: "butt",
-				})}
-			/>
-		</Example>
-		<Example label="Custom colors">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				styles={buildStyles({
-					textColor: "red",
-					pathColor: "turquoise",
-					trailColor: "gold",
-				})}
-			/>
-		</Example>
-		<Example label="Text size">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				styles={buildStyles({
-					// This is in units relative to the 100x100px
-					// SVG viewbox.
-					textSize: "14px",
-				})}
-			/>
-		</Example>
-		<Example label="Rotation">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				styles={buildStyles({
-					rotation: 0.5 + (1 - percentage / 100) / 2,
-				})}
-			/>
-		</Example>
+	useEffectOnce(() => {
+		dispatch(resetAll());
+		dispatch(getCareer());
+	});
 
-		<h2>Animation</h2>
-		<Example label="Default animation speed">
-			<ChangingProgressProvider values={[0, 20, 40, 60, 80, 100]}>
-				{(percentage) => (
-					<CircularProgressbar value={percentage} text={`${percentage}%`} />
-				)}
-			</ChangingProgressProvider>
-		</Example>
-		<Example label="Custom animation speed">
-			<ChangingProgressProvider values={[0, 20, 40, 60, 80, 100]}>
-				{(percentage) => (
-					<CircularProgressbar
-						value={percentage}
-						text={`${percentage}%`}
-						styles={buildStyles({
-							pathTransitionDuration: 0.15,
-						})}
-					/>
-				)}
-			</ChangingProgressProvider>
-		</Example>
-		<Example label="No animation when returning to 0">
-			<ChangingProgressProvider values={[0, 80]}>
-				{(percentage) => (
-					<CircularProgressbar
-						value={percentage}
-						text={`${percentage}%`}
-						styles={buildStyles({
-							pathTransition:
-								percentage === 0 ? "none" : "stroke-dashoffset 0.5s ease 0s",
-						})}
-					/>
-				)}
-			</ChangingProgressProvider>
-		</Example>
-		<Example label="Fully controlled text animation using react-move">
-			<AnimatedProgressProvider
-				valueStart={0}
-				valueEnd={66}
-				duration={1.4}
-				easingFunction={easeQuadInOut}
-				repeat
-			>
-				{(value) => {
-					const roundedValue = Math.round(value);
-					return (
-						<CircularProgressbar
-							value={value}
-							text={`${roundedValue}%`}
-							/* This is important to include, because if you're fully managing the
-        animation yourself, you'll want to disable the CSS animation. */
-							styles={buildStyles({ pathTransition: "none" })}
-						/>
-					);
-				}}
-			</AnimatedProgressProvider>
-		</Example>
-
-		<h2>Other use cases</h2>
-		<Example label="Arbitrary content">
-			<CircularProgressbarWithChildren value={66}>
-				{/* Put any JSX content in here that you'd like. It'll be vertically and horizonally centered. */}
-				<img
-					style={{ width: 40, marginTop: -5 }}
-					src="https://i.imgur.com/b9NyUGm.png"
-					alt="doge"
-				/>
-				<div style={{ fontSize: 12, marginTop: -5 }}>
-					<strong>66%</strong> mate
-				</div>
-			</CircularProgressbarWithChildren>
-		</Example>
-		<Example label="Multiple overlapping paths">
-			<CircularProgressbarWithChildren
-				value={80}
-				styles={buildStyles({
-					pathColor: "#f00",
-					trailColor: "#eee",
-					strokeLinecap: "butt",
-				})}
-			>
-				{/* Foreground path */}
-				<CircularProgressbar
-					value={70}
-					styles={buildStyles({
-						trailColor: "transparent",
-						strokeLinecap: "butt",
-					})}
-				/>
-			</CircularProgressbarWithChildren>
-		</Example>
-		<Example label="Multiple concentric paths">
-			<CircularProgressbarWithChildren
-				value={75}
-				strokeWidth={8}
-				styles={buildStyles({
-					pathColor: "#f00",
-					trailColor: "transparent",
-				})}
-			>
-				{/*
-          Width here needs to be (100 - 2 * strokeWidth)% 
-          in order to fit exactly inside the outer progressbar.
-        */}
-				<div style={{ width: "84%" }}>
-					<CircularProgressbar
-						value={70}
-						styles={buildStyles({
-							trailColor: "transparent",
-						})}
-					/>
-				</div>
-			</CircularProgressbarWithChildren>
-		</Example>
-		<Example label="Background">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				background
-				backgroundPadding={6}
-				styles={buildStyles({
-					backgroundColor: "#3e98c7",
-					textColor: "#fff",
-					pathColor: "#fff",
-					trailColor: "transparent",
-				})}
-			/>
-		</Example>
-		<Example label="Counterclockwise">
-			<CircularProgressbar
-				value={percentage}
-				text={`${percentage}%`}
-				counterClockwise
-			/>
-		</Example>
-
-		<Example label="Pie chart">
-			<CircularProgressbar
-				value={percentage}
-				strokeWidth={50}
-				styles={buildStyles({
-					strokeLinecap: "butt",
-				})}
-			/>
-		</Example>
-		<Example label="Progressbar with separators">
-			<CircularProgressbarWithChildren
-				value={80}
-				text={`${80}%`}
-				strokeWidth={10}
-				styles={buildStyles({
-					strokeLinecap: "butt",
-				})}
-			>
-				<RadialSeparators
-					count={12}
-					style={{
-						background: "#fff",
-						width: "2px",
-						// This needs to be equal to props.strokeWidth
-						height: `${10}%`,
-					}}
-				/>
-			</CircularProgressbarWithChildren>
-		</Example>
-		<Example label="Dashboard/speedometer">
-			<ChangingProgressProvider values={[0, 20, 80]}>
-				{(value) => (
-					<CircularProgressbar
-						value={value}
-						text={`${value}%`}
-						circleRatio={0.75}
-						styles={buildStyles({
-							rotation: 1 / 2 + 1 / 8,
-							strokeLinecap: "butt",
-							trailColor: "#eee",
-						})}
-					/>
-				)}
-			</ChangingProgressProvider>
-		</Example>
-	</div>
-);
-
-function Example(props) {
+	useEffect(() => {
+		if (data?.career) setCurrentCareer(data?.career);
+	}, [data]);
 	return (
-		<div style={{ marginBottom: 80 }}>
-			<hr style={{ border: "2px solid #ddd" }} />
-			<div style={{ marginTop: 30, display: "flex" }}>
-				<div style={{ width: "30%", paddingRight: 30 }}>{props.children}</div>
-				<div style={{ width: "70%" }}>
-					<h3 className="h5">{props.label}</h3>
-					<p>{props.description}</p>
+		<section className="pt-5 pb-0">
+			<div className="container">
+				{/* Chart and Ticket START */}
+				<div className="row g-4 mb-4">
+					{/* Ticket START */}
+					<div className="col-xxl-4">
+						<div className="card shadow h-100">
+							{/* Card header */}
+							<div className="card-header border-bottom d-flex justify-content-between align-items-center p-4">
+								<h5 className="card-header-title">Performa Semester Ini</h5>
+								<a href="#" className="btn btn-link p-0 mb-0">
+									View all
+								</a>
+							</div>
+							{/* Card body START */}
+							<div className="card-body p-4">
+								{/* Chart */}
+								<div className="row justify-content-center">
+									<div className="col-12 text-center">
+										{/* <img
+                                    src="../assets/images/element/chart.svg"
+                                    className="h-200px h-md-300px mb-3"
+                                    alt=""
+                                /> */}
+										<div className="d-flex justify-content-center mb-4">
+											<div style={{ width: "60%" }}>
+												<GradientSVG />
+												<CircularProgressbar
+													strokeWidth={12}
+													value={[currentCareer?.accuracy]}
+													text={currentCareer?.accuracy + "%"}
+													styles={{
+														path: { stroke: `url(#${idCSS})`, height: "100%" },
+														trail: {
+															stroke: "#eee",
+														},
+													}}
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{/* Ticket END */}
+					{/* Chart START */}
+					<div className="col-xxl-8">
+						<div className="card shadow h-100">
+							{/* Card header */}
+							<div className="card-header p-4 border-bottom">
+								<h5 className="card-header-title">
+									Analisa Hasil Belajar Tiap Semester
+								</h5>
+							</div>
+							{/* Card body */}
+							<div className="card-body">
+								{/* Apex chart */}
+								<div id="ChartPayout" />
+							</div>
+						</div>
+					</div>
+					{/* Chart END */}
 				</div>
 			</div>
-		</div>
+		</section>
 	);
-}
+};
 
 export default Chart;
