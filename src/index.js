@@ -27,6 +27,11 @@ root.render(
 				src="/assets/vendor/stepper/js/bs-stepper.min.js"
 				defer
 			></script>
+			<script
+				type="text/javascript"
+				src="/assets/vendor/apexcharts/js/apexcharts.min.js"
+				defer
+			></script>
 		</Helmet>
 	</Provider>
 );

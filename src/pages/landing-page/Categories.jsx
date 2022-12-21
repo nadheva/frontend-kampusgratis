@@ -60,10 +60,10 @@ const Categories = () => {
 		},
 		{
 			name: "Drill, Simulasi & Assessment ",
-			url: "#",
+			url: "/simulasi-drill-assessment",
 			src: "/assets/images/element/account.svg",
 			background: "bg-info",
-			disabled: true,
+			disabled: false,
 		},
 		{
 			name: "Kalender Saya",

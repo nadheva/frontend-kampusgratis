@@ -3,18 +3,18 @@ import React from 'react';
 import Header from "../../components/default/Header";
 import Footer from "../../components/default/Footer";
 
-// import IntroDetail from '../../components/Discussion-Global/IntroDetail';
-import MainContent from '../../components/Discussion-Global/MainContentDetail';
+import Intro from '../../components/Discussion-Global/IntroCreate';
+import MainContent from '../../components/Discussion-Global/Create';
 
-const Detail = () => {
+const Create = () => {
   return <>
     <Header />
     <main>
-      {/* <IntroDetail /> */}
+      <Intro />
       <MainContent />
     </main>
     <Footer />
   </>
 }
 
-export default Detail;
+export default Create;
