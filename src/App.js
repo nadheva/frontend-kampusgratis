@@ -102,6 +102,7 @@ import DiscussionGlobal from './pages/Discussion-Global/Main';
 import DiscussionGlobalDetail from './pages/Discussion-Global/Detail';
 import CreateDiscussion from './pages/Discussion-Global/Create';
 
+import DrillSimulationAssessment from "./pages/drill-simulation-assessment/Main";
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
 
@@ -295,6 +296,10 @@ function App() {
 							<Route path="/panduan/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
 						</Route>
 						{/* END : */}
+
+						<Route path="/simulasi-drill-assessment" exact element={<PrivateRoute redirect />}>
+							<Route path="/simulasi-drill-assessment" element={<DrillSimulationAssessment />} />
+						</Route>
 
 						{/* START : KALENDER */}
 						<Route path="/kalender" exact element={<PrivateRoute />}>
