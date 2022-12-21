@@ -50,9 +50,9 @@ const Create = () => {
           <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
       </div>
-      <div className="col-12 my-3">
+      <div className="col-12 my-3 mb-5">
         <label className="form-label">Isi Diskusi</label>
-        <div className="input-group" style={{ minHeight: '150px' }}>
+        <div className="input-group" style={{ minHeight: '120px' }}>
           <Editor
             editorState={content}
             onEditorStateChange={setContent}
@@ -63,7 +63,7 @@ const Create = () => {
         </div>
       </div>
       <div className="d-sm-flex justify-content-end mt-5">
-        <button className="btn btn-primary mt-3" onClick={doCreateDiscussion}>
+        <button className="btn btn-primary mt-5" onClick={doCreateDiscussion}>
           <i className="bi bi-send-plus-fill me-2"></i>
           Buat Diskusi</button>
       </div>
