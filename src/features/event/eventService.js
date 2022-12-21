@@ -28,13 +28,13 @@ const getEvent = async (id) => {
 			'Authorization': `Bearer ${token}`
 		}
 	}
-	const response = await axios.get(API_URL + `events/event/${id}`, config);
+	const response = await axios.get(API_URL + `events/${id}`, config);
 
 	return response.data;
 }
 
 
-const joinEvent = async (id, data) => {
+const joinEvent = async (id, data2) => {
 	const auth = getAuth();
 	const token = await auth.currentUser.getIdToken();
 
@@ -44,7 +44,7 @@ const joinEvent = async (id, data) => {
 			'Authorization': `Bearer ${token}`
 		}
 	}
-	const response = await axios.post(API_URL + `events/join/${id}`, data, config);
+	const response = await axios.post(API_URL + `events/join/${id}`, data2, config);
 
 	return response.data;
 }
