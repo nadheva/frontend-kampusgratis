@@ -103,6 +103,7 @@ import DiscussionGlobalDetail from './pages/Discussion-Global/Detail';
 import CreateDiscussion from './pages/Discussion-Global/Create';
 
 import DrillSimulationAssessment from "./pages/drill-simulation-assessment/Main";
+import Team from "./pages/Team";
 // https://stackoverflow.com/questions/69864165/error-privateroute-is-not-a-route-component-all-component-children-of-rou
 // https://codesandbox.io/s/dreamy-gauss-w47hm?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.js&theme=dark
 
@@ -113,6 +114,7 @@ function App() {
 				<ScrollToTop>
 					<Routes>
 						<Route path="/" exact element={<Main />} />
+						<Route path="/team" exact element={<Team />} />
 						<Route path="/pendidikanS1" exact element={<PendidikanS1 />} />
 						<Route path="/pelatihan" exact element={<Pelatihan />} />
 						<Route path="/magang" exact element={<Magang />} />
