@@ -59,7 +59,7 @@ const SidebarProfile = () => {
 									) : (
 										<>
 											<NavLink className="list-group-item" to="/mycourse">
-												<i className="bi bi-collection me-2"></i>Mata Kuliah
+												<i className="bi bi-collection fa-fw me-2"></i>Mata Kuliah
 											</NavLink>
 											<NavLink className="list-group-item" to="/nilai">
 												<i className="bi bi-clipboard fa-fw me-2"></i>Nilai
