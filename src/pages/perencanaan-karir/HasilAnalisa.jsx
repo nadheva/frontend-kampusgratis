@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getCareer } from "../../features/career/careerSlice";
+import { getCareer, resetAll } from "../../features/career/careerSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Footer from "../../components/default/Footer";
@@ -25,14 +25,13 @@ const HasilAnalisa = () => {
 	const { data, isLoading } = useSelector((state) => state.career);
 
 	useEffectOnce(() => {
+		dispatch(resetAll());
 		dispatch(getCareer());
 	});
 
 	useEffect(() => {
 		if (data?.career) setCurrentCareer(data?.career);
 	}, [data]);
-
-	console.log(currentCareer);
 
 	return (
 		<>
@@ -51,9 +50,9 @@ const HasilAnalisa = () => {
 									<div style={{ width: "25%" }}>
 										<GradientSVG />
 										<CircularProgressbar
-											strokeWidth={8}
+											strokeWidth={12}
 											value={[currentCareer?.accuracy]}
-											text={currentCareer?.accuracy}
+											text={currentCareer?.accuracy + "%"}
 											styles={{
 												path: { stroke: `url(#${idCSS})`, height: "100%" },
 												trail: {
@@ -65,12 +64,32 @@ const HasilAnalisa = () => {
 								</div>
 
 								<p>Karir yang cocok untuk kamu adalah</p>
-								<h1>“{currentCareer?.accuracy}”</h1>
+								{currentCareer?.career ? (
+									<>
+										<h1>
+											“
+											{currentCareer?.career.charAt(0).toUpperCase() +
+												currentCareer?.career.slice(1)}
+											”
+										</h1>
+									</>
+								) : (
+									"..."
+								)}
 							</div>
 							<div className="col-12 text-center mt-5">
 								<p className="mb-0">
 									Pelajari selengkapnya untuk menjadi <br />{" "}
-									<b>{currentCareer?.career}</b>
+									{currentCareer?.career ? (
+										<>
+											<b>
+												{currentCareer?.career.charAt(0).toUpperCase() +
+													currentCareer?.career.slice(1)}
+											</b>
+										</>
+									) : (
+										"..."
+									)}
 								</p>
 								{/* <Link to="/perencanaan-karir/hasil-analisa/modul-karir" type="button" className="btn btn-info mt-7 mb-0 rounded-5 px-4">
                                     Lihat detail modul
