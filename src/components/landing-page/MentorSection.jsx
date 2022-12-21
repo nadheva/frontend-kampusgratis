@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const MentorSection = () => {
 	const data = [
@@ -6,27 +6,34 @@ const MentorSection = () => {
 			id: 1,
 			name: "Bunaiya",
 			title: "Bunaiya",
-			img: "./assets/images/asset-kg/KGB00660.jpg",
+			img: "./assets/images/instructor/13.png",
 		},
 		{
 			id: 2,
-			name: "Apud Salapudin",
+			name: "Alyuhannas",
 			title: "Alyuhannas ",
-			img: "./assets/images/asset-kg/KGB00654.JPG",
+			img: "./assets/images/instructor/12.png",
 		},
 		{
 			id: 3,
-			name: "Master in ",
-			title: "Apud Salapudin",
-			img: "./assets/images/instructor/03.jpg",
+			name: "Kembar Cahyono",
+			title: "Kembar Cahyono",
+			img: "./assets/images/instructor/14.png",
 		},
 		{
 			id: 4,
-			name: "M Alam",
-			title: "M Alam",
-			img: "./assets/images/instructor/11.jpg",
+			name: "Abu Bakar Shodik",
+			title: "Abu Bakar Shodik",
+			img: "./assets/images/instructor/15.png",
+		},
+		{
+			id: 5,
+			name: "Apud Salapudin",
+			title: "Apud Salapudin",
+			img: "./assets/images/instructor/16.png",
 		},
 	];
+
 
 	return (
 		<section className="py-5">
@@ -56,7 +63,7 @@ const MentorSection = () => {
 				<div className="row g-4">
 					{data.map((x) => (
 						<div
-							className="col-sm-6 col-lg-4 col-xl-3"
+							className="col"
 							key={x.id}
 							data-aos="zoom-in"
 						>
