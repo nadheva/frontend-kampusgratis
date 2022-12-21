@@ -134,10 +134,50 @@ const deleteReply = async (replyId) => {
   return response.data;
 }
 
+const deleteDiscussion = async (discussionId) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  const response = await axios.delete(API_URL + `forum/discussionforum/delete/${discussionId}`, config);
+
+  return response.data;
+}
+
+const createDiscussion = async (title, content) => {
+  const auth = getAuth();
+  const token = await auth.currentUser.getIdToken();
+
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+  }
+
+  console.log(title, content)
+
+  const response = await axios.post(API_URL + 'forum/discussionforum/create', {
+    title,
+    content,
+    session_id: null
+  }, config);
+
+  return response.data;
+}
+
 const discussionGlobalService = {
   getAllDiscussion, getDiscussionDetail, likeDiscussion,
   likeComment, likeReply,
-  sendComment, deleteComment, deleteReply
+  sendComment, deleteComment, deleteReply,
+  createDiscussion,
+  deleteDiscussion
 };
 
 export default discussionGlobalService;
