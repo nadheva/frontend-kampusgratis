@@ -10,6 +10,7 @@ import { reset as resetMyStudy } from '../../features/my-study/myStudySlice';
 
 import ForumComment from '../../components/Discussion-Global/Discussion';
 import { toast } from 'react-toastify';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const MainContent = () => {
   const dispatch = useDispatch();
@@ -79,7 +80,7 @@ const MainContent = () => {
           return { ...prevState, student_like: data?.discussion?.student_like }
         });
 
-        dispatch(reset());
+        // dispatch(reset());
       }
     }
   }, [data, discussion, messageForum]);
@@ -179,7 +180,9 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-      </> : "..."}
+      </> : <>
+        ...
+      </>}
     </div>
   </>
 }

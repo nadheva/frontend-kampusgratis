@@ -165,7 +165,6 @@ const Main = () => {
               </div>
             </div>
           </form>
-
           <div className="row mt-3">
             <div className="col-12">
               <div className="row">

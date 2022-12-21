@@ -43,6 +43,17 @@ export const likeDiscussion = createAsyncThunk(
   }
 )
 
+export const deleteDiscussion = createAsyncThunk(
+  'discussion-global/delete-discussion-by-id',
+  async (discussionId, thunkAPI) => {
+    try {
+      return await discussionGlobalService.deleteDiscussion(discussionId);
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extractErrorMessage(error));
+    }
+  }
+)
+
 export const sendComment = createAsyncThunk(
   'discussion-global/forum-insert-comment',
   async (_, thunkAPI) => {
@@ -120,6 +131,20 @@ export const likeReply = createAsyncThunk(
     }
   }
 )
+
+export const createDiscussion = createAsyncThunk(
+  'discussion-global/forum-create-discussion',
+  async (_, thunkAPI) => {
+    try {
+      console.log(_);
+      const data = await discussionGlobalService.createDiscussion(_.title, _.content);
+
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(extartErrorFirebase(error) || extractErrorMessage(error));
+    }
+  }
+);
 
 export const discussionGlobalSlice = createSlice({
   name: "discussion-global",
@@ -223,6 +248,36 @@ export const discussionGlobalSlice = createSlice({
         state.message = "DELETE_REPLY";
       })
       .addCase(deleteReply.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(createDiscussion.pending, (state) => {
+        // state.isLoading = true;
+      })
+      .addCase(createDiscussion.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.discussion_new = action.payload;
+        state.message = "CREATE_DISCUSSION";
+      })
+      .addCase(createDiscussion.rejected, (state, action) => {
+        state.isSuccess = false;
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(deleteDiscussion.pending, (state) => {
+        // state.isLoading = true;
+      })
+      .addCase(deleteDiscussion.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data.discussion_delete = action.payload;
+        state.message = "DELETE_DISCUSSION";
+      })
+      .addCase(deleteDiscussion.rejected, (state, action) => {
         state.isSuccess = false;
         state.isLoading = false;
         state.isError = true;
