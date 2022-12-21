@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getCareer, resetAll } from "../../features/career/careerSlice";
+import { getCareer } from "../../features/career/careerSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Footer from "../../components/default/Footer";
@@ -13,9 +13,11 @@ import Header from "../../components/default/Header";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import ChangingProgressProvider from "../../assets/js/ChangingProgressProvider";
-const percentage = 66;
+import GradientSVG from "../../assets/js/GradientSVG";
 
 const HasilAnalisa = () => {
+	const idCSS = "hello";
+	const percentage = 66;
 	// Redux
 	const dispatch = useDispatch();
 	const [currentCareer, setCurrentCareer] = useState({});
@@ -27,11 +29,10 @@ const HasilAnalisa = () => {
 	});
 
 	useEffect(() => {
-		if (data?.career) {
-			setCurrentCareer(data?.career);
-			dispatch(resetAll());
-		}
+		if (data?.career) setCurrentCareer(data?.career);
 	}, [data]);
+
+	console.log(currentCareer);
 
 	return (
 		<>
@@ -48,23 +49,18 @@ const HasilAnalisa = () => {
                                 /> */}
 								<div className="d-flex justify-content-center mb-4">
 									<div style={{ width: "25%" }}>
-										<ChangingProgressProvider
-											values={[0, currentCareer?.accuracy]}
-											className="h-200px h-md-300px mb-3"
-										>
-											{(percentage) => (
-												<CircularProgressbar
-													value={percentage}
-													text={`${percentage}%`}
-													styles={buildStyles({
-														pathTransition:
-															percentage === 0
-																? "none"
-																: "stroke-dashoffset 0.5s ease 0s",
-													})}
-												/>
-											)}
-										</ChangingProgressProvider>
+										<GradientSVG />
+										<CircularProgressbar
+											strokeWidth={8}
+											value={[currentCareer?.accuracy]}
+											text={currentCareer?.accuracy}
+											styles={{
+												path: { stroke: `url(#${idCSS})`, height: "100%" },
+												trail: {
+													stroke: "#eee",
+												},
+											}}
+										/>
 									</div>
 								</div>
 
