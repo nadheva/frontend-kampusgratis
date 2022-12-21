@@ -34,9 +34,9 @@ export const getEvent = createAsyncThunk("events/event", async (id, thunkAPI) =>
     }
 });
 
-export const joinEvent = createAsyncThunk("events/join", async (id, thunkAPI) => {
+export const joinEvent = createAsyncThunk("events/join", async ({ id, data2 }, thunkAPI) => {
     try {
-        const { data } = await eventService.joinEvent(id);
+        const { data } = await eventService.joinEvent(id, data2);
 
         return data;
     } catch (error) {
@@ -100,7 +100,8 @@ export const eventSlice = createSlice({
             .addCase(joinEvent.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = true;
-                state.data.join = action.payload;
+                state.message = "SUCCESS_UPLOAD";
+                state.data.event = action.payload;
             })
             .addCase(joinEvent.rejected, (state, action) => {
                 state.isSuccess = false;

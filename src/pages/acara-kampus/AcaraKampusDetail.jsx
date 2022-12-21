@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 // redux
 import { useSelector, useDispatch } from "react-redux";
-import { getEvent, joinEvent } from "../../features/event/eventSlice";
+import { getEvent, joinEvent, reset } from "../../features/event/eventSlice";
 import useEffectOnce from "../../helpers/useEffectOnce";
 
 import Header from "../../components/default/Header";
@@ -19,8 +20,9 @@ const AcaraKampusDetail = () => {
 	// Redux
 	const dispatch = useDispatch();
 	const [event, setEvent] = useState({});
+	const [data2, setData2] = useState({});
 
-	const { data, isLoading, message } = useSelector(
+	const { data, isLoading, message, isSuccess } = useSelector(
 		(state) => state.event
 	);
 
@@ -33,9 +35,19 @@ const AcaraKampusDetail = () => {
 	}, [data]);
 
 	const onClickDaftar = () => {
-		console.log("haloo")
-		dispatch(joinEvent(id))
+		dispatch(joinEvent({ id, data2 }))
 	}
+
+	useEffect(() => {
+		if (isSuccess && message === "SUCCESS_UPLOAD") {
+			toast.success("Pendaftaran Event Berhasil!");
+			dispatch(reset());
+		}
+	}, [message, event, id]);
+
+
+
+	console.log(event)
 
 	return (
 		<>
