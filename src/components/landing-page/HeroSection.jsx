@@ -226,7 +226,7 @@ const HeroSection = () => {
 									</svg>
 								</span>
 							</span>
-							{text}
+							Gratis & Berkualitas
 						</h1>
 						<p className="my-4 lead">
 							Platform belajar gratis pertama di Indonesia, belajar mudah dengan
@@ -253,7 +253,7 @@ const HeroSection = () => {
 							>
 								Coba sekarang - Gratis
 							</Link>
-							<div className="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
+							{/* <div className="d-flex align-items-center justify-content-center py-2 ms-0 ms-sm-4">
 								<a
 									href="https://youtu.be/1ftUaeb_wi4"
 									target="_blank"
@@ -264,7 +264,7 @@ const HeroSection = () => {
 										Putar Vidio
 									</h6>
 								</a>
-							</div>
+							</div> */}
 						</div>
 					</div>
 					<div
