@@ -230,8 +230,7 @@ const HeroSection = () => {
 						</h1>
 						<p className="my-4 lead">
 							Platform belajar gratis pertama di Indonesia, belajar mudah dengan
-							kampus gratis bisa diakses siapapun khususnya kaum marginal, dan
-							selalu update layaknya platform Wikipedia.
+							kampus gratis bisa diakses siapapun khususnya kaum marginal
 						</p>
 						<ul className="list-group position-relative justify-content-center justify-content-lg-start mb-4">
 							<li className="list-group-item border-0">
