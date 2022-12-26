@@ -71,6 +71,7 @@ const MainContent = () => {
                       </div>
                     </div>
                   </div>
+<<<<<<< Updated upstream
                   <div className="col-md-6">
                     <div class="card p-2 shadow h-100">
                       <div class="rounded-top overflow-hidden">
@@ -96,12 +97,15 @@ const MainContent = () => {
                       </div>
                     </div>
                   </div>
+=======
+>>>>>>> Stashed changes
                 </div>
               </div>
             </div>
           </div>
           <div class="tab-pane fade" id="riwayat-simulasi-drill-assessment" role="tabpanel" aria-labelledby="riwayat-simulasi-drill-assessment-body">
             <div class="row">
+<<<<<<< Updated upstream
               <div className="col-md-6">
                 <div class="card p-2 shadow h-100">
                   <div class="rounded-top overflow-hidden">
@@ -153,6 +157,63 @@ const MainContent = () => {
                       </div>
                       <div>
                         <h6 class="bg-info bg-opacity-10 text-primary me-2 p-2 h4 mb-0">A</h6>
+=======
+              <div class="col-lg-6">
+                <h3>Development</h3>
+                <p class="mb-3">Ask a quick six seven offer see among. Handsome met debating sir dwelling age material. As style lived he worse dried. Offered related so visitors we private removed.</p>
+                <h6 class="mt-4">What you’ll learn</h6>
+                <ul class="list-group list-group-borderless mb-3">
+                  <li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Create responsive, accessible, and beautiful layouts</li>
+                  <li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Course Videos &amp; Readings</li>
+                  <li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Manipulate the DOM with vanilla JS</li>
+                  <li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Master the command line interface</li>
+                  <li class="list-group-item h6 fw-light d-flex mb-0"><i class="bi bi-patch-check-fill text-success me-2"></i>Create your own Node modules</li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <div class="card p-2 pb-0 shadow">
+                  <div class="overflow-hidden h-xl-200px">
+                    <img src="/assets/images/about/14.jpg" class="card-img-top" alt="course image" />
+                    <div class="card-img-overlay d-flex p-3">
+                      <div class="m-auto">
+                        <a href="https://www.youtube.com/embed/tXHviS-4ygo" class="btn btn-lg text-danger btn-round btn-white-shadow mb-0" data-glightbox="" data-gallery="course-video">
+                          <i class="fas fa-play"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card-body">
+                    <div class="row g-3">
+                      <div class="col-sm-4 col-lg-6 col-xl-4">
+                        <div class="d-flex align-items-center">
+                          <a href="#" class="btn btn-orange rounded-2 me-3 mb-0"><i class="bi bi-cart3 fs-5"></i></a>
+                          <div>
+                            <span class="badge text-bg-info mb-1">6 month</span>
+                            <h5 class="mb-0">$134</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4 col-lg-6 col-xl-4">
+                        <div class="d-flex align-items-center">
+                          <a href="#" class="btn btn-orange rounded-2 me-3 mb-0"><i class="bi bi-cart3 fs-5"></i></a>
+                          <div>
+                            <span class="badge text-bg-info mb-1">12 month</span>
+                            <h5 class="mb-0">$355</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-4 col-lg-6 col-xl-4">
+                        <div class="d-flex align-items-center">
+                          <a href="#" class="btn btn-orange rounded-2 me-3 mb-0"><i class="bi bi-cart3 fs-5"></i></a>
+                          <div>
+                            <span class="badge text-bg-info mb-1">18 month</span>
+                            <h5 class="mb-0">$654</h5>
+                          </div>
+                        </div>
+>>>>>>> Stashed changes
                       </div>
                     </div>
                   </div>
