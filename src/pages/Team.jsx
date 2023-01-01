@@ -8,37 +8,37 @@ const Team = () => {
         {
             name: "Theophilus Lukas Hotasi",
             position: "Back End Developer",
-            img: "./assets/images/instructor/01.jpg",
+            img: "./assets/images/asset-kg/team/3.JPG",
             color: "",
         },
         {
             name: "Lalu Ibnu Hidayatullah",
             position: "Back End Developer",
-            img: "./assets/images/instructor/02.jpg",
+            img: "./assets/images/asset-kg/team/4.JPG",
             color: "three",
         },
         {
             name: "Kenniskiu Fortino Kurniawan",
             position: "Back End Developer",
-            img: "./assets/images/instructor/03.jpg",
+            img: "./assets/images/asset-kg/team/1.JPG",
             color: "four",
         },
         {
             name: "Rizki Pratama",
             position: "Front End",
-            img: "./assets/images/instructor/04.jpg",
+            img: "./assets/images/asset-kg/team/6.JPG",
             color: "five",
         },
         {
             name: "Aryo Bhodro Irawan",
             position: "Front End Developer",
-            img: "./assets/images/instructor/08.jpg",
+            img: "./assets/images/asset-kg/team/2.JPG",
             color: "six",
         },
         {
             name: "Muhamad Azis",
             position: "Front End Developer",
-            img: "./assets/images/instructor/06.jpg",
+            img: "./assets/images/asset-kg/team/5.PNG",
             color: "two",
         },
     ]
@@ -52,7 +52,7 @@ const Team = () => {
                     style={{
                         backgroundImage: "url(assets/images/asset-kg/web.JPG)",
                         backgroundPosition: "center",
-                        backgroundSize: "cover"
+                        backgroundSize: "cover",
                     }}
                 >
                     <div className="bg-overlay bg-dark opacity-5" />
@@ -88,7 +88,16 @@ const Team = () => {
                                     <div className="col-sm-6 col-lg-4" key={i}>
                                         <div className={`team-item ${x.color}`}>
                                             <div className="top">
-                                                <img src={x.img} alt="Team" />
+                                                <img
+                                                    src={x.img}
+                                                    alt={x.name}
+                                                    style={{
+                                                        height: "470px",
+                                                        objectFit: "cover",
+                                                        objectPosition: "center"
+                                                    }}
+
+                                                />
                                             </div>
                                             <div className="bottom">
                                                 <h3>{x.name}</h3>
