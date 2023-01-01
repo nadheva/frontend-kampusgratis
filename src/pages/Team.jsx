@@ -38,7 +38,7 @@ const Team = () => {
         {
             name: "Muhamad Azis",
             position: "Front End Developer",
-            img: "./assets/images/asset-kg/team/5.PNG",
+            img: "./assets/images/asset-kg/team/5.png",
             color: "two",
         },
     ]
