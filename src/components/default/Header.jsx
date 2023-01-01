@@ -75,6 +75,9 @@ const Header = () => {
                 <li className="nav-item">
                   <NavLink className="nav-link " to="/panduan" style={{ fontSize: "17px" }}>Panduan</NavLink>
                 </li>
+                <li className="nav-item">
+                  <NavLink className="nav-link " to="/team" style={{ fontSize: "17px" }}>Team</NavLink>
+                </li>
               </ul>
             </div>
             {user ? (
