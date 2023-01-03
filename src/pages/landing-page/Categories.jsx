@@ -80,13 +80,6 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Analitik",
-			url: "/analitik",
-			src: "/assets/images/element/exam.svg",
-			background: "bg-danger",
-			disabled: false,
-		},
-		{
 			name: "Panduan",
 			url: "/panduan",
 			src: "/assets/images/element/help.svg",
@@ -108,18 +101,25 @@ const Categories = () => {
 			disabled: false,
 		},
 		{
-			name: "Perencanaan Karir",
-			url: "/perencanaan-karir",
-			src: "/assets/images/element/engineering.svg",
-			background: "bg-orange",
-			disabled: false,
-		},
-		{
 			name: "Penyaluran Kerja",
 			url: "/penyaluran-kerja",
 			src: "/assets/images/element/coding.svg",
 			background: "bg-purple",
 			disabled: false,
+		},
+		{
+			name: "Perencanaan Karir",
+			url: "/perencanaan-karir",
+			src: "/assets/images/element/engineering.svg",
+			background: "bg-secondary",
+			disabled: true,
+		},
+		{
+			name: "Analitik",
+			url: "/analitik",
+			src: "/assets/images/element/exam.svg",
+			background: "bg-secondary",
+			disabled: true,
 		},
 	];
 
