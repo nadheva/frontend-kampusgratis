@@ -48,7 +48,7 @@ const Panduan = () => {
 		{
 			id: 2,
 			icon: "bi-fast-forward text-danger",
-			title: "Vidio Panduan",
+			title: "Video Panduan",
 			deskripsi: "Panduan ini berisi video - video panduan.",
 			link: "/panduan/vidio-panduan",
 		},
