@@ -21,7 +21,7 @@ import PageNotFound from "./components/default/PageNotFound";
 import Administration from "./pages/Administration";
 
 // import SilabusSubject from "./pages/syllabus/ListSubject";
-import SubjectsList from './pages/syllabus/SubjectsList';
+import SubjectsList from "./pages/syllabus/SubjectsList";
 import Silabus from "./pages/syllabus/Main";
 
 import ScrollToTop from "./components/default/ScrollToTop";
@@ -86,7 +86,7 @@ import Pelatihan from "./pages/landing-page/programkami/Pelatihan";
 import Magang from "./pages/landing-page/programkami/Magang";
 import Projek from "./pages/landing-page/programkami/Projek";
 
-import Leaderboard from './pages/leaderboard/Single';
+import Leaderboard from "./pages/leaderboard/Single";
 import BukuPanduan from "./pages/panduan/BukuPanduan";
 import BukuPanduanDetial from "./pages/panduan/BukuPanduanDetial";
 import Glosarium from "./pages/panduan/Glosarium";
@@ -98,9 +98,9 @@ import Index from "./pages/perencanaan-karir/Index";
 import HasilAnalisa from "./pages/perencanaan-karir/HasilAnalisa";
 import Modul from "./pages/perencanaan-karir/Modul";
 
-import DiscussionGlobal from './pages/Discussion-Global/Main';
-import DiscussionGlobalDetail from './pages/Discussion-Global/Detail';
-import CreateDiscussion from './pages/Discussion-Global/Create';
+import DiscussionGlobal from "./pages/Discussion-Global/Main";
+import DiscussionGlobalDetail from "./pages/Discussion-Global/Detail";
+import CreateDiscussion from "./pages/Discussion-Global/Create";
 
 import DrillSimulationAssessment from "./pages/drill-simulation-assessment/Main";
 import Team from "./pages/Team";
@@ -132,15 +132,31 @@ function App() {
 							<Route path="/settings" element={<Setting />} />
 						</Route>
 
-						<Route path="/notifikasi" element={<PrivateRoute redirect />} >
+						<Route path="/notifikasi" element={<PrivateRoute redirect />}>
 							<Route path="/notifikasi" element={<Notifikasi />} />
 						</Route>
 
-						<Route path="/administrasi" exact element={<><PrivateRoute redirect /></>}>
+						<Route
+							path="/administrasi"
+							exact
+							element={
+								<>
+									<PrivateRoute redirect />
+								</>
+							}
+						>
 							<Route path="/administrasi" exact element={<Administration />} />
 						</Route>
 
-						<Route path="/profil" exact element={<><PrivateRoute redirect /></>}>
+						<Route
+							path="/profil"
+							exact
+							element={
+								<>
+									<PrivateRoute redirect />
+								</>
+							}
+						>
 							<Route path="/profil" exact element={<Profile />} />
 						</Route>
 
@@ -228,40 +244,86 @@ function App() {
 							<Route path="/studi-ku" exact element={<MyStudy />} />
 						</Route>
 
-						<Route path='/silabus/:majorId' element={<PrivateRoute redirect />}>
-							<Route path='/silabus/:majorId' element={<SubjectsList />} />
+						<Route path="/silabus/:majorId" element={<PrivateRoute redirect />}>
+							<Route path="/silabus/:majorId" element={<SubjectsList />} />
 						</Route>
 
 						<Route path="/silabus" exact element={<PrivateRoute redirect />}>
 							<Route path="/silabus" exact element={<Silabus />} />
 						</Route>
 
-						<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<PrivateRoute redirect />}>
-							<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz' exact element={<QuizStart />} />
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz"
+								exact
+								element={<QuizStart />}
+							/>
 						</Route>
 
-						<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId' exact element={<PrivateRoute redirect />}>
-							<Route path='/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId' exact element={<Detail />} />
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/quiz/:materialId"
+								exact
+								element={<Detail />}
+							/>
 						</Route>
 
-						<Route path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan" element={<PrivateRoute redirect />}>
-							<Route path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan" element={<DetailPenugasan />} />
+						<Route
+							path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/studi-ku/:subjectId/pertemuan/:sessionId/penugasan"
+								element={<DetailPenugasan />}
+							/>
 						</Route>
 
 						<Route path="/penugasan" exact element={<PrivateRoute redirect />}>
 							<Route path="/penugasan" exact element={<Penugasan />} />
 						</Route>
 
-						<Route path="/diskusi-global" exact element={<PrivateRoute redirect />}>
-							<Route path="/diskusi-global" exact element={<DiscussionGlobal />} />
+						<Route
+							path="/diskusi-global"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/diskusi-global"
+								exact
+								element={<DiscussionGlobal />}
+							/>
 						</Route>
 
-						<Route path="/diskusi-global/buat-diskusi" exact element={<PrivateRoute redirect />}>
-							<Route path="/diskusi-global/buat-diskusi" exact element={<CreateDiscussion />} />
+						<Route
+							path="/diskusi-global/buat-diskusi"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/diskusi-global/buat-diskusi"
+								exact
+								element={<CreateDiscussion />}
+							/>
 						</Route>
 
-						<Route path="/diskusi-global/diskusi/:discussionId" exact element={<PrivateRoute redirect />}>
-							<Route path="/diskusi-global/diskusi/:discussionId" exact element={<DiscussionGlobalDetail />} />
+						<Route
+							path="/diskusi-global/diskusi/:discussionId"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/diskusi-global/diskusi/:discussionId"
+								exact
+								element={<DiscussionGlobalDetail />}
+							/>
 						</Route>
 
 						{/* START : SEKILAS ILMU/ARTIKEL */}
@@ -271,36 +333,93 @@ function App() {
 
 						{/* START : */}
 						<Route path="/panduan" element={<Panduan />} />
-						<Route path="/panduan/buku-panduan" exact element={<PrivateRoute redirect />}>
+						<Route
+							path="/panduan/buku-panduan"
+							exact
+							element={<PrivateRoute redirect />}
+						>
 							<Route path="/panduan/buku-panduan" element={<BukuPanduan />} />
 						</Route>
-						<Route path="/panduan/buku-panduan/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/buku-panduan/:id" element={<BukuPanduanDetial />} />
+						<Route
+							path="/panduan/buku-panduan/:id"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/buku-panduan/:id"
+								element={<BukuPanduanDetial />}
+							/>
 						</Route>
-						<Route path="/panduan/vidio-panduan" exact element={<PrivateRoute redirect />}>
+						<Route
+							path="/panduan/vidio-panduan"
+							exact
+							element={<PrivateRoute redirect />}
+						>
 							<Route path="/panduan/vidio-panduan" element={<VidioPanduan />} />
 						</Route>
-						<Route path="/panduan/vidio-panduan/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/vidio-panduan/:id" element={<VidioDetail />} />
+						<Route
+							path="/panduan/vidio-panduan/:id"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/vidio-panduan/:id"
+								element={<VidioDetail />}
+							/>
 						</Route>
 						<Route path="/panduan/kamus-KG" element={<KamusKG />} />
 
-						<Route path="/panduan/kamus-KG/kamus-aplikasi" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/kamus-KG/kamus-aplikasi" element={<KamusKgDetail />} />
+						<Route
+							path="/panduan/kamus-KG/kamus-aplikasi"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/kamus-KG/kamus-aplikasi"
+								element={<KamusKgDetail />}
+							/>
 						</Route>
-						<Route path="/panduan/kamus-KG/kamus-aplikasi/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/kamus-KG/kamus-aplikasi/:id" element={<KamusAplikasiDetail />} />
+						<Route
+							path="/panduan/kamus-KG/kamus-aplikasi/:id"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/kamus-KG/kamus-aplikasi/:id"
+								element={<KamusAplikasiDetail />}
+							/>
 						</Route>
-						<Route path="/panduan/kamus-KG/glosarium" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/kamus-KG/glosarium" element={<Glosarium />} />
+						<Route
+							path="/panduan/kamus-KG/glosarium"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/kamus-KG/glosarium"
+								element={<Glosarium />}
+							/>
 						</Route>
-						<Route path="/panduan/kamus-KG/glosarium/:id" exact element={<PrivateRoute redirect />}>
-							<Route path="/panduan/kamus-KG/glosarium/:id" element={<GlosariumDetail />} />
+						<Route
+							path="/panduan/kamus-KG/glosarium/:id"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/panduan/kamus-KG/glosarium/:id"
+								element={<GlosariumDetail />}
+							/>
 						</Route>
 						{/* END : */}
 
-						<Route path="/simulasi-drill-assessment" exact element={<PrivateRoute redirect />}>
-							<Route path="/simulasi-drill-assessment" element={<DrillSimulationAssessment />} />
+						<Route
+							path="/simulasi-drill-assessment"
+							exact
+							element={<PrivateRoute redirect />}
+						>
+							<Route
+								path="/simulasi-drill-assessment"
+								element={<DrillSimulationAssessment />}
+							/>
 						</Route>
 
 						{/* START : KALENDER */}
@@ -329,17 +448,31 @@ function App() {
 						<Route path="/certificates" element={<PrivateRoute redirect />}>
 							<Route path="/certificates" element={<Sertifikat redirect />} />
 						</Route>
-						<Route path="/certificates/:id" element={<ViewSertifikat redirect />} />
+						<Route
+							path="/certificates/:id"
+							element={<ViewSertifikat redirect />}
+						/>
 						{/* END : NILAI & SERTIFIKAT */}
 
 						{/* START : Penyaluran Kerja */}
 						<Route path="/penyaluran-kerja" element={<PrivateRoute />}>
 							<Route path="/penyaluran-kerja" element={<ListPekerjaan />} />
 						</Route>
-						<Route path="/penyaluran-kerja/pilih-pekerjaan/:type" exact element={<PrivateRoute />}>
-							<Route path="/penyaluran-kerja/pilih-pekerjaan/:type" exact element={<PenyaluranKerja />} />
+						<Route
+							path="/penyaluran-kerja/pilih-pekerjaan/:type"
+							exact
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/penyaluran-kerja/pilih-pekerjaan/:type"
+								exact
+								element={<PenyaluranKerja />}
+							/>
 						</Route>
-						<Route path="/penyaluran-kerja/pilih-pekerjaan/:type/:id" element={<PrivateRoute />}>
+						<Route
+							path="/penyaluran-kerja/pilih-pekerjaan/:type/:id"
+							element={<PrivateRoute />}
+						>
 							<Route
 								path="/penyaluran-kerja/pilih-pekerjaan/:type/:id"
 								element={<DetailPenyaluranKerja />}
@@ -367,20 +500,50 @@ function App() {
 						<Route path="/layanan-konsultasi" element={<PrivateRoute />}>
 							<Route path="/layanan-konsultasi" element={<HomeLayanan />} />
 						</Route>
-						<Route path="/layanan-konsultasi/konsultasi" element={<PrivateRoute />}>
-							<Route path="/layanan-konsultasi/konsultasi" element={<Konsultasi />} />
+						<Route
+							path="/layanan-konsultasi/konsultasi"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/layanan-konsultasi/konsultasi"
+								element={<Konsultasi />}
+							/>
 						</Route>
-						<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<PrivateRoute />}>
-							<Route path="/layanan-konsultasi/konsultasi/chat-konsultasi" element={<ChatKonsultasi />} />
+						<Route
+							path="/layanan-konsultasi/konsultasi/chat-konsultasi"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/layanan-konsultasi/konsultasi/chat-konsultasi"
+								element={<ChatKonsultasi />}
+							/>
 						</Route>
-						<Route path="/layanan-konsultasi/dokumen" element={<PrivateRoute />}>
-							<Route path="/layanan-konsultasi/dokumen" element={<PilihDokument />} />
+						<Route
+							path="/layanan-konsultasi/dokumen"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/layanan-konsultasi/dokumen"
+								element={<PilihDokument />}
+							/>
 						</Route>
-						<Route path="/layanan-konsultasi/proses-dokumen" element={<PrivateRoute />}>
-							<Route path="/layanan-konsultasi/proses-dokumen" element={<PengajuanDokument />} />
+						<Route
+							path="/layanan-konsultasi/proses-dokumen"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/layanan-konsultasi/proses-dokumen"
+								element={<PengajuanDokument />}
+							/>
 						</Route>
-						<Route path="/layanan-konsultasi/status-dokumen" element={<PrivateRoute />}>
-							<Route path="/layanan-konsultasi/status-dokumen" element={<StatusDokument />} />
+						<Route
+							path="/layanan-konsultasi/status-dokumen"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/layanan-konsultasi/status-dokumen"
+								element={<StatusDokument />}
+							/>
 						</Route>
 						{/* END : Konsultasi & Layanan*/}
 
@@ -388,11 +551,23 @@ function App() {
 						<Route path="/perencanaan-karir" element={<PrivateRoute />}>
 							<Route path="/perencanaan-karir" element={<Index />} />
 						</Route>
-						<Route path="/perencanaan-karir/hasil-analisa" element={<PrivateRoute />}>
-							<Route path="/perencanaan-karir/hasil-analisa" element={<HasilAnalisa />} />
+						<Route
+							path="/perencanaan-karir/hasil-analisa"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/perencanaan-karir/hasil-analisa"
+								element={<HasilAnalisa />}
+							/>
 						</Route>
-						<Route path="/perencanaan-karir/hasil-analisa/modul-karir" element={<PrivateRoute />}>
-							<Route path="/perencanaan-karir/hasil-analisa/modul-karir" element={<Modul />} />
+						<Route
+							path="/perencanaan-karir/hasil-analisa/modul-karir"
+							element={<PrivateRoute />}
+						>
+							<Route
+								path="/perencanaan-karir/hasil-analisa/modul-karir"
+								element={<Modul />}
+							/>
 						</Route>
 						{/* END : Perencanaan Karir*/}
 
@@ -407,7 +582,6 @@ function App() {
 						{/* START : */}
 
 						{/* END : */}
-
 					</Routes>
 				</ScrollToTop>
 			</Router>
