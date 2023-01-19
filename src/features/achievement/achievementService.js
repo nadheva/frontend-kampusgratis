@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuth } from "firebase/auth";
 
-const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
+const API_URL = "https://kg-2-luk-s7dsgbuasq-et.a.run.app/api/v1/";
 
 const getAchievements = async () => {
 	const auth = getAuth();
@@ -9,19 +9,18 @@ const getAchievements = async () => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-	const response = await axios.get(API_URL + 'profile/achievements', config);
+	const response = await axios.get(API_URL + "profile/achievements", config);
 
 	return response.data;
-}
-
+};
 
 const achievementService = {
-	getAchievements
+	getAchievements,
 };
 
 export default achievementService;

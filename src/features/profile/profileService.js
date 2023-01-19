@@ -1,7 +1,7 @@
-import axios from 'axios';
-import { getAuth } from 'firebase/auth';
+import axios from "axios";
+import { getAuth } from "firebase/auth";
 
-const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
+const API_URL = "https://kg-2-luk-s7dsgbuasq-et.a.run.app/api/v1/";
 
 const getMe = async () => {
 	const auth = getAuth();
@@ -9,19 +9,19 @@ const getMe = async () => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-	const response = await axios.get(API_URL + 'profile/me', config);
+	const response = await axios.get(API_URL + "profile/me", config);
 
 	if (response?.data) {
-		localStorage.setItem('user', JSON.stringify(response.data.data))
+		localStorage.setItem("user", JSON.stringify(response.data.data));
 	}
 
 	return response.data;
-}
+};
 
 const updateProfile = async (body) => {
 	const auth = getAuth();
@@ -29,23 +29,23 @@ const updateProfile = async (body) => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'multipart/form-data',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "multipart/form-data",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-	const response = await axios.put(API_URL + 'profile/me', body, config);
+	const response = await axios.put(API_URL + "profile/me", body, config);
 
 	if (response?.data) {
-		localStorage.setItem('user', JSON.stringify(response.data.data))
+		localStorage.setItem("user", JSON.stringify(response.data.data));
 	}
 
 	return response.data;
-}
+};
 
 const profileService = {
 	getMe,
-	updateProfile
-}
+	updateProfile,
+};
 
 export default profileService;

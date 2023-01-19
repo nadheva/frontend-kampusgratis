@@ -1,35 +1,37 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
+const API_URL = "https://kg-2-luk-s7dsgbuasq-et.a.run.app/api/v1/";
 
 const artikelAll = async (currentPage, search) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  }
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
 
-  const response = await axios.get(API_URL + `article/index?page=${currentPage}&limit=8&search=${search}`, config);
+	const response = await axios.get(
+		API_URL + `article/index?page=${currentPage}&limit=8&search=${search}`,
+		config
+	);
 
-  return response.data;
-}
+	return response.data;
+};
 
 const artikel = async (id) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  }
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
 
-  const response = await axios.get(API_URL + `article/${id}`, config);
+	const response = await axios.get(API_URL + `article/${id}`, config);
 
-  return response.data;
-}
-
+	return response.data;
+};
 
 const artikelService = {
-  artikelAll,
-  artikel
-}
+	artikelAll,
+	artikel,
+};
 
 export default artikelService;

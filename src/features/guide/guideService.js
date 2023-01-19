@@ -1,7 +1,7 @@
 import axios from "axios";
 import { getAuth } from "firebase/auth";
 
-const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
+const API_URL = "https://kg-2-luk-s7dsgbuasq-et.a.run.app/api/v1/";
 
 const getGuideVideos = async () => {
 	const auth = getAuth();
@@ -9,15 +9,18 @@ const getGuideVideos = async () => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-	const response = await axios.get(API_URL + 'guide/getbytype?type=video', config);
+	const response = await axios.get(
+		API_URL + "guide/getbytype?type=video",
+		config
+	);
 
 	return response.data;
-}
+};
 
 const getGuideBooks = async () => {
 	const auth = getAuth();
@@ -25,15 +28,18 @@ const getGuideBooks = async () => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-	const response = await axios.get(API_URL + 'guide/getbytype?type=book', config);
+	const response = await axios.get(
+		API_URL + "guide/getbytype?type=book",
+		config
+	);
 
 	return response.data;
-}
+};
 
 const getGuide = async (id) => {
 	const auth = getAuth();
@@ -41,15 +47,15 @@ const getGuide = async (id) => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
 	const response = await axios.get(API_URL + `guide/getbyid/${id}`, config);
 
 	return response.data;
-}
+};
 
 const getApplication = async (currentPage, search) => {
 	const auth = getAuth();
@@ -57,14 +63,18 @@ const getApplication = async (currentPage, search) => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
-	const response = await axios.get(API_URL + `guide/glossary?page=${currentPage}&limit=8&search=${search}&type=application`, config);
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+	const response = await axios.get(
+		API_URL +
+			`guide/glossary?page=${currentPage}&limit=8&search=${search}&type=application`,
+		config
+	);
 
 	return response.data;
-}
+};
 
 const getGlossaries = async (currentPage, search) => {
 	const auth = getAuth();
@@ -72,14 +82,18 @@ const getGlossaries = async (currentPage, search) => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
-	const response = await axios.get(API_URL + `guide/glossary?page=${currentPage}&limit=8&search=${search}&type=material`, config);
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
+	const response = await axios.get(
+		API_URL +
+			`guide/glossary?page=${currentPage}&limit=8&search=${search}&type=material`,
+		config
+	);
 
 	return response.data;
-}
+};
 
 const getGlossary = async (id) => {
 	const auth = getAuth();
@@ -87,15 +101,15 @@ const getGlossary = async (id) => {
 
 	const config = {
 		headers: {
-			'Content-Type': 'application/json',
-			'Authorization': `Bearer ${token}`
-		}
-	}
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
 	const response = await axios.get(API_URL + `guide/glossary/${id}`, config);
 
 	return response.data;
-}
+};
 
 const guideService = {
 	getGuideVideos,
@@ -103,7 +117,7 @@ const guideService = {
 	getGuide,
 	getApplication,
 	getGlossaries,
-	getGlossary
+	getGlossary,
 };
 
 export default guideService;

@@ -1,50 +1,60 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_URL = "https://kg-be-o5doicnv2a-et.a.run.app/api/v1/";
+const API_URL = "https://kg-2-luk-s7dsgbuasq-et.a.run.app/api/v1/";
 
 const register = async (userData) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  }
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
 
-  const response = await axios.post(API_URL + 'auth/register', userData, config);
+	const response = await axios.post(
+		API_URL + "auth/register",
+		userData,
+		config
+	);
 
-  return response.data;
-}
-
+	return response.data;
+};
 
 const forgotPassword = async (userData) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    }
-  }
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+		},
+	};
 
-  const response = await axios.post(API_URL + 'auth/forget-password', userData, config);
+	const response = await axios.post(
+		API_URL + "auth/forget-password",
+		userData,
+		config
+	);
 
-  return response.data;
-}
-
+	return response.data;
+};
 
 const googleValidate = async (token) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
-    }
-  }
+	const config = {
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${token}`,
+		},
+	};
 
-  const response = await axios.post(API_URL + 'auth/google-validate', {}, config);
+	const response = await axios.post(
+		API_URL + "auth/google-validate",
+		{},
+		config
+	);
 
-  return response.data;
-}
+	return response.data;
+};
 
 const authService = {
-  googleValidate,
-  register,
-  forgotPassword
-}
+	googleValidate,
+	register,
+	forgotPassword,
+};
 
 export default authService;
